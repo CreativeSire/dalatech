@@ -3,1402 +3,313 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - DALA Technologies</title>
+  <title>About DALA | The Retail Execution Control Layer</title>
   <meta name="description" content="Built by operators. Designed for founders. Focused on your growth.">
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../assets/css/animations.css">
-  
-  <style>
-    /* PREMIUM ABOUT PAGE - VISUALLY STUNNING */
-    
-    /* Hero - Dramatic Dark */
-    .about-hero {
-      min-height: 90vh;
-      background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 120px 2rem;
-    }
-    
-    .about-hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(229, 57, 53, 0.15) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    
-    .about-hero::after {
-      content: '';
-      position: absolute;
-      bottom: -30%;
-      left: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(255, 193, 7, 0.08) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    
-    .about-hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      max-width: 900px;
-    }
-    
-    .about-hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--primary-light);
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      margin-bottom: 2rem;
-      padding: 0.75rem 1.5rem;
-      background: rgba(229, 57, 53, 0.15);
-      border: 1px solid rgba(229, 57, 53, 0.3);
-      border-radius: 100px;
-    }
-    
-    .about-hero-title {
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 900;
-      color: white;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
-    }
-    
-    .about-hero-title span {
-      display: block;
-      background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .about-hero-subtitle {
-      font-size: 1.375rem;
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.8;
-      max-width: 650px;
-      margin: 0 auto 3rem;
-    }
-    
-    .hero-stats-row {
-      display: flex;
-      justify-content: center;
-      gap: 4rem;
-      margin-top: 4rem;
-    }
-    
-    .hero-stat {
-      text-align: center;
-    }
-    
-    .hero-stat-number {
-      font-size: 3.5rem;
-      font-weight: 800;
-      color: var(--primary-light);
-      line-height: 1;
-    }
-    
-    .hero-stat-label {
-      font-size: 0.875rem;
-      color: rgba(255, 255, 255, 0.6);
-      margin-top: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    
-    /* Story Section - Magazine Layout */
-    .story-section {
-      padding: 120px 0;
-      background: #ffffff;
-      position: relative;
-    }
-    
-    .story-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    .story-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      margin-bottom: 6rem;
-    }
-    
-    .story-header-content h2 {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--dark);
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-    
-    .story-header-content p {
-      font-size: 1.25rem;
-      color: var(--gray-600);
-      line-height: 1.8;
-    }
-    
-    .story-visual-large {
-      position: relative;
-    }
-    
-    .story-image-frame {
-      background: linear-gradient(135deg, var(--primary) 0%, #c62828 100%);
-      border-radius: 24px;
-      padding: 3rem;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .story-image-frame::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
-      animation: rotate 20s linear infinite;
-    }
-    
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    .story-stat-box {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      color: white;
-    }
-    
-    .story-stat-box .number {
-      font-size: 5rem;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-    
-    .story-stat-box .label {
-      font-size: 1.25rem;
-      font-weight: 600;
-      opacity: 0.9;
-    }
-    
-    .story-stat-box .sublabel {
-      font-size: 0.875rem;
-      opacity: 0.7;
-      margin-top: 0.25rem;
-    }
-    
-    /* Quote Block */
-    .quote-block {
-      background: linear-gradient(135deg, #faf9f7 0%, #f5f3f0 100%);
-      border-left: 6px solid var(--primary);
-      padding: 3rem 4rem;
-      margin: 4rem 0;
-      border-radius: 0 24px 24px 0;
-      position: relative;
-    }
-    
-    .quote-block::before {
-      content: '"';
-      position: absolute;
-      top: 1rem;
-      right: 2rem;
-      font-size: 8rem;
-      color: var(--primary);
-      opacity: 0.1;
-      font-weight: 700;
-      line-height: 1;
-    }
-    
-    .quote-block p {
-      font-size: 1.75rem;
-      font-weight: 600;
-      color: var(--dark);
-      line-height: 1.6;
-      position: relative;
-      z-index: 1;
-    }
-    
-    /* Timeline Story */
-    .timeline-story {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin: 6rem 0;
-    }
-    
-    .timeline-card {
-      background: white;
-      border-radius: 20px;
-      padding: 2.5rem;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      position: relative;
-      transition: all 0.3s ease;
-    }
-    
-    .timeline-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    }
-    
-    .timeline-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 2.5rem;
-      right: 2.5rem;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary) 0%, #ffc107 100%);
-      border-radius: 2px;
-    }
-    
-    .timeline-number {
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--primary);
-      opacity: 0.2;
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-    
-    .timeline-card h3 {
-      font-size: 1.375rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 1rem;
-    }
-    
-    .timeline-card p {
-      font-size: 1rem;
-      color: var(--gray-600);
-      line-height: 1.7;
-    }
-    
-    /* Mission Vision - Dark Premium */
-    .mission-vision-section {
-      padding: 120px 0;
-      background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .mission-vision-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
-    }
-    
-    .mv-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .mv-card-premium {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-      padding: 3.5rem;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-    
-    .mv-card-premium:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(229, 57, 53, 0.3);
-      transform: translateY(-4px);
-    }
-    
-    .mv-card-premium::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-    }
-    
-    .mv-card-premium.mission::before {
-      background: linear-gradient(90deg, var(--primary) 0%, #ff6b6b 100%);
-    }
-    
-    .mv-card-premium.vision::before {
-      background: linear-gradient(90deg, #ffc107 0%, #ff9800 100%);
-    }
-    
-    .mv-icon-premium {
-      width: 72px;
-      height: 72px;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-    
-    .mv-card-premium.mission .mv-icon-premium {
-      background: linear-gradient(135deg, rgba(229, 57, 53, 0.2) 0%, rgba(229, 57, 53, 0.1) 100%);
-      color: var(--primary-light);
-      border: 1px solid rgba(229, 57, 53, 0.3);
-    }
-    
-    .mv-card-premium.vision .mv-icon-premium {
-      background: linear-gradient(135deg, rgba(255, 193, 7, 0.2) 0%, rgba(255, 193, 7, 0.1) 100%);
-      color: #ffc107;
-      border: 1px solid rgba(255, 193, 7, 0.3);
-    }
-    
-    .mv-card-premium h3 {
-      font-size: 0.875rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 1.5rem;
-      color: rgba(255, 255, 255, 0.6);
-    }
-    
-    .mv-card-premium h2 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: white;
-      line-height: 1.4;
-      margin-bottom: 1.5rem;
-    }
-    
-    .mv-card-premium p {
-      font-size: 1.0625rem;
-      color: rgba(255, 255, 255, 0.65);
-      line-height: 1.8;
-    }
-    
-    /* Values Grid - Bento Style */
-    .values-section-premium {
-      padding: 120px 0;
-      background: #ffffff;
-    }
-    
-    .values-header-premium {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 4rem;
-      padding: 0 2rem;
-    }
-    
-    .values-label-premium {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 1rem;
-      padding: 0.5rem 1rem;
-      background: var(--primary-lighter);
-      border-radius: 100px;
-    }
-    
-    .values-title-premium {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-    
-    .values-subtitle-premium {
-      font-size: 1.25rem;
-      color: var(--gray-600);
-    }
-    
-    .values-bento {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    .value-bento-card {
-      background: white;
-      border-radius: 20px;
-      padding: 2.5rem;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .value-bento-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-    }
-    
-    .value-bento-card.featured {
-      grid-column: span 2;
-      background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%);
-      color: white;
-    }
-    
-    .value-bento-card.featured h4 {
-      color: white;
-      font-size: 1.5rem;
-    }
-    
-    .value-bento-card.featured p {
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 1.125rem;
-    }
-    
-    .value-icon-bento {
-      width: 56px;
-      height: 56px;
-      background: var(--primary-subtle);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      transition: all 0.3s ease;
-    }
-    
-    .value-bento-card:hover .value-icon-bento {
-      transform: scale(1.1) rotate(-5deg);
-      background: var(--primary);
-      color: white;
-    }
-    
-    .value-bento-card.featured .value-icon-bento {
-      background: rgba(229, 57, 53, 0.2);
-      color: var(--primary-light);
-      width: 72px;
-      height: 72px;
-      font-size: 2rem;
-    }
-    
-    .value-bento-card h4 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 0.75rem;
-    }
-    
-    .value-bento-card p {
-      font-size: 1rem;
-      color: var(--gray-600);
-      line-height: 1.6;
-    }
-    
-    /* Partner Section - Clean */
-    .partner-section-premium {
-      padding: 120px 0;
-      background: linear-gradient(180deg, #faf9f7 0%, #ffffff 100%);
-    }
-    
-    .partner-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      align-items: center;
-    }
-    
-    .partner-content h2 {
-      font-size: 2.75rem;
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-    
-    .partner-content > p {
-      font-size: 1.25rem;
-      color: var(--gray-600);
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-    }
-    
-    .partner-traits-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    .partner-trait-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.25rem;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-      border-left: 4px solid var(--primary);
-      transition: all 0.3s ease;
-    }
-    
-    .partner-trait-item:hover {
-      transform: translateX(8px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    }
-    
-    .partner-trait-item i {
-      width: 32px;
-      height: 32px;
-      background: var(--primary-subtle);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 0.875rem;
-      flex-shrink: 0;
-    }
-    
-    .partner-trait-item span {
-      font-size: 1rem;
-      color: var(--gray-700);
-      line-height: 1.6;
-      font-weight: 500;
-    }
-    
-    .partner-quote-box {
-      background: white;
-      border-radius: 24px;
-      padding: 3rem;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-      position: relative;
-    }
-    
-    .partner-quote-box::before {
-      content: '"';
-      position: absolute;
-      top: 1rem;
-      left: 2rem;
-      font-size: 6rem;
-      color: var(--primary);
-      opacity: 0.1;
-      font-weight: 700;
-      line-height: 1;
-    }
-    
-    .partner-quote-box p {
-      font-size: 1.125rem;
-      color: var(--gray-700);
-      line-height: 1.9;
-      font-style: italic;
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .partner-quote-box p:last-child {
-      margin-bottom: 0;
-    }
-    
-    /* Trust Section - Cards */
-    .trust-section-premium {
-      padding: 120px 0;
-      background: #ffffff;
-    }
-    
-    .trust-header-premium {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 4rem;
-    }
-    
-    .trust-header-premium h2 {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 1rem;
-    }
-    
-    .trust-header-premium p {
-      font-size: 1.25rem;
-      color: var(--gray-600);
-    }
-    
-    .trust-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    .trust-card-premium {
-      background: white;
-      border-radius: 24px;
-      padding: 2.5rem;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .trust-card-premium::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary) 0%, #ffc107 100%);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-    
-    .trust-card-premium:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-    }
-    
-    .trust-card-premium:hover::before {
-      transform: scaleX(1);
-    }
-    
-    .trust-card-premium.featured {
-      background: linear-gradient(135deg, var(--primary) 0%, #c62828 100%);
-      color: white;
-    }
-    
-    .trust-card-premium.featured::before {
-      display: none;
-    }
-    
-    .trust-card-premium.featured h4 {
-      color: white;
-    }
-    
-    .trust-card-premium.featured p {
-      color: rgba(255, 255, 255, 0.9);
-    }
-    
-    .trust-card-premium.featured .trust-icon-premium {
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-    }
-    
-    .trust-icon-premium {
-      width: 64px;
-      height: 64px;
-      background: var(--primary-subtle);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 1.75rem;
-      margin-bottom: 1.5rem;
-      transition: all 0.3s ease;
-    }
-    
-    .trust-card-premium:hover .trust-icon-premium {
-      transform: scale(1.1);
-    }
-    
-    .trust-card-premium h4 {
-      font-size: 1.375rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 1rem;
-    }
-    
-    .trust-card-premium p {
-      font-size: 1.0625rem;
-      color: var(--gray-600);
-      line-height: 1.7;
-    }
-    
-    /* Commitment Section */
-    .commitment-premium {
-      padding: 100px 0;
-      background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0f 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .commitment-premium::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(229, 57, 53, 0.1) 0%, transparent 50%);
-    }
-    
-    .commitment-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 2;
-      text-align: center;
-    }
-    
-    .commitment-label {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--primary-light);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 1rem;
-      padding: 0.5rem 1rem;
-      background: rgba(229, 57, 53, 0.15);
-      border: 1px solid rgba(229, 57, 53, 0.3);
-      border-radius: 100px;
-    }
-    
-    .commitment-container h2 {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      font-weight: 800;
-      color: white;
-      margin-bottom: 3rem;
-    }
-    
-    .commitment-list-premium {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-    
-    .commitment-item-premium {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      color: rgba(255, 255, 255, 0.9);
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-    
-    .commitment-item-premium:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(229, 57, 53, 0.3);
-      transform: translateY(-4px);
-    }
-    
-    .commitment-item-premium i {
-      color: var(--primary-light);
-      font-size: 1.25rem;
-    }
-    
-    .commitment-text {
-      font-size: 1.25rem;
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.8;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    /* CTA Section */
-    .about-cta-premium {
-      padding: 120px 0;
-      background: linear-gradient(135deg, var(--primary) 0%, #c62828 100%);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .about-cta-premium::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
-    }
-    
-    .about-cta-container {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    .about-cta-container h2 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900;
-      color: white;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-    
-    .about-cta-container > p {
-      font-size: 1.375rem;
-      color: rgba(255, 255, 255, 0.9);
-      line-height: 1.7;
-      margin-bottom: 3rem;
-    }
-    
-    .about-cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    .about-cta-premium .btn-primary {
-      background: white;
-      color: var(--primary);
-      padding: 1.25rem 3rem;
-      border-radius: 16px;
-      font-weight: 700;
-      font-size: 1.125rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    }
-    
-    .about-cta-premium .btn-primary:hover {
-      background: var(--gray-100);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-    
-    .about-cta-premium .btn-secondary {
-      background: transparent;
-      color: white;
-      padding: 1.25rem 3rem;
-      border-radius: 16px;
-      font-weight: 600;
-      font-size: 1.125rem;
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      transition: all 0.3s ease;
-    }
-    
-    .about-cta-premium .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.7);
-    }
-    
-    /* Responsive */
-    @media (max-width: 992px) {
-      .story-header {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      
-      .timeline-story {
-        grid-template-columns: 1fr;
-      }
-      
-      .mv-container {
-        grid-template-columns: 1fr;
-      }
-      
-      .values-bento {
-        grid-template-columns: 1fr;
-      }
-      
-      .value-bento-card.featured {
-        grid-column: span 1;
-      }
-      
-      .partner-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      
-      .trust-cards-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .commitment-list-premium {
-        grid-template-columns: 1fr;
-      }
-      
-      .hero-stats-row {
-        gap: 2rem;
-        flex-wrap: wrap;
-      }
-    }
-    
-    @media (max-width: 640px) {
-      .about-hero {
-        min-height: auto;
-        padding: 100px 1.5rem;
-      }
-      
-      .hero-stat-number {
-        font-size: 2.5rem;
-      }
-      
-      .story-header-content h2 {
-        font-size: 2.25rem;
-      }
-      
-      .quote-block {
-        padding: 2rem;
-      }
-      
-      .quote-block p {
-        font-size: 1.375rem;
-      }
-      
-      .about-cta-buttons {
-        flex-direction: column;
-      }
-      
-      .about-cta-premium .btn-primary,
-      .about-cta-premium .btn-secondary {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
-<body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <a href="../index.html" class="logo">
-        <div class="logo-icon">D</div>
-        <span>DALA</span>
-      </a>
-      
-      <div class="nav-links">
-        <a href="for-brands.html" class="nav-link">DALA for Brands</a>
-        <a href="for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
-        <a href="about.html" class="nav-link active">About Us</a>
-        <a href="case-studies.html" class="nav-link">Case Studies</a>
-        <a href="contact.html" class="nav-link">Contact Us</a>
-        <a href="get-listed.html" class="nav-cta">Work With Us</a>
-      </div>
-      
-      <button class="mobile-menu-btn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
+<body class="page-about">
 
-  <!-- Hero Section - Dark Dramatic -->
-  <section class="about-hero" data-animate="fade-in">
-    <div class="about-hero-content">
-      <div class="about-hero-label">
-        <i class="fas fa-heart"></i>
-        Our Story
-      </div>
-      <h1 class="about-hero-title">
-        <span>Built by operators.</span>
-        <span>Designed for founders.</span>
-      </h1>
-      <p class="about-hero-subtitle">
-        Before DALA became what it is today, we were you. We had a company that was slowly dying—not because the product wasn't good, but because the operational chaos of Nigerian retail was eating us alive.
-      </p>
-      
-      <div class="hero-stats-row">
-        <div class="hero-stat">
-          <div class="hero-stat-number">300+</div>
-          <div class="hero-stat-label">Retail Stores</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number">7+</div>
-          <div class="hero-stat-label">Brand Partners</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number">10+</div>
-          <div class="hero-stat-label">Years Experience</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number">48hr</div>
-          <div class="hero-stat-label">Avg. Response</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div id="scroll-progress"></div>
 
-  <!-- Story Section -->
-  <section class="story-section reveal-section">
-    <div class="story-container">
-      <div class="story-header">
-        <div class="story-header-content fade-in">
-          <h2>From the brink of failure to operational excellence</h2>
-          <p>Deliveries were killing our cash flow. Getting into stores felt impossible. Small order quantities weren't worth it to logistics companies, so we stayed stuck in a handful of locations while competitors expanded. Every day felt like we were running harder just to stay in the same place.</p>
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a class="navbar__logo" href="../index.html"><span class="logo-d">D</span><span class="logo-text">DALA</span></a>
+      <nav class="navbar__links">
+        <a href="../index.html">Home</a>
+        <a href="for-brands.html">DALA for Brands</a>
+        <a href="for-supermarkets.html">DALA for Supermarkets</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+      <div class="navbar__cta"><a class="btn btn--primary" href="get-listed.html">Work With Us</a></div>
+      <button class="navbar__hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="navbar__mobile">
+      <a href="../index.html">Home</a>
+      <a href="for-brands.html">DALA for Brands</a>
+      <a href="for-supermarkets.html">DALA for Supermarkets</a>
+      <a href="about.html">About Us</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="contact.html">Contact Us</a>
+      <a class="btn btn--primary" href="get-listed.html">Work With Us</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PAGE HEADER — DARK IMMERSIVE -->
+    <section class="page-header">
+      <div class="page-header__orb page-header__orb--1"></div>
+      <div class="page-header__orb page-header__orb--2"></div>
+      <div class="container">
+        <div class="eyebrow" style="color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.08);">Our Story</div>
+        <h1 class="fade-in">Built by <em>Operators</em>.<br>Designed for Founders.</h1>
+        <p class="fade-in">We lived the chaos of Nigerian retail before we built the solution. Now we share what saved us.</p>
+        <div class="btn-group fade-in">
+          <a class="btn btn--primary btn--lg" href="get-listed.html">Work With Us</a>
+          <a class="btn btn--ghost btn--lg" href="case-studies.html">Case Studies</a>
         </div>
-        <div class="story-visual-large fade-in stagger-1">
-          <div class="story-image-frame">
-            <div class="story-stat-box">
-              <div class="number">300+</div>
-              <div class="label">Retail Locations</div>
-              <div class="sublabel">Across Lagos & Ogun</div>
+      </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section" style="background:linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 100%);padding:80px 0;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%,rgba(212,32,39,0.08) 0%,transparent 50%),radial-gradient(circle at 80% 50%,rgba(255,193,7,0.05) 0%,transparent 50%);"></div>
+      <div class="container" style="position:relative;z-index:2;">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center;" class="stats-grid">
+          <div class="stat-item fade-in">
+            <div class="stat-number" data-target="300" data-suffix="+">0</div>
+            <div class="stat-label">Retail Stores</div>
+          </div>
+          <div class="stat-item fade-in delay-1">
+            <div class="stat-number" data-target="7" data-suffix="+">0</div>
+            <div class="stat-label">Brand Partners</div>
+          </div>
+          <div class="stat-item fade-in delay-2">
+            <div class="stat-number" data-target="10" data-suffix="+">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item fade-in delay-3">
+            <div class="stat-number" data-target="48" data-suffix="hr">0</div>
+            <div class="stat-label">Avg. Response</div>
+          </div>
+        </div>
+      </div>
+      <style>
+        .stat-number { font-size: clamp(3rem,6vw,4.5rem); font-weight: 800; color: #ff6b6b; line-height: 1; margin-bottom: 8px; }
+        .stat-label { font-size: 0.875rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.1em; }
+        @media (max-width:768px) { .stats-grid { grid-template-columns:repeat(2,1fr) !important; gap:30px 20px !important; } }
+      </style>
+      <script>
+        (function() {
+          const stats = document.querySelectorAll('.stat-number');
+          const animate = (el) => {
+            const target = parseInt(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            const duration = 2000;
+            const start = performance.now();
+            const step = (now) => {
+              const progress = Math.min((now - start) / duration, 1);
+              const ease = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.floor(ease * target) + suffix;
+              if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+          };
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { animate(e.target); observer.unobserve(e.target); } });
+          }, { threshold: 0.5 });
+          stats.forEach(s => observer.observe(s));
+        })();
+      </script>
+    </section>
+
+    <!-- ORIGIN STORY -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Block 01 -->
+        <div class="story-block">
+          <div class="story-img-wrap fade-in-left">
+            <span class="story-chapter">01</span>
+            <div class="story-img">
+              <img src="../images/IMG-20260119-WA0016(1).jpg" alt="DALA in the field"
+                onerror="this.parentElement.style.background='linear-gradient(135deg,#1A1A2E,#D42027)';this.style.display='none'">
+            </div>
+          </div>
+          <div class="story-text fade-in-right">
+            <div class="eyebrow">Where We Started</div>
+            <h2>Born From the Problem We Lived</h2>
+            <p>Before DALA became what it is today, we were you. We had a company that was slowly dying. Not because the product wasn't good. Not because customers didn't want it. But because the operational chaos of Nigerian retail was eating us alive.</p>
+            <p>Deliveries were killing our cash flow. Getting into stores felt impossible. Small order quantities weren't worth it to logistics companies, so we stayed stuck in a handful of locations while competitors expanded. Every day felt like we were running harder just to stay in the same place.</p>
+            <p>That's when DALA was born — not as a business idea, but as a lifeline.</p>
+          </div>
+        </div>
+
+        <!-- Block 02 -->
+        <div class="story-block story-block--reverse">
+          <div class="story-img-wrap fade-in-right">
+            <span class="story-chapter">02</span>
+            <div class="story-img">
+              <img src="../images/IMG-20260119-WA0017.jpg" alt="DALA growth story"
+                onerror="this.parentElement.style.background='linear-gradient(135deg,#D42027,#1A1A2E)';this.style.display='none'">
+            </div>
+          </div>
+          <div class="story-text fade-in-left">
+            <div class="eyebrow">The Breakthrough</div>
+            <h2>What We Learned Changes Everything</h2>
+            <p>DALA helped Wilson Lemonade scale from struggling in a few stores to thriving in over 300 modern retail locations across Lagos and Ogun. What took us close to a decade to achieve on our own could have been done in 1–2 years with what we know now.</p>
+            <p>We learned: the problem was never the product. It was the operations. When you can't deliver efficiently, you can't scale. When payments are unpredictable, you can't plan. When logistics buries you, your brand can't grow.</p>
+            <p><strong>We lived that reality. And we found the way out.</strong></p>
+          </div>
+        </div>
+
+        <!-- Block 03 -->
+        <div class="story-block">
+          <div class="story-img-wrap fade-in-left">
+            <span class="story-chapter">03</span>
+            <div class="story-img">
+              <img src="../images/IMG-20260119-WA0019.jpg" alt="DALA helping brands today"
+                onerror="this.parentElement.style.background='linear-gradient(135deg,#252540,#D42027)';this.style.display='none'">
+            </div>
+          </div>
+          <div class="story-text fade-in-right">
+            <div class="eyebrow">What We Do Today</div>
+            <h2>Sharing What Saved Us</h2>
+            <p>Today, DALA exists to help other founder-led brands move faster than they ever could alone. We help you get on more shelves, expand across Lagos and Ogun, and scale rapidly — while you focus on what actually matters: making great products and building demand.</p>
+            <p>We're not selling you theory. We're sharing what saved us.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MISSION / VISION / CORE VALUES -->
+    <section class="section" style="background:var(--primary);position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;"></div>
+      <div class="container" style="position:relative;z-index:2;">
+        <div class="section-header">
+          <div class="eyebrow" style="color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);margin-bottom:12px;">What Drives Us</div>
+          <h2 class="fade-in" style="color:var(--white);">Our Mission, Vision &amp; Core Values</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,28px);margin-bottom:clamp(20px,3vw,36px);">
+          <article class="how-works-card fade-in" style="background:rgba(0,0,0,0.20);border-color:rgba(255,255,255,0.12);">
+            <div style="font-size:2rem;margin-bottom:12px;">🎯</div>
+            <h4 style="color:var(--white);margin-bottom:8px;">Our Mission</h4>
+            <p style="color:rgba(255,255,255,0.75);">To remove operational bottlenecks so great products can scale responsibly in modern retail. We exist to help founder-led brands grow with structure, discipline, and confidence.</p>
+          </article>
+          <article class="how-works-card fade-in delay-1" style="background:rgba(0,0,0,0.20);border-color:rgba(255,255,255,0.12);">
+            <div style="font-size:2rem;margin-bottom:12px;">🔭</div>
+            <h4 style="color:var(--white);margin-bottom:8px;">Our Vision</h4>
+            <p style="color:rgba(255,255,255,0.75);">To be the trusted retail operations engine for every growing consumer brand in Nigeria — the reliable infrastructure layer between ambitious brands and modern retail.</p>
+          </article>
+        </div>
+        <div style="margin-bottom:clamp(16px,2vw,24px);">
+          <h3 class="fade-in" style="color:var(--white);text-align:center;margin-bottom:clamp(20px,3vw,32px);font-size:clamp(1.1rem,2vw,1.5rem);">Our Core Values</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(12px,2vw,20px);">
+            <article class="how-works-card fade-in" style="background:rgba(0,0,0,0.18);border-color:rgba(255,255,255,0.10);text-align:center;">
+              <div style="font-size:1.8rem;margin-bottom:10px;">🤝</div>
+              <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:6px;">Integrity First</h4>
+              <p style="color:rgba(255,255,255,0.70);font-size:0.85rem;">We operate with full transparency and honest communication — no hidden agendas, no surprises.</p>
+            </article>
+            <article class="how-works-card fade-in delay-1" style="background:rgba(0,0,0,0.18);border-color:rgba(255,255,255,0.10);text-align:center;">
+              <div style="font-size:1.8rem;margin-bottom:10px;">⚙️</div>
+              <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:6px;">Execution Excellence</h4>
+              <p style="color:rgba(255,255,255,0.70);font-size:0.85rem;">We take pride in doing things right — consistently, reliably, and to the highest operational standard.</p>
+            </article>
+            <article class="how-works-card fade-in delay-2" style="background:rgba(0,0,0,0.18);border-color:rgba(255,255,255,0.10);text-align:center;">
+              <div style="font-size:1.8rem;margin-bottom:10px;">📈</div>
+              <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:6px;">Sustainable Growth</h4>
+              <p style="color:rgba(255,255,255,0.70);font-size:0.85rem;">We build for the long term — helping brands scale in ways that are disciplined, responsible, and lasting.</p>
+            </article>
+            <article class="how-works-card fade-in delay-3" style="background:rgba(0,0,0,0.18);border-color:rgba(255,255,255,0.10);text-align:center;">
+              <div style="font-size:1.8rem;margin-bottom:10px;">👥</div>
+              <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:6px;">Partnership Mindset</h4>
+              <p style="color:rgba(255,255,255,0.70);font-size:0.85rem;">Your success is our success. We invest deeply in the brands we partner with and treat every relationship as a true collaboration.</p>
+            </article>
+            <article class="how-works-card fade-in delay-4" style="background:rgba(0,0,0,0.18);border-color:rgba(255,255,255,0.10);text-align:center;">
+              <div style="font-size:1.8rem;margin-bottom:10px;">💡</div>
+              <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:6px;">Continuous Improvement</h4>
+              <p style="color:rgba(255,255,255,0.70);font-size:0.85rem;">We constantly refine our processes, systems, and service quality to stay ahead of the challenges our partners face.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY BRANDS TRUST US — EDITORIAL GRID -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Why Us</div>
+          <h2 class="fade-in">Why Brands Trust Us</h2>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-item fade-in">
+            <div class="trust-item__num">01</div>
+            <div class="trust-item__body">
+              <h4>We Understand Nigerian Retail Realities</h4>
+              <p>We're not theory-driven consultants or foreign models imported without adaptation. We operate daily in Lagos and Ogun's retail environment. We know the challenges, the politics, the delays — and we've built systems that actually work here.</p>
+            </div>
+          </div>
+          <div class="trust-item fade-in delay-1">
+            <div class="trust-item__num">02</div>
+            <div class="trust-item__body">
+              <h4>We Guarantee What Matters Most</h4>
+              <p>Payment stress kills brands. That's why we guarantee remittance within agreed timelines, even when retailers delay. You get predictable cash flow so you can plan production, invest in marketing, and grow with confidence.</p>
+            </div>
+          </div>
+          <div class="trust-item fade-in delay-2">
+            <div class="trust-item__num">03</div>
+            <div class="trust-item__body">
+              <h4>We Operate With Full Transparency</h4>
+              <p>You receive weekly reports on sales, inventory, store activity, and issue resolution. You're never in the dark about what's happening with your brand. No vague updates. No surprises. Just clarity.</p>
+            </div>
+          </div>
+          <div class="trust-item fade-in delay-3">
+            <div class="trust-item__num">04</div>
+            <div class="trust-item__body">
+              <h4>We Protect Your Time and Energy</h4>
+              <p>When you partner with DALA, you get your life back. No more chasing payments. No more coordinating deliveries at midnight. No more retail politics eating into your strategy time. You focus on building the brand. We handle the engine.</p>
             </div>
           </div>
         </div>
       </div>
-      
-      <div class="quote-block fade-in">
-        <p>That's when DALA was born—not as a business idea, but as a lifeline. We built the operational engine we desperately needed to save our own company. And it worked.</p>
-      </div>
-      
-      <!-- Timeline Story -->
-      <div class="timeline-story">
-        <div class="timeline-card fade-in stagger-child">
-          <div class="timeline-number">01</div>
-          <h3>The Problem</h3>
-          <p>We learned: the problem was never the product. It was the operations. When you can't deliver efficiently, you can't scale. When payments are unpredictable, you can't plan.</p>
-        </div>
-        <div class="timeline-card fade-in stagger-1 stagger-child">
-          <div class="timeline-number">02</div>
-          <h3>The Breakthrough</h3>
-          <p>DALA helped Wilson's Lemonade scale from struggling in a few stores to thriving in over 300 modern retail locations. What took a decade could have been done in 1-2 years.</p>
-        </div>
-        <div class="timeline-card fade-in stagger-2 stagger-child">
-          <div class="timeline-number">03</div>
-          <h3>The Mission</h3>
-          <p>Today, DALA exists to help other founder-led brands move faster than they ever could alone. We're not selling theory—we're sharing what saved us.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Mission & Vision - Dark Premium -->
-  <section class="mission-vision-section reveal-section">
-    <div class="mv-container">
-      <div class="mv-card-premium mission fade-in stagger-child">
-        <div class="mv-icon-premium">
-          <i class="fas fa-bullseye"></i>
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-section__orb cta-section__orb--1"></div>
+      <div class="cta-section__orb cta-section__orb--2"></div>
+      <div class="container fade-in">
+        <div class="eyebrow" style="color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.1);margin-bottom:24px;">Get Started</div>
+        <h2>Let's Build Something Great Together</h2>
+        <p>If you're a founder-led brand ready to scale with structure, transparency, and a partner who truly gets what you're facing, we'd love to explore whether we're aligned.</p>
+        <div class="btn-group">
+          <a class="btn btn--white btn--lg" href="get-listed.html">Partner With Us</a>
+          <a class="btn btn--ghost btn--lg" href="for-brands.html">Learn More About Our Services</a>
         </div>
-        <h3>Our Mission</h3>
-        <h2>To remove operational bottlenecks so great products can scale responsibly in modern retail.</h2>
-        <p>We handle the push: store relationships, order generation, merchandising, delivery, and payment collection, so brand owners can focus on the pull: product quality, marketing, and demand creation.</p>
       </div>
-      <div class="mv-card-premium vision fade-in stagger-1 stagger-child">
-        <div class="mv-icon-premium">
-          <i class="fas fa-eye"></i>
-        </div>
-        <h3>Our Vision</h3>
-        <h2>To be the trusted retail operations engine for every growing consumer brand in Nigeria.</h2>
-        <p>We envision an ecosystem where founders scale with structure, transparency, and predictability—free from the constant stress of logistics, collections, and retail politics.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Who We Are -->
-  <section class="story-section reveal-section">
-    <div class="story-container">
-      <div class="story-header">
-        <div class="story-visual-large fade-in">
-          <div class="story-image-frame" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
-            <div class="story-stat-box">
-              <div class="number">10+</div>
-              <div class="label">Years of Experience</div>
-              <div class="sublabel">In Nigerian Retail</div>
-            </div>
-          </div>
-        </div>
-        <div class="story-header-content fade-in stagger-1">
-          <h2>The retail operations engine for growing brands</h2>
-          <p>DALA is the retail operations engine for founder-led consumer brands across Lagos and Ogun. We exist to remove the operational bottlenecks that keep great products from scaling responsibly in modern retail.</p>
-          <p>We're not a traditional distributor. We're not a marketing agency. We're an operational partner built specifically for brands that want structure, transparency, and disciplined growth—without the crushing overhead and constant stress that usually comes with retail expansion.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- Core Values - Bento Grid -->
-  <section class="values-section-premium reveal-section">
-    <div class="values-header-premium">
-      <div class="values-label-premium">What Drives Us</div>
-      <h2 class="values-title-premium">Our Core Values</h2>
-      <p class="values-subtitle-premium">The principles that guide every decision we make and every partnership we build.</p>
-    </div>
-    
-    <div class="values-bento">
-      <div class="value-bento-card fade-in stagger-child">
-        <div class="value-icon-bento">
-          <i class="fas fa-comments"></i>
-        </div>
-        <h4>Honest Communication</h4>
-        <p>We set clear expectations and communicate transparently. No overselling. No surprises.</p>
-      </div>
-      
-      <div class="value-bento-card fade-in stagger-1 stagger-child">
-        <div class="value-icon-bento">
-          <i class="fas fa-check-circle"></i>
-        </div>
-        <h4>Reliable Execution</h4>
-        <p>We do what we say, when we say. You can count on us to show up and deliver consistently.</p>
-      </div>
-      
-      <div class="value-bento-card fade-in stagger-2 stagger-child">
-        <div class="value-icon-bento">
-          <i class="fas fa-handshake"></i>
-        </div>
-        <h4>True Partnership</h4>
-        <p>We succeed only when your product moves. When you win, we win. That's partnership.</p>
-      </div>
-      
-      <div class="value-bento-card featured fade-in stagger-child">
-        <div class="value-icon-bento">
-          <i class="fas fa-award"></i>
-        </div>
-        <h4>Integrity Always</h4>
-        <p>We protect your cash flow, respect your brand, and treat your business like our own. We handle your products with care, your payments with discipline, and your trust with responsibility.</p>
-      </div>
-      
-      <div class="value-bento-card fade-in stagger-1 stagger-child">
-        <div class="value-icon-bento">
-          <i class="fas fa-user-tie"></i>
-        </div>
-        <h4>Founder-Focused</h4>
-        <p>We're built for decisive brand owners who are serious about growth.</p>
-      </div>
-      
-      <div class="value-bento-card fade-in stagger-2 stagger-child">
-        <div class="value-icon-bento">
-          <i class="fas fa-eye"></i>
-        </div>
-        <h4>Full Transparency</h4>
-        <p>Weekly reports on sales, inventory, and store activity. No vague updates. Just clarity.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Partner Section -->
-  <section class="partner-section-premium reveal-section">
-    <div class="partner-grid">
-      <div class="partner-content fade-in">
-        <h2>Who We Work With</h2>
-        <p>We partner with founder-led consumer brands that are ready for structured, sustainable growth in modern retail.</p>
-        
-        <div class="partner-traits-list">
-          <div class="partner-trait-item">
-            <i class="fas fa-check"></i>
-            <span>Have genuinely good products people want to buy</span>
-          </div>
-          <div class="partner-trait-item">
-            <i class="fas fa-check"></i>
-            <span>Invest actively in marketing and consumer awareness</span>
-          </div>
-          <div class="partner-trait-item">
-            <i class="fas fa-check"></i>
-            <span>Want disciplined operational support and transparent growth</span>
-          </div>
-          <div class="partner-trait-item">
-            <i class="fas fa-check"></i>
-            <span>Are founder-led and ready to scale</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="partner-quote-box fade-in stagger-1">
-        <p>"We're not for everyone and that's intentional. We partner best with owners who value structure, transparency, and long-term thinking over quick fixes and empty promises.</p>
-        <p>If you're looking for someone to guarantee sales without marketing, we're not the right fit. But if you're ready to drive demand while a reliable partner runs the operational engine underneath, we might be exactly what you need."</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Brands Trust Us -->
-  <section class="trust-section-premium reveal-section">
-    <div class="trust-header-premium">
-      <h2>Why Brands Trust Us</h2>
-      <p>Real operational expertise, transparent processes, and aligned incentives.</p>
-    </div>
-    
-    <div class="trust-cards-grid">
-      <div class="trust-card-premium fade-in stagger-child">
-        <div class="trust-icon-premium">
-          <i class="fas fa-map-marked-alt"></i>
-        </div>
-        <h4>We Understand Nigerian Retail</h4>
-        <p>We're not theory-driven consultants. We operate daily in Lagos and Ogun's retail environment. We know the challenges, the politics, the delays—and we've built systems that actually work here.</p>
-      </div>
-      
-      <div class="trust-card-premium fade-in stagger-1 stagger-child">
-        <div class="trust-icon-premium">
-          <i class="fas fa-money-bill-wave"></i>
-        </div>
-        <h4>We Guarantee What Matters</h4>
-        <p>Payment stress kills brands. That's why we guarantee remittance within agreed timelines, even when retailers delay. You get predictable cash flow so you can plan and grow with confidence.</p>
-      </div>
-      
-      <div class="trust-card-premium fade-in stagger-2 stagger-child">
-        <div class="trust-icon-premium">
-          <i class="fas fa-eye"></i>
-        </div>
-        <h4>We Operate With Transparency</h4>
-        <p>You receive weekly reports on sales, inventory, store activity, and issue resolution. You're never in the dark about what's happening with your brand.</p>
-      </div>
-      
-      <div class="trust-card-premium featured fade-in stagger-3 stagger-child">
-        <div class="trust-icon-premium">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <h4>We're Aligned With Your Success</h4>
-        <p>Our pricing model keeps your fixed costs low and ties our earnings to actual product movement. We don't earn unless your product moves. That's true alignment—not just words.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Commitment Section -->
-  <section class="commitment-premium reveal-section">
-    <div class="commitment-container">
-      <div class="commitment-label">Our Promise</div>
-      <h2>Our Commitment to You</h2>
-      
-      <div class="commitment-list-premium">
-        <div class="commitment-item-premium">
-          <i class="fas fa-check"></i>
-          <span>Clear expectations, not hype</span>
-        </div>
-        <div class="commitment-item-premium">
-          <i class="fas fa-check"></i>
-          <span>Disciplined execution, not excuses</span>
-        </div>
-        <div class="commitment-item-premium">
-          <i class="fas fa-check"></i>
-          <span>Transparent communication, not silence</span>
-        </div>
-        <div class="commitment-item-premium">
-          <i class="fas fa-check"></i>
-          <span>Long-term partnership</span>
-        </div>
-        <div class="commitment-item-premium">
-          <i class="fas fa-check"></i>
-          <span>Respect for your vision and brand</span>
-        </div>
-        <div class="commitment-item-premium">
-          <i class="fas fa-check"></i>
-          <span>We protect your time and energy</span>
-        </div>
-      </div>
-      
-      <p class="commitment-text">
-        We're focused on dominating Lagos and Ogun before expanding outward—building deep coverage, strong systems, and lasting relationships with the retail ecosystem. We're not rushing. We're building right.
-      </p>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="about-cta-premium reveal-section">
-    <div class="about-cta-container">
-      <h2>Let's Build Something Great Together</h2>
-      <p>If you're a founder-led brand ready to scale with structure, transparency, and a partner who truly gets what you're facing, we'd love to explore whether we're aligned.</p>
-      <div class="about-cta-buttons">
-        <a href="get-listed.html" class="btn btn-primary">Partner With Us</a>
-        <a href="for-brands.html" class="btn btn-secondary">Learn More About Our Services</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="../index.html" class="footer-logo">
-            <div class="logo-icon">D</div>
-            <span>DALA</span>
-          </a>
-          <p class="footer-tagline">
-            The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.
-          </p>
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="footer__logo" href="../index.html"><span class="logo-d">D</span><span>DALA</span></a>
+          <p>The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.</p>
         </div>
-        
-        <div class="footer-links">
+        <div>
           <h4>Quick Links</h4>
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="for-brands.html">DALA for Brands</a></li>
-            <li><a href="for-supermarkets.html">DALA for Supermarkets</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="case-studies.html">Case Studies</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
+          <div class="footer__links">
+            <a href="../index.html">Home</a>
+            <a href="for-brands.html">DALA for Brands</a>
+            <a href="for-supermarkets.html">DALA for Supermarkets</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="about.html">About Us</a>
+            <a href="get-listed.html">Get Listed</a>
+          </div>
         </div>
-        
-        <div class="footer-links">
-          <h4>Get Started</h4>
-          <ul>
-            <li><a href="get-listed.html">Get Listed</a></li>
-            <li><a href="get-listed.html">Work With Us</a></li>
-            <li><a href="#">Retailer Login</a></li>
-            <li><a href="#">Browse Retailers</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-contact">
+        <div>
           <h4>Contact Info</h4>
-          <p><i class="fas fa-map-marker-alt"></i> Iju, Ota, Ogun State, Nigeria</p>
-          <p><i class="fas fa-phone"></i> +234 814 882 4115</p>
-          <p><i class="fas fa-phone"></i> +234 903 235 2306</p>
-          <p><i class="fas fa-envelope"></i> info@dalatechnologies.com</p>
-          <p><i class="fas fa-clock"></i> Business Hours: 8am-6pm</p>
+          <div class="footer__contact-item"><span class="footer__contact-icon">📍</span><span>Iju, Ota, Ogun State, Nigeria</span></div>
+          <div class="footer__contact-item"><span class="footer__contact-icon">📞</span><span>+234 814 882 4115 | +234 903 235 2306</span></div>
+          <div class="footer__contact-item"><span class="footer__contact-icon">✉</span><span>info@dalatechnologies.com</span></div>
+          <div class="footer__contact-item"><span class="footer__contact-icon">🕘</span><span>8am – 6pm</span></div>
         </div>
       </div>
-      
-      <div class="footer-bottom">
+      <div class="footer__bottom">
         <p>&copy; 2026 DALA Technologies. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/2348148824115" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <script src="../assets/js/animations.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

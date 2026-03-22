@@ -39,15 +39,16 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero" data-animate="fade-in">
-    <div class="hero-container">
+  <!-- Hero Section with Constellation -->
+  <section class="hero" data-animate="fade-in" style="position:relative;overflow:hidden;">
+    <canvas id="dala-network" aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></canvas>
+    <div class="hero-container" style="position:relative;z-index:1;">
       <div class="hero-badge">
         <i class="fas fa-shield-alt"></i>
         <span>The Retail Execution Control Layer</span>
       </div>
       
-      <h1 class="hero-title" data-typewriter>DALA: The Retail Execution Control Layer</h1>
+      <h1 class="hero-title" data-typewriter>DALA: The <em style="color:var(--primary);">Retail Execution</em> Control Layer</h1>
       
       <p class="hero-subtitle">
         Ensuring supermarket standards are met while driving efficient, disciplined, transparent, and sustainable growth between brands and modern retail.
@@ -58,6 +59,7 @@
         <a href="pages/for-brands.html" class="btn btn-secondary btn-large">DALA for Brands</a>
       </div>
     </div>
+    <script src="js/network-canvas.js"></script>
   </section>
 
   <!-- Trusted Retailers Marquee -->
@@ -65,38 +67,76 @@
     <div class="logo-section-header">
       <p class="logo-section-title">Trusted By Leading Retailers</p>
       <h3 class="logo-section-subtitle">Building retail infrastructure across Nigeria</h3>
-      <p class="logo-section-desc">Partnering with reputable supermarkets to ensure reliable execution</p>
+      <p class="logo-section-desc">22+ leading supermarkets and modern trade outlets across Lagos and Ogun State</p>
     </div>
     
     <div class="brand-marquee">
       <div class="brand-track">
-        <!-- Spar -->
         <div class="brand-logo-card">
-          <img src="images/logos/spar-logo.png" alt="Spar" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'><i class=\'fas fa-shopping-cart\'></i>SPAR</span>'">
+          <img src="images/logos/supermarkets/234 Stores.jpg" alt="234 Stores" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>234 Stores</span>'">
         </div>
-        <!-- Hubmart -->
         <div class="brand-logo-card">
-          <img src="images/logos/hubmart-logo.png" alt="Hubmart" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'><i class=\'fas fa-building\'></i>Hubmart</span>'">
+          <img src="images/logos/supermarkets/Addide.jpg" alt="Addide" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Addide</span>'">
         </div>
-        <!-- Prince Ebeano -->
         <div class="brand-logo-card">
-          <img src="images/logos/prince-ebeano-logo.png" alt="Prince Ebeano" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'><i class=\'fas fa-crown\'></i>Prince Ebeano</span>'">
+          <img src="images/logos/supermarkets/Blackbell.jpg" alt="Blackbell" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Blackbell</span>'">
         </div>
-        <!-- Justrite -->
         <div class="brand-logo-card">
-          <img src="images/logos/justrite-logo.png" alt="Justrite" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'><i class=\'fas fa-check-circle\'></i>Justrite</span>'">
+          <img src="images/logos/supermarkets/Convenant Uni.jpg" alt="Covenant University" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Covenant Uni</span>'">
         </div>
-        <!-- Addide -->
         <div class="brand-logo-card">
-          <img src="images/logos/addide-logo.png" alt="Addide" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'><i class=\'fas fa-store\'></i>Addide</span>'">
+          <img src="images/logos/supermarkets/Foodco.png" alt="Foodco" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Foodco</span>'">
         </div>
-        <!-- Total -->
         <div class="brand-logo-card">
-          <img src="images/logos/total-logo.png" alt="Total" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'><i class=\'fas fa-gas-pump\'></i>Total</span>'">
+          <img src="images/logos/supermarkets/Game.png" alt="Game" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Game</span>'">
         </div>
-        <!-- SuperSaver -->
         <div class="brand-logo-card">
-          <img src="images/logos/supersaver-logo.png" alt="SuperSaver" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'><i class=\'fas fa-piggy-bank\'></i>SuperSaver</span>'">
+          <img src="images/logos/supermarkets/Globus Supermarket.jpg" alt="Globus Supermarket" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Globus</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Grocery Bazaar.jpg" alt="Grocery Bazaar" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Grocery Bazaar</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Hubmart.jpg" alt="Hubmart" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Hubmart</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Jendol.png" alt="Jendol" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Jendol</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Justrite.jpg" alt="Justrite" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Justrite</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Prime Mart.jpg" alt="Prime Mart" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Prime Mart</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Prince Ebeano.png" alt="Prince Ebeano" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Prince Ebeano</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Shoprite.jpg" alt="Shoprite" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Shoprite</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/So Fresh.jpg" alt="So Fresh" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>So Fresh</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Spar.png" alt="Spar" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>SPAR</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Sundry Market Square.jpg" alt="Sundry Market Square" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Sundry Market</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Supersaver.jpg" alt="Supersaver" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Supersaver</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Sweet Sensation.png" alt="Sweet Sensation" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Sweet Sensation</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/The Bazaar.png" alt="The Bazaar" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>The Bazaar</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Total Bonjour.png" alt="Total Bonjour" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Total Bonjour</span>'">
+        </div>
+        <div class="brand-logo-card">
+          <img src="images/logos/supermarkets/Twins Faja Supermarket.png" alt="Twins Faja Supermarket" onerror="this.parentElement.innerHTML='<span class=\'brand-name-text\'>Twins Faja</span>'">
         </div>
         <!-- Duplicate for seamless scroll -->
         <div class="brand-logo-card">
