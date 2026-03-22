@@ -5,18 +5,898 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About DALA | The Retail Execution Control Layer</title>
   <meta name="description" content="Built by operators. Designed for founders. Focused on your growth.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../css/styles.css">
+  
+  <style>
+    /* PREMIUM ABOUT US - DALA TECHNOLOGIES */
+    
+    :root {
+      --primary: #E53935;
+      --primary-dark: #c62828;
+      --primary-light: #ff6b6b;
+      --dark: #0D0D0D;
+      --dark-lighter: #1a1a2e;
+      --white: #ffffff;
+      --gray-100: #f8f7f5;
+      --gray-200: #e8e6e1;
+      --gray-600: #6b6b6b;
+      --gray-800: #2d2d2d;
+      --gold: #ffc107;
+      --gradient-red: linear-gradient(135deg, #E53935 0%, #c62828 100%);
+      --gradient-dark: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+      --shadow-3d: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      --shadow-glow: 0 0 60px rgba(229, 57, 53, 0.3);
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .navbar__inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .navbar__logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--dark);
+    }
+    
+    .logo-d {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+    
+    .navbar__links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .navbar__links a {
+      text-decoration: none;
+      color: var(--gray-800);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+      position: relative;
+    }
+    
+    .navbar__links a:hover,
+    .navbar__links a.active {
+      color: var(--primary);
+    }
+    
+    .navbar__links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.75rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn--primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px rgba(229, 57, 53, 0.3);
+    }
+    
+    .btn--primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(229, 57, 53, 0.4);
+    }
+    
+    .btn--ghost {
+      background: transparent;
+      color: var(--dark);
+      border: 2px solid var(--gray-200);
+    }
+    
+    .btn--ghost:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn--lg {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+    
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    /* Hero Section */
+    .about-hero {
+      min-height: 100vh;
+      background: var(--gradient-dark);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 120px 2rem 80px;
+    }
+    
+    .about-hero__orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    .about-hero__orb--1 {
+      width: 600px;
+      height: 600px;
+      background: var(--primary);
+      top: -200px;
+      right: -100px;
+      animation-delay: 0s;
+    }
+    
+    .about-hero__orb--2 {
+      width: 400px;
+      height: 400px;
+      background: var(--gold);
+      bottom: -100px;
+      left: -100px;
+      animation-delay: -10s;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(50px, -50px) scale(1.1); }
+      50% { transform: translate(0, 50px) scale(1); }
+      75% { transform: translate(-50px, -25px) scale(0.95); }
+    }
+    
+    .about-hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+    }
+    
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 100px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+    }
+    
+    .about-hero h1 {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: white;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+    
+    .about-hero h1 em {
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: normal;
+    }
+    
+    .about-hero p {
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    
+    /* Stats Section */
+    .stats-section {
+      background: linear-gradient(180deg, #0a0a0f 0%, #151520 100%);
+      padding: 100px 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .stats-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(229, 57, 53, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255, 193, 7, 0.05) 0%, transparent 50%);
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .stat-item:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(229, 57, 53, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    .stat-number {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+    }
+    
+    /* Story Section */
+    .story-section {
+      padding: 120px 2rem;
+      background: var(--white);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    
+    .section-header .eyebrow {
+      background: rgba(229, 57, 53, 0.1);
+      border-color: rgba(229, 57, 53, 0.2);
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+    }
+    
+    .story-grid {
+      display: grid;
+      gap: 6rem;
+    }
+    
+    .story-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .story-block:nth-child(even) .story-visual {
+      order: 2;
+    }
+    
+    .story-visual {
+      position: relative;
+    }
+    
+    .story-number {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 80px;
+      height: 80px;
+      background: var(--gradient-red);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 900;
+      color: white;
+      box-shadow: var(--shadow-3d);
+      z-index: 2;
+    }
+    
+    .story-image {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-3d);
+    }
+    
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .story-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    .story-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(229, 57, 53, 0.1) 0%, transparent 50%);
+    }
+    
+    .story-content .eyebrow {
+      margin-bottom: 1rem;
+    }
+    
+    .story-content h3 {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .story-content p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    
+    /* Mission/Vision Cards */
+    .mission-section {
+      padding: 120px 2rem;
+      background: var(--gradient-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mission-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    
+    .mv-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    .mv-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 32px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .mv-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    
+    .mv-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    }
+    
+    .mv-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .mv-card__icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(229, 57, 53, 0.2);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(229, 57, 53, 0.3);
+    }
+    
+    .mv-card h3 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--primary-light);
+      margin-bottom: 0.75rem;
+    }
+    
+    .mv-card h4 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    
+    .mv-card p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
+    }
+    
+    /* Values Grid */
+    .values-title {
+      text-align: center;
+      color: white;
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 2.5rem;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .value-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-red);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .value-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(229, 57, 53, 0.2);
+    }
+    
+    .value-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .value-card__icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .value-card h4 {
+      color: white;
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .value-card p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    
+    /* Trust Section */
+    .trust-section {
+      padding: 120px 2rem;
+      background: var(--gray-100);
+    }
+    
+    .trust-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    .trust-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: start;
+      padding: 2.5rem;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+    }
+    
+    .trust-item:hover {
+      transform: translateX(8px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    }
+    
+    .trust-item__num {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--primary);
+      opacity: 0.3;
+      line-height: 1;
+    }
+    
+    .trust-item h4 {
+      font-size: 1.375rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+    }
+    
+    .trust-item p {
+      color: var(--gray-600);
+      line-height: 1.7;
+      font-size: 1.0625rem;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 120px 2rem;
+      background: var(--gradient-dark);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    .cta-section__orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.4;
+    }
+    
+    .cta-section__orb--1 {
+      width: 500px;
+      height: 500px;
+      background: var(--primary);
+      top: -200px;
+      left: -200px;
+    }
+    
+    .cta-section__orb--2 {
+      width: 400px;
+      height: 400px;
+      background: var(--gold);
+      bottom: -150px;
+      right: -150px;
+    }
+    
+    .cta-section .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta-section h2 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .cta-section p {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    
+    .btn--white {
+      background: white;
+      color: var(--dark);
+    }
+    
+    .btn--white:hover {
+      background: var(--gray-100);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: white;
+      padding: 80px 2rem 40px;
+    }
+    
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer__brand p {
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 1rem;
+      line-height: 1.7;
+    }
+    
+    .footer h4 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .footer__links a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .footer__links a:hover {
+      color: var(--primary-light);
+    }
+    
+    .footer__bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+    }
+    
+    /* Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .reveal-left.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .reveal-right.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Mobile Menu */
+    .navbar__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+    }
+    
+    .navbar__hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      transition: all 0.3s;
+    }
+    
+    .navbar__mobile {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .navbar__mobile a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+      .navbar__links { display: none; }
+      .navbar__hamburger { display: flex; }
+      .navbar__mobile.active { display: flex; }
+      
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      
+      .story-block {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .story-block:nth-child(even) .story-visual { order: 0; }
+      
+      .mv-grid { grid-template-columns: 1fr; }
+      
+      .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      
+      .stat-item { padding: 1.5rem; }
+      
+      .mv-card { padding: 2rem; }
+      
+      .trust-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .story-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        top: -10px;
+        left: -10px;
+      }
+      
+      .btn-group {
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      .btn { width: 100%; }
+    }
+  </style>
 </head>
-<body class="page-about">
+<body>
 
-  <div id="scroll-progress"></div>
-
+  <!-- Navigation -->
   <header class="navbar">
     <div class="navbar__inner">
-      <a class="navbar__logo" href="../index.html"><span class="logo-d">D</span><span class="logo-text">DALA</span></a>
+      <a class="navbar__logo" href="../index.html">
+        <span class="logo-d">D</span>
+        <span>DALA</span>
+      </a>
       <nav class="navbar__links">
         <a href="../index.html">Home</a>
         <a href="for-brands.html">DALA for Brands</a>
@@ -25,264 +905,250 @@
         <a href="case-studies.html">Case Studies</a>
         <a href="contact.html">Contact Us</a>
       </nav>
-      <div class="navbar__cta"><a class="btn btn--primary" href="get-listed.html">Work With Us</a></div>
-      <button class="navbar__hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <div class="navbar__cta">
+        <a class="btn btn--primary" href="get-listed.html">Work With Us</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
     <nav class="navbar__mobile">
       <a href="../index.html">Home</a>
-      <a href="for-brands.html">DALA for Brands</a>
-      <a href="for-supermarkets.html">DALA for Supermarkets</a>
-      <a href="about.html">About Us</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="contact.html">Contact Us</a>
-      <a class="btn btn--primary" href="get-listed.html">Work With Us</a>
+        <a href="for-brands.html">DALA for Brands</a>
+        <a href="for-supermarkets.html">DALA for Supermarkets</a>
+        <a href="about.html">About Us</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="contact.html">Contact Us</a>
+        <a class="btn btn--primary" href="get-listed.html">Work With Us</a>
     </nav>
   </header>
 
-  <main>
-
-    <!-- PAGE HEADER — DARK IMMERSIVE -->
-    <section class="page-header">
-      <div class="page-header__orb page-header__orb--1"></div>
-      <div class="page-header__orb page-header__orb--2"></div>
-      <div class="container">
-        <div class="eyebrow" style="color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.08);">Our Story</div>
-        <h1 class="fade-in">Built by <em>Operators</em>.<br>Designed for Founders.</h1>
-        <p class="fade-in">We lived the chaos of Nigerian retail before we built the solution. Now we share what saved us.</p>
-        <div class="btn-group fade-in">
-          <a class="btn btn--primary btn--lg" href="get-listed.html">Work With Us</a>
-          <a class="btn btn--ghost btn--lg" href="case-studies.html">Case Studies</a>
-        </div>
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="about-hero__orb about-hero__orb--1"></div>
+    <div class="about-hero__orb about-hero__orb--2"></div>
+    <div class="about-hero__content">
+      <div class="eyebrow reveal">
+        <i class="fas fa-heart"></i>
+        Our Story
       </div>
-    </section>
-
-    <!-- STATS SECTION -->
-    <section class="stats-section" style="background:linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 100%);padding:80px 0;position:relative;overflow:hidden;">
-      <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%,rgba(212,32,39,0.08) 0%,transparent 50%),radial-gradient(circle at 80% 50%,rgba(255,193,7,0.05) 0%,transparent 50%);"></div>
-      <div class="container" style="position:relative;z-index:2;">
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center;" class="stats-grid">
-          <div class="stat-item fade-in">
-            <div class="stat-number" data-target="300" data-suffix="+">0</div>
-            <div class="stat-label">Retail Stores</div>
-          </div>
-          <div class="stat-item fade-in delay-1">
-            <div class="stat-number" data-target="7" data-suffix="+">0</div>
-            <div class="stat-label">Brand Partners</div>
-          </div>
-          <div class="stat-item fade-in delay-2">
-            <div class="stat-number" data-target="10" data-suffix="+">0</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-item fade-in delay-3">
-            <div class="stat-number" data-target="48" data-suffix="hr">0</div>
-            <div class="stat-label">Avg. Response</div>
-          </div>
-        </div>
+      <h1 class="reveal">Built by <em>Operators</em>.<br>Designed for Founders.</h1>
+      <p class="reveal">We lived the chaos of Nigerian retail before we built the solution. Now we share what saved us.</p>
+      <div class="btn-group reveal">
+        <a class="btn btn--primary btn--lg" href="get-listed.html">Work With Us</a>
+        <a class="btn btn--ghost btn--lg" href="case-studies.html">Case Studies</a>
       </div>
-      <style>
-        .stat-number { font-size: clamp(3rem,6vw,4.5rem); font-weight: 800; color: #ff6b6b; line-height: 1; margin-bottom: 8px; }
-        .stat-label { font-size: 0.875rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.1em; }
-        @media (max-width:768px) { .stats-grid { grid-template-columns:repeat(2,1fr) !important; gap:30px 20px !important; } }
-      </style>
-      <script>
-        (function() {
-          const stats = document.querySelectorAll('.stat-number');
-          const animate = (el) => {
-            const target = parseInt(el.dataset.target);
-            const suffix = el.dataset.suffix || '';
-            const duration = 2000;
-            const start = performance.now();
-            const step = (now) => {
-              const progress = Math.min((now - start) / duration, 1);
-              const ease = 1 - Math.pow(1 - progress, 3);
-              el.textContent = Math.floor(ease * target) + suffix;
-              if (progress < 1) requestAnimationFrame(step);
-            };
-            requestAnimationFrame(step);
-          };
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) { animate(e.target); observer.unobserve(e.target); } });
-          }, { threshold: 0.5 });
-          stats.forEach(s => observer.observe(s));
-        })();
-      </script>
-    </section>
+    </div>
+  </section>
 
-    <!-- ORIGIN STORY -->
-    <section class="section">
-      <div class="container">
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="300">0</div>
+        <div class="stat-label">Retail Stores</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="7">0</div>
+        <div class="stat-label">Brand Partners</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="10">0</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="48">0</div>
+        <div class="stat-label">Avg. Response</div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Origin Story -->
+  <section class="story-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="eyebrow">Our Journey</div>
+        <h2>From the Problem We Lived</h2>
+      </div>
+      
+      <div class="story-grid">
         <!-- Block 01 -->
         <div class="story-block">
-          <div class="story-img-wrap fade-in-left">
-            <span class="story-chapter">01</span>
-            <div class="story-img">
-              <img src="../images/IMG-20260119-WA0016(1).jpg" alt="DALA in the field"
-                onerror="this.parentElement.style.background='linear-gradient(135deg,#1A1A2E,#D42027)';this.style.display='none'">
+          <div class="story-visual reveal-left">
+            <div class="story-number">01</div>
+            <div class="story-image">
+              <img src="../images/IMG-20260119-WA0016(1).jpg" alt="DALA in the field">
             </div>
           </div>
-          <div class="story-text fade-in-right">
+          <div class="story-content reveal-right">
             <div class="eyebrow">Where We Started</div>
-            <h2>Born From the Problem We Lived</h2>
+            <h3>Born From the Problem We Lived</h3>
             <p>Before DALA became what it is today, we were you. We had a company that was slowly dying. Not because the product wasn't good. Not because customers didn't want it. But because the operational chaos of Nigerian retail was eating us alive.</p>
-            <p>Deliveries were killing our cash flow. Getting into stores felt impossible. Small order quantities weren't worth it to logistics companies, so we stayed stuck in a handful of locations while competitors expanded. Every day felt like we were running harder just to stay in the same place.</p>
+            <p>Deliveries were killing our cash flow. Getting into stores felt impossible. Small order quantities weren't worth it to logistics companies, so we stayed stuck in a handful of locations while competitors expanded.</p>
             <p>That's when DALA was born — not as a business idea, but as a lifeline.</p>
           </div>
         </div>
-
+        
         <!-- Block 02 -->
-        <div class="story-block story-block--reverse">
-          <div class="story-img-wrap fade-in-right">
-            <span class="story-chapter">02</span>
-            <div class="story-img">
-              <img src="../images/IMG-20260119-WA0017.jpg" alt="DALA growth story"
-                onerror="this.parentElement.style.background='linear-gradient(135deg,#D42027,#1A1A2E)';this.style.display='none'">
+        <div class="story-block">
+          <div class="story-visual reveal-right">
+            <div class="story-number">02</div>
+            <div class="story-image">
+              <img src="../images/IMG-20260119-WA0017.jpg" alt="DALA growth story">
             </div>
           </div>
-          <div class="story-text fade-in-left">
+          <div class="story-content reveal-left">
             <div class="eyebrow">The Breakthrough</div>
-            <h2>What We Learned Changes Everything</h2>
+            <h3>What We Learned Changes Everything</h3>
             <p>DALA helped Wilson Lemonade scale from struggling in a few stores to thriving in over 300 modern retail locations across Lagos and Ogun. What took us close to a decade to achieve on our own could have been done in 1–2 years with what we know now.</p>
-            <p>We learned: the problem was never the product. It was the operations. When you can't deliver efficiently, you can't scale. When payments are unpredictable, you can't plan. When logistics buries you, your brand can't grow.</p>
+            <p>We learned: the problem was never the product. It was the operations. When you can't deliver efficiently, you can't scale. When payments are unpredictable, you can't plan.</p>
             <p><strong>We lived that reality. And we found the way out.</strong></p>
           </div>
         </div>
-
+        
         <!-- Block 03 -->
         <div class="story-block">
-          <div class="story-img-wrap fade-in-left">
-            <span class="story-chapter">03</span>
-            <div class="story-img">
-              <img src="../images/IMG-20260119-WA0019.jpg" alt="DALA helping brands today"
-                onerror="this.parentElement.style.background='linear-gradient(135deg,#252540,#D42027)';this.style.display='none'">
+          <div class="story-visual reveal-left">
+            <div class="story-number">03</div>
+            <div class="story-image">
+              <img src="../images/IMG-20260119-WA0019.jpg" alt="DALA helping brands today">
             </div>
           </div>
-          <div class="story-text fade-in-right">
+          <div class="story-content reveal-right">
             <div class="eyebrow">What We Do Today</div>
-            <h2>Sharing What Saved Us</h2>
+            <h3>Sharing What Saved Us</h3>
             <p>Today, DALA exists to help other founder-led brands move faster than they ever could alone. We help you get on more shelves, expand across Lagos and Ogun, and scale rapidly — while you focus on what actually matters: making great products and building demand.</p>
-            <p>We're not selling you theory. We're sharing what saved us.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- MISSION / VISION / CORE VALUES -->
-    <section class="section" style="background:var(--primary);position:relative;overflow:hidden;">
-      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;"></div>
-      <div class="container" style="position:relative;z-index:2;">
-        <div class="section-header">
-          <div class="eyebrow" style="color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);margin-bottom:12px;">What Drives Us</div>
-          <h2 class="fade-in" style="color:var(--white);">Our Mission, Vision &amp; Core Values</h2>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,28px);margin-bottom:clamp(20px,3vw,36px);">
-          <article class="how-works-card fade-in" style="background:rgba(0,0,0,0.20);border-color:rgba(255,255,255,0.12);">
-            <div style="font-size:2rem;margin-bottom:12px;">🎯</div>
-            <h4 style="color:var(--white);margin-bottom:8px;">Our Mission</h4>
-            <p style="color:rgba(255,255,255,0.75);">To remove operational bottlenecks so great products can scale responsibly in modern retail. We exist to help founder-led brands grow with structure, discipline, and confidence.</p>
-          </article>
-          <article class="how-works-card fade-in delay-1" style="background:rgba(0,0,0,0.20);border-color:rgba(255,255,255,0.12);">
-            <div style="font-size:2rem;margin-bottom:12px;">🔭</div>
-            <h4 style="color:var(--white);margin-bottom:8px;">Our Vision</h4>
-            <p style="color:rgba(255,255,255,0.75);">To be the trusted retail operations engine for every growing consumer brand in Nigeria — the reliable infrastructure layer between ambitious brands and modern retail.</p>
-          </article>
-        </div>
-        <div style="margin-bottom:clamp(16px,2vw,24px);">
-          <h3 class="fade-in" style="color:var(--white);text-align:center;margin-bottom:clamp(20px,3vw,32px);font-size:clamp(1.1rem,2vw,1.5rem);">Our Core Values</h3>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(12px,2vw,20px);">
-            <article class="how-works-card fade-in" style="background:rgba(0,0,0,0.18);border-color:rgba(255,255,255,0.10);text-align:center;">
-              <div style="font-size:1.8rem;margin-bottom:10px;">🤝</div>
-              <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:6px;">Integrity First</h4>
-              <p style="color:rgba(255,255,255,0.70);font-size:0.85rem;">We operate with full transparency and honest communication — no hidden agendas, no surprises.</p>
-            </article>
-            <article class="how-works-card fade-in delay-1" style="background:rgba(0,0,0,0.18);border-color:rgba(255,255,255,0.10);text-align:center;">
-              <div style="font-size:1.8rem;margin-bottom:10px;">⚙️</div>
-              <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:6px;">Execution Excellence</h4>
-              <p style="color:rgba(255,255,255,0.70);font-size:0.85rem;">We take pride in doing things right — consistently, reliably, and to the highest operational standard.</p>
-            </article>
-            <article class="how-works-card fade-in delay-2" style="background:rgba(0,0,0,0.18);border-color:rgba(255,255,255,0.10);text-align:center;">
-              <div style="font-size:1.8rem;margin-bottom:10px;">📈</div>
-              <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:6px;">Sustainable Growth</h4>
-              <p style="color:rgba(255,255,255,0.70);font-size:0.85rem;">We build for the long term — helping brands scale in ways that are disciplined, responsible, and lasting.</p>
-            </article>
-            <article class="how-works-card fade-in delay-3" style="background:rgba(0,0,0,0.18);border-color:rgba(255,255,255,0.10);text-align:center;">
-              <div style="font-size:1.8rem;margin-bottom:10px;">👥</div>
-              <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:6px;">Partnership Mindset</h4>
-              <p style="color:rgba(255,255,255,0.70);font-size:0.85rem;">Your success is our success. We invest deeply in the brands we partner with and treat every relationship as a true collaboration.</p>
-            </article>
-            <article class="how-works-card fade-in delay-4" style="background:rgba(0,0,0,0.18);border-color:rgba(255,255,255,0.10);text-align:center;">
-              <div style="font-size:1.8rem;margin-bottom:10px;">💡</div>
-              <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:6px;">Continuous Improvement</h4>
-              <p style="color:rgba(255,255,255,0.70);font-size:0.85rem;">We constantly refine our processes, systems, and service quality to stay ahead of the challenges our partners face.</p>
-            </article>
+            <p>We're not selling you theory. We're sharing what saved us. This is tested, proven, and works because we've lived it, fixed it, and built a system that helps brands like yours achieve in 1-2 years what used to take a decade.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- WHY BRANDS TRUST US — EDITORIAL GRID -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">Why Us</div>
-          <h2 class="fade-in">Why Brands Trust Us</h2>
+  <!-- Mission & Vision -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="eyebrow">What Drives Us</div>
+        <h2 style="color: white;">Our Mission, Vision & Values</h2>
+      </div>
+      
+      <div class="mv-grid">
+        <div class="mv-card reveal">
+          <div class="mv-card__icon">🎯</div>
+          <h3>Our Mission</h3>
+          <h4>To Remove Operational Bottlenecks</h4>
+          <p>We exist to remove operational bottlenecks so great products can scale responsibly in modern retail. We help founder-led brands grow with structure, discipline, and confidence.</p>
         </div>
-        <div class="trust-grid">
-          <div class="trust-item fade-in">
-            <div class="trust-item__num">01</div>
-            <div class="trust-item__body">
-              <h4>We Understand Nigerian Retail Realities</h4>
-              <p>We're not theory-driven consultants or foreign models imported without adaptation. We operate daily in Lagos and Ogun's retail environment. We know the challenges, the politics, the delays — and we've built systems that actually work here.</p>
-            </div>
+        <div class="mv-card reveal">
+          <div class="mv-card__icon">🔭</div>
+          <h3>Our Vision</h3>
+          <h4>The Trusted Retail Operations Engine</h4>
+          <p>To be the trusted retail operations engine for every growing consumer brand in Nigeria — the reliable infrastructure layer between ambitious brands and modern retail.</p>
+        </div>
+      </div>
+      
+      <h3 class="values-title reveal">Our Core Values</h3>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-card__icon">🤝</div>
+          <h4>Integrity First</h4>
+          <p>We operate with full transparency and honest communication — no hidden agendas, no surprises.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-card__icon">⚙️</div>
+          <h4>Execution Excellence</h4>
+          <p>We take pride in doing things right — consistently, reliably, and to the highest standard.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-card__icon">📈</div>
+          <h4>Sustainable Growth</h4>
+          <p>We build for the long term — helping brands scale in disciplined, responsible ways.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-card__icon">👥</div>
+          <h4>Partnership Mindset</h4>
+          <p>Your success is our success. We treat every relationship as a true collaboration.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-card__icon">💡</div>
+          <h4>Continuous Improvement</h4>
+          <p>We constantly refine our processes to stay ahead of the challenges our partners face.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Trust Us -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="eyebrow">Why Us</div>
+        <h2>Why Brands Trust Us</h2>
+      </div>
+      
+      <div class="trust-grid">
+        <div class="trust-item reveal">
+          <div class="trust-item__num">01</div>
+          <div>
+            <h4>We Understand Nigerian Retail Realities</h4>
+            <p>We're not theory-driven consultants. We operate daily in Lagos and Ogun's retail environment. We know the challenges, the politics, the delays — and we've built systems that actually work here.</p>
           </div>
-          <div class="trust-item fade-in delay-1">
-            <div class="trust-item__num">02</div>
-            <div class="trust-item__body">
-              <h4>We Guarantee What Matters Most</h4>
-              <p>Payment stress kills brands. That's why we guarantee remittance within agreed timelines, even when retailers delay. You get predictable cash flow so you can plan production, invest in marketing, and grow with confidence.</p>
-            </div>
+        </div>
+        
+        <div class="trust-item reveal">
+          <div class="trust-item__num">02</div>
+          <div>
+            <h4>We Guarantee What Matters Most</h4>
+            <p>Payment stress kills brands. That's why we guarantee remittance within agreed timelines, even when retailers delay. You get predictable cash flow so you can plan and grow with confidence.</p>
           </div>
-          <div class="trust-item fade-in delay-2">
-            <div class="trust-item__num">03</div>
-            <div class="trust-item__body">
-              <h4>We Operate With Full Transparency</h4>
-              <p>You receive weekly reports on sales, inventory, store activity, and issue resolution. You're never in the dark about what's happening with your brand. No vague updates. No surprises. Just clarity.</p>
-            </div>
+        </div>
+        
+        <div class="trust-item reveal">
+          <div class="trust-item__num">03</div>
+          <div>
+            <h4>We Operate With Full Transparency</h4>
+            <p>You receive weekly reports on sales, inventory, store activity, and issue resolution. You're never in the dark about what's happening with your brand. No vague updates. Just clarity.</p>
           </div>
-          <div class="trust-item fade-in delay-3">
-            <div class="trust-item__num">04</div>
-            <div class="trust-item__body">
-              <h4>We Protect Your Time and Energy</h4>
-              <p>When you partner with DALA, you get your life back. No more chasing payments. No more coordinating deliveries at midnight. No more retail politics eating into your strategy time. You focus on building the brand. We handle the engine.</p>
-            </div>
+        </div>
+        
+        <div class="trust-item reveal">
+          <div class="trust-item__num">04</div>
+          <div>
+            <h4>We Protect Your Time and Energy</h4>
+            <p>When you partner with DALA, you get your life back. No more chasing payments. No more coordinating deliveries at midnight. You focus on building the brand. We handle the engine.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <div class="cta-section__orb cta-section__orb--1"></div>
-      <div class="cta-section__orb cta-section__orb--2"></div>
-      <div class="container fade-in">
-        <div class="eyebrow" style="color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.1);margin-bottom:24px;">Get Started</div>
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-section__orb cta-section__orb--1"></div>
+    <div class="cta-section__orb cta-section__orb--2"></div>
+    <div class="container">
+      <div class="reveal">
+        <div class="eyebrow" style="margin-bottom: 1.5rem;">Get Started</div>
         <h2>Let's Build Something Great Together</h2>
         <p>If you're a founder-led brand ready to scale with structure, transparency, and a partner who truly gets what you're facing, we'd love to explore whether we're aligned.</p>
-        <div class="btn-group">
+        <div class="btn-group" style="justify-content: center;">
           <a class="btn btn--white btn--lg" href="get-listed.html">Partner With Us</a>
-          <a class="btn btn--ghost btn--lg" href="for-brands.html">Learn More About Our Services</a>
+          <a class="btn btn--ghost btn--lg" href="for-brands.html" style="color: white; border-color: rgba(255,255,255,0.3);">Learn More About Our Services</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
-
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a class="footer__logo" href="../index.html"><span class="logo-d">D</span><span>DALA</span></a>
+          <a class="navbar__logo" href="../index.html" style="text-decoration: none;">
+            <span class="logo-d">D</span>
+            <span style="color: white; font-weight: 800; font-size: 1.5rem;">DALA</span>
+          </a>
           <p>The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.</p>
         </div>
         <div>
@@ -298,10 +1164,13 @@
         </div>
         <div>
           <h4>Contact Info</h4>
-          <div class="footer__contact-item"><span class="footer__contact-icon">📍</span><span>Iju, Ota, Ogun State, Nigeria</span></div>
-          <div class="footer__contact-item"><span class="footer__contact-icon">📞</span><span>+234 814 882 4115 | +234 903 235 2306</span></div>
-          <div class="footer__contact-item"><span class="footer__contact-icon">✉</span><span>info@dalatechnologies.com</span></div>
-          <div class="footer__contact-item"><span class="footer__contact-icon">🕘</span><span>8am – 6pm</span></div>
+          <div class="footer__links">
+            <a href="#">📍 Iju, Ota, Ogun State, Nigeria</a>
+            <a href="tel:+2348148824115">📞 +234 814 882 4115</a>
+            <a href="tel:+2349032352306">📞 +234 903 235 2306</a>
+            <a href="mailto:info@dalatechnologies.com">✉ info@dalatechnologies.com</a>
+            <a href="#">🕘 8am – 6pm</a>
+          </div>
         </div>
       </div>
       <div class="footer__bottom">
@@ -310,6 +1179,66 @@
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <!-- Animations Script -->
+  <script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all reveal elements
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Stat counter animation
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          const duration = 2000;
+          const start = performance.now();
+          
+          const step = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(ease * target);
+            
+            el.textContent = current + (el.parentElement.querySelector('.stat-label').textContent.includes('hr') ? 'hr' : '+');
+            
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            }
+          };
+          
+          requestAnimationFrame(step);
+          statObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    document.querySelectorAll('.stat-number').forEach(stat => {
+      statObserver.observe(stat);
+    });
+    
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.navbar__hamburger');
+    const mobileMenu = document.querySelector('.navbar__mobile');
+    
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+  </script>
+
 </body>
 </html>
