@@ -1,0 +1,657 @@
+/**
+ * DALA Technologies - Animation Styles
+ * Scroll-triggered animations, micro-interactions, and visual effects
+ */
+
+/* ==========================================
+   CSS VARIABLES - SPACING REDUCTION
+   ========================================== */
+:root {
+  /* Reduced section spacing */
+  --section-padding-sm: 3rem 0;
+  --section-padding-md: 4rem 0;
+  --section-padding-lg: 5rem 0;
+  --section-padding-xl: 6rem 0;
+  
+  /* Component spacing */
+  --component-gap-sm: 1rem;
+  --component-gap-md: 1.5rem;
+  --component-gap-lg: 2rem;
+  
+  /* Animation timings */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ==========================================
+   SCROLL-TRIGGERED REVEAL ANIMATIONS
+   ========================================== */
+
+/* Base reveal state */
+.reveal-section,
+[data-animate="reveal-up"],
+[data-animate="fade-in"] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+/* Visible state */
+.reveal-section.is-visible,
+[data-animate="reveal-up"].is-visible,
+[data-animate="fade-in"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children animations */
+.stagger-child {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-child.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left reveal */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Right reveal */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale reveal */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ==========================================
+   COUNTER ANIMATION
+   ========================================== */
+[data-counter] {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================
+   FLOATING ELEMENTS
+   ========================================== */
+.float-element {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* ==========================================
+   MAGNETIC BUTTONS
+   ========================================== */
+.magnetic {
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+/* ==========================================
+   PARALLAX LAYERS
+   ========================================== */
+.parallax {
+  will-change: transform;
+}
+
+/* ==========================================
+   MARQUEE ANIMATION
+   ========================================== */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  padding: 0 2rem;
+}
+
+/* ==========================================
+   LINE DRAW ANIMATION
+   ========================================== */
+.draw-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.draw-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.draw-line.is-drawn::after {
+  transform: scaleX(1);
+}
+
+/* Vertical line draw */
+.draw-line-vertical::after {
+  width: 2px;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.draw-line-vertical.is-drawn::after {
+  transform: scaleY(1);
+}
+
+/* ==========================================
+   TYPEWRITER EFFECT
+   ========================================== */
+.typewriter {
+  display: inline;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: var(--primary);
+  margin-left: 2px;
+  animation: cursor-blink 1s infinite;
+  vertical-align: middle;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ==========================================
+   SHINE EFFECT
+   ========================================== */
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--shine-x, 50%) var(--shine-y, 50%),
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.shine-effect.shining::before {
+  opacity: 1;
+}
+
+/* ==========================================
+   IMAGE REVEAL
+   ========================================== */
+.reveal-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark);
+  transform: translateY(0);
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 2;
+}
+
+.reveal-image img {
+  transform: scale(1.2);
+  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.reveal-image.is-revealed::before {
+  transform: translateY(100%);
+}
+
+.reveal-image.is-revealed img {
+  transform: scale(1);
+}
+
+/* ==========================================
+   NAVBAR SCROLL EFFECT
+   ========================================== */
+.navbar {
+  transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.navbar-scrolled {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+/* ==========================================
+   HOVER MICRO-INTERACTIONS
+   ========================================== */
+
+/* Lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Scale effect */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Glow effect */
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(229, 57, 53, 0.4);
+}
+
+/* Border slide effect */
+.hover-border-slide {
+  position: relative;
+}
+
+.hover-border-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--primary);
+  transition: width 0.4s ease;
+}
+
+.hover-border-slide:hover::before {
+  width: 100%;
+}
+
+/* Icon bounce */
+.hover-icon-bounce .icon {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hover-icon-bounce:hover .icon {
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* Rotate icon */
+.hover-rotate .icon {
+  transition: transform 0.5s ease;
+}
+
+.hover-rotate:hover .icon {
+  transform: rotate(360deg);
+}
+
+/* ==========================================
+   BUTTON ENHANCEMENTS
+   ========================================== */
+
+/* Button pulse */
+.btn-pulse {
+  position: relative;
+}
+
+.btn-pulse::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: inherit;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.5;
+  z-index: -1;
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Button shimmer */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-shimmer:hover::after {
+  left: 100%;
+}
+
+/* ==========================================
+   CARD ENHANCEMENTS
+   ========================================== */
+
+/* 3D tilt effect placeholder */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Gradient border on hover */
+.card-gradient-border {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+}
+
+.card-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary), #FF5252, var(--primary));
+  background-size: 200% 200%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.card-gradient-border:hover::before {
+  opacity: 1;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ==========================================
+   LOADING STATES
+   ========================================== */
+
+/* Skeleton loading */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ==========================================
+   TEXT ANIMATIONS
+   ========================================== */
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), #FF5252);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Underline expand */
+.text-underline-expand {
+  position: relative;
+  display: inline-block;
+}
+
+.text-underline-expand::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.text-underline-expand:hover::after {
+  width: 100%;
+}
+
+/* ==========================================
+   SECTION SPACING REDUCTIONS
+   ========================================== */
+
+/* Compact sections */
+.section-compact {
+  padding: var(--section-padding-sm);
+}
+
+.section-normal {
+  padding: var(--section-padding-md);
+}
+
+.section-spacious {
+  padding: var(--section-padding-lg);
+}
+
+/* Reduced gap utilities */
+.gap-compact {
+  gap: var(--component-gap-sm);
+}
+
+.gap-normal {
+  gap: var(--component-gap-md);
+}
+
+.gap-spacious {
+  gap: var(--component-gap-lg);
+}
+
+/* Background variations to reduce perceived whitespace */
+.bg-alt {
+  background: linear-gradient(180deg, #fff 0%, #f8f9fa 50%, #fff 100%);
+}
+
+.bg-subtle-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(229, 57, 53, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(229, 57, 53, 0.02) 0%, transparent 40%);
+}
+
+/* ==========================================
+   UTILITY ANIMATIONS
+   ========================================== */
+
+/* Spin animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 2s linear infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease forwards;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease;
+}
+
+/* ==========================================
+   REDUCED MOTION SUPPORT
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .reveal-section,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================
+   PERFORMANCE OPTIMIZATIONS
+   ========================================== */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.will-animate {
+  will-change: transform, opacity;
+}

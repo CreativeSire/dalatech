@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What We Do - DALA Technologies</title>
+  <meta name="description" content="Explore DALA's comprehensive retail execution services. From retail intelligence to marketing, we help brands scale across Nigeria.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <style>
+    /* Premium Services Page - Airtable & Userpilot Inspired */
+    :root {
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    /* Premium Hero */
+    .services-hero {
+      padding: 10rem 2rem 5rem;
+      background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+      text-align: center;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    
+    .services-hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .services-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--primary-subtle);
+      border-radius: 100px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .services-title {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.04em;
+      margin-bottom: 1.25rem;
+      line-height: 1.1;
+    }
+    
+    .services-subtitle {
+      font-size: 1.25rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+    }
+    
+    /* Premium Services Grid - Airtable Inspired */
+    .services-section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      padding: 2.5rem;
+      background: white;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
+      text-decoration: none;
+      transition: all 0.5s var(--ease-out-expo);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), #ff6b6b);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s var(--ease-out-expo);
+    }
+    
+    .service-card:hover {
+      border-color: transparent;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+      transform: translateY(-8px);
+    }
+    
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--primary-subtle) 0%, #ffebee 100%);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.4s var(--ease-out-expo);
+      position: relative;
+    }
+    
+    .service-icon::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--primary);
+      border-radius: 18px;
+      transform: scale(0);
+      transition: transform 0.4s var(--ease-out-expo);
+      z-index: -1;
+    }
+    
+    .service-card:hover .service-icon {
+      color: white;
+      transform: scale(1.1);
+    }
+    
+    .service-card:hover .service-icon::after {
+      transform: scale(1);
+    }
+    
+    .service-title {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+    }
+    
+    .service-desc {
+      font-size: 1rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+    
+    .service-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--primary);
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.4s var(--ease-out-expo);
+    }
+    
+    .service-card:hover .service-cta {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Why Choose Us Section */
+    .why-section {
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
+    }
+    
+    .why-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .why-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 3rem;
+      letter-spacing: -0.03em;
+    }
+    
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    
+    .why-item {
+      padding: 2rem;
+    }
+    
+    .why-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+    
+    .why-label {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    
+    .why-text {
+      font-size: 0.9375rem;
+      color: var(--gray-500);
+    }
+    
+    /* CTA Section */
+    .services-cta {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, var(--dark) 0%, #1a1a1a 100%);
+      text-align: center;
+    }
+    
+    .services-cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .services-cta-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+    
+    .services-cta-text {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2rem;
+    }
+    
+    .services-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.125rem 2.5rem;
+      background: white;
+      color: var(--dark);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+    
+    .services-cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s var(--ease-out-expo);
+    }
+    
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">D</div>
+        <span>DALA</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="for-brands.html" class="nav-link">DALA for Brands</a>
+        <a href="for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link active">What We Do</a>
+        <a href="case-studies.html" class="nav-link">Case Studies</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="get-listed.html" class="nav-cta">Work With Us</a>
+      </div>
+      
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="services-hero" data-animate="fade-in">
+    <div class="services-hero-content">
+      <div class="services-badge reveal">
+        <i class="fas fa-briefcase"></i>
+        Our Services
+      </div>
+      <h1 class="services-title reveal reveal-delay-1">What We Do</h1>
+      <p class="services-subtitle reveal reveal-delay-2">
+        Comprehensive retail execution services designed to help FMCG brands scale efficiently across Nigeria's modern retail landscape.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="services-section reveal-section">
+    <div class="services-grid stagger-container">
+      <!-- Retail Intelligence -->
+      <a href="services/retail-intelligence.html" class="service-card reveal stagger-child hover-lift">
+        <div class="service-icon">
+          <i class="fas fa-chart-pie"></i>
+        </div>
+        <h3 class="service-title">Retail Intelligence</h3>
+        <p class="service-desc">
+          Data-driven insights into retail performance, competitor analysis, and market trends to inform your growth strategy.
+        </p>
+        <span class="service-cta">Learn more <i class="fas fa-arrow-right"></i></span>
+      </a>
+      
+      <!-- Supplier Engagement -->
+      <a href="services/supplier-engagement.html" class="service-card reveal reveal-delay-1 stagger-child hover-lift">
+        <div class="service-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h3 class="service-title">Supplier Engagement</h3>
+        <p class="service-desc">
+          Build and maintain strong relationships with retail partners through professional engagement and support programs.
+        </p>
+        <span class="service-cta">Learn more <i class="fas fa-arrow-right"></i></span>
+      </a>
+      
+      <!-- Listing Assistance -->
+      <a href="services/listing-assistance.html" class="service-card reveal reveal-delay-2 stagger-child hover-lift">
+        <div class="service-icon">
+          <i class="fas fa-clipboard-check"></i>
+        </div>
+        <h3 class="service-title">Listing Assistance</h3>
+        <p class="service-desc">
+          End-to-end support for getting your products listed in major retail chains and supermarkets across Nigeria.
+        </p>
+        <span class="service-cta">Learn more <i class="fas fa-arrow-right"></i></span>
+      </a>
+      
+      <!-- Retail Evaluation -->
+      <a href="services/retail-evaluation.html" class="service-card reveal reveal-delay-3 stagger-child hover-lift">
+        <div class="service-icon">
+          <i class="fas fa-search-dollar"></i>
+        </div>
+        <h3 class="service-title">Retail Evaluation</h3>
+        <p class="service-desc">
+          Comprehensive assessment of retail opportunities, store performance, and growth potential for your brand.
+        </p>
+        <span class="service-cta">Learn more <i class="fas fa-arrow-right"></i></span>
+      </a>
+      
+      <!-- Modern Trade Navigation -->
+      <a href="services/modern-trade-navigation.html" class="service-card reveal reveal-delay-4 stagger-child hover-lift">
+        <div class="service-icon">
+          <i class="fas fa-store-alt"></i>
+        </div>
+        <h3 class="service-title">Modern Trade Navigation</h3>
+        <p class="service-desc">
+          Expert guidance through the complexities of modern retail channels, from supermarkets to convenience stores.
+        </p>
+        <span class="service-cta">Learn more <i class="fas fa-arrow-right"></i></span>
+      </a>
+      
+      <!-- Marketing & Media Services -->
+      <a href="services/marketing-media.html" class="service-card reveal reveal-delay-5 stagger-child hover-lift">
+        <div class="service-icon">
+          <i class="fas fa-bullhorn"></i>
+        </div>
+        <h3 class="service-title">Marketing & Media Services</h3>
+        <p class="service-desc">
+          Strategic marketing support including in-store promotions, brand visibility, and media planning for retail growth.
+        </p>
+        <span class="service-cta">Learn more <i class="fas fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-section reveal-section">
+    <div class="why-container">
+      <h2 class="why-title reveal">Why Brands Choose DALA</h2>
+      <div class="why-grid stagger-container">
+        <div class="why-item reveal reveal-delay-1 stagger-child">
+          <div class="why-number">500+</div>
+          <div class="why-label">Retail Stores</div>
+          <div class="why-text">Across Lagos & Ogun State</div>
+        </div>
+        <div class="why-item reveal reveal-delay-2 stagger-child">
+          <div class="why-number">48hrs</div>
+          <div class="why-label">Restocking</div>
+          <div class="why-text">Guaranteed replenishment</div>
+        </div>
+        <div class="why-item reveal reveal-delay-3 stagger-child">
+          <div class="why-number">₦500M+</div>
+          <div class="why-label">Revenue Generated</div>
+          <div class="why-text">For partner brands</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="services-cta reveal-section">
+    <div class="services-cta-content reveal">
+      <h2 class="services-cta-title">Ready to Scale Your Brand?</h2>
+      <p class="services-cta-text">
+        Partner with DALA and access our full suite of retail execution services.
+      </p>
+      <a href="get-listed.html" class="services-cta-btn magnetic">
+        Get Started
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo">
+            <div class="logo-icon">D</div>
+            <span>DALA</span>
+          </a>
+          <p class="footer-tagline">
+            The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.
+          </p>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="../index.html" class="footer-link">Home</a>
+            <a href="for-brands.html" class="footer-link">DALA for Brands</a>
+            <a href="for-supermarkets.html" class="footer-link">DALA for Supermarkets</a>
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="services.html" class="footer-link">What We Do</a>
+            <a href="case-studies.html" class="footer-link">Case Studies</a>
+            <a href="contact.html" class="footer-link">Contact Us</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="services/retail-intelligence.html" class="footer-link">Retail Intelligence</a>
+            <a href="services/supplier-engagement.html" class="footer-link">Supplier Engagement</a>
+            <a href="services/listing-assistance.html" class="footer-link">Listing Assistance</a>
+            <a href="services/retail-evaluation.html" class="footer-link">Retail Evaluation</a>
+            <a href="services/modern-trade-navigation.html" class="footer-link">Modern Trade Navigation</a>
+            <a href="services/marketing-media.html" class="footer-link">Marketing & Media</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Contact Info</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--primary);"></i> Iju, Ota, Ogun State, Nigeria</p>
+            <p><i class="fas fa-phone" style="margin-right: 8px; color: var(--primary);"></i> +234 814 882 4115</p>
+            <p><i class="fas fa-envelope" style="margin-right: 8px; color: var(--primary);"></i> info@dalatechnologies.com</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 DALA Technologies. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+  <script src="../assets/js/animations.js"></script>
+</body>
+</html>

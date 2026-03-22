@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing & Media Services - DALA Technologies</title>
+  <meta name="description" content="Strategic marketing and media services for FMCG brands. In-store promotions, brand visibility, and retail marketing across Nigeria.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../assets/css/animations.css">
+  <style>
+    :root { --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); }
+    
+    .service-hero {
+      padding: 10rem 2rem 5rem;
+      background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(229, 57, 53, 0.12) 0%, transparent 50%);
+      animation: pulse 8s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.05); }
+    }
+    
+    .service-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .service-icon-large {
+      width: 96px;
+      height: 96px;
+      background: linear-gradient(135deg, var(--primary) 0%, #c62828 100%);
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.5rem;
+      margin: 0 auto 2rem;
+      box-shadow: 0 20px 50px rgba(229, 57, 53, 0.3);
+    }
+    
+    .service-hero-title {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.25rem;
+    }
+    
+    .service-hero-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+    
+    .service-content {
+      padding: 5rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .service-content h2 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 2.5rem 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .service-content p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+    
+    .service-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+    
+    .service-content li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.875rem 0;
+      font-size: 1.0625rem;
+      color: var(--gray-700);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    
+    .service-content li i {
+      color: var(--primary);
+      margin-top: 0.25rem;
+    }
+    
+    .service-cta-section {
+      padding: 5rem 2rem;
+      background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
+      text-align: center;
+    }
+    
+    .service-cta-box {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 3rem;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+    }
+    
+    .service-cta-title {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+    
+    .service-cta-text {
+      font-size: 1.125rem;
+      color: var(--gray-500);
+      margin-bottom: 2rem;
+    }
+    
+    .service-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.125rem 2.5rem;
+      background: linear-gradient(135deg, var(--primary) 0%, #c62828 100%);
+      color: white;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.4s var(--ease-out-expo);
+      box-shadow: 0 10px 30px rgba(229, 57, 53, 0.3);
+    }
+    
+    .service-cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(229, 57, 53, 0.4);
+    }
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s var(--ease-out-expo);
+    }
+    
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../../index.html" class="logo">
+        <div class="logo-icon">D</div>
+        <span>DALA</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="../for-brands.html" class="nav-link">DALA for Brands</a>
+        <a href="../for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
+        <a href="../about.html" class="nav-link">About Us</a>
+        <a href="../services.html" class="nav-link active">What We Do</a>
+        <a href="../case-studies.html" class="nav-link">Case Studies</a>
+        <a href="../contact.html" class="nav-link">Contact Us</a>
+        <a href="../get-listed.html" class="nav-cta">Work With Us</a>
+      </div>
+      
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="service-hero" data-animate="fade-in">
+    <div class="service-hero-content">
+      <div class="service-icon-large reveal">
+        <i class="fas fa-bullhorn"></i>
+      </div>
+      <h1 class="service-hero-title reveal reveal-delay-1">Marketing & Media Services</h1>
+      <p class="service-hero-subtitle reveal reveal-delay-2">
+        Strategic marketing support that drives visibility, engagement, and sales in retail environments across Nigeria.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="service-content reveal-section">
+    <h2 class="reveal">Marketing at the Point of Sale</h2>
+    <p class="reveal">
+      The retail environment is where purchase decisions are made. DALA's Marketing & Media Services ensure your brand stands out when customers are ready to buy. From eye-catching displays to promotional campaigns, we create the visibility and engagement that converts shoppers into customers across our network of 500+ retail stores.
+    </p>
+    
+    <h2 class="reveal">Our Marketing Services</h2>
+    <ul class="stagger-container">
+      <li class="reveal stagger-child">
+        <i class="fas fa-check-circle"></i>
+        <span><strong>In-Store Promotions:</strong> Design and execution of promotional campaigns including discounts, bundle offers, sampling programs, and limited-time deals.</span>
+      </li>
+      <li class="reveal reveal-delay-1 stagger-child">
+        <i class="fas fa-check-circle"></i>
+        <span><strong>Brand Visibility:</strong> Point-of-sale materials, shelf talkers, end-cap displays, and floor graphics that capture customer attention.</span>
+      </li>
+      <li class="reveal reveal-delay-2 stagger-child">
+        <i class="fas fa-check-circle"></i>
+        <span><strong>Seasonal Campaigns:</strong> Strategic planning and execution of holiday promotions, festive campaigns, and seasonal product launches.</span>
+      </li>
+      <li class="reveal reveal-delay-3 stagger-child">
+        <i class="fas fa-check-circle"></i>
+        <span><strong>Staff Advocacy:</strong> Training retail staff about your products so they can recommend them confidently to customers.</span>
+      </li>
+      <li class="reveal reveal-delay-4 stagger-child">
+        <i class="fas fa-check-circle"></i>
+        <span><strong>Digital Integration:</strong> Coordination with retailer apps, loyalty programs, and digital signage to amplify your reach.</span>
+      </li>
+    </ul>
+    
+    <h2 class="reveal">Results That Matter</h2>
+    <p class="reveal">
+      Effective retail marketing drives measurable results. Zayith Food Company experienced their strongest sales during promotional periods coordinated through our marketing services. Wilson's Lemonade's consistent brand visibility across 350 stores contributed to their ₦221.7M revenue achievement. We design every campaign with clear KPIs and track performance to ensure your marketing investment delivers returns.
+    </p>
+    
+    <h2 class="reveal">Integrated Approach</h2>
+    <p class="reveal">
+      Our marketing services work seamlessly with our other offerings. Retail intelligence informs which stores deserve promotional investment. Supplier engagement ensures retailers support your campaigns. Listing assistance gets your promotional displays approved and positioned effectively. This integration maximizes the impact of every marketing naira you spend.
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="service-cta-section reveal-section">
+    <div class="service-cta-box reveal">
+      <h2 class="service-cta-title">Ready to Amplify Your Brand?</h2>
+      <p class="service-cta-text">
+        Partner with DALA for strategic marketing that drives retail success.
+      </p>
+      <a href="../get-listed.html" class="service-cta-btn magnetic">
+        Join as a Brand
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../../index.html" class="footer-logo">
+            <div class="logo-icon">D</div>
+            <span>DALA</span>
+          </a>
+          <p class="footer-tagline">The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="../../index.html" class="footer-link">Home</a>
+            <a href="../services.html" class="footer-link">What We Do</a>
+            <a href="../contact.html" class="footer-link">Contact Us</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Contact Info</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--primary);"></i> Iju, Ota, Ogun State, Nigeria</p>
+            <p><i class="fas fa-phone" style="margin-right: 8px; color: var(--primary);"></i> +234 814 882 4115</p>
+            <p><i class="fas fa-envelope" style="margin-right: 8px; color: var(--primary);"></i> info@dalatechnologies.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 DALA Technologies. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+  <script src="../../assets/js/animations.js"></script>
+</body>
+</html>

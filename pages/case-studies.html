@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies - DALA Technologies</title>
+  <meta name="description" content="Real results from brands scaling with discipline, efficiency, and sustainable growth.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <style>
+    /* Premium Design System */
+    :root {
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    
+    /* Premium Hero */
+    .cs-hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cs-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(229, 57, 53, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(229, 57, 53, 0.1) 0%, transparent 40%);
+      animation: pulse-slow 8s ease-in-out infinite;
+    }
+    
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    
+    .cs-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 2rem;
+    }
+    
+    .cs-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.5rem;
+      background: rgba(229, 57, 53, 0.15);
+      border: 1px solid rgba(229, 57, 53, 0.3);
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #ff6b6b;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 2.5rem;
+      backdrop-filter: blur(10px);
+    }
+    
+    .cs-hero-title {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cs-hero-subtitle {
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      color: rgba(255,255,255,0.6);
+      font-weight: 400;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Premium Case Study Sections */
+    .cs-section {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .cs-image-side {
+      position: relative;
+      height: 100%;
+      min-height: 600px;
+      overflow: hidden;
+    }
+    
+    .cs-image {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.1);
+      transition: transform 1.2s var(--ease-out-expo);
+    }
+    
+    .cs-section:hover .cs-image {
+      transform: scale(1);
+    }
+    
+    .cs-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+    }
+    
+    .cs-content-side {
+      padding: 5rem;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .cs-number {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    
+    .cs-title {
+      font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cs-text {
+      font-size: 1.0625rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    
+    /* Premium Metrics Grid */
+    .cs-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    
+    .cs-metric {
+      position: relative;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: all 0.5s var(--ease-out-expo);
+    }
+    
+    .cs-metric:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      background: white;
+    }
+    
+    .cs-metric-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 20px rgba(229, 57, 53, 0.25);
+    }
+    
+    .cs-metric-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1;
+      margin-bottom: 0.375rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .cs-metric-label {
+      font-size: 0.8125rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+    
+    /* Premium Progress Bars */
+    .cs-progress-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .cs-progress-item {
+      position: relative;
+    }
+    
+    .cs-progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    .cs-progress-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    .cs-progress-value {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .cs-progress-track {
+      height: 5px;
+      background: #f0f0f0;
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .cs-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary) 0%, #ff6b6b 100%);
+      border-radius: 3px;
+      position: relative;
+      transform-origin: left;
+      animation: progress-grow 1.5s var(--ease-out-expo) forwards;
+    }
+    
+    @keyframes progress-grow {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+    
+    /* Premium Feature Cards */
+    .cs-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .cs-feature {
+      display: flex;
+      gap: 0.875rem;
+      padding: 1.25rem;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: all 0.4s var(--ease-out-expo);
+    }
+    
+    .cs-feature:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateX(6px);
+    }
+    
+    .cs-feature:hover .cs-feature-icon {
+      background: white;
+      color: var(--primary);
+    }
+    
+    .cs-feature:hover .cs-feature-title,
+    .cs-feature:hover .cs-feature-text {
+      color: white;
+    }
+    
+    .cs-feature-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-subtle);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1rem;
+      flex-shrink: 0;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+    
+    .cs-feature-title {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+      transition: color 0.4s var(--ease-out-expo);
+    }
+    
+    .cs-feature-text {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      line-height: 1.4;
+      margin: 0;
+      transition: color 0.4s var(--ease-out-expo);
+    }
+    
+    /* Premium Quote Block */
+    .cs-quote {
+      position: relative;
+      padding: 1.75rem;
+      background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+      border-radius: 16px;
+      margin-top: 2rem;
+      border-left: 3px solid var(--primary);
+    }
+    
+    .cs-quote::before {
+      content: '"';
+      position: absolute;
+      top: 0.5rem;
+      right: 1.5rem;
+      font-size: 4rem;
+      color: var(--primary);
+      opacity: 0.1;
+      font-weight: 700;
+      line-height: 1;
+    }
+    
+    .cs-quote-text {
+      font-size: 1rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Premium Stats Bar */
+    .cs-stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 5rem;
+      padding: 4rem 2rem;
+      background: linear-gradient(180deg, #fafafa 0%, white 100%);
+      border-top: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .cs-stat-item {
+      text-align: center;
+    }
+    
+    .cs-stat-value {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+    
+    .cs-stat-value span {
+      color: var(--primary);
+    }
+    
+    .cs-stat-label {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    /* Alternating Layouts */
+    /* Default: Image LEFT, Content RIGHT */
+    /* cs-right: Image RIGHT, Content LEFT */
+    .cs-section.cs-right .cs-image-side {
+      order: 2;
+    }
+    
+    .cs-section.cs-right .cs-content-side {
+      order: 1;
+    }
+    
+    /* Premium CTA Section */
+    .cs-cta-section {
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, var(--dark) 0%, #1a1a1a 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cs-cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(229, 57, 53, 0.1) 0%, transparent 60%);
+      animation: rotate 30s linear infinite;
+    }
+    
+    .cs-cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .cs-cta-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .cs-cta-text {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .cs-section {
+        grid-template-columns: 1fr;
+      }
+      
+      .cs-image-side {
+        min-height: 350px;
+        order: -1 !important;
+      }
+      
+      .cs-content-side {
+        padding: 3rem 2rem;
+        order: 2 !important;
+      }
+      
+      .cs-metrics {
+        grid-template-columns: 1fr;
+      }
+      
+      .cs-features {
+        grid-template-columns: 1fr;
+      }
+      
+      .cs-stats-bar {
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+    }
+    
+    /* Smooth Scroll Behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s var(--ease-out-expo);
+    }
+    
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">D</div>
+        <span>DALA</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="for-brands.html" class="nav-link">DALA for Brands</a>
+        <a href="for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="case-studies.html" class="nav-link active">Case Studies</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="get-listed.html" class="nav-cta">Work With Us</a>
+      </div>
+      
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Premium Hero -->
+  <section class="cs-hero" data-animate="fade-in">
+    <div class="cs-hero-content">
+      <div class="cs-hero-badge">
+        <i class="fas fa-trophy" style="font-size: 1rem;"></i>
+        Success Stories
+      </div>
+      <h1 class="cs-hero-title">Case Studies</h1>
+      <p class="cs-hero-subtitle">
+        Real results from brands scaling with discipline, efficiency, and sustainable growth across Lagos and Ogun State.
+      </p>
+    </div>
+  </section>
+
+  <!-- Case Study 1: Wilson's Lemonade - IMAGE LEFT -->
+  <section class="cs-section reveal-section" id="wilson">
+    <div class="cs-image-side">
+      <div class="cs-image" style="background-image: url('https://images.unsplash.com/photo-1544145945-f90425340c7e?w=1200&h=800&fit=crop');"></div>
+      <div class="cs-image-overlay"></div>
+    </div>
+    <div class="cs-content-side">
+      <div class="reveal">
+        <div class="cs-number">Case Study 01</div>
+        <h2 class="cs-title">Scaling Wilson's Lemonade Through Structured Retail Execution</h2>
+        <p class="cs-text">
+          Wilson's Lemonade had demand, but distribution was limiting growth. Orders came in from different locations in small quantities, making delivery expensive and unsustainable. Limited retail presence and operational inefficiencies slowed expansion.
+        </p>
+        
+        <!-- Premium Metrics -->
+        <div class="cs-metrics">
+          <div class="cs-metric hover-lift">
+            <div class="cs-metric-icon">
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <div class="cs-metric-value">₦221.7M</div>
+            <div class="cs-metric-label">Revenue Generated</div>
+          </div>
+          <div class="cs-metric hover-lift">
+            <div class="cs-metric-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <div class="cs-metric-value">350</div>
+            <div class="cs-metric-label">Retail Stores</div>
+          </div>
+          <div class="cs-metric hover-lift">
+            <div class="cs-metric-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="cs-metric-value">1.5</div>
+            <div class="cs-metric-label">Years to Scale</div>
+          </div>
+        </div>
+        
+        <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--dark); margin: 1.5rem 0 0.75rem;">How DALA Helped</h3>
+        
+        <!-- Premium Feature Cards -->
+        <div class="cs-features">
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">Store Onboarding</div>
+              <p class="cs-feature-text">Coordinated product onboarding across 350 retail locations</p>
+            </div>
+          </div>
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">In-Store Execution</div>
+              <p class="cs-feature-text">Managed shelf placement and product visibility</p>
+            </div>
+          </div>
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-bullhorn"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">Campaign Support</div>
+              <p class="cs-feature-text">Supported seasonal promotions and launches</p>
+            </div>
+          </div>
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">Transparent Reporting</div>
+              <p class="cs-feature-text">Provided real-time revenue and performance data</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Progress Bars -->
+        <div class="cs-progress-list">
+          <div class="cs-progress-item">
+            <div class="cs-progress-header">
+              <span class="cs-progress-title">Store Expansion</span>
+              <span class="cs-progress-value">350 stores</span>
+            </div>
+            <div class="cs-progress-track">
+              <div class="cs-progress-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+          <div class="cs-progress-item">
+            <div class="cs-progress-header">
+              <span class="cs-progress-title">Revenue Growth</span>
+              <span class="cs-progress-value">₦221.7M</span>
+            </div>
+            <div class="cs-progress-track">
+              <div class="cs-progress-fill" style="width: 92%;"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cs-quote">
+          <p class="cs-quote-text">
+            Wilson's lemonade achieved major revenue generation and expanded its retail network significantly within approximately 1.5 years. The brand demonstrated strong and consistent sales growth throughout the partnership.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="cs-stats-bar reveal-section">
+    <div class="cs-stat-item">
+      <div class="cs-stat-value">₦221.<span>7M</span></div>
+      <div class="cs-stat-label">Total Revenue</div>
+    </div>
+    <div class="cs-stat-item">
+      <div class="cs-stat-value">350</div>
+      <div class="cs-stat-label">Stores Reached</div>
+    </div>
+    <div class="cs-stat-item">
+      <div class="cs-stat-value">1.5<span>yrs</span></div>
+      <div class="cs-stat-label">Timeline</div>
+    </div>
+  </section>
+
+  <!-- Case Study 2: Zayith Food Company - IMAGE RIGHT -->
+  <section class="cs-section cs-right reveal-section" id="zayith">
+    <div class="cs-image-side">
+      <div class="cs-image" style="background-image: url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&h=800&fit=crop');"></div>
+      <div class="cs-image-overlay"></div>
+    </div>
+    <div class="cs-content-side">
+      <div class="reveal">
+        <div class="cs-number">Case Study 02</div>
+        <h2 class="cs-title">How Zayith Accelerated Revenue Growth and Expanded to 170+ Stores</h2>
+        <p class="cs-text">
+          Zayith Food Company had quality products but needed to scale revenue and expand retail presence. The brand required structured execution support to accelerate growth and reach more customers across modern retail outlets.
+        </p>
+        
+        <!-- Premium Metrics -->
+        <div class="cs-metrics">
+          <div class="cs-metric hover-lift">
+            <div class="cs-metric-icon">
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <div class="cs-metric-value">₦138M</div>
+            <div class="cs-metric-label">Revenue Generated</div>
+          </div>
+          <div class="cs-metric hover-lift">
+            <div class="cs-metric-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <div class="cs-metric-value">173</div>
+            <div class="cs-metric-label">Retail Stores</div>
+          </div>
+          <div class="cs-metric hover-lift">
+            <div class="cs-metric-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="cs-metric-value">Peak</div>
+            <div class="cs-metric-label">Performance</div>
+          </div>
+        </div>
+        
+        <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--dark); margin: 1.5rem 0 0.75rem;">What We Did</h3>
+        
+        <!-- Premium Feature Cards -->
+        <div class="cs-features">
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">Store Onboarding</div>
+              <p class="cs-feature-text">Coordinated product onboarding and expansion into new retail locations</p>
+            </div>
+          </div>
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">In-Store Execution</div>
+              <p class="cs-feature-text">Managed in-store execution and product visibility</p>
+            </div>
+          </div>
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-bullhorn"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">Campaign Support</div>
+              <p class="cs-feature-text">Supported seasonal campaigns and product launches</p>
+            </div>
+          </div>
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">Transparent Reporting</div>
+              <p class="cs-feature-text">Provided transparent reporting on revenue and performance trends</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Progress Bars -->
+        <div class="cs-progress-list">
+          <div class="cs-progress-item">
+            <div class="cs-progress-header">
+              <span class="cs-progress-title">Revenue Achievement</span>
+              <span class="cs-progress-value">₦138M</span>
+            </div>
+            <div class="cs-progress-track">
+              <div class="cs-progress-fill" style="width: 88%;"></div>
+            </div>
+          </div>
+          <div class="cs-progress-item">
+            <div class="cs-progress-header">
+              <span class="cs-progress-title">Store Network</span>
+              <span class="cs-progress-value">173 stores</span>
+            </div>
+            <div class="cs-progress-track">
+              <div class="cs-progress-fill" style="width: 87%;"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cs-quote">
+          <p class="cs-quote-text">
+            Zayith Food Company experienced remarkable revenue growth throughout the fiscal year. Performance built steadily and peaked in the later months, indicating effective seasonal campaigns and scaled marketing efforts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="cs-stats-bar reveal-section">
+    <div class="cs-stat-item">
+      <div class="cs-stat-value">₦138<span>M</span></div>
+      <div class="cs-stat-label">Total Revenue</div>
+    </div>
+    <div class="cs-stat-item">
+      <div class="cs-stat-value">173</div>
+      <div class="cs-stat-label">Stores Reached</div>
+    </div>
+    <div class="cs-stat-item">
+      <div class="cs-stat-value">Peak</div>
+      <div class="cs-stat-label">Performance</div>
+    </div>
+  </section>
+
+  <!-- Case Study 3: August Secrets - IMAGE LEFT -->
+  <section class="cs-section reveal-section" id="august">
+    <div class="cs-image-side">
+      <div class="cs-image" style="background-image: url('https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&h=800&fit=crop');"></div>
+      <div class="cs-image-overlay"></div>
+    </div>
+    <div class="cs-content-side">
+      <div class="reveal">
+        <div class="cs-number">Case Study 03</div>
+        <h2 class="cs-title">How August Secrets Achieved Exponential Revenue Growth with Dala</h2>
+        <p class="cs-text">
+          August Secrets needed to scale rapidly while building a credible retail presence. The brand required structured execution support to drive revenue growth and expand into modern retail outlets across multiple locations.
+        </p>
+        
+        <!-- Premium Metrics -->
+        <div class="cs-metrics">
+          <div class="cs-metric hover-lift">
+            <div class="cs-metric-icon">
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <div class="cs-metric-value">₦30.8M</div>
+            <div class="cs-metric-label">Revenue Generated</div>
+          </div>
+          <div class="cs-metric hover-lift">
+            <div class="cs-metric-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <div class="cs-metric-value">106</div>
+            <div class="cs-metric-label">Retail Stores</div>
+          </div>
+          <div class="cs-metric hover-lift">
+            <div class="cs-metric-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="cs-metric-value">1</div>
+            <div class="cs-metric-label">Year to Scale</div>
+          </div>
+        </div>
+        
+        <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--dark); margin: 1.5rem 0 0.75rem;">What We Did</h3>
+        
+        <!-- Premium Feature Cards -->
+        <div class="cs-features">
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">Store Onboarding</div>
+              <p class="cs-feature-text">Rapid expansion across 106 retail locations in 12 months</p>
+            </div>
+          </div>
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">In-Store Execution</div>
+              <p class="cs-feature-text">Maintained premium product presentation and visibility</p>
+            </div>
+          </div>
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-bullhorn"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">Campaign Support</div>
+              <p class="cs-feature-text">Executed targeted promotional campaigns</p>
+            </div>
+          </div>
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">Transparent Reporting</div>
+              <p class="cs-feature-text">Delivered weekly performance and revenue insights</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Progress Bars -->
+        <div class="cs-progress-list">
+          <div class="cs-progress-item">
+            <div class="cs-progress-header">
+              <span class="cs-progress-title">Store Network Growth</span>
+              <span class="cs-progress-value">106 stores</span>
+            </div>
+            <div class="cs-progress-track">
+              <div class="cs-progress-fill" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="cs-progress-item">
+            <div class="cs-progress-header">
+              <span class="cs-progress-title">Revenue Achievement</span>
+              <span class="cs-progress-value">₦30.8M</span>
+            </div>
+            <div class="cs-progress-track">
+              <div class="cs-progress-fill" style="width: 78%;"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cs-quote">
+          <p class="cs-quote-text">
+            August Secrets achieved dramatic revenue growth with DALA, scaling from initial figures to multimillion-naira earnings. The partnership delivered exponential growth and successfully established a substantial retail footprint within one year.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="cs-stats-bar reveal-section">
+    <div class="cs-stat-item">
+      <div class="cs-stat-value">₦30.<span>8M</span></div>
+      <div class="cs-stat-label">Total Revenue</div>
+    </div>
+    <div class="cs-stat-item">
+      <div class="cs-stat-value">106</div>
+      <div class="cs-stat-label">Stores Reached</div>
+    </div>
+    <div class="cs-stat-item">
+      <div class="cs-stat-value">1<span>yr</span></div>
+      <div class="cs-stat-label">Timeline</div>
+    </div>
+  </section>
+
+  <!-- Case Study 4: Eloha - IMAGE RIGHT -->
+  <section class="cs-section cs-right reveal-section" id="eloha">
+    <div class="cs-image-side">
+      <div class="cs-image" style="background-image: url('https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1200&h=800&fit=crop');"></div>
+      <div class="cs-image-overlay"></div>
+    </div>
+    <div class="cs-content-side">
+      <div class="reveal">
+        <div class="cs-number">Case Study 04</div>
+        <h2 class="cs-title">How Eloha Launched and Scaled to 83 Stores in Just Seven Months</h2>
+        <p class="cs-text">
+          Eloha needed to launch successfully and build market presence quickly. As a new brand entering modern retail, they required structured execution and disciplined operations to establish credibility and drive revenue from day one.
+        </p>
+        
+        <!-- Premium Metrics -->
+        <div class="cs-metrics">
+          <div class="cs-metric hover-lift">
+            <div class="cs-metric-icon">
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <div class="cs-metric-value">₦3.8M</div>
+            <div class="cs-metric-label">Revenue Generated</div>
+          </div>
+          <div class="cs-metric hover-lift">
+            <div class="cs-metric-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <div class="cs-metric-value">83</div>
+            <div class="cs-metric-label">Retail Stores</div>
+          </div>
+          <div class="cs-metric hover-lift">
+            <div class="cs-metric-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="cs-metric-value">7mo</div>
+            <div class="cs-metric-label">To Market Presence</div>
+          </div>
+        </div>
+        
+        <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--dark); margin: 1.5rem 0 0.75rem;">What We Did</h3>
+        
+        <!-- Premium Feature Cards -->
+        <div class="cs-features">
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">Store Onboarding</div>
+              <p class="cs-feature-text">Rapid onboarding across 83 retail locations in 7 months</p>
+            </div>
+          </div>
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">In-Store Execution</div>
+              <p class="cs-feature-text">Ensured consistent brand presence and visibility</p>
+            </div>
+          </div>
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-bullhorn"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">Campaign Support</div>
+              <p class="cs-feature-text">Launched with targeted introductory campaigns</p>
+            </div>
+          </div>
+          <div class="cs-feature hover-lift">
+            <div class="cs-feature-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <div>
+              <div class="cs-feature-title">Transparent Reporting</div>
+              <p class="cs-feature-text">Weekly growth tracking and performance insights</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Progress Bars -->
+        <div class="cs-progress-list">
+          <div class="cs-progress-item">
+            <div class="cs-progress-header">
+              <span class="cs-progress-title">Stores Reached</span>
+              <span class="cs-progress-value">83 stores</span>
+            </div>
+            <div class="cs-progress-track">
+              <div class="cs-progress-fill" style="width: 83%;"></div>
+            </div>
+          </div>
+          <div class="cs-progress-item">
+            <div class="cs-progress-header">
+              <span class="cs-progress-title">Timeline Achievement</span>
+              <span class="cs-progress-value">7 months</span>
+            </div>
+            <div class="cs-progress-track">
+              <div class="cs-progress-fill" style="width: 70%;"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cs-quote">
+          <p class="cs-quote-text">
+            Eloha experienced consistent and strong revenue growth following its mid-year launch. The partnership successfully launched the brand and scaled it to significant market presence within just seven months, building a stable and growing income stream.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="cs-stats-bar reveal-section">
+    <div class="cs-stat-item">
+      <div class="cs-stat-value">₦3.<span>8M</span></div>
+      <div class="cs-stat-label">Total Revenue</div>
+    </div>
+    <div class="cs-stat-item">
+      <div class="cs-stat-value">83</div>
+      <div class="cs-stat-label">Stores Reached</div>
+    </div>
+    <div class="cs-stat-item">
+      <div class="cs-stat-value">7<span>mo</span></div>
+      <div class="cs-stat-label">Timeline</div>
+    </div>
+  </section>
+
+  <!-- Premium CTA Section -->
+  <section class="cs-cta-section reveal-section">
+    <div class="cs-cta-content">
+      <h2 class="cs-cta-title">Ready to Scale Your Brand?</h2>
+      <p class="cs-cta-text">
+        Partner with DALA and transform your retail distribution. Join the brands achieving remarkable growth with structure and discipline.
+      </p>
+      <a href="get-listed.html" class="btn btn-primary btn-large" style="background: white; color: var(--dark); box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+        Work With Us
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo">
+            <div class="logo-icon">D</div>
+            <span>DALA</span>
+          </a>
+          <p class="footer-tagline">
+            The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.
+          </p>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="../index.html" class="footer-link">Home</a>
+            <a href="for-brands.html" class="footer-link">DALA for Brands</a>
+            <a href="for-supermarkets.html" class="footer-link">DALA for Supermarkets</a>
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="case-studies.html" class="footer-link">Case Studies</a>
+            <a href="contact.html" class="footer-link">Contact Us</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Get Started</h4>
+          <div class="footer-links">
+            <a href="get-listed.html" class="footer-link">Get Listed</a>
+            <a href="get-listed.html" class="footer-link">Work With Us</a>
+            <a href="#" class="footer-link">Retailer Login</a>
+            <a href="#" class="footer-link">Browse Retailers</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Contact Info</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--primary);"></i> Iju, Ota, Ogun State, Nigeria</p>
+            <p><i class="fas fa-phone" style="margin-right: 8px; color: var(--primary);"></i> +234 814 882 4115</p>
+            <p><i class="fas fa-phone" style="margin-right: 8px; color: var(--primary);"></i> +234 903 235 2306</p>
+            <p><i class="fas fa-envelope" style="margin-right: 8px; color: var(--primary);"></i> info@dalatechnologies.com</p>
+            <p><i class="fas fa-clock" style="margin-right: 8px; color: var(--primary);"></i> Business Hours: 8am-6pm</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 DALA Technologies. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Reveal animations on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+  <script src="../assets/js/animations.js"></script>
+</body>
+</html>
