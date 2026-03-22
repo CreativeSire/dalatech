@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../css/styles.css">
   
   <style>
-    /* PREMIUM ABOUT US - DALA TECHNOLOGIES */
+    /* PREMIUM ABOUT US - DALA TECHNOLOGIES v2 */
     
     :root {
       --primary: #E53935;
@@ -22,15 +22,12 @@
       --dark: #0D0D0D;
       --dark-lighter: #1a1a2e;
       --white: #ffffff;
-      --gray-100: #f8f7f5;
-      --gray-200: #e8e6e1;
+      --gray-100: #faf9f7;
+      --gray-200: #f0eeea;
       --gray-600: #6b6b6b;
       --gray-800: #2d2d2d;
-      --gold: #ffc107;
-      --gradient-red: linear-gradient(135deg, #E53935 0%, #c62828 100%);
-      --gradient-dark: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
-      --shadow-3d: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      --shadow-glow: 0 0 60px rgba(229, 57, 53, 0.3);
+      --gold: #f59e0b;
+      --cream: #fef9f3;
     }
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -56,7 +53,6 @@
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
     }
     
     .navbar__inner {
@@ -157,6 +153,17 @@
       color: var(--primary);
     }
     
+    .btn--outline {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .btn--outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: white;
+    }
+    
     .btn--lg {
       padding: 1rem 2rem;
       font-size: 1rem;
@@ -166,51 +173,48 @@
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
     
-    /* Hero Section */
+    /* Hero Section - LIGHT VERSION */
     .about-hero {
-      min-height: 100vh;
-      background: var(--gradient-dark);
+      min-height: 90vh;
+      background: linear-gradient(135deg, #faf9f7 0%, #ffffff 50%, #fef3f0 100%);
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      padding: 120px 2rem 80px;
+      padding: 140px 2rem 80px;
     }
     
-    .about-hero__orb {
+    .about-hero::before {
+      content: '';
       position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.5;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(229, 57, 53, 0.08) 0%, transparent 60%);
       animation: float 20s ease-in-out infinite;
     }
     
-    .about-hero__orb--1 {
+    .about-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
       width: 600px;
       height: 600px;
-      background: var(--primary);
-      top: -200px;
-      right: -100px;
-      animation-delay: 0s;
-    }
-    
-    .about-hero__orb--2 {
-      width: 400px;
-      height: 400px;
-      background: var(--gold);
-      bottom: -100px;
-      left: -100px;
-      animation-delay: -10s;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+      animation: float 20s ease-in-out infinite reverse;
     }
     
     @keyframes float {
       0%, 100% { transform: translate(0, 0) scale(1); }
-      25% { transform: translate(50px, -50px) scale(1.1); }
-      50% { transform: translate(0, 50px) scale(1); }
-      75% { transform: translate(-50px, -25px) scale(0.95); }
+      25% { transform: translate(30px, -30px) scale(1.05); }
+      50% { transform: translate(0, 30px) scale(1); }
+      75% { transform: translate(-30px, -15px) scale(0.98); }
     }
     
     .about-hero__content {
@@ -229,24 +233,24 @@
       text-transform: uppercase;
       letter-spacing: 0.15em;
       padding: 0.5rem 1rem;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(229, 57, 53, 0.1);
+      border: 1px solid rgba(229, 57, 53, 0.2);
       border-radius: 100px;
-      color: rgba(255, 255, 255, 0.9);
+      color: var(--primary);
       margin-bottom: 2rem;
     }
     
     .about-hero h1 {
-      font-size: clamp(3rem, 6vw, 5rem);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
       font-weight: 800;
       line-height: 1.05;
-      color: white;
+      color: var(--dark);
       margin-bottom: 1.5rem;
       letter-spacing: -0.03em;
     }
     
     .about-hero h1 em {
-      background: linear-gradient(135deg, var(--primary-light) 0%, var(--gold) 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--gold) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -255,7 +259,7 @@
     
     .about-hero p {
       font-size: clamp(1.125rem, 2vw, 1.375rem);
-      color: rgba(255, 255, 255, 0.75);
+      color: var(--gray-600);
       max-width: 600px;
       margin: 0 auto 2.5rem;
       line-height: 1.7;
@@ -263,52 +267,40 @@
     
     /* Stats Section */
     .stats-section {
-      background: linear-gradient(180deg, #0a0a0f 0%, #151520 100%);
-      padding: 100px 2rem;
+      background: linear-gradient(180deg, #faf9f7 0%, #ffffff 100%);
+      padding: 80px 2rem;
       position: relative;
-      overflow: hidden;
-    }
-    
-    .stats-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: 
-        radial-gradient(circle at 20% 50%, rgba(229, 57, 53, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(255, 193, 7, 0.05) 0%, transparent 50%);
     }
     
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 3rem;
-      max-width: 1200px;
+      gap: 1.5rem;
+      max-width: 1100px;
       margin: 0 auto;
-      position: relative;
-      z-index: 1;
     }
     
     .stat-item {
       text-align: center;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-      backdrop-filter: blur(10px);
+      padding: 2rem 1.5rem;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
     }
     
     .stat-item:hover {
-      transform: translateY(-8px);
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(229, 57, 53, 0.3);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      transform: translateY(-8px) rotateX(5deg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-color: rgba(229, 57, 53, 0.2);
     }
     
     .stat-number {
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 900;
-      background: linear-gradient(135deg, var(--primary-light) 0%, var(--gold) 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--gold) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -317,87 +309,111 @@
     }
     
     .stat-label {
-      font-size: 0.875rem;
-      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8rem;
+      color: var(--gray-600);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-weight: 600;
     }
     
-    /* Story Section */
+    /* Story Section - TIGHTER */
     .story-section {
-      padding: 120px 2rem;
+      padding: 80px 2rem;
       background: var(--white);
     }
     
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
     }
     
     .section-header {
       text-align: center;
-      margin-bottom: 5rem;
-    }
-    
-    .section-header .eyebrow {
-      background: rgba(229, 57, 53, 0.1);
-      border-color: rgba(229, 57, 53, 0.2);
-      color: var(--primary);
-      margin-bottom: 1rem;
+      margin-bottom: 3rem;
     }
     
     .section-header h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
       font-weight: 800;
       color: var(--dark);
       letter-spacing: -0.02em;
     }
     
     .story-grid {
-      display: grid;
-      gap: 6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
     }
     
     .story-block {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 3rem;
       align-items: center;
+      background: white;
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.4s ease;
+      transform-style: preserve-3d;
+      perspective: 1000px;
     }
     
-    .story-block:nth-child(even) .story-visual {
-      order: 2;
+    .story-block:hover {
+      transform: translateY(-4px) rotateY(2deg);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    }
+    
+    .story-block:nth-child(even) {
+      direction: rtl;
+    }
+    
+    .story-block:nth-child(even) > * {
+      direction: ltr;
     }
     
     .story-visual {
       position: relative;
+      transform-style: preserve-3d;
     }
     
     .story-number {
       position: absolute;
-      top: -20px;
-      left: -20px;
-      width: 80px;
-      height: 80px;
-      background: var(--gradient-red);
-      border-radius: 20px;
+      top: -15px;
+      left: -15px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 900;
       color: white;
-      box-shadow: var(--shadow-3d);
+      box-shadow: 0 10px 30px rgba(229, 57, 53, 0.3);
       z-index: 2;
+      transform: translateZ(20px);
+      transition: transform 0.3s ease;
+    }
+    
+    .story-block:hover .story-number {
+      transform: translateZ(30px) scale(1.1);
     }
     
     .story-image {
       position: relative;
-      border-radius: 24px;
+      border-radius: 16px;
       overflow: hidden;
-      aspect-ratio: 4/3;
-      box-shadow: var(--shadow-3d);
+      aspect-ratio: 16/10;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transform: translateZ(10px);
+      transition: transform 0.4s ease;
+    }
+    
+    .story-image:hover {
+      transform: translateZ(20px) scale(1.02);
     }
     
     .story-image img {
@@ -408,39 +424,95 @@
     }
     
     .story-image:hover img {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
     
-    .story-image::after {
+    /* Placeholder with Nigerian theme */
+    .story-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .story-placeholder::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(229, 57, 53, 0.1) 0%, transparent 50%);
+      opacity: 0.9;
+    }
+    
+    .story-placeholder.challenge::before {
+      background: linear-gradient(135deg, #1a1a2e 0%, #e53935 100%);
+    }
+    
+    .story-placeholder.breakthrough::before {
+      background: linear-gradient(135deg, #e53935 0%, #f59e0b 100%);
+    }
+    
+    .story-placeholder.today::before {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    }
+    
+    .story-placeholder i {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      opacity: 0.9;
+    }
+    
+    .story-placeholder h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .story-placeholder p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .story-content {
+      padding: 1rem 0;
     }
     
     .story-content .eyebrow {
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.7rem;
+      padding: 0.375rem 0.875rem;
     }
     
     .story-content h3 {
-      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-size: clamp(1.375rem, 2.5vw, 1.75rem);
       font-weight: 800;
       color: var(--dark);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       letter-spacing: -0.02em;
     }
     
     .story-content p {
-      font-size: 1.125rem;
+      font-size: 1rem;
       color: var(--gray-600);
-      margin-bottom: 1rem;
-      line-height: 1.8;
+      margin-bottom: 0.75rem;
+      line-height: 1.7;
     }
     
-    /* Mission/Vision Cards */
+    /* Mission Section */
     .mission-section {
-      padding: 120px 2rem;
-      background: var(--gradient-dark);
+      padding: 80px 2rem;
+      background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
       position: relative;
       overflow: hidden;
     }
@@ -450,27 +522,28 @@
       position: absolute;
       inset: 0;
       background-image: 
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
     }
     
     .mv-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin-bottom: 4rem;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
     }
     
     .mv-card {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 32px;
-      padding: 3rem;
+      border-radius: 24px;
+      padding: 2rem;
       position: relative;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
     }
     
     .mv-card::before {
@@ -479,15 +552,15 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
-      background: var(--gradient-red);
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--gold));
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.4s ease;
     }
     
     .mv-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-6px) rotateX(5deg);
       background: rgba(255, 255, 255, 0.08);
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
     }
@@ -497,63 +570,65 @@
     }
     
     .mv-card__icon {
-      width: 64px;
-      height: 64px;
+      width: 48px;
+      height: 48px;
       background: rgba(229, 57, 53, 0.2);
-      border-radius: 16px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
       border: 1px solid rgba(229, 57, 53, 0.3);
+      transform: translateZ(10px);
     }
     
     .mv-card h3 {
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       color: var(--primary-light);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
     
     .mv-card h4 {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 800;
       color: white;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
     
     .mv-card p {
       color: rgba(255, 255, 255, 0.7);
-      line-height: 1.7;
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
     
-    /* Values Grid */
     .values-title {
       text-align: center;
       color: white;
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       font-weight: 800;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
     
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
     }
     
     .value-card {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      padding: 2rem;
+      border-radius: 16px;
+      padding: 1.5rem;
       text-align: center;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
+      transform-style: preserve-3d;
     }
     
     .value-card::before {
@@ -562,14 +637,14 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
-      background: var(--gradient-red);
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--gold));
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }
     
     .value-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-6px) rotateY(3deg);
       background: rgba(255, 255, 255, 0.06);
       border-color: rgba(229, 57, 53, 0.2);
     }
@@ -579,103 +654,100 @@
     }
     
     .value-card__icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      transform: translateZ(10px);
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    
+    .value-card:hover .value-card__icon {
+      transform: translateZ(20px) scale(1.2);
     }
     
     .value-card h4 {
       color: white;
-      font-size: 1.125rem;
+      font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.375rem;
     }
     
     .value-card p {
       color: rgba(255, 255, 255, 0.6);
-      font-size: 0.9rem;
-      line-height: 1.6;
+      font-size: 0.85rem;
+      line-height: 1.5;
     }
     
     /* Trust Section */
     .trust-section {
-      padding: 120px 2rem;
+      padding: 80px 2rem;
       background: var(--gray-100);
     }
     
     .trust-grid {
-      display: grid;
-      gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
     
     .trust-item {
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
       align-items: start;
-      padding: 2.5rem;
+      padding: 1.5rem 2rem;
       background: white;
-      border-radius: 24px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
       border: 1px solid rgba(0, 0, 0, 0.04);
       transition: all 0.3s ease;
+      transform-style: preserve-3d;
     }
     
     .trust-item:hover {
-      transform: translateX(8px);
+      transform: translateX(8px) rotateY(-2deg);
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      border-left: 3px solid var(--primary);
     }
     
     .trust-item__num {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 900;
       color: var(--primary);
-      opacity: 0.3;
+      opacity: 0.2;
       line-height: 1;
     }
     
     .trust-item h4 {
-      font-size: 1.375rem;
+      font-size: 1.125rem;
       font-weight: 800;
       color: var(--dark);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.375rem;
     }
     
     .trust-item p {
       color: var(--gray-600);
-      line-height: 1.7;
-      font-size: 1.0625rem;
+      line-height: 1.6;
+      font-size: 0.95rem;
     }
     
     /* CTA Section */
     .cta-section {
-      padding: 120px 2rem;
-      background: var(--gradient-dark);
+      padding: 100px 2rem;
+      background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0f 100%);
       position: relative;
       overflow: hidden;
       text-align: center;
     }
     
-    .cta-section__orb {
+    .cta-section::before {
+      content: '';
       position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      opacity: 0.4;
-    }
-    
-    .cta-section__orb--1 {
-      width: 500px;
-      height: 500px;
-      background: var(--primary);
-      top: -200px;
-      left: -200px;
-    }
-    
-    .cta-section__orb--2 {
-      width: 400px;
-      height: 400px;
-      background: var(--gold);
-      bottom: -150px;
-      right: -150px;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 30%, rgba(229, 57, 53, 0.1) 0%, transparent 40%);
     }
     
     .cta-section .container {
@@ -684,18 +756,18 @@
     }
     
     .cta-section h2 {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 800;
       color: white;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       letter-spacing: -0.02em;
     }
     
     .cta-section p {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       color: rgba(255, 255, 255, 0.7);
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
+      max-width: 550px;
+      margin: 0 auto 2rem;
       line-height: 1.7;
     }
     
@@ -714,41 +786,43 @@
     .footer {
       background: var(--dark);
       color: white;
-      padding: 80px 2rem 40px;
+      padding: 60px 2rem 30px;
     }
     
     .footer__grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
-      gap: 4rem;
-      margin-bottom: 3rem;
+      gap: 3rem;
+      margin-bottom: 2rem;
     }
     
     .footer__brand p {
       color: rgba(255, 255, 255, 0.6);
-      margin-top: 1rem;
-      line-height: 1.7;
+      margin-top: 0.75rem;
+      line-height: 1.6;
+      font-size: 0.95rem;
     }
     
     .footer h4 {
-      font-size: 0.875rem;
+      font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       color: rgba(255, 255, 255, 0.9);
     }
     
     .footer__links {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.5rem;
     }
     
     .footer__links a {
       color: rgba(255, 255, 255, 0.6);
       text-decoration: none;
       transition: color 0.2s;
+      font-size: 0.9rem;
     }
     
     .footer__links a:hover {
@@ -757,10 +831,10 @@
     
     .footer__bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 2rem;
+      padding-top: 1.5rem;
       text-align: center;
       color: rgba(255, 255, 255, 0.5);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     
     /* Animations */
@@ -777,7 +851,7 @@
     
     .reveal-left {
       opacity: 0;
-      transform: translateX(-50px);
+      transform: translateX(-40px);
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
@@ -788,13 +862,24 @@
     
     .reveal-right {
       opacity: 0;
-      transform: translateX(50px);
+      transform: translateX(40px);
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .reveal-right.active {
       opacity: 1;
       transform: translateX(0);
+    }
+    
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .reveal-scale.active {
+      opacity: 1;
+      transform: scale(1);
     }
     
     /* Mobile Menu */
@@ -846,43 +931,46 @@
       
       .story-block {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
+        padding: 1.5rem;
       }
       
-      .story-block:nth-child(even) .story-visual { order: 0; }
+      .story-block:nth-child(even) { direction: ltr; }
       
       .mv-grid { grid-template-columns: 1fr; }
       
       .footer__grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
       }
     }
     
     @media (max-width: 640px) {
-      .stats-grid { grid-template-columns: 1fr; }
+      .about-hero { padding: 120px 1.5rem 60px; }
       
-      .stat-item { padding: 1.5rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
       
-      .mv-card { padding: 2rem; }
+      .stat-item { padding: 1.5rem 1rem; }
+      
+      .mv-card { padding: 1.5rem; }
       
       .trust-item {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 0.75rem;
+        padding: 1.25rem;
       }
       
+      .trust-item__num { font-size: 2rem; }
+      
       .story-number {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
         top: -10px;
         left: -10px;
       }
       
-      .btn-group {
-        flex-direction: column;
-        width: 100%;
-      }
+      .btn-group { flex-direction: column; width: 100%; }
       
       .btn { width: 100%; }
     }
@@ -923,10 +1011,8 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section - LIGHT -->
   <section class="about-hero">
-    <div class="about-hero__orb about-hero__orb--1"></div>
-    <div class="about-hero__orb about-hero__orb--2"></div>
     <div class="about-hero__content">
       <div class="eyebrow reveal">
         <i class="fas fa-heart"></i>
@@ -944,26 +1030,26 @@
   <!-- Stats Section -->
   <section class="stats-section">
     <div class="stats-grid">
-      <div class="stat-item reveal">
+      <div class="stat-item reveal-scale">
         <div class="stat-number" data-target="300">0</div>
         <div class="stat-label">Retail Stores</div>
       </div>
-      <div class="stat-item reveal">
+      <div class="stat-item reveal-scale">
         <div class="stat-number" data-target="7">0</div>
         <div class="stat-label">Brand Partners</div>
       </div>
-      <div class="stat-item reveal">
+      <div class="stat-item reveal-scale">
         <div class="stat-number" data-target="10">0</div>
         <div class="stat-label">Years Experience</div>
       </div>
-      <div class="stat-item reveal">
+      <div class="stat-item reveal-scale">
         <div class="stat-number" data-target="48">0</div>
         <div class="stat-label">Avg. Response</div>
       </div>
     </div>
   </section>
 
-  <!-- Origin Story -->
+  <!-- Origin Story - TIGHTER -->
   <section class="story-section">
     <div class="container">
       <div class="section-header reveal">
@@ -972,53 +1058,66 @@
       </div>
       
       <div class="story-grid">
-        <!-- Block 01 -->
-        <div class="story-block">
-          <div class="story-visual reveal-left">
+        <!-- Block 01 - Challenge -->
+        <div class="story-block reveal">
+          <div class="story-visual">
             <div class="story-number">01</div>
             <div class="story-image">
-              <img src="../images/IMG-20260119-WA0016(1).jpg" alt="DALA in the field">
+              <div class="story-placeholder challenge">
+                <i class="fas fa-store-slash"></i>
+                <h4>The Struggle</h4>
+                <p>Nigerian retail challenges</p>
+              </div>
             </div>
           </div>
-          <div class="story-content reveal-right">
+          <div class="story-content">
             <div class="eyebrow">Where We Started</div>
             <h3>Born From the Problem We Lived</h3>
-            <p>Before DALA became what it is today, we were you. We had a company that was slowly dying. Not because the product wasn't good. Not because customers didn't want it. But because the operational chaos of Nigerian retail was eating us alive.</p>
-            <p>Deliveries were killing our cash flow. Getting into stores felt impossible. Small order quantities weren't worth it to logistics companies, so we stayed stuck in a handful of locations while competitors expanded.</p>
-            <p>That's when DALA was born — not as a business idea, but as a lifeline.</p>
+            <p>Before DALA became what it is today, we were you. We had a company that was slowly dying. Not because the product wasn't good. But because the operational chaos of Nigerian retail was eating us alive.</p>
+            <p>Deliveries were killing our cash flow. Getting into stores felt impossible. Small order quantities weren't worth it to logistics companies.</p>
+            <p><strong>That's when DALA was born — not as a business idea, but as a lifeline.</strong></p>
           </div>
         </div>
         
-        <!-- Block 02 -->
-        <div class="story-block">
-          <div class="story-visual reveal-right">
+        <!-- Block 02 - Breakthrough -->
+        <div class="story-block reveal">
+          <div class="story-visual">
             <div class="story-number">02</div>
             <div class="story-image">
-              <img src="../images/IMG-20260119-WA0017.jpg" alt="DALA growth story">
+              <div class="story-placeholder breakthrough">
+                <i class="fas fa-rocket"></i>
+                <h4>The Breakthrough</h4>
+                <p>From 10 to 300+ stores</p>
+              </div>
             </div>
           </div>
-          <div class="story-content reveal-left">
+          <div class="story-content">
             <div class="eyebrow">The Breakthrough</div>
             <h3>What We Learned Changes Everything</h3>
-            <p>DALA helped Wilson Lemonade scale from struggling in a few stores to thriving in over 300 modern retail locations across Lagos and Ogun. What took us close to a decade to achieve on our own could have been done in 1–2 years with what we know now.</p>
-            <p>We learned: the problem was never the product. It was the operations. When you can't deliver efficiently, you can't scale. When payments are unpredictable, you can't plan.</p>
-            <p><strong>We lived that reality. And we found the way out.</strong></p>
+            <p>DALA helped Wilson Lemonade scale from struggling in a few stores to thriving in over 300 modern retail locations across Lagos and Ogun.</p>
+            <p>What took us close to a decade to achieve on our own could have been done in 1–2 years with what we know now.</p>
+            <p><strong>We learned: the problem was never the product. It was the operations.</strong> When you can't deliver efficiently, you can't scale.</p>
           </div>
         </div>
         
-        <!-- Block 03 -->
-        <div class="story-block">
-          <div class="story-visual reveal-left">
+        <!-- Block 03 - Today -->
+        <div class="story-block reveal">
+          <div class="story-visual">
             <div class="story-number">03</div>
             <div class="story-image">
-              <img src="../images/IMG-20260119-WA0019.jpg" alt="DALA helping brands today">
+              <div class="story-placeholder today">
+                <i class="fas fa-handshake"></i>
+                <h4>Today</h4>
+                <p>Helping brands scale</p>
+              </div>
             </div>
           </div>
-          <div class="story-content reveal-right">
+          <div class="story-content">
             <div class="eyebrow">What We Do Today</div>
             <h3>Sharing What Saved Us</h3>
-            <p>Today, DALA exists to help other founder-led brands move faster than they ever could alone. We help you get on more shelves, expand across Lagos and Ogun, and scale rapidly — while you focus on what actually matters: making great products and building demand.</p>
-            <p>We're not selling you theory. We're sharing what saved us. This is tested, proven, and works because we've lived it, fixed it, and built a system that helps brands like yours achieve in 1-2 years what used to take a decade.</p>
+            <p>Today, DALA exists to help other founder-led brands move faster than they ever could alone. We help you get on more shelves, expand across Lagos and Ogun, and scale rapidly.</p>
+            <p>While you focus on what actually matters: making great products and building demand.</p>
+            <p><strong>We're not selling you theory. We're sharing what saved us.</strong></p>
           </div>
         </div>
       </div>
@@ -1125,16 +1224,14 @@
 
   <!-- CTA Section -->
   <section class="cta-section">
-    <div class="cta-section__orb cta-section__orb--1"></div>
-    <div class="cta-section__orb cta-section__orb--2"></div>
     <div class="container">
       <div class="reveal">
-        <div class="eyebrow" style="margin-bottom: 1.5rem;">Get Started</div>
+        <div class="eyebrow" style="margin-bottom: 1.5rem; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">Get Started</div>
         <h2>Let's Build Something Great Together</h2>
         <p>If you're a founder-led brand ready to scale with structure, transparency, and a partner who truly gets what you're facing, we'd love to explore whether we're aligned.</p>
         <div class="btn-group" style="justify-content: center;">
           <a class="btn btn--white btn--lg" href="get-listed.html">Partner With Us</a>
-          <a class="btn btn--ghost btn--lg" href="for-brands.html" style="color: white; border-color: rgba(255,255,255,0.3);">Learn More About Our Services</a>
+          <a class="btn btn--outline btn--lg" href="for-brands.html">Learn More About Our Services</a>
         </div>
       </div>
     </div>
@@ -1169,7 +1266,6 @@
             <a href="tel:+2348148824115">📞 +234 814 882 4115</a>
             <a href="tel:+2349032352306">📞 +234 903 235 2306</a>
             <a href="mailto:info@dalatechnologies.com">✉ info@dalatechnologies.com</a>
-            <a href="#">🕘 8am – 6pm</a>
           </div>
         </div>
       </div>
@@ -1184,7 +1280,7 @@
     // Intersection Observer for scroll animations
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -30px 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
@@ -1196,7 +1292,7 @@
     }, observerOptions);
     
     // Observe all reveal elements
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
       observer.observe(el);
     });
     
@@ -1214,7 +1310,8 @@
             const ease = 1 - Math.pow(1 - progress, 3);
             const current = Math.floor(ease * target);
             
-            el.textContent = current + (el.parentElement.querySelector('.stat-label').textContent.includes('hr') ? 'hr' : '+');
+            const suffix = el.parentElement.querySelector('.stat-label').textContent.includes('hr') ? 'hr' : '+';
+            el.textContent = current + suffix;
             
             if (progress < 1) {
               requestAnimationFrame(step);
@@ -1237,6 +1334,29 @@
     
     hamburger.addEventListener('click', () => {
       mobileMenu.classList.toggle('active');
+    });
+    
+    // 3D tilt effect for story blocks on mouse move
+    const storyBlocks = document.querySelectorAll('.story-block');
+    
+    storyBlocks.forEach(block => {
+      block.addEventListener('mousemove', (e) => {
+        const rect = block.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        
+        block.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      });
+      
+      block.addEventListener('mouseleave', () => {
+        block.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+      });
     });
   </script>
 
