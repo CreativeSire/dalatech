@@ -1,0 +1,79 @@
+BRAND PARTNERS PAGE - COMPLETE CONTENT
+PAGE NAVIGATION MAP
+This page is accessible from:
+Navigation/Hamburger Menu → "Brand Partners"
+Homepage Section 3 (Card Slideshow) → "Learn More" button on "For Brands" card
+Homepage Section 1 (Hero) → "DALA for Brands" button
+Footer → Quick links
+HEADER SECTION
+Headline (Hook):
+Grow in Supermarkets With Structure, Discipline, and Reliable Execution
+Paragraph:
+DALA is the control layer between your brand and supermarkets. We streamline the orders to payment cycle, ensure supermarket standards are upheld, and keep operations running smoothly so each party can focus on product quality and demand creation without operational chaos.DALA, helps eliminate distractions,make payments more predictable, create visibility, and a proven path to grow across more supermarkets. Dala helps you focus on production and demand generation, with full transparency and confidence in efficiency and consistently reliable operational execution.
+CTA Button:
+Work with us 
+Links to: Brand Partners Application Form
+BRAND PARTNERS LOGO SECTION
+[Horizontal Auto-Sliding Logo Carousel]
+Design Note: Clean logo display, neutral background, seamless auto-slide. Logos only, no text.
+VALUE PROPOSITION SECTION
+Headline:
+Why Growing Brands Choose DALA
+Subheading:
+Our operations helps brands meet supermarket standards, build trust with retailers,and protect your cash flow.
+4 Value Proposition Rectangle card Boxes 
+BOX 1:
+Icon: [Payment/Cash Flow icon]
+Headline:
+Reliable Cash Flow & Predictable Payment.
+Description: Clear paperwork and reliable payment timing protect cash flow. We ensure payments are processed within agreed cycles, so you can plan production with confidence and less financial stress.
+BOX 2:
+Icon: [Store/Expansion icon]
+Headline:
+Faster Market Access
+Description:
+Our professional field sales team  improves in-store results and expands coverage into more stores at a fraction of the cost. 
+BOX 3:
+Icon: [visibility and transparency icon]
+Headline:
+Clear Reports & Performance Tracking
+Description:Retail activity report and data driven analysis provides valuable insight for our brand partners so you always know what's happening on your shelves, no surprises, just clarity. This way you're never in the dark about your brand's retail presence. Full clarity and no surprises our partners are never in the dark.
+BOX 4:
+Icon: [Infrastructure/System icon]
+Headline:
+Structured Execution Eliminate Chaos.
+Description: We handle in-store shelf management and order generation, we also address and resolve issues quickly. So brands scale without the overhead risk, more structure and full transparency.
+WHAT DALA DOES FOR YOU SECTION
+Headline:
+What DALA Does for Brand Partners
+Subheading:
+Drive efficient, disciplined,transparent and sustainable growth
+Services cards (slide show)
+SERVICE 1:
+Service Name:
+Retail Expansion & Store Onboarding
+Brief Description:
+We get brands on shelf                                                                                                                                                                                                                                                                                                                                                                faster. From initial introduction to consistent shelf presence, we ensure your brand reaches more customers.
+SERVICE 2:
+Service Name:
+In-Store Operations & Shelf Management
+Brief Description:
+We Confirm fifo compliance, resolve issues promptly and  ensure shelf presence preventing stock out
+SERVICE 3:
+Service Name:
+Warehousing & Timely Delivery
+Brief Description:
+ Flexible ambient and cold storage solutions. 48 hour fulfillment with no minimum order quantities. Accurate invoicing and real-time delivery confirmation to reduce this disputes and make reconciliation easier.
+SERVICE 4:
+Service Name:
+Weekly Reporting & Transparent Insights
+Brief Description:
+Receive unbiased detailed and meaningful activity and sales reports, create full visibility and know your brand performance on exactly how your products are doing across retail outlets.SERVICE 5:
+Service Name:
+Stress-free Reliable Payment
+Brief Description:
+We have fixed payment terms that eliminate time, energy and money spent chasing payment.Predictable cash flow allows you to produce, market and grow sustainably.
+FINAL CTA 
+Ready to Scale With Discipline, Transparency, and Reliable Structure?
+ CTA Button (Become a Brand Partner):
+Links to: Brand Partners Application Form

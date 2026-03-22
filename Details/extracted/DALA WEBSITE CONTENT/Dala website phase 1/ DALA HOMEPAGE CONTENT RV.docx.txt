@@ -1,0 +1,99 @@
+ DALA HOMEPAGE CONTENT  SECTION 1: HERO - UNIVERSAL OPENING SLIDE
+Main Headline:
+DALA: The Retail Execution Control Layer
+Supporting Subheadline:
+Ensuring supermarket standards are met while driving efficient, disciplined, transparent, and sustainable growth between brands and modern retail.
+Visual Element:
+ [The Retail Risk Control animation Framework]
+Two Primary CTA Buttons:
+Button 1: DALA for Supermarkets Color: [Primary brand color] Links to: DALA For Supermarkets dedicated page
+Button 2: DALA for Brands Color: [Secondary brand color] Links to: DALA For Brands dedicated page
+End of Section 1
+(SECTION 2:SUPERMARKET PARTNER LOGOS)
+Section Headline:
+Trusted By Leading Retailers
+Section Subheading:
+Building retail infrastructure with Nigeria's Reputable retailers.
+Visual Element:
+[Horizontal Auto-Sliding of different supermarket Logos]
+End of Section 2
+(SECTION 3: CARD SLIDESHOW - "WHO WE'RE BUILT FOR)
+Section Headline:
+Built For Two Sides of Retail
+Section Subheading:
+DALA serves as the control layer between supermarkets and brands streamlining operations, ensuring standards are met, and providing reliable execution for both sides.
+CARD 1: FOR SUPERMARKETS
+Icon: [Retail/Store/Building icon]
+Card Title: Dala For Supermarkets
+Brief Description: We reduce supplier-related risks and complications by ensuring your standards are upheld, monitoring inventory to prevent overstocking and stockouts, and quickly addressing and resolving  expiry and product quality issues.
+CTA Button: Learn More Links to: For Supermarkets dedicated page
+CARD 2: FOR BRANDS
+Icon: [Brand/Product/Box icon]
+Card Title: Dala For Brands
+Brief Description: We help you grow in supermarkets with structure, discipline, and reliable execution providing predictable payments, clear visibility, and operational clarity so you can focus on product quality and demand creation.
+CTA Button: Learn More  Links to: For Brands dedicated page
+Design Note: Cards should be in horizontal slideshow format with manual and Auto-slide navigation.
+End of Section 3
+(SECTION 4: BRAND PARTNER LOGOS)
+Section Headline:
+Scaling Ambitious Brands Across Several Retail Outlets
+Section Subheading:
+Join the brands growing with discipline, transparency, and reliable structure.
+Design Note: Clean logo display, neutral background, seamless auto-slide of our brand partners Logos
+End of Section 4
+(SECTION 5: TESTIMONIALS/CASE STUDIES (Review Cards)
+Section Headline:
+See What our Brand Partners Say About DALA
+Section Subheading:
+Real results from brands scaling with discipline, efficiency, and Sustainable growth.
+Testimonial Cards (4 Cards - Auto-Sliding Carousel):
+Design Note: Pre-designed cards. Just insert text placeholders.
+Card 1: Wilson's Lemonade
+Working with DALA has transformed our retail business and how we distribute our products. They helped us get our products into over 300 stores across Lagos and Ogun State, drastically increasing our reach and sales & profitability.
+General Manager….kehinde
+CTA button (View case study) which leads to the brands dedicated case study page 
+Card 2: ZayithWe're impressed with Dala's reach and ability to get our product into 175 active retail stores across Lagos and Ogun. Their broad geographic coverage and daily physical salesforce outreach have helped spot & resolve issues quickly and also reach new customers we couldn't access on our own.
+Brand Manager…Marire Adebanjo
+Card 3: Eloha We're impressed with Dala's reach and ability to get our product into 175 active retail stores across Lagos and Ogun. Their broad geographic coverage and daily physical salesforce outreach have helped spot & resolve issues quickly and also reach new customers we couldn't access on our own.
+Brand Manager Marire Adebanjo
+Card 4: August SecretsDala works with a strong sense of ownership and commitment to pushing our products across multiple Lagos stores. Their distribution footprint has significantly supported our brand visibility and sales penetration
+FOUNDER ….Toyin
+Section Bottom CTA (Below Carousel):
+CTA Button: Get Listed Now Links to: Get Your Brand Listed page
+End of Section 5
+📍 SECTION 6: FINAL CONVERSION CTA
+Section Headline:
+Ready to Work With DALA?
+Section Subheading:
+Join the brands and retailers scaling with structure, discipline, and transparency.
+2 CTA Buttons (Grid/Row Layout):
+Button 1: Work With Us (Brands) Links to: Work With Us Form (Brand Partners Application)
+Button 2: Work With Us (Supermarkets) Links to: Work With Us Form (Supermarket Partners Application)
+End of Section 6
+📍 SECTION 7: FOOTER
+Footer Layout (3 Columns):
+QUICK LINKS
+Home
+DALA for Brands
+DALA for Supermarkets
+How It Works
+Case Studies
+About Us
+Contact Us
+CONTACT INFO
+Address: Iju, Ota, Ogun State, Nigeria
+Phone: +234 814 882 4115 +234 903 235 2306
+Email: info@dalatechnologies.com
+Business Hours:8am-6pm
+SOCIAL MEDIA icons (Centered at bottom):
+LinkedIn: [Link]
+Instagram: [Link]
+Twitter/X: [Link]
+Facebook: [Link]
+Copyright Notice:
+© 2025 DALA Technologies. All rights reserved.
+PERSISTENT ELEMENT: WHATSAPP BUTTON
+Fixed floating button (bottom right corner, visible on all pages)
+Icon: WhatsApp logo
+Hover Text/Label: Chat with us
+Action: Opens WhatsApp chat with DALA with automatic message (Hi, am reaching out from the dala website…..) Links to: +234 704 035  0639

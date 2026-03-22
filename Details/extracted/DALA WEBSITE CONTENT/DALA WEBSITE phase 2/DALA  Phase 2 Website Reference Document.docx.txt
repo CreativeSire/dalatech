@@ -1,0 +1,36 @@
+DALA  Phase 2 Website Reference Document
+1. Retailer Directory
+Reference Website: TripAdvisor (https://www.tripadvisor.com)
+How it should work:
+The directory should be searchable and filterable. Users can filter by: Location, Retailer Type (supermarket, mini-mart, pharmacy), Chain Name.
+Each retailer entry should include: Name, Address (with map and geolocation), Type, Key Contact (if available).
+Users can export or download the retailer list. Similar to TripAdvisor, where users can search, filter, and view listings with maps and details.
+Key points: Geotagged map view, card or table layout, smooth search/filter functionality, mobile-friendly.
+2. Retailer Feedback & Ratings
+Reference Websites: TripAdvisor, Zomato (https://www.zomato.com)
+How it should work:
+Logged-in brands and suppliers can rate retailers based on: Supplier treatment, Foot traffic, Receiving efficiency, Timely payment, Responsiveness.
+Ratings use 1–5 stars, with optional comments.
+Aggregate ratings visible to other logged-in users.
+Key points: Ratings system like TripAdvisor/Zomato for restaurants; intuitive, visual, and easy to understand; mobile-friendly.
+3. Retailer Portal
+Reference Websites: Airbnb (https://www.airbnb.com), Squarespace Admin Panel (https://www.squarespace.com)
+How it should work:
+Secure login for retailers only.
+Features include: Posting store openings, Promotions, Announcements.
+Analytics view: profile views, engagement stats.
+Key points: Clean dashboard interface, easy to navigate, secure access, visually clear sections for posts and analytics.
+4. Brand / Supplier Portal
+Reference Websites: Airbnb Host Dashboard, Mixpanel Analytics (https://mixpanel.com)
+How it should work:
+Secure login for brands and suppliers.
+Features include: Submit offers/rebates, Rate retailers, Download onboarding guides and retail lists, Track promotion performance.
+Key points: Structured dashboard, easy submission forms, analytics charts for performance tracking, intuitive layout for quick access.
+5. Insights / Blog Section
+Reference Websites: Mixpanel Blog (https://mixpanel.com/blog), Squarespace Blog (https://www.squarespace.com)
+How it should work:
+Public blog feed with educational updates, market insights, case studies, and tips.
+Clean layout for readability and navigation.
+Categories and search/filtering option recommended.
+Key points: Modern, readable, visually clear blog; mobile-friendly; organized by category for easy browsing.
+This reference document explains how each section should function and look, based on our agreed websites. It’s in simple, communicable English so the developer can understand design, flow, and functionality requirements clearly.

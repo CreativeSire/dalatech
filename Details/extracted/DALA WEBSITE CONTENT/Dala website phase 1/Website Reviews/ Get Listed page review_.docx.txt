@@ -1,0 +1,187 @@
+Website Review Report – Get Listed With DALA Page
+Page: Get Listed With DALA View Reviewed: Desktop Version
+Section 1 – Hero Section
+Headline:
+“Get Your Brand Listed With DALA”
+Subheading:
+Subheading is well placed and visually acceptable.
+Status:
+✅ Headline and subheading are appropriate. No major structural concerns here.
+Section 2 – Qualification Boxes
+There are two major boxes under the hero section:
+“You Will Enjoy Partnering With DALA If You…”
+“DALA May Not Be a Good Fit for You Yet If…”
+Box 1 – “You Will Enjoy Partnering With DALA If You…”
+Issue Identified:
+According to the approved brief, there are only four (4) qualifying points.
+On the live design, there are five (5) listed items.
+The fifth item is actually a call-to-action statement, not a qualification.
+Required Correction:
+Remove the fifth item from the list of qualifications.
+Only the four approved points from the document should remain.
+Important Note on Call-to-Action:
+If the developer wants to retain the added call-to-action:
+It must be visually differentiated from the list.
+It should NOT appear as part of the bullet/numbered list.
+It should be styled as a button, similar to the existing button in that section (e.g., the “Is DALA the right fit for you?” style button).
+It should appear smaller and clearly separated from the qualification list.
+It must not appear as a fifth condition.
+Box 2 – “DALA May Not Be a Good Fit for You Yet If…”
+Issue Identified:
+According to the brief, there are three (3) disqualifying conditions.
+On the design, there are four (4) listed items.
+The fourth item is a call-to-action statement, which is not part of the approved document.
+Required Correction:
+Reduce the list to the three approved conditions only.
+Remove the added fourth statement from the list.
+If the extra statement is to remain:
+It must be clearly separated.
+It should be styled as a button, not a bullet point.
+It must not visually appear as part of the list.
+Section 3 – “What We Need From You”
+This section outlines what DALA expects from brand partners.
+Content Accuracy Issues:
+The approved document contains three (3) requirements.
+The current design shows four (4), a
+With the last point being a call to action statement
+You mentioned you like the fourth — that is acceptable if intentional.
+However:
+Major Problem:
+The subheadings and body text do NOT match the approved documents
+Required Correction:
+The developer must copy the text word-for-word from the approved document.
+Specific Example:
+In the document, the correct wording is:
+“Proactive Prevention and Responsive Action”
+However, on the live design, it says:
+“Responsive growths”
+This is incorrect.
+Correction:
+Replace “Responsive growth” with: “Responsive Action”
+Then insert the exact body text from the document under it.
+This instruction applies to all boxes in this section. Put the exact word on the document subheading and their body test for them. 
+Section 4 – “How the Partnership Works”
+This section contains five (5) steps, and five are displayed — which is correct.
+However:
+Major Issue:
+The subheadings do NOT match the document.
+The body text does NOT match the document.
+The wording has been changed
+Required Correction:
+Copy and paste in each step’s header exactly as written in the approved document.
+Copy and paste in each step’s body text exactly as written in the approved document.
+The content in the document is already concise. It should be used as-is.
+Section 5 – Layout & Alignment Issues (Desktop)
+On the how the partnership works section
+Problem:
+The text inside boxes is taking up excessive vertical space.
+Boxes appear elongated.
+Some lines contain only one or two words.
+The body text is not arranged to fit the box.
+Content looks stretched across the full width of the page.
+Required Desktop Corrections:
+Adjust text width so text wraps naturally fitting the box as on mobile view.
+Avoid elongated boxes with excessive vertical spacing.
+Make text compact and visually balanced.
+Align text properly under headings within each box.
+And also this particular how the partnership works has a page of its own so I suggest you remove it from this section let it remain on the how it works page or you leave it on this section but remove the  body text explaining each of the steps of the process and just leave the numbers and the step-by-step heading of how it works only
+Website Review Report – Get Listed With DALA Page
+Page: Get Listed With DALA View Reviewed: Mobile Version
+Important Note
+All content corrections mentioned in the Desktop Review still apply here:
+All wording must be copied word-for-word from the approved document.
+No paraphrasing.
+No improvised statements.
+No added call-to-action lines inside lists in cards for these  for the my mobile version 
+This mobile review will focus mainly on layout and responsiveness.
+Section 1 – “Are We a Good Fit?” Boxes
+This includes the two major qualification boxes:
+“You Will Enjoy Partnering With DALA If…”
+“DALA May Not Be a Good Fit for You Yet If…”
+Layout & Responsiveness Issues
+1. Box Width
+Problem:
+The boxes are too wide on mobile.
+The borders are almost touching the edges of the phone screen.
+There is insufficient side padding.
+Required Correction:
+Reduce box width slightly.
+Add proper left and right margin.
+Ensure the box breathes properly within the mobile screen.
+Maintain comfortable padding inside the box.
+The boxes should not feel “edge-to-edge” or cramped on the phone view 
+2. Border Color Differentiation
+Since the section contrasts positive vs. negative alignment:
+The first box represents positive alignment.
+The second box represents misalignment / not a fit.
+Required Visual Correction:
+The first box border should be entirely green not just half  (symbolizing positive/good fit).
+The second box border should be entirely red (symbolizing not a good fit).
+This improves:
+Visual clarity
+Emotional signaling
+User understanding
+The color must be clearly visible but still brand-aligned.
+Content Reminder (Still Applies on extra list items.
+Do not includeMobile)
+Even though this is layout-focused:
+Remove  call-to-action statements inside the bullet lists.
+If CTA remains, it must be styled as a button and clearly separated.
+Section 2 – “What We Need From You”
+Responsiveness Status:
+✅ Layout is responsive. ✅ Boxes stack correctly. ✅ Spacing is acceptable.
+No major layout restructuring needed.
+Content Reminder
+Replace all headers and body text with exact wording from the approved document.
+Replace incorrect phrases like:
+“Responsive growth”
+With: responsive growth without putting the word is Proactive Prevention and Responsive Action”
+Apply all wording corrections from desktop review here as well.
+Section 3 – “How the Partnership Works”
+This section requires more structural adjustment on mobile.
+Structural Concern
+There is already a dedicated page for “How the Partnership Works.”
+Because of that:
+This section on the mobile version should not be overly detailed.
+It should not describe each step in full paragraph format.
+Required Mobile Adjustment
+If this section remains on this page:
+1. Reduce Detail
+Do NOT include full descriptive body text under each step.
+Only include:
+The step headings (copied word-for-word from the document).
+A clean vertical timeline layout.
+2. Layout Structure
+Align the the steps vertically in the mobile view
+Use a vertical connecting line linking each step.
+Keep it minimal and clean.
+Avoid bulky descriptive paragraphs.
+This keeps:
+The mobile experience clean.
+The page from becoming too long.
+The user focused.
+3. Header Accuracy
+The step titles must:
+Be copied exactly from the approved document.
+Not be rewritten.
+Not be rephrased.
+Overall Mobile Layout Observations
+Improvements Needed:
+Reduce edge-to-edge box width.
+Improve margin spacing.
+Differentiate positive vs negative boxes using green/red borders.
+Simplify “How the Partnership Works” section.
+Maintain clean vertical stacking.
+Mobile Version – Summary of Required Fixes
+Layout Fixes:
+Reduce width of qualification boxes.
+Add side margins.
+Apply green border to “Good Fit” box.
+Apply red border to “Not a Good Fit” box.
+Simplify How the Partnership Works” to heading + vertical connector only.
+Avoid elongated blocks of text.
+Content Fixes (Still Apply):
+Remove extra list items.
+Separate CTA from lists.
+Replace all altered wording with document text.
+Use exact headers from the approved in brief.

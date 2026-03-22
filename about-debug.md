@@ -1,0 +1,258 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "D DALA" [ref=e4] [cursor=pointer]:
+        - /url: ../index.html
+        - generic [ref=e5]: D
+        - generic [ref=e6]: DALA
+      - generic [ref=e7]:
+        - link "DALA for Brands" [ref=e8] [cursor=pointer]:
+          - /url: for-brands.html
+        - link "DALA for Supermarkets" [ref=e9] [cursor=pointer]:
+          - /url: for-supermarkets.html
+        - link "About Us" [ref=e10] [cursor=pointer]:
+          - /url: about.html
+        - link "Case Studies" [ref=e11] [cursor=pointer]:
+          - /url: case-studies.html
+        - link "Contact Us" [ref=e12] [cursor=pointer]:
+          - /url: contact.html
+        - link "Work With Us" [ref=e13] [cursor=pointer]:
+          - /url: get-listed.html
+  - generic [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]: 
+      - text: Our Story
+    - heading "Built by operators. Designed for founders." [level=1] [ref=e18]:
+      - text: Built by operators.
+      - text: Designed for founders.
+    - paragraph [ref=e19]: We were you. A brand with a great product, struggling against the operational chaos of Nigerian retail. DALA was born from that struggle—and built to solve it.
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - heading "From struggling brand to retail operations engine" [level=2] [ref=e23]
+      - paragraph [ref=e24]: Before DALA became what it is today, we were you. We had a company that was slowly dying. Not because the product wasn't good. Not because customers didn't want it. But because the operational chaos of Nigerian retail was eating us alive.
+      - paragraph [ref=e25]: Deliveries were killing our cash flow. Getting into stores felt impossible. Small order quantities weren't worth it to logistics companies, so we stayed stuck in a handful of locations while competitors expanded.
+      - paragraph [ref=e27]: That's when DALA was born—not as a business idea, but as a lifeline. We built the operational engine we desperately needed to save our own company. And it worked.
+      - paragraph [ref=e28]: DALA helped Wilson's Lemonade scale from struggling in a few stores to thriving in over 300 modern retail locations across Lagos and Ogun. What took us close to a decade to achieve on our own, could have been done in 1-2 years having what we know now—DALA.
+    - generic [ref=e31]:
+      - generic [ref=e32]: 10+
+      - generic [ref=e33]: Years of Experience
+      - generic [ref=e34]: In Nigerian Retail
+  - generic [ref=e36]:
+    - generic [ref=e37]: Who We Are
+    - heading "The retail operations engine for growing brands" [level=2] [ref=e38]
+    - paragraph [ref=e39]: DALA exists to remove the operational bottlenecks that keep great products from scaling responsibly in modern retail. We're not a traditional distributor. We're not a marketing agency. We're an operational partner built specifically for brands that want structure, transparency, and disciplined growth.
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - generic [ref=e43]: 
+        - heading "Operations-First" [level=4] [ref=e44]
+        - paragraph [ref=e45]: We handle the entire order-to-payment process so you can focus on product and demand.
+      - generic [ref=e46]:
+        - generic [ref=e48]: 
+        - heading "True Partnership" [level=4] [ref=e49]
+        - paragraph [ref=e50]: Our success is tied to yours. We win when your products move.
+      - generic [ref=e51]:
+        - generic [ref=e53]: 
+        - heading "Disciplined Growth" [level=4] [ref=e54]
+        - paragraph [ref=e55]: Structure and transparency over quick fixes. Sustainable scaling built to last.
+  - generic [ref=e58]:
+    - generic [ref=e59]:
+      - generic [ref=e61]: 
+      - heading "Our Mission" [level=3] [ref=e62]
+      - heading "To remove operational bottlenecks so great products can scale responsibly in modern retail." [level=2] [ref=e63]
+      - paragraph [ref=e64]: "We handle the push: store relationships, order generation, merchandising, delivery, and payment collection, so brand owners can focus on the pull: product quality, marketing, and demand creation."
+    - generic [ref=e65]:
+      - generic [ref=e67]: 
+      - heading "Our Vision" [level=3] [ref=e68]
+      - heading "To be the trusted retail operations engine for every growing consumer brand in Nigeria." [level=2] [ref=e69]
+      - paragraph [ref=e70]: We envision an ecosystem where founders scale with structure, transparency, and predictability—free from the constant stress of logistics, collections, and retail politics.
+  - generic [ref=e71]:
+    - generic [ref=e72]:
+      - generic [ref=e73]: What Drives Us
+      - heading "Our Core Values" [level=2] [ref=e74]
+      - paragraph [ref=e75]: The principles that guide every decision we make and every partnership we build.
+    - generic [ref=e76]:
+      - generic [ref=e77]:
+        - generic [ref=e79]: 
+        - heading "Honest Communication" [level=4] [ref=e80]
+        - paragraph [ref=e81]: We set clear expectations and communicate transparently. No overselling. No surprises. Just the truth about what we can do and what success requires.
+      - generic [ref=e82]:
+        - generic [ref=e84]: 
+        - heading "Reliable Execution" [level=4] [ref=e85]
+        - paragraph [ref=e86]: We do what we say, when we say. You can count on us to show up, follow through, and deliver consistently. Retail rewards reliability.
+      - generic [ref=e87]:
+        - generic [ref=e89]: 
+        - heading "True Partnership" [level=4] [ref=e90]
+        - paragraph [ref=e91]: Our subscription + performance fee model aligns our incentives directly with yours. When you win, we win. That's partnership, not vendor-ship.
+      - generic [ref=e92]:
+        - generic [ref=e94]: 
+        - heading "Founder-Focused" [level=4] [ref=e95]
+        - paragraph [ref=e96]: We're built for decisive brand owners who are serious about growth. We understand the realities you face because we've lived them.
+      - generic [ref=e97]:
+        - generic [ref=e99]: 
+        - heading "Full Transparency" [level=4] [ref=e100]
+        - paragraph [ref=e101]: Weekly reports on sales, inventory, and store activity. You're never in the dark about what's happening with your brand.
+      - generic [ref=e102]:
+        - generic [ref=e104]: 
+        - heading "Integrity Always" [level=4] [ref=e105]
+        - paragraph [ref=e106]: We protect your cash flow, respect your brand, and treat your business like our own. We handle your products with care and your trust with responsibility.
+  - generic [ref=e107]:
+    - generic [ref=e108]: Our Impact
+    - heading "Numbers that tell our story" [level=2] [ref=e109]
+    - generic [ref=e110]:
+      - generic [ref=e111]:
+        - generic [ref=e112]: 300+
+        - generic [ref=e113]: Retail Stores
+        - generic [ref=e114]: Across Lagos & Ogun
+      - generic [ref=e115]:
+        - generic [ref=e116]: 48hrs
+        - generic [ref=e117]: Issue Resolution
+        - generic [ref=e118]: Average response time
+      - generic [ref=e119]:
+        - generic [ref=e120]: 99%
+        - generic [ref=e121]: On-Time Delivery
+        - generic [ref=e122]: Reliability rate
+      - generic [ref=e123]:
+        - generic [ref=e124]: 30d
+        - generic [ref=e125]: Payment Guarantee
+        - generic [ref=e126]: Predictable cash flow
+  - generic [ref=e127]:
+    - generic [ref=e128]:
+      - generic [ref=e129]: Partners
+      - heading "Brands We Work With" [level=2] [ref=e130]
+      - paragraph [ref=e131]: We're proud to partner with ambitious founder-led brands across Nigeria.
+    - generic [ref=e132]:
+      - generic [ref=e133]:
+        - generic [ref=e134]: 
+        - text: Wilson's
+      - generic [ref=e135]:
+        - generic [ref=e136]: 
+        - text: Zayith
+      - generic [ref=e137]:
+        - generic [ref=e138]: 
+        - text: August Secrets
+      - generic [ref=e139]:
+        - generic [ref=e140]: 
+        - text: Eloha
+      - generic [ref=e141]:
+        - generic [ref=e142]: 
+        - text: Orisirisi
+      - generic [ref=e143]:
+        - generic [ref=e144]: 
+        - text: Soulmate
+      - generic [ref=e145]:
+        - generic [ref=e146]: 
+        - text: Veritas
+  - generic [ref=e148]:
+    - generic [ref=e149]:
+      - generic [ref=e150]: Why DALA
+      - heading "Why Brands Trust Us" [level=2] [ref=e151]
+    - generic [ref=e152]:
+      - generic [ref=e153]:
+        - generic [ref=e155]: 
+        - heading "We Understand Nigerian Retail" [level=4] [ref=e156]
+        - paragraph [ref=e157]: We're not theory-driven consultants. We operate daily in Lagos and Ogun's retail environment. We know the challenges, the politics, the delays—and we've built systems that actually work here.
+      - generic [ref=e158]:
+        - generic [ref=e160]: 
+        - heading "We Guarantee What Matters" [level=4] [ref=e161]
+        - paragraph [ref=e162]: Payment stress kills brands. That's why we guarantee remittance within agreed timelines, even when retailers delay. You get predictable cash flow so you can plan and grow with confidence.
+      - generic [ref=e163]:
+        - generic [ref=e165]: 
+        - heading "We Operate With Transparency" [level=4] [ref=e166]
+        - paragraph [ref=e167]: You receive weekly reports on sales, inventory, store activity, and issue resolution. You're never in the dark about what's happening with your brand. No vague updates. Just clarity.
+      - generic [ref=e168]:
+        - generic [ref=e170]: 
+        - heading "We're Aligned With Your Success" [level=4] [ref=e171]
+        - paragraph [ref=e172]: Our pricing model keeps your fixed costs low and ties our earnings to actual product movement. We don't earn unless your product moves. That's true alignment—not just words.
+  - generic [ref=e174]:
+    - heading "Ready to scale with structure?" [level=2] [ref=e175]
+    - paragraph [ref=e176]: If you're a founder-led brand ready to grow with transparency, discipline, and a partner who truly gets what you're facing—we'd love to explore whether we're aligned.
+    - generic [ref=e177]:
+      - link "Partner With Us" [ref=e178] [cursor=pointer]:
+        - /url: get-listed.html
+      - link "Explore Our Services" [ref=e179] [cursor=pointer]:
+        - /url: for-brands.html
+  - contentinfo [ref=e180]:
+    - generic [ref=e181]:
+      - generic [ref=e182]:
+        - generic [ref=e183]:
+          - link "D DALA" [ref=e184] [cursor=pointer]:
+            - /url: ../index.html
+            - generic [ref=e185]: D
+            - generic [ref=e186]: DALA
+          - paragraph [ref=e187]: The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.
+        - generic [ref=e188]:
+          - heading "Quick Links" [level=4] [ref=e189]
+          - list [ref=e190]:
+            - listitem [ref=e191]:
+              - link "Home" [ref=e192] [cursor=pointer]:
+                - /url: ../index.html
+            - listitem [ref=e193]:
+              - link "DALA for Brands" [ref=e194] [cursor=pointer]:
+                - /url: for-brands.html
+            - listitem [ref=e195]:
+              - link "DALA for Supermarkets" [ref=e196] [cursor=pointer]:
+                - /url: for-supermarkets.html
+            - listitem [ref=e197]:
+              - link "About Us" [ref=e198] [cursor=pointer]:
+                - /url: about.html
+            - listitem [ref=e199]:
+              - link "Case Studies" [ref=e200] [cursor=pointer]:
+                - /url: case-studies.html
+            - listitem [ref=e201]:
+              - link "Contact Us" [ref=e202] [cursor=pointer]:
+                - /url: contact.html
+        - generic [ref=e203]:
+          - heading "Get Started" [level=4] [ref=e204]
+          - list [ref=e205]:
+            - listitem [ref=e206]:
+              - link "Get Listed" [ref=e207] [cursor=pointer]:
+                - /url: get-listed.html
+            - listitem [ref=e208]:
+              - link "Work With Us" [ref=e209] [cursor=pointer]:
+                - /url: get-listed.html
+            - listitem [ref=e210]:
+              - link "Retailer Login" [ref=e211] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e212]:
+              - link "Browse Retailers" [ref=e213] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e214]:
+          - heading "Contact Info" [level=4] [ref=e215]
+          - paragraph [ref=e216]:
+            - generic [ref=e217]: 
+            - text: Iju, Ota, Ogun State, Nigeria
+          - paragraph [ref=e218]:
+            - generic [ref=e219]: 
+            - text: +234 814 882 4115
+          - paragraph [ref=e220]:
+            - generic [ref=e221]: 
+            - text: +234 903 235 2306
+          - paragraph [ref=e222]:
+            - generic [ref=e223]: 
+            - text: info@dalatechnologies.com
+          - paragraph [ref=e224]:
+            - generic [ref=e225]: 
+            - text: "Business Hours: 8am-6pm"
+      - generic [ref=e226]:
+        - paragraph [ref=e227]: © 2026 DALA Technologies. All rights reserved.
+        - generic [ref=e228]:
+          - link "" [ref=e229] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e230]: 
+          - link "" [ref=e231] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e232]: 
+          - link "" [ref=e233] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e234]: 
+          - link "" [ref=e235] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e236]: 
+        - generic [ref=e237]:
+          - link "Privacy Policy" [ref=e238] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e239] [cursor=pointer]:
+            - /url: "#"
+  - link "" [ref=e240] [cursor=pointer]:
+    - /url: https://wa.me/2348148824115
+    - generic [ref=e241]: 

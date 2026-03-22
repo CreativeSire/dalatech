@@ -1,0 +1,29 @@
+Case Study Pages Review
+1. Case Study Landing Page (From Hamburger Quick Link Section)
+From the hamburger menu, we have a landing page that displays all case studies together as an overview.
+Observation
+This page correctly serves as a hub for all case studies.
+It should contain four case studies.
+Currently, only three are visible.
+Required Correction
+Add the missing fourth case study.
+Ensure all four brand partners are represented consistently.
+Maintain uniform layout and spacing across all case study cards.
+2. Individual Case Study Pages (Linked from Homepage Review Cards)
+When users scroll down on the Homepage and click on the review cards, they are redirected to the individual case study pages.
+According to the website brief, each case study must follow the same structured pattern.
+3. Required Structure for Each Individual Case Study Page
+Each page must strictly follow the format and content exactly how it is in the website brief for this individual pages
+4. Current Issues Identified
+Missing Page
+There should be four individual case study pages.
+Only three are currently available.
+Content Not Fully Applied
+The content from the website brief is not fully implemented.
+Pages are not properly expanded.
+Sections are underdeveloped.
+Metrics and impact summaries as in brief are not represented 
+Mock-Up Image 
+A mock-up placeholder image is present.
+This should be removed.
+Only real, relevant brand-related visuals should be used.

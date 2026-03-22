@@ -1,0 +1,202 @@
+CASE STUDY PAGES CONTENT
+Each case study page follows this structure:
+Hero Section - Brand name + headline
+Challenge Section - What problem they faced
+Solution Section - How DALA helped
+Results Section - Data cards showing impact
+Final CTA - Work with DALA
+CASE STUDY 1: WILSON'S Juice CO LTD
+HERO SECTION
+Brand Name:
+Wilson's Juice Co Ltd
+Headline:
+Scaling Wilson’s Lemonade Through Structured Retail Execution.
+[Brand Logo Placeholder]
+[Hero Image: Products on retail shelves ]
+Section Headline:
+The Challenge
+Wilson’s Lemonade had demand, but distribution was limiting growth. Orders came in from different locations in small quantities, making delivery expensive and unsustainable. At the same time, limited retail presence and operational inefficiencies slowed expansion and kept the team focused on logistics instead of scaling.
+The Solution
+How DALA Helped
+DALA took over Wilson’s retail and distribution operations, removing the logistics burden and creating a structured path to scale. We helped the brand expand into more supermarkets, coordinated deliveries, and managed store-level execution—allowing Wilson’s to grow without operational strain.
+What We Did
+Expanded distribution into multiple retail locations
+Managed store onboarding, logistics, and merchandising
+Provided clear sales and performance reports
+Ensured consistent product availability across stores.
+Section Headline:
+The Results (**hi Vic this data is a yearly data)
+[3 Data Cards animation in Row Layout]
+CARD 1:
+Icon: 💰 Revenue/Money
+Metric:
+₦221.7M
+Label: Total Revenue Generated
+CARD 2:
+Icon: 🏪 Store/Expansion
+Metric:
+350
+Label:
+Retail Stores Reached
+CARD 3:
+Icon: 📈 Growth/Trend
+Metric:
+Strong Growth
+Label:
+Impact Summary:
+Wilson's lemonade achieved major revenue generation and expanded its retail network significantly within approximately 1.5 years. The brand demonstrated strong and consistent sales growth throughout the partnership, reflecting successful product adoption and increasing market demand.
+Ready to Scale Your Brand Like Wilson's Lemonade?
+CTA Button:
+Work With Us
+Links to: Brand Partners Application Form
+CASE STUDY 2: ZAYITH FOOD COMPANY
+HERO SECTION
+Brand Name:
+Zayith Food Company
+Headline:
+How Zayith Accelerated Revenue Growth and Expanded to 170+ Stores with DALA
+[Brand Logo Placeholder]
+[Hero Image: Products on retail shelves or revenue growth visual]
+THE CHALLENGE
+Section Headline:
+The Challenge
+Zayith Food Company had quality products but needed to scale revenue and expand retail presence. The brand required structured execution support to accelerate growth and reach more customers across modern retail outlets.
+THE SOLUTION
+Section Headline:
+How DALA Helped
+DALA managed Zayith's retail operations focusing on revenue acceleration and market expansion. We handled store onboarding, retail operation execution, Reports and performance tracking enabling the brand to scale effectively.
+What We Did:
+Coordinated product onboarding and expansion into new retail locations
+Managed in-store execution and product visibility
+Supported seasonal campaigns and product launches with disciplined execution
+Provided transparent reporting on revenue and performance trends
+Section Headline:
+The Results
+[3 Data Cards in Row Layout]
+CARD 1:
+Icon: 💰 Revenue/Money
+Metric:
+₦138.0M
+Label:
+Total Revenue Generated
+CARD 2:
+Icon: 🏪 Store/Expansion
+Metric:
+173
+Label:
+Retail Stores Reached
+CARD 3:
+Icon: 📈 Growth/Peak
+Metric:
+Peak Performance
+Label:
+Strong Revenue Growth.
+Impact Summary:
+Zayith Food Company experienced remarkable revenue growth throughout the fiscal year. Performance built steadily and peaked in the later months, indicating effective seasonal campaigns and scaled marketing efforts that significantly boosted earnings.
+FINAL CTA SECTION
+Bold Text:
+Ready to Accelerate Revenue Like Zayith?
+CTA Button:
+Work With Us
+Links to: Brand Partners Application Form
+CASE STUDY 3: AUGUST SECRETS
+HERO SECTION
+Brand Name:
+August Secrets
+Headline:
+How August Secrets Achieved Exponential Revenue Growth with Dala.
+[Brand Logo Placeholder]
+THE CHALLENGE
+Section Headline:
+The Challenge
+August Secrets needed to scale rapidly from while building a credible retail presence. The brand required structured execution support to drive revenue growth and expand into modern retail outlets across multiple locations.
+THE SOLUTION
+Section Headline:
+How DALA Helped
+DALA managed August Secrets' retail operations focusing on aggressive revenue growth and market expansion. We handled execution, distribution, and performance tracking enabling the brand to scale to multimillion-dollar monthly earnings.
+What We Did:
+Coordinated rapid store expansion to over 100 retail locations
+Managed in-store execution and product visibility
+Provided disciplined replenishment to support growing demand
+Delivered transparent reporting on revenue performance and growth trends
+THE RESULTS
+Section Headline:
+The Results
+[3 Data Cards in Row Layout]
+CARD 1:
+Icon: 💰 Revenue/Money
+Metric:
+₦30.8M
+Label:
+Total Revenue Generated
+CARD 2:
+Icon: 🏪 Store/Expansion
+Metric:
+106
+Label:
+Retail Stores Reached
+CARD 3:
+Icon: 📈 Growth/Exponential
+Metric:
+Exponential Growth
+Label:
+Scaled to Multimillion-Naira Monthly Revenue 
+Impact Summary:
+August Secrets achieved dramatic revenue growth with DALA. scaling from initial figures to multimillion-naira  earnings. The partnership delivered exponential growth and successfully established a substantial retail footprint within one year.
+FINAL CTA SECTION
+Bold Text:
+Ready to Achieve Exponential Growth Like August Secrets?
+CTA Button:
+Work With Us
+Links to: Brand Partners Application Form
+CASE STUDY 4: ELOHA
+HERO SECTION
+Brand Name:
+Eloha
+Headline:
+How Eloha Launched and Scaled to 83 stores in Just Seven Months
+[Brand Logo Placeholder]
+THE CHALLENGE
+Section Headline:
+The Challenge
+Eloha needed to launch successfully and build market presence quickly. As a new brand entering modern retail, they required structured execution and disciplined operations to establish credibility and drive revenue from day one.
+THE SOLUTION
+Section Headline:
+How DALA Helped
+DALA managed Eloha's retail launch and growth from May through November 2025. We handled store onboarding, execution, and performance tracking, enabling the brand to scale to significant market presence within seven months.
+What We Did:
+Coordinated launch and store expansion to 83 retail locations
+Managed in-store execution and product visibility from day one
+Provided consistent replenishment to support growing demand
+Delivered transparent reporting on revenue growth and market performance
+THE RESULTS
+Section Headline:
+The Results
+[3 Data Cards in Row Layout]
+CARD 1:
+Icon: 💰 Revenue/Money
+Metric:
+₦3.8M
+Label:
+Total Revenue Generated
+CARD 2:
+Icon: 🏪 Store/Expansion
+Metric:
+83
+Label:
+Retail Stores Reached
+CARD 3:
+Icon: 📈 Growth/Launch
+Metric:
+7 Months
+Label:
+From Launch to Significant Market Presence
+Impact Summary:
+Eloha experienced consistent and strong revenue growth following its mid-year launch. The partnership successfully launched the brand and scaled it to significant market presence within just seven months, building a stable and growing income stream.
+FINAL CTA SECTION
+Bold Text:
+Ready to Launch and Scale Like Eloha?
+CTA Button:
+Work With Us
+Links to: Brand Partners Application Form
+ 

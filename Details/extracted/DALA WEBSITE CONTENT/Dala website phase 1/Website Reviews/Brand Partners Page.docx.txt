@@ -1,0 +1,46 @@
+Brand Partners Page
+1. Hero Section
+Desktop:
+Header Styling: Entire headline is italicized. Only keywords should be italic; the rest in normal font (match Homepage style).
+Background Color: Currently bluish, not in brand palette. Change to approved brand color.
+Overview Paragraph: Paragraph giving an overview of what we do for this brand is missing. Insert below the brand partner slideshow as an overview on its own. 
+Mobile:
+Header Size: Headline is too large and almost fills the screen. Reduce font size. Keep only keywords italicized.
+Slideshow Speed: Reduce speed to match desktop/Homepage style.
+Slideshow header: Add a small title, e.g., “Our Brand Partners,” above logos for clarity.
+2. Brand Partner Logo Slideshow
+Desktop:
+Slideshow moves too fast. Slow it to match Homepage supermarket slideshow.
+Ensure size, spacing, and animation are consistent with Homepage.
+Mobile:
+Slideshow speed should also be reduced.
+3. “Why Growing Brands Choose DALA” (Value Proposition Boxes)
+Desktop:
+Boxes only display color and shadows when clicked. They should be colorful and visually engaging by default.
+On click: add subtle pop-out animation with shadows.
+Content is truncated and altered. Restore headings and body text exactly as in the document.
+If space is limited, use a dropdown to reveal full content.
+Mobile:
+Boxes sizing is fine.
+Maintain default color and shadow visibility.
+Add dropdown expansion for full content.
+4. “What We Do for Brand Partners” (Service Cards)
+Desktop:
+Only 3 cards are visible; there should be 5.
+Body text is shortened; restore full content.
+Placeholder images should be replaced with real images.
+Text can be slightly resized to fit cards.
+Use dropdown expansion if content is long.
+Mobile:
+Cards are left-aligned. Change to horizontal swipeable carousel.
+Include all 5 cards.
+Restore full content with dropdown expansion.
+Replace placeholder images.
+5. Final Call-to-Action Section
+Desktop:
+Headline: Italicize the keyword “scale.”
+Replace placeholder background image with relevant real image.
+Mobile:
+Ensure headline scales properly on mobile.
+Keep keyword italicized.
+Replace background image with responsive, real image.

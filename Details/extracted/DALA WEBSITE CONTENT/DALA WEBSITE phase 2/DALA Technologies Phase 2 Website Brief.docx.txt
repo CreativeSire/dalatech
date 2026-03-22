@@ -1,0 +1,48 @@
+DALA Technologies Phase 2 Website Brief
+Phase 2 will expand the website’s functionality to include portals, directories, and interactive features that support our full service offering. This phase is aimed at brands and retailers who are already engaged and will enable secure access, communication, and tracking.
+1. Homepage Updates 
+Keep Phase 1 homepage design
+Add secondary CTAs for “Browse Retailers” and “Retailer Login”
+Include new visual elements highlighting Phase 2 capabilities (e.g., portal benefits)
+2. Retailer Directory (Client Access Only)
+Secure login required
+Searchable and filterable by: Location, Retailer Type, Chain Name
+Each entry shows: Name, Address (with Google Maps), Retailer Type, Key Contact (if available)
+Registered users can download/export lists
+3. Retailer Feedback & Ratings
+Logged-in brands and suppliers can rate retailers on:
+Supplier treatment
+Foot traffic
+Receiving efficiency
+Timely payments
+Responsiveness
+1–5 star scale with optional comments
+Aggregate scores visible to other logged-in users
+4. Retailer Portal
+Secure login for retailers
+Features include:
+Posting store openings, promotions, announcements
+Access analytics on profile views
+5. Brand / Supplier Portal
+Secure login for brands/suppliers
+Features include:
+Submit offers and rebates
+Rate/evaluate retailers
+Download onboarding guides and retail lists
+Track promotion performance
+6. Insights / Blog Section
+Educational blog or updates feed
+Market insights, case studies, tips, platform updates
+7. Technical Requirements
+Mobile-first, responsive, lightweight design
+Role-based authentication: Retailer / Brand / Supplier
+Google Maps API for geolocation in directory
+Admin panel for content and user management
+Secure hosting with HTTPS
+8. Security & Permissions
+Captcha-protected login and forms
+Email/phone verification required
+Separate login states for Retailers and Brands
+Admin dashboard for feedback moderation
+GDPR-compliant data handling
+This Phase 2 brief is focused on secure access, interactivity, and functional portals. Everything in this phase builds on Phase 1 and brings the website closer to a full operational platform.

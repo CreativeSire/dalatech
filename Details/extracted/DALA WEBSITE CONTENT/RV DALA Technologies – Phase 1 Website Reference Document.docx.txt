@@ -1,0 +1,46 @@
+DALA Technologies – Phase 1 Website Reference Document
+This document provides reference websites and examples for each page or section of the Phase 1 DALA website. Kindly use these as style, layout, and functional inspiration.
+1. Homepage
+Reference Websites:
+Asana asana.com – imitate Asana For the hero section design, clear mission statement, and its  strong CTA buttons.
+Mixpanel mixpanel.com  – imitate  For visual hierarchy, clean layout, and concise explanation of services.
+Squarespace (https://www.squarespace.com) – imitate For the slideshow/rotating logos of clients and partners…. And also for the Intro to services overview of what dala do you, present what we do by pictorial slides shows just like how square space feature, their grow your business part
+2. What We Do Section
+Reference Websites:
+Airtable airtable.com  –Imitate it's  Minimal layout and clear explanation of features/services.
+Userpilot userpilot.com – Concise copy, clean icons, and CTA buttons for each feature.
+We Display six services: Retail Intelligence, Supplier Engagement, Listing Assistance, Retail Evaluation, Modern Trade Navigation, Marketing & Media Services
+Each service links to a dedicated page with a paragraph describing it and it's information.
+Each page ends with a CTA: “Join as a Brand”
+3. Get Listed / Required Documents
+Reference Websites:
+Airtable – it's Clean display of structured information
+OpenPhone (https://openphone.com) – it's  Simple, easy-to-read layout with form CTA
+Public page showing requirements to get listed as a brand
+CTA leads to qualification form for brand leads
+4. Case Studies
+Reference Websites:
+Squarespace –Imitate it's  Effective visual storytelling and use of images.
+Mixpanel – Imitate it's Simple charts and progress indicators to show results
+This section will Show top 3 brands as case studies, include photos of products in supermarkets, Optional simple charts showing reach or scale
+Eg CTA: leading to the page “See How We Help Brands Grow” 
+5. About Us Page:
+Reference websites: 
+Asana (https://asana.com), Squarespace (https://www.squarespace.com)
+We want the About Us page to feel clean, professional, and premium, like Asana and Squarespace. Use a combination of concise text sections and visuals (images or icons) to tell our story, highlight mission, vision, values, and the brands we serve on the about us page. The layout should guide the reader naturally from “Who we are” → “What we do” → “How we add value” → “Join us/Call-to-action.  Keep it approachable, human, and trustworthy, with clear spacing and visual hierarchy for easy reading.
+6. Contact Page
+Reference Websites:
+OpenPhone –imitate it's  Clean contact form and layout
+Contact form to get listed.
+Company contact information clearly displayed
+7. Floating WhatsApp Button
+Reference Websites:
+Squarespace – Example of floating interactive element that stays visible
+OpenPhone – Chat automation inspiration
+Purpose 
+Always visible at the bottom of the page
+Leads to automated prompts to qualify leads (brand/retailer, service interest)
+Usage Notes:
+All references focus on clean, professional, and modern SaaS/B2B style
+Emphasize visual clarity, clear CTAs, and user-friendly flow
+List the site to be easy to navigate and user friendly
