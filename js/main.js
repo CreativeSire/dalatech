@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
   initScrollAnimations();
   initWhatsAppChat();
   initSmoothScroll();
+  initMobileReveal();
+  initParallaxScroll();
 });
 
 /**
@@ -206,3 +208,86 @@ document.querySelectorAll('form').forEach(form => {
     }
   });
 });
+
+
+/**
+ * Mobile Reveal Animations
+ * Premium scroll-triggered animations for mobile
+ */
+function initMobileReveal() {
+  // Only run on mobile
+  if (window.innerWidth > 768) return;
+
+  const revealElements = document.querySelectorAll('.reveal-mobile, .reveal-left, .reveal-right, .stagger-children');
+  
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+}
+
+/**
+ * Parallax Scroll Effect for Mobile
+ * Subtle parallax on scroll for depth
+ */
+function initParallaxScroll() {
+  // Only run on mobile
+  if (window.innerWidth > 768) return;
+
+  const parallaxElements = document.querySelectorAll('.parallax-mobile');
+  let ticking = false;
+
+  function updateParallax() {
+    const scrollY = window.scrollY;
+    
+    parallaxElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const speed = el.dataset.speed || 0.5;
+      
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const yPos = (rect.top - window.innerHeight / 2) * speed * 0.1;
+        el.style.transform = `translateY(${yPos}px)`;
+      }
+    });
+    
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+/**
+ * Touch Feedback Enhancement
+ * Adds active states for better touch feedback
+ */
+function initTouchFeedback() {
+  // Add touch feedback to all buttons and links
+  const touchElements = document.querySelectorAll('a, button, .btn, .card-3d, .side-card');
+  
+  touchElements.forEach(el => {
+    el.addEventListener('touchstart', function() {
+      this.classList.add('touch-active');
+    }, { passive: true });
+    
+    el.addEventListener('touchend', function() {
+      this.classList.remove('touch-active');
+    }, { passive: true });
+  });
+}
+
+// Initialize touch feedback
+document.addEventListener('DOMContentLoaded', initTouchFeedback);
