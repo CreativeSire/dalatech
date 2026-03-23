@@ -208,7 +208,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 90px;
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--space-xl);
@@ -239,7 +239,7 @@ p {
 }
 
 .logo-img {
-  height: 60px;
+  height: 80px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -3098,7 +3098,7 @@ p {
 }
 
 .footer-logo .logo-img {
-  height: 50px;
+  height: 70px;
   width: auto;
   display: block;
   object-fit: contain;
