@@ -1,0 +1,37 @@
+# Render.com deployment configuration
+# This file tells Render how to build and deploy your application
+
+services:
+  # Static site for frontend
+  - type: static
+    name: dala-website
+    runtime: static
+    buildCommand: echo "Static site - no build needed"
+    staticPublishPath: .
+    rootDir: .
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://dala-api.onrender.com/api/$1
+    envVars:
+      - key: API_URL
+        value: https://dala-api.onrender.com
+
+  # Web service for backend API
+  - type: web
+    name: dala-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
+    disk:
+      name: database
+      mountPath: /data
+      sizeGB: 1

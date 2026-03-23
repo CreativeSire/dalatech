@@ -1,7 +1,10 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
-const DB_PATH = path.join(__dirname, 'database.sqlite');
+// Use persistent disk on Render, or local file in development
+const DB_PATH = process.env.RENDER_DISK_PATH 
+  ? path.join(process.env.RENDER_DISK_PATH, 'database.sqlite')
+  : path.join(__dirname, 'database.sqlite');
 
 // Create database connection
 const db = new sqlite3.Database(DB_PATH, (err) => {
