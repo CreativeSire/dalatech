@@ -21,9 +21,6 @@
       if (!slider) return;
 
       let currentFace = 'supermarket';
-      let startX = 0;
-      let currentX = 0;
-      let isDragging = false;
 
       // Toggle button click handlers
       toggleBtns.forEach(btn => {
@@ -55,86 +52,39 @@
         }
       }
 
-      // Touch swipe handlers
-      slider.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-        slider.style.transition = 'none';
-      }, { passive: true });
+      // Swipe functionality removed - using toggle buttons only
 
-      slider.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        
-        currentX = e.touches[0].clientX;
-        const diff = currentX - startX;
-        const rotation = currentFace === 'supermarket' ? diff * 0.1 : 180 + diff * 0.1;
-        
-        // Limit rotation during drag
-        if (currentFace === 'supermarket' && rotation > 0 && rotation < 90) {
-          slider.style.transform = `rotateY(${rotation}deg)`;
-        } else if (currentFace === 'brand' && rotation > 90 && rotation < 270) {
-          slider.style.transform = `rotateY(${rotation}deg)`;
-        }
-      }, { passive: true });
-
-      slider.addEventListener('touchend', () => {
-        if (!isDragging) return;
-        isDragging = false;
-        
-        slider.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-        
-        const diff = currentX - startX;
-        const threshold = 50;
-
-        // Determine flip direction based on swipe
-        if (currentFace === 'supermarket' && diff < -threshold) {
-          flipCard('brand');
-        } else if (currentFace === 'brand' && diff > threshold) {
-          flipCard('supermarket');
-        } else {
-          // Snap back to current face
-          flipCard(currentFace);
-        }
-      }, { passive: true });
-
-      // Auto-rotate every 8 seconds if user hasn't interacted
+      // Auto-rotate every 6 seconds
       let autoRotateInterval;
-      let userInteracted = false;
 
       function startAutoRotate() {
         autoRotateInterval = setInterval(() => {
-          if (!userInteracted) {
-            const nextFace = currentFace === 'supermarket' ? 'brand' : 'supermarket';
-            flipCard(nextFace);
-          }
-        }, 8000);
+          const nextFace = currentFace === 'supermarket' ? 'brand' : 'supermarket';
+          flipCard(nextFace);
+        }, 6000);
       }
 
       function stopAutoRotate() {
         clearInterval(autoRotateInterval);
       }
 
-      // Detect user interaction
-      slider.addEventListener('touchstart', () => {
-        userInteracted = true;
-        stopAutoRotate();
-      }, { passive: true });
-
+      // Stop auto-rotate on toggle button click
       toggleBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          userInteracted = true;
           stopAutoRotate();
+          // Restart after 10 seconds
+          setTimeout(startAutoRotate, 10000);
         });
       });
 
-      // Start auto-rotate after 3 seconds
-      setTimeout(startAutoRotate, 3000);
+      // Start auto-rotate after 2 seconds
+      setTimeout(startAutoRotate, 2000);
 
       // Pause when not visible
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            if (!userInteracted) startAutoRotate();
+            startAutoRotate();
           } else {
             stopAutoRotate();
           }
