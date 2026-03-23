@@ -4,6 +4,74 @@
    ============================================ */
 
 /* ============================================
+   MOBILE CRITICAL FIXES - Overlap Issues
+   ============================================ */
+@media (max-width: 768px) {
+  /* Fix z-index stacking context */
+  .section {
+    position: relative !important;
+    z-index: auto !important;
+  }
+
+  .section-header {
+    position: relative !important;
+    z-index: 10 !important;
+    background: transparent;
+  }
+
+  /* Ensure cards don't overlap */
+  .container {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Fix for service/holo cards overlapping */
+  .services-holo-section,
+  .holo-grid,
+  .holo-card {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .holo-card {
+    margin-bottom: 20px !important;
+    transform: none !important;
+    display: block !important;
+    clear: both !important;
+    float: none !important;
+  }
+
+  .holo-card-inner {
+    position: relative !important;
+    z-index: 2 !important;
+    transform: none !important;
+  }
+
+  /* Fix section stacking */
+  section {
+    position: relative !important;
+    isolation: isolate !important;
+  }
+
+  h1, h2, h3 {
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  /* Fix crystal section overlapping */
+  .crystal-section {
+    position: relative !important;
+    z-index: 1 !important;
+    overflow: visible !important;
+  }
+
+  .crystal-island {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+}
+
+/* ============================================
    MOBILE MENU - Fixed Overlay Issue
    ============================================ */
 @media (max-width: 768px) {
@@ -225,33 +293,43 @@
    TWO-SIDED CARDS - No More Itemized Lists!
    ============================================ */
 @media (max-width: 768px) {
-  .two-sided-section {
+  .two-sided-section,
+  .section:has(.cards-container) {
     padding: 40px 20px;
+    position: relative;
+    z-index: 1;
   }
 
-  .two-sided-section .section-header {
+  .section-header {
     text-align: center;
     margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
   }
 
-  .two-sided-section h2 {
+  .section-header h2 {
     font-size: 26px;
     margin-bottom: 12px;
   }
 
-  .two-sided-section > p {
+  .section-header p {
     font-size: 15px;
     color: var(--gray-600);
   }
 
-  /* Stack cards vertically with 3D effect */
-  .cards-container {
+  /* Stack cards vertically with proper spacing */
+  .cards-container,
+  .two-column.two-sides-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: relative;
+    z-index: 1;
   }
 
-  .card-3d {
+  /* Fix overlapping cards */
+  .card-3d,
+  .side-card {
     background: white;
     border-radius: 24px;
     padding: 28px 24px;
@@ -259,11 +337,14 @@
       0 4px 20px rgba(0,0,0,0.08),
       0 1px 3px rgba(0,0,0,0.05);
     transform-style: preserve-3d;
-    transform: perspective(1000px) rotateX(2deg);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(0,0,0,0.04);
     position: relative;
     overflow: hidden;
+    width: 100%;
+    margin: 0;
+    display: block;
+    clear: both;
   }
 
   .card-3d::before {
