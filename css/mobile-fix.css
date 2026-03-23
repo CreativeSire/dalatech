@@ -3,41 +3,115 @@
    ============================================ */
 
 @media (max-width: 768px) {
-  /* Reset ALL transforms on mobile that cause overlap */
-  .holo-card,
-  .holo-card-inner,
-  .holo-card-content,
-  .crystal-satellite,
-  .crystal-hub,
-  .satellite-inner,
-  .side-card,
-  .card-3d,
-  .float-3d {
-    transform: none !important;
-    transform-style: flat !important;
+  /* ============================================
+     CRYSTAL SECTION FIX - Prevent Card Overlap
+     ============================================ */
+  
+  .crystal-section {
+    padding: 60px 20px !important;
+    min-height: auto !important;
     perspective: none !important;
+    overflow: visible !important;
+    position: relative !important;
   }
 
-  /* Fix holo section layout */
-  .services-holo-section {
-    padding: 40px 20px !important;
+  /* Header MUST stay above cards */
+  .crystal-header {
     position: relative !important;
+    z-index: 100 !important;
+    margin-bottom: 40px !important;
+    background: transparent !important;
+  }
+
+  .crystal-header h2 {
+    position: relative !important;
+    z-index: 101 !important;
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .crystal-header p {
+    position: relative !important;
+    z-index: 101 !important;
+    font-size: 15px !important;
+  }
+
+  /* Island container */
+  .crystal-island {
+    position: relative !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    padding: 0 !important;
+    transform-style: flat !important;
+    perspective: none !important;
     z-index: 1 !important;
+  }
+
+  /* Hub card */
+  .crystal-hub {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 16px 0 !important;
+    padding: 24px !important;
+    z-index: 1 !important;
+    order: -1 !important; /* Hub first */
+  }
+
+  /* Satellite cards */
+  .crystal-satellite {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 12px 0 !important;
+    z-index: 1 !important;
+    animation: none !important;
+  }
+
+  .satellite-inner {
+    transform: none !important;
+    padding: 20px !important;
+  }
+
+  .satellite-icon {
+    transform: none !important;
+  }
+
+  /* ============================================
+     HOLO CARDS FIX
+     ============================================ */
+  
+  .services-holo-section {
+    padding: 60px 20px !important;
+    position: relative !important;
   }
 
   .services-header {
     position: relative !important;
-    z-index: 10 !important;
+    z-index: 100 !important;
     margin-bottom: 30px !important;
   }
 
   .services-header h2 {
+    position: relative !important;
+    z-index: 101 !important;
     font-size: 24px !important;
     line-height: 1.3 !important;
-    margin-bottom: 10px !important;
   }
 
-  /* Grid layout for cards - single column */
   .holo-grid {
     display: flex !important;
     flex-direction: column !important;
@@ -46,120 +120,94 @@
     z-index: 1 !important;
   }
 
-  /* Individual cards */
   .holo-card {
     position: relative !important;
     width: 100% !important;
     margin: 0 0 16px 0 !important;
-    display: block !important;
+    transform: none !important;
   }
 
   .holo-card:nth-child(5) {
     grid-column: auto !important;
-    max-width: none !important;
+    max-width: 100% !important;
   }
 
   .holo-card-inner {
-    position: relative !important;
+    transform: none !important;
     padding: 24px !important;
-    border-radius: 16px !important;
-    background: linear-gradient(135deg, rgba(30, 30, 40, 0.95) 0%, rgba(15, 15, 25, 0.98) 100%) !important;
-  }
-
-  /* Fix section headers to stay above cards */
-  .section-header,
-  .services-header,
-  .crystal-header {
     position: relative !important;
-    z-index: 100 !important;
-    background: transparent !important;
-    margin-bottom: 24px !important;
   }
 
-  /* Two-sided section fix */
+  .holo-card-content {
+    transform: none !important;
+  }
+
+  .holo-icon-inner {
+    transform: none !important;
+  }
+
+  /* ============================================
+     SIDE CARDS FIX
+     ============================================ */
+  
   .two-sides-container {
     display: flex !important;
     flex-direction: column !important;
     gap: 20px !important;
+    position: relative !important;
+    z-index: 1 !important;
   }
 
   .side-card {
     position: relative !important;
     width: 100% !important;
-    margin: 0 0 16px 0 !important;
+    margin: 0 !important;
     padding: 24px !important;
-    border-radius: 20px !important;
-    display: block !important;
+    transform: none !important;
+    z-index: 1 !important;
   }
 
-  .side-card-dark {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
-  }
-
-  .side-card-light {
-    background: white !important;
-    border: 1px solid #e0e0e0 !important;
-  }
-
-  /* Remove floating animations on mobile */
-  .floater,
+  /* ============================================
+     REMOVE ANIMATIONS THAT CAUSE ISSUES
+     ============================================ */
+  
+  .crystal-bg-effects,
+  .crystal-orb,
   .ambient-floaters,
-  .crystal-bg-effects {
+  .floater {
     display: none !important;
   }
 
-  /* Fix crystal section */
-  .crystal-section {
-    padding: 40px 20px !important;
-    min-height: auto !important;
-    position: relative !important;
-  }
-
-  .crystal-island {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-    position: relative !important;
-  }
-
-  .crystal-hub,
-  .crystal-satellite {
-    position: relative !important;
-    width: 100% !important;
-    margin: 0 0 16px 0 !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-  }
-
-  /* Text readability fixes */
-  h1, h2, h3 {
-    position: relative !important;
-    z-index: 50 !important;
-  }
-
-  /* Ensure proper stacking context */
+  /* ============================================
+     SECTION SPACING FIX
+     ============================================ */
+  
   section {
     position: relative !important;
-    z-index: auto !important;
   }
 
-  .container {
+  .section-header {
     position: relative !important;
-    z-index: 1 !important;
+    z-index: 50 !important;
+    margin-bottom: 30px !important;
+  }
+
+  h1, h2, h3 {
+    position: relative !important;
+    z-index: 51 !important;
   }
 }
 
 /* Extra small screens */
 @media (max-width: 480px) {
-  .holo-card-inner,
-  .side-card {
-    padding: 20px !important;
+  .crystal-header h2 {
+    font-size: 22px !important;
   }
 
-  .services-header h2,
-  .section-header h2 {
-    font-size: 22px !important;
+  .crystal-hub,
+  .crystal-satellite,
+  .side-card,
+  .holo-card-inner {
+    padding: 20px !important;
   }
 }
