@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Database
+database.sqlite
+*.sqlite
+*.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Screenshots (generated during development)
+logo-check*.png
+login-page.png
+signup-page.png
+
+# Temporary files
+*.tmp
+*.temp
