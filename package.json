@@ -1,0 +1,17 @@
+{
+  "name": "dala-technologies",
+  "version": "1.0.0",
+  "description": "DALA Technologies - Retail Execution Control Layer",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}
