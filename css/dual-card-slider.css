@@ -45,15 +45,15 @@
     overflow: visible;
   }
 
-  /* Supermarket Card - Front */
+  /* Supermarket Card - Front - Now with primary color background */
   .dual-card-face.supermarket {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(135deg, #c62828 0%, #e53935 100%);
     color: white;
     transform: rotateY(0deg);
     z-index: 2;
   }
 
-  /* Brand Card - Back */
+  /* Brand Card - Back - Light background */
   .dual-card-face.brand {
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     color: var(--dark);
@@ -82,9 +82,9 @@
   }
 
   .dual-card-face.supermarket .dual-card-badge {
-    background: rgba(229, 57, 53, 0.2);
-    color: var(--primary-light);
-    border: 1px solid rgba(229, 57, 53, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .dual-card-face.brand .dual-card-badge {
@@ -188,9 +188,9 @@
   }
 
   .dual-card-face.supermarket .dual-card-btn {
-    background: var(--primary);
+    background: #1a1a2e;
     color: white;
-    box-shadow: 0 8px 25px rgba(229, 57, 53, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   }
 
   .dual-card-face.brand .dual-card-btn {
@@ -326,15 +326,15 @@
     overflow: visible;
   }
 
-  /* Supermarket Card - Front */
+  /* Supermarket Card - Front - Now with primary color background */
   .dual-card-face.supermarket {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(135deg, #c62828 0%, #e53935 100%);
     color: white;
     transform: rotateY(0deg);
     z-index: 2;
   }
 
-  /* Brand Card - Back */
+  /* Brand Card - Back - Light background */
   .dual-card-face.brand {
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     color: var(--dark);
@@ -363,9 +363,9 @@
   }
 
   .dual-card-face.supermarket .dual-card-badge {
-    background: rgba(229, 57, 53, 0.2);
-    color: var(--primary-light);
-    border: 1px solid rgba(229, 57, 53, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .dual-card-face.brand .dual-card-badge {
