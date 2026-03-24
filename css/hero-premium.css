@@ -203,8 +203,8 @@
   .hero-btn-secondary {
     background: white;
     color: var(--dark);
-    border: 0.5px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    border: 0.25px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
   }
 
   .hero-btn-secondary:hover {
@@ -406,8 +406,10 @@
     gap: 8px;
     padding: 14px 16px;
     border-radius: 14px;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;

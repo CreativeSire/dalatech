@@ -1,0 +1,221 @@
+/* ============================================
+   STATIC CARDS - Side by Side Layout
+   Similar to Testimonial Cards
+   ============================================ */
+
+/* Desktop - Side by Side */
+@media (min-width: 769px) {
+  .static-cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1000px;
+    margin: 60px auto 0;
+  }
+
+  .static-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 32px;
+    box-shadow: 
+      0 4px 24px rgba(0, 0, 0, 0.06),
+      0 1px 4px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .static-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.1),
+      0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .static-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(229, 57, 53, 0.08);
+    border: 1px solid rgba(229, 57, 53, 0.15);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary);
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+
+  .static-card-badge i {
+    font-size: 14px;
+  }
+
+  .static-card-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .static-card-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--gray-600);
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+
+  .static-card-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .static-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-700);
+  }
+
+  .static-feature-item i {
+    color: var(--primary);
+    font-size: 12px;
+  }
+
+  .static-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    background: linear-gradient(90deg, #FF4136 0%, #FF8C42 100%);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    width: fit-content;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .static-card-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(232, 74, 60, 0.3);
+  }
+
+  .static-card-link i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .static-card-link:hover i {
+    transform: translateX(4px);
+  }
+}
+
+/* Mobile - Stacked */
+@media (max-width: 768px) {
+  .static-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+  }
+
+  .static-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.06),
+      0 1px 4px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .static-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(229, 57, 53, 0.08);
+    border: 1px solid rgba(229, 57, 53, 0.15);
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary);
+    margin-bottom: 16px;
+    width: fit-content;
+  }
+
+  .static-card-badge i {
+    font-size: 12px;
+  }
+
+  .static-card-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .static-card-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--gray-600);
+    margin-bottom: 20px;
+  }
+
+  .static-card-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .static-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-700);
+  }
+
+  .static-feature-item i {
+    color: var(--primary);
+    font-size: 11px;
+  }
+
+  .static-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #FF4136 0%, #FF8C42 100%);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    width: fit-content;
+  }
+
+  .static-card-link i {
+    font-size: 11px;
+  }
+}

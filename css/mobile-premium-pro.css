@@ -18,19 +18,28 @@
   }
 
   /* ============================================
-     PREMIUM GLASS MORPHISM NAVBAR
+     PREMIUM GLASS MORPHISM NAVBAR - SMART HIDE/SHOW
      ============================================ */
   .navbar {
-    background: rgba(255, 255, 255, 0.85) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
   }
 
-  .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.95) !important;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  .navbar.nav-hidden {
+    transform: translateY(-100%);
+  }
+
+  .navbar.nav-visible {
+    transform: translateY(0);
   }
 
   /* Hide scroll indicator on mobile */
