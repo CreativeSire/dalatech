@@ -207,7 +207,7 @@
   .dual-card-toggle {
     display: flex;
     justify-content: center;
-    margin-top: 28px;
+    margin-top: 50px;
     gap: 12px;
   }
 
@@ -494,7 +494,7 @@
   .dual-card-toggle {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 60px;
     gap: 16px;
     position: relative;
     z-index: 10;

@@ -3,9 +3,9 @@
    ============================================ */
 
 @media (min-width: 769px) {
-  /* Main Footer Container */
-  .footer {
-    background: linear-gradient(180deg, #0D0D12 0%, #12121A 50%, #0A0A0F 100%);
+  /* Main Footer Container - Dark Premium Theme */
+  body .footer {
+    background: linear-gradient(180deg, #0D0D12 0%, #12121A 50%, #0A0A0F 100%) !important;
     position: relative;
     padding: 60px 40px 30px;
     overflow: hidden;
@@ -409,6 +409,55 @@
 
   .footer-legal-link:hover::after {
     width: 100%;
+  }
+}
+
+/* Mobile Dark Footer - Overrides footer-clean.css */
+@media (max-width: 768px) {
+  body .footer {
+    background: linear-gradient(180deg, #0D0D12 0%, #12121A 50%, #0A0A0F 100%) !important;
+    padding: 48px 20px 24px;
+  }
+  
+  body .footer-accordion-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  body .footer-accordion-header {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  body .footer-link {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  body .footer-contact-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  body .footer-contact-title {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  body .footer-contact-item {
+    color: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+  
+  body .footer-social-section {
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+  
+  body .social-icon {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  body .footer-copyright {
+    color: rgba(255, 255, 255, 0.4);
   }
 }
 
