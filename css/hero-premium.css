@@ -254,49 +254,12 @@
     letter-spacing: 0.05em;
   }
 
-  /* Scroll Indicator */
+  /* Scroll Indicator - Hidden */
   .hero-scroll {
-    position: absolute;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    animation: bounce 2s ease-in-out infinite;
-    cursor: pointer;
+    display: none;
   }
 
-  .hero-scroll-text {
-    font-size: 12px;
-    color: var(--gray-400);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
 
-  .hero-scroll-icon {
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gray-400);
-    font-size: 14px;
-    transition: all 0.3s ease;
-  }
-
-  .hero-scroll:hover .hero-scroll-icon {
-    border-color: var(--primary);
-    color: var(--primary);
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(10px); }
-  }
 }
 
 /* Mobile Styles (768px and below) */
@@ -532,10 +495,7 @@
     letter-spacing: 0.05em;
   }
 
-  /* Scroll Indicator - Hidden on mobile */
-  .hero-scroll {
-    display: none;
-  }
+
 
 /* Extra small screens */
 @media (max-width: 380px) {

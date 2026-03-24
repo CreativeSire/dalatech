@@ -6,8 +6,7 @@
 (function() {
   'use strict';
 
-  // Only run on mobile
-  if (window.innerWidth > 768) return;
+  // Run on all devices (mobile and desktop)
 
   function initDualCardSlider() {
     const containers = document.querySelectorAll('.dual-card-container');
@@ -54,14 +53,14 @@
 
       // Swipe functionality removed - using toggle buttons only
 
-      // Auto-rotate every 6 seconds
+      // Auto-rotate every 10 seconds
       let autoRotateInterval;
 
       function startAutoRotate() {
         autoRotateInterval = setInterval(() => {
           const nextFace = currentFace === 'supermarket' ? 'brand' : 'supermarket';
           flipCard(nextFace);
-        }, 6000);
+        }, 10000);
       }
 
       function stopAutoRotate() {
