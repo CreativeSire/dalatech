@@ -180,11 +180,11 @@
   }
 
   .hero-cta .btn--primary {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, #E84A3C 0%, #FF8C42 100%);
     color: white;
     box-shadow: 
-      0 10px 30px rgba(229, 57, 53, 0.35),
-      0 4px 10px rgba(229, 57, 53, 0.2);
+      0 10px 30px rgba(232, 74, 60, 0.35),
+      0 4px 10px rgba(255, 140, 66, 0.2);
     border: none;
   }
 
@@ -211,7 +211,7 @@
 
   .hero-cta .btn--primary:active {
     transform: scale(0.97);
-    box-shadow: 0 5px 15px rgba(229, 57, 53, 0.3);
+    box-shadow: 0 5px 15px rgba(232, 74, 60, 0.3);
   }
 
   .hero-cta .btn--secondary {
