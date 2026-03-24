@@ -393,32 +393,32 @@
   .hero-cta-group {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 40px;
     justify-content: center;
+    align-items: center;
     animation: fade-in-up 0.8s ease-out 0.6s both;
   }
 
   .hero-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 14px 12px;
-    border-radius: 14px;
-    font-size: 10px;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0 20px;
+    border-radius: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    flex: 1;
-    max-width: 170px;
-    min-width: 170px;
-    height: 48px;
+    width: 170px;
+    height: 46px;
     white-space: nowrap;
+    line-height: 1;
   }
 
   .hero-btn-primary {
@@ -450,8 +450,8 @@
   .hero-btn-secondary {
     background: white;
     color: var(--dark);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 0.5px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
 
   .hero-btn-secondary:active {
@@ -460,7 +460,10 @@
   }
 
   .hero-btn i {
-    font-size: 14px;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
     transition: transform 0.3s ease;
   }
 
