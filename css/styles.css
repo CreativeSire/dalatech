@@ -395,18 +395,39 @@ p {
   align-items: center;
 }
 
-.hero-badge {
+/* Unified Section Badge - Pill Style */
+.section-badge,
+.hero-badge,
+.dual-card-badge {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  background: var(--primary-subtle);
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(229, 57, 53, 0.08);
   border: 1px solid rgba(229, 57, 53, 0.15);
-  border-radius: var(--radius-full);
-  font-size: 0.875rem;
-  font-weight: 600;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--primary);
-  margin-bottom: var(--space-lg);
+  margin-bottom: 20px;
+}
+
+/* Dark card variant */
+.section-badge--dark,
+.dual-card-face.supermarket .dual-card-badge {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Light/white card variant */
+.section-badge--light,
+.dual-card-face.brand .dual-card-badge {
+  background: var(--dark);
+  color: white;
+  border: none;
 }
 
 .hero-title {
@@ -951,13 +972,18 @@ p {
 }
 
 .partner-badge {
-  display: inline-block;
-  padding: var(--space-xs) var(--space-md);
-  background: var(--primary-subtle);
-  color: var(--primary);
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(229, 57, 53, 0.08);
+  border: 1px solid rgba(229, 57, 53, 0.15);
+  border-radius: 100px;
+  font-size: 12px;
   font-weight: 700;
-  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
 }
 
 /* ============================================
@@ -2763,14 +2789,19 @@ p {
 }
 
 .testimonial-badge {
-  display: inline-block;
-  padding: var(--space-xs) var(--space-md);
-  background: var(--primary-subtle);
-  color: var(--primary);
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(229, 57, 53, 0.08);
+  border: 1px solid rgba(229, 57, 53, 0.15);
+  border-radius: 100px;
+  font-size: 12px;
   font-weight: 700;
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  margin-bottom: 20px;
 }
 
 .testimonial-stars {
