@@ -4,10 +4,10 @@
 
 /* Desktop Styles (769px and above) */
 @media (min-width: 769px) {
-  /* Hero Container */
+  /* Hero Container - Dark Premium Theme */
   .hero {
     min-height: 100vh;
-    background: linear-gradient(180deg, #FAF9F6 0%, #F5F4F0 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #151515 50%, #0d0d0d 100%);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -16,29 +16,36 @@
     padding: 120px 40px 60px;
   }
 
-  /* Animated Gradient Orbs */
+  /* Animated Red Glow Effects */
   .hero::before {
     content: '';
     position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(229, 57, 53, 0.08) 0%, transparent 70%);
-    animation: orb-float 8s ease-in-out infinite;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(229, 57, 53, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(229, 57, 53, 0.08) 0%, transparent 40%);
+    animation: pulse-glow 8s ease-in-out infinite;
     pointer-events: none;
   }
 
   .hero::after {
     content: '';
     position: absolute;
-    bottom: -30%;
-    left: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(229, 57, 53, 0.06) 0%, transparent 70%);
+    top: -20%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(229, 57, 53, 0.1) 0%, transparent 70%);
     animation: orb-float 10s ease-in-out infinite reverse;
     pointer-events: none;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.05); }
   }
 
   @keyframes orb-float {
@@ -127,7 +134,7 @@
   .hero-badge span {
     font-size: 14px;
     font-weight: 600;
-    color: var(--gray-700);
+    color: rgba(255, 255, 255, 0.9);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -141,7 +148,7 @@
   .hero-title {
     font-size: 56px;
     font-weight: 800;
-    color: var(--dark);
+    color: white;
     line-height: 1.1;
     margin-bottom: 24px;
     animation: fade-in-up 0.8s ease-out 0.2s both;
@@ -163,7 +170,7 @@
   /* Subtitle */
   .hero-subtitle {
     font-size: 20px;
-    color: var(--gray-600);
+    color: rgba(255, 255, 255, 0.7);
     line-height: 1.7;
     max-width: 700px;
     margin: 0 auto 40px;
@@ -319,11 +326,11 @@
 
 /* Mobile Styles (768px and below) */
 @media (max-width: 768px) {
-  /* Hero Container */
+  /* Hero Container - Dark Premium Theme */
   .hero {
     min-height: 100vh;
     min-height: 100dvh;
-    background: linear-gradient(180deg, #FAF9F6 0%, #F5F4F0 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #151515 50%, #0d0d0d 100%);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -332,29 +339,36 @@
     padding: 120px 20px 40px;
   }
 
-  /* Animated Gradient Orbs */
+  /* Animated Red Glow Effects */
   .hero::before {
     content: '';
     position: absolute;
-    top: -20%;
-    right: -30%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(229, 57, 53, 0.08) 0%, transparent 70%);
-    animation: orb-float 8s ease-in-out infinite;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(229, 57, 53, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(229, 57, 53, 0.08) 0%, transparent 40%);
+    animation: pulse-glow 8s ease-in-out infinite;
     pointer-events: none;
   }
 
   .hero::after {
     content: '';
     position: absolute;
-    bottom: -30%;
-    left: -20%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(229, 57, 53, 0.06) 0%, transparent 70%);
+    top: -20%;
+    right: -30%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(229, 57, 53, 0.1) 0%, transparent 70%);
     animation: orb-float 10s ease-in-out infinite reverse;
     pointer-events: none;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.05); }
   }
 
   @keyframes orb-float {
@@ -426,7 +440,7 @@
   .hero-badge span {
     font-size: 12px;
     font-weight: 600;
-    color: var(--gray-700);
+    color: rgba(255, 255, 255, 0.9);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -440,7 +454,7 @@
   .hero-title {
     font-size: 36px;
     font-weight: 800;
-    color: var(--dark);
+    color: white;
     line-height: 1.15;
     margin-bottom: 20px;
     animation: fade-in-up 0.8s ease-out 0.2s both;
@@ -462,7 +476,7 @@
   /* Subtitle */
   .hero-subtitle {
     font-size: 16px;
-    color: var(--gray-600);
+    color: rgba(255, 255, 255, 0.7);
     line-height: 1.7;
     margin-bottom: 32px;
     animation: fade-in-up 0.8s ease-out 0.4s both;
