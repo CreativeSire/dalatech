@@ -454,61 +454,327 @@
     }
     
     /* Responsive */
-    /* Mobile - Same format as desktop */
+    /* ============================================
+       MOBILE CASE STUDIES - MIND BLOWING PREMIUM
+       ============================================ */
     @media (max-width: 1024px) {
       .cs-section {
-        grid-template-columns: 1fr 1fr;
+        display: block;
         min-height: auto;
+        margin-bottom: 4rem;
       }
       
+      /* Premium Card Container */
       .cs-image-side {
-        min-height: 400px;
+        position: relative;
+        width: 100%;
+        height: 380px;
+        min-height: auto;
+        border-radius: 24px 24px 0 0;
+        overflow: hidden;
+      }
+      
+      .cs-image {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transform: scale(1);
+        transition: transform 8s ease-out;
+      }
+      
+      .cs-section.in-view .cs-image {
+        transform: scale(1.1);
+      }
+      
+      /* Gradient Overlay with Glassmorphism Stats */
+      .cs-image-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, 
+          transparent 0%, 
+          transparent 40%,
+          rgba(0,0,0,0.6) 80%,
+          rgba(0,0,0,0.9) 100%);
+        display: flex;
+        align-items: flex-end;
+        padding: 1.5rem;
+      }
+      
+      /* Floating Stats Badge on Image */
+      .cs-image-stats {
+        display: flex;
+        gap: 1.5rem;
+        width: 100%;
+      }
+      
+      .cs-image-stat {
+        text-align: center;
+        padding: 0.75rem 1rem;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.2);
+      }
+      
+      .cs-image-stat-value {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: white;
+        line-height: 1;
+      }
+      
+      .cs-image-stat-label {
+        font-size: 0.625rem;
+        color: rgba(255,255,255,0.8);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-top: 0.25rem;
+      }
+      
+      /* Premium Content Card */
+      .cs-content-side {
+        padding: 2rem;
+        background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+        border-radius: 0 0 24px 24px;
+        position: relative;
+        margin-top: -20px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      }
+      
+      /* Floating Case Number */
+      .cs-number {
+        position: absolute;
+        top: -15px;
+        left: 2rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: white;
+        background: var(--primary);
+        padding: 0.5rem 1rem;
+        border-radius: 100px;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        box-shadow: 0 4px 15px rgba(229, 57, 53, 0.4);
+      }
+      
+      /* Premium Title */
+      .cs-title {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: var(--dark);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin: 1rem 0 1.25rem;
+      }
+      
+      /* Elegant Text */
+      .cs-text {
+        font-size: 1rem;
+        color: var(--gray-600);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+      
+      /* Horizontal Scrolling Metrics */
+      .cs-metrics {
+        display: flex;
+        gap: 0.75rem;
+        margin: 1.5rem 0;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      
+      .cs-metrics::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .cs-metric {
+        flex: 0 0 auto;
+        min-width: 100px;
+        padding: 1rem;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        border-radius: 16px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      
+      .cs-metric:active {
+        transform: scale(0.95);
+      }
+      
+      .cs-metric-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(229, 57, 53, 0.2);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 1rem;
+        margin: 0 auto 0.75rem;
+      }
+      
+      .cs-metric-value {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: white;
+        line-height: 1;
+        margin-bottom: 0.25rem;
+      }
+      
+      .cs-metric-label {
+        font-size: 0.6875rem;
+        color: rgba(255,255,255,0.7);
+        font-weight: 500;
+      }
+      
+      /* Key Results Section */
+      .cs-results {
+        margin: 1.5rem 0;
+        padding: 1.25rem;
+        background: linear-gradient(135deg, rgba(229, 57, 53, 0.05) 0%, rgba(229, 57, 53, 0.02) 100%);
+        border-radius: 16px;
+        border-left: 3px solid var(--primary);
+      }
+      
+      .cs-results-title {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 0.75rem;
+      }
+      
+      .cs-results-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .cs-result-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.9375rem;
+        color: var(--gray-700);
+      }
+      
+      .cs-result-item i {
+        width: 24px;
+        height: 24px;
+        background: rgba(76, 175, 80, 0.1);
+        color: #4CAF50;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.625rem;
+      }
+      
+      /* Progress Bars Premium */
+      .cs-progress-list {
+        margin: 1.5rem 0;
+      }
+      
+      .cs-progress-item {
+        margin-bottom: 1.25rem;
+      }
+      
+      .cs-progress-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+      
+      .cs-progress-title {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--dark);
+      }
+      
+      .cs-progress-value {
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      
+      .cs-progress-bar {
+        height: 6px;
+        background: rgba(0,0,0,0.08);
+        border-radius: 100px;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .cs-progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--primary) 0%, #ff6b6b 100%);
+        border-radius: 100px;
+        transition: width 1.5s ease-out;
+        position: relative;
+      }
+      
+      .cs-progress-fill::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 20px;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+      }
+      
+      /* Swipe Indicator */
+      .cs-swipe-hint {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        font-size: 0.75rem;
+        color: var(--gray-400);
+      }
+      
+      .cs-swipe-hint i {
+        animation: swipe-hint 1.5s ease-in-out infinite;
+      }
+      
+      @keyframes swipe-hint {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(5px); }
+      }
+    }
+    
+    /* Small Mobile Optimization */
+    @media (max-width: 480px) {
+      .cs-image-side {
+        height: 320px;
       }
       
       .cs-content-side {
-        padding: 3rem 2rem;
-      }
-      
-      .cs-metrics {
-        grid-template-columns: repeat(3, 1fr);
+        padding: 1.75rem 1.5rem;
       }
       
       .cs-title {
         font-size: 1.5rem;
       }
       
-      .cs-text {
-        font-size: 0.9375rem;
-      }
-    }
-    
-    /* Small Mobile */
-    @media (max-width: 768px) {
-      .cs-section {
-        grid-template-columns: 1fr;
+      .cs-image-stats {
+        gap: 1rem;
       }
       
-      .cs-image-side {
-        min-height: 280px;
-        order: -1 !important;
+      .cs-image-stat {
+        padding: 0.625rem 0.875rem;
       }
       
-      .cs-content-side {
-        padding: 2rem 1.5rem;
-        order: 2 !important;
-      }
-      
-      .cs-metrics {
-        grid-template-columns: 1fr;
-      }
-      
-      .cs-features {
-        grid-template-columns: 1fr;
-      }
-      
-      .cs-stats-bar {
-        flex-direction: column;
-        gap: 2rem;
+      .cs-image-stat-value {
+        font-size: 1.25rem;
       }
     }
     
@@ -574,7 +840,22 @@
   <section class="cs-section reveal-section" id="wilson">
     <div class="cs-image-side">
       <div class="cs-image" style="background-image: url('https://images.unsplash.com/photo-1544145945-f90425340c7e?w=1200&h=800&fit=crop');"></div>
-      <div class="cs-image-overlay"></div>
+      <div class="cs-image-overlay">
+        <div class="cs-image-stats">
+          <div class="cs-image-stat">
+            <div class="cs-image-stat-value">₦221M</div>
+            <div class="cs-image-stat-label">Revenue</div>
+          </div>
+          <div class="cs-image-stat">
+            <div class="cs-image-stat-value">175</div>
+            <div class="cs-image-stat-label">Stores</div>
+          </div>
+          <div class="cs-image-stat">
+            <div class="cs-image-stat-value">40%</div>
+            <div class="cs-image-stat-label">Margin</div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="cs-content-side">
       <div class="reveal">
@@ -702,7 +983,22 @@
   <section class="cs-section cs-right reveal-section" id="zayith">
     <div class="cs-image-side">
       <div class="cs-image" style="background-image: url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&h=800&fit=crop');"></div>
-      <div class="cs-image-overlay"></div>
+      <div class="cs-image-overlay">
+        <div class="cs-image-stats">
+          <div class="cs-image-stat">
+            <div class="cs-image-stat-value">₦176M</div>
+            <div class="cs-image-stat-label">Revenue</div>
+          </div>
+          <div class="cs-image-stat">
+            <div class="cs-image-stat-value">170+</div>
+            <div class="cs-image-stat-label">Stores</div>
+          </div>
+          <div class="cs-image-stat">
+            <div class="cs-image-stat-value">6.5x</div>
+            <div class="cs-image-stat-label">Growth</div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="cs-content-side">
       <div class="reveal">
@@ -830,7 +1126,22 @@
   <section class="cs-section reveal-section" id="august">
     <div class="cs-image-side">
       <div class="cs-image" style="background-image: url('https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&h=800&fit=crop');"></div>
-      <div class="cs-image-overlay"></div>
+      <div class="cs-image-overlay">
+        <div class="cs-image-stats">
+          <div class="cs-image-stat">
+            <div class="cs-image-stat-value">₦138M</div>
+            <div class="cs-image-stat-label">Revenue</div>
+          </div>
+          <div class="cs-image-stat">
+            <div class="cs-image-stat-value">173</div>
+            <div class="cs-image-stat-label">Stores</div>
+          </div>
+          <div class="cs-image-stat">
+            <div class="cs-image-stat-value">Peak</div>
+            <div class="cs-image-stat-label">Performance</div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="cs-content-side">
       <div class="reveal">
@@ -958,7 +1269,22 @@
   <section class="cs-section cs-right reveal-section" id="eloha">
     <div class="cs-image-side">
       <div class="cs-image" style="background-image: url('https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1200&h=800&fit=crop');"></div>
-      <div class="cs-image-overlay"></div>
+      <div class="cs-image-overlay">
+        <div class="cs-image-stats">
+          <div class="cs-image-stat">
+            <div class="cs-image-stat-value">₦30M</div>
+            <div class="cs-image-stat-label">Revenue</div>
+          </div>
+          <div class="cs-image-stat">
+            <div class="cs-image-stat-value">106</div>
+            <div class="cs-image-stat-label">Stores</div>
+          </div>
+          <div class="cs-image-stat">
+            <div class="cs-image-stat-value">7mo</div>
+            <div class="cs-image-stat-label">Timeline</div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="cs-content-side">
       <div class="reveal">
@@ -1239,6 +1565,22 @@
     }, observerOptions);
     
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    
+    // Case Study Section Observer for image zoom effect
+    const csObserverOptions = {
+      threshold: 0.3,
+      rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const csObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, csObserverOptions);
+    
+    document.querySelectorAll('.cs-section').forEach(el => csObserver.observe(el));
   </script>
   <script src="../assets/js/animations.js"></script>
 
