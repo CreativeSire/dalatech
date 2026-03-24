@@ -193,7 +193,6 @@
       padding: 140px 2rem 100px;
     }
     
-    /* Animated mesh gradient background */
     .hero-mesh {
       position: absolute;
       inset: 0;
@@ -221,7 +220,6 @@
       }
     }
     
-    /* Floating geometric shapes */
     .hero-shape {
       position: absolute;
       border-radius: 50%;
@@ -264,7 +262,6 @@
       75% { transform: translate(-20px, -10px) scale(1.05); opacity: 0.45; }
     }
     
-    /* Subtle grid pattern overlay */
     .hero-grid {
       position: absolute;
       inset: 0;
@@ -277,7 +274,6 @@
       -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
     }
     
-    /* Noise texture for premium feel */
     .hero-noise {
       position: absolute;
       inset: 0;
@@ -385,7 +381,7 @@
       font-weight: 600;
     }
     
-    /* Story Section - TIGHTER */
+    /* Story Section - DESKTOP */
     .story-section {
       padding: 80px 2rem;
       background: var(--white);
@@ -496,7 +492,6 @@
       transform: scale(1.08);
     }
     
-    /* Placeholder with Nigerian theme */
     .story-placeholder {
       width: 100%;
       height: 100%;
@@ -578,7 +573,7 @@
       line-height: 1.7;
     }
     
-    /* Mission Section */
+    /* Mission Section - DESKTOP SPLIT CARDS */
     .mission-section {
       padding: 80px 2rem;
       background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
@@ -596,26 +591,30 @@
       background-size: 50px 50px;
     }
     
-    .mv-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 3rem;
+    /* Desktop Mission/Vision Container */
+    .mv-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 4rem;
     }
     
-    .mv-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Desktop Split Card Design */
+    .mv-split-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2rem;
+      background: linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 24px;
-      padding: 2rem;
+      padding: 2.5rem;
       position: relative;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       transform-style: preserve-3d;
     }
     
-    .mv-card::before {
+    .mv-split-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -628,31 +627,68 @@
       transition: transform 0.4s ease;
     }
     
-    .mv-card:hover {
-      transform: translateY(-6px) rotateX(5deg);
-      background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    .mv-split-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
     }
     
-    .mv-card:hover::before {
+    .mv-split-card:hover::before {
       transform: scaleX(1);
     }
     
-    .mv-card__icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(229, 57, 53, 0.2);
-      border-radius: 12px;
+    .mv-split-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .mv-icon-wrap {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid rgba(229, 57, 53, 0.3);
-      transform: translateZ(10px);
     }
     
-    .mv-card h3 {
+    .mv-icon {
+      font-size: 4rem;
+      line-height: 1;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .mv-icon-glow {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(229,57,53,0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(20px);
+      animation: glow-pulse 3s ease-in-out infinite;
+    }
+    
+    @keyframes glow-pulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.2); }
+    }
+    
+    .mv-accent-line {
+      width: 2px;
+      height: 60px;
+      background: linear-gradient(180deg, var(--primary), transparent);
+      margin-top: 1.5rem;
+      opacity: 0.5;
+    }
+    
+    .mv-split-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .mv-label {
       font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -661,17 +697,42 @@
       margin-bottom: 0.5rem;
     }
     
-    .mv-card h4 {
-      font-size: 1.25rem;
+    .mv-split-content h3 {
+      font-size: 1.5rem;
       font-weight: 800;
       color: white;
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
     }
     
-    .mv-card p {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.95rem;
-      line-height: 1.6;
+    .mv-split-content p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .mv-stats {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .mv-stat {
+      text-align: center;
+    }
+    
+    .mv-stat-num {
+      display: block;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+    
+    .mv-stat-text {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
     
     .values-title {
@@ -857,10 +918,6 @@
       right: -20px;
     }
     
-    /* Mobile elements hidden by default */
-    .story-3d-carousel,
-    .mv-mobile-stack { display: none !important; }
-    
     /* Trust Section */
     .trust-section {
       padding: 80px 2rem;
@@ -1032,28 +1089,6 @@
       transform: translateY(0);
     }
     
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-40px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .reveal-left.active {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(40px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .reveal-right.active {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    
     .reveal-scale {
       opacity: 0;
       transform: scale(0.9);
@@ -1118,29 +1153,6 @@
       padding-left: 0.5rem;
     }
     
-    .navbar__mobile a::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gray-300);
-      transition: all 0.2s ease;
-    }
-    
-    .navbar__mobile a:hover::before {
-      background: var(--primary);
-      transform: scale(1.3);
-    }
-    
-    .navbar__mobile a.active {
-      color: var(--primary);
-    }
-    
-    .navbar__mobile a.active::before {
-      background: var(--primary);
-    }
-    
-    /* Mobile Menu Auth Buttons */
     .navbar__mobile .btn {
       margin-top: 1rem;
       width: 100%;
@@ -1164,6 +1176,22 @@
       box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
     }
     
+    /* ==========================================
+       DESKTOP/MOBILE VISIBILITY CONTROL
+       ========================================== */
+    
+    /* Base: Hide mobile elements on desktop */
+    .story-3d-carousel,
+    .mv-mobile-stack { 
+      display: none !important; 
+    }
+    
+    /* Base: Show desktop elements */
+    .story-grid,
+    .mv-container { 
+      display: flex !important; 
+    }
+    
     /* Mobile Responsive */
     @media (max-width: 1024px) {
       .navbar__links { display: none; }
@@ -1180,12 +1208,29 @@
       
       .story-block:nth-child(even) { direction: ltr; }
       
-      .mv-grid { grid-template-columns: 1fr; }
-      
-      .footer__grid {
+      .mv-split-card {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        padding: 1.5rem;
       }
+      
+      .mv-split-visual {
+        flex-direction: row;
+        gap: 1rem;
+      }
+      
+      .mv-accent-line {
+        width: 60px;
+        height: 2px;
+        margin-top: 0;
+      }
+      
+      .mv-stats {
+        gap: 1.5rem;
+      }
+      
+      .values-nav--prev { left: 0; }
+      .values-nav--next { right: 0; }
     }
     
     @media (max-width: 640px) {
@@ -1194,8 +1239,6 @@
       .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
       
       .stat-item { padding: 1.5rem 1rem; }
-      
-      .mv-card { padding: 1.5rem; }
       
       .trust-item {
         grid-template-columns: 1fr;
@@ -1217,12 +1260,21 @@
       
       .btn { width: 100%; }
       
-      /* Show/Hide Desktop/Mobile */
+      /* ======================================
+         MOBILE: SWAP VISIBILITY
+         ====================================== */
+      
+      /* Hide desktop elements */
       .story-grid { display: none !important; }
       .mv-container { display: none !important; }
       
-      .story-3d-carousel { display: block !important; visibility: visible !important; }
-      .mv-mobile-stack { display: flex !important; visibility: visible !important; }
+      /* Show mobile elements */
+      .story-3d-carousel { 
+        display: block !important; 
+      }
+      .mv-mobile-stack { 
+        display: flex !important; 
+      }
       
       /* Mobile Story 3D Carousel */
       .story-3d-carousel {
@@ -1410,7 +1462,6 @@
       
       /* Mobile Mission/Vision Premium Cards */
       .mv-mobile-stack {
-        display: flex;
         flex-direction: column;
         gap: 1.5rem;
       }
@@ -1530,12 +1581,12 @@
     </div>
     <nav class="navbar__mobile">
       <a href="for-brands.html">DALA for Brands</a>
-        <a href="for-supermarkets.html">DALA for Supermarkets</a>
-        <a href="about.html">About Us</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="contact.html">Contact Us</a>
-        <a class="btn btn--ghost" href="login.html">Login</a>
-        <a class="btn btn--primary" href="signup.html">Sign Up</a>
+      <a href="for-supermarkets.html">DALA for Supermarkets</a>
+      <a href="about.html">About Us</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="contact.html">Contact Us</a>
+      <a class="btn btn--ghost" href="login.html">Login</a>
+      <a class="btn btn--primary" href="signup.html">Sign Up</a>
     </nav>
   </header>
 
@@ -1583,7 +1634,7 @@
     </div>
   </section>
 
-  <!-- Origin Story - Premium 3D Mobile Carousel -->
+  <!-- Origin Story - Desktop Grid + Mobile 3D Carousel -->
   <section class="story-section">
     <div class="container">
       <div class="section-header reveal">
@@ -1657,8 +1708,8 @@
         </div>
       </div>
       
-      <!-- Mobile: 3D Carousel -->
-      <div class="story-3d-carousel" style="display: none;">
+      <!-- Mobile: 3D Carousel (NO INLINE STYLE - controlled by CSS) -->
+      <div class="story-3d-carousel">
         <div class="story-3d-container">
           <div class="story-3d-track" id="storyTrack">
             <!-- Card 1 -->
@@ -1718,7 +1769,7 @@
     </div>
   </section>
 
-  <!-- Mission & Vision - Premium Split Design -->
+  <!-- Mission & Vision - Desktop Split + Mobile Stack -->
   <section class="mission-section">
     <div class="container">
       <div class="section-header reveal">
@@ -1779,8 +1830,8 @@
         </div>
       </div>
       
-      <!-- Mobile: Premium Cards -->
-      <div class="mv-mobile-stack" style="display: none;">
+      <!-- Mobile: Premium Cards (NO INLINE STYLE - controlled by CSS) -->
+      <div class="mv-mobile-stack">
         <div class="mv-mobile-card reveal">
           <div class="mv-mobile-header">
             <span class="mv-mobile-icon">🎯</span>
@@ -2083,7 +2134,7 @@
     }, observerOptions);
     
     // Observe all reveal elements
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+    document.querySelectorAll('.reveal, .reveal-scale').forEach(el => {
       observer.observe(el);
     });
     
@@ -2127,7 +2178,7 @@
       mobileMenu.classList.toggle('active');
     });
     
-    // 3D tilt effect for story blocks on mouse move
+    // 3D tilt effect for story blocks
     const storyBlocks = document.querySelectorAll('.story-block');
     
     storyBlocks.forEach(block => {
