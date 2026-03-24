@@ -682,69 +682,179 @@
       margin-bottom: 2rem;
     }
     
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+    /* 3D Values Carousel */
+    .values-3d-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      perspective: 1200px;
     }
     
-    .value-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 1.5rem;
+    .values-3d-carousel {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .value-3d-card {
+      position: absolute;
+      width: 280px;
+      left: 50%;
+      top: 50%;
+      margin-left: -140px;
+      margin-top: -130px;
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .value-3d-card.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateZ(100px) rotateY(0deg) scale(1);
+      z-index: 5;
+    }
+    
+    .value-3d-card.prev {
+      opacity: 0.5;
+      pointer-events: none;
+      transform: translateZ(-50px) translateX(-200px) rotateY(35deg) scale(0.8);
+      z-index: 3;
+      filter: brightness(0.6);
+    }
+    
+    .value-3d-card.next {
+      opacity: 0.5;
+      pointer-events: none;
+      transform: translateZ(-50px) translateX(200px) rotateY(-35deg) scale(0.8);
+      z-index: 3;
+      filter: brightness(0.6);
+    }
+    
+    .value-3d-card.hidden {
+      opacity: 0;
+      transform: translateZ(-200px) scale(0.5);
+      z-index: 1;
+    }
+    
+    .value-3d-card__inner {
+      background: linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 24px;
+      padding: 2rem;
       text-align: center;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
-      transform-style: preserve-3d;
+      backdrop-filter: blur(10px);
+      box-shadow: 
+        0 25px 50px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.05) inset,
+        0 0 30px rgba(229,57,53,0.1) inset;
     }
     
-    .value-card::before {
-      content: '';
+    .value-3d-card__shine {
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--primary), var(--gold));
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.6s ease;
     }
     
-    .value-card:hover {
-      transform: translateY(-6px) rotateY(3deg);
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(229, 57, 53, 0.2);
+    .value-3d-card.active .value-3d-card__shine {
+      left: 100%;
     }
     
-    .value-card:hover::before {
-      transform: scaleX(1);
-    }
-    
-    .value-card__icon {
-      font-size: 2rem;
-      margin-bottom: 0.75rem;
-      transform: translateZ(10px);
+    .value-3d-card__icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
       display: inline-block;
-      transition: transform 0.3s ease;
+      animation: float-icon 3s ease-in-out infinite;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
     }
     
-    .value-card:hover .value-card__icon {
-      transform: translateZ(20px) scale(1.2);
+    @keyframes float-icon {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
     }
     
-    .value-card h4 {
+    .value-3d-card h4 {
       color: white;
-      font-size: 1rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      margin-bottom: 0.375rem;
+      margin-bottom: 0.75rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
     
-    .value-card p {
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.85rem;
-      line-height: 1.5;
+    .value-3d-card p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    
+    /* Navigation Dots */
+    .values-3d-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 2rem;
+    }
+    
+    .values-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .values-dot:hover {
+      background: rgba(255,255,255,0.4);
+    }
+    
+    .values-dot.active {
+      background: var(--primary);
+      box-shadow: 0 0 15px rgba(229,57,53,0.5);
+      transform: scale(1.2);
+    }
+    
+    /* Navigation Arrows */
+    .values-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+    
+    .values-nav:hover {
+      background: rgba(229,57,53,0.8);
+      border-color: var(--primary);
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .values-nav--prev {
+      left: -20px;
+    }
+    
+    .values-nav--next {
+      right: -20px;
     }
     
     /* Trust Section */
@@ -1222,32 +1332,73 @@
       </div>
       
       <h3 class="values-title reveal">Our Core Values</h3>
-      <div class="values-grid">
-        <div class="value-card reveal">
-          <div class="value-card__icon">🤝</div>
-          <h4>Integrity First</h4>
-          <p>We operate with full transparency and honest communication — no hidden agendas, no surprises.</p>
+      
+      <!-- 3D Values Carousel -->
+      <div class="values-3d-container reveal">
+        <div class="values-3d-carousel" id="valuesCarousel">
+          <!-- Card 1: Integrity First -->
+          <div class="value-3d-card active" data-index="0">
+            <div class="value-3d-card__inner">
+              <div class="value-3d-card__icon">🤝</div>
+              <h4>Integrity First</h4>
+              <p>We operate with full transparency and honest communication — no hidden agendas, no surprises.</p>
+              <div class="value-3d-card__shine"></div>
+            </div>
+          </div>
+          <!-- Card 2: Execution Excellence -->
+          <div class="value-3d-card" data-index="1">
+            <div class="value-3d-card__inner">
+              <div class="value-3d-card__icon">⚙️</div>
+              <h4>Execution Excellence</h4>
+              <p>We take pride in doing things right — consistently, reliably, and to the highest standard.</p>
+              <div class="value-3d-card__shine"></div>
+            </div>
+          </div>
+          <!-- Card 3: Sustainable Growth -->
+          <div class="value-3d-card" data-index="2">
+            <div class="value-3d-card__inner">
+              <div class="value-3d-card__icon">📈</div>
+              <h4>Sustainable Growth</h4>
+              <p>We build for the long term — helping brands scale in disciplined, responsible ways.</p>
+              <div class="value-3d-card__shine"></div>
+            </div>
+          </div>
+          <!-- Card 4: Partnership Mindset -->
+          <div class="value-3d-card" data-index="3">
+            <div class="value-3d-card__inner">
+              <div class="value-3d-card__icon">👥</div>
+              <h4>Partnership Mindset</h4>
+              <p>Your success is our success. We treat every relationship as a true collaboration.</p>
+              <div class="value-3d-card__shine"></div>
+            </div>
+          </div>
+          <!-- Card 5: Continuous Improvement -->
+          <div class="value-3d-card" data-index="4">
+            <div class="value-3d-card__inner">
+              <div class="value-3d-card__icon">💡</div>
+              <h4>Continuous Improvement</h4>
+              <p>We constantly refine our processes to stay ahead of the challenges our partners face.</p>
+              <div class="value-3d-card__shine"></div>
+            </div>
+          </div>
         </div>
-        <div class="value-card reveal">
-          <div class="value-card__icon">⚙️</div>
-          <h4>Execution Excellence</h4>
-          <p>We take pride in doing things right — consistently, reliably, and to the highest standard.</p>
+        
+        <!-- Navigation Dots -->
+        <div class="values-3d-dots">
+          <button class="values-dot active" data-index="0"></button>
+          <button class="values-dot" data-index="1"></button>
+          <button class="values-dot" data-index="2"></button>
+          <button class="values-dot" data-index="3"></button>
+          <button class="values-dot" data-index="4"></button>
         </div>
-        <div class="value-card reveal">
-          <div class="value-card__icon">📈</div>
-          <h4>Sustainable Growth</h4>
-          <p>We build for the long term — helping brands scale in disciplined, responsible ways.</p>
-        </div>
-        <div class="value-card reveal">
-          <div class="value-card__icon">👥</div>
-          <h4>Partnership Mindset</h4>
-          <p>Your success is our success. We treat every relationship as a true collaboration.</p>
-        </div>
-        <div class="value-card reveal">
-          <div class="value-card__icon">💡</div>
-          <h4>Continuous Improvement</h4>
-          <p>We constantly refine our processes to stay ahead of the challenges our partners face.</p>
-        </div>
+        
+        <!-- Navigation Arrows -->
+        <button class="values-nav values-nav--prev" aria-label="Previous value">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="values-nav values-nav--next" aria-label="Next value">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
     </div>
   </section>
@@ -1573,6 +1724,105 @@
     localStorage.setItem('wipBadgeDismissed', 'true');
     localStorage.setItem('wipBadgeDismissedTime', Date.now().toString());
   }
+</script>
+
+<!-- 3D Values Carousel Script -->
+<script>
+(function() {
+  const cards = document.querySelectorAll('.value-3d-card');
+  const dots = document.querySelectorAll('.values-dot');
+  const prevBtn = document.querySelector('.values-nav--prev');
+  const nextBtn = document.querySelector('.values-nav--next');
+  let currentIndex = 0;
+  const totalCards = cards.length;
+  let autoRotateInterval;
+  
+  function updateCarousel() {
+    cards.forEach((card, index) => {
+      card.classList.remove('active', 'prev', 'next', 'hidden');
+      
+      if (index === currentIndex) {
+        card.classList.add('active');
+      } else if (index === (currentIndex - 1 + totalCards) % totalCards) {
+        card.classList.add('prev');
+      } else if (index === (currentIndex + 1) % totalCards) {
+        card.classList.add('next');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+  }
+  
+  function goToSlide(index) {
+    currentIndex = (index + totalCards) % totalCards;
+    updateCarousel();
+    resetAutoRotate();
+  }
+  
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
+  
+  function prevSlide() {
+    goToSlide(currentIndex - 1);
+  }
+  
+  function startAutoRotate() {
+    autoRotateInterval = setInterval(nextSlide, 5000);
+  }
+  
+  function resetAutoRotate() {
+    clearInterval(autoRotateInterval);
+    startAutoRotate();
+  }
+  
+  // Event listeners
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+  
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => goToSlide(index));
+  });
+  
+  // Touch/swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const container = document.querySelector('.values-3d-container');
+  
+  container.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  
+  container.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+  
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+  }
+  
+  // Initialize
+  updateCarousel();
+  startAutoRotate();
+  
+  // Pause on hover
+  container.addEventListener('mouseenter', () => clearInterval(autoRotateInterval));
+  container.addEventListener('mouseleave', startAutoRotate);
+})();
 </script>
 </body>
 </html>
