@@ -1710,6 +1710,107 @@
     .wip-badge { bottom: 16px; right: 50%; transform: translateX(50%); padding: 10px 16px; font-size: 12px; }
     .wip-badge:hover { transform: translateX(50%) translateY(-2px); }
     .wip-badge--hidden { transform: translateX(50%) translateY(20px) scale(0.9); }
+    
+    /* Mobile 3D Carousel Adjustments */
+    .values-3d-container {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+    
+    .values-3d-carousel {
+      height: 360px;
+    }
+    
+    .value-3d-card {
+      width: 260px;
+      margin-left: -130px;
+      margin-top: -140px;
+    }
+    
+    .value-3d-card.prev {
+      transform: translateZ(-80px) translateX(-120px) rotateY(25deg) scale(0.7);
+    }
+    
+    .value-3d-card.next {
+      transform: translateZ(-80px) translateX(120px) rotateY(-25deg) scale(0.7);
+    }
+    
+    .value-3d-card__inner {
+      padding: 1.75rem 1.5rem;
+    }
+    
+    .value-3d-card__icon {
+      font-size: 3rem;
+    }
+    
+    .value-3d-card h4 {
+      font-size: 1.2rem;
+    }
+    
+    .value-3d-card p {
+      font-size: 0.9rem;
+    }
+    
+    .values-nav {
+      width: 44px;
+      height: 44px;
+      font-size: 1rem;
+    }
+    
+    .values-nav--prev {
+      left: 5px;
+    }
+    
+    .values-nav--next {
+      right: 5px;
+    }
+    
+    .values-3d-dots {
+      gap: 10px;
+      margin-top: 1.5rem;
+    }
+    
+    .values-dot {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  
+  /* Small Mobile */
+  @media (max-width: 380px) {
+    .values-3d-carousel {
+      height: 380px;
+    }
+    
+    .value-3d-card {
+      width: 240px;
+      margin-left: -120px;
+      margin-top: -150px;
+    }
+    
+    .value-3d-card.prev {
+      transform: translateZ(-100px) translateX(-100px) rotateY(20deg) scale(0.65);
+    }
+    
+    .value-3d-card.next {
+      transform: translateZ(-100px) translateX(100px) rotateY(-20deg) scale(0.65);
+    }
+    
+    .value-3d-card__inner {
+      padding: 1.5rem;
+    }
+    
+    .value-3d-card__icon {
+      font-size: 2.5rem;
+    }
+    
+    .value-3d-card h4 {
+      font-size: 1.1rem;
+    }
+    
+    .value-3d-card p {
+      font-size: 0.85rem;
+    }
   }
 </style>
 <div class="wip-badge" id="wipBadge" role="status" aria-label="Website maintenance in progress">
