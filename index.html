@@ -213,8 +213,8 @@
         </p>
       </div>
       
-      <!-- Static Cards - Supermarket & Brand -->
-      <div class="static-cards-container">
+      <!-- Desktop: Static Cards (Side by Side) -->
+      <div class="static-cards-container desktop-cards">
         <!-- Supermarket Card -->
         <div class="static-card supermarket-card">
           <div class="static-card-badge">
@@ -247,6 +247,60 @@
           <a href="pages/for-brands.html" class="static-card-link">
             Learn More <i class="fas fa-arrow-right"></i>
           </a>
+        </div>
+      </div>
+
+      <!-- Mobile: Floating Auto-Rotate Card -->
+      <div class="floating-card-container mobile-only" id="dualFloatingCard">
+        <div class="floating-card-wrapper">
+          <!-- Supermarket Slide -->
+          <div class="floating-card-slide active" data-slide="supermarket">
+            <div class="floating-card dark">
+              <div class="floating-card-badge">
+                <i class="fas fa-store"></i> For Supermarkets
+              </div>
+              <h3 class="floating-card-title">Dala For Supermarkets</h3>
+              <p class="floating-card-text">We reduce supplier-related risks by ensuring your standards are upheld, monitoring inventory to prevent stockouts, and quickly resolving quality issues.</p>
+              <div class="floating-card-features">
+                <span class="floating-feature-item"><i class="fas fa-check"></i> 48hr restocking</span>
+                <span class="floating-feature-item"><i class="fas fa-check"></i> Quality control</span>
+                <span class="floating-feature-item"><i class="fas fa-check"></i> Standards enforcement</span>
+              </div>
+              <a href="pages/for-supermarkets.html" class="floating-card-link">
+                Learn More <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Brand Slide -->
+          <div class="floating-card-slide" data-slide="brand">
+            <div class="floating-card light">
+              <div class="floating-card-badge">
+                <i class="fas fa-box-open"></i> For Brands
+              </div>
+              <h3 class="floating-card-title">Dala For Brands</h3>
+              <p class="floating-card-text">We help you grow in supermarkets with structure and reliable execution — providing predictable payments and operational clarity.</p>
+              <div class="floating-card-features">
+                <span class="floating-feature-item"><i class="fas fa-check"></i> 30-day payments</span>
+                <span class="floating-feature-item"><i class="fas fa-check"></i> 300+ stores</span>
+                <span class="floating-feature-item"><i class="fas fa-check"></i> Real-time visibility</span>
+              </div>
+              <a href="pages/for-brands.html" class="floating-card-link secondary">
+                Learn More <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation Dots -->
+        <div class="floating-card-dots">
+          <button class="floating-dot active" data-slide="supermarket" aria-label="Supermarkets"></button>
+          <button class="floating-dot" data-slide="brand" aria-label="Brands"></button>
+        </div>
+        
+        <!-- Touch Hint -->
+        <div class="floating-card-hint">
+          <i class="fas fa-hand-pointer"></i> Tap to pause
         </div>
       </div>
     </div>
@@ -634,6 +688,7 @@
   <script src="js/mobile-premium.js"></script>
   <script src="js/dual-card-slider.js"></script>
   <script src="js/smart-navbar.js"></script>
+  <script src="js/floating-card.js"></script>
   <script src="assets/js/animations.js"></script>
 <!-- Website Maintenance in Progress Badge -->
 <style>

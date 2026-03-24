@@ -147,17 +147,17 @@
   .static-card-link:hover i {
     transform: translateX(4px);
   }
+
+  /* Hide mobile floating card on desktop */
+  .floating-card-container.mobile-only {
+    display: none;
+  }
 }
 
-/* Mobile - Stacked */
+/* Mobile - Stacked Cards (Desktop hidden on mobile) */
 @media (max-width: 768px) {
-  .static-cards-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 400px;
-    margin: 40px auto 0;
-    padding: 0 20px;
+  .static-cards-container.desktop-cards {
+    display: none;
   }
 
   .static-card {
@@ -273,5 +273,222 @@
 
   .static-card-link i {
     font-size: 11px;
+  }
+
+  /* ============================================
+     MOBILE FLOATING CARD - Auto Rotate
+     ============================================ */
+  .floating-card-container.mobile-only {
+    display: block;
+    max-width: 340px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+    animation: card-float 4s ease-in-out infinite;
+  }
+
+  @keyframes card-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .floating-card-wrapper {
+    position: relative;
+    min-height: 380px;
+  }
+
+  .floating-card-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+  }
+
+  .floating-card-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .floating-card {
+    border-radius: 20px;
+    padding: 24px 20px;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.12),
+      0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .floating-card.dark {
+    background: #1a0a0a;
+    border: none;
+  }
+
+  .floating-card.light {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .floating-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 14px;
+    width: fit-content;
+  }
+
+  .floating-card.dark .floating-card-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  .floating-card.light .floating-card-badge {
+    background: rgba(229, 57, 53, 0.08);
+    border: 1px solid rgba(229, 57, 53, 0.15);
+    color: var(--primary);
+  }
+
+  .floating-card-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .floating-card.dark .floating-card-title {
+    color: white;
+  }
+
+  .floating-card.light .floating-card-title {
+    color: var(--dark);
+  }
+
+  .floating-card-text {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .floating-card.dark .floating-card-text {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .floating-card.light .floating-card-text {
+    color: var(--gray-600);
+  }
+
+  .floating-card-features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .floating-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .floating-card.dark .floating-feature-item {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .floating-card.light .floating-feature-item {
+    color: var(--gray-700);
+  }
+
+  .floating-feature-item i {
+    font-size: 10px;
+  }
+
+  .floating-card.dark .floating-feature-item i {
+    color: var(--primary-light);
+  }
+
+  .floating-card.light .floating-feature-item i {
+    color: var(--primary);
+  }
+
+  .floating-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    width: fit-content;
+    background: linear-gradient(90deg, #FF4136 0%, #FF8C42 100%);
+    color: white;
+  }
+
+  .floating-card-link.secondary {
+    background: var(--dark);
+    color: white;
+  }
+
+  .floating-card-link i {
+    font-size: 11px;
+  }
+
+  /* Navigation Dots */
+  .floating-card-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .floating-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(229, 57, 53, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .floating-dot.active {
+    background: var(--primary);
+    transform: scale(1.2);
+  }
+
+  /* Touch Hint */
+  .floating-card-hint {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--gray-500);
+    opacity: 0.7;
+  }
+
+  .floating-card-hint i {
+    margin-right: 6px;
+  }
+
+  /* Pause animation when user interacts */
+  .floating-card-container.paused {
+    animation-play-state: paused;
+  }
+
+  .floating-card-container.paused .floating-card-hint::after {
+    content: ' (Paused)';
   }
 }
