@@ -1,8 +1,8 @@
 /* ============================================
-   DUAL CARD SLIDER - Premium Floating Animation
-   Combined Supermarket + Brand in One Card
+   DUAL CARD SLIDER - Mobile & Desktop
    ============================================ */
 
+/* Mobile Styles (768px and below) */
 @media (max-width: 768px) {
   /* Container for the dual card */
   .dual-card-container {
@@ -271,73 +271,290 @@
     50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
   }
 
-  /* Shimmer effect on card */
-  .dual-card-face::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent
-    );
-    transition: left 0.8s ease;
-    pointer-events: none;
-  }
-
-  .dual-card-slider:hover .dual-card-face::after,
-  .dual-card-slider.flipped .dual-card-face::after {
-    left: 150%;
-  }
-
   /* Swipe hint - hidden as requested */
   .swipe-hint {
     display: none;
   }
 }
 
-/* Alternative: Slide animation instead of flip */
-@media (max-width: 768px) {
-  .dual-card-slide {
+/* Desktop Styles (769px and above) - Same centered layout */
+@media (min-width: 769px) {
+  /* Container for the dual card */
+  .dual-card-container {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
-    overflow: hidden;
-    border-radius: 28px;
+    perspective: 1500px;
+  }
+
+  /* The sliding card wrapper */
+  .dual-card-slider {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 560px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Individual card faces */
+  .dual-card-face {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 560px;
+    backface-visibility: hidden;
+    border-radius: 32px;
+    padding: 40px 36px 120px;
     box-shadow: 
-      0 20px 60px rgba(0, 0, 0, 0.15),
-      0 8px 25px rgba(0, 0, 0, 0.1);
+      0 25px 80px rgba(0, 0, 0, 0.15),
+      0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: visible;
   }
 
-  .dual-card-slide-inner {
-    display: flex;
-    width: 200%;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .dual-card-slide-inner.slide-right {
-    transform: translateX(-50%);
-  }
-
-  .dual-card-slide-face {
-    width: 50%;
-    padding: 32px 28px;
-    flex-shrink: 0;
-  }
-
-  .dual-card-slide-face.supermarket {
+  /* Supermarket Card - Front */
+  .dual-card-face.supermarket {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    transform: rotateY(0deg);
+    z-index: 2;
+  }
+
+  /* Brand Card - Back */
+  .dual-card-face.brand {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: var(--dark);
+    transform: rotateY(180deg);
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  /* Flip animation states */
+  .dual-card-slider.flipped {
+    transform: rotateY(180deg);
+  }
+
+  /* Card content styling */
+  .dual-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+  }
+
+  .dual-card-face.supermarket .dual-card-badge {
+    background: rgba(229, 57, 53, 0.2);
+    color: var(--primary-light);
+    border: 1px solid rgba(229, 57, 53, 0.3);
+  }
+
+  .dual-card-face.brand .dual-card-badge {
+    background: var(--dark);
     color: white;
   }
 
-  .dual-card-slide-face.brand {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  .dual-card-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .dual-card-face.supermarket .dual-card-title {
+    color: white;
+  }
+
+  .dual-card-face.brand .dual-card-title {
     color: var(--dark);
-    border-left: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .dual-card-text {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    opacity: 0.9;
+  }
+
+  .dual-card-face.supermarket .dual-card-text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .dual-card-face.brand .dual-card-text {
+    color: var(--gray-600);
+  }
+
+  /* Feature pills */
+  .dual-card-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .dual-feature-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .dual-card-face.supermarket .dual-feature-pill {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .dual-card-face.brand .dual-feature-pill {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    border: 1px solid var(--gray-200);
+  }
+
+  .dual-feature-pill:hover {
+    transform: scale(1.02);
+  }
+
+  .dual-feature-pill i {
+    font-size: 13px;
+  }
+
+  .dual-card-face.supermarket .dual-feature-pill i {
+    color: var(--primary-light);
+  }
+
+  .dual-card-face.brand .dual-feature-pill i {
+    color: var(--primary);
+  }
+
+  /* CTA Button */
+  .dual-card-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 18px 28px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dual-card-face.supermarket .dual-card-btn {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 10px 30px rgba(229, 57, 53, 0.4);
+  }
+
+  .dual-card-face.supermarket .dual-card-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px rgba(229, 57, 53, 0.5);
+  }
+
+  .dual-card-face.brand .dual-card-btn {
+    background: var(--dark);
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .dual-card-face.brand .dual-card-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Toggle Switch */
+  .dual-card-toggle {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+    gap: 16px;
+  }
+
+  .toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .toggle-btn.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 8px 25px rgba(229, 57, 53, 0.3);
+  }
+
+  .toggle-btn:not(.active) {
+    color: var(--gray-600);
+    border-color: var(--gray-200);
+  }
+
+  .toggle-btn:not(.active):hover {
+    background: var(--gray-50);
+    border-color: var(--gray-300);
+  }
+
+  /* Floating animation for the card */
+  .dual-card-container.float-animation {
+    animation: card-float 6s ease-in-out infinite;
+  }
+
+  @keyframes card-float {
+    0%, 100% { 
+      transform: translateY(0) rotate(0deg);
+    }
+    50% { 
+      transform: translateY(-10px) rotate(1deg);
+    }
+  }
+
+  /* Glow effect behind card */
+  .dual-card-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(135deg, rgba(229, 57, 53, 0.3) 0%, rgba(255, 193, 7, 0.2) 100%);
+    border-radius: 40px;
+    transform: translate(-50%, -50%);
+    filter: blur(40px);
+    opacity: 0.5;
+    z-index: -1;
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+  }
+
+  /* Swipe hint - hidden */
+  .swipe-hint {
+    display: none;
   }
 }

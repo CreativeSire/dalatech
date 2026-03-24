@@ -1,13 +1,13 @@
 /* ============================================
-   PREMIUM DESKTOP FOOTER - Matches Mobile Style
+   PREMIUM FOOTER - Desktop (Matches Mobile Layout)
    ============================================ */
 
 @media (min-width: 769px) {
-  /* Main Footer Container - Same as mobile but larger */
+  /* Main Footer Container */
   .footer {
     background: linear-gradient(180deg, #0D0D12 0%, #12121A 50%, #0A0A0F 100%);
     position: relative;
-    padding: 80px 40px 40px;
+    padding: 100px 40px 50px;
     overflow: hidden;
   }
 
@@ -18,26 +18,25 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
+    width: 120px;
+    height: 2px;
     background: linear-gradient(90deg, transparent, var(--primary), transparent);
-    border-radius: 0 0 3px 3px;
   }
 
-  /* Ambient glow */
+  /* Subtle ambient glow */
   .footer::after {
     content: '';
     position: absolute;
-    top: -200px;
+    top: -150px;
     left: 50%;
     transform: translateX(-50%);
     width: 600px;
-    height: 400px;
-    background: radial-gradient(ellipse, rgba(229, 57, 53, 0.08) 0%, transparent 70%);
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(229, 57, 53, 0.06) 0%, transparent 70%);
     pointer-events: none;
   }
 
-  /* Footer Container */
+  /* Footer Container - Centered like mobile */
   .footer .container {
     max-width: 600px;
     margin: 0 auto;
@@ -45,31 +44,31 @@
     z-index: 1;
   }
 
-  /* Main Grid Layout - Stacked like mobile */
+  /* Main Grid Layout - Stacked vertically */
   .footer-grid {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 48px;
     margin-bottom: 60px;
   }
 
-  /* Brand Section */
+  /* Brand Section - Centered */
   .footer-brand {
     text-align: center;
-    padding-bottom: 32px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .footer-logo {
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .footer-logo img {
-    height: 55px;
+    height: 60px;
     width: auto;
     filter: brightness(0) invert(1);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
   }
 
   .footer-logo:hover img {
@@ -77,14 +76,14 @@
   }
 
   .footer-tagline {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
     line-height: 1.7;
     max-width: 400px;
     margin: 0 auto;
   }
 
-  /* Accordion Navigation - Same as mobile */
+  /* Accordion Navigation */
   .footer-accordion {
     display: flex;
     flex-direction: column;
@@ -92,16 +91,17 @@
   }
 
   .footer-accordion-item {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.02);
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .footer-accordion-item:hover {
-    box-shadow: 0 4px 30px rgba(229, 57, 53, 0.15);
+    border-color: rgba(229, 57, 53, 0.2);
+    box-shadow: 0 4px 30px rgba(229, 57, 53, 0.1);
   }
 
   .footer-accordion-header {
@@ -122,9 +122,11 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
   .footer-accordion-title i {
@@ -136,7 +138,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .footer-accordion-icon {
@@ -176,19 +178,19 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 14px;
+    padding: 14px 16px;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     border-radius: 10px;
     transition: all 0.2s ease;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
   }
 
   .footer-link:hover {
     background: var(--primary);
     color: white;
-    transform: scale(0.98);
+    transform: translateX(4px);
   }
 
   .footer-link i {
@@ -203,11 +205,10 @@
 
   /* Premium Contact Card */
   .footer-contact-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.02);
     border-radius: 20px;
     padding: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     position: relative;
     overflow: hidden;
   }
@@ -219,17 +220,19 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(229, 57, 53, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, rgba(229, 57, 53, 0.4), transparent);
   }
 
   .footer-contact-title {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
   .footer-contact-title i {
@@ -251,7 +254,7 @@
     padding: 14px 0;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.7);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     text-decoration: none;
     transition: all 0.3s ease;
   }
@@ -262,7 +265,6 @@
 
   .footer-contact-item:hover {
     color: white;
-    padding-left: 8px;
   }
 
   .footer-contact-item i {
@@ -270,12 +272,12 @@
     height: 32px;
     background: rgba(229, 57, 53, 0.1);
     border: 1px solid rgba(229, 57, 53, 0.2);
-    border-radius: 10px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary);
-    font-size: 14px;
+    font-size: 13px;
     transition: all 0.3s ease;
     flex-shrink: 0;
   }
@@ -283,15 +285,18 @@
   .footer-contact-item:hover i {
     background: var(--primary);
     color: white;
-    box-shadow: 0 0 20px rgba(229, 57, 53, 0.4);
+    box-shadow: 0 0 15px rgba(229, 57, 53, 0.3);
   }
 
   /* Social Section */
   .footer-social-section {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 32px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 40px;
   }
 
   .footer-social-title {
@@ -300,27 +305,25 @@
     color: rgba(255, 255, 255, 0.4);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-bottom: 20px;
   }
 
   .footer-social-grid {
     display: flex;
-    justify-content: center;
-    gap: 16px;
+    gap: 12px;
   }
 
   .social-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 14px;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     color: rgba(255, 255, 255, 0.6);
-    font-size: 18px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 16px;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
   }
@@ -338,9 +341,9 @@
   }
 
   .social-icon:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     border-color: transparent;
-    box-shadow: 0 10px 30px rgba(229, 57, 53, 0.3);
+    box-shadow: 0 8px 20px rgba(229, 57, 53, 0.25);
   }
 
   .social-icon:hover::before {
@@ -359,19 +362,19 @@
 
   /* Bottom Bar */
   .footer-bottom {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 10px;
   }
 
   .footer-copyright {
     font-size: 13px;
     color: rgba(255, 255, 255, 0.4);
-    margin-bottom: 16px;
   }
 
   .footer-legal {
     display: flex;
-    justify-content: center;
     gap: 32px;
   }
 
@@ -403,9 +406,9 @@
   }
 }
 
-/* Large Desktop (1200px+) - Wider but same stacked layout */
+/* Large Desktop */
 @media (min-width: 1200px) {
   .footer .container {
-    max-width: 700px;
+    max-width: 650px;
   }
 }
