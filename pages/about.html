@@ -858,7 +858,6 @@
     }
     
     /* Desktop/Mobile Show/Hide - Base Styles */
-    .desktop-only { display: block; }
     .mobile-only { display: none !important; }
     
     /* Trust Section */
@@ -1220,6 +1219,10 @@
       /* Show/Hide Desktop/Mobile */
       .desktop-only { display: none !important; }
       .mobile-only { display: block !important; }
+      
+      /* Reset display for flex/grid elements on mobile */
+      .mobile-only.story-3d-carousel,
+      .mobile-only.mv-mobile-stack { display: flex !important; }
       
       /* Mobile Story 3D Carousel */
       .story-3d-carousel {
