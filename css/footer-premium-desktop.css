@@ -50,11 +50,13 @@
   }
 
   /* Main Grid Layout - Premium spacing */
+  .footer .container .footer-grid,
   .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: 80px;
-    margin-bottom: 80px;
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr !important;
+    gap: 80px !important;
+    margin-bottom: 80px !important;
+    flex-direction: row !important;
   }
 
   /* Brand Section - Elegant */
@@ -96,30 +98,34 @@
 
   /* Premium Navigation Columns */
   .footer-accordion {
-    display: contents;
+    display: contents !important;
+    flex-direction: row !important;
   }
 
   .footer-accordion-item {
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: block !important;
   }
 
   .footer-accordion-header {
-    padding: 0;
-    cursor: default;
-    background: transparent;
-    margin-bottom: 28px;
+    padding: 0 !important;
+    cursor: default !important;
+    background: transparent !important;
+    margin-bottom: 28px !important;
+    display: block !important;
   }
 
   .footer-accordion-icon {
-    display: none;
+    display: none !important;
   }
 
   .footer-accordion-content {
     max-height: none !important;
     padding: 0 !important;
-    overflow: visible;
+    overflow: visible !important;
+    display: block !important;
   }
 
   .footer-accordion-title {
