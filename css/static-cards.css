@@ -33,6 +33,34 @@
       0 4px 12px rgba(0, 0, 0, 0.06);
   }
 
+  /* Supermarket Card - Dark Theme */
+  .static-card.supermarket-card {
+    background: #1a0a0a;
+    border: none;
+  }
+
+  .static-card.supermarket-card .static-card-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  .static-card.supermarket-card .static-card-title {
+    color: white;
+  }
+
+  .static-card.supermarket-card .static-card-text {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .static-card.supermarket-card .static-feature-item {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .static-card.supermarket-card .static-feature-item i {
+    color: var(--primary-light);
+  }
+
   .static-card-badge {
     display: inline-flex;
     align-items: center;
@@ -142,6 +170,34 @@
     border: 1px solid rgba(0, 0, 0, 0.04);
     display: flex;
     flex-direction: column;
+  }
+
+  /* Supermarket Card - Dark Theme (Mobile) */
+  .static-card.supermarket-card {
+    background: #1a0a0a;
+    border: none;
+  }
+
+  .static-card.supermarket-card .static-card-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  .static-card.supermarket-card .static-card-title {
+    color: white;
+  }
+
+  .static-card.supermarket-card .static-card-text {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .static-card.supermarket-card .static-feature-item {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .static-card.supermarket-card .static-feature-item i {
+    color: var(--primary-light);
   }
 
   .static-card-badge {
