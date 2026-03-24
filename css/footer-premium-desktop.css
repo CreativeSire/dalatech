@@ -52,22 +52,38 @@
     margin-bottom: 60px;
   }
 
-  /* Brand Section - Centered */
+  /* Brand Section - Premium Centered Layout */
   .footer-brand {
     text-align: center;
-    padding-bottom: 40px;
+    padding: 0 20px 48px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-logo {
-    display: inline-block;
-    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    padding: 16px 32px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: all 0.4s ease;
+  }
+
+  .footer-logo:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(229, 57, 53, 0.3);
+    transform: translateY(-2px);
   }
 
   .footer-logo img {
-    height: 60px;
+    height: 50px;
     width: auto;
-    filter: brightness(0) invert(1);
+    display: block;
     transition: transform 0.4s ease;
   }
 
@@ -76,11 +92,13 @@
   }
 
   .footer-tagline {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.5);
-    line-height: 1.7;
-    max-width: 400px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.8;
+    max-width: 420px;
     margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.01em;
   }
 
   /* Accordion Navigation */
