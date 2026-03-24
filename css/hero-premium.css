@@ -88,6 +88,23 @@
     text-align: center;
   }
 
+  /* Logo Display */
+  .hero-logo {
+    margin-bottom: 32px;
+    animation: fade-in-down 0.8s ease-out;
+  }
+
+  .hero-logo img {
+    height: 70px;
+    width: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+  }
+
+  .hero-logo img:hover {
+    transform: scale(1.05);
+  }
+
   /* Trust Badge */
   .hero-badge {
     display: inline-flex;
