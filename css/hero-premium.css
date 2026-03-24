@@ -4,10 +4,10 @@
 
 /* Desktop Styles (769px and above) */
 @media (min-width: 769px) {
-  /* Hero Container - Light Premium Theme */
+  /* Hero Container - Light Theme with subtle warmth */
   .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, #faf9f7 0%, #ffffff 50%, #fff8f5 100%);
+    background: linear-gradient(135deg, #f5f3ef 0%, #f8f6f2 50%, #f0ede8 100%);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -16,31 +16,13 @@
     padding: 120px 40px 60px;
   }
 
-  /* Animated Red Glow Effects - Subtle on light */
+  /* No background effects - clean look */
   .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 20% 80%, rgba(229, 57, 53, 0.06) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(229, 57, 53, 0.04) 0%, transparent 40%);
-    animation: pulse-glow 8s ease-in-out infinite;
-    pointer-events: none;
+    display: none;
   }
 
   .hero::after {
-    content: '';
-    position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(229, 57, 53, 0.1) 0%, transparent 70%);
-    animation: orb-float 10s ease-in-out infinite reverse;
-    pointer-events: none;
+    display: none;
   }
 
   @keyframes pulse-glow {
@@ -53,16 +35,9 @@
     50% { transform: translate(-30px, 30px) scale(1.1); }
   }
 
-  /* Particle Overlay */
+  /* Particle Overlay - Disabled */
   .hero-particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
+    display: none;
   }
 
   .hero-particle {
@@ -326,11 +301,11 @@
 
 /* Mobile Styles (768px and below) */
 @media (max-width: 768px) {
-  /* Hero Container - Light Premium Theme */
+  /* Hero Container - Light Theme with subtle warmth */
   .hero {
     min-height: 100vh;
     min-height: 100dvh;
-    background: linear-gradient(135deg, #faf9f7 0%, #ffffff 50%, #fff8f5 100%);
+    background: linear-gradient(135deg, #f5f3ef 0%, #f8f6f2 50%, #f0ede8 100%);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -339,31 +314,13 @@
     padding: 120px 20px 40px;
   }
 
-  /* Animated Red Glow Effects - Subtle on light */
+  /* No background effects - clean look */
   .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 20% 80%, rgba(229, 57, 53, 0.06) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(229, 57, 53, 0.04) 0%, transparent 40%);
-    animation: pulse-glow 8s ease-in-out infinite;
-    pointer-events: none;
+    display: none;
   }
 
   .hero::after {
-    content: '';
-    position: absolute;
-    top: -20%;
-    right: -30%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(229, 57, 53, 0.1) 0%, transparent 70%);
-    animation: orb-float 10s ease-in-out infinite reverse;
-    pointer-events: none;
+    display: none;
   }
 
   @keyframes pulse-glow {
@@ -376,16 +333,9 @@
     50% { transform: translate(-30px, 30px) scale(1.1); }
   }
 
-  /* Particle Overlay */
+  /* Particle Overlay - Disabled */
   .hero-particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
+    display: none;
   }
 
   .hero-particle {
