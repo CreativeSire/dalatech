@@ -7,7 +7,7 @@
   .footer {
     background: linear-gradient(180deg, #0D0D12 0%, #12121A 50%, #0A0A0F 100%);
     position: relative;
-    padding: 100px 40px 50px;
+    padding: 60px 40px 30px;
     overflow: hidden;
   }
 
@@ -48,43 +48,27 @@
   .footer-grid {
     display: flex;
     flex-direction: column;
-    gap: 48px;
-    margin-bottom: 60px;
+    gap: 24px;
+    margin-bottom: 40px;
   }
 
-  /* Brand Section - Premium Centered Layout */
+  /* Brand Section - Clean & Simple */
   .footer-brand {
     text-align: center;
-    padding: 0 20px 48px;
+    padding-bottom: 32px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .footer-logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 28px;
-    padding: 16px 32px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    transition: all 0.4s ease;
-  }
-
-  .footer-logo:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(229, 57, 53, 0.3);
-    transform: translateY(-2px);
+    display: inline-block;
+    margin-bottom: 20px;
   }
 
   .footer-logo img {
-    height: 50px;
+    height: 55px;
     width: auto;
-    display: block;
-    transition: transform 0.4s ease;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
   }
 
   .footer-logo:hover img {
@@ -92,13 +76,11 @@
   }
 
   .footer-tagline {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.55);
-    line-height: 1.8;
-    max-width: 420px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+    max-width: 380px;
     margin: 0 auto;
-    text-align: center;
-    letter-spacing: 0.01em;
   }
 
   /* Accordion Navigation */
@@ -126,7 +108,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 24px;
+    padding: 16px 20px;
     cursor: pointer;
     background: transparent;
     transition: background 0.2s ease;
@@ -225,7 +207,7 @@
   .footer-contact-card {
     background: rgba(255, 255, 255, 0.02);
     border-radius: 20px;
-    padding: 28px;
+    padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.06);
     position: relative;
     overflow: hidden;
@@ -311,7 +293,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 32px 0;
+    padding: 24px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     margin-bottom: 40px;
