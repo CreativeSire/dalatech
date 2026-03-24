@@ -857,8 +857,9 @@
       right: -20px;
     }
     
-    /* Desktop/Mobile Show/Hide - Base Styles */
-    .mobile-only { display: none !important; }
+    /* Mobile elements hidden by default */
+    .story-3d-carousel,
+    .mv-mobile-stack { display: none !important; }
     
     /* Trust Section */
     .trust-section {
@@ -1217,12 +1218,11 @@
       .btn { width: 100%; }
       
       /* Show/Hide Desktop/Mobile */
-      .desktop-only { display: none !important; }
-      .mobile-only { display: block !important; }
+      .story-grid { display: none !important; }
+      .mv-container { display: none !important; }
       
-      /* Reset display for flex/grid elements on mobile */
-      .mobile-only.story-3d-carousel,
-      .mobile-only.mv-mobile-stack { display: flex !important; }
+      .story-3d-carousel { display: block !important; }
+      .mv-mobile-stack { display: flex !important; }
       
       /* Mobile Story 3D Carousel */
       .story-3d-carousel {
@@ -1592,7 +1592,7 @@
       </div>
       
       <!-- Desktop: Grid Layout -->
-      <div class="story-grid desktop-only">
+      <div class="story-grid">
         <!-- Block 01 - Challenge -->
         <div class="story-block reveal">
           <div class="story-visual">
@@ -1658,7 +1658,7 @@
       </div>
       
       <!-- Mobile: 3D Carousel -->
-      <div class="story-3d-carousel mobile-only">
+      <div class="story-3d-carousel">
         <div class="story-3d-container">
           <div class="story-3d-track" id="storyTrack">
             <!-- Card 1 -->
@@ -1727,7 +1727,7 @@
       </div>
       
       <!-- Desktop: Split Cards -->
-      <div class="mv-container desktop-only">
+      <div class="mv-container">
         <div class="mv-split-card reveal">
           <div class="mv-split-visual">
             <div class="mv-icon-wrap">
@@ -1780,7 +1780,7 @@
       </div>
       
       <!-- Mobile: Premium Cards -->
-      <div class="mv-mobile-stack mobile-only">
+      <div class="mv-mobile-stack">
         <div class="mv-mobile-card reveal">
           <div class="mv-mobile-header">
             <span class="mv-mobile-icon">🎯</span>
