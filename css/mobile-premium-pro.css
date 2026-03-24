@@ -129,18 +129,6 @@
     display: inline-block;
   }
 
-  .hero h1 em::after {
-    content: '';
-    position: absolute;
-    bottom: 4px;
-    left: 0;
-    width: 100%;
-    height: 8px;
-    background: linear-gradient(90deg, var(--primary-light), transparent);
-    opacity: 0.3;
-    border-radius: 4px;
-  }
-
   @keyframes text-reveal {
     to {
       opacity: 1;
