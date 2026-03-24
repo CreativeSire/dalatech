@@ -1221,8 +1221,8 @@
       .story-grid { display: none !important; }
       .mv-container { display: none !important; }
       
-      .story-3d-carousel { display: block !important; }
-      .mv-mobile-stack { display: flex !important; }
+      .story-3d-carousel { display: block !important; visibility: visible !important; }
+      .mv-mobile-stack { display: flex !important; visibility: visible !important; }
       
       /* Mobile Story 3D Carousel */
       .story-3d-carousel {
@@ -1658,7 +1658,7 @@
       </div>
       
       <!-- Mobile: 3D Carousel -->
-      <div class="story-3d-carousel">
+      <div class="story-3d-carousel" style="display: none;">
         <div class="story-3d-container">
           <div class="story-3d-track" id="storyTrack">
             <!-- Card 1 -->
@@ -1780,7 +1780,7 @@
       </div>
       
       <!-- Mobile: Premium Cards -->
-      <div class="mv-mobile-stack">
+      <div class="mv-mobile-stack" style="display: none;">
         <div class="mv-mobile-card reveal">
           <div class="mv-mobile-header">
             <span class="mv-mobile-icon">🎯</span>
