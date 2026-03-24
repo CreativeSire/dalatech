@@ -473,8 +473,25 @@
    TESTIMONIALS - Mobile Premium
    ============================================ */
 @media (max-width: 768px) {
+  .testimonials-slider-section {
+    padding: 32px 0 24px;
+  }
+
+  .testimonials-header {
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+
+  .testimonials-title {
+    font-size: 1.5rem;
+  }
+
+  .testimonials-subtitle {
+    font-size: 0.875rem;
+  }
+
   .testimonial-section {
-    padding: 50px 20px;
+    padding: 40px 20px;
   }
 
   .testimonial-card {
@@ -551,7 +568,63 @@
     border-radius: 4px;
     background: var(--primary);
   }
-}
+
+  /* Testimonial Slider Card - Mobile Compact */
+  .testimonials-slider-container {
+    padding: 0 16px;
+  }
+
+  .testimonial-slide-card {
+    border-radius: 20px;
+    padding: 24px 20px;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .testimonial-slide-badge {
+    font-size: 10px;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+  }
+
+  .testimonial-slide-stars {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .testimonial-slide-text {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-slide-author {
+    margin-bottom: 16px;
+  }
+
+  .author-slide-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .author-slide-info h4 {
+    font-size: 14px;
+  }
+
+  .author-slide-info p {
+    font-size: 12px;
+  }
+
+  .testimonial-slide-link {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .testimonials-nav {
+    margin-top: 20px;
+    gap: 16px;
+  }
 
 /* ============================================
    CTA SECTION - Mobile Impact
