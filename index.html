@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="css/mobile-fix.css">
   <link rel="stylesheet" href="css/mobile-premium-pro.css">
   <link rel="stylesheet" href="css/dual-card-slider.css">
+  <link rel="stylesheet" href="css/footer-clean.css">
+  <link rel="stylesheet" href="css/hero-premium.css">
   <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
@@ -44,26 +46,65 @@
   </nav>
 
   <!-- Hero Section with Constellation -->
-  <section class="hero" data-animate="fade-in" style="position:relative;overflow:hidden;">
-    <canvas id="dala-network" aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></canvas>
-    <div class="hero-container" style="position:relative;z-index:1;">
+  <section class="hero">
+    <!-- Floating Particles -->
+    <div class="hero-particles">
+      <div class="hero-particle"></div>
+      <div class="hero-particle"></div>
+      <div class="hero-particle"></div>
+      <div class="hero-particle"></div>
+      <div class="hero-particle"></div>
+    </div>
+
+    <div class="hero-container">
+      <!-- Trust Badge -->
       <div class="hero-badge">
         <i class="fas fa-shield-alt"></i>
         <span>The Retail Execution Control Layer</span>
       </div>
       
-      <h1 class="hero-title" data-typewriter>DALA: The <em style="color:var(--primary);">Retail Execution</em> Control Layer</h1>
+      <!-- Main Title -->
+      <h1 class="hero-title">DALA: The <em>Retail Execution</em> Control Layer</h1>
       
+      <!-- Subtitle -->
       <p class="hero-subtitle">
         Ensuring supermarket standards are met while driving efficient, disciplined, transparent, and sustainable growth between brands and modern retail.
       </p>
       
+      <!-- CTA Buttons -->
       <div class="hero-cta-group">
-        <a href="pages/for-supermarkets.html" class="btn btn-primary btn-large">DALA for Supermarkets</a>
-        <a href="pages/for-brands.html" class="btn btn-secondary btn-large">DALA for Brands</a>
+        <a href="pages/for-supermarkets.html" class="hero-btn hero-btn-primary">
+          <i class="fas fa-store"></i> DALA for Supermarkets
+        </a>
+        <a href="pages/for-brands.html" class="hero-btn hero-btn-secondary">
+          <i class="fas fa-box-open"></i> DALA for Brands
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number">22+</span>
+          <span class="hero-stat-label">Retailers</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">300+</span>
+          <span class="hero-stat-label">Stores</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">30</span>
+          <span class="hero-stat-label">Day Payments</span>
+        </div>
       </div>
     </div>
-    <script src="js/network-canvas.js"></script>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll" onclick="document.querySelector('.brand-logo-section').scrollIntoView({behavior: 'smooth'})">
+      <span class="hero-scroll-text">Scroll</span>
+      <div class="hero-scroll-icon">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
   </section>
 
   <!-- Trusted Retailers Marquee -->
@@ -437,7 +478,7 @@
       </div>
     </div>
   </section>
-
+I do Can you change the color of the 
   <!-- Final CTA Section -->
   <section class="cta-section reveal-section">
     <div class="cta-container">
@@ -453,65 +494,128 @@
   <!-- Footer -->
   <footer class="footer reveal-section">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="footer-logo">
-            <img src="4.png" alt="DALA Technologies" class="logo-img">
-          </a>
-          <p class="footer-tagline">
-            The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.
-          </p>
-        </div>
-        
-        <div class="footer-column">
-          <h4>Quick Links</h4>
-          <div class="footer-links">
-            <a href="index.html" class="footer-link">Home</a>
-            <a href="pages/for-brands.html" class="footer-link">DALA for Brands</a>
-            <a href="pages/for-supermarkets.html" class="footer-link">DALA for Supermarkets</a>
-            <a href="pages/about.html" class="footer-link">About Us</a>
-            <a href="pages/case-studies.html" class="footer-link">Case Studies</a>
-            <a href="pages/contact.html" class="footer-link">Contact Us</a>
+      <!-- Brand Section -->
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="4.png" alt="DALA Technologies">
+        </a>
+        <p class="footer-tagline">
+          The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.
+        </p>
+      </div>
+
+      <!-- Accordion Navigation -->
+      <div class="footer-accordion">
+        <!-- Company Links -->
+        <div class="footer-accordion-item">
+          <div class="footer-accordion-header" onclick="toggleAccordion(this)">
+            <span class="footer-accordion-title">
+              <i class="fas fa-building"></i>
+              Company
+            </span>
+            <i class="fas fa-chevron-down footer-accordion-icon"></i>
+          </div>
+          <div class="footer-accordion-content">
+            <div class="footer-links-grid">
+              <a href="index.html" class="footer-link"><i class="fas fa-home"></i> Home</a>
+              <a href="pages/about.html" class="footer-link"><i class="fas fa-info-circle"></i> About</a>
+              <a href="pages/case-studies.html" class="footer-link"><i class="fas fa-chart-line"></i> Case Studies</a>
+              <a href="pages/contact.html" class="footer-link"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
           </div>
         </div>
-        
-        <div class="footer-column">
-          <h4>Get Started</h4>
-          <div class="footer-links">
-            <a href="pages/get-listed.html" class="footer-link">Get Listed</a>
-            <a href="pages/get-listed.html" class="footer-link">Work With Us</a>
-            <a href="pages/login.html" class="footer-link">Partner Login</a>
-            <a href="#" class="footer-link">Browse Retailers</a>
+
+        <!-- Solutions Links -->
+        <div class="footer-accordion-item">
+          <div class="footer-accordion-header" onclick="toggleAccordion(this)">
+            <span class="footer-accordion-title">
+              <i class="fas fa-layer-group"></i>
+              Solutions
+            </span>
+            <i class="fas fa-chevron-down footer-accordion-icon"></i>
           </div>
-        </div>
-        
-        <div class="footer-column">
-          <h4>Contact Info</h4>
-          <div class="footer-contact">
-            <p><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--primary);"></i> Iju, Ota, Ogun State, Nigeria</p>
-            <p><i class="fas fa-phone" style="margin-right: 8px; color: var(--primary);"></i> +234 814 882 4115</p>
-            <p><i class="fas fa-phone" style="margin-right: 8px; color: var(--primary);"></i> +234 903 235 2306</p>
-            <p><i class="fas fa-envelope" style="margin-right: 8px; color: var(--primary);"></i> info@dalatechnologies.com</p>
-            <p><i class="fas fa-clock" style="margin-right: 8px; color: var(--primary);"></i> Business Hours: 8am-6pm</p>
-          </div>
-          <div style="display: flex; gap: 16px; margin-top: 24px;">
-            <a href="#" style="width: 40px; height: 40px; background: var(--gray-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gray-600); transition: all 0.3s;"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" style="width: 40px; height: 40px; background: var(--gray-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gray-600); transition: all 0.3s;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="width: 40px; height: 40px; background: var(--gray-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gray-600); transition: all 0.3s;"><i class="fab fa-twitter"></i></a>
-            <a href="#" style="width: 40px; height: 40px; background: var(--gray-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gray-600); transition: all 0.3s;"><i class="fab fa-facebook-f"></i></a>
+          <div class="footer-accordion-content">
+            <div class="footer-links-grid">
+              <a href="pages/for-brands.html" class="footer-link"><i class="fas fa-box"></i> For Brands</a>
+              <a href="pages/for-supermarkets.html" class="footer-link"><i class="fas fa-store"></i> Supermarkets</a>
+              <a href="pages/get-listed.html" class="footer-link"><i class="fas fa-rocket"></i> Get Listed</a>
+              <a href="pages/login.html" class="footer-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </div>
           </div>
         </div>
       </div>
-      
+
+      <!-- Contact Card -->
+      <div class="footer-contact-card">
+        <div class="footer-contact-title">
+          <i class="fas fa-headset"></i>
+          Get In Touch
+        </div>
+        <a href="https://maps.google.com" class="footer-contact-item" target="_blank">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Iju, Ota, Ogun State, Nigeria</span>
+        </a>
+        <a href="tel:+2348148824115" class="footer-contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+234 814 882 4115</span>
+        </a>
+        <a href="mailto:info@dalatechnologies.com" class="footer-contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>info@dalatechnologies.com</span>
+        </a>
+        <div class="footer-contact-item">
+          <i class="fas fa-clock"></i>
+          <span>Mon - Sat: 8am - 6pm</span>
+        </div>
+      </div>
+
+      <!-- Social Section -->
+      <div class="footer-social-section">
+        <div class="footer-social-title">Follow Us</div>
+        <div class="footer-social-grid">
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
       <div class="footer-bottom">
         <p class="footer-copyright">© 2026 DALA Technologies. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="#" class="footer-legal-link">Privacy Policy</a>
+          <a href="#" class="footer-legal-link">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- Footer Accordion Script -->
+  <script>
+    function toggleAccordion(header) {
+      const item = header.parentElement;
+      const isActive = item.classList.contains('active');
+      
+      // Close all accordion items
+      document.querySelectorAll('.footer-accordion-item').forEach(acc => {
+        acc.classList.remove('active');
+      });
+      
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    }
+  </script>
 
   <!-- WhatsApp Floating Button -->
   <div class="whatsapp-float">
