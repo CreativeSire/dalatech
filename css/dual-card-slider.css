@@ -45,9 +45,9 @@
     overflow: visible;
   }
 
-  /* Supermarket Card - Front - Primary red background */
+  /* Supermarket Card - Front - Dark background for better contrast */
   .dual-card-face.supermarket {
-    background: linear-gradient(135deg, #E53935 0%, #c62828 100%);
+    background: linear-gradient(135deg, #1a0a0a 0%, #0f0a0a 100%);
     color: white;
     transform: rotateY(0deg);
     z-index: 2;
@@ -326,9 +326,9 @@
     overflow: visible;
   }
 
-  /* Supermarket Card - Front - Primary red background */
+  /* Supermarket Card - Front - Dark background for better contrast */
   .dual-card-face.supermarket {
-    background: linear-gradient(135deg, #E53935 0%, #c62828 100%);
+    background: linear-gradient(135deg, #1a0a0a 0%, #0f0a0a 100%);
     color: white;
     transform: rotateY(0deg);
     z-index: 2;
