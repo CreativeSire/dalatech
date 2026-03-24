@@ -3,9 +3,9 @@
    ============================================ */
 
 @media (min-width: 769px) {
-  /* Main Footer Container - Dark Premium Theme */
+  /* Main Footer Container - Matches Get Listed Page */
   body .footer {
-    background: linear-gradient(180deg, #0D0D12 0%, #12121A 50%, #0A0A0F 100%) !important;
+    background: linear-gradient(135deg, #0a0a0a 0%, #151515 50%, #0d0d0d 100%) !important;
     position: relative;
     padding: 60px 40px 30px;
     overflow: hidden;
@@ -412,10 +412,10 @@
   }
 }
 
-/* Mobile Dark Footer - Overrides footer-clean.css */
+/* Mobile Dark Footer - Matches Get Listed Page */
 @media (max-width: 768px) {
   body .footer {
-    background: linear-gradient(180deg, #0D0D12 0%, #12121A 50%, #0A0A0F 100%) !important;
+    background: linear-gradient(135deg, #0a0a0a 0%, #151515 50%, #0d0d0d 100%) !important;
     padding: 48px 20px 24px;
   }
   

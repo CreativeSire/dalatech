@@ -454,18 +454,47 @@
     }
     
     /* Responsive */
+    /* Mobile - Same format as desktop */
     @media (max-width: 1024px) {
+      .cs-section {
+        grid-template-columns: 1fr 1fr;
+        min-height: auto;
+      }
+      
+      .cs-image-side {
+        min-height: 400px;
+      }
+      
+      .cs-content-side {
+        padding: 3rem 2rem;
+      }
+      
+      .cs-metrics {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .cs-title {
+        font-size: 1.5rem;
+      }
+      
+      .cs-text {
+        font-size: 0.9375rem;
+      }
+    }
+    
+    /* Small Mobile */
+    @media (max-width: 768px) {
       .cs-section {
         grid-template-columns: 1fr;
       }
       
       .cs-image-side {
-        min-height: 350px;
+        min-height: 280px;
         order: -1 !important;
       }
       
       .cs-content-side {
-        padding: 3rem 2rem;
+        padding: 2rem 1.5rem;
         order: 2 !important;
       }
       
@@ -479,7 +508,7 @@
       
       .cs-stats-bar {
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 2rem;
       }
     }
     
