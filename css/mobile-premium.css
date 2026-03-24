@@ -560,7 +560,7 @@
   .cta-section {
     padding: 60px 20px;
     text-align: center;
-    background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%);
+    background: #0f0a0a;
     position: relative;
     overflow: hidden;
   }
