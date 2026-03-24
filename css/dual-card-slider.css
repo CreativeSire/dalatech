@@ -45,21 +45,20 @@
     overflow: visible;
   }
 
-  /* Supermarket Card - Front - Now with primary color background */
+  /* Supermarket Card - Front - Primary red background */
   .dual-card-face.supermarket {
-    background: linear-gradient(135deg, #c62828 0%, #e53935 100%);
+    background: linear-gradient(135deg, #E53935 0%, #c62828 100%);
     color: white;
     transform: rotateY(0deg);
     z-index: 2;
   }
 
-  /* Brand Card - Back - Light background */
+  /* Brand Card - Back - Dark background */
   .dual-card-face.brand {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    color: var(--dark);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
     transform: rotateY(180deg);
     z-index: 1;
-    border: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   /* Flip animation states */
@@ -105,7 +104,7 @@
   }
 
   .dual-card-face.brand .dual-card-title {
-    color: var(--dark);
+    color: white;
   }
 
   .dual-card-text {
@@ -120,7 +119,7 @@
   }
 
   .dual-card-face.brand .dual-card-text {
-    color: var(--gray-600);
+    color: rgba(255, 255, 255, 0.8);
   }
 
   /* Feature pills */
@@ -149,9 +148,9 @@
   }
 
   .dual-card-face.brand .dual-feature-pill {
-    background: var(--gray-100);
-    color: var(--gray-700);
-    border: 1px solid var(--gray-200);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .dual-feature-pill:active {
@@ -326,21 +325,20 @@
     overflow: visible;
   }
 
-  /* Supermarket Card - Front - Now with primary color background */
+  /* Supermarket Card - Front - Primary red background */
   .dual-card-face.supermarket {
-    background: linear-gradient(135deg, #c62828 0%, #e53935 100%);
+    background: linear-gradient(135deg, #E53935 0%, #c62828 100%);
     color: white;
     transform: rotateY(0deg);
     z-index: 2;
   }
 
-  /* Brand Card - Back - Light background */
+  /* Brand Card - Back - Dark background */
   .dual-card-face.brand {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    color: var(--dark);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
     transform: rotateY(180deg);
     z-index: 1;
-    border: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   /* Flip animation states */
@@ -386,7 +384,7 @@
   }
 
   .dual-card-face.brand .dual-card-title {
-    color: var(--dark);
+    color: white;
   }
 
   .dual-card-text {
@@ -401,7 +399,7 @@
   }
 
   .dual-card-face.brand .dual-card-text {
-    color: var(--gray-600);
+    color: rgba(255, 255, 255, 0.8);
   }
 
   /* Feature pills */
@@ -430,9 +428,9 @@
   }
 
   .dual-card-face.brand .dual-feature-pill {
-    background: var(--gray-100);
-    color: var(--gray-700);
-    border: 1px solid var(--gray-200);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .dual-feature-pill:hover {
