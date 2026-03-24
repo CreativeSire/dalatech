@@ -188,9 +188,9 @@
   }
 
   .dual-card-face.supermarket .dual-card-btn {
-    background: #E84A3C;
+    background: linear-gradient(90deg, #FF4136 0%, #FF8C42 100%);
     color: white;
-    box-shadow: 0 8px 25px rgba(232, 74, 60, 0.4);
+    box-shadow: 0 8px 25px rgba(255, 65, 54, 0.4);
   }
 
   .dual-card-face.brand .dual-card-btn {
@@ -469,14 +469,14 @@
   }
 
   .dual-card-face.supermarket .dual-card-btn {
-    background: #E84A3C;
+    background: linear-gradient(90deg, #FF4136 0%, #FF8C42 100%);
     color: white;
-    box-shadow: 0 10px 30px rgba(232, 74, 60, 0.4);
+    box-shadow: 0 10px 30px rgba(255, 65, 54, 0.4);
   }
 
   .dual-card-face.supermarket .dual-card-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 40px rgba(232, 74, 60, 0.5);
+    box-shadow: 0 14px 40px rgba(255, 65, 54, 0.5);
   }
 
   .dual-card-face.brand .dual-card-btn {
