@@ -1081,23 +1081,83 @@
     
     .navbar__mobile {
       display: none;
-      position: absolute;
-      top: 100%;
+      position: fixed;
+      top: 72px;
       left: 0;
       right: 0;
-      background: white;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(250,250,250,0.98) 100%);
+      backdrop-filter: blur(20px);
       padding: 1.5rem;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0;
       box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      z-index: 999;
+      overflow-y: auto;
     }
     
     .navbar__mobile a {
       text-decoration: none;
       color: var(--dark);
       font-weight: 600;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 0.2s ease;
+    }
+    
+    .navbar__mobile a:hover {
+      color: var(--primary);
+      padding-left: 0.5rem;
+    }
+    
+    .navbar__mobile a::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gray-300);
+      transition: all 0.2s ease;
+    }
+    
+    .navbar__mobile a:hover::before {
+      background: var(--primary);
+      transform: scale(1.3);
+    }
+    
+    .navbar__mobile a.active {
+      color: var(--primary);
+    }
+    
+    .navbar__mobile a.active::before {
+      background: var(--primary);
+    }
+    
+    /* Mobile Menu Auth Buttons */
+    .navbar__mobile .btn {
+      margin-top: 1rem;
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    
+    .navbar__mobile .btn--ghost {
+      background: rgba(229, 57, 53, 0.05);
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .navbar__mobile .btn--primary {
+      background: linear-gradient(135deg, var(--primary) 0%, #c62828 100%);
+      border: none;
+      color: white;
+      box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
     }
     
     /* Mobile Responsive */
@@ -1152,6 +1212,289 @@
       .btn-group { flex-direction: column; width: 100%; }
       
       .btn { width: 100%; }
+      
+      /* Show/Hide Desktop/Mobile */
+      .desktop-only { display: none !important; }
+      .mobile-only { display: block !important; }
+      
+      /* Mobile Story 3D Carousel */
+      .story-3d-carousel {
+        position: relative;
+        padding: 1rem 0;
+      }
+      
+      .story-3d-container {
+        position: relative;
+        width: 100%;
+        height: 440px;
+        perspective: 1000px;
+        overflow: hidden;
+      }
+      
+      .story-3d-track {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+      }
+      
+      .story-3d-card {
+        position: absolute;
+        width: 90%;
+        max-width: 340px;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%) translateZ(-100px);
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+      }
+      
+      .story-3d-card.active {
+        transform: translateX(-50%) translateZ(0);
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 3;
+      }
+      
+      .story-3d-card.prev {
+        transform: translateX(-130%) translateZ(-80px) rotateY(15deg);
+        opacity: 0.4;
+        z-index: 1;
+      }
+      
+      .story-3d-card.next {
+        transform: translateX(30%) translateZ(-80px) rotateY(-15deg);
+        opacity: 0.4;
+        z-index: 1;
+      }
+      
+      .story-3d-visual {
+        background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+        border-radius: 20px 20px 0 0;
+        padding: 2rem 1.5rem 1.5rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .story-3d-visual::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), #ff6b6b);
+      }
+      
+      .story-3d-number {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        width: 32px;
+        height: 32px;
+        background: rgba(229, 57, 53, 0.2);
+        border: 1px solid rgba(229, 57, 53, 0.4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      
+      .story-3d-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0.5rem auto 0;
+        font-size: 1.75rem;
+        position: relative;
+      }
+      
+      .story-3d-icon.challenge {
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.1));
+        color: #ef4444;
+        box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
+      }
+      
+      .story-3d-icon.breakthrough {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.1));
+        color: #3b82f6;
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+      }
+      
+      .story-3d-icon.today {
+        background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1));
+        color: #22c55e;
+        box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+      }
+      
+      .story-3d-content {
+        background: white;
+        border-radius: 0 0 20px 20px;
+        padding: 1.5rem;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      }
+      
+      .story-3d-eyebrow {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      
+      .story-3d-content h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+      }
+      
+      .story-3d-content p {
+        font-size: 0.9375rem;
+        color: var(--gray-600);
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+      }
+      
+      .story-3d-highlight {
+        background: linear-gradient(90deg, rgba(229, 57, 53, 0.1), transparent);
+        padding: 0.75rem;
+        border-radius: 8px;
+        border-left: 3px solid var(--primary);
+        font-weight: 600;
+        color: var(--dark) !important;
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+      }
+      
+      .story-3d-dots {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 1.5rem;
+      }
+      
+      .story-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.2);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .story-dot.active {
+        background: var(--primary);
+        transform: scale(1.3);
+        box-shadow: 0 0 10px rgba(229, 57, 53, 0.5);
+      }
+      
+      /* Mobile Mission/Vision Premium Cards */
+      .mv-mobile-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .mv-mobile-card {
+        background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 24px;
+        padding: 1.75rem;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+      }
+      
+      .mv-mobile-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), transparent);
+      }
+      
+      .mv-mobile-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      
+      .mv-mobile-icon {
+        font-size: 2.5rem;
+        line-height: 1;
+      }
+      
+      .mv-mobile-pulse {
+        width: 8px;
+        height: 8px;
+        background: var(--primary);
+        border-radius: 50%;
+        animation: pulse-dot 2s ease-in-out infinite;
+      }
+      
+      @keyframes pulse-dot {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(1.5); }
+      }
+      
+      .mv-mobile-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      
+      .mv-mobile-card h3 {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+      }
+      
+      .mv-mobile-card p {
+        font-size: 0.9375rem;
+        color: rgba(255,255,255,0.7);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+      
+      .mv-mobile-stats {
+        display: flex;
+        gap: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+      
+      .mv-mobile-stats div {
+        font-size: 0.875rem;
+        color: rgba(255,255,255,0.8);
+      }
+      
+      .mv-mobile-stats strong {
+        color: var(--primary);
+        font-size: 1.1rem;
+        display: block;
+      }
     }
   </style>
 </head>
@@ -1233,7 +1576,7 @@
     </div>
   </section>
 
-  <!-- Origin Story - TIGHTER -->
+  <!-- Origin Story - Premium 3D Mobile Carousel -->
   <section class="story-section">
     <div class="container">
       <div class="section-header reveal">
@@ -1241,7 +1584,8 @@
         <h2>From the Problem We Lived</h2>
       </div>
       
-      <div class="story-grid">
+      <!-- Desktop: Grid Layout -->
+      <div class="story-grid desktop-only">
         <!-- Block 01 - Challenge -->
         <div class="story-block reveal">
           <div class="story-visual">
@@ -1305,29 +1649,157 @@
           </div>
         </div>
       </div>
+      
+      <!-- Mobile: 3D Carousel -->
+      <div class="story-3d-carousel mobile-only">
+        <div class="story-3d-container">
+          <div class="story-3d-track" id="storyTrack">
+            <!-- Card 1 -->
+            <div class="story-3d-card active" data-index="0">
+              <div class="story-3d-visual">
+                <div class="story-3d-number">01</div>
+                <div class="story-3d-icon challenge">
+                  <i class="fas fa-store-slash"></i>
+                </div>
+              </div>
+              <div class="story-3d-content">
+                <span class="story-3d-eyebrow">Where We Started</span>
+                <h3>Born From the Problem</h3>
+                <p>Before DALA, we were you. Our company was dying from operational chaos — deliveries killing cash flow, stores impossible to reach.</p>
+                <p class="story-3d-highlight">DALA was born as a lifeline.</p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="story-3d-card" data-index="1">
+              <div class="story-3d-visual">
+                <div class="story-3d-number">02</div>
+                <div class="story-3d-icon breakthrough">
+                  <i class="fas fa-rocket"></i>
+                </div>
+              </div>
+              <div class="story-3d-content">
+                <span class="story-3d-eyebrow">The Breakthrough</span>
+                <h3>What Changed Everything</h3>
+                <p>We scaled from 10 to 300+ stores. What took a decade could be done in 1-2 years with what we know now.</p>
+                <p class="story-3d-highlight">The problem was never the product. It was operations.</p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="story-3d-card" data-index="2">
+              <div class="story-3d-visual">
+                <div class="story-3d-number">03</div>
+                <div class="story-3d-icon today">
+                  <i class="fas fa-handshake"></i>
+                </div>
+              </div>
+              <div class="story-3d-content">
+                <span class="story-3d-eyebrow">What We Do Today</span>
+                <h3>Sharing What Saved Us</h3>
+                <p>We help founder-led brands move faster alone. Get on more shelves, expand across Lagos and Ogun, scale rapidly.</p>
+                <p class="story-3d-highlight">We're sharing what saved us. Not theory.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Dots -->
+        <div class="story-3d-dots">
+          <button class="story-dot active" data-index="0"></button>
+          <button class="story-dot" data-index="1"></button>
+          <button class="story-dot" data-index="2"></button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Mission & Vision -->
+  <!-- Mission & Vision - Premium Split Design -->
   <section class="mission-section">
     <div class="container">
       <div class="section-header reveal">
         <div class="eyebrow">What Drives Us</div>
-        <h2 style="color: white;">Our Mission, Vision & Values</h2>
+        <h2 style="color: white;">Our Mission & Vision</h2>
       </div>
       
-      <div class="mv-grid">
-        <div class="mv-card reveal">
-          <div class="mv-card__icon">🎯</div>
-          <h3>Our Mission</h3>
-          <h4>To Remove Operational Bottlenecks</h4>
-          <p>We exist to remove operational bottlenecks so great products can scale responsibly in modern retail. We help founder-led brands grow with structure, discipline, and confidence.</p>
+      <!-- Desktop: Split Cards -->
+      <div class="mv-container desktop-only">
+        <div class="mv-split-card reveal">
+          <div class="mv-split-visual">
+            <div class="mv-icon-wrap">
+              <span class="mv-icon">🎯</span>
+              <div class="mv-icon-glow"></div>
+            </div>
+            <div class="mv-accent-line"></div>
+          </div>
+          <div class="mv-split-content">
+            <span class="mv-label">Our Mission</span>
+            <h3>Remove Operational Bottlenecks</h3>
+            <p>We exist to remove operational bottlenecks so great products can scale responsibly in modern retail. We help founder-led brands grow with structure, discipline, and confidence.</p>
+            <div class="mv-stats">
+              <div class="mv-stat">
+                <span class="mv-stat-num">300+</span>
+                <span class="mv-stat-text">Stores Reached</span>
+              </div>
+              <div class="mv-stat">
+                <span class="mv-stat-num">22+</span>
+                <span class="mv-stat-text">Retail Partners</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mv-card reveal">
-          <div class="mv-card__icon">🔭</div>
-          <h3>Our Vision</h3>
-          <h4>The Trusted Retail Operations Engine</h4>
-          <p>To be the trusted retail operations engine for every growing consumer brand in Nigeria — the reliable infrastructure layer between ambitious brands and modern retail.</p>
+        
+        <div class="mv-split-card reveal">
+          <div class="mv-split-visual">
+            <div class="mv-icon-wrap">
+              <span class="mv-icon">🔭</span>
+              <div class="mv-icon-glow"></div>
+            </div>
+            <div class="mv-accent-line"></div>
+          </div>
+          <div class="mv-split-content">
+            <span class="mv-label">Our Vision</span>
+            <h3>The Trusted Retail Engine</h3>
+            <p>To be the trusted retail operations engine for every growing consumer brand in Nigeria — the reliable infrastructure layer between ambitious brands and modern retail.</p>
+            <div class="mv-stats">
+              <div class="mv-stat">
+                <span class="mv-stat-num">Lagos</span>
+                <span class="mv-stat-text">Primary Market</span>
+              </div>
+              <div class="mv-stat">
+                <span class="mv-stat-num">Ogun</span>
+                <span class="mv-stat-text">Expanding To</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mobile: Premium Cards -->
+      <div class="mv-mobile-stack mobile-only">
+        <div class="mv-mobile-card reveal">
+          <div class="mv-mobile-header">
+            <span class="mv-mobile-icon">🎯</span>
+            <div class="mv-mobile-pulse"></div>
+          </div>
+          <span class="mv-mobile-label">Our Mission</span>
+          <h3>Remove Operational Bottlenecks</h3>
+          <p>We help founder-led brands grow with structure, discipline, and confidence in modern retail.</p>
+          <div class="mv-mobile-stats">
+            <div><strong>300+</strong> Stores</div>
+            <div><strong>22+</strong> Partners</div>
+          </div>
+        </div>
+        
+        <div class="mv-mobile-card reveal">
+          <div class="mv-mobile-header">
+            <span class="mv-mobile-icon">🔭</span>
+            <div class="mv-mobile-pulse"></div>
+          </div>
+          <span class="mv-mobile-label">Our Vision</span>
+          <h3>The Trusted Retail Engine</h3>
+          <p>The reliable infrastructure layer between ambitious brands and modern retail across Nigeria.</p>
+          <div class="mv-mobile-stats">
+            <div><strong>Lagos</strong> &</div>
+            <div><strong>Ogun</strong> State</div>
+          </div>
         </div>
       </div>
       
@@ -1670,6 +2142,88 @@
         block.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
       });
     });
+    
+    // Mobile Story 3D Carousel
+    const storyCards = document.querySelectorAll('.story-3d-card');
+    const storyDots = document.querySelectorAll('.story-dot');
+    let currentStoryIndex = 0;
+    const totalStoryCards = storyCards.length;
+    let storyAutoRotate;
+    
+    function updateStoryCarousel() {
+      storyCards.forEach((card, index) => {
+        card.classList.remove('active', 'prev', 'next');
+        
+        if (index === currentStoryIndex) {
+          card.classList.add('active');
+        } else if (index === (currentStoryIndex - 1 + totalStoryCards) % totalStoryCards) {
+          card.classList.add('prev');
+        } else if (index === (currentStoryIndex + 1) % totalStoryCards) {
+          card.classList.add('next');
+        }
+      });
+      
+      storyDots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentStoryIndex);
+      });
+    }
+    
+    function goToStory(index) {
+      currentStoryIndex = (index + totalStoryCards) % totalStoryCards;
+      updateStoryCarousel();
+      resetStoryAutoRotate();
+    }
+    
+    function nextStory() {
+      goToStory(currentStoryIndex + 1);
+    }
+    
+    function startStoryAutoRotate() {
+      storyAutoRotate = setInterval(nextStory, 6000);
+    }
+    
+    function resetStoryAutoRotate() {
+      clearInterval(storyAutoRotate);
+      startStoryAutoRotate();
+    }
+    
+    // Dot navigation
+    storyDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToStory(index));
+    });
+    
+    // Touch/swipe support
+    const storyContainer = document.querySelector('.story-3d-container');
+    if (storyContainer) {
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      storyContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      
+      storyContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
+            goToStory(currentStoryIndex + 1);
+          } else {
+            goToStory(currentStoryIndex - 1);
+          }
+        }
+      }, { passive: true });
+      
+      // Pause on hover/touch
+      storyContainer.addEventListener('mouseenter', () => clearInterval(storyAutoRotate));
+      storyContainer.addEventListener('mouseleave', startStoryAutoRotate);
+    }
+    
+    // Initialize
+    if (storyCards.length > 0) {
+      updateStoryCarousel();
+      startStoryAutoRotate();
+    }
   </script>
 
 <!-- Website Maintenance in Progress Badge -->
