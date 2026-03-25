@@ -31,6 +31,35 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    height: 60px;
+  }
+  
+  .navbar-container {
+    height: 60px !important;
+    padding: 0 16px;
+  }
+  
+  .logo-img {
+    height: 44px !important;
+    width: auto;
+  }
+  
+  /* Smaller mobile menu button */
+  .mobile-menu-btn {
+    width: 36px !important;
+    height: 36px !important;
+    gap: 4px !important;
+  }
+  
+  .mobile-menu-btn span {
+    width: 18px !important;
+    height: 2px !important;
+  }
+  
+  /* Adjust nav links position for smaller navbar */
+  .nav-links {
+    top: 60px !important;
+  }
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
   }
 
