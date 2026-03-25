@@ -918,57 +918,395 @@
       right: -20px;
     }
     
-    /* Trust Section */
+    /* ============================================
+       PREMIUM TRUST SECTION - Floating Card Stack
+       ============================================ */
+    
     .trust-section {
       padding: 80px 2rem;
-      background: var(--gray-100);
+      background: linear-gradient(180deg, #f8f7f4 0%, #f0eeea 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle background pattern */
+    .trust-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(229, 57, 53, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.02) 0%, transparent 50%);
+      pointer-events: none;
     }
     
-    .trust-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    /* DESKTOP: Floating Card Stack */
+    @media (min-width: 1024px) {
+      .trust-grid {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      
+      .trust-card {
+        position: sticky;
+        top: 100px;
+        margin-bottom: 40px;
+        background: white;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 
+          0 20px 60px rgba(0, 0, 0, 0.08),
+          0 8px 24px rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center top;
+      }
+      
+      /* Card stack effect - each card gets smaller as you scroll */
+      .trust-card:nth-child(1) { z-index: 4; }
+      .trust-card:nth-child(2) { z-index: 3; transform: scale(0.97); }
+      .trust-card:nth-child(3) { z-index: 2; transform: scale(0.94); }
+      .trust-card:nth-child(4) { z-index: 1; transform: scale(0.91); }
+      
+      /* Active card scales back to full size */
+      .trust-card.active {
+        transform: scale(1) !important;
+        box-shadow: 
+          0 30px 80px rgba(0, 0, 0, 0.12),
+          0 12px 32px rgba(0, 0, 0, 0.08);
+      }
+      
+      .trust-card__inner {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        min-height: 380px;
+      }
+      
+      /* Left: Content */
+      .trust-card__content {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+      }
+      
+      /* Number badge */
+      .trust-card__num {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 900;
+        color: white;
+        box-shadow: 0 10px 30px rgba(229, 57, 53, 0.3);
+        z-index: 2;
+      }
+      
+      /* Icon */
+      .trust-card__icon {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 48px;
+        height: 48px;
+        background: rgba(229, 57, 53, 0.08);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        color: var(--primary);
+      }
+      
+      .trust-card__text {
+        margin-top: 80px;
+      }
+      
+      .trust-card__label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--primary);
+        margin-bottom: 12px;
+        padding: 8px 14px;
+        background: rgba(229, 57, 53, 0.08);
+        border-radius: 100px;
+      }
+      
+      .trust-card__text h3 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 16px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+      
+      .trust-card__text p {
+        font-size: 1rem;
+        color: var(--gray-600);
+        line-height: 1.7;
+      }
+      
+      /* Right: Image */
+      .trust-card__image {
+        position: relative;
+        overflow: hidden;
+        min-height: 380px;
+      }
+      
+      .trust-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .trust-card:hover .trust-card__image img {
+        transform: scale(1.08);
+      }
+      
+      /* Image overlay gradient */
+      .trust-card__image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(229, 57, 53, 0.1) 0%,
+          transparent 50%
+        );
+        pointer-events: none;
+      }
+      
+      /* Decorative corner accent */
+      .trust-card__corner {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(135deg, transparent 50%, rgba(229, 57, 53, 0.1) 50%);
+        pointer-events: none;
+      }
     }
-    
+
+    /* TABLET: Stacked Cards with Images */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .trust-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      
+      .trust-card {
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+      }
+      
+      .trust-card__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .trust-card__content {
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      .trust-card__num {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: 900;
+        color: white;
+        margin-bottom: 16px;
+        box-shadow: 0 8px 20px rgba(229, 57, 53, 0.25);
+      }
+      
+      .trust-card__label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--primary);
+        margin-bottom: 8px;
+      }
+      
+      .trust-card__text h3 {
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 12px;
+        line-height: 1.25;
+      }
+      
+      .trust-card__text p {
+        font-size: 0.9rem;
+        color: var(--gray-600);
+        line-height: 1.6;
+      }
+      
+      .trust-card__image {
+        min-height: 280px;
+      }
+      
+      .trust-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    /* MOBILE: Horizontal Scroll Carousel */
+    @media (max-width: 767px) {
+      .trust-section {
+        padding: 60px 0 60px 20px;
+      }
+      
+      .trust-section .section-header {
+        padding-right: 20px;
+        margin-bottom: 32px;
+      }
+      
+      .trust-grid {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding-right: 20px;
+        /* Hide scrollbar */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      
+      .trust-grid::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .trust-card {
+        flex: 0 0 85vw;
+        max-width: 340px;
+        scroll-snap-align: start;
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+      }
+      
+      .trust-card__image {
+        height: 200px;
+        overflow: hidden;
+      }
+      
+      .trust-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .trust-card__content {
+        padding: 24px;
+      }
+      
+      .trust-card__header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      
+      .trust-card__num {
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.875rem;
+        font-weight: 900;
+        color: white;
+        flex-shrink: 0;
+      }
+      
+      .trust-card__label {
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--primary);
+      }
+      
+      .trust-card__text h3 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 10px;
+        line-height: 1.25;
+      }
+      
+      .trust-card__text p {
+        font-size: 0.9rem;
+        color: var(--gray-600);
+        line-height: 1.6;
+      }
+      
+      /* Scroll indicators */
+      .trust-scroll-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 24px;
+        padding-right: 20px;
+      }
+      
+      .trust-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+      }
+      
+      .trust-dot.active {
+        background: var(--primary);
+        width: 24px;
+        border-radius: 4px;
+      }
+    }
+
+    /* Legacy support for old trust-item class */
     .trust-item {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1.5rem;
-      align-items: start;
-      padding: 1.5rem 2rem;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      transition: all 0.3s ease;
-      transform-style: preserve-3d;
-    }
-    
-    .trust-item:hover {
-      transform: translateX(8px) rotateY(-2deg);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-      border-left: 3px solid var(--primary);
-    }
-    
-    .trust-item__num {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--primary);
-      opacity: 0.2;
-      line-height: 1;
-    }
-    
-    .trust-item h4 {
-      font-size: 1.125rem;
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 0.375rem;
-    }
-    
-    .trust-item p {
-      color: var(--gray-600);
-      line-height: 1.6;
-      font-size: 0.95rem;
+      display: none;
     }
     
     /* CTA Section */
@@ -1255,14 +1593,6 @@
       .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
       
       .stat-item { padding: 1.5rem 1rem; }
-      
-      .trust-item {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-        padding: 1.25rem;
-      }
-      
-      .trust-item__num { font-size: 2rem; }
       
       .story-number {
         width: 50px;
@@ -1951,7 +2281,7 @@
     </div>
   </section>
 
-  <!-- Why Trust Us -->
+  <!-- Why Trust Us - Premium Floating Cards -->
   <section class="trust-section">
     <div class="container">
       <div class="section-header reveal">
@@ -1959,38 +2289,110 @@
         <h2>Why Brands Trust Us</h2>
       </div>
       
-      <div class="trust-grid">
-        <div class="trust-item reveal">
-          <div class="trust-item__num">01</div>
-          <div>
-            <h4>We Understand Nigerian Retail Realities</h4>
-            <p>We're not theory-driven consultants. We operate daily in Lagos and Ogun's retail environment. We know the challenges, the politics, the delays — and we've built systems that actually work here.</p>
+      <div class="trust-grid" id="trustGrid">
+        <!-- Card 1: Nigerian Retail Realities -->
+        <div class="trust-card reveal" data-index="0">
+          <div class="trust-card__inner">
+            <div class="trust-card__content">
+              <div class="trust-card__num">01</div>
+              <div class="trust-card__icon">
+                <i class="fas fa-store"></i>
+              </div>
+              <div class="trust-card__text">
+                <span class="trust-card__label">
+                  <i class="fas fa-map-marker-alt"></i>
+                  Local Expertise
+                </span>
+                <h3>We Understand Nigerian Retail Realities</h3>
+                <p>We're not theory-driven consultants. We operate daily in Lagos and Ogun's retail environment. We know the challenges, the politics, the delays — and we've built systems that actually work here.</p>
+              </div>
+            </div>
+            <div class="trust-card__image">
+              <img src="../Why Brands Trust Us/Nigerian Retail.jpg" alt="Nigerian retail market expertise" loading="lazy">
+              <div class="trust-card__corner"></div>
+            </div>
           </div>
         </div>
         
-        <div class="trust-item reveal">
-          <div class="trust-item__num">02</div>
-          <div>
-            <h4>We Guarantee What Matters Most</h4>
-            <p>Payment stress kills brands. That's why we guarantee remittance within agreed timelines, even when retailers delay. You get predictable cash flow so you can plan and grow with confidence.</p>
+        <!-- Card 2: Payment Guarantee -->
+        <div class="trust-card reveal" data-index="1">
+          <div class="trust-card__inner">
+            <div class="trust-card__content">
+              <div class="trust-card__num">02</div>
+              <div class="trust-card__icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="trust-card__text">
+                <span class="trust-card__label">
+                  <i class="fas fa-lock"></i>
+                  Guaranteed Payments
+                </span>
+                <h3>We Guarantee What Matters Most</h3>
+                <p>Payment stress kills brands. That's why we guarantee remittance within agreed timelines, even when retailers delay. You get predictable cash flow so you can plan and grow with confidence.</p>
+              </div>
+            </div>
+            <div class="trust-card__image">
+              <img src="../Why Brands Trust Us/Nigerian Payment.jpg" alt="Secure payment guarantee" loading="lazy">
+              <div class="trust-card__corner"></div>
+            </div>
           </div>
         </div>
         
-        <div class="trust-item reveal">
-          <div class="trust-item__num">03</div>
-          <div>
-            <h4>We Operate With Full Transparency</h4>
-            <p>You receive weekly reports on sales, inventory, store activity, and issue resolution. You're never in the dark about what's happening with your brand. No vague updates. Just clarity.</p>
+        <!-- Card 3: Full Transparency -->
+        <div class="trust-card reveal" data-index="2">
+          <div class="trust-card__inner">
+            <div class="trust-card__content">
+              <div class="trust-card__num">03</div>
+              <div class="trust-card__icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="trust-card__text">
+                <span class="trust-card__label">
+                  <i class="fas fa-eye"></i>
+                  Full Visibility
+                </span>
+                <h3>We Operate With Full Transparency</h3>
+                <p>You receive weekly reports on sales, inventory, store activity, and issue resolution. You're never in the dark about what's happening with your brand. No vague updates. Just clarity.</p>
+              </div>
+            </div>
+            <div class="trust-card__image">
+              <img src="../Why Brands Trust Us/Nigerian Report.jpeg" alt="Transparent reporting system" loading="lazy">
+              <div class="trust-card__corner"></div>
+            </div>
           </div>
         </div>
         
-        <div class="trust-item reveal">
-          <div class="trust-item__num">04</div>
-          <div>
-            <h4>We Protect Your Time and Energy</h4>
-            <p>When you partner with DALA, you get your life back. No more chasing payments. No more coordinating deliveries at midnight. You focus on building the brand. We handle the engine.</p>
+        <!-- Card 4: Time Protection -->
+        <div class="trust-card reveal" data-index="3">
+          <div class="trust-card__inner">
+            <div class="trust-card__content">
+              <div class="trust-card__num">04</div>
+              <div class="trust-card__icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="trust-card__text">
+                <span class="trust-card__label">
+                  <i class="fas fa-heart"></i>
+                  Peace of Mind
+                </span>
+                <h3>We Protect Your Time and Energy</h3>
+                <p>When you partner with DALA, you get your life back. No more chasing payments. No more coordinating deliveries at midnight. You focus on building the brand. We handle the engine.</p>
+              </div>
+            </div>
+            <div class="trust-card__image">
+              <img src="../Why Brands Trust Us/Nigerian Satisfied Business.jpg" alt="Satisfied business owners" loading="lazy">
+              <div class="trust-card__corner"></div>
+            </div>
           </div>
         </div>
+      </div>
+      
+      <!-- Mobile Scroll Dots -->
+      <div class="trust-scroll-dots" id="trustDots">
+        <div class="trust-dot active" data-index="0"></div>
+        <div class="trust-dot" data-index="1"></div>
+        <div class="trust-dot" data-index="2"></div>
+        <div class="trust-dot" data-index="3"></div>
       </div>
     </div>
   </section>
@@ -2299,6 +2701,62 @@
     if (storyCards.length > 0) {
       updateStoryCarousel();
       startStoryAutoRotate();
+    }
+    
+    // ============================================
+    // TRUST CARDS - Desktop Sticky Stack & Mobile Carousel
+    // ============================================
+    
+    const trustCards = document.querySelectorAll('.trust-card');
+    const trustGrid = document.getElementById('trustGrid');
+    const trustDots = document.querySelectorAll('.trust-dot');
+    
+    if (trustCards.length > 0) {
+      // Desktop: Sticky card stack scroll effect
+      if (window.innerWidth >= 1024) {
+        const trustObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+            } else {
+              entry.target.classList.remove('active');
+            }
+          });
+        }, { 
+          threshold: 0.6,
+          rootMargin: '-100px 0px -40% 0px'
+        });
+        
+        trustCards.forEach(card => {
+          trustObserver.observe(card);
+        });
+      }
+      
+      // Mobile: Scroll dots update
+      if (window.innerWidth < 768 && trustGrid) {
+        const updateTrustDots = () => {
+          const scrollLeft = trustGrid.scrollLeft;
+          const cardWidth = trustCards[0].offsetWidth + 16; // card width + gap
+          const currentIndex = Math.round(scrollLeft / cardWidth);
+          
+          trustDots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+          });
+        };
+        
+        trustGrid.addEventListener('scroll', updateTrustDots, { passive: true });
+        
+        // Dot click navigation
+        trustDots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            const cardWidth = trustCards[0].offsetWidth + 16;
+            trustGrid.scrollTo({
+              left: cardWidth * index,
+              behavior: 'smooth'
+            });
+          });
+        });
+      }
     }
   </script>
 
