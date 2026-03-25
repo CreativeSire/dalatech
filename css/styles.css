@@ -725,7 +725,7 @@ p {
 }
 
 .side-card-dark {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: linear-gradient(135deg, #1a0a0a 0%, #2d0a0a 100%);
   color: white;
 }
 
@@ -1285,7 +1285,7 @@ p {
    ===================================================== */
 .benefits-slider-section {
   padding: var(--space-5xl) 0;
-  background: linear-gradient(135deg, var(--dark-900) 0%, #0f172a 100%);
+  background: linear-gradient(135deg, var(--dark-900) 0%, #1a0a0a 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1386,7 +1386,7 @@ p {
 }
 
 .benefit-slide-card {
-  background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+  background: linear-gradient(145deg, #2a1a1a 0%, #1a0a0a 100%);
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 
@@ -1455,7 +1455,7 @@ p {
   color: white;
   font-size: 1.5rem;
   box-shadow: 0 10px 30px rgba(229, 57, 53, 0.4);
-  border: 3px solid #1e293b;
+  border: 3px solid #2a1a1a;
 }
 
 .benefit-slide-content h3 {
