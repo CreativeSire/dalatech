@@ -2005,16 +2005,18 @@
         z-index: 3;
       }
       
-      .story-3d-card.prev {
-        transform: translateX(-130%) translateZ(-80px) rotateY(15deg);
-        opacity: 0.4;
-        z-index: 1;
+      .story-3d-card.prev,
+      .story-3d-card.next {
+        opacity: 0;
+        pointer-events: none;
+        z-index: 0;
       }
       
-      .story-3d-card.next {
-        transform: translateX(30%) translateZ(-80px) rotateY(-15deg);
-        opacity: 0.4;
-        z-index: 1;
+      .story-3d-card.active {
+        transform: translateX(-50%) translateZ(0);
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 3;
       }
       
       .story-3d-visual {
