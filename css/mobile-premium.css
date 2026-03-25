@@ -277,15 +277,22 @@
   }
 
   .brand-logo-card {
-    width: 100px;
-    height: 60px;
-    margin: 0 8px;
-    padding: 8px;
-    border-radius: 10px;
+    width: 120px;
+    height: 80px;
+    margin: 0 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
 
   .brand-logo-card img {
-    max-height: 36px;
+    max-width: 100%;
+    max-height: 56px;
+    object-fit: contain;
   }
 }
 
@@ -716,16 +723,9 @@
     gap: 32px;
   }
 
-  .footer-brand img {
-    height: 40px;
-    margin-bottom: 12px;
-    filter: brightness(0) invert(1);
-  }
-
-  .footer-brand p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.6;
+  /* Hide footer brand/logo section on mobile for cleaner look */
+  .footer-brand {
+    display: none;
   }
 
   .footer-links h4 {
