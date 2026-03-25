@@ -1,0 +1,83 @@
+DALA FOR SUPERMARKETS PAGE.
+PAGE NAVIGATION MAP
+This page is accessible from:
+Navigation/Hamburger Menu → "DALA for Supermarkets"
+Homepage Section 1 (Hero) → "DALA for Supermarkets" button
+Homepage Section 3 (Card Slideshow) → "Learn More" button on "For Supermarkets" card
+Footer → Quick links
+HEADER SECTION
+Headline (Hook):
+Reduce Supplier Risk and Improve Operational Reliability
+No confusion. No disputes. Just clean Professional Execution.
+Paragraph:
+DALA partners with modern retail outlets reduce supplier-related risks and complications. We ensure your standards are upheld, monitor inventory to prevent overstocking and stockout, quickly address expiry and product quality issues. We streamline operations so your team can focus on satisfying your customers.
+CTA Button: Work With Us
+Links to: Supermarket Partners Application Form (universal form, dropdown pre-selects "Supermarket/Retailer")SUPERMARKET PARTNER LOGOS SECTION
+[Horizontal Auto-Sliding Logo Carousel]
+Design Note: Clean logo display, neutral background, seamless auto-slide. Logos only, no text.
+VALUE PROPOSITION SECTION
+Headline:
+Why Retailers Choose DALA
+Subheading:
+DALA strengthens your existing operations by streamlining orders, executing timely delivery and providing clear and accurate documentation. We ensure your shelves stay stocked with the right volume of quality products to reduce your liabilities and ensure your team focuses on keeping your customers happy. 
+4 Value Proposition Boxes (Grid Layout - 2x2)
+BOX 1:
+Icon: [Stockout Prevention icon]
+Headline:
+Reduced Supplier Risk & Stockouts
+Description: Structured replenishment cycles, timely delivery discipline, and faster issue resolution reduce the frequency of stockouts and operational escalations that consume management time. Our proactive monitoring and 48-hour restocking guarantee keep your shelves full as we identify low inventory early and restock before gaps affect customer experience.
+BOX 2:
+Icon: [Delivery/Clock icon]
+Headline:
+Timely & Reliable Deliveries
+Description: No more late or missed deliveries disrupting your operations. DALA-managed brands deliver on schedule with proper documentation every time.
+BOX 3:
+Icon: [Quality Control icon]
+Headline:
+Supplier Efficiency
+Description: By ensuring brands meet execution and reliability standards, DALA reduces the time store managers and category teams spend resolving multiple supplier issues.
+BOX 4:
+Icon: [Documentation/Checklist icon]
+Headline:
+Accurate Documentation & Transparency
+Description: Accurate invoicing, transparent records and predictable remittance processes reduce back-and-forth between suppliers and your supermarket teams.. No confusion, no disputes, just clean, professional execution.
+WHAT DALA DOES FOR YOU SECTION
+Headline:
+What DALA Does for Retail Partners
+Subheading:
+From supplier vetting to issue resolution, we ensure our brand partners consistently meet your operational standards.
+Services 
+SERVICE 1:
+Icon: [Shield icon]
+Service Name:
+Supplier Vetting & Quality Assurance
+Brief Description:
+Brands within the DALA system are held to clear execution expectations. We vet them before they reach your shelves, ensuring they meet operational readiness, regulatory compliance, and production reliability standards.
+SERVICE 2:
+Icon: [Store icon]
+Service Name:
+Regular Store Visits & Performance Reporting
+Brief Description:
+We regularly visit your store to ensure in-store execution, and provide you with clear, structured reports to keep you informed on supplier execution, delivery performance, and issue resolution for full visibility without the need for constant follow-up.
+SERVICE 3:
+Icon: [Delivery icon]
+Service Name:
+48-Hour Restocking & Delivery
+Brief Description:
+Reduce inventory risk with 48-hours fulfillment and no minimum order values. When inventory runs low, we restock within 48 hours. Our fast, reliable delivery ensures your shelves stay full and your customers find what they need.
+SERVICE 4:
+Icon: [Issue Resolution icon]
+Service Name:
+Proactive Issue Resolution
+Brief Description:
+Product quality concerns, damaged packaging, and expiry issues are identified and resolved within 24 hours. We handle problems professionally before they escalate.
+FINAL CTA CARD SECTION
+[Full-width card with background image and text overlay]
+Background Image:
+[Professional image showing well-organized retail store with clean shelves]
+Bold Text on Card:
+Ready to Work With No Confusion. No disputes. Just clean Professional Execution.?
+CTA Button 1:
+Become a Retail Partner (Links to: Supermarket Partners Application Form (universal form, dropdown pre-selects "Supermarket/ Brands)
+CTA Button 2: see how to work with us 
+Links to: (get listed for supermarket page)
