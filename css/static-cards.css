@@ -281,7 +281,7 @@
   .floating-card-container.mobile-only {
     display: block;
     max-width: 340px;
-    margin: 40px auto 0;
+    margin: 24px auto 0;
     padding: 0 20px;
     animation: card-float 4s ease-in-out infinite;
   }

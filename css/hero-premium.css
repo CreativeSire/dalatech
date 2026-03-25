@@ -393,8 +393,8 @@
   .hero-cta-group {
     display: flex;
     flex-direction: row;
-    gap: 12px;
-    margin-bottom: 40px;
+    gap: 8px;
+    margin-bottom: 24px;
     justify-content: center;
     align-items: center;
     animation: fade-in-up 0.8s ease-out 0.6s both;
@@ -404,19 +404,19 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 0 14px;
-    border-radius: 12px;
-    font-size: 9.5px;
+    gap: 6px;
+    padding: 0 10px;
+    border-radius: 10px;
+    font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.01em;
+    letter-spacing: 0;
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    width: 160px;
-    height: 44px;
+    width: 155px;
+    height: 42px;
     white-space: nowrap;
     line-height: 1;
   }
@@ -460,8 +460,8 @@
   }
 
   .hero-btn i {
-    font-size: 14px;
-    width: 16px;
+    font-size: 13px;
+    width: 14px;
     text-align: center;
     flex-shrink: 0;
     transition: transform 0.3s ease;

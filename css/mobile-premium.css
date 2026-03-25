@@ -250,12 +250,12 @@
    ============================================ */
 @media (max-width: 768px) {
   .brand-logo-section {
-    padding: 40px 0;
+    padding: 24px 0;
   }
 
   .logo-section-header {
     padding: 0 20px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   .logo-section-title {
@@ -309,14 +309,14 @@
 
   .section-header {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     position: relative;
     z-index: 2;
   }
 
   .section-header h2 {
-    font-size: 26px;
-    margin-bottom: 12px;
+    font-size: 24px;
+    margin-bottom: 8px;
   }
 
   .section-header p {
