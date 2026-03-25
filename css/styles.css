@@ -552,31 +552,59 @@ p {
 
 .brand-logo-card {
   flex-shrink: 0;
-  height: 80px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2.5rem;
+  padding: 1.25rem 2rem;
   background: white;
   border-radius: var(--radius-xl);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.04);
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* Stagger the breathing animation for each card */
+.brand-logo-card:nth-child(1) { animation-delay: 0s; }
+.brand-logo-card:nth-child(2) { animation-delay: 0.3s; }
+.brand-logo-card:nth-child(3) { animation-delay: 0.6s; }
+.brand-logo-card:nth-child(4) { animation-delay: 0.9s; }
+.brand-logo-card:nth-child(5) { animation-delay: 1.2s; }
+.brand-logo-card:nth-child(6) { animation-delay: 1.5s; }
+.brand-logo-card:nth-child(7) { animation-delay: 1.8s; }
+
+/* Breathing animation - subtle scale up and down */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
 }
 
 .brand-logo-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-  border-color: rgba(229, 57, 53, 0.15);
+  transform: translateY(-8px) scale(1.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border-color: rgba(229, 57, 53, 0.2);
+  animation-play-state: paused;
 }
 
 .brand-logo-card img {
-  height: 48px;
+  height: 72px;
   width: auto;
-  max-width: 160px;
+  max-width: 200px;
   object-fit: contain;
   /* Keep logos in full color */
   filter: none;
+  transition: transform 0.35s ease;
+}
+
+.brand-logo-card:hover img {
+  transform: scale(1.05);
 }
 
 /* Placeholder text styling when no image */
