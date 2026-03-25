@@ -36,11 +36,11 @@
   
   .navbar-container {
     height: 60px !important;
-    padding: 0 16px;
-    position: relative;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
   }
   
   .logo {
@@ -51,32 +51,24 @@
     align-items: center;
     justify-content: flex-start;
     flex-shrink: 0;
-    margin-right: auto;
   }
   
   .logo-img {
-    height: 40px !important;
+    height: 38px !important;
     width: auto;
-    max-width: 160px;
+    max-width: 140px;
     object-fit: contain;
     display: block;
   }
   
-  /* Spacer to push menu button to right */
-  .navbar-container::after {
-    content: '';
-    flex: 1;
-    min-width: 36px;
-  }
-  
-  /* Position menu button on the right */
+  /* Position menu button on the right with gap */
   .mobile-menu-btn {
     position: relative !important;
     right: 0;
     top: auto;
     transform: none;
     flex-shrink: 0;
-    margin-left: auto;
+    margin-left: 0;
   }
   
   /* Smaller mobile menu button */
