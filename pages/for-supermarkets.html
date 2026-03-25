@@ -286,123 +286,252 @@
     </div>
   </section>
 
-  <!-- What DALA Does - Premium Crystal Island -->
-  <section class="crystal-section" id="crystalSection">
-    <div class="crystal-bg-effects">
-      <div class="crystal-orb orb-1"></div>
-      <div class="crystal-orb orb-2"></div>
-      <div class="crystal-orb orb-3"></div>
-    </div>
-    
+  <!-- What DALA Does - Expandable Service Cards -->
+  <section class="services-section" id="servicesSection">
     <div class="container">
-      <div class="crystal-header">
-        <span class="crystal-label">Our Services</span>
-        <h2 class="crystal-title">What DALA Does for Retail Partners</h2>
-        <p class="crystal-subtitle">From supplier vetting to issue resolution, we ensure brand partners meet your standards</p>
+      <div class="section-header reveal">
+        <span class="eyebrow">Our Services</span>
+        <h2>What DALA Does for Retail Partners</h2>
+        <p>From supplier vetting to issue resolution, we ensure brand partners meet your standards</p>
       </div>
       
-      <!-- Crystal Cards Island -->
-      <div class="crystal-island" id="crystalIsland">
-        
-        <!-- Main Hub Card -->
-        <div class="crystal-hub" data-tilt>
-          <div class="crystal-hub-inner">
-            <div class="hub-glow"></div>
-            <div class="hub-content">
-              <div class="hub-badge">
-                <i class="fas fa-star"></i>
-                <span>Core Services</span>
-              </div>
-              <h3 class="hub-title">Complete Retail Operations Support</h3>
-              <p class="hub-text">From supplier vetting to issue resolution, we handle every aspect of supplier management so you can focus on customers.</p>
-              <div class="hub-stats-row">
-                <div class="hub-stat">
-                  <span class="hub-number" data-count="48">0</span>
-                  <span class="hub-suffix">hrs</span>
-                  <span class="hub-label">Restocking</span>
-                </div>
-                <div class="hub-stat">
-                  <span class="hub-number" data-count="24">0</span>
-                  <span class="hub-suffix">hrs</span>
-                  <span class="hub-label">Issue Fix</span>
-                </div>
-                <div class="hub-stat">
-                  <span class="hub-number" data-count="100">0</span>
-                  <span class="hub-suffix">%</span>
-                  <span class="hub-label">Vetted</span>
-                </div>
-              </div>
+      <!-- Desktop: Nucleus Constellation -->
+      <div class="services-nucleus" id="servicesNucleus">
+        <!-- Central Hub -->
+        <div class="nucleus-hub reveal">
+          <div class="hub-inner">
+            <div class="hub-icon">
+              <i class="fas fa-network-wired"></i>
             </div>
+            <h3>Complete Operations</h3>
+            <p>End-to-end retail support</p>
           </div>
         </div>
         
-        <!-- Floating Satellite Cards -->
-        <div class="crystal-satellite satellite-1" data-tilt data-depth="1">
-          <div class="satellite-inner">
-            <div class="satellite-accent"></div>
-            <div class="satellite-content">
-              <div class="satellite-icon">
+        <!-- Service Cards Orbiting -->
+        <div class="service-orbit-card" data-service="vetting" style="--orbit-angle: 0deg;">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1531956531641-729a2351314b?w=400&h=600&fit=crop" alt="Supplier vetting - Nigerian business professional" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
                 <i class="fas fa-shield-alt"></i>
               </div>
               <h4>Supplier Vetting</h4>
-              <p>Pre-screened, quality-assured brands</p>
+              <p class="service-subtitle">Quality-assured brands only</p>
+              <button class="service-expand-btn" aria-label="Learn more about Supplier Vetting">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div class="service-card-expanded">
+              <div class="expanded-glass">
+                <h5>Supplier Vetting & Quality Assurance</h5>
+                <p>Brands within the DALA system are held to clear execution expectations. We vet them before they reach your shelves, ensuring they meet operational readiness, regulatory compliance, and production reliability standards.</p>
+                <button class="service-close-btn" aria-label="Close">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
         
-        <div class="crystal-satellite satellite-2" data-tilt data-depth="2">
-          <div class="satellite-inner">
-            <div class="satellite-accent gold"></div>
-            <div class="satellite-content">
-              <div class="satellite-icon gold-icon">
+        <div class="service-orbit-card" data-service="visits" style="--orbit-angle: 90deg;">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=600&fit=crop" alt="Store visits - Nigerian retail store" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
                 <i class="fas fa-store"></i>
               </div>
               <h4>Store Visits</h4>
-              <p>Regular performance reports</p>
+              <p class="service-subtitle">Regular performance reports</p>
+              <button class="service-expand-btn" aria-label="Learn more about Store Visits">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div class="service-card-expanded">
+              <div class="expanded-glass">
+                <h5>Regular Store Visits & Performance Reporting</h5>
+                <p>We regularly visit your store to ensure in-store execution, and provide you with clear, structured reports to keep you informed on supplier execution, delivery performance, and issue resolution for full visibility without the need for constant follow-up.</p>
+                <button class="service-close-btn" aria-label="Close">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
         
-        <div class="crystal-satellite satellite-3" data-tilt data-depth="1.5">
-          <div class="satellite-inner">
-            <div class="satellite-accent"></div>
-            <div class="satellite-content">
-              <div class="satellite-icon">
-                <i class="fas fa-clock"></i>
+        <div class="service-orbit-card" data-service="delivery" style="--orbit-angle: 180deg;">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=600&fit=crop" alt="Delivery - Nigerian logistics" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
+                <i class="fas fa-shipping-fast"></i>
               </div>
               <h4>48-Hour Delivery</h4>
-              <p>Fast restocking, no minimum orders</p>
+              <p class="service-subtitle">Fast restocking, no minimums</p>
+              <button class="service-expand-btn" aria-label="Learn more about 48-Hour Delivery">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div class="service-card-expanded">
+              <div class="expanded-glass">
+                <h5>48-Hour Restocking & Delivery</h5>
+                <p>Reduce inventory risk with 48-hours fulfillment and no minimum order values. When inventory runs low, we restock within 48 hours. Our fast, reliable delivery ensures your shelves stay full and your customers find what they need.</p>
+                <button class="service-close-btn" aria-label="Close">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
         
-        <div class="crystal-satellite satellite-4" data-tilt data-depth="2.5">
-          <div class="satellite-inner">
-            <div class="satellite-accent gold"></div>
-            <div class="satellite-content">
-              <div class="satellite-icon gold-icon">
+        <div class="service-orbit-card" data-service="resolution" style="--orbit-angle: 270deg;">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=600&fit=crop" alt="Issue resolution - Professional support" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
                 <i class="fas fa-tools"></i>
               </div>
               <h4>Issue Resolution</h4>
-              <p>24-hour problem solving</p>
+              <p class="service-subtitle">24-hour problem solving</p>
+              <button class="service-expand-btn" aria-label="Learn more about Issue Resolution">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div class="service-card-expanded">
+              <div class="expanded-glass">
+                <h5>Proactive Issue Resolution</h5>
+                <p>Product quality concerns, damaged packaging, and expiry issues are identified and resolved within 24 hours. We handle problems professionally before they escalate.</p>
+                <button class="service-close-btn" aria-label="Close">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
         
-        <!-- Connecting Lines -->
-        <svg class="crystal-connections" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
-          <path class="connection-line" d="M400,300 Q300,200 200,150" />
-          <path class="connection-line" d="M400,300 Q500,200 600,150" />
-          <path class="connection-line" d="M400,300 Q200,350 150,400" />
-          <path class="connection-line" d="M400,300 Q600,350 650,400" />
+        <!-- Connection Lines SVG -->
+        <svg class="nucleus-connections" viewBox="0 0 800 600">
+          <defs>
+            <linearGradient id="nucleusGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#e53935;stop-opacity:0.4" />
+              <stop offset="50%" style="stop-color:#e53935;stop-opacity:0.8" />
+              <stop offset="100%" style="stop-color:#e53935;stop-opacity:0.4" />
+            </linearGradient>
+          </defs>
+          <line class="nucleus-line" x1="400" y1="300" x2="400" y2="100" />
+          <line class="nucleus-line" x1="400" y1="300" x2="600" y2="300" />
+          <line class="nucleus-line" x1="400" y1="300" x2="400" y2="500" />
+          <line class="nucleus-line" x1="400" y1="300" x2="200" y2="300" />
         </svg>
       </div>
       
-      <!-- Ambient floating elements -->
-      <div class="ambient-floaters">
-        <div class="floater floater-1"></div>
-        <div class="floater floater-2"></div>
-        <div class="floater floater-3"></div>
+      <!-- Mobile: Testimonial Style Slider -->
+      <div class="services-mobile-slider" id="servicesMobileSlider">
+        <div class="services-track">
+          <!-- Card 1 -->
+          <div class="service-slide active" data-index="0">
+            <div class="service-slide-card">
+              <div class="service-slide-image">
+                <img src="https://images.unsplash.com/photo-1531956531641-729a2351314b?w=400&h=300&fit=crop" alt="Supplier vetting">
+              </div>
+              <div class="service-slide-content">
+                <div class="service-slide-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>Supplier Vetting</h4>
+                <p class="service-slide-subtitle">Quality-assured brands only</p>
+                <div class="service-slide-details">
+                  <p>Brands within the DALA system are held to clear execution expectations. We vet them before they reach your shelves, ensuring they meet operational readiness, regulatory compliance, and production reliability standards.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="service-slide" data-index="1">
+            <div class="service-slide-card">
+              <div class="service-slide-image">
+                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop" alt="Store visits">
+              </div>
+              <div class="service-slide-content">
+                <div class="service-slide-icon">
+                  <i class="fas fa-store"></i>
+                </div>
+                <h4>Store Visits</h4>
+                <p class="service-slide-subtitle">Regular performance reports</p>
+                <div class="service-slide-details">
+                  <p>We regularly visit your store to ensure in-store execution, and provide you with clear, structured reports to keep you informed on supplier execution, delivery performance, and issue resolution.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="service-slide" data-index="2">
+            <div class="service-slide-card">
+              <div class="service-slide-image">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop" alt="48-hour delivery">
+              </div>
+              <div class="service-slide-content">
+                <div class="service-slide-icon">
+                  <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h4>48-Hour Delivery</h4>
+                <p class="service-slide-subtitle">Fast restocking, no minimums</p>
+                <div class="service-slide-details">
+                  <p>Reduce inventory risk with 48-hours fulfillment and no minimum order values. When inventory runs low, we restock within 48 hours. Our fast, reliable delivery ensures your shelves stay full.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 4 -->
+          <div class="service-slide" data-index="3">
+            <div class="service-slide-card">
+              <div class="service-slide-image">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=300&fit=crop" alt="Issue resolution">
+              </div>
+              <div class="service-slide-content">
+                <div class="service-slide-icon">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <h4>Issue Resolution</h4>
+                <p class="service-slide-subtitle">24-hour problem solving</p>
+                <div class="service-slide-details">
+                  <p>Product quality concerns, damaged packaging, and expiry issues are identified and resolved within 24 hours. We handle problems professionally before they escalate.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="services-nav">
+          <button class="services-nav-btn prev" id="servicesPrev">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <div class="services-dots">
+            <button class="services-dot active" data-index="0"></button>
+            <button class="services-dot" data-index="1"></button>
+            <button class="services-dot" data-index="2"></button>
+            <button class="services-dot" data-index="3"></button>
+          </div>
+          <button class="services-nav-btn next" id="servicesNext">
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -583,6 +712,434 @@
   <script src="../js/mobile-premium.js"></script>
   <script src="../assets/js/animations.js"></script>
 
+<!-- Services Section Styles -->
+<style>
+  /* ============================================
+     SERVICES SECTION - Expandable Cards
+     ============================================ */
+  
+  .services-section {
+    padding: 100px 2rem;
+    background: linear-gradient(180deg, #faf9f7 0%, #f5f4f0 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .services-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(229, 57, 53, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(229, 57, 53, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  /* Desktop: Nucleus Constellation */
+  @media (min-width: 1024px) {
+    .services-mobile-slider {
+      display: none !important;
+    }
+    
+    .services-nucleus {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      height: 700px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Central Hub */
+    .nucleus-hub {
+      position: relative;
+      z-index: 10;
+      width: 280px;
+      height: 280px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(229, 57, 53, 0.1),
+        inset 0 0 60px rgba(229, 57, 53, 0.05);
+      animation: hubPulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes hubPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(229, 57, 53, 0.1); }
+      50% { transform: scale(1.02); box-shadow: 0 25px 70px rgba(229, 57, 53, 0.15), 0 0 0 2px rgba(229, 57, 53, 0.15); }
+    }
+    
+    .hub-inner {
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .hub-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      color: white;
+      box-shadow: 0 10px 30px rgba(229, 57, 53, 0.3);
+    }
+    
+    .nucleus-hub h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    
+    .nucleus-hub p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    /* Orbiting Service Cards */
+    .service-orbit-card {
+      position: absolute;
+      width: 220px;
+      transform: rotate(var(--orbit-angle)) translateX(280px) rotate(calc(var(--orbit-angle) * -1));
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .service-orbit-card:hover {
+      transform: rotate(var(--orbit-angle)) translateX(280px) rotate(calc(var(--orbit-angle) * -1)) scale(1.05);
+      z-index: 20;
+    }
+    
+    /* Portrait Card Design */
+    .service-card-portrait {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+    }
+    
+    .service-card-image {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+    
+    .service-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .service-card-portrait:hover .service-card-image img {
+      transform: scale(1.1);
+    }
+    
+    .service-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 100%);
+    }
+    
+    .service-card-content {
+      position: relative;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    
+    .service-card-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: -44px auto 1rem;
+      font-size: 1.5rem;
+      color: white;
+      box-shadow: 0 8px 24px rgba(229, 57, 53, 0.3);
+      position: relative;
+      z-index: 2;
+      border: 3px solid white;
+    }
+    
+    .service-card-content h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+    
+    .service-subtitle {
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+    }
+    
+    .service-expand-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
+    }
+    
+    .service-expand-btn:hover {
+      transform: scale(1.1);
+      background: var(--primary-dark);
+    }
+    
+    /* Expanded State with Glassmorphism */
+    .service-card-expanded {
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s ease;
+      padding: 1.5rem;
+    }
+    
+    .service-card-portrait.expanded .service-card-expanded {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    .expanded-glass {
+      text-align: center;
+    }
+    
+    .expanded-glass h5 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    
+    .expanded-glass p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .service-close-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gray-100);
+      border: none;
+      color: var(--gray-600);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .service-close-btn:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    /* Connection Lines */
+    .nucleus-connections {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .nucleus-line {
+      stroke: url(#nucleusGradient);
+      stroke-width: 2;
+      stroke-dasharray: 8, 4;
+      opacity: 0.6;
+      animation: lineFlow 20s linear infinite;
+    }
+    
+    @keyframes lineFlow {
+      to { stroke-dashoffset: -100; }
+    }
+  }
+  
+  /* Mobile: Testimonial Style Slider */
+  @media (max-width: 1023px) {
+    .services-nucleus {
+      display: none !important;
+    }
+    
+    .services-mobile-slider {
+      display: block;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .services-track {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-slide {
+      display: none;
+      animation: serviceFade 0.5s ease;
+    }
+    
+    .service-slide.active {
+      display: block;
+    }
+    
+    @keyframes serviceFade {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    .service-slide-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    
+    .service-slide-image {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .service-slide-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .service-slide-content {
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    
+    .service-slide-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: -52px auto 1.25rem;
+      font-size: 1.75rem;
+      color: white;
+      box-shadow: 0 10px 30px rgba(229, 57, 53, 0.3);
+      border: 4px solid white;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .service-slide-content h4 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    
+    .service-slide-subtitle {
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .service-slide-details {
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    
+    .service-slide-details p {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    
+    /* Navigation */
+    .services-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .services-nav-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-600);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    
+    .services-nav-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    
+    .services-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .services-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.15);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+    }
+    
+    .services-dot.active {
+      background: var(--primary);
+      width: 28px;
+      border-radius: 5px;
+    }
+  }
+</style>
+
 <!-- Website Maintenance in Progress Badge -->
 <style>
   .wip-badge {
@@ -635,6 +1192,85 @@
     localStorage.setItem('wipBadgeDismissed', 'true');
     localStorage.setItem('wipBadgeDismissedTime', Date.now().toString());
   }
+  
+  // ============================================
+  // SERVICES SECTION - Expandable Cards & Slider
+  // ============================================
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    // Desktop: Expandable cards
+    const expandBtns = document.querySelectorAll('.service-expand-btn');
+    const closeBtns = document.querySelectorAll('.service-close-btn');
+    
+    expandBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const card = this.closest('.service-card-portrait');
+        card.classList.add('expanded');
+      });
+    });
+    
+    closeBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const card = this.closest('.service-card-portrait');
+        card.classList.remove('expanded');
+      });
+    });
+    
+    // Mobile: Slider
+    const slides = document.querySelectorAll('.service-slide');
+    const dots = document.querySelectorAll('.services-dot');
+    const prevBtn = document.getElementById('servicesPrev');
+    const nextBtn = document.getElementById('servicesNext');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let autoRotate;
+    
+    function updateSlider() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+      });
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+    
+    function goToSlide(index) {
+      currentSlide = (index + totalSlides) % totalSlides;
+      updateSlider();
+      resetAutoRotate();
+    }
+    
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+    
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+    
+    function startAutoRotate() {
+      autoRotate = setInterval(nextSlide, 5000);
+    }
+    
+    function resetAutoRotate() {
+      clearInterval(autoRotate);
+      startAutoRotate();
+    }
+    
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', nextSlide);
+    }
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToSlide(index));
+    });
+    
+    if (slides.length > 0) {
+      updateSlider();
+      startAutoRotate();
+    }
+  });
 </script>
 </body>
 </html>
