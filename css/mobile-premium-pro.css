@@ -104,18 +104,18 @@
     50% { box-shadow: 0 0 20px 5px rgba(229, 57, 53, 0.1); }
   }
 
-  .hero-badge::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    background: var(--primary);
-    border-radius: 50%;
-    animation: dot-pulse 2s ease-in-out infinite;
+  /* Remove pulsing dot/circle from badge */
+  .hero-badge::before,
+  .hero-badge .dot,
+  .hero-badge > span:first-child,
+  .hero-badge i:first-child:not(.fa-shield-alt) {
+    display: none !important;
   }
-
-  @keyframes dot-pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.3); opacity: 0.7; }
+  
+  /* Ensure only shield icon and text are visible */
+  .hero-badge .fa-shield-alt,
+  .hero-badge i.fas.fa-shield-alt {
+    display: inline-flex !important;
   }
 
   /* Hero text reveal animation */
