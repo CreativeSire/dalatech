@@ -1451,154 +1451,538 @@
       display: none;
     }
 
+    /* ============================================
+       PARTNERS SECTION - Premium 3D Theater Layout
+       ============================================ */
+    
     .partners-section {
-      padding: 92px 2rem;
-      background: linear-gradient(180deg, #fffdfb 0%, #f8f4ee 100%);
+      padding: 120px 2rem;
+      background: linear-gradient(180deg, #faf9f7 0%, #f5f3ef 50%, #faf9f7 100%);
       position: relative;
       overflow: hidden;
     }
 
+    /* Ambient Background Effects */
     .partners-section::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 20%, rgba(229, 57, 53, 0.06) 0%, transparent 42%),
-        radial-gradient(circle at 80% 10%, rgba(255, 122, 24, 0.05) 0%, transparent 35%);
+        radial-gradient(circle at 15% 30%, rgba(229, 57, 53, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 70%, rgba(255, 122, 24, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(229, 57, 53, 0.03) 0%, transparent 60%);
+      pointer-events: none;
+      animation: ambientPulse 8s ease-in-out infinite;
+    }
+
+    @keyframes ambientPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+
+    /* Floating Orbs */
+    .partners-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .partners-orb--1 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(229, 57, 53, 0.15) 0%, transparent 70%);
+      top: -100px;
+      left: -100px;
+      animation: orbFloat1 15s ease-in-out infinite;
+    }
+
+    .partners-orb--2 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 122, 24, 0.12) 0%, transparent 70%);
+      bottom: -50px;
+      right: -50px;
+      animation: orbFloat2 12s ease-in-out infinite;
+    }
+
+    @keyframes orbFloat1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, 20px) scale(1.1); }
+    }
+
+    @keyframes orbFloat2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-20px, -30px) scale(1.15); }
+    }
+
+    .partners-section .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .partners-intro {
+      max-width: 640px;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+
+    .partners-intro p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--gray-600);
+    }
+
+    /* Desktop: 3D Theater Layout */
+    @media (min-width: 769px) {
+      .partners-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        position: relative;
+        perspective: 2000px;
+        min-height: 600px;
+        padding: 2rem 0;
+      }
+
+      /* Glass Morphism Cards */
+      .partner-card {
+        width: 520px;
+        background: rgba(255, 255, 255, 0.75);
+        border-radius: 32px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow:
+          0 32px 80px rgba(49, 24, 22, 0.12),
+          0 0 0 1px rgba(255, 255, 255, 0.4) inset,
+          0 0 100px rgba(229, 57, 53, 0.08);
+        backdrop-filter: blur(24px);
+        transform-style: preserve-3d;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+      }
+
+      /* Card 1 - Left Side (Brands) */
+      .partner-card:nth-child(1) {
+        transform: translateX(40px) rotateY(-8deg) translateZ(-50px);
+        z-index: 1;
+      }
+
+      /* Card 2 - Right Side (Retailers) */
+      .partner-card:nth-child(2) {
+        transform: translateX(-40px) rotateY(8deg) translateZ(-50px);
+        z-index: 1;
+      }
+
+      /* Hover States - Cards tilt toward center creating theater effect */
+      .partner-card:hover {
+        transform: translateX(0) rotateY(0) translateZ(80px) scale(1.02);
+        z-index: 10;
+        box-shadow:
+          0 50px 100px rgba(49, 24, 22, 0.2),
+          0 0 0 1px rgba(255, 255, 255, 0.6) inset,
+          0 0 120px rgba(229, 57, 53, 0.15);
+      }
+
+      .partner-card:nth-child(1):hover {
+        transform: translateX(20px) rotateY(-3deg) translateZ(80px) scale(1.02);
+      }
+
+      .partner-card:nth-child(2):hover {
+        transform: translateX(-20px) rotateY(3deg) translateZ(80px) scale(1.02);
+      }
+
+      /* Ambient Glow Behind Cards */
+      .partner-card::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: 34px;
+        background: linear-gradient(135deg, 
+          rgba(229, 57, 53, 0.2) 0%, 
+          rgba(255, 122, 24, 0.15) 50%,
+          rgba(229, 57, 53, 0.2) 100%);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        filter: blur(20px);
+      }
+
+      .partner-card:hover::before {
+        opacity: 1;
+      }
+
+      /* Image Container with Parallax */
+      .partner-card__media {
+        position: relative;
+        height: 260px;
+        overflow: hidden;
+        border-radius: 32px 32px 0 0;
+      }
+
+      .partner-card__media::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, 
+          rgba(20, 10, 10, 0) 0%, 
+          rgba(20, 10, 10, 0.3) 70%,
+          rgba(20, 10, 10, 0.6) 100%);
+        transition: opacity 0.4s ease;
+      }
+
+      .partner-card:hover .partner-card__media::after {
+        opacity: 0.7;
+      }
+
+      .partner-card__media img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
+        filter: grayscale(20%);
+      }
+
+      .partner-card:hover .partner-card__media img {
+        transform: scale(1.08);
+        filter: grayscale(0%);
+      }
+
+      /* Card Content */
+      .partner-card__body {
+        padding: 2rem 2.25rem 2.25rem;
+        position: relative;
+        transform: translateZ(30px);
+      }
+
+      /* Glass Badge */
+      .partner-card__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 100px;
+        border: 1px solid rgba(229, 57, 53, 0.2);
+        background: rgba(229, 57, 53, 0.08);
+        backdrop-filter: blur(10px);
+        color: var(--primary);
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 1.25rem;
+        transition: all 0.4s ease;
+      }
+
+      .partner-card:hover .partner-card__badge {
+        background: rgba(229, 57, 53, 0.12);
+        border-color: rgba(229, 57, 53, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .partner-card h3 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        color: var(--dark);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .partner-card p {
+        color: var(--gray-600);
+        line-height: 1.7;
+        margin-bottom: 1.25rem;
+        font-size: 0.95rem;
+      }
+
+      .partner-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.875rem;
+      }
+
+      .partner-card li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        color: var(--gray-700);
+        line-height: 1.5;
+        font-size: 0.9rem;
+        opacity: 0;
+        transform: translateX(-10px);
+        animation: bulletReveal 0.5s ease forwards;
+      }
+
+      .partner-card:hover li {
+        animation: bulletReveal 0.5s ease forwards;
+      }
+
+      .partner-card li:nth-child(1) { animation-delay: 0.1s; }
+      .partner-card li:nth-child(2) { animation-delay: 0.2s; }
+      .partner-card li:nth-child(3) { animation-delay: 0.3s; }
+
+      @keyframes bulletReveal {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .partner-card li i {
+        color: var(--primary);
+        margin-top: 0.2rem;
+        font-size: 0.875rem;
+        flex-shrink: 0;
+      }
+
+      /* Floating Center Badge */
+      .partners-highlight {
+        position: absolute;
+        left: 50%;
+        bottom: -30px;
+        transform: translateX(-50%) translateZ(100px);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 1.5rem;
+        border-radius: 100px;
+        background: rgba(26, 10, 10, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255,255,255,0.92);
+        box-shadow: 
+          0 20px 60px rgba(26, 10, 10, 0.3),
+          0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+        z-index: 20;
+        font-size: 0.95rem;
+        transition: all 0.4s ease;
+      }
+
+      .partners-highlight:hover {
+        transform: translateX(-50%) translateZ(120px) scale(1.05);
+        box-shadow: 
+          0 30px 80px rgba(26, 10, 10, 0.4),
+          0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      }
+
+      .partners-highlight strong {
+        color: #ff9a6e;
+        font-weight: 700;
+      }
+
+      .partners-highlight i {
+        font-size: 1.25rem;
+        color: #ff9a6e;
+      }
+    }
+
+    /* Mobile: Stacked Cards with Depth */
+    @media (max-width: 768px) {
+      .partners-section {
+        padding: 80px 1.5rem;
+      }
+
+      .partners-intro {
+        margin-bottom: 3rem;
+      }
+
+      .partners-intro p {
+        font-size: 1rem;
+      }
+
+      .partners-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        perspective: 1000px;
+      }
+
+      .partner-card {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 28px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow:
+          0 20px 50px rgba(49, 24, 22, 0.1),
+          0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+        backdrop-filter: blur(20px);
+        transform-style: preserve-3d;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Stacked deck effect */
+      .partner-card:nth-child(1) {
+        transform: translateY(0) rotateX(2deg);
+      }
+
+      .partner-card:nth-child(2) {
+        transform: translateY(-10px) rotateX(1deg);
+      }
+
+      /* Reveal animation on scroll */
+      .partner-card.reveal-scale {
+        opacity: 0;
+        transform: translateY(40px) rotateX(10deg);
+      }
+
+      .partner-card.reveal-scale.active {
+        opacity: 1;
+        transform: translateY(0) rotateX(2deg);
+      }
+
+      .partner-card.reveal-scale.active:nth-child(2) {
+        transform: translateY(-10px) rotateX(1deg);
+        transition-delay: 0.15s;
+      }
+
+      .partner-card__media {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .partner-card__media::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(20, 10, 10, 0) 0%, rgba(20, 10, 10, 0.4) 100%);
+      }
+
+      .partner-card__media img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      .partner-card__body {
+        padding: 1.5rem;
+      }
+
+      .partner-card__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.4rem 0.875rem;
+        border-radius: 100px;
+        border: 1px solid rgba(229, 57, 53, 0.15);
+        background: rgba(229, 57, 53, 0.06);
+        color: var(--primary);
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1rem;
+      }
+
+      .partner-card h3 {
+        font-size: 1.35rem;
+        line-height: 1.2;
+        margin-bottom: 0.875rem;
+        color: var(--dark);
+        font-weight: 800;
+      }
+
+      .partner-card p {
+        color: var(--gray-600);
+        line-height: 1.65;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .partner-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .partner-card li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.625rem;
+        color: var(--gray-700);
+        line-height: 1.5;
+        font-size: 0.875rem;
+      }
+
+      .partner-card li i {
+        color: var(--primary);
+        margin-top: 0.25rem;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+      }
+
+      .partners-highlight {
+        margin-top: 2.5rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.625rem;
+        padding: 1rem 1.25rem;
+        border-radius: 100px;
+        background: rgba(26, 10, 10, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255,255,255,0.92);
+        box-shadow: 0 20px 50px rgba(26, 10, 10, 0.25);
+        font-size: 0.9rem;
+      }
+
+      .partners-highlight strong {
+        color: #ff9a6e;
+      }
+
+      .partners-highlight i {
+        color: #ff9a6e;
+      }
+    }
+
+    /* Commitment Section (unchanged but included for context) */
+    .commitment-section {
+      padding: 92px 2rem;
+      background: linear-gradient(135deg, #140909 0%, #1b0f0d 48%, #22120d 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .commitment-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 18%, rgba(255, 122, 24, 0.18) 0%, transparent 34%),
+        radial-gradient(circle at 85% 12%, rgba(229, 57, 53, 0.14) 0%, transparent 32%);
       pointer-events: none;
     }
 
-    .partners-section .container,
     .commitment-section .container {
       position: relative;
       z-index: 1;
     }
 
-    .partners-intro,
     .commitment-intro {
       max-width: 720px;
       margin: 0 auto 3rem;
       text-align: center;
     }
 
-    .partners-intro p,
     .commitment-intro p {
       font-size: 1.05rem;
       line-height: 1.8;
-      color: var(--gray-600);
+      color: rgba(255,255,255,0.72);
     }
 
-    .partners-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.75rem;
-    }
-
-    .partner-card {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 30px;
-      overflow: hidden;
-      border: 1px solid rgba(148, 53, 43, 0.08);
-      box-shadow:
-        0 20px 60px rgba(49, 24, 22, 0.12),
-        0 4px 18px rgba(229, 57, 53, 0.08);
-      backdrop-filter: blur(14px);
-    }
-
-    .partner-card__media {
-      position: relative;
-      height: 220px;
-      overflow: hidden;
-    }
-
-    .partner-card__media::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(20, 10, 10, 0.05) 0%, rgba(20, 10, 10, 0.42) 100%);
-    }
-
-    .partner-card__media img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    .partner-card__body {
-      padding: 1.75rem;
-    }
-
-    .partner-card__badge,
-    .commitment-card__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.45rem 0.85rem;
-      border-radius: 999px;
-      border: 1px solid rgba(229, 57, 53, 0.16);
-      background: rgba(229, 57, 53, 0.08);
-      color: var(--primary);
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 1rem;
-    }
-
-    .partner-card h3,
-    .commitment-card h3 {
-      font-size: clamp(1.4rem, 2.2vw, 1.8rem);
-      line-height: 1.14;
-      margin-bottom: 0.85rem;
-      color: var(--dark);
-    }
-
-    .partner-card p,
-    .commitment-card p {
-      color: var(--gray-600);
-      line-height: 1.75;
-      margin-bottom: 1rem;
-    }
-
-    .partner-card ul,
-    .commitment-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.7rem;
-    }
-
-    .partner-card li,
-    .commitment-card li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.7rem;
-      color: var(--gray-700);
-      line-height: 1.55;
-    }
-
-    .partner-card li i,
-    .commitment-card li i {
-      color: var(--primary);
-      margin-top: 0.22rem;
-    }
-
-    .partners-highlight {
-      margin-top: 2rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.9rem 1.15rem;
-      border-radius: 18px;
-      background: rgba(26, 10, 10, 0.96);
-      color: rgba(255,255,255,0.92);
-      box-shadow: 0 18px 45px rgba(26, 10, 10, 0.18);
-    }
-
-    .partners-highlight strong {
-      color: #ff9a6e;
+    .commitment-section .section-header h2 {
+      color: white;
     }
 
     .commitment-section {
@@ -3260,6 +3644,10 @@
   </section>
 
   <section class="partners-section">
+    <!-- Ambient Background Orbs -->
+    <div class="partners-orb partners-orb--1"></div>
+    <div class="partners-orb partners-orb--2"></div>
+    
     <div class="container">
       <div class="section-header reveal">
         <div class="eyebrow">Who We Work With</div>
@@ -3268,8 +3656,11 @@
       <div class="partners-intro reveal">
         <p>DALA sits between ambitious brands and modern retail partners, shaped by 10+ years of lived operating experience in this market. We work best where product ambition needs disciplined execution.</p>
       </div>
-      <div class="partners-grid">
-        <article class="partner-card reveal-scale">
+      
+      <!-- 3D Theater Grid -->
+      <div class="partners-grid" id="partnersGrid">
+        <!-- Card 1: Founder-Led Brands -->
+        <article class="partner-card reveal-scale" data-card="brands">
           <div class="partner-card__media">
             <img src="../images/generated/about/story-today.png" alt="Founder-led Nigerian consumer brand team planning retail growth" loading="lazy">
           </div>
@@ -3284,7 +3675,15 @@
             </ul>
           </div>
         </article>
-        <article class="partner-card reveal-scale">
+        
+        <!-- Floating Center Badge -->
+        <div class="partners-highlight reveal" id="partnersHighlight">
+          <i class="fas fa-award"></i>
+          <span><strong>10+ years</strong> of operating experience</span>
+        </div>
+        
+        <!-- Card 2: Modern Retail Partners -->
+        <article class="partner-card reveal-scale" data-card="retailers">
           <div class="partner-card__media">
             <img src="../images/generated/about/value-partnership-mindset.png" alt="Modern retail partnership team in Nigeria" loading="lazy">
           </div>
@@ -3299,10 +3698,6 @@
             </ul>
           </div>
         </article>
-      </div>
-      <div class="partners-highlight reveal">
-        <i class="fas fa-award"></i>
-        <span><strong>10+ years</strong> of operating experience translated into repeatable execution for both sides of retail.</span>
       </div>
     </div>
   </section>
@@ -3571,6 +3966,108 @@
         block.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
       });
     });
+    
+    // ============================================
+    // PARTNERS SECTION - Premium 3D Tilt Effect
+    // ============================================
+    
+    const partnerCards = document.querySelectorAll('.partner-card');
+    const partnersGrid = document.getElementById('partnersGrid');
+    
+    // Only apply on desktop
+    if (window.innerWidth > 768) {
+      partnerCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          // Calculate rotation (max 5 degrees)
+          const rotateX = ((y - centerY) / centerY) * -5;
+          const rotateY = ((x - centerX) / centerX) * 5;
+          
+          // Apply transform with perspective
+          card.style.transform = `
+            perspective(1000px) 
+            rotateX(${rotateX}deg) 
+            rotateY(${rotateY}deg) 
+            translateZ(80px) 
+            scale(1.02)
+          `;
+          
+          // Parallax effect on image
+          const img = card.querySelector('.partner-card__media img');
+          if (img) {
+            const moveX = ((x - centerX) / centerX) * -10;
+            const moveY = ((y - centerY) / centerY) * -10;
+            img.style.transform = `scale(1.08) translate(${moveX}px, ${moveY}px)`;
+          }
+          
+          // Move content opposite direction for depth
+          const content = card.querySelector('.partner-card__body');
+          if (content) {
+            const contentX = ((x - centerX) / centerX) * 5;
+            const contentY = ((y - centerY) / centerY) * 5;
+            content.style.transform = `translateZ(40px) translate(${contentX}px, ${contentY}px)`;
+          }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          // Reset to original theater position based on card index
+          const isFirstCard = card === partnerCards[0];
+          const baseTransform = isFirstCard 
+            ? 'translateX(40px) rotateY(-8deg) translateZ(-50px)'
+            : 'translateX(-40px) rotateY(8deg) translateZ(-50px)';
+          
+          card.style.transform = baseTransform;
+          
+          // Reset image
+          const img = card.querySelector('.partner-card__media img');
+          if (img) {
+            img.style.transform = '';
+          }
+          
+          // Reset content
+          const content = card.querySelector('.partner-card__body');
+          if (content) {
+            content.style.transform = 'translateZ(30px)';
+          }
+        });
+      });
+      
+      // Magnetic effect on the center highlight badge
+      const highlight = document.getElementById('partnersHighlight');
+      if (highlight && partnersGrid) {
+        partnersGrid.addEventListener('mousemove', (e) => {
+          const rect = partnersGrid.getBoundingClientRect();
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const mouseX = e.clientX - rect.left;
+          const mouseY = e.clientY - rect.top;
+          
+          // Calculate distance from center
+          const distX = mouseX - centerX;
+          const distY = mouseY - centerY;
+          const distance = Math.sqrt(distX * distX + distY * distY);
+          
+          // Only apply magnetic effect when close to center
+          if (distance < 200) {
+            const pull = (200 - distance) / 200;
+            const moveX = (distX / 10) * pull;
+            const moveY = (distY / 10) * pull;
+            
+            highlight.style.transform = `translateX(calc(-50% + ${moveX}px)) translateY(${moveY}px) translateZ(120px)`;
+          }
+        });
+        
+        partnersGrid.addEventListener('mouseleave', () => {
+          highlight.style.transform = '';
+        });
+      }
+    }
     
     // Mobile Story 3D Carousel
     const storyCards = document.querySelectorAll('.story-3d-card');
