@@ -2115,6 +2115,11 @@
       color: rgba(255, 255, 255, 0.65);
     }
 
+    .commitment-mobile-nav,
+    .commitment-mobile-context {
+      display: none;
+    }
+
     /* Desktop: Staggered Card Layout */
     @media (min-width: 769px) {
       .commitment-grid {
@@ -2521,57 +2526,145 @@
 
     @media (max-width: 768px) {
       .commitment-grid {
-        display: grid;
-        gap: 1rem;
-        max-width: 420px;
+        position: relative;
+        display: block;
+        max-width: 400px;
         margin: 0 auto;
         padding-top: 0.25rem;
-        scroll-snap-type: y proximity;
+        min-height: 620px;
       }
 
       .commitment-card {
         width: 100%;
-        position: relative;
-        top: auto;
-        min-height: min(72vh, 620px);
-        padding: 1.2rem 1.15rem 1.35rem;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
+        position: absolute;
+        inset: 0;
+        min-height: 100%;
+        padding: 1.25rem 1.2rem 1.45rem;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(18px) scale(0.965);
+        transition: opacity 0.45s ease, transform 0.45s ease;
       }
 
-      .commitment-card:nth-child(2) {
-        transform: translateX(12px);
-      }
-
-      .commitment-card:nth-child(3) {
-        transform: translateX(24px);
+      .commitment-card.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0) scale(1);
       }
 
       .commitment-card__media {
-        aspect-ratio: 4 / 3;
-        margin-bottom: 1rem;
-        border-radius: 18px;
+        aspect-ratio: 1.35 / 1;
+        margin-bottom: 1.1rem;
+        border-radius: 22px;
+      }
+
+      .commitment-card__media::after {
+        background: linear-gradient(180deg, rgba(14, 10, 10, 0.05) 0%, rgba(14, 10, 10, 0.28) 100%);
       }
 
       .commitment-card__num {
         top: 0.95rem;
         right: 1rem;
-        font-size: 2.5rem;
+        font-size: 2.35rem;
       }
 
       .commitment-card h3 {
-        font-size: 1.7rem;
-        line-height: 1.05;
+        font-size: 1.78rem;
+        line-height: 1.02;
+        margin-bottom: 0.85rem;
       }
 
       .commitment-card p {
         font-size: 1rem;
-        line-height: 1.75;
+        line-height: 1.72;
+        margin-bottom: 1.1rem;
       }
 
       .commitment-card ul {
         gap: 0.9rem;
-        margin-top: auto;
+        margin-top: 1.15rem;
+      }
+
+      .commitment-mobile-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.9rem;
+        margin-top: 1.25rem;
+      }
+
+      .commitment-mobile-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: var(--gray-800);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+      }
+
+      .commitment-mobile-dots {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 0.75rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+      }
+
+      .commitment-mobile-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.24);
+        border: none;
+        padding: 0;
+        transition: all 0.3s ease;
+      }
+
+      .commitment-mobile-dot.active {
+        width: 24px;
+        background: linear-gradient(135deg, #ff8a1d 0%, #ff6b35 100%);
+      }
+
+      .commitment-mobile-context {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.9rem;
+        margin-top: 1rem;
+        padding: 0.9rem 1rem;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: rgba(255,255,255,0.78);
+      }
+
+      .commitment-mobile-context span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        color: #ffb18f;
+        font-size: 0.76rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+
+      .commitment-mobile-context p {
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.6;
+        color: rgba(255,255,255,0.74);
+      }
+
+      .commitment-card::before {
+        opacity: 0.9;
       }
     }
 
@@ -4416,7 +4509,7 @@
       
       <!-- Desktop: Staggered Cards / Mobile: Horizontal Scroll -->
       <div class="commitment-grid" id="commitmentGrid">
-        <article class="commitment-card reveal-scale">
+        <article class="commitment-card reveal-scale active">
           <div class="commitment-card__num">01</div>
           <div class="commitment-card__media">
             <img src="../images/generated/about/commitment-clarity.png" alt="Editorial visual representing clarity and transparent reporting" loading="lazy">
@@ -4454,6 +4547,23 @@
             <li><i class="fas fa-check"></i><span>Partnership mindset on both sides</span></li>
           </ul>
         </article>
+      </div>
+      <div class="commitment-mobile-nav">
+        <button class="commitment-mobile-btn" id="commitmentPrev" aria-label="Previous commitment">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <div class="commitment-mobile-dots">
+          <button class="commitment-mobile-dot active" data-commitment="0" aria-label="Go to commitment 1"></button>
+          <button class="commitment-mobile-dot" data-commitment="1" aria-label="Go to commitment 2"></button>
+          <button class="commitment-mobile-dot" data-commitment="2" aria-label="Go to commitment 3"></button>
+        </div>
+        <button class="commitment-mobile-btn" id="commitmentNext" aria-label="Next commitment">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+      <div class="commitment-mobile-context">
+        <span><i class="fas fa-quote-left"></i> Partner Standard</span>
+        <p>Three standards. One dependable partner experience built around clarity, control, and durable growth.</p>
       </div>
       
     </div>
@@ -4835,8 +4945,62 @@
     }
     
     // ============================================
-    // COMMITMENT SECTION - Mobile Scroll Indicator
+    // COMMITMENT SECTION - Mobile Single Card Slider
     // ============================================
+
+    const commitmentCards = document.querySelectorAll('#commitmentGrid .commitment-card');
+    const commitmentDots = document.querySelectorAll('.commitment-mobile-dot');
+    const commitmentPrev = document.getElementById('commitmentPrev');
+    const commitmentNext = document.getElementById('commitmentNext');
+    let commitmentIndex = 0;
+
+    function updateCommitmentSlider() {
+      commitmentCards.forEach((card, index) => {
+        card.classList.toggle('active', index === commitmentIndex);
+      });
+
+      commitmentDots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === commitmentIndex);
+      });
+    }
+
+    if (window.innerWidth <= 768 && commitmentCards.length) {
+      updateCommitmentSlider();
+
+      commitmentPrev?.addEventListener('click', () => {
+        commitmentIndex = (commitmentIndex - 1 + commitmentCards.length) % commitmentCards.length;
+        updateCommitmentSlider();
+      });
+
+      commitmentNext?.addEventListener('click', () => {
+        commitmentIndex = (commitmentIndex + 1) % commitmentCards.length;
+        updateCommitmentSlider();
+      });
+
+      commitmentDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          commitmentIndex = index;
+          updateCommitmentSlider();
+        });
+      });
+
+      let commitmentTouchStartX = 0;
+      const commitmentGrid = document.getElementById('commitmentGrid');
+      commitmentGrid?.addEventListener('touchstart', (e) => {
+        commitmentTouchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      commitmentGrid?.addEventListener('touchend', (e) => {
+        const commitmentTouchEndX = e.changedTouches[0].screenX;
+        const diff = commitmentTouchStartX - commitmentTouchEndX;
+        if (Math.abs(diff) > 50) {
+          commitmentIndex = diff > 0
+            ? (commitmentIndex + 1) % commitmentCards.length
+            : (commitmentIndex - 1 + commitmentCards.length) % commitmentCards.length;
+          updateCommitmentSlider();
+        }
+      }, { passive: true });
+    }
     
     // Mobile Story 3D Carousel
     const storyCards = document.querySelectorAll('.story-3d-card');
