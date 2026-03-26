@@ -48,8 +48,8 @@
   
   /* Layout Spacing Variables */
   --header-height: 60px;
-  --spacing-hero-top: 120px;
-  --spacing-hero-bottom: 80px;
+  --spacing-hero-top: 80px;
+  --spacing-hero-bottom: 40px;
   --spacing-section: 100px;
   
   /* Transitions */
@@ -384,7 +384,7 @@ p {
   overflow: hidden;
   display: flex;
   align-items: center;
-  min-height: 100vh;
+  min-height: auto;
   box-sizing: border-box;
   /* Container Queries for component-level responsiveness */
   container-type: inline-size;
