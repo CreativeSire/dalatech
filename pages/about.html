@@ -1679,7 +1679,6 @@
     }
     
     /* Base: Show desktop elements */
-    .story-grid,
     .mv-container { 
       display: flex !important; 
     }
@@ -2248,6 +2247,171 @@
         display: block;
       }
     }
+
+    /* Premium image-led overrides */
+    @media (min-width: 769px) {
+      .story-grid {
+        display: none !important;
+      }
+    }
+
+    .story-float-visual,
+    .story-3d-visual {
+      isolation: isolate;
+    }
+
+    .story-float-visual img,
+    .story-3d-visual img,
+    .value-3d-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .story-float-visual::after,
+    .story-3d-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(18, 10, 10, 0.08) 0%, rgba(18, 10, 10, 0.38) 58%, rgba(18, 10, 10, 0.78) 100%),
+        linear-gradient(135deg, rgba(229, 57, 53, 0.18) 0%, rgba(16, 10, 10, 0.14) 100%);
+      z-index: 1;
+    }
+
+    .story-float-number,
+    .story-3d-number {
+      z-index: 2;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--dark);
+    }
+
+    .story-float-icon,
+    .story-3d-icon,
+    .value-3d-card__icon {
+      display: none !important;
+    }
+
+    .story-float-content {
+      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, #fffaf6 100%);
+    }
+
+    .story-float-label {
+      color: var(--primary-dark);
+    }
+
+    .story-3d-visual {
+      padding: 0;
+      height: 186px;
+      border-radius: 24px 24px 0 0;
+      background: #1a0a0a;
+    }
+
+    .story-3d-content {
+      background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, #fffaf6 100%);
+    }
+
+    .value-3d-card__inner {
+      background: linear-gradient(180deg, rgba(24, 10, 10, 0.18) 0%, rgba(24, 10, 10, 0.72) 100%);
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow:
+        0 28px 55px rgba(0,0,0,0.28),
+        0 0 0 1px rgba(255,255,255,0.05) inset;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: left;
+      padding: 1.6rem;
+    }
+
+    .value-3d-card__media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .value-3d-card__media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(12, 8, 8, 0.02) 0%, rgba(12, 8, 8, 0.3) 38%, rgba(12, 8, 8, 0.88) 100%),
+        linear-gradient(135deg, rgba(229, 57, 53, 0.26) 0%, rgba(245, 158, 11, 0.12) 45%, rgba(10, 10, 10, 0.14) 100%);
+    }
+
+    .value-3d-card__label,
+    .value-3d-card h4,
+    .value-3d-card p,
+    .value-3d-card__shine {
+      position: relative;
+      z-index: 1;
+    }
+
+    .value-3d-card__label {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-bottom: 0.9rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.92);
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      backdrop-filter: blur(10px);
+    }
+
+    .value-3d-card h4 {
+      font-size: 1.55rem;
+      margin-bottom: 0.85rem;
+      line-height: 1.1;
+    }
+
+    .value-3d-card p {
+      color: rgba(255,255,255,0.84);
+      font-size: 0.97rem;
+      line-height: 1.68;
+      max-width: 22ch;
+    }
+
+    .values-nav {
+      background: rgba(24, 12, 12, 0.48);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .values-dot {
+      background: rgba(18, 18, 18, 0.18);
+    }
+
+    @media (max-width: 768px) {
+      .value-3d-card__inner {
+        min-height: 338px;
+        padding: 1.45rem;
+      }
+
+      .value-3d-card h4 {
+        font-size: 1.25rem;
+      }
+
+      .value-3d-card p {
+        font-size: 0.9rem;
+        max-width: none;
+      }
+
+      .story-3d-container {
+        height: 500px;
+      }
+
+      .story-3d-visual {
+        height: 210px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2411,7 +2575,7 @@
           <div class="story-float-card">
             <div class="story-float-visual struggle">
               <div class="story-float-number">01</div>
-              <div class="story-float-icon">😰</div>
+              <img src="../images/generated/about/story-struggle.png" alt="The struggle of founder-led retail operations in Nigeria" loading="lazy">
             </div>
             <div class="story-float-content">
               <span class="story-float-label">The Struggle</span>
@@ -2424,7 +2588,7 @@
           <div class="story-float-card">
             <div class="story-float-visual breakthrough">
               <div class="story-float-number">02</div>
-              <div class="story-float-icon">🚀</div>
+              <img src="../images/generated/about/story-breakthrough.png" alt="The breakthrough from disciplined retail operations" loading="lazy">
             </div>
             <div class="story-float-content">
               <span class="story-float-label">The Breakthrough</span>
@@ -2437,7 +2601,7 @@
           <div class="story-float-card">
             <div class="story-float-visual today">
               <div class="story-float-number">03</div>
-              <div class="story-float-icon">🤝</div>
+              <img src="../images/generated/about/story-today.png" alt="How DALA helps brands scale today" loading="lazy">
             </div>
             <div class="story-float-content">
               <span class="story-float-label">Today</span>
@@ -2456,9 +2620,7 @@
             <div class="story-3d-card active" data-index="0">
               <div class="story-3d-visual">
                 <div class="story-3d-number">01</div>
-                <div class="story-3d-icon challenge">
-                  <i class="fas fa-store-slash"></i>
-                </div>
+                <img src="../images/generated/about/story-struggle.png" alt="The struggle of founder-led retail operations in Nigeria" loading="lazy">
               </div>
               <div class="story-3d-content">
                 <span class="story-3d-eyebrow">Where We Started</span>
@@ -2471,9 +2633,7 @@
             <div class="story-3d-card" data-index="1">
               <div class="story-3d-visual">
                 <div class="story-3d-number">02</div>
-                <div class="story-3d-icon breakthrough">
-                  <i class="fas fa-rocket"></i>
-                </div>
+                <img src="../images/generated/about/story-breakthrough.png" alt="The breakthrough from disciplined retail operations" loading="lazy">
               </div>
               <div class="story-3d-content">
                 <span class="story-3d-eyebrow">The Breakthrough</span>
@@ -2486,14 +2646,12 @@
             <div class="story-3d-card" data-index="2">
               <div class="story-3d-visual">
                 <div class="story-3d-number">03</div>
-                <div class="story-3d-icon today">
-                  <i class="fas fa-handshake"></i>
-                </div>
+                <img src="../images/generated/about/story-today.png" alt="How DALA helps brands scale today" loading="lazy">
               </div>
               <div class="story-3d-content">
                 <span class="story-3d-eyebrow">What We Do Today</span>
                 <h3>Sharing What Saved Us</h3>
-                <p>We help founder-led brands move faster alone. Get on more shelves, expand across Lagos and Ogun, scale rapidly.</p>
+                <p>We help founder-led brands move faster than they ever could alone. Get on more shelves, expand across Lagos and Ogun, and scale rapidly.</p>
                 <p class="story-3d-highlight">We're sharing what saved us. Not theory.</p>
               </div>
             </div>
@@ -2633,7 +2791,8 @@
           <!-- Card 1: Integrity First -->
           <div class="value-3d-card active" data-index="0">
             <div class="value-3d-card__inner">
-              <div class="value-3d-card__icon">🤝</div>
+              <div class="value-3d-card__media"><img src="../images/generated/about/value-integrity-first.png" alt="Integrity First" loading="lazy"></div>
+              <div class="value-3d-card__label">Core Value</div>
               <h4>Integrity First</h4>
               <p>We operate with full transparency and honest communication — no hidden agendas, no surprises.</p>
               <div class="value-3d-card__shine"></div>
@@ -2642,7 +2801,8 @@
           <!-- Card 2: Execution Excellence -->
           <div class="value-3d-card" data-index="1">
             <div class="value-3d-card__inner">
-              <div class="value-3d-card__icon">⚙️</div>
+              <div class="value-3d-card__media"><img src="../images/generated/about/value-execution-excellence.png" alt="Execution Excellence" loading="lazy"></div>
+              <div class="value-3d-card__label">Core Value</div>
               <h4>Execution Excellence</h4>
               <p>We take pride in doing things right — consistently, reliably, and to the highest standard.</p>
               <div class="value-3d-card__shine"></div>
@@ -2651,7 +2811,8 @@
           <!-- Card 3: Sustainable Growth -->
           <div class="value-3d-card" data-index="2">
             <div class="value-3d-card__inner">
-              <div class="value-3d-card__icon">📈</div>
+              <div class="value-3d-card__media"><img src="../images/generated/about/value-sustainable-growth.png" alt="Sustainable Growth" loading="lazy"></div>
+              <div class="value-3d-card__label">Core Value</div>
               <h4>Sustainable Growth</h4>
               <p>We build for the long term — helping brands scale in disciplined, responsible ways.</p>
               <div class="value-3d-card__shine"></div>
@@ -2660,7 +2821,8 @@
           <!-- Card 4: Partnership Mindset -->
           <div class="value-3d-card" data-index="3">
             <div class="value-3d-card__inner">
-              <div class="value-3d-card__icon">👥</div>
+              <div class="value-3d-card__media"><img src="../images/generated/about/value-partnership-mindset.png" alt="Partnership Mindset" loading="lazy"></div>
+              <div class="value-3d-card__label">Core Value</div>
               <h4>Partnership Mindset</h4>
               <p>Your success is our success. We treat every relationship as a true collaboration.</p>
               <div class="value-3d-card__shine"></div>
@@ -2669,7 +2831,8 @@
           <!-- Card 5: Continuous Improvement -->
           <div class="value-3d-card" data-index="4">
             <div class="value-3d-card__inner">
-              <div class="value-3d-card__icon">💡</div>
+              <div class="value-3d-card__media"><img src="../images/generated/about/value-continuous-improvement.png" alt="Continuous Improvement" loading="lazy"></div>
+              <div class="value-3d-card__label">Core Value</div>
               <h4>Continuous Improvement</h4>
               <p>We constantly refine our processes to stay ahead of the challenges our partners face.</p>
               <div class="value-3d-card__shine"></div>
