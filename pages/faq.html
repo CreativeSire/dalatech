@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | DALA Technologies</title>
+  <meta name="description" content="Frequently asked questions about partnering with DALA.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="shortcut icon" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/get-listed.css">
+</head>
+<body class="faq-body">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
+      <div class="nav-links">
+        <a href="for-brands.html" class="nav-link">DALA for Brands</a>
+        <a href="for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="case-studies.html" class="nav-link">Case Studies</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="get-listed.html" class="nav-link">Get Listed</a>
+        <a href="faq.html" class="nav-link active listed-nav-link mobile-only-nav">FAQ</a>
+        <a href="signup.html" class="nav-cta">Sign Up</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="faq-shell">
+    <section class="listed-hero">
+      <div class="listed-container">
+        <div class="listed-hero-panel">
+          <div class="listed-hero-copy">
+            <span class="listed-kicker"><i class="fas fa-circle-question"></i> FAQ</span>
+            <h1 class="listed-title">Answers before you apply.</h1>
+            <p class="listed-subtitle">Everything brands usually want clarified before they start the partnership process with DALA.</p>
+            <div class="listed-actions">
+              <a href="get-listed.html" class="listed-btn listed-btn-primary">Back to Get Listed <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="listed-hero-art">
+            <img src="../images/generated/about/commitment-clarity.png" alt="DALA FAQ visual">
+            <div class="listed-hero-note">Clear expectations, faster decisions, and fewer surprises before you start the qualification process.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="listed-sections">
+      <div class="listed-container">
+        <section class="faq-panel listed-section-card">
+          <div class="listed-section-header">
+            <span class="listed-section-badge"><i class="fas fa-list-check"></i> Common Questions</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div class="listed-faq-items">
+            <div class="listed-faq-item">
+              <button class="listed-faq-trigger" type="button">How long does the approval process take? <i class="fas fa-chevron-down"></i></button>
+              <div class="listed-faq-answer"><p>Our standard review process takes 48-72 hours after receiving your complete application. If additional information is needed, we'll reach out within 24 hours.</p></div>
+            </div>
+            <div class="listed-faq-item">
+              <button class="listed-faq-trigger" type="button">What are the fees for getting listed? <i class="fas fa-chevron-down"></i></button>
+              <div class="listed-faq-answer"><p>We operate on a commission-based model. There are no upfront listing fees. We earn when you sell, aligning our success with yours.</p></div>
+            </div>
+            <div class="listed-faq-item">
+              <button class="listed-faq-trigger" type="button">Can I start with a trial period? <i class="fas fa-chevron-down"></i></button>
+              <div class="listed-faq-answer"><p>Yes! We offer a 3-month trial period with select retail partners to test market fit before full rollout across our network.</p></div>
+            </div>
+            <div class="listed-faq-item">
+              <button class="listed-faq-trigger" type="button">What support does DALA provide? <i class="fas fa-chevron-down"></i></button>
+              <div class="listed-faq-answer"><p>We provide end-to-end support including store onboarding, in-store execution, sales reporting, payment collection, and dedicated account management.</p></div>
+            </div>
+            <div class="listed-faq-item">
+              <button class="listed-faq-trigger" type="button">How do I track my sales performance? <i class="fas fa-chevron-down"></i></button>
+              <div class="listed-faq-answer"><p>You'll receive weekly sales reports via email and have access to our partner dashboard for real-time performance tracking across all store locations.</p></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="listed-footer">
+    <div class="listed-footer__inner">
+      <p>© 2026 DALA Technologies. Structured retail execution across Nigeria.</p>
+      <div class="listed-footer__links">
+        <a href="../index.html">Home</a>
+        <a href="for-brands.html">For Brands</a>
+        <a href="for-supermarkets.html">For Supermarkets</a>
+        <a href="get-listed.html">Get Listed</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    document.querySelectorAll('.listed-faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.listed-faq-item').forEach(entry => entry.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

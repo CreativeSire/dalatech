@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Listed Form | DALA Technologies</title>
+  <meta name="description" content="Complete the DALA qualification form to begin the listing process.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="shortcut icon" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/get-listed.css">
+</head>
+<body class="listed-form-body">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
+      <div class="nav-links">
+        <a href="for-brands.html" class="nav-link">DALA for Brands</a>
+        <a href="for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="case-studies.html" class="nav-link">Case Studies</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="get-listed.html" class="nav-link active">Get Listed</a>
+        <a href="faq.html" class="nav-link listed-nav-link mobile-only-nav">FAQ</a>
+        <a href="signup.html" class="nav-cta">Sign Up</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="listed-form-shell">
+    <section class="listed-hero">
+      <div class="listed-container">
+        <div class="listed-hero-panel">
+          <div class="listed-hero-copy">
+            <span class="listed-kicker"><i class="fas fa-file-signature"></i> Qualification Form</span>
+            <h1 class="listed-title">Complete your qualification form.</h1>
+            <p class="listed-subtitle">Share the details we need to review your brand properly and move the partnership process forward.</p>
+          </div>
+          <div class="listed-hero-art">
+            <img src="../images/generated/about/mission-statement-bg.png" alt="DALA qualification form visual">
+            <div class="listed-hero-note">Structured intake, clearer review, and a cleaner first step into disciplined retail execution.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="listed-sections">
+      <div class="listed-container">
+        <section class="listed-form-panel">
+          <span class="listed-form-badge"><i class="fas fa-pen-to-square"></i> Application</span>
+          <h2 style="margin:0.7rem 0 0;">Brand Partner Qualification Form</h2>
+          <p class="listed-intro">Complete the form below and our team will review your submission.</p>
+          <form name="get-listed-qualification" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="get-listed-qualification">
+            <input type="hidden" name="bot-field">
+            <div class="listed-form-grid">
+              <div class="listed-field">
+                <label for="full-name">Full Name</label>
+                <input id="full-name" name="full_name" type="text" required>
+              </div>
+              <div class="listed-field">
+                <label for="brand-name">Brand Name</label>
+                <input id="brand-name" name="brand_name" type="text" required>
+              </div>
+              <div class="listed-field">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" required>
+              </div>
+              <div class="listed-field">
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="tel" required>
+              </div>
+              <div class="listed-field">
+                <label for="category">Product Category</label>
+                <input id="category" name="product_category" type="text" required>
+              </div>
+              <div class="listed-field">
+                <label for="partner-type">Partnership Type</label>
+                <select id="partner-type" name="partner_type" required>
+                  <option value="Brand Partner" selected>Brand Partner</option>
+                  <option value="Retail Partner">Retail Partner</option>
+                </select>
+              </div>
+              <div class="listed-field listed-field--full">
+                <label for="message">Tell us about your brand</label>
+                <textarea id="message" name="message" placeholder="Share your product range, current retail footprint, and what you want to achieve with DALA." required></textarea>
+              </div>
+            </div>
+            <div class="listed-form-actions">
+              <button type="submit" class="listed-btn listed-btn-primary">Submit Qualification Form <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="listed-footer">
+    <div class="listed-footer__inner">
+      <p>© 2026 DALA Technologies. Structured retail execution across Nigeria.</p>
+      <div class="listed-footer__links">
+        <a href="../index.html">Home</a>
+        <a href="for-brands.html">For Brands</a>
+        <a href="for-supermarkets.html">For Supermarkets</a>
+        <a href="get-listed.html">Get Listed</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
