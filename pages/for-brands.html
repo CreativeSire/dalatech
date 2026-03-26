@@ -422,6 +422,98 @@
           </div>
         </div>
         
+        <!-- Duplicate cards for seamless marquee loop -->
+        <div class="service-orbit-card" data-service="expansion">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="../Shully/Faster%20Market%20Access.jpeg" alt="Retail expansion" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
+                <i class="fas fa-expand-arrows-alt"></i>
+              </div>
+              <h4>Retail Expansion</h4>
+              <p class="service-subtitle">Get on shelves faster</p>
+              <button class="service-expand-btn" aria-label="Learn more">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="service-orbit-card" data-service="shelf">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="../images/Frame%201.png" alt="Shelf management" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
+                <i class="fas fa-tasks"></i>
+              </div>
+              <h4>Shelf Management</h4>
+              <p class="service-subtitle">Confirm FIFO compliance</p>
+              <button class="service-expand-btn" aria-label="Learn more">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="service-orbit-card" data-service="warehouse">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="../images/Frame%202.png" alt="Warehousing" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
+                <i class="fas fa-warehouse"></i>
+              </div>
+              <h4>Warehousing</h4>
+              <p class="service-subtitle">48-hour fulfillment</p>
+              <button class="service-expand-btn" aria-label="Learn more">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="service-orbit-card" data-service="reporting">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="../images/Frame%203.png" alt="Reporting" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h4>Reporting</h4>
+              <p class="service-subtitle">Weekly transparent insights</p>
+              <button class="service-expand-btn" aria-label="Learn more">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="service-orbit-card" data-service="payment">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="../images/Frame%204.png" alt="Payment" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
+                <i class="fas fa-hand-holding-usd"></i>
+              </div>
+              <h4>Payment Guarantee</h4>
+              <p class="service-subtitle">30-day predictable cash flow</p>
+              <button class="service-expand-btn" aria-label="Learn more">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
         <!-- Carousel Navigation -->
         <div class="carousel-nav">
           <button class="carousel-arrow carousel-prev" id="carouselPrev" aria-label="Previous service">
@@ -735,40 +827,42 @@
     .services-nucleus {
       position: relative;
       width: 100%;
-      max-width: 1400px;
       margin: 0 auto;
-      padding: 0;
+      overflow: hidden;
     }
     
-    /* Carousel Container - Shows 3 full cards + peek of 4th */
+    /* Marquee Carousel - Continuous Scroll */
     .services-carousel-wrapper {
       position: relative;
-      padding: 2rem 0;
       width: 100%;
+      padding: 2rem 0;
+      overflow: hidden;
     }
     
     .services-carousel {
       display: flex;
       gap: 24px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      padding: 2rem 80px 2rem 80px;
-      /* Hide scrollbar */
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      width: max-content;
+      animation: marqueeScroll 30s linear infinite;
     }
     
-    .services-carousel::-webkit-scrollbar {
-      display: none;
+    .services-carousel-wrapper:hover .services-carousel {
+      animation-play-state: paused;
     }
     
-    /* Service Cards with 3D Perspective - Fixed width */
+    @keyframes marqueeScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    
+    /* Service Cards with 3D Perspective */
     .service-orbit-card {
       flex: 0 0 auto;
-      width: 360px;
-      scroll-snap-align: start;
+      width: 340px;
       perspective: 1000px;
       transform-style: preserve-3d;
     }

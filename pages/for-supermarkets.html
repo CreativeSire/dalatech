@@ -415,6 +415,80 @@
           </div>
         </div>
         
+        <!-- Duplicate cards for seamless marquee loop -->
+        <div class="service-orbit-card" data-service="vetting">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="../Shully/Vetting.png" alt="Supplier vetting" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>Supplier Vetting</h4>
+              <p class="service-subtitle">Quality-assured brands only</p>
+              <button class="service-expand-btn" aria-label="Learn more">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="service-orbit-card" data-service="visits">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="../Shully/Store%20visits.png" alt="Store visits" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
+                <i class="fas fa-store"></i>
+              </div>
+              <h4>Store Visits</h4>
+              <p class="service-subtitle">Regular performance reports</p>
+              <button class="service-expand-btn" aria-label="Learn more">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="service-orbit-card" data-service="delivery">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="../Shully/48%20Hours%20restocking.png" alt="48-hour delivery" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
+                <i class="fas fa-shipping-fast"></i>
+              </div>
+              <h4>48-Hour Delivery</h4>
+              <p class="service-subtitle">Fast restocking, no minimums</p>
+              <button class="service-expand-btn" aria-label="Learn more">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="service-orbit-card" data-service="resolution">
+          <div class="service-card-portrait">
+            <div class="service-card-image">
+              <img src="../Shully/Structure%20execution%20eliminates%20Choas%20.png" alt="Issue resolution" loading="lazy">
+              <div class="service-card-overlay"></div>
+            </div>
+            <div class="service-card-content">
+              <div class="service-card-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h4>Issue Resolution</h4>
+              <p class="service-subtitle">24-hour problem solving</p>
+              <button class="service-expand-btn" aria-label="Learn more">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
         <!-- Carousel Navigation -->
         <div class="carousel-nav">
           <button class="carousel-arrow carousel-prev" id="carouselPrev" aria-label="Previous service">
@@ -713,40 +787,42 @@
     .services-nucleus {
       position: relative;
       width: 100%;
-      max-width: 1400px;
       margin: 0 auto;
-      padding: 0;
+      overflow: hidden;
     }
     
-    /* Carousel Container - Shows 3 full cards + peek of 4th */
+    /* Marquee Carousel - Continuous Scroll */
     .services-carousel-wrapper {
       position: relative;
-      padding: 2rem 0;
       width: 100%;
+      padding: 2rem 0;
+      overflow: hidden;
     }
     
     .services-carousel {
       display: flex;
       gap: 24px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      padding: 2rem 80px 2rem 80px;
-      /* Hide scrollbar */
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      width: max-content;
+      animation: marqueeScroll 25s linear infinite;
     }
     
-    .services-carousel::-webkit-scrollbar {
-      display: none;
+    .services-carousel-wrapper:hover .services-carousel {
+      animation-play-state: paused;
     }
     
-    /* Service Cards with 3D Perspective - Fixed width */
+    @keyframes marqueeScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    
+    /* Service Cards with 3D Perspective */
     .service-orbit-card {
       flex: 0 0 auto;
-      width: 360px;
-      scroll-snap-align: start;
+      width: 340px;
       perspective: 1000px;
       transform-style: preserve-3d;
     }
