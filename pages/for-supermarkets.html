@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../assets/css/animations.css">
   <link rel="stylesheet" href="../css/footer-clean.css">
   <link rel="stylesheet" href="../css/footer-premium-desktop.css">
+  <link rel="stylesheet" href="../css/static-cards.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -435,100 +436,67 @@
         </div>
       </div>
       
-      <!-- Mobile: Testimonial Style Slider -->
-      <div class="services-mobile-slider" id="servicesMobileSlider">
-        <div class="services-track">
-          <!-- Card 1 -->
-          <div class="service-slide active" data-index="0">
-            <div class="service-slide-card">
-              <div class="service-slide-image">
-              <img src="../Shully/Supplier%20Vetting%20%26%20Quality%20Assurance.jpeg" alt="Supplier vetting and quality assurance" style="object-position: center 18%;">
+      <!-- Mobile: Homepage-style Floating Cards -->
+      <div class="floating-card-container mobile-only services-mobile-floating" id="servicesMobileFloatingRetail">
+        <div class="floating-card-wrapper">
+          <div class="floating-card-slide active" data-slide="0">
+            <div class="floating-card dark">
+              <div class="floating-card-badge"><i class="fas fa-shield-alt"></i> Supplier Vetting</div>
+              <h3 class="floating-card-title">Stock only trusted brands</h3>
+              <p class="floating-card-text">We screen brand partners for execution readiness, compliance, and consistency before they ever reach your shelves.</p>
+              <div class="floating-card-features">
+                <span class="floating-feature-item"><i class="fas fa-check"></i> Compliance-first onboarding</span>
+                <span class="floating-feature-item"><i class="fas fa-check"></i> Quality-ready supply partners</span>
+                <span class="floating-feature-item"><i class="fas fa-check"></i> Lower supplier risk</span>
               </div>
-              <div class="service-slide-content">
-                <div class="service-slide-icon">
-                  <i class="fas fa-shield-alt"></i>
-                </div>
-                <h4>Supplier Vetting</h4>
-                <p class="service-slide-subtitle">Quality-assured brands only</p>
-                <div class="service-slide-details">
-                  <p>Brands within the DALA system are held to clear execution expectations. We vet them before they reach your shelves, ensuring they meet operational readiness, regulatory compliance, and production reliability standards.</p>
-                </div>
-              </div>
+              <a href="contact.html" class="floating-card-link">Work With DALA <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
-          
-          <!-- Card 2 -->
-          <div class="service-slide" data-index="1">
-            <div class="service-slide-card">
-              <div class="service-slide-image">
-                <img src="../Shully/Clear%20Reporting.jpeg" alt="Store visits and performance reporting" style="object-position: center 30%;">
+          <div class="floating-card-slide" data-slide="1">
+            <div class="floating-card light">
+              <div class="floating-card-badge"><i class="fas fa-store"></i> Store Visits</div>
+              <h3 class="floating-card-title">Stay informed in real time</h3>
+              <p class="floating-card-text">Our teams visit stores, monitor execution, and share clear reports so you can see what suppliers are doing on ground.</p>
+              <div class="floating-card-features">
+                <span class="floating-feature-item"><i class="fas fa-check"></i> Regular in-store checks</span>
+                <span class="floating-feature-item"><i class="fas fa-check"></i> Performance reporting</span>
+                <span class="floating-feature-item"><i class="fas fa-check"></i> Better operational visibility</span>
               </div>
-              <div class="service-slide-content">
-                <div class="service-slide-icon">
-                  <i class="fas fa-store"></i>
-                </div>
-                <h4>Store Visits</h4>
-                <p class="service-slide-subtitle">Regular performance reports</p>
-                <div class="service-slide-details">
-                  <p>We regularly visit your store to ensure in-store execution, and provide you with clear, structured reports to keep you informed on supplier execution, delivery performance, and issue resolution.</p>
-                </div>
-              </div>
+              <a href="contact.html" class="floating-card-link secondary">Work With DALA <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
-          
-          <!-- Card 3 -->
-          <div class="service-slide" data-index="2">
-            <div class="service-slide-card">
-              <div class="service-slide-image">
-                <img src="../Shully/48-Hour%20Restocking%20%26%20Delivery.jpeg" alt="48-hour delivery and restocking" style="object-position: center 35%;">
+          <div class="floating-card-slide" data-slide="2">
+            <div class="floating-card dark">
+              <div class="floating-card-badge"><i class="fas fa-shipping-fast"></i> 48-Hour Delivery</div>
+              <h3 class="floating-card-title">Restock without delay</h3>
+              <p class="floating-card-text">When inventory drops, we restock fast and professionally, helping you avoid empty shelves and supply gaps.</p>
+              <div class="floating-card-features">
+                <span class="floating-feature-item"><i class="fas fa-check"></i> 48-hour restocking</span>
+                <span class="floating-feature-item"><i class="fas fa-check"></i> No minimum order value</span>
+                <span class="floating-feature-item"><i class="fas fa-check"></i> Reliable shelf continuity</span>
               </div>
-              <div class="service-slide-content">
-                <div class="service-slide-icon">
-                  <i class="fas fa-shipping-fast"></i>
-                </div>
-                <h4>48-Hour Delivery</h4>
-                <p class="service-slide-subtitle">Fast restocking, no minimums</p>
-                <div class="service-slide-details">
-                  <p>Reduce inventory risk with 48-hours fulfillment and no minimum order values. When inventory runs low, we restock within 48 hours. Our fast, reliable delivery ensures your shelves stay full.</p>
-                </div>
-              </div>
+              <a href="contact.html" class="floating-card-link">Work With DALA <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
-          
-          <!-- Card 4 -->
-          <div class="service-slide" data-index="3">
-            <div class="service-slide-card">
-              <div class="service-slide-image">
-                <img src="../Shully/Structure%20execution%20eliminates%20Choas%20.png" alt="Issue resolution and structured execution" style="object-position: center 18%;">
+          <div class="floating-card-slide" data-slide="3">
+            <div class="floating-card light">
+              <div class="floating-card-badge"><i class="fas fa-tools"></i> Issue Resolution</div>
+              <h3 class="floating-card-title">Resolve problems before they spread</h3>
+              <p class="floating-card-text">We catch damaged goods, expiry concerns, and execution issues early, then resolve them quickly to protect your operation.</p>
+              <div class="floating-card-features">
+                <span class="floating-feature-item"><i class="fas fa-check"></i> 24-hour issue handling</span>
+                <span class="floating-feature-item"><i class="fas fa-check"></i> Packaging and expiry checks</span>
+                <span class="floating-feature-item"><i class="fas fa-check"></i> Professional escalation support</span>
               </div>
-              <div class="service-slide-content">
-                <div class="service-slide-icon">
-                  <i class="fas fa-tools"></i>
-                </div>
-                <h4>Issue Resolution</h4>
-                <p class="service-slide-subtitle">24-hour problem solving</p>
-                <div class="service-slide-details">
-                  <p>Product quality concerns, damaged packaging, and expiry issues are identified and resolved within 24 hours. We handle problems professionally before they escalate.</p>
-                </div>
-              </div>
+              <a href="contact.html" class="floating-card-link secondary">Work With DALA <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
-        
-        <!-- Navigation -->
-        <div class="services-nav">
-          <button class="services-nav-btn prev" id="servicesPrev">
-            <i class="fas fa-arrow-left"></i>
-          </button>
-          <div class="services-dots">
-            <button class="services-dot active" data-index="0"></button>
-            <button class="services-dot" data-index="1"></button>
-            <button class="services-dot" data-index="2"></button>
-            <button class="services-dot" data-index="3"></button>
-          </div>
-          <button class="services-nav-btn next" id="servicesNext">
-            <i class="fas fa-arrow-right"></i>
-          </button>
+        <div class="floating-card-dots">
+          <button class="floating-dot active" data-slide="0" aria-label="Supplier Vetting"></button>
+          <button class="floating-dot" data-slide="1" aria-label="Store Visits"></button>
+          <button class="floating-dot" data-slide="2" aria-label="48-Hour Delivery"></button>
+          <button class="floating-dot" data-slide="3" aria-label="Issue Resolution"></button>
         </div>
       </div>
     </div>
@@ -744,14 +712,16 @@
       width: 100%;
       max-width: 1400px;
       margin: 0 auto;
-      padding: 0 4rem;
+      padding: 0 2rem;
     }
     
-    /* Carousel Container */
+    /* Carousel Container - Fixed to show partial next card */
     .services-carousel-wrapper {
       position: relative;
-      overflow: hidden;
+      overflow: visible;
       padding: 2rem 0;
+      margin: 0 -2rem;
+      padding-left: 2rem;
     }
     
     .services-carousel {
@@ -761,8 +731,8 @@
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
-      padding: 2rem 1rem;
-      margin: 0 -1rem;
+      padding: 2rem calc(50vw - 700px + 2rem) 2rem 0;
+      margin: 0;
       /* Hide scrollbar */
       scrollbar-width: none;
       -ms-overflow-style: none;
@@ -772,23 +742,22 @@
       display: none;
     }
     
-    /* Service Cards */
+    /* Service Cards with 3D Perspective */
     .service-orbit-card {
       flex: 0 0 auto;
-      width: 340px;
-      scroll-snap-align: start;
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      width: calc((100vw - 8rem) / 3);
+      max-width: 400px;
+      min-width: 320px;
+      scroll-snap-align: center;
+      perspective: 1000px;
+      transform-style: preserve-3d;
     }
     
-    .service-orbit-card:hover {
-      transform: translateY(-8px);
-    }
-    
-    /* Portrait Card Design - Premium Large Cards */
+    /* Portrait Card Design - Premium Large Cards with 3D Tilt */
     .service-card-portrait {
       position: relative;
       width: 100%;
-      height: 480px;
+      height: 520px;
       background: white;
       border-radius: 28px;
       overflow: hidden;
@@ -796,8 +765,34 @@
         0 4px 6px -1px rgba(0, 0, 0, 0.05),
         0 10px 15px -3px rgba(0, 0, 0, 0.08),
         0 20px 40px -12px rgba(0, 0, 0, 0.15);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.1s ease-out, box-shadow 0.3s ease;
       cursor: pointer;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    
+    .service-card-portrait:hover {
+      box-shadow: 
+        0 20px 30px -5px rgba(0, 0, 0, 0.15),
+        0 30px 50px -10px rgba(0, 0, 0, 0.2),
+        0 50px 80px -25px rgba(229, 57, 53, 0.2);
+    }
+    
+    /* 3D Floating Elements */
+    .service-card-icon {
+      transition: transform 0.3s ease-out;
+      transform: translateZ(30px);
+    }
+    
+    .service-card-content h4,
+    .service-subtitle {
+      transition: transform 0.3s ease-out;
+      transform: translateZ(20px);
+    }
+    
+    .service-expand-btn {
+      transition: transform 0.3s ease-out, background 0.3s ease, box-shadow 0.3s ease;
+      transform: translateZ(40px);
     }
     
     .service-card-portrait:hover {
@@ -1324,6 +1319,29 @@
     const carouselPrev = document.getElementById('carouselPrev');
     const carouselNext = document.getElementById('carouselNext');
     const carouselDots = document.querySelectorAll('.carousel-dot');
+    // 3D Tilt Effect for Service Cards
+    const tiltCards = document.querySelectorAll('.service-card-portrait');
+    
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = ((y - centerY) / centerY) * -8; // Max 8deg rotation
+        const rotateY = ((x - centerX) / centerX) * 8;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+      });
+    });
+    
     const orbitCards = document.querySelectorAll('.service-orbit-card');
     
     if (carousel && orbitCards.length > 0) {
