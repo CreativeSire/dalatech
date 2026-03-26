@@ -1397,7 +1397,7 @@ p {
 
 .benefit-slide-image {
   position: relative;
-  height: 280px;
+  height: 340px;
   overflow: hidden;
 }
 
@@ -1564,7 +1564,7 @@ p {
   }
   
   .benefit-slide-image {
-    height: 200px;
+    height: 240px;
   }
   
   .benefit-slide-number {

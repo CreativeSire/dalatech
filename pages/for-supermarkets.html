@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css?v=20260326b">
   <link rel="stylesheet" href="../css/mobile-premium.css">
   <link rel="stylesheet" href="../css/mobile-fix.css">
   <link rel="stylesheet" href="../css/mobile-premium-pro.css">
@@ -202,7 +202,7 @@
           <div class="benefit-slide">
             <div class="benefit-slide-card">
               <div class="benefit-slide-image">
-                <img src="../Shully/48-Hour%20Restocking%20%26%20Delivery.jpeg" alt="Timely and reliable deliveries" loading="lazy" style="object-position: center 35%;">
+                <img src="../images/generated/nigerian-delivery-centered.png" alt="Timely and reliable deliveries" loading="lazy" style="object-position: center 52%;">
                 <div class="benefit-slide-overlay"></div>
                 <div class="benefit-slide-number">02</div>
               </div>
@@ -331,7 +331,7 @@
         <div class="service-orbit-card" data-service="visits" style="--orbit-angle: 90deg;">
           <div class="service-card-portrait">
             <div class="service-card-image">
-              <img src="../Shully/Clear%20Reporting.jpeg" alt="Store visits and performance reporting" loading="lazy" style="object-position: center 30%;">
+              <img src="../images/generated/nigerian-shelf-operations.png" alt="Store visits and performance reporting" loading="lazy" style="object-position: center 46%;">
               <div class="service-card-overlay"></div>
             </div>
             <div class="service-card-content">
@@ -359,7 +359,7 @@
         <div class="service-orbit-card" data-service="delivery" style="--orbit-angle: 180deg;">
           <div class="service-card-portrait">
             <div class="service-card-image">
-              <img src="../Shully/48-Hour%20Restocking%20%26%20Delivery.jpeg" alt="48-hour delivery and restocking" loading="lazy" style="object-position: center 35%;">
+              <img src="../images/generated/nigerian-delivery-centered.png" alt="48-hour delivery and restocking" loading="lazy" style="object-position: center 52%;">
               <div class="service-card-overlay"></div>
             </div>
             <div class="service-card-content">
@@ -757,7 +757,7 @@
     .service-card-portrait {
       position: relative;
       width: 100%;
-      height: 520px;
+      height: 560px;
       background: white;
       border-radius: 28px;
       overflow: hidden;
@@ -804,7 +804,7 @@
     
     .service-card-image {
       position: relative;
-      height: 280px;
+      height: 330px;
       overflow: hidden;
     }
     
@@ -1031,154 +1031,48 @@
     }
   }
   
-  /* Mobile: Testimonial Style Slider */
+  /* Mobile: Homepage-style Floating Cards */
   @media (max-width: 1023px) {
     .services-nucleus {
       display: none !important;
     }
     
     .services-mobile-slider {
+      display: none !important;
+    }
+    
+    .services-mobile-floating {
       display: block;
-      max-width: 400px;
+      max-width: 380px;
       margin: 0 auto;
+      padding: 0 20px;
     }
     
-    .services-track {
-      position: relative;
-      overflow: hidden;
+    .services-mobile-floating .floating-card-wrapper {
+      min-height: 540px;
     }
     
-    .service-slide {
-      display: none;
-      animation: serviceFade 0.5s ease;
+    .services-mobile-floating .floating-card {
+      min-height: 500px;
     }
     
-    .service-slide.active {
-      display: block;
+    .services-mobile-floating .floating-card-title {
+      font-size: 2rem;
+      line-height: 1.08;
     }
     
-    @keyframes serviceFade {
-      from { opacity: 0; transform: translateX(20px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    
-    .service-slide-card {
-      background: white;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-    }
-    
-    .service-slide-image {
-      height: 200px;
-      overflow: hidden;
-    }
-    
-    .service-slide-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .service-slide-content {
-      padding: 2rem 1.5rem;
-      text-align: center;
-    }
-    
-    .service-slide-icon {
-      width: 64px;
-      height: 64px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: -52px auto 1.25rem;
-      font-size: 1.75rem;
-      color: white;
-      box-shadow: 0 10px 30px rgba(229, 57, 53, 0.3);
-      border: 4px solid white;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .service-slide-content h4 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 0.5rem;
-    }
-    
-    .service-slide-subtitle {
-      font-size: 0.9rem;
-      color: var(--primary);
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    
-    .service-slide-details {
-      padding-top: 1rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
-    }
-    
-    .service-slide-details p {
-      font-size: 0.95rem;
-      color: var(--gray-600);
-      line-height: 1.7;
-    }
-    
-    /* Navigation */
-    .services-nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    
-    .services-nav-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: white;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gray-600);
+    .services-mobile-floating .floating-card-text {
       font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      line-height: 1.65;
     }
     
-    .services-nav-btn:hover {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
+    .services-mobile-floating .floating-card-features {
+      gap: 0.875rem;
+      margin-top: 1.5rem;
     }
     
-    .services-dots {
-      display: flex;
-      gap: 0.5rem;
-    }
-    
-    .services-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.15);
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      padding: 0;
-    }
-    
-    .services-dot.active {
-      background: var(--primary);
-      width: 28px;
-      border-radius: 5px;
+    .services-mobile-floating .floating-card-link {
+      margin-top: auto;
     }
   }
 </style>
@@ -1259,60 +1153,69 @@
       });
     });
     
-    // Mobile: Slider
-    const slides = document.querySelectorAll('.service-slide');
-    const dots = document.querySelectorAll('.services-dot');
-    const prevBtn = document.getElementById('servicesPrev');
-    const nextBtn = document.getElementById('servicesNext');
-    let currentSlide = 0;
-    const totalSlides = slides.length;
-    let autoRotate;
-    
-    function updateSlider() {
-      slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === currentSlide);
-      });
+    function initFloatingCardCarousel(containerId, delay = 6500) {
+      if (window.innerWidth > 1023) return;
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      
+      const slides = container.querySelectorAll('.floating-card-slide');
+      const dots = container.querySelectorAll('.floating-dot');
+      if (!slides.length) return;
+      
+      let currentSlide = 0;
+      let autoRotate;
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      function showSlide(index) {
+        currentSlide = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle('active', slideIndex === currentSlide);
+        });
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle('active', dotIndex === currentSlide);
+        });
+      }
+      
+      function nextSlide() {
+        showSlide(currentSlide + 1);
+      }
+      
+      function restartAutoRotate() {
+        clearInterval(autoRotate);
+        autoRotate = setInterval(nextSlide, delay);
+      }
+      
       dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
+        dot.addEventListener('click', () => {
+          showSlide(index);
+          restartAutoRotate();
+        });
       });
+      
+      container.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0].screenX;
+      }, { passive: true });
+      
+      container.addEventListener('touchend', (event) => {
+        touchEndX = event.changedTouches[0].screenX;
+        const swipeDistance = touchEndX - touchStartX;
+        
+        if (Math.abs(swipeDistance) > 50) {
+          if (swipeDistance < 0) {
+            nextSlide();
+          } else {
+            showSlide(currentSlide - 1);
+          }
+          restartAutoRotate();
+        }
+      }, { passive: true });
+      
+      showSlide(0);
+      restartAutoRotate();
     }
     
-    function goToSlide(index) {
-      currentSlide = (index + totalSlides) % totalSlides;
-      updateSlider();
-      resetAutoRotate();
-    }
-    
-    function nextSlide() {
-      goToSlide(currentSlide + 1);
-    }
-    
-    function prevSlide() {
-      goToSlide(currentSlide - 1);
-    }
-    
-    function startAutoRotate() {
-      autoRotate = setInterval(nextSlide, 5000);
-    }
-    
-    function resetAutoRotate() {
-      clearInterval(autoRotate);
-      startAutoRotate();
-    }
-    
-    if (prevBtn && nextBtn) {
-      prevBtn.addEventListener('click', prevSlide);
-      nextBtn.addEventListener('click', nextSlide);
-    }
-    
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => goToSlide(index));
-    });
-    
-    if (slides.length > 0) {
-      updateSlider();
-      startAutoRotate();
-    }
+    initFloatingCardCarousel('servicesMobileFloatingRetail');
     
     // Desktop: Horizontal Scroll Carousel
     const carousel = document.getElementById('servicesCarousel');
