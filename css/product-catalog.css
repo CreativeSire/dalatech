@@ -679,3 +679,562 @@ body.catalog-body {
     align-items: start;
   }
 }
+
+
+/* ============================================
+   PREMIUM MOBILE EXPERIENCE (max-width: 768px)
+   Like Apple, Nike, SSENSE mobile stores
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --mobile-radius: 24px;
+    --mobile-gap: 16px;
+    --mobile-padding: 20px;
+  }
+
+  body.catalog-body {
+    background: #faf8f5;
+    padding-bottom: 100px; /* Space for sticky CTA */
+  }
+
+  .catalog-shell {
+    padding-top: 60px;
+  }
+
+  .catalog-container {
+    padding: 0 var(--mobile-padding);
+  }
+
+  /* ==========================================
+     PREMIUM HERO - Full Bleed Editorial
+     ========================================== */
+  .catalog-hero {
+    padding: 0;
+    margin: 0 calc(-1 * var(--mobile-padding));
+  }
+
+  .catalog-hero-panel {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    gap: 0;
+  }
+
+  /* Full-bleed hero visual */
+  .catalog-hero-visual {
+    position: relative;
+    min-height: 85vh;
+    margin: 0;
+    border-radius: 0 0 var(--mobile-radius) var(--mobile-radius);
+    overflow: hidden;
+  }
+
+  .catalog-cover-frame {
+    position: absolute;
+    inset: 0;
+    border-radius: 0 0 var(--mobile-radius) var(--mobile-radius);
+  }
+
+  .catalog-cover-frame::after {
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.1) 50%,
+      rgba(0,0,0,0.6) 100%
+    );
+  }
+
+  /* Gradient headline overlay */
+  .catalog-hero-copy {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--mobile-padding);
+    padding-bottom: 100px;
+    z-index: 3;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0,0,0,0.4) 30%,
+      rgba(0,0,0,0.7) 100%
+    );
+  }
+
+  .catalog-hero-copy .catalog-kicker {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.25);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 0.5rem 0.875rem;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .catalog-hero-copy h1 {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+    background: linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fff5f0 50%,
+      #ffccbb 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 30px rgba(229, 57, 53, 0.3);
+  }
+
+  .catalog-hero-lead {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.95);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .catalog-hero-copy p:not(.catalog-hero-lead) {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Scroll indicator */
+  .catalog-hero-copy::after {
+    content: '';
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 14l-7 7m0 0l-7-7m7 7V3'/%3E%3C/svg%3E") center no-repeat;
+    opacity: 0.6;
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* Floating stat chips - Glass morphism */
+  .catalog-hero-meta {
+    position: absolute;
+    top: 100px;
+    right: var(--mobile-padding);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0;
+    z-index: 3;
+  }
+
+  .catalog-hero-meta span {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(20px);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 100px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+
+  /* Hide desktop chips and card on mobile */
+  .catalog-hero-chips,
+  .catalog-hero-card {
+    display: none;
+  }
+
+  /* Hero actions - repositioned */
+  .catalog-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .catalog-btn {
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* ==========================================
+     HORIZONTAL CATEGORY PILLS
+     ========================================== */
+  .catalog-jumps-wrap {
+    position: sticky;
+    top: 60px;
+    z-index: 40;
+    padding: 1rem 0;
+    background: linear-gradient(
+      180deg,
+      #faf8f5 0%,
+      #faf8f5 80%,
+      transparent 100%
+    );
+    margin: 0 calc(-1 * var(--mobile-padding));
+    padding-left: var(--mobile-padding);
+  }
+
+  .catalog-jumps {
+    display: flex;
+    gap: 0.6rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    padding-right: var(--mobile-padding);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .catalog-jumps::-webkit-scrollbar {
+    display: none;
+  }
+
+  .catalog-jumps a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    padding: 0.7rem 1.1rem;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    transition: all 0.25s ease;
+  }
+
+  .catalog-jumps a:active {
+    transform: scale(0.95);
+  }
+
+  .catalog-jumps a:hover,
+  .catalog-jumps a:focus {
+    background: linear-gradient(135deg, var(--primary), #ff7a1a);
+    color: white;
+    border-color: transparent;
+  }
+
+  /* ==========================================
+     MAGAZINE-STYLE COLLECTION CARDS
+     ========================================== */
+  .catalog-collections {
+    padding: 1rem 0 3rem;
+  }
+
+  .catalog-section-intro {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .catalog-section-intro .catalog-kicker {
+    margin: 0 auto 0.75rem;
+    font-size: 0.7rem;
+  }
+
+  .catalog-section-intro h2 {
+    font-size: 1.75rem;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+
+  .catalog-section-intro p {
+    font-size: 1rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+
+  .catalog-collections-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mobile-gap);
+  }
+
+  .catalog-collection-card {
+    border-radius: var(--mobile-radius);
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 
+      0 4px 0 rgba(229, 57, 53, 0.06),
+      0 8px 0 rgba(229, 57, 53, 0.04),
+      0 20px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .catalog-collection-card:active {
+    transform: scale(0.98);
+  }
+
+  .catalog-collection-media {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .catalog-collection-card img {
+    aspect-ratio: 4/5;
+    transition: transform 0.6s ease;
+  }
+
+  .catalog-collection-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .catalog-collection-badge {
+    top: 1rem;
+    left: 1rem;
+    background: rgba(255,255,255,0.95);
+    color: var(--primary);
+    font-size: 0.65rem;
+    padding: 0.45rem 0.7rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  }
+
+  .catalog-collection-body {
+    padding: 1.25rem;
+    background: #fff;
+  }
+
+  .catalog-collection-topline {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+  }
+
+  .catalog-collection-body h3 {
+    font-size: 1.35rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Accent underline */
+  .catalog-collection-body h3::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), #ff7a1a);
+    border-radius: 2px;
+  }
+
+  .catalog-collection-body p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0.75rem 0 1rem;
+    color: var(--gray-600);
+  }
+
+  .catalog-collection-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .catalog-collection-meta span:first-child {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: var(--gray-500);
+    font-size: 0.8rem;
+  }
+
+  .catalog-collection-meta span:last-child {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: linear-gradient(135deg, var(--primary), #ff7a1a);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 100px;
+  }
+
+  .catalog-collection-meta span:last-child::after {
+    content: '→';
+    font-size: 1rem;
+  }
+
+  /* ==========================================
+     EDITORIAL STRIP
+     ========================================== */
+  .catalog-editorial-strip {
+    padding: 0 0 2rem;
+  }
+
+  .catalog-editorial-panel {
+    padding: 1.75rem;
+    border-radius: var(--mobile-radius);
+    text-align: center;
+  }
+
+  .catalog-editorial-panel .catalog-kicker {
+    margin: 0 auto 0.75rem;
+  }
+
+  .catalog-editorial-panel h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .catalog-editorial-panel p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ==========================================
+     FULL CATALOG - MASONRY GRID
+     ========================================== */
+  .catalog-viewer {
+    padding: 1rem 0 4rem;
+  }
+
+  .catalog-section-intro--compact {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .catalog-section {
+    padding: 2rem 0;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .catalog-section-header {
+    text-align: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .catalog-section-header h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .catalog-section-header p {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+  }
+
+  .catalog-back-link {
+    display: none; /* Hide on mobile, use native back */
+  }
+
+  /* Masonry 2-column grid */
+  .catalog-pages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .catalog-page-card {
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.04);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .catalog-page-card:active {
+    transform: scale(0.96);
+  }
+
+  .catalog-page-card img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+  }
+
+  .catalog-page-meta {
+    padding: 0.75rem;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-start;
+  }
+
+  .catalog-page-meta span:first-child {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+  }
+
+  .catalog-page-meta span:last-child {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  /* ==========================================
+     STICKY BOTTOM CTA BAR
+     ========================================== */
+  .catalog-sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem var(--mobile-padding);
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(250,248,245,0.95) 20%,
+      #faf8f5 100%
+    );
+    z-index: 100;
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .catalog-sticky-cta .catalog-btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .catalog-sticky-cta .catalog-btn-primary {
+    box-shadow: 0 4px 20px rgba(229, 57, 53, 0.35);
+  }
+
+  /* Hide inline buttons when sticky is present */
+  .catalog-hero .catalog-actions {
+    display: none;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE OPTIMIZATIONS
+   ============================================ */
+
+@media (max-width: 380px) {
+  :root {
+    --mobile-padding: 16px;
+    --mobile-radius: 20px;
+  }
+
+  .catalog-hero-copy h1 {
+    font-size: 2.25rem;
+  }
+
+  .catalog-collection-body h3 {
+    font-size: 1.2rem;
+  }
+
+  .catalog-jumps a {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.8rem;
+  }
+}
