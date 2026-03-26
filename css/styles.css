@@ -502,6 +502,11 @@ p {
 
 .brand-logo-section::before,
 .brand-logo-section::after {
+  display: none;
+}
+
+.brand-marquee::before,
+.brand-marquee::after {
   content: '';
   position: absolute;
   top: 0;
@@ -511,12 +516,12 @@ p {
   pointer-events: none;
 }
 
-.brand-logo-section::before {
+.brand-marquee::before {
   left: 0;
   background: linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
 }
 
-.brand-logo-section::after {
+.brand-marquee::after {
   right: 0;
   background: linear-gradient(270deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
 }
@@ -3116,14 +3121,14 @@ p {
 }
 
 .cta-section .btn-primary {
-  background: white;
-  color: var(--primary);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #ff8a1d 0%, #ff6b35 100%);
+  color: white;
+  box-shadow: 0 12px 28px rgba(255, 107, 53, 0.28);
 }
 
 .cta-section .btn-primary:hover {
-  background: var(--gray-100);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #ff9b3d 0%, #ff7b47 100%);
+  box-shadow: 0 16px 32px rgba(255, 107, 53, 0.34);
 }
 
 .cta-section .btn-secondary {
