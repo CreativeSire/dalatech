@@ -512,6 +512,7 @@
           </button>
         </div>
       </div>
+      </div>
       
       <!-- Mobile: Homepage-style Floating Cards -->
       <div class="floating-card-container mobile-only services-mobile-floating" id="servicesMobileFloatingRetail">
@@ -1212,6 +1213,13 @@
     // Desktop: Expandable cards
     const expandBtns = document.querySelectorAll('.service-expand-btn');
     const closeBtns = document.querySelectorAll('.service-close-btn');
+    const servicesNucleus = document.getElementById('servicesNucleus');
+    const mobileServicesFloating = document.getElementById('servicesMobileFloatingRetail');
+
+    // Keep the mobile floating cards outside the hidden desktop wrapper on small screens.
+    if (window.innerWidth <= 1023 && servicesNucleus && mobileServicesFloating && mobileServicesFloating.parentElement === servicesNucleus) {
+      servicesNucleus.insertAdjacentElement('afterend', mobileServicesFloating);
+    }
     
     expandBtns.forEach(btn => {
       btn.addEventListener('click', function() {
