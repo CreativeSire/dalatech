@@ -2492,61 +2492,104 @@
       color: rgba(255,255,255,0.78);
     }
 
-    /* CTA Section */
+    /* ============================================
+       CTA SECTION - Clean White with Gradient Text
+       ============================================ */
+    
     .cta-section {
-      padding: 100px 2rem;
-      background: linear-gradient(135deg, #1a0a0a 0%, #0a0a0f 100%);
+      padding: 120px 2rem;
+      background: #ffffff;
       position: relative;
       overflow: hidden;
       text-align: center;
     }
     
+    /* Subtle top border gradient */
     .cta-section::before {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 30%, rgba(229, 57, 53, 0.1) 0%, transparent 40%);
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(229, 57, 53, 0.5), 
+        rgba(255, 140, 100, 0.4),
+        rgba(229, 57, 53, 0.5),
+        transparent);
     }
     
     .cta-section .container {
       position: relative;
       z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
     }
     
+    /* Eyebrow badge */
+    .cta-section .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      background: rgba(229, 57, 53, 0.08);
+      border: 1px solid rgba(229, 57, 53, 0.15);
+      border-radius: 100px;
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 2rem;
+    }
+    
+    /* Gradient headline for visual interest */
     .cta-section h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
       font-weight: 800;
-      color: white;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      background: linear-gradient(135deg, 
+        #1a0a0a 0%, 
+        #3d1f1f 40%,
+        var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Subtle text shadow for depth */
+    .cta-section h2::after {
+      content: 'Let\'s Build Something Great Together';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      background: linear-gradient(135deg, 
+        rgba(229, 57, 53, 0.1) 0%, 
+        transparent 50%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: blur(20px);
+      opacity: 0.5;
+      z-index: -1;
     }
     
     .cta-section p {
       font-size: 1.125rem;
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--gray-600);
       max-width: 550px;
-      margin: 0 auto 2rem;
-      line-height: 1.7;
-    }
-    
-    .btn--white {
-      background: white;
-      color: var(--dark);
-    }
-    
-    .btn--white:hover {
-      background: var(--gray-100);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
     }
 
     .cta-section .btn-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 16px;
       justify-content: center;
       align-items: center;
     }
@@ -2555,32 +2598,48 @@
       flex: 0 1 auto;
       min-width: 220px;
       max-width: 100%;
+      padding: 1.125rem 2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 14px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    /* Primary CTA button - Gradient */
     .cta-section .btn--white {
       background: linear-gradient(135deg, #ff8a1d 0%, #ff6a1f 52%, #e53935 100%);
       color: white;
-      box-shadow: 0 18px 38px rgba(229, 57, 53, 0.28);
+      box-shadow: 
+        0 8px 30px rgba(229, 57, 53, 0.3),
+        0 0 0 1px rgba(255,255,255,0.1) inset;
+      border: none;
     }
 
     .cta-section .btn--white:hover {
       background: linear-gradient(135deg, #ff9b38 0%, #ff7528 52%, #ee4a40 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 18px 42px rgba(229, 57, 53, 0.34);
+      transform: translateY(-3px);
+      box-shadow: 
+        0 12px 40px rgba(229, 57, 53, 0.4),
+        0 0 0 1px rgba(255,255,255,0.2) inset;
     }
 
+    /* Secondary button - Dark outline */
     .cta-section .btn--outline {
-      color: white;
-      border-color: rgba(255,255,255,0.26);
-      background: rgba(255,255,255,0.06);
+      color: var(--dark);
+      border: 2px solid rgba(0,0,0,0.12);
+      background: white;
       white-space: normal;
       text-align: center;
       line-height: 1.35;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
 
     .cta-section .btn--outline:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.42);
+      background: var(--dark);
+      color: white;
+      border-color: var(--dark);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
     }
     
     /* Footer */
@@ -2822,7 +2881,26 @@
       .partners-section,
       .commitment-section,
       .trust-slider-section,
-      .cta-section { padding: 60px 1.5rem; }
+      .cta-section { 
+        padding: 80px 1.5rem;
+        background: #ffffff;
+      }
+      
+      .cta-section h2 {
+        font-size: clamp(1.875rem, 7vw, 2.5rem);
+        letter-spacing: -0.02em;
+      }
+      
+      .cta-section p {
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+      
+      .cta-section .eyebrow {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1.5rem;
+      }
 
       .partners-grid,
       .commitment-grid {
@@ -4292,10 +4370,10 @@
   <section class="cta-section">
     <div class="container">
       <div class="reveal">
-        <div class="eyebrow" style="margin-bottom: 1.5rem; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">Get Started</div>
+        <div class="eyebrow"><i class="fas fa-rocket"></i> Get Started</div>
         <h2>Let's Build Something Great Together</h2>
         <p>If you're a founder-led brand ready to scale with structure, transparency, and a partner who truly gets what you're facing, we'd love to explore whether we're aligned.</p>
-        <div class="btn-group" style="justify-content: center;">
+        <div class="btn-group">
           <a class="btn btn--white btn--lg" href="get-listed.html">Partner With Us</a>
           <a class="btn btn--outline btn--lg" href="for-brands.html">Learn More About Our Services</a>
         </div>
