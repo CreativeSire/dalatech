@@ -712,27 +712,24 @@
       width: 100%;
       max-width: 1400px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0;
     }
     
-    /* Carousel Container - Fixed to show partial next card */
+    /* Carousel Container - Shows 3 full cards + peek of 4th */
     .services-carousel-wrapper {
       position: relative;
-      overflow: visible;
       padding: 2rem 0;
-      margin: 0 -2rem;
-      padding-left: 2rem;
+      width: 100%;
     }
     
     .services-carousel {
       display: flex;
-      gap: 2rem;
+      gap: 24px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
-      padding: 2rem calc(50vw - 700px + 2rem) 2rem 0;
-      margin: 0;
+      padding: 2rem 80px 2rem 80px;
       /* Hide scrollbar */
       scrollbar-width: none;
       -ms-overflow-style: none;
@@ -742,13 +739,11 @@
       display: none;
     }
     
-    /* Service Cards with 3D Perspective */
+    /* Service Cards with 3D Perspective - Fixed width */
     .service-orbit-card {
       flex: 0 0 auto;
-      width: calc((100vw - 8rem) / 3);
-      max-width: 400px;
-      min-width: 320px;
-      scroll-snap-align: center;
+      width: 360px;
+      scroll-snap-align: start;
       perspective: 1000px;
       transform-style: preserve-3d;
     }
