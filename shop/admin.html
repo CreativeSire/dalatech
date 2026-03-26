@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DALA Shop Admin</title>
+  <meta name="description" content="Edit DALA store products, pricing, and collection assignments.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="shortcut icon" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/shop.css">
+</head>
+<body class="shop-body" data-shop-page="admin">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
+      <div class="nav-links">
+        <a href="../pages/for-brands.html" class="nav-link">DALA for Brands</a>
+        <a href="../pages/for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
+        <a href="../pages/about.html" class="nav-link">About Us</a>
+        <a href="../pages/case-studies.html" class="nav-link">Case Studies</a>
+        <a href="../pages/contact.html" class="nav-link">Contact Us</a>
+        <a href="/shop/" class="nav-link active">Shop</a>
+        <a href="../pages/signup.html" class="nav-cta">Sign Up</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="shop-shell">
+    <section class="shop-section">
+      <div class="shop-container">
+        <div class="shop-admin-layout">
+          <section class="shop-admin-panel">
+            <span class="shop-kicker"><i class="fas fa-pen-ruler"></i> Store editor</span>
+            <h1>Edit products and pricing</h1>
+            <p>This first version keeps product and pricing edits simple so the live storefront can move fast while we shape the fuller admin later.</p>
+            <div class="shop-form-field">
+              <label for="adminKey">Admin key</label>
+              <input id="adminKey" class="shop-input" data-admin-key placeholder="Enter SHOP_ADMIN_KEY">
+            </div>
+            <form class="shop-form-grid" data-admin-form>
+              <div class="shop-form-field">
+                <label for="slug">Slug</label>
+                <input id="slug" class="shop-input" name="slug" required>
+              </div>
+              <div class="shop-form-field">
+                <label for="name">Name</label>
+                <input id="name" class="shop-input" name="name" required>
+              </div>
+              <div class="shop-form-field">
+                <label for="categorySlug">Category</label>
+                <select id="categorySlug" class="shop-select" name="categorySlug" data-admin-category></select>
+              </div>
+              <div class="shop-form-field">
+                <label for="sku">SKU</label>
+                <input id="sku" class="shop-input" name="sku">
+              </div>
+              <div class="shop-form-field shop-form-field--full">
+                <label for="shortDescription">Short description</label>
+                <input id="shortDescription" class="shop-input" name="shortDescription">
+              </div>
+              <div class="shop-form-field shop-form-field--full">
+                <label for="description">Full description</label>
+                <textarea id="description" class="shop-textarea" name="description" rows="5"></textarea>
+              </div>
+              <div class="shop-form-field">
+                <label for="price">Price</label>
+                <input id="price" class="shop-input" name="price" type="number" min="0" step="0.01" required>
+              </div>
+              <div class="shop-form-field">
+                <label for="compareAtPrice">Compare-at price</label>
+                <input id="compareAtPrice" class="shop-input" name="compareAtPrice" type="number" min="0" step="0.01">
+              </div>
+              <div class="shop-form-field">
+                <label for="badge">Badge</label>
+                <input id="badge" class="shop-input" name="badge">
+              </div>
+              <div class="shop-form-field">
+                <label for="stockStatus">Stock status</label>
+                <select id="stockStatus" class="shop-select" name="stockStatus">
+                  <option value="in_stock">In stock</option>
+                  <option value="low_stock">Low stock</option>
+                  <option value="out_of_stock">Out of stock</option>
+                </select>
+              </div>
+              <div class="shop-form-field">
+                <label for="featured">Featured</label>
+                <select id="featured" class="shop-select" name="featured">
+                  <option value="false">No</option>
+                  <option value="true">Yes</option>
+                </select>
+              </div>
+              <div class="shop-form-field">
+                <label for="sortOrder">Sort order</label>
+                <input id="sortOrder" class="shop-input" name="sortOrder" type="number" min="0" step="1">
+              </div>
+              <div class="shop-form-field shop-form-field--full">
+                <label for="image">Primary image path</label>
+                <input id="image" class="shop-input" name="image">
+              </div>
+              <div class="shop-form-field shop-form-field--full">
+                <label for="gallery">Gallery image paths</label>
+                <textarea id="gallery" class="shop-textarea" name="gallery" rows="4" placeholder="Separate multiple paths with commas"></textarea>
+              </div>
+              <div class="shop-form-field shop-form-field--full">
+                <button class="shop-btn shop-btn-primary" type="submit">Save product</button>
+              </div>
+            </form>
+          </section>
+          <aside class="shop-admin-panel">
+            <span class="shop-kicker"><i class="fas fa-table-list"></i> Current products</span>
+            <h1>Live inventory snapshot</h1>
+            <div class="shop-admin-grid" data-admin-products></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/shop.js"></script>
+</body>
+</html>

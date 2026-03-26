@@ -35,3 +35,6 @@ signup-page.png
 # Temporary files
 *.tmp
 *.temp
+
+# Local Netlify folder
+.netlify
