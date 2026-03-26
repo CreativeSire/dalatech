@@ -2521,28 +2521,30 @@
 
     @media (max-width: 768px) {
       .commitment-grid {
-        display: block;
+        display: grid;
+        gap: 1rem;
+        max-width: 420px;
+        margin: 0 auto;
         padding-top: 0.25rem;
+        scroll-snap-type: y proximity;
       }
 
       .commitment-card {
         width: 100%;
-        position: sticky;
-        top: calc(var(--header-height, 60px) + 12px);
-        margin-bottom: 1rem;
+        position: relative;
+        top: auto;
+        min-height: min(72vh, 620px);
         padding: 1.2rem 1.15rem 1.35rem;
-      }
-
-      .commitment-card + .commitment-card {
-        margin-top: -2.4rem;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
       }
 
       .commitment-card:nth-child(2) {
-        top: calc(var(--header-height, 60px) + 56px);
+        transform: translateX(12px);
       }
 
       .commitment-card:nth-child(3) {
-        top: calc(var(--header-height, 60px) + 100px);
+        transform: translateX(24px);
       }
 
       .commitment-card__media {
@@ -2555,6 +2557,21 @@
         top: 0.95rem;
         right: 1rem;
         font-size: 2.5rem;
+      }
+
+      .commitment-card h3 {
+        font-size: 1.7rem;
+        line-height: 1.05;
+      }
+
+      .commitment-card p {
+        font-size: 1rem;
+        line-height: 1.75;
+      }
+
+      .commitment-card ul {
+        gap: 0.9rem;
+        margin-top: auto;
       }
     }
 
