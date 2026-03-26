@@ -116,6 +116,19 @@ body.case-study-index {
   max-width: 58ch;
 }
 
+.case-story-block {
+  max-width: 56ch;
+  padding: 1rem 1.05rem;
+  border-left: 3px solid rgba(229, 57, 53, 0.24);
+  border-radius: 18px;
+  background: rgba(18, 18, 18, 0.03);
+}
+
+.case-story-block p {
+  margin: 0;
+  color: var(--gray-700);
+}
+
 .case-hero-meta {
   display: flex;
   flex-wrap: wrap;
@@ -139,14 +152,9 @@ body.case-study-index {
   min-height: 430px;
   border-radius: 28px;
   overflow: hidden;
-  background: #130d0d;
-}
-
-.case-hero-art img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  background:
+    radial-gradient(circle at top left, rgba(255, 138, 29, 0.26), transparent 32%),
+    linear-gradient(145deg, #180f0f 0%, #2a1412 48%, #120d0d 100%);
 }
 
 .case-hero-art::after {
@@ -154,8 +162,54 @@ body.case-study-index {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(18, 12, 12, 0.08) 0%, rgba(18, 12, 12, 0.44) 100%),
-    linear-gradient(135deg, rgba(229, 57, 53, 0.18) 0%, rgba(255, 138, 29, 0.12) 100%);
+    linear-gradient(180deg, rgba(18, 12, 12, 0.04) 0%, rgba(18, 12, 12, 0.3) 100%),
+    linear-gradient(135deg, rgba(229, 57, 53, 0.08) 0%, rgba(255, 138, 29, 0.08) 100%);
+  pointer-events: none;
+}
+
+.case-hero-collage {
+  position: absolute;
+  inset: 1.1rem 1.1rem 6.8rem;
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.95rem;
+  z-index: 1;
+}
+
+.case-hero-tile {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.18);
+}
+
+.case-hero-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.case-hero-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 10, 10, 0.02) 0%, rgba(16, 10, 10, 0.28) 100%);
+}
+
+.case-hero-tile--tall {
+  grid-row: 1 / span 2;
+}
+
+.case-hero-tile--top {
+  transform: translateY(0.6rem);
+}
+
+.case-hero-tile--bottom {
+  transform: translateX(1.1rem);
 }
 
 .case-hero-note {
@@ -170,6 +224,13 @@ body.case-study-index {
   color: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(14px);
   z-index: 1;
+  line-height: 1.55;
+}
+
+.case-hero-note strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #ffffff;
 }
 
 .case-sections {
@@ -483,7 +544,24 @@ body.case-study-index {
   }
 
   .case-hero-art {
-    min-height: 260px;
+    min-height: 300px;
+  }
+
+  .case-hero-collage {
+    inset: 0.85rem 0.85rem 7.1rem;
+    gap: 0.7rem;
+  }
+
+  .case-hero-tile {
+    border-radius: 20px;
+  }
+
+  .case-hero-tile--top {
+    transform: none;
+  }
+
+  .case-hero-tile--bottom {
+    transform: translateX(0.4rem);
   }
 
   .case-brand-lockup {
@@ -506,5 +584,13 @@ body.case-study-index {
 
   .case-subtext {
     font-size: 0.98rem;
+  }
+
+  .case-hero-note {
+    left: 0.85rem;
+    right: 0.85rem;
+    bottom: 0.85rem;
+    padding: 0.9rem 0.95rem;
+    font-size: 0.92rem;
   }
 }
