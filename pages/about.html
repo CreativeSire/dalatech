@@ -765,146 +765,135 @@
         margin-right: auto;
       }
       
-      /* Mission Card - White with Red Accents */
-      .mv-split-card:first-child {
-        background: white;
-        border-radius: 28px;
-        padding: 2.5rem;
-        box-shadow: 
-          0 4px 0 rgba(229, 57, 53, 0.1),
-          0 8px 0 rgba(229, 57, 53, 0.06),
-          0 20px 60px rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(229, 57, 53, 0.1);
-        position: relative;
-        overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .mv-split-card:first-child::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, var(--primary), var(--primary-light));
-      }
-      
-      .mv-split-card:first-child:hover {
-        transform: translateY(-8px);
-        box-shadow: 
-          0 8px 0 rgba(229, 57, 53, 0.1),
-          0 16px 0 rgba(229, 57, 53, 0.06),
-          0 30px 80px rgba(0, 0, 0, 0.12);
-      }
-      
-      /* Vision Card - Plain White */
-      .mv-split-card:last-child {
-        background: white;
-        border-radius: 28px;
-        padding: 2.5rem;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        position: relative;
-        overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .mv-split-card:last-child::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, var(--gray-400), var(--gray-300));
-      }
-      
-      .mv-split-card:last-child:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
-      }
-      
       .mv-split-card {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 0;
+        border-radius: 28px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        box-shadow:
+          0 20px 60px rgba(0, 0, 0, 0.08),
+          0 8px 24px rgba(229, 57, 53, 0.08);
+        position: relative;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      
+
+      .mv-split-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        z-index: 2;
+        background: linear-gradient(90deg, var(--primary), #ff8a1d);
+      }
+
+      .mv-split-card:last-child::before {
+        background: linear-gradient(90deg, #ff8a1d, rgba(229, 57, 53, 0.85));
+      }
+
+      .mv-split-card:hover {
+        transform: translateY(-8px);
+        box-shadow:
+          0 28px 80px rgba(0, 0, 0, 0.12),
+          0 12px 30px rgba(229, 57, 53, 0.1);
+      }
+
       .mv-split-visual {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+        display: block;
+        position: relative;
+        min-height: 220px;
+        overflow: hidden;
       }
-      
-      .mv-icon-wrap {
-        width: 64px;
-        height: 64px;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        box-shadow: 0 8px 24px rgba(229, 57, 53, 0.25);
+
+      .mv-split-media {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
       }
-      
-      .mv-split-card:last-child .mv-icon-wrap {
-        background: linear-gradient(135deg, var(--gray-700) 0%, var(--gray-800) 100%);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+      .mv-split-media.mission {
+        background-image:
+          linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(21, 10, 10, 0.38) 100%),
+          url('../images/generated/about/mission-statement-bg.png');
       }
-      
+
+      .mv-split-media.vision {
+        background-image:
+          linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(12, 12, 18, 0.5) 100%),
+          url('../images/generated/about/vision-statement-bg.png');
+      }
+
+      .mv-split-content {
+        position: relative;
+        margin: -42px 1.35rem 1.35rem;
+        padding: 1.6rem 1.6rem 1.5rem;
+        border-radius: 24px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.88) 100%);
+        border: 1px solid rgba(255,255,255,0.78);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 18px 40px rgba(19, 12, 12, 0.1);
+        z-index: 1;
+      }
+
       .mv-label {
-        font-size: 0.75rem;
-        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(229, 57, 53, 0.08);
+        border: 1px solid rgba(229, 57, 53, 0.12);
+        font-size: 0.72rem;
+        font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.14em;
         color: var(--primary);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.85rem;
       }
-      
-      .mv-split-card:last-child .mv-label {
-        color: var(--gray-600);
-      }
-      
+
       .mv-split-content h3 {
         font-size: 1.5rem;
         font-weight: 800;
         color: var(--dark);
-        margin-bottom: 1rem;
-        line-height: 1.3;
+        margin-bottom: 0.95rem;
+        line-height: 1.25;
       }
-      
+
       .mv-split-content p {
-        color: var(--gray-600);
+        color: var(--gray-700);
         font-size: 1rem;
         line-height: 1.7;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.35rem;
       }
-      
+
       .mv-stats {
         display: flex;
-        gap: 2rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        gap: 1.5rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid rgba(17, 17, 17, 0.08);
       }
-      
+
       .mv-stat {
         text-align: center;
       }
-      
+
       .mv-stat-num {
         display: block;
-        font-size: 1.5rem;
+        font-size: 1.45rem;
         font-weight: 800;
         color: var(--primary);
         line-height: 1;
       }
-      
+
       .mv-split-card:last-child .mv-stat-num {
-        color: var(--gray-700);
+        color: #ff7b2c;
       }
-      
+
       .mv-stat-text {
         font-size: 0.7rem;
         color: var(--gray-500);
@@ -2094,43 +2083,53 @@
       }
       
       .mv-slide-card {
-        background: white;
+        background: rgba(255,255,255,0.96);
         border-radius: 24px;
-        padding: 2rem;
+        overflow: hidden;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         border: 1px solid rgba(0, 0, 0, 0.06);
-        text-align: center;
+        text-align: left;
       }
       
-      /* Mission card - red accent */
       .mv-slide-card.mission {
         border-top: 4px solid var(--primary);
       }
       
-      /* Vision card - gray accent */
       .mv-slide-card.vision {
-        border-top: 4px solid var(--gray-400);
+        border-top: 4px solid #ff8a1d;
       }
-      
-      .mv-slide-icon {
-        width: 72px;
-        height: 72px;
+
+      .mv-slide-media {
+        height: 180px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .mv-slide-media::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(18, 10, 10, 0.48) 100%);
+      }
+
+      .mv-slide-media.mission {
+        background-image: url('../images/generated/about/mission-statement-bg.png');
+      }
+
+      .mv-slide-media.vision {
+        background-image: url('../images/generated/about/vision-statement-bg.png');
+      }
+
+      .mv-slide-body {
+        margin: -24px 14px 14px;
+        padding: 1.4rem 1.25rem 1.3rem;
         border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        margin: 0 auto 1.5rem;
-      }
-      
-      .mv-slide-card.mission .mv-slide-icon {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        box-shadow: 0 8px 24px rgba(229, 57, 53, 0.25);
-      }
-      
-      .mv-slide-card.vision .mv-slide-icon {
-        background: linear-gradient(135deg, var(--gray-700) 0%, var(--gray-800) 100%);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.88) 100%);
+        border: 1px solid rgba(255,255,255,0.75);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(16px);
+        position: relative;
       }
       
       .mv-slide-label {
@@ -2139,7 +2138,11 @@
         text-transform: uppercase;
         letter-spacing: 0.15em;
         margin-bottom: 0.75rem;
-        display: block;
+        display: inline-flex;
+        padding: 0.38rem 0.72rem;
+        border-radius: 999px;
+        background: rgba(229, 57, 53, 0.08);
+        border: 1px solid rgba(229, 57, 53, 0.12);
       }
       
       .mv-slide-card.mission .mv-slide-label {
@@ -2960,11 +2963,7 @@
       <div class="mv-container">
         <div class="mv-split-card reveal">
           <div class="mv-split-visual">
-            <div class="mv-icon-wrap">
-              <span class="mv-icon">🎯</span>
-              <div class="mv-icon-glow"></div>
-            </div>
-            <div class="mv-accent-line"></div>
+            <div class="mv-split-media mission" aria-hidden="true"></div>
           </div>
           <div class="mv-split-content">
             <span class="mv-label">Our Mission</span>
@@ -2985,11 +2984,7 @@
         
         <div class="mv-split-card reveal">
           <div class="mv-split-visual">
-            <div class="mv-icon-wrap">
-              <span class="mv-icon">🔭</span>
-              <div class="mv-icon-glow"></div>
-            </div>
-            <div class="mv-accent-line"></div>
+            <div class="mv-split-media vision" aria-hidden="true"></div>
           </div>
           <div class="mv-split-content">
             <span class="mv-label">Our Vision</span>
@@ -3013,18 +3008,20 @@
       <div class="mv-mobile-slider" id="mvMobileSlider">
         <div class="mv-slide active" data-index="0">
           <div class="mv-slide-card mission">
-            <div class="mv-slide-icon">🎯</div>
-            <span class="mv-slide-label">Our Mission</span>
-            <h3>Remove Operational Bottlenecks</h3>
-            <p>We help founder-led brands grow with structure, discipline, and confidence in modern retail.</p>
-            <div class="mv-slide-stats">
-              <div class="mv-slide-stat">
-                <strong>300+</strong>
-                <span>Stores</span>
-              </div>
-              <div class="mv-slide-stat">
-                <strong>22+</strong>
-                <span>Partners</span>
+            <div class="mv-slide-media mission" aria-hidden="true"></div>
+            <div class="mv-slide-body">
+              <span class="mv-slide-label">Our Mission</span>
+              <h3>Remove Operational Bottlenecks</h3>
+              <p>We help founder-led brands grow with structure, discipline, and confidence in modern retail.</p>
+              <div class="mv-slide-stats">
+                <div class="mv-slide-stat">
+                  <strong>300+</strong>
+                  <span>Stores</span>
+                </div>
+                <div class="mv-slide-stat">
+                  <strong>22+</strong>
+                  <span>Partners</span>
+                </div>
               </div>
             </div>
           </div>
@@ -3032,18 +3029,20 @@
         
         <div class="mv-slide" data-index="1">
           <div class="mv-slide-card vision">
-            <div class="mv-slide-icon">🔭</div>
-            <span class="mv-slide-label">Our Vision</span>
-            <h3>The Trusted Retail Engine</h3>
-            <p>The reliable infrastructure layer between ambitious brands and modern retail across Nigeria.</p>
-            <div class="mv-slide-stats">
-              <div class="mv-slide-stat">
-                <strong>Lagos</strong>
-                <span>Primary</span>
-              </div>
-              <div class="mv-slide-stat">
-                <strong>Ogun</strong>
-                <span>Expanding</span>
+            <div class="mv-slide-media vision" aria-hidden="true"></div>
+            <div class="mv-slide-body">
+              <span class="mv-slide-label">Our Vision</span>
+              <h3>The Trusted Retail Engine</h3>
+              <p>The reliable infrastructure layer between ambitious brands and modern retail across Nigeria.</p>
+              <div class="mv-slide-stats">
+                <div class="mv-slide-stat">
+                  <strong>Lagos</strong>
+                  <span>Primary</span>
+                </div>
+                <div class="mv-slide-stat">
+                  <strong>Ogun</strong>
+                  <span>Expanding</span>
+                </div>
               </div>
             </div>
           </div>
