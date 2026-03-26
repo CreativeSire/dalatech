@@ -544,7 +544,7 @@
     @media (min-width: 769px) {
       .story-marquee-container {
         position: relative;
-        height: 500px;
+        height: 520px;
         perspective: 1200px;
         overflow: hidden;
       }
@@ -564,56 +564,47 @@
         overflow: hidden;
         box-shadow: 0 25px 80px rgba(0, 0, 0, 0.12);
         border: 1px solid rgba(0, 0, 0, 0.06);
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        animation: storyFloat 21s ease-in-out infinite;
-      }
-      
-      /* Card positions in the floating cycle */
-      .story-float-card:nth-child(1) {
-        left: 10%;
+        transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         top: 50%;
-        transform: translateY(-50%) translateZ(100px) scale(1);
-        z-index: 3;
-        animation-delay: 0s;
-      }
-      
-      .story-float-card:nth-child(2) {
         left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) translateZ(50px) scale(0.9);
+        opacity: 0;
+        pointer-events: none;
+        filter: saturate(0.82);
+      }
+
+      .story-float-card.active {
+        transform: translate(-50%, -50%) translateZ(100px) scale(1);
+        z-index: 3;
+        opacity: 1;
+        pointer-events: auto;
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.14);
+        filter: saturate(1);
+      }
+
+      .story-float-card.prev {
+        transform: translate(calc(-50% - 300px), -46%) translateZ(10px) scale(0.86) rotate(-5deg);
         z-index: 2;
-        animation-delay: -7s;
-        opacity: 0.7;
+        opacity: 0.72;
+        pointer-events: auto;
       }
-      
-      .story-float-card:nth-child(3) {
-        left: 70%;
-        top: 50%;
-        transform: translateY(-50%) translateZ(0px) scale(0.8);
+
+      .story-float-card.next {
+        transform: translate(calc(-50% + 300px), -46%) translateZ(10px) scale(0.86) rotate(5deg);
+        z-index: 2;
+        opacity: 0.72;
+        pointer-events: auto;
+      }
+
+      .story-float-card.is-away-left {
+        transform: translate(calc(-50% - 480px), -42%) translateZ(-40px) scale(0.74) rotate(-8deg);
         z-index: 1;
-        animation-delay: -14s;
-        opacity: 0.5;
+        opacity: 0;
       }
-      
-      @keyframes storyFloat {
-        0%, 33.33% {
-          left: 10%;
-          transform: translateY(-50%) translateZ(100px) scale(1);
-          z-index: 3;
-          opacity: 1;
-        }
-        38%, 66.66% {
-          left: 50%;
-          transform: translate(-50%, -50%) translateZ(50px) scale(0.9);
-          z-index: 2;
-          opacity: 0.7;
-        }
-        71.66%, 100% {
-          left: 70%;
-          transform: translateY(-50%) translateZ(0px) scale(0.8);
-          z-index: 1;
-          opacity: 0.5;
-        }
+
+      .story-float-card.is-away-right {
+        transform: translate(calc(-50% + 480px), -42%) translateZ(-40px) scale(0.74) rotate(8deg);
+        z-index: 1;
+        opacity: 0;
       }
       
       .story-float-visual {
@@ -686,6 +677,10 @@
         font-size: 0.875rem;
         color: var(--gray-600);
         line-height: 1.6;
+      }
+
+      .story-marquee-container:hover .story-float-card.active {
+        transform: translate(-50%, -50%) translateZ(118px) scale(1.015);
       }
     }
     
@@ -3250,7 +3245,7 @@
       <div class="story-marquee-container">
         <div class="story-marquee-track">
           <!-- Card 1: The Struggle -->
-          <div class="story-float-card">
+          <div class="story-float-card active" data-index="0">
             <div class="story-float-visual struggle">
               <div class="story-float-number">01</div>
               <img src="../images/generated/about/story-struggle.png" alt="The struggle of founder-led retail operations in Nigeria" loading="lazy">
@@ -3263,7 +3258,7 @@
           </div>
           
           <!-- Card 2: The Breakthrough -->
-          <div class="story-float-card">
+          <div class="story-float-card next" data-index="1">
             <div class="story-float-visual breakthrough">
               <div class="story-float-number">02</div>
               <img src="../images/generated/about/story-breakthrough.png" alt="The breakthrough from disciplined retail operations" loading="lazy">
@@ -3276,7 +3271,7 @@
           </div>
           
           <!-- Card 3: Today -->
-          <div class="story-float-card">
+          <div class="story-float-card prev" data-index="2">
             <div class="story-float-visual today">
               <div class="story-float-number">03</div>
               <img src="../images/generated/about/story-today.png" alt="How DALA helps brands scale today" loading="lazy">
@@ -4081,6 +4076,7 @@
     
     // Mobile Story 3D Carousel
     const storyCards = document.querySelectorAll('.story-3d-card');
+    const desktopStoryCards = document.querySelectorAll('.story-float-card');
     const storyDots = document.querySelectorAll('.story-dot');
     let currentStoryIndex = 0;
     const totalStoryCards = storyCards.length;
@@ -4101,6 +4097,22 @@
       
       storyDots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentStoryIndex);
+      });
+
+      desktopStoryCards.forEach((card, index) => {
+        card.classList.remove('active', 'prev', 'next', 'is-away-left', 'is-away-right');
+
+        if (index === currentStoryIndex) {
+          card.classList.add('active');
+        } else if (index === (currentStoryIndex - 1 + totalStoryCards) % totalStoryCards) {
+          card.classList.add('prev');
+        } else if (index === (currentStoryIndex + 1) % totalStoryCards) {
+          card.classList.add('next');
+        } else if (index < currentStoryIndex) {
+          card.classList.add('is-away-left');
+        } else {
+          card.classList.add('is-away-right');
+        }
       });
     }
     
@@ -4126,6 +4138,14 @@
     // Dot navigation
     storyDots.forEach((dot, index) => {
       dot.addEventListener('click', () => goToStory(index));
+    });
+
+    desktopStoryCards.forEach((card, index) => {
+      card.addEventListener('click', () => {
+        if (index !== currentStoryIndex) {
+          goToStory(index);
+        }
+      });
     });
     
     // Touch/swipe support
@@ -4153,6 +4173,12 @@
       // Pause on hover/touch
       storyContainer.addEventListener('mouseenter', () => clearInterval(storyAutoRotate));
       storyContainer.addEventListener('mouseleave', startStoryAutoRotate);
+    }
+
+    const desktopStoryContainer = document.querySelector('.story-marquee-container');
+    if (desktopStoryContainer) {
+      desktopStoryContainer.addEventListener('mouseenter', () => clearInterval(storyAutoRotate));
+      desktopStoryContainer.addEventListener('mouseleave', startStoryAutoRotate);
     }
     
     // Initialize
