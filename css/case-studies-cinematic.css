@@ -112,6 +112,7 @@ body {
   z-index: 1000;
   background: transparent;
   transition: background 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: auto;
 }
 
 .navbar.scrolled {
@@ -147,6 +148,19 @@ body {
 .navbar .nav-link.active,
 .navbar .nav-dropdown-trigger:hover {
   color: var(--cinematic-gold-light);
+}
+
+.navbar .navbar-container,
+.navbar .nav-links,
+.navbar .nav-link,
+.navbar .nav-dropdown,
+.navbar .nav-dropdown-trigger,
+.navbar .nav-dropdown-menu,
+.navbar .nav-dropdown-item,
+.navbar .nav-cta {
+  position: relative;
+  z-index: 1002;
+  pointer-events: auto;
 }
 
 .navbar .nav-dropdown-menu {
@@ -385,6 +399,7 @@ body {
   object-fit: cover;
   transform: scale(1.15);
   animation: heroZoom 25s var(--ease-out-quart) forwards;
+  pointer-events: none;
 }
 
 @keyframes heroZoom {
