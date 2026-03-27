@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DALA Store Product</title>
+  <meta name="description" content="View a DALA Store product, browse its gallery, and add it to your cart or quote request.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="shortcut icon" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/store.css">
+</head>
+<body class="shop-body" data-shop-page="product">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
+      <div class="nav-links">
+        <a href="../pages/for-brands.html" class="nav-link">DALA for Brands</a>
+        <a href="../pages/for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
+        <a href="../pages/about.html" class="nav-link">About Us</a>
+        <a href="../pages/case-studies.html" class="nav-link">Case Studies</a>
+        <a href="../pages/contact.html" class="nav-link">Contact Us</a>
+        <a href="/store/" class="nav-link active">Store</a>
+        <a href="../pages/signup.html" class="nav-cta">Sign Up</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="shop-shell">
+    <section class="shop-section">
+      <div class="shop-container">
+        <div class="shop-product-detail">
+          <div class="shop-product-gallery">
+            <div class="shop-product-gallery__main">
+              <img data-product-main-image src="" alt="">
+            </div>
+            <div class="shop-product-gallery__thumbs" data-product-gallery></div>
+          </div>
+          <div class="shop-product-detail__copy">
+            <span class="shop-kicker" data-product-badge>DALA Pick</span>
+            <h1 data-product-name>Product Name</h1>
+            <p data-product-short></p>
+            <div class="shop-price-group">
+              <span class="shop-price" data-product-price></span>
+              <span class="shop-compare" data-product-compare></span>
+            </div>
+            <div class="shop-product-meta">
+              <span class="shop-pill">SKU: <strong data-product-sku></strong></span>
+              <span class="shop-pill" data-product-stock></span>
+            </div>
+            <p data-product-description></p>
+            <ul class="shop-feature-list" data-product-features></ul>
+            <div class="shop-hero-actions">
+              <button class="shop-btn shop-btn-primary" data-product-add>Add to cart</button>
+              <button class="shop-btn shop-btn-secondary" data-product-quote>Request quote</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/store.js"></script>
+  <script defer src="/js/wip-badge.js"></script>
+</body>
+</html>

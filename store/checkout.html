@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | DALA Store</title>
+  <meta name="description" content="Complete a DALA Store manual order or quote request checkout.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="shortcut icon" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/store.css">
+</head>
+<body class="shop-body" data-shop-page="checkout">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
+      <div class="nav-links">
+        <a href="../pages/for-brands.html" class="nav-link">DALA for Brands</a>
+        <a href="../pages/for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
+        <a href="../pages/about.html" class="nav-link">About Us</a>
+        <a href="../pages/case-studies.html" class="nav-link">Case Studies</a>
+        <a href="../pages/contact.html" class="nav-link">Contact Us</a>
+        <a href="/store/" class="nav-link active">Store</a>
+        <a href="../pages/signup.html" class="nav-cta">Sign Up</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="shop-shell">
+    <section class="shop-section">
+      <div class="shop-container">
+        <div class="shop-checkout-layout">
+          <div class="shop-checkout-panel">
+            <span class="shop-kicker" data-checkout-mode>Manual order</span>
+            <h1 data-checkout-heading>Complete your order</h1>
+            <p>Enter the buyer details we need to process the order cleanly and follow up quickly.</p>
+            <form data-checkout-form class="shop-form-grid">
+              <div class="shop-form-field">
+                <label for="customerName">Full name</label>
+                <input class="shop-input" id="customerName" name="customerName" required>
+              </div>
+              <div class="shop-form-field">
+                <label for="companyName">Company name</label>
+                <input class="shop-input" id="companyName" name="companyName">
+              </div>
+              <div class="shop-form-field">
+                <label for="email">Email</label>
+                <input class="shop-input" id="email" name="email" type="email" required>
+              </div>
+              <div class="shop-form-field">
+                <label for="phone">Phone number</label>
+                <input class="shop-input" id="phone" name="phone" required>
+              </div>
+              <div class="shop-form-field">
+                <label for="addressLine1">Address line 1</label>
+                <input class="shop-input" id="addressLine1" name="addressLine1">
+              </div>
+              <div class="shop-form-field">
+                <label for="addressLine2">Address line 2</label>
+                <input class="shop-input" id="addressLine2" name="addressLine2">
+              </div>
+              <div class="shop-form-field">
+                <label for="city">City</label>
+                <input class="shop-input" id="city" name="city">
+              </div>
+              <div class="shop-form-field">
+                <label for="state">State</label>
+                <input class="shop-input" id="state" name="state">
+              </div>
+              <div class="shop-form-field shop-form-field--full">
+                <label for="notes">Notes</label>
+                <textarea class="shop-textarea" id="notes" name="notes" rows="5" placeholder="Add delivery notes, quote context, or any buying details that will help us process this better."></textarea>
+              </div>
+              <div class="shop-form-field shop-form-field--full">
+                <button class="shop-btn shop-btn-primary" type="submit">Place manual order</button>
+              </div>
+            </form>
+          </div>
+          <aside class="shop-cart-card">
+            <div class="shop-checkout-summary">
+              <h2>Order summary</h2>
+              <div data-checkout-items></div>
+              <div class="shop-summary-row"><span>Subtotal</span><strong data-checkout-subtotal>₦0</strong></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/store.js"></script>
+  <script defer src="/js/wip-badge.js"></script>
+</body>
+</html>

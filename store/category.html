@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DALA Store Collection</title>
+  <meta name="description" content="Browse a DALA Store collection with live products and editable pricing.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="shortcut icon" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/store.css">
+</head>
+<body class="shop-body" data-shop-page="category">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
+      <div class="nav-links">
+        <a href="../pages/for-brands.html" class="nav-link">DALA for Brands</a>
+        <a href="../pages/for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
+        <a href="../pages/about.html" class="nav-link">About Us</a>
+        <a href="../pages/case-studies.html" class="nav-link">Case Studies</a>
+        <a href="../pages/contact.html" class="nav-link">Contact Us</a>
+        <a href="/store/" class="nav-link active">Store</a>
+        <a href="../pages/signup.html" class="nav-cta">Sign Up</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="shop-shell">
+    <section class="shop-hero">
+      <div class="shop-container">
+        <div class="shop-hero-panel">
+          <div class="shop-hero-copy">
+            <span class="shop-kicker"><i class="fas fa-boxes-stacked"></i> Collection</span>
+            <h1 data-category-name>Collection</h1>
+            <p data-category-description>Collection details</p>
+            <div class="shop-hero-actions">
+              <a class="shop-btn shop-btn-primary" href="/store/cart.html">Go to cart <span data-cart-count>0</span></a>
+              <a class="shop-btn shop-btn-secondary" href="/store/">Back to store</a>
+            </div>
+            <div class="shop-tabs" data-category-tabs></div>
+          </div>
+          <div class="shop-cover">
+            <img data-category-image src="" alt="">
+            <div class="shop-cover-copy">
+              <strong>DALA collection</strong>
+              <p>Curated assortment, clearer browsing, and live pricing ready for quote or manual order placement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop-section">
+      <div class="shop-container">
+        <div class="shop-section-header">
+          <div>
+            <span class="shop-section-kicker"><i class="fas fa-bag-shopping"></i> Products</span>
+            <h2>Everything in this collection</h2>
+          </div>
+          <p>Browse the full range, compare pricing, and add directly to your cart.</p>
+        </div>
+        <div class="shop-product-grid" data-category-products></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/store.js"></script>
+  <script defer src="/js/wip-badge.js"></script>
+</body>
+</html>

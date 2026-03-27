@@ -31,18 +31,19 @@ exports.handler = async (event, context) => {
   const path = (event.path || '/')
     .replace('/.netlify/functions/api', '')
     .replace('/api', '') || '/';
+  const normalizedPath = path.startsWith('/store') ? path.replace('/store', '/shop') : path;
 
   try {
-    if (path.startsWith('/auth')) {
+    if (normalizedPath.startsWith('/auth')) {
       return auth.handler(event, context);
     }
 
-    if (path === '/shop/categories' && event.httpMethod === 'GET') {
+    if (normalizedPath === '/shop/categories' && event.httpMethod === 'GET') {
       const categories = await listCategories();
       return json(200, { categories });
     }
 
-    if (path === '/shop/products' && event.httpMethod === 'GET') {
+    if (normalizedPath === '/shop/products' && event.httpMethod === 'GET') {
       const params = new URLSearchParams(
         event.rawQuery ||
         new URL(event.rawUrl || 'https://example.com').searchParams.toString() ||
@@ -57,14 +58,14 @@ exports.handler = async (event, context) => {
       return json(200, { products });
     }
 
-    if (path.startsWith('/shop/products/') && event.httpMethod === 'GET') {
-      const slug = path.split('/').pop();
+    if (normalizedPath.startsWith('/shop/products/') && event.httpMethod === 'GET') {
+      const slug = normalizedPath.split('/').pop();
       const product = await getProductBySlug(slug);
       if (!product) return json(404, { message: 'Product not found' });
       return json(200, { product });
     }
 
-    if (path === '/shop/orders' && event.httpMethod === 'POST') {
+    if (normalizedPath === '/shop/orders' && event.httpMethod === 'POST') {
       const body = JSON.parse(event.body || '{}');
       if (!body.customerName || !body.email || !body.phone || !Array.isArray(body.items) || body.items.length === 0) {
         return json(400, { message: 'Missing required order fields' });
@@ -90,7 +91,7 @@ exports.handler = async (event, context) => {
       });
     }
 
-    if (path === '/shop/admin/products' && event.httpMethod === 'POST') {
+    if (normalizedPath === '/shop/admin/products' && event.httpMethod === 'POST') {
       if (!requireAdmin(event)) return json(401, { message: 'Unauthorized' });
       const body = JSON.parse(event.body || '{}');
       if (!body.slug || !body.name || !body.categorySlug) {

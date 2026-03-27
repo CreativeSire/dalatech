@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DALA Store | Food, Drinks & Household Essentials</title>
+  <meta name="description" content="Browse the DALA Store for food, drinks, household essentials, personal care and more. Discover trusted Nigerian brands with live pricing and fast delivery.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="shortcut icon" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/store.css">
+</head>
+<body class="shop-body" data-shop-page="home">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
+      <div class="nav-links">
+        <a href="../pages/for-brands.html" class="nav-link">DALA for Brands</a>
+        <a href="../pages/for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
+        <a href="../pages/about.html" class="nav-link">About Us</a>
+        <a href="../pages/case-studies.html" class="nav-link">Case Studies</a>
+        <a href="../pages/contact.html" class="nav-link">Contact Us</a>
+        <a href="/store/" class="nav-link active">Store</a>
+        <a href="../pages/signup.html" class="nav-cta">Sign Up</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="shop-shell">
+    <section class="shop-hero">
+      <div class="shop-container">
+        <div class="shop-hero-panel">
+          <div class="shop-hero-copy">
+            <span class="shop-kicker"><i class="fas fa-store"></i> DALA Store</span>
+            <h1>Browse the products, not the brochure.</h1>
+            <p>Welcome to the DALA Store: a cleaner way to discover trusted Nigerian brands, see live pricing, choose quantity, and place orders from one premium storefront.</p>
+            <div class="shop-hero-actions">
+              <a class="shop-btn shop-btn-primary" href="#collections">Start browsing <i class="fas fa-arrow-right"></i></a>
+              <a class="shop-btn shop-btn-secondary" href="/store/cart.html">View cart <span data-cart-count>0</span></a>
+            </div>
+            <div class="shop-highlight-row">
+              <div class="shop-highlight">
+                <strong>48-hour delivery</strong>
+                <span>Fast, reliable fulfilment</span>
+              </div>
+              <div class="shop-highlight">
+                <strong>Trusted brands</strong>
+                <span>Products ready for serious retail orders</span>
+              </div>
+              <div class="shop-highlight">
+                <strong>Easy ordering</strong>
+                <span>Order directly or request a quote</span>
+              </div>
+            </div>
+          </div>
+          <div class="shop-cover">
+            <img src="../images/shop-products/catalog-product-4.webp" alt="DALA featured products" onerror="this.style.background='linear-gradient(135deg,#f5f0e8,#ffe8d0)'; this.style.borderRadius='20px'; this.removeAttribute('onerror');">
+            <div class="shop-cover-copy">
+              <strong>Retail-ready collections</strong>
+              <p>From drinks and pantry staples to infant care, spices, and household essentials, every collection now opens like a proper product store.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop-section" id="collections">
+      <div class="shop-container">
+        <div class="shop-section-header">
+          <div>
+            <span class="shop-section-kicker"><i class="fas fa-layer-group"></i> Collections</span>
+            <h2>Browse by collection</h2>
+          </div>
+          <p>Choose the category you need. Every collection has live prices, clear stock status, and one-tap add-to-cart.</p>
+        </div>
+        <div class="shop-tabs" data-collection-tabs></div>
+        <div class="shop-category-grid" data-category-grid></div>
+      </div>
+    </section>
+
+    <section class="shop-section">
+      <div class="shop-container">
+        <div class="shop-section-header">
+          <div>
+            <span class="shop-section-kicker"><i class="fas fa-star"></i> Featured products</span>
+            <h2>Featured products</h2>
+          </div>
+          <p>Hand-picked favourites from across the store — trusted brands, live prices, and ready to add to cart.</p>
+        </div>
+        <div class="shop-product-grid" data-featured-products></div>
+      </div>
+    </section>
+
+    <section class="shop-section shop-trust-strip">
+      <div class="shop-container">
+        <div class="shop-benefit-grid">
+          <article class="shop-mini-panel">
+            <div class="shop-mini-panel-icon"><i class="fas fa-truck-fast"></i></div>
+            <h3>48-hour delivery</h3>
+            <p>Fast, reliable fulfilment from our warehouse direct to you or your store.</p>
+          </article>
+          <article class="shop-mini-panel">
+            <div class="shop-mini-panel-icon"><i class="fas fa-shield-check"></i></div>
+            <h3>Quality guaranteed</h3>
+            <p>Every product meets the same standards enforced across Nigeria's top supermarkets.</p>
+          </article>
+          <article class="shop-mini-panel">
+            <div class="shop-mini-panel-icon"><i class="fas fa-headset"></i></div>
+            <h3>Dedicated support</h3>
+            <p>Our team is on hand to assist with orders, quotes, and any product questions.</p>
+          </article>
+          <article class="shop-mini-panel">
+            <div class="shop-mini-panel-icon"><i class="fas fa-receipt"></i></div>
+            <h3>Easy reordering</h3>
+            <p>Place orders and quote requests quickly, with your purchase history easy to track.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/store.js"></script>
+  <script defer src="/js/wip-badge.js"></script>
+</body>
+</html>
