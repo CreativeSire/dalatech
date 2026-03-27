@@ -14,31 +14,37 @@
   from = "/store"
   to = "/"
   status = 302
+  force = true
 
 [[redirects]]
   from = "/store/"
   to = "/"
   status = 302
+  force = true
 
 [[redirects]]
   from = "/store/*"
   to = "/"
   status = 302
+  force = true
 
 [[redirects]]
   from = "/shop"
   to = "/"
   status = 302
+  force = true
 
 [[redirects]]
   from = "/shop/"
   to = "/"
   status = 302
+  force = true
 
 [[redirects]]
   from = "/shop/*"
   to = "/"
   status = 302
+  force = true
 
 [dev]
   port = 8888
