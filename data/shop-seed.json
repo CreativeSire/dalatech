@@ -1,0 +1,713 @@
+{
+  "categories": [
+    {
+      "slug": "drinks-yoghurt",
+      "name": "Drinks & Yoghurt",
+      "description": "Shelf-ready drinks, yoghurt, juice, and breakfast-led beverage lines gathered into one retail collection.",
+      "heroImage": "/assets/catalog/2026/3.webp",
+      "accent": "sunrise",
+      "sortOrder": 1
+    },
+    {
+      "slug": "body-care-wellness",
+      "name": "Body Care & Wellness",
+      "description": "Wellness-led essentials and personal care products arranged for cleaner category browsing.",
+      "heroImage": "/assets/catalog/2026/11.webp",
+      "accent": "clay",
+      "sortOrder": 2
+    },
+    {
+      "slug": "infant-child-care",
+      "name": "Infant & Child Care",
+      "description": "Family and child-focused products grouped for trusted everyday retail shopping.",
+      "heroImage": "/assets/catalog/2026/17.webp",
+      "accent": "gold",
+      "sortOrder": 3
+    },
+    {
+      "slug": "pantry-staples-flour",
+      "name": "Pantry Staples & Flour",
+      "description": "Pantry-building products, flour, cereals, and kitchen staples with strong household relevance.",
+      "heroImage": "/assets/catalog/2026/20.webp",
+      "accent": "sand",
+      "sortOrder": 4
+    },
+    {
+      "slug": "snacks-confectionery",
+      "name": "Snacks & Confectionery",
+      "description": "Snacks, confectionery, and impulse-friendly shelf products gathered into one browsing lane.",
+      "heroImage": "/assets/catalog/2026/29.webp",
+      "accent": "berry",
+      "sortOrder": 5
+    },
+    {
+      "slug": "spices-condiments",
+      "name": "Spices & Condiments",
+      "description": "Spices, seasonings, and cooking condiments presented with a cleaner premium-store feel.",
+      "heroImage": "/assets/catalog/2026/34.webp",
+      "accent": "spice",
+      "sortOrder": 6
+    },
+    {
+      "slug": "household-items",
+      "name": "Household Items",
+      "description": "Household essentials presented as a practical, shelf-ready home care collection.",
+      "heroImage": "/assets/catalog/2026/39.webp",
+      "accent": "forest",
+      "sortOrder": 7
+    }
+  ],
+  "products": [
+    {
+      "slug": "cevo-exotic-assortment",
+      "name": "Cevo Exotic Assortment",
+      "categorySlug": "drinks-yoghurt",
+      "shortDescription": "Premium drinks and yoghurt selection from Cevo Exotic.",
+      "description": "Premium drinks and yoghurt selection from Cevo Exotic. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 8500,
+      "compareAtPrice": 9600,
+      "currency": "NGN",
+      "sku": "DRINK-004",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-4.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-4.webp",
+        "/assets/catalog/2026/4.webp"
+      ],
+      "sortOrder": 1,
+      "catalogPage": 4
+    },
+    {
+      "slug": "felon-innovation-milk-drink",
+      "name": "Felon Innovation Milk Drink",
+      "categorySlug": "drinks-yoghurt",
+      "shortDescription": "Retail-ready beverage offering from Felon Innovation Ltd.",
+      "description": "Retail-ready beverage offering from Felon Innovation Ltd. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 7800,
+      "compareAtPrice": 8600,
+      "currency": "NGN",
+      "sku": "DRINK-005",
+      "badge": "Fresh Pick",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-5.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-5.webp",
+        "/assets/catalog/2026/5.webp"
+      ],
+      "sortOrder": 2,
+      "catalogPage": 5
+    },
+    {
+      "slug": "madala-juice-range",
+      "name": "Madala Juice Range",
+      "categorySlug": "drinks-yoghurt",
+      "shortDescription": "A clean shelf presentation of Madala beverage products.",
+      "description": "A clean shelf presentation of Madala beverage products. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 8200,
+      "compareAtPrice": 9000,
+      "currency": "NGN",
+      "sku": "DRINK-006",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-6.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-6.webp",
+        "/assets/catalog/2026/6.webp"
+      ],
+      "sortOrder": 3,
+      "catalogPage": 6
+    },
+    {
+      "slug": "orisirisi-catering-drinks",
+      "name": "Orisirisi Catering Drinks",
+      "categorySlug": "drinks-yoghurt",
+      "shortDescription": "Bottle-led drinks assortment from Orisirisi Catering Service.",
+      "description": "Bottle-led drinks assortment from Orisirisi Catering Service. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 9100,
+      "compareAtPrice": 9900,
+      "currency": "NGN",
+      "sku": "DRINK-007",
+      "badge": "Popular",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-7.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-7.webp",
+        "/assets/catalog/2026/7.webp"
+      ],
+      "sortOrder": 4,
+      "catalogPage": 7
+    },
+    {
+      "slug": "wilsons-juice-co-range",
+      "name": "Wilson's Juice Co. Range",
+      "categorySlug": "drinks-yoghurt",
+      "shortDescription": "Wilson's shelf range presented as a stronger beverage collection.",
+      "description": "Wilson's shelf range presented as a stronger beverage collection. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 11200,
+      "compareAtPrice": 12400,
+      "currency": "NGN",
+      "sku": "DRINK-008",
+      "badge": "Best Seller",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-8.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-8.webp",
+        "/assets/catalog/2026/8.webp"
+      ],
+      "sortOrder": 5,
+      "catalogPage": 8
+    },
+    {
+      "slug": "kezia-mixed-beverage-line",
+      "name": "Kezia Mixed Beverage Line",
+      "categorySlug": "drinks-yoghurt",
+      "shortDescription": "Kezia fruit and beverage assortment for modern grocery shelves.",
+      "description": "Kezia fruit and beverage assortment for modern grocery shelves. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 8800,
+      "compareAtPrice": 9500,
+      "currency": "NGN",
+      "sku": "DRINK-009",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-9.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-9.webp",
+        "/assets/catalog/2026/9.webp"
+      ],
+      "sortOrder": 6,
+      "catalogPage": 9
+    },
+    {
+      "slug": "zayith-yogurt-selection",
+      "name": "Zayith Yogurt Selection",
+      "categorySlug": "drinks-yoghurt",
+      "shortDescription": "Zayith yoghurt assortment arranged for premium chilled-shelf appeal.",
+      "description": "Zayith yoghurt assortment arranged for premium chilled-shelf appeal. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 10400,
+      "compareAtPrice": 11600,
+      "currency": "NGN",
+      "sku": "DRINK-010",
+      "badge": "Trusted",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-10.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-10.webp",
+        "/assets/catalog/2026/10.webp"
+      ],
+      "sortOrder": 7,
+      "catalogPage": 10
+    },
+    {
+      "slug": "aman-bless-wellness-range",
+      "name": "Aman-Bless Wellness Range",
+      "categorySlug": "body-care-wellness",
+      "shortDescription": "Wellness and body-care products from Aman-Bless.",
+      "description": "Wellness and body-care products from Aman-Bless. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 13200,
+      "compareAtPrice": 14500,
+      "currency": "NGN",
+      "sku": "BODY-003",
+      "badge": "Popular",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-12.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-12.webp",
+        "/assets/catalog/2026/12.webp"
+      ],
+      "sortOrder": 8,
+      "catalogPage": 12
+    },
+    {
+      "slug": "biniowan-enterprises-care-kit",
+      "name": "Biniowan Enterprises Care Kit",
+      "categorySlug": "body-care-wellness",
+      "shortDescription": "A broad body-care and wellness assortment from Biniowan Enterprises.",
+      "description": "A broad body-care and wellness assortment from Biniowan Enterprises. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 12900,
+      "compareAtPrice": 13900,
+      "currency": "NGN",
+      "sku": "BODY-004",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-13.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-13.webp",
+        "/assets/catalog/2026/13.webp"
+      ],
+      "sortOrder": 9,
+      "catalogPage": 13
+    },
+    {
+      "slug": "tosh-cocodia-wellness-drink",
+      "name": "Tosh Cocodia Wellness Drink",
+      "categorySlug": "body-care-wellness",
+      "shortDescription": "A shelf-led wellness drink product from Tosh Cocodia.",
+      "description": "A shelf-led wellness drink product from Tosh Cocodia. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 7600,
+      "compareAtPrice": 8400,
+      "currency": "NGN",
+      "sku": "BODY-005",
+      "badge": "New In",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-14.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-14.webp",
+        "/assets/catalog/2026/14.webp"
+      ],
+      "sortOrder": 10,
+      "catalogPage": 14
+    },
+    {
+      "slug": "respite-tea-duo",
+      "name": "Respite Tea Duo",
+      "categorySlug": "body-care-wellness",
+      "shortDescription": "Respite Tea products curated for wellness-led browsing.",
+      "description": "Respite Tea products curated for wellness-led browsing. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 9400,
+      "compareAtPrice": 10200,
+      "currency": "NGN",
+      "sku": "BODY-006",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-15.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-15.webp",
+        "/assets/catalog/2026/15.webp"
+      ],
+      "sortOrder": 11,
+      "catalogPage": 15
+    },
+    {
+      "slug": "whole-eats-africa-meditea",
+      "name": "Whole Eats Africa Meditea",
+      "categorySlug": "body-care-wellness",
+      "shortDescription": "Whole Eats Africa wellness products arranged into one premium card.",
+      "description": "Whole Eats Africa wellness products arranged into one premium card. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 11800,
+      "compareAtPrice": 12900,
+      "currency": "NGN",
+      "sku": "BODY-007",
+      "badge": "Top Rated",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-16.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-16.webp",
+        "/assets/catalog/2026/16.webp"
+      ],
+      "sortOrder": 12,
+      "catalogPage": 16
+    },
+    {
+      "slug": "whole-eats-africa-infant-care",
+      "name": "Whole Eats Africa Infant Care",
+      "categorySlug": "infant-child-care",
+      "shortDescription": "Infant and child-care assortment from Whole Eats Africa.",
+      "description": "Infant and child-care assortment from Whole Eats Africa. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 14750,
+      "compareAtPrice": 15900,
+      "currency": "NGN",
+      "sku": "INFANT-002",
+      "badge": "Trusted",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-18.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-18.webp",
+        "/assets/catalog/2026/18.webp"
+      ],
+      "sortOrder": 13,
+      "catalogPage": 18
+    },
+    {
+      "slug": "august-secrets-infant-range",
+      "name": "August Secrets Infant Range",
+      "categorySlug": "infant-child-care",
+      "shortDescription": "August Secrets infant-focused products with cleaner shelf presentation.",
+      "description": "August Secrets infant-focused products with cleaner shelf presentation. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 15200,
+      "compareAtPrice": 16600,
+      "currency": "NGN",
+      "sku": "INFANT-003",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-19.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-19.webp",
+        "/assets/catalog/2026/19.webp"
+      ],
+      "sortOrder": 14,
+      "catalogPage": 19
+    },
+    {
+      "slug": "atun-foods-pantry-pair",
+      "name": "Atun Foods Pantry Pair",
+      "categorySlug": "pantry-staples-flour",
+      "shortDescription": "Atun Foods pantry products gathered into one compact retail pair.",
+      "description": "Atun Foods pantry products gathered into one compact retail pair. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 12500,
+      "compareAtPrice": 13600,
+      "currency": "NGN",
+      "sku": "PANTRY-004",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-21.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-21.webp",
+        "/assets/catalog/2026/21.webp"
+      ],
+      "sortOrder": 15,
+      "catalogPage": 21
+    },
+    {
+      "slug": "cresso-life-pantry-line",
+      "name": "Cresso Life Pantry Line",
+      "categorySlug": "pantry-staples-flour",
+      "shortDescription": "Cresso Life pantry and food products for everyday shelves.",
+      "description": "Cresso Life pantry and food products for everyday shelves. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 13400,
+      "compareAtPrice": 14500,
+      "currency": "NGN",
+      "sku": "PANTRY-005",
+      "badge": "Popular",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-22.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-22.webp",
+        "/assets/catalog/2026/22.webp"
+      ],
+      "sortOrder": 16,
+      "catalogPage": 22
+    },
+    {
+      "slug": "eti-farms-rice-choice",
+      "name": "Eti Farms Rice Choice",
+      "categorySlug": "pantry-staples-flour",
+      "shortDescription": "Eti Farms rice-led pantry item arranged for premium storefront browsing.",
+      "description": "Eti Farms rice-led pantry item arranged for premium storefront browsing. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 14200,
+      "compareAtPrice": 15400,
+      "currency": "NGN",
+      "sku": "PANTRY-006",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-23.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-23.webp",
+        "/assets/catalog/2026/23.webp"
+      ],
+      "sortOrder": 17,
+      "catalogPage": 23
+    },
+    {
+      "slug": "jkb-plantain-flour",
+      "name": "JKB Plantain Flour",
+      "categorySlug": "pantry-staples-flour",
+      "shortDescription": "Plantain flour product from JKB with clear pantry relevance.",
+      "description": "Plantain flour product from JKB with clear pantry relevance. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 11600,
+      "compareAtPrice": 12400,
+      "currency": "NGN",
+      "sku": "PANTRY-007",
+      "badge": "Best Seller",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-24.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-24.webp",
+        "/assets/catalog/2026/24.webp"
+      ],
+      "sortOrder": 18,
+      "catalogPage": 24
+    },
+    {
+      "slug": "mazara-cereal-selection",
+      "name": "Mazara Cereal Selection",
+      "categorySlug": "pantry-staples-flour",
+      "shortDescription": "Mazara pantry range curated into a stronger cereal-led storefront tile.",
+      "description": "Mazara pantry range curated into a stronger cereal-led storefront tile. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 12800,
+      "compareAtPrice": 13800,
+      "currency": "NGN",
+      "sku": "PANTRY-008",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-25.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-25.webp",
+        "/assets/catalog/2026/25.webp"
+      ],
+      "sortOrder": 19,
+      "catalogPage": 25
+    },
+    {
+      "slug": "prothrive-grandios-range",
+      "name": "Prothrive Grandios Range",
+      "categorySlug": "pantry-staples-flour",
+      "shortDescription": "Prothrive pantry staples gathered for cereal and flour category browsing.",
+      "description": "Prothrive pantry staples gathered for cereal and flour category browsing. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 15800,
+      "compareAtPrice": 17200,
+      "currency": "NGN",
+      "sku": "PANTRY-009",
+      "badge": "Top Rated",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-26.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-26.webp",
+        "/assets/catalog/2026/26.webp"
+      ],
+      "sortOrder": 20,
+      "catalogPage": 26
+    },
+    {
+      "slug": "tosh-cocodia-pantry-range",
+      "name": "Tosh Cocodia Pantry Range",
+      "categorySlug": "pantry-staples-flour",
+      "shortDescription": "Tosh Cocodia pantry selection built around cereal and breakfast products.",
+      "description": "Tosh Cocodia pantry selection built around cereal and breakfast products. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 13800,
+      "compareAtPrice": 14900,
+      "currency": "NGN",
+      "sku": "PANTRY-010",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-27.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-27.webp",
+        "/assets/catalog/2026/27.webp"
+      ],
+      "sortOrder": 21,
+      "catalogPage": 27
+    },
+    {
+      "slug": "zeef-rice-flour",
+      "name": "Zeef Rice Flour",
+      "categorySlug": "pantry-staples-flour",
+      "shortDescription": "Rice flour product from Zeef prepared for pantry-store browsing.",
+      "description": "Rice flour product from Zeef prepared for pantry-store browsing. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 9900,
+      "compareAtPrice": 10800,
+      "currency": "NGN",
+      "sku": "PANTRY-011",
+      "badge": "Popular",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-28.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-28.webp",
+        "/assets/catalog/2026/28.webp"
+      ],
+      "sortOrder": 22,
+      "catalogPage": 28
+    },
+    {
+      "slug": "eloha-dates-range",
+      "name": "Eloha Dates Range",
+      "categorySlug": "snacks-confectionery",
+      "shortDescription": "Eloha snack products grouped into a cleaner impulse-buy card.",
+      "description": "Eloha snack products grouped into a cleaner impulse-buy card. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 9300,
+      "compareAtPrice": 10100,
+      "currency": "NGN",
+      "sku": "SNACK-003",
+      "badge": "Best Seller",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-30.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-30.webp",
+        "/assets/catalog/2026/30.webp"
+      ],
+      "sortOrder": 23,
+      "catalogPage": 30
+    },
+    {
+      "slug": "b-boon-snack-selection",
+      "name": "B-Boon Snack Selection",
+      "categorySlug": "snacks-confectionery",
+      "shortDescription": "B-Boon snack products curated for fast shelf recognition.",
+      "description": "B-Boon snack products curated for fast shelf recognition. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 8800,
+      "compareAtPrice": 9600,
+      "currency": "NGN",
+      "sku": "SNACK-004",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-31.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-31.webp",
+        "/assets/catalog/2026/31.webp"
+      ],
+      "sortOrder": 24,
+      "catalogPage": 31
+    },
+    {
+      "slug": "tosh-cocodia-snack-jar",
+      "name": "Tosh Cocodia Snack Jar",
+      "categorySlug": "snacks-confectionery",
+      "shortDescription": "A snack-led Tosh Cocodia product designed for shelf visibility.",
+      "description": "A snack-led Tosh Cocodia product designed for shelf visibility. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 8200,
+      "compareAtPrice": 8900,
+      "currency": "NGN",
+      "sku": "SNACK-005",
+      "badge": "New In",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-32.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-32.webp",
+        "/assets/catalog/2026/32.webp"
+      ],
+      "sortOrder": 25,
+      "catalogPage": 32
+    },
+    {
+      "slug": "skiddo-foods-happy-treat",
+      "name": "Skiddo Foods Happy Treat",
+      "categorySlug": "snacks-confectionery",
+      "shortDescription": "Skiddo Foods confectionery products grouped into one premium snack tile.",
+      "description": "Skiddo Foods confectionery products grouped into one premium snack tile. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 7600,
+      "compareAtPrice": 8300,
+      "currency": "NGN",
+      "sku": "SNACK-006",
+      "badge": "Top Rated",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-33.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-33.webp",
+        "/assets/catalog/2026/33.webp"
+      ],
+      "sortOrder": 26,
+      "catalogPage": 33
+    },
+    {
+      "slug": "atun-foods-pepper-soup-spice",
+      "name": "Atun Foods Pepper Soup Spice",
+      "categorySlug": "spices-condiments",
+      "shortDescription": "Atun Foods spice product positioned for kitchen essentials browsing.",
+      "description": "Atun Foods spice product positioned for kitchen essentials browsing. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 8600,
+      "compareAtPrice": 9300,
+      "currency": "NGN",
+      "sku": "SPICE-003",
+      "badge": "Chef Pick",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-35.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-35.webp",
+        "/assets/catalog/2026/35.webp"
+      ],
+      "sortOrder": 27,
+      "catalogPage": 35
+    },
+    {
+      "slug": "dizauregi-spice-range",
+      "name": "Dizauregi Spice Range",
+      "categorySlug": "spices-condiments",
+      "shortDescription": "Dizauregi seasoning range gathered into one shelf-ready spice card.",
+      "description": "Dizauregi seasoning range gathered into one shelf-ready spice card. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 9100,
+      "compareAtPrice": 9800,
+      "currency": "NGN",
+      "sku": "SPICE-004",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-36.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-36.webp",
+        "/assets/catalog/2026/36.webp"
+      ],
+      "sortOrder": 28,
+      "catalogPage": 36
+    },
+    {
+      "slug": "sooyah-food-spice-line",
+      "name": "Sooyah Food Spice Line",
+      "categorySlug": "spices-condiments",
+      "shortDescription": "Seasoning and spice products from Sooyah Food.",
+      "description": "Seasoning and spice products from Sooyah Food. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 9400,
+      "compareAtPrice": 10200,
+      "currency": "NGN",
+      "sku": "SPICE-005",
+      "badge": "Popular",
+      "stockStatus": "in_stock",
+      "featured": false,
+      "image": "/images/shop-products/catalog-product-37.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-37.webp",
+        "/assets/catalog/2026/37.webp"
+      ],
+      "sortOrder": 29,
+      "catalogPage": 37
+    },
+    {
+      "slug": "zeef-condiments-selection",
+      "name": "Zeef Condiments Selection",
+      "categorySlug": "spices-condiments",
+      "shortDescription": "Zeef condiments and cooking staples arranged for premium browsing.",
+      "description": "Zeef condiments and cooking staples arranged for premium browsing. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 9800,
+      "compareAtPrice": 10600,
+      "currency": "NGN",
+      "sku": "SPICE-006",
+      "badge": "Featured",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-38.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-38.webp",
+        "/assets/catalog/2026/38.webp"
+      ],
+      "sortOrder": 30,
+      "catalogPage": 38
+    },
+    {
+      "slug": "kitchensmith-household-essentials",
+      "name": "Kitchensmith Household Essentials",
+      "categorySlug": "household-items",
+      "shortDescription": "Household items from Kitchensmith Limited prepared for home-care shopping.",
+      "description": "Household items from Kitchensmith Limited prepared for home-care shopping. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.",
+      "price": 6200,
+      "compareAtPrice": 7100,
+      "currency": "NGN",
+      "sku": "HOUSE-002",
+      "badge": "Home Pick",
+      "stockStatus": "in_stock",
+      "featured": true,
+      "image": "/images/shop-products/catalog-product-39.webp",
+      "gallery": [
+        "/images/shop-products/catalog-product-39.webp",
+        "/assets/catalog/2026/39.webp"
+      ],
+      "sortOrder": 31,
+      "catalogPage": 39
+    }
+  ]
+}
