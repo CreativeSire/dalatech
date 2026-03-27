@@ -1570,17 +1570,22 @@
       color: var(--gray-600);
     }
 
+    .partners-mobile-slider,
+    #partnersMobileHighlight {
+      display: none;
+    }
+
     /* Desktop: 3D Theater Layout */
     @media (min-width: 769px) {
       .partners-grid {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 0;
+        gap: 1.5rem;
         position: relative;
         perspective: 2000px;
-        min-height: 600px;
-        padding: 2rem 0;
+        min-height: 560px;
+        padding: 2.5rem 0 0;
       }
 
       /* Glass Morphism Cards - Warm Tint */
@@ -1601,13 +1606,13 @@
       }
 
       /* Card 1 - Left Side (Brands) */
-      .partner-card:nth-child(1) {
+      .partner-card[data-card="brands"] {
         transform: translateX(40px) rotateY(-8deg) translateZ(-50px);
         z-index: 1;
       }
 
       /* Card 2 - Right Side (Retailers) */
-      .partner-card:nth-child(2) {
+      .partner-card[data-card="retailers"] {
         transform: translateX(-40px) rotateY(8deg) translateZ(-50px);
         z-index: 1;
       }
@@ -1622,11 +1627,11 @@
           0 0 120px rgba(229, 57, 53, 0.15);
       }
 
-      .partner-card:nth-child(1):hover {
+      .partner-card[data-card="brands"]:hover {
         transform: translateX(20px) rotateY(-3deg) translateZ(80px) scale(1.02);
       }
 
-      .partner-card:nth-child(2):hover {
+      .partner-card[data-card="retailers"]:hover {
         transform: translateX(-20px) rotateY(3deg) translateZ(80px) scale(1.02);
       }
 
@@ -1779,10 +1784,10 @@
 
       /* Floating Center Badge */
       .partners-highlight {
-        position: absolute;
-        left: 50%;
-        bottom: -30px;
-        transform: translateX(-50%) translateZ(100px);
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: translateZ(80px);
         display: inline-flex;
         align-items: center;
         gap: 0.75rem;
@@ -1797,11 +1802,13 @@
           0 0 0 1px rgba(255, 255, 255, 0.05) inset;
         z-index: 20;
         font-size: 0.95rem;
+        white-space: nowrap;
+        align-self: center;
         transition: all 0.4s ease;
       }
 
       .partners-highlight:hover {
-        transform: translateX(-50%) translateZ(120px) scale(1.05);
+        transform: translateZ(100px) scale(1.03);
         box-shadow: 
           0 30px 80px rgba(26, 10, 10, 0.4),
           0 0 0 1px rgba(255, 255, 255, 0.1) inset;
