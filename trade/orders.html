@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order History — DALA Trade Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/trade-portal.css" />
+</head>
+<body data-trade-page="orders">
+
+<div class="trade-portal">
+  <!-- ── Sidebar ─────────────────────────────────────────── -->
+  <aside class="trade-sidebar">
+    <div class="sidebar-logo">
+      <img src="../4.png" alt="DALA Technologies" />
+      <div class="sidebar-logo-label">Trade Portal</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Navigation</div>
+      <a href="dashboard.html" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+      <a href="catalog.html" data-page="catalog"><i class="fa-solid fa-layer-group"></i> Brand Catalog</a>
+      <a href="order.html" data-page="order"><i class="fa-solid fa-clipboard-list"></i> Order Builder</a>
+      <a href="orders.html" data-page="orders"><i class="fa-solid fa-clock-rotate-left"></i> Order History</a>
+      <a href="delivery.html" data-page="delivery"><i class="fa-solid fa-calendar-days"></i> Delivery Schedule</a>
+      <div class="sidebar-nav-label" style="margin-top:8px;">Account</div>
+      <a href="account.html" data-page="account"><i class="fa-solid fa-circle-user"></i> My Account</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-account">
+        <div class="sidebar-avatar" data-retailer-initials>AD</div>
+        <div class="sidebar-account-info">
+          <div class="sidebar-account-name" data-retailer-name>Addide Supermarket</div>
+          <div class="sidebar-account-tier" data-retailer-tier>Standard Partner</div>
+        </div>
+      </div>
+      <button class="btn-logout" data-logout><i class="fa-solid fa-right-from-bracket"></i> Sign out</button>
+    </div>
+  </aside>
+  <div class="sidebar-overlay"></div>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main class="trade-main">
+    <div class="trade-topbar">
+      <button class="hamburger-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-greeting">
+        <h2 data-greeting>Good morning, Addide Supermarket</h2>
+        <p data-topbar-date>Friday, 27 March 2026</p>
+      </div>
+      <div class="topbar-actions">
+        <a href="order.html" class="btn btn-orange btn-sm"><i class="fa-solid fa-plus"></i> New order</a>
+        <button class="topbar-btn-icon"><i class="fa-regular fa-bell"></i><span class="notif-dot"></span></button>
+      </div>
+    </div>
+
+    <div class="trade-content">
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1>Order History</h1>
+          <p>All orders placed through the DALA Trade Portal</p>
+        </div>
+        <div class="page-header-actions">
+          <div class="filter-input">
+            <i class="fa-regular fa-calendar"></i>
+            <input type="text" placeholder="Date range" style="min-width:140px;" />
+          </div>
+          <button class="btn btn-secondary">
+            <i class="fa-solid fa-download"></i> Export
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table class="trade-table">
+            <thead>
+              <tr>
+                <th>Order #</th>
+                <th>Date</th>
+                <th>Items</th>
+                <th>Value</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:700;font-family:monospace;font-size:13px;">TP-2850</td>
+                <td>12 Jan 2026</td>
+                <td>8 items</td>
+                <td style="font-weight:600;">₦156,000</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle-check"></i> Delivered</span></td>
+                <td><button class="btn btn-sm btn-secondary" data-view-order="TP-2850">View</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;font-family:monospace;font-size:13px;">TP-2847</td>
+                <td>8 Jan 2026</td>
+                <td>5 items</td>
+                <td style="font-weight:600;">₦107,000</td>
+                <td><span class="badge badge-blue"><i class="fa-solid fa-circle-check"></i> Confirmed</span></td>
+                <td><button class="btn btn-sm btn-secondary" data-view-order="TP-2847">View</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;font-family:monospace;font-size:13px;">TP-2841</td>
+                <td>2 Jan 2026</td>
+                <td>11 items</td>
+                <td style="font-weight:600;">₦203,000</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle-check"></i> Delivered</span></td>
+                <td><button class="btn btn-sm btn-secondary" data-view-order="TP-2841">View</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;font-family:monospace;font-size:13px;">TP-2835</td>
+                <td>26 Dec 2025</td>
+                <td>3 items</td>
+                <td style="font-weight:600;">₦62,000</td>
+                <td><span class="badge badge-orange"><i class="fa-solid fa-file-invoice"></i> Invoiced</span></td>
+                <td>
+                  <div style="display:flex;gap:6px;">
+                    <button class="btn btn-sm btn-secondary" data-view-order="TP-2835">View</button>
+                    <button class="btn btn-sm btn-orange">Pay</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;font-family:monospace;font-size:13px;">TP-2829</td>
+                <td>18 Dec 2025</td>
+                <td>7 items</td>
+                <td style="font-weight:600;">₦145,000</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle-check"></i> Delivered</span></td>
+                <td><button class="btn btn-sm btn-secondary" data-view-order="TP-2829">View</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;font-family:monospace;font-size:13px;">TP-2821</td>
+                <td>10 Dec 2025</td>
+                <td>9 items</td>
+                <td style="font-weight:600;">₦178,000</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle-check"></i> Delivered</span></td>
+                <td><button class="btn btn-sm btn-secondary" data-view-order="TP-2821">View</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;font-family:monospace;font-size:13px;">TP-2814</td>
+                <td>3 Dec 2025</td>
+                <td>4 items</td>
+                <td style="font-weight:600;">₦89,000</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle-check"></i> Delivered</span></td>
+                <td><button class="btn btn-sm btn-secondary" data-view-order="TP-2814">View</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;font-family:monospace;font-size:13px;">TP-2807</td>
+                <td>25 Nov 2025</td>
+                <td>6 items</td>
+                <td style="font-weight:600;">₦124,000</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle-check"></i> Delivered</span></td>
+                <td><button class="btn btn-sm btn-secondary" data-view-order="TP-2807">View</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;font-family:monospace;font-size:13px;">TP-2798</td>
+                <td>17 Nov 2025</td>
+                <td>8 items</td>
+                <td style="font-weight:600;">₦167,000</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle-check"></i> Delivered</span></td>
+                <td><button class="btn btn-sm btn-secondary" data-view-order="TP-2798">View</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;font-family:monospace;font-size:13px;">TP-2791</td>
+                <td>10 Nov 2025</td>
+                <td>5 items</td>
+                <td style="font-weight:600;">₦98,000</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle-check"></i> Delivered</span></td>
+                <td><button class="btn btn-sm btn-secondary" data-view-order="TP-2791">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- ── Order Detail Slide Panel ──────────────────────────── -->
+<div class="slide-panel" id="order-detail-panel">
+  <div class="slide-panel-header">
+    <div>
+      <h3>Order <span id="panel-order-id">TP-2850</span></h3>
+      <p style="font-size:12px;color:var(--trade-muted);margin-top:2px;">12 Jan 2026 · 8 items</p>
+    </div>
+    <button class="modal-close" data-close-panel="order-detail-panel">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <div class="slide-panel-body">
+
+    <!-- Items list -->
+    <div style="margin-bottom:22px;">
+      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--trade-muted);margin-bottom:12px;">
+        Order Items
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--trade-bg);border-radius:8px;">
+          <div>
+            <div style="font-size:13px;font-weight:600;">Wilson's Lemonade 330ml</div>
+            <div style="font-size:11.5px;color:var(--trade-muted);">24 cases × ₦2,000</div>
+          </div>
+          <div style="font-weight:700;color:var(--trade-navy);">₦48,000</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--trade-bg);border-radius:8px;">
+          <div>
+            <div style="font-size:13px;font-weight:600;">August Secrets Body Lotion 200ml</div>
+            <div style="font-size:11.5px;color:var(--trade-muted);">12 units × ₦3,000</div>
+          </div>
+          <div style="font-weight:700;color:var(--trade-navy);">₦36,000</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--trade-bg);border-radius:8px;">
+          <div>
+            <div style="font-size:13px;font-weight:600;">Zayith Organic Honey 250g</div>
+            <div style="font-size:11.5px;color:var(--trade-muted);">6 units × ₦3,000</div>
+          </div>
+          <div style="font-weight:700;color:var(--trade-navy);">₦18,000</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--trade-bg);border-radius:8px;">
+          <div>
+            <div style="font-size:13px;font-weight:600;">Kezia Hair Serum 100ml</div>
+            <div style="font-size:11.5px;color:var(--trade-muted);">6 units × ₦4,200</div>
+          </div>
+          <div style="font-weight:700;color:var(--trade-navy);">₦25,200</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--trade-bg);border-radius:8px;">
+          <div>
+            <div style="font-size:13px;font-weight:600;">Orisirisi Snack Mix 100g</div>
+            <div style="font-size:11.5px;color:var(--trade-muted);">48 packs × ₦450</div>
+          </div>
+          <div style="font-weight:700;color:var(--trade-navy);">₦21,600</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Totals -->
+    <div style="border-top:1px solid var(--trade-border);padding-top:16px;margin-bottom:22px;">
+      <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;color:var(--trade-muted);">
+        <span>Subtotal</span><span style="color:var(--trade-text);font-weight:600;">₦148,800</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;color:var(--trade-muted);">
+        <span>Delivery</span><span style="color:var(--trade-text);font-weight:600;">₦5,000</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:15px;font-weight:700;padding:10px 0 0;border-top:1px solid var(--trade-border);margin-top:6px;">
+        <span>Total</span><span style="color:var(--trade-navy);">₦153,800</span>
+      </div>
+    </div>
+
+    <!-- Status timeline -->
+    <div>
+      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--trade-muted);margin-bottom:14px;">
+        Order Status
+      </div>
+      <div class="status-timeline">
+        <div class="timeline-step done">
+          <div class="timeline-dot"><i class="fa-solid fa-check"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-label">Order placed</div>
+            <div class="timeline-desc">12 Jan 2026 · 10:24am</div>
+          </div>
+        </div>
+        <div class="timeline-step done">
+          <div class="timeline-dot"><i class="fa-solid fa-check"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-label">Confirmed by account manager</div>
+            <div class="timeline-desc">12 Jan 2026 · 12:05pm</div>
+          </div>
+        </div>
+        <div class="timeline-step done">
+          <div class="timeline-dot"><i class="fa-solid fa-check"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-label">Packed & dispatched</div>
+            <div class="timeline-desc">14 Jan 2026 · 8:00am</div>
+          </div>
+        </div>
+        <div class="timeline-step done">
+          <div class="timeline-dot"><i class="fa-solid fa-check"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-label">Delivered</div>
+            <div class="timeline-desc">15 Jan 2026 · 11:42am</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div style="display:flex;gap:10px;margin-top:24px;">
+      <button class="btn btn-secondary" style="flex:1;">
+        <i class="fa-solid fa-download"></i> Download invoice
+      </button>
+      <a href="order.html" class="btn btn-primary" style="flex:1;justify-content:center;text-decoration:none;">
+        <i class="fa-solid fa-rotate-right"></i> Reorder
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Overlay for slide panel -->
+<div class="sidebar-overlay" id="panel-overlay" style="z-index:199;"></div>
+
+<script src="../js/trade-portal.js"></script>
+<script>
+  if (!TradeAuth.isLoggedIn()) window.location.href = 'index.html';
+  else populateRetailerInfo();
+
+  // Panel open/close with overlay
+  document.querySelectorAll('[data-view-order]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const orderId = btn.getAttribute('data-view-order');
+      document.getElementById('panel-order-id').textContent = orderId;
+      document.getElementById('order-detail-panel').classList.add('open');
+      document.getElementById('panel-overlay').classList.add('open');
+    });
+  });
+
+  document.querySelector('[data-close-panel="order-detail-panel"]').addEventListener('click', () => {
+    document.getElementById('order-detail-panel').classList.remove('open');
+    document.getElementById('panel-overlay').classList.remove('open');
+  });
+
+  document.getElementById('panel-overlay').addEventListener('click', () => {
+    document.getElementById('order-detail-panel').classList.remove('open');
+    document.getElementById('panel-overlay').classList.remove('open');
+  });
+</script>
+
+</body>
+</html>

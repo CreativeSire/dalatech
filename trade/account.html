@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account — DALA Trade Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/trade-portal.css" />
+</head>
+<body data-trade-page="account">
+
+<div class="trade-portal">
+  <!-- ── Sidebar ─────────────────────────────────────────── -->
+  <aside class="trade-sidebar">
+    <div class="sidebar-logo">
+      <img src="../4.png" alt="DALA Technologies" />
+      <div class="sidebar-logo-label">Trade Portal</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Navigation</div>
+      <a href="dashboard.html" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+      <a href="catalog.html" data-page="catalog"><i class="fa-solid fa-layer-group"></i> Brand Catalog</a>
+      <a href="order.html" data-page="order"><i class="fa-solid fa-clipboard-list"></i> Order Builder</a>
+      <a href="orders.html" data-page="orders"><i class="fa-solid fa-clock-rotate-left"></i> Order History</a>
+      <a href="delivery.html" data-page="delivery"><i class="fa-solid fa-calendar-days"></i> Delivery Schedule</a>
+      <div class="sidebar-nav-label" style="margin-top:8px;">Account</div>
+      <a href="account.html" data-page="account"><i class="fa-solid fa-circle-user"></i> My Account</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-account">
+        <div class="sidebar-avatar" data-retailer-initials>AD</div>
+        <div class="sidebar-account-info">
+          <div class="sidebar-account-name" data-retailer-name>Addide Supermarket</div>
+          <div class="sidebar-account-tier" data-retailer-tier>Standard Partner</div>
+        </div>
+      </div>
+      <button class="btn-logout" data-logout><i class="fa-solid fa-right-from-bracket"></i> Sign out</button>
+    </div>
+  </aside>
+  <div class="sidebar-overlay"></div>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main class="trade-main">
+    <div class="trade-topbar">
+      <button class="hamburger-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-greeting">
+        <h2 data-greeting>Good morning, Addide Supermarket</h2>
+        <p data-topbar-date>Friday, 27 March 2026</p>
+      </div>
+      <div class="topbar-actions">
+        <a href="order.html" class="btn btn-orange btn-sm"><i class="fa-solid fa-plus"></i> New order</a>
+        <button class="topbar-btn-icon"><i class="fa-regular fa-bell"></i><span class="notif-dot"></span></button>
+      </div>
+    </div>
+
+    <div class="trade-content">
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1>My Account</h1>
+          <p>Manage your account details, billing, and support</p>
+        </div>
+      </div>
+
+      <div class="account-grid">
+
+        <!-- ── Left column ──────────────────────────────── -->
+        <div style="display:flex;flex-direction:column;gap:20px;">
+
+          <!-- Account details -->
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-building" style="color:var(--trade-navy);margin-right:8px;"></i>Account Details</h3>
+              <button class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-pen"></i> Edit details
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="account-detail-row">
+                <span class="detail-label">Retailer name</span>
+                <span class="detail-value" data-retailer-name>Addide Supermarket</span>
+              </div>
+              <div class="account-detail-row">
+                <span class="detail-label">Location</span>
+                <span class="detail-value" data-retailer-location>Ikeja, Lagos</span>
+              </div>
+              <div class="account-detail-row">
+                <span class="detail-label">Partner tier</span>
+                <span class="detail-value">
+                  <span class="badge badge-navy" data-retailer-tier>Standard Partner</span>
+                </span>
+              </div>
+              <div class="account-detail-row">
+                <span class="detail-label">Member since</span>
+                <span class="detail-value">March 2024</span>
+              </div>
+              <div class="account-detail-row">
+                <span class="detail-label">Account status</span>
+                <span class="detail-value">
+                  <span class="badge badge-green"><i class="fa-solid fa-circle-check"></i> Active</span>
+                </span>
+              </div>
+              <div class="account-detail-row">
+                <span class="detail-label">Portal access</span>
+                <span class="detail-value">Trade Portal v2</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Billing -->
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-file-invoice" style="color:var(--trade-navy);margin-right:8px;"></i>Billing & Payments</h3>
+              <button class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-file-lines"></i> View invoices
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="account-detail-row">
+                <span class="detail-label">Payment terms</span>
+                <span class="detail-value">Net 30</span>
+              </div>
+              <div class="account-detail-row">
+                <span class="detail-label">Outstanding balance</span>
+                <span class="detail-value">
+                  <span style="color:var(--trade-warning);font-weight:700;">₦62,000</span>
+                  <span style="font-size:11px;color:var(--trade-muted);margin-left:6px;">(TP-2835)</span>
+                </span>
+              </div>
+              <div class="account-detail-row">
+                <span class="detail-label">Bank details on file</span>
+                <span class="detail-value">
+                  <span class="badge badge-green"><i class="fa-solid fa-check"></i> On file</span>
+                </span>
+              </div>
+              <div class="account-detail-row">
+                <span class="detail-label">Currency</span>
+                <span class="detail-value">Nigerian Naira (₦)</span>
+              </div>
+
+              <div style="margin-top:16px;padding:14px;background:rgba(245,114,35,0.07);border-radius:8px;border:1px solid rgba(245,114,35,0.2);">
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+                  <div>
+                    <div style="font-size:13px;font-weight:600;">Outstanding: TP-2835</div>
+                    <div style="font-size:12px;color:var(--trade-muted);">Due date: 25 Jan 2026</div>
+                  </div>
+                  <button class="btn btn-orange btn-sm">Pay ₦62,000</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ── Right column ─────────────────────────────── -->
+        <div style="display:flex;flex-direction:column;gap:20px;">
+
+          <!-- Account manager -->
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-headset" style="color:var(--trade-navy);margin-right:8px;"></i>Your Account Manager</h3>
+            </div>
+            <div class="card-body" style="text-align:center;">
+              <div class="manager-card-avatar" data-retailer-initials>TA</div>
+              <div style="font-size:17px;font-weight:700;margin-bottom:4px;" data-retailer-manager>Tunde Adeyemi</div>
+              <div style="font-size:13px;color:var(--trade-muted);margin-bottom:18px;">Senior Account Manager · DALA Technologies</div>
+
+              <div style="display:flex;flex-direction:column;gap:10px;text-align:left;margin-bottom:20px;">
+                <div style="display:flex;align-items:center;gap:10px;font-size:13px;">
+                  <i class="fa-solid fa-phone" style="color:var(--trade-navy);width:16px;"></i>
+                  <span>+234 801 234 5678</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;font-size:13px;">
+                  <i class="fa-regular fa-envelope" style="color:var(--trade-navy);width:16px;"></i>
+                  <span>tunde@dalatechnologies.com</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;font-size:13px;">
+                  <i class="fa-solid fa-location-dot" style="color:var(--trade-navy);width:16px;"></i>
+                  <span>Lagos, Nigeria</span>
+                </div>
+              </div>
+
+              <div style="display:flex;gap:10px;">
+                <a href="https://wa.me/2348012345678" target="_blank"
+                   class="btn btn-secondary" style="flex:1;justify-content:center;text-decoration:none;gap:7px;">
+                  <i class="fa-brands fa-whatsapp" style="color:#25d366;font-size:15px;"></i> WhatsApp
+                </a>
+                <button class="btn btn-primary" style="flex:1;gap:7px;">
+                  <i class="fa-regular fa-calendar"></i> Book meeting
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Support -->
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-circle-question" style="color:var(--trade-navy);margin-right:8px;"></i>Support</h3>
+            </div>
+            <div class="card-body">
+              <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:18px;">
+                <div style="display:flex;align-items:center;gap:10px;font-size:13px;">
+                  <i class="fa-regular fa-envelope" style="color:var(--trade-navy);width:16px;"></i>
+                  <a href="mailto:support@dalatechnologies.com" style="color:var(--trade-navy-mid);font-weight:500;">support@dalatechnologies.com</a>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;font-size:13px;">
+                  <i class="fa-brands fa-whatsapp" style="color:#25d366;width:16px;"></i>
+                  <a href="#" style="color:var(--trade-navy-mid);font-weight:500;">Join WhatsApp partner group</a>
+                </div>
+              </div>
+
+              <div style="border-top:1px solid var(--trade-border);padding-top:16px;">
+                <div style="font-size:13px;font-weight:600;margin-bottom:12px;">Submit a request</div>
+                <form id="supportForm">
+                  <div class="form-group">
+                    <label class="form-label">Subject</label>
+                    <select class="form-control">
+                      <option value="">Select a topic…</option>
+                      <option>Order query</option>
+                      <option>Delivery issue</option>
+                      <option>Product availability</option>
+                      <option>Billing & payments</option>
+                      <option>Account update</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" rows="4" placeholder="Describe your request in detail…"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fa-solid fa-paper-plane"></i> Send request
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /.account-grid -->
+    </div>
+  </main>
+</div>
+
+<script src="../js/trade-portal.js"></script>
+<script>
+  if (!TradeAuth.isLoggedIn()) window.location.href = 'index.html';
+  else populateRetailerInfo();
+
+  document.getElementById('supportForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    showToast('Support request submitted. Your account manager will respond within 24 hours.', 'success', 5000);
+    this.reset();
+  });
+</script>
+
+</body>
+</html>

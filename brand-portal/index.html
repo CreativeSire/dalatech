@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Portal — Sign In | DALA Technologies</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/brand-portal.css" />
+</head>
+<body class="login-page">
+
+  <!-- LEFT PANEL -->
+  <div class="login-left">
+    <div>
+      <img src="../4.png" alt="DALA Technologies" class="login-logo" />
+    </div>
+
+    <div class="login-left-content">
+      <h1 class="login-headline">Your retail distribution,<br>made visible.</h1>
+      <p class="login-subtext">
+        See exactly where your products are, who's ordering them, and how your brand is growing across Nigerian retail — all in one place.
+      </p>
+
+      <ul class="login-trust-list">
+        <li class="login-trust-item">
+          <i class="fa-solid fa-store"></i>
+          47 active retail locations tracking your brand
+        </li>
+        <li class="login-trust-item">
+          <i class="fa-solid fa-bolt"></i>
+          Real-time order data, updated daily
+        </li>
+        <li class="login-trust-item">
+          <i class="fa-solid fa-file-chart-column"></i>
+          Monthly distribution reports, automatically generated
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="login-brands-label">Our brand partners</p>
+      <div class="login-brand-chips">
+        <span class="login-brand-chip">Wilson's Lemonade</span>
+        <span class="login-brand-chip">Zayith</span>
+        <span class="login-brand-chip">August Secrets</span>
+        <span class="login-brand-chip">Orisirisi</span>
+        <span class="login-brand-chip">Cresso Life</span>
+        <span class="login-brand-chip">Eti Farms</span>
+        <span class="login-brand-chip">Kezia</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="login-right">
+    <div class="login-form-wrap">
+      <h2>Sign in to your<br>Brand Portal</h2>
+      <p class="login-subtitle">Welcome back. Let's see how your brand is performing.</p>
+
+      <form id="login-form" novalidate>
+        <div class="form-field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="you@yourbrand.com" autocomplete="email" required />
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required />
+        </div>
+        <button type="submit" class="btn-login">
+          Sign in &nbsp;<i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+
+      <div id="login-error" class="login-error">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        Incorrect password. Use the demo password to sign in.
+      </div>
+
+      <div class="login-links">
+        <a href="#">Forgot password?</a>
+        <a href="#" class="apply-link">Not a partner yet? Apply to list your brand &rarr;</a>
+      </div>
+
+      <div class="demo-hint">
+        <i class="fa-solid fa-circle-info"></i>
+        <span><strong>Demo:</strong> any email + password: <strong>demo</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/brand-portal.js"></script>
+  <script>bpLoginPage();</script>
+</body>
+</html>

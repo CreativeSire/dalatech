@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Builder — DALA Trade Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/trade-portal.css" />
+</head>
+<body data-trade-page="order">
+
+<div class="trade-portal">
+  <!-- ── Sidebar ─────────────────────────────────────────── -->
+  <aside class="trade-sidebar">
+    <div class="sidebar-logo">
+      <img src="../4.png" alt="DALA Technologies" />
+      <div class="sidebar-logo-label">Trade Portal</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Navigation</div>
+      <a href="dashboard.html" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+      <a href="catalog.html" data-page="catalog"><i class="fa-solid fa-layer-group"></i> Brand Catalog</a>
+      <a href="order.html" data-page="order"><i class="fa-solid fa-clipboard-list"></i> Order Builder</a>
+      <a href="orders.html" data-page="orders"><i class="fa-solid fa-clock-rotate-left"></i> Order History</a>
+      <a href="delivery.html" data-page="delivery"><i class="fa-solid fa-calendar-days"></i> Delivery Schedule</a>
+      <div class="sidebar-nav-label" style="margin-top:8px;">Account</div>
+      <a href="account.html" data-page="account"><i class="fa-solid fa-circle-user"></i> My Account</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-account">
+        <div class="sidebar-avatar" data-retailer-initials>AD</div>
+        <div class="sidebar-account-info">
+          <div class="sidebar-account-name" data-retailer-name>Addide Supermarket</div>
+          <div class="sidebar-account-tier" data-retailer-tier>Standard Partner</div>
+        </div>
+      </div>
+      <button class="btn-logout" data-logout><i class="fa-solid fa-right-from-bracket"></i> Sign out</button>
+    </div>
+  </aside>
+  <div class="sidebar-overlay"></div>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main class="trade-main">
+    <div class="trade-topbar">
+      <button class="hamburger-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-greeting">
+        <h2 data-greeting>Good morning, Addide Supermarket</h2>
+        <p data-topbar-date>Friday, 27 March 2026</p>
+      </div>
+      <div class="topbar-actions">
+        <button class="topbar-btn-icon"><i class="fa-regular fa-bell"></i><span class="notif-dot"></span></button>
+      </div>
+    </div>
+
+    <div class="trade-content">
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1>New Order</h1>
+          <p>Draft #TP-2851 · Delivery window: Thursday 15 Jan</p>
+        </div>
+        <div class="page-header-actions">
+          <button class="btn btn-secondary" id="saveDraftBtn">
+            <i class="fa-regular fa-floppy-disk"></i> Save draft
+          </button>
+          <button class="btn btn-orange" id="submitOrderBtn">
+            <i class="fa-solid fa-paper-plane"></i> Submit order
+          </button>
+        </div>
+      </div>
+
+      <div class="content-grid-2">
+
+        <!-- ── Left: Order lines ─────────────────────────── -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-list-check" style="color:var(--trade-navy);margin-right:8px;"></i>Order Lines</h3>
+              <span style="font-size:12px;color:var(--trade-muted);">3 items</span>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="trade-table order-lines-table">
+                <thead>
+                  <tr>
+                    <th>Brand</th>
+                    <th>Product</th>
+                    <th>Pack</th>
+                    <th>Trade Price</th>
+                    <th>Qty</th>
+                    <th>Line Total</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-unit-price="2000">
+                    <td style="font-size:12px;color:var(--trade-muted);font-weight:500;">Wilson's Lemonade</td>
+                    <td><div class="product-name">Lemonade 330ml</div></td>
+                    <td style="font-size:12px;color:var(--trade-muted);">24-pack case</td>
+                    <td style="font-weight:600;">₦2,000</td>
+                    <td><input type="number" class="qty-input" value="24" min="1" /></td>
+                    <td class="line-total" style="font-weight:700;color:var(--trade-navy);">₦48,000</td>
+                    <td><button class="btn-remove-row" title="Remove"><i class="fa-solid fa-xmark"></i></button></td>
+                  </tr>
+                  <tr data-unit-price="3000">
+                    <td style="font-size:12px;color:var(--trade-muted);font-weight:500;">August Secrets</td>
+                    <td><div class="product-name">Body Lotion 200ml</div></td>
+                    <td style="font-size:12px;color:var(--trade-muted);">Single unit</td>
+                    <td style="font-weight:600;">₦3,000</td>
+                    <td><input type="number" class="qty-input" value="12" min="1" /></td>
+                    <td class="line-total" style="font-weight:700;color:var(--trade-navy);">₦36,000</td>
+                    <td><button class="btn-remove-row" title="Remove"><i class="fa-solid fa-xmark"></i></button></td>
+                  </tr>
+                  <tr data-unit-price="3000">
+                    <td style="font-size:12px;color:var(--trade-muted);font-weight:500;">Zayith</td>
+                    <td><div class="product-name">Organic Honey 250g</div></td>
+                    <td style="font-size:12px;color:var(--trade-muted);">Single unit</td>
+                    <td style="font-weight:600;">₦3,000</td>
+                    <td><input type="number" class="qty-input" value="6" min="1" /></td>
+                    <td class="line-total" style="font-weight:700;color:var(--trade-navy);">₦18,000</td>
+                    <td><button class="btn-remove-row" title="Remove"><i class="fa-solid fa-xmark"></i></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding:16px 22px;border-top:1px solid var(--trade-border);">
+              <button class="btn btn-secondary" id="addProductBtn">
+                <i class="fa-solid fa-plus"></i> Add product
+              </button>
+            </div>
+          </div>
+
+          <!-- Order notes -->
+          <div class="card" style="margin-top:16px;">
+            <div class="card-header">
+              <h3><i class="fa-regular fa-note-sticky" style="color:var(--trade-navy);margin-right:8px;"></i>Order Notes</h3>
+              <span style="font-size:12px;color:var(--trade-muted);">Optional</span>
+            </div>
+            <div class="card-body">
+              <textarea class="form-control" rows="3" placeholder="Add any special instructions for your account manager, e.g. delivery access notes, stacking preferences…"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Right: Summary ───────────────────────────── -->
+        <div>
+          <div class="order-summary">
+            <div class="order-summary-header">
+              <i class="fa-solid fa-receipt" style="margin-right:8px;"></i> Order Summary
+            </div>
+            <div class="order-summary-body">
+              <div class="summary-row">
+                <span class="label">Subtotal</span>
+                <span class="value" id="order-subtotal">₦102,000</span>
+              </div>
+              <div class="summary-row">
+                <span class="label">Delivery fee</span>
+                <span class="value">₦5,000</span>
+              </div>
+              <div class="summary-row total">
+                <span class="label">Total</span>
+                <span class="value" id="order-total">₦107,000</span>
+              </div>
+
+              <div class="summary-divider"></div>
+
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:8px;">
+                <span style="color:var(--trade-muted);">Minimum order</span>
+                <div id="moq-status"><span class="badge badge-green"><i class="fa-solid fa-check"></i> Met</span></div>
+              </div>
+              <div style="font-size:11.5px;color:var(--trade-muted);margin-bottom:14px;">
+                Minimum order value: ₦50,000
+              </div>
+
+              <div class="summary-meta">
+                <div class="summary-meta-row">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  <span><strong>Delivery window:</strong> Thursday 15 Jan</span>
+                </div>
+                <div class="summary-meta-row">
+                  <i class="fa-solid fa-clock"></i>
+                  <span><strong>Cutoff:</strong> Wednesday 14 Jan, 5pm</span>
+                </div>
+                <div class="summary-meta-row">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Ikeja, Lagos</span>
+                </div>
+              </div>
+
+              <div class="summary-manager">
+                <div class="manager-avatar">TA</div>
+                <div class="manager-info">
+                  <p data-retailer-manager>Tunde Adeyemi</p>
+                  <p>Your account manager</p>
+                </div>
+                <a href="https://wa.me/2348012345678" target="_blank"
+                   class="btn btn-secondary btn-sm" style="margin-left:auto;gap:6px;">
+                  <i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> Chat
+                </a>
+              </div>
+
+              <div style="margin-top:18px;">
+                <button class="btn btn-primary btn-full btn-lg" id="submitOrderMain">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  Submit order for confirmation
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ── Add Product Modal ─────────────────────────────────── -->
+<div class="modal-overlay" id="addProductModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3><i class="fa-solid fa-plus" style="margin-right:8px;color:var(--trade-navy);"></i>Add Product to Order</h3>
+      <button class="modal-close" onclick="closeModal('addProductModal')"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="filter-input" style="margin-bottom:16px;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search products by name or brand…" style="min-width:0;flex:1;" />
+      </div>
+
+      <div style="font-size:12px;font-weight:600;color:var(--trade-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px;">Available SKUs</div>
+
+      <div style="display:flex;flex-direction:column;gap:2px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:8px;background:var(--trade-bg);cursor:pointer;" onmouseover="this.style.background='#e8ecf4'" onmouseout="this.style.background='var(--trade-bg)'">
+          <div>
+            <div style="font-size:13px;font-weight:600;">Wilson's Lemonade 500ml</div>
+            <div style="font-size:11.5px;color:var(--trade-muted);">Wilson's Lemonade · ₦2,600/case · MOQ: 6 cases</div>
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="closeModal('addProductModal')">Add</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:8px;background:var(--trade-bg);cursor:pointer;" onmouseover="this.style.background='#e8ecf4'" onmouseout="this.style.background='var(--trade-bg)'">
+          <div>
+            <div style="font-size:13px;font-weight:600;">Kezia Hair Serum 100ml</div>
+            <div style="font-size:11.5px;color:var(--trade-muted);">Kezia · ₦4,200/unit · MOQ: 6 units</div>
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="closeModal('addProductModal')">Add</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:8px;background:var(--trade-bg);cursor:pointer;" onmouseover="this.style.background='#e8ecf4'" onmouseout="this.style.background='var(--trade-bg)'">
+          <div>
+            <div style="font-size:13px;font-weight:600;">Cresso Life Vitamin C Drink 250ml</div>
+            <div style="font-size:11.5px;color:var(--trade-muted);">Cresso Life · ₦1,500/unit · MOQ: 24 units</div>
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="closeModal('addProductModal')">Add</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:8px;background:var(--trade-bg);cursor:pointer;" onmouseover="this.style.background='#e8ecf4'" onmouseout="this.style.background='var(--trade-bg)'">
+          <div>
+            <div style="font-size:13px;font-weight:600;">Orisirisi Snack Mix 100g</div>
+            <div style="font-size:11.5px;color:var(--trade-muted);">Orisirisi · ₦450/pack · MOQ: 24 packs</div>
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="closeModal('addProductModal')">Add</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:8px;background:var(--trade-bg);cursor:pointer;" onmouseover="this.style.background='#e8ecf4'" onmouseout="this.style.background='var(--trade-bg)'">
+          <div>
+            <div style="font-size:13px;font-weight:600;">Eti Farms Fresh Milk 500ml</div>
+            <div style="font-size:11.5px;color:var(--trade-muted);">Eti Farms · ₦850/unit · MOQ: 12 units</div>
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="closeModal('addProductModal')">Add</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:8px;background:var(--trade-bg);cursor:pointer;" onmouseover="this.style.background='#e8ecf4'" onmouseout="this.style.background='var(--trade-bg)'">
+          <div>
+            <div style="font-size:13px;font-weight:600;">Zayith Organic Honey 500g</div>
+            <div style="font-size:11.5px;color:var(--trade-muted);">Zayith · ₦3,200/unit · MOQ: 12 units</div>
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="closeModal('addProductModal')">Add</button>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;text-align:center;">
+        <a href="catalog.html" style="font-size:13px;color:var(--trade-navy-mid);font-weight:600;">
+          Browse full catalog <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Close modal on overlay click -->
+<script>
+  document.getElementById('addProductModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal('addProductModal');
+  });
+</script>
+
+<script src="../js/trade-portal.js"></script>
+<script>
+  if (!TradeAuth.isLoggedIn()) window.location.href = 'index.html';
+  else populateRetailerInfo();
+
+  document.getElementById('addProductBtn').addEventListener('click', () => openModal('addProductModal'));
+
+  function handleSubmit() {
+    showToast(
+      'Order submitted. Reference #TP-2851. Your account manager will confirm within 2 hours.',
+      'success',
+      7000
+    );
+    document.getElementById('submitOrderBtn').disabled = true;
+    document.getElementById('submitOrderMain').disabled = true;
+    setTimeout(() => {
+      document.getElementById('submitOrderBtn').disabled = false;
+      document.getElementById('submitOrderMain').disabled = false;
+    }, 7500);
+  }
+
+  document.getElementById('submitOrderBtn').addEventListener('click', handleSubmit);
+  document.getElementById('submitOrderMain').addEventListener('click', handleSubmit);
+
+  document.getElementById('saveDraftBtn').addEventListener('click', () => {
+    showToast('Draft saved successfully.', 'success', 3000);
+  });
+</script>
+
+</body>
+</html>

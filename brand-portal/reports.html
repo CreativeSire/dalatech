@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports | DALA Brand Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/brand-portal.css" />
+</head>
+<body data-bp-page="reports">
+
+  <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Open menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-shell">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo-wrap">
+        <img src="../4.png" alt="DALA Technologies" class="sidebar-logo" />
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-label">Main</p>
+        <a href="dashboard.html" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="reach.html"     data-page="reach"><i class="fa-solid fa-map-location-dot"></i> Retailer Reach</a>
+        <a href="catalog.html"   data-page="catalog"><i class="fa-solid fa-boxes-stacking"></i> My Products</a>
+        <a href="orders.html"    data-page="orders"><i class="fa-solid fa-file-invoice-pound"></i> Orders &amp; Payments</a>
+        <p class="sidebar-label">Insights</p>
+        <a href="reports.html"   data-page="reports"><i class="fa-solid fa-chart-bar"></i> Reports</a>
+        <a href="consumer.html"  data-page="consumer"><i class="fa-solid fa-store"></i> Consumer Store</a>
+        <p class="sidebar-label">Account</p>
+        <a href="account.html"   data-page="account"><i class="fa-solid fa-circle-user"></i> My Account</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-brand-tag">
+          <div class="brand-avatar" id="sidebar-avatar">WL</div>
+          <div class="brand-name-tag">
+            <span id="sidebar-brand-name">Wilson's Lemonade</span>
+            <span>Brand Partner</span>
+          </div>
+        </div>
+        <button class="btn-logout" data-logout>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main-area">
+      <header class="topbar">
+        <span class="topbar-title">Reports</span>
+        <div class="topbar-meta">
+          <span class="topbar-date" id="topbar-date"></span>
+          <span class="topbar-updated">Last updated: just now</span>
+        </div>
+      </header>
+
+      <main class="page-body">
+        <!-- Page header -->
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1>Reports</h1>
+            <p>Download distribution reports, audit summaries, and performance data for <span data-bp-brand>Wilson's Lemonade</span></p>
+          </div>
+          <div class="page-header-actions">
+            <button class="btn btn-primary" data-panel-open="custom-report-panel">
+              <i class="fa-solid fa-sliders"></i> Request Custom Report
+            </button>
+          </div>
+        </div>
+
+        <!-- Recent activity notice -->
+        <div class="info-note info-green" style="margin-bottom:24px;">
+          <i class="fa-solid fa-circle-check"></i>
+          <span><strong>Your January 2026 distribution report is ready.</strong> Generated 13 Jan 2026. Click the card below to download.</span>
+        </div>
+
+        <!-- Reports grid -->
+        <div class="reports-grid">
+          <!-- 1 -->
+          <div class="report-card">
+            <div class="report-card-icon rc-green"><i class="fa-solid fa-truck"></i></div>
+            <span class="report-period">Jan 2026</span>
+            <h3>Monthly Distribution Report</h3>
+            <p>Full breakdown of orders, deliveries, and revenue across all retail locations. Includes per-retailer and per-SKU summaries.</p>
+            <button class="btn btn-primary btn-sm" onclick="alert('In a live system this would download a PDF. This is a demo.')">
+              <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+            </button>
+          </div>
+          <!-- 2 -->
+          <div class="report-card">
+            <div class="report-card-icon rc-blue"><i class="fa-solid fa-clipboard-list"></i></div>
+            <span class="report-period">Jan 2026</span>
+            <h3>Retailer Compliance Report</h3>
+            <p>Which retailers met shelf standards, product placement requirements, and reorder frequency during the month.</p>
+            <button class="btn btn-outline btn-sm" onclick="alert('In a live system this would download a PDF. This is a demo.')">
+              <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+            </button>
+          </div>
+          <!-- 3 -->
+          <div class="report-card">
+            <div class="report-card-icon rc-orange"><i class="fa-solid fa-chart-line"></i></div>
+            <span class="report-period">Q4 2025</span>
+            <h3>SKU Performance Report</h3>
+            <p>Unit sales by SKU across all retailers for Q4 2025. Identify your top-performing and under-performing variants.</p>
+            <button class="btn btn-outline btn-sm" onclick="alert('In a live system this would download a PDF. This is a demo.')">
+              <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+            </button>
+          </div>
+          <!-- 4 -->
+          <div class="report-card">
+            <div class="report-card-icon rc-purple"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <span class="report-period">Q4 2025</span>
+            <h3>Payment &amp; Invoice Summary</h3>
+            <p>Complete payment timeline, outstanding invoices, and financial reconciliation across all retail partners.</p>
+            <button class="btn btn-outline btn-sm" onclick="alert('In a live system this would download a PDF. This is a demo.')">
+              <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+            </button>
+          </div>
+          <!-- 5 -->
+          <div class="report-card">
+            <div class="report-card-icon rc-amber"><i class="fa-solid fa-location-dot"></i></div>
+            <span class="report-period">2025 Annual</span>
+            <h3>New Retailer Onboarding</h3>
+            <p>Timeline of all new retail locations added across 2025. Includes onboarding dates, location details, and initial order data.</p>
+            <button class="btn btn-outline btn-sm" onclick="alert('In a live system this would download a PDF. This is a demo.')">
+              <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+            </button>
+          </div>
+          <!-- 6 -->
+          <div class="report-card">
+            <div class="report-card-icon rc-pink"><i class="fa-solid fa-mobile-screen"></i></div>
+            <span class="report-period">Jan 2026</span>
+            <h3>Consumer Store Report</h3>
+            <p>Performance of your products on the DALA consumer marketplace — orders, views, ratings, and "Find in store" click-throughs.</p>
+            <button class="btn btn-outline btn-sm" onclick="alert('In a live system this would download a PDF. This is a demo.')">
+              <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Custom report form card -->
+        <div class="custom-report-card">
+          <h3><i class="fa-solid fa-sliders" style="color:var(--bp-accent);margin-right:8px"></i>Request a Custom Report</h3>
+          <form data-demo-form="custom-report">
+            <div class="form-row">
+              <div class="pf-group" style="margin-bottom:0">
+                <label>Report type</label>
+                <select>
+                  <option value="">Select report type...</option>
+                  <option>Distribution &amp; Delivery</option>
+                  <option>SKU Performance</option>
+                  <option>Retailer Compliance</option>
+                  <option>Payment &amp; Reconciliation</option>
+                  <option>Consumer Marketplace</option>
+                  <option>Custom / Other</option>
+                </select>
+              </div>
+              <div class="pf-group" style="margin-bottom:0">
+                <label>Date range</label>
+                <select>
+                  <option>January 2026</option>
+                  <option>December 2025</option>
+                  <option>Q4 2025 (Oct–Dec)</option>
+                  <option>Q3 2025 (Jul–Sep)</option>
+                  <option>H2 2025</option>
+                  <option>Full year 2025</option>
+                  <option>Custom range</option>
+                </select>
+              </div>
+            </div>
+            <div class="pf-group" style="margin-top:16px;">
+              <label>Specific retailers (optional — leave blank for all)</label>
+              <input type="text" placeholder="e.g. SPAR, Addide, Foodco" />
+            </div>
+            <div class="pf-group">
+              <label>Additional notes or requirements</label>
+              <textarea placeholder="e.g. I need a breakdown by SKU with monthly trend for each retailer..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fa-solid fa-paper-plane"></i> Submit request
+            </button>
+          </form>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="js/brand-portal.js"></script>
+  <script>bpInit();</script>
+</body>
+</html>

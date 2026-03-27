@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Products | DALA Brand Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/brand-portal.css" />
+</head>
+<body data-bp-page="catalog">
+
+  <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Open menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-shell">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo-wrap">
+        <img src="../4.png" alt="DALA Technologies" class="sidebar-logo" />
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-label">Main</p>
+        <a href="dashboard.html" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="reach.html"     data-page="reach"><i class="fa-solid fa-map-location-dot"></i> Retailer Reach</a>
+        <a href="catalog.html"   data-page="catalog"><i class="fa-solid fa-boxes-stacking"></i> My Products</a>
+        <a href="orders.html"    data-page="orders"><i class="fa-solid fa-file-invoice-pound"></i> Orders &amp; Payments</a>
+        <p class="sidebar-label">Insights</p>
+        <a href="reports.html"   data-page="reports"><i class="fa-solid fa-chart-bar"></i> Reports</a>
+        <a href="consumer.html"  data-page="consumer"><i class="fa-solid fa-store"></i> Consumer Store</a>
+        <p class="sidebar-label">Account</p>
+        <a href="account.html"   data-page="account"><i class="fa-solid fa-circle-user"></i> My Account</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-brand-tag">
+          <div class="brand-avatar" id="sidebar-avatar">WL</div>
+          <div class="brand-name-tag">
+            <span id="sidebar-brand-name">Wilson's Lemonade</span>
+            <span>Brand Partner</span>
+          </div>
+        </div>
+        <button class="btn-logout" data-logout>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main-area">
+      <header class="topbar">
+        <span class="topbar-title">My Products</span>
+        <div class="topbar-meta">
+          <span class="topbar-date" id="topbar-date"></span>
+          <span class="topbar-updated">Last updated: just now</span>
+        </div>
+      </header>
+
+      <main class="page-body">
+        <!-- Page header -->
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1>My Products</h1>
+            <p>Manage your active SKUs and request new product listings</p>
+          </div>
+          <div class="page-header-actions">
+            <button class="btn btn-outline" data-panel-open="update-prices-panel">
+              <i class="fa-solid fa-tag"></i> Update Prices
+            </button>
+            <button class="btn btn-primary" data-panel-open="new-sku-panel">
+              <i class="fa-solid fa-plus"></i> Request New SKU
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="stats-bar">
+          <div class="stat-item">
+            <div class="stat-val accent">8</div>
+            <div class="stat-lbl">Active SKUs</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val amber">2</div>
+            <div class="stat-lbl">Pending review</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val">₦1,420</div>
+            <div class="stat-lbl">Avg. trade price</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val blue">47</div>
+            <div class="stat-lbl">Retailers stocking</div>
+          </div>
+        </div>
+
+        <!-- SKU Table -->
+        <div class="table-wrap">
+          <div class="table-header">
+            <h3>SKU Catalogue — <span data-bp-brand>Wilson's Lemonade</span></h3>
+            <span class="badge badge-green">10 total SKUs</span>
+          </div>
+          <div class="table-scroll">
+            <table class="bp-table">
+              <thead>
+                <tr>
+                  <th>SKU</th>
+                  <th>Product Name</th>
+                  <th>Pack Size</th>
+                  <th>RRP</th>
+                  <th>Trade Price</th>
+                  <th>Status</th>
+                  <th>Retailers Stocking</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="td-mono">WL-001</td>
+                  <td class="td-bold">Wilson's Lemonade Original 330ml</td>
+                  <td class="td-muted">Case of 24</td>
+                  <td>₦2,400</td>
+                  <td class="td-bold">₦1,800</td>
+                  <td><span class="pill pill-green">Active</span></td>
+                  <td><strong>47</strong> retailers</td>
+                  <td><button class="btn btn-sm btn-outline"><i class="fa-solid fa-pen"></i> Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="td-mono">WL-002</td>
+                  <td class="td-bold">Wilson's Lemonade Strawberry 330ml</td>
+                  <td class="td-muted">Case of 24</td>
+                  <td>₦2,400</td>
+                  <td class="td-bold">₦1,850</td>
+                  <td><span class="pill pill-green">Active</span></td>
+                  <td><strong>38</strong> retailers</td>
+                  <td><button class="btn btn-sm btn-outline"><i class="fa-solid fa-pen"></i> Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="td-mono">WL-003</td>
+                  <td class="td-bold">Wilson's Lemonade Original 500ml</td>
+                  <td class="td-muted">Case of 12</td>
+                  <td>₦3,000</td>
+                  <td class="td-bold">₦2,200</td>
+                  <td><span class="pill pill-green">Active</span></td>
+                  <td><strong>31</strong> retailers</td>
+                  <td><button class="btn btn-sm btn-outline"><i class="fa-solid fa-pen"></i> Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="td-mono">WL-004</td>
+                  <td class="td-bold">Wilson's Lemonade Mint 330ml</td>
+                  <td class="td-muted">Case of 24</td>
+                  <td>₦2,600</td>
+                  <td class="td-bold">₦1,950</td>
+                  <td><span class="pill pill-green">Active</span></td>
+                  <td><strong>24</strong> retailers</td>
+                  <td><button class="btn btn-sm btn-outline"><i class="fa-solid fa-pen"></i> Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="td-mono">WL-005</td>
+                  <td class="td-bold">Wilson's Lemonade Ginger 330ml</td>
+                  <td class="td-muted">Case of 24</td>
+                  <td>₦2,600</td>
+                  <td class="td-bold">₦1,950</td>
+                  <td><span class="pill pill-green">Active</span></td>
+                  <td><strong>19</strong> retailers</td>
+                  <td><button class="btn btn-sm btn-outline"><i class="fa-solid fa-pen"></i> Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="td-mono">WL-006</td>
+                  <td class="td-bold">Wilson's Lemonade Zero Sugar 330ml</td>
+                  <td class="td-muted">Case of 24</td>
+                  <td>₦2,800</td>
+                  <td class="td-bold">₦2,100</td>
+                  <td><span class="pill pill-green">Active</span></td>
+                  <td><strong>15</strong> retailers</td>
+                  <td><button class="btn btn-sm btn-outline"><i class="fa-solid fa-pen"></i> Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="td-mono">WL-007</td>
+                  <td class="td-bold">Wilson's Lemonade Family Pack 1.5L</td>
+                  <td class="td-muted">Pack of 6</td>
+                  <td>₦8,000</td>
+                  <td class="td-bold">₦5,800</td>
+                  <td><span class="pill pill-green">Active</span></td>
+                  <td><strong>12</strong> retailers</td>
+                  <td><button class="btn btn-sm btn-outline"><i class="fa-solid fa-pen"></i> Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="td-mono">WL-008</td>
+                  <td class="td-bold">Wilson's Lemonade Gift Set</td>
+                  <td class="td-muted">Assorted</td>
+                  <td>₦12,000</td>
+                  <td class="td-bold">₦9,000</td>
+                  <td><span class="pill pill-green">Active</span></td>
+                  <td><strong>8</strong> retailers</td>
+                  <td><button class="btn btn-sm btn-outline"><i class="fa-solid fa-pen"></i> Edit</button></td>
+                </tr>
+                <tr style="background:#fffbeb;">
+                  <td class="td-mono">WL-009</td>
+                  <td class="td-bold">Wilson's Lemonade Passion Fruit 330ml</td>
+                  <td class="td-muted">Case of 24</td>
+                  <td>₦2,600</td>
+                  <td class="td-bold">₦2,000</td>
+                  <td><span class="pill pill-amber"><i class="fa-solid fa-clock" style="font-size:.65rem"></i> Pending review</span></td>
+                  <td class="td-muted">—</td>
+                  <td class="td-muted">—</td>
+                </tr>
+                <tr style="background:#fffbeb;">
+                  <td class="td-mono">WL-010</td>
+                  <td class="td-bold">Wilson's Lemonade Hibiscus 330ml</td>
+                  <td class="td-muted">Case of 24</td>
+                  <td>₦2,600</td>
+                  <td class="td-bold">₦2,000</td>
+                  <td><span class="pill pill-amber"><i class="fa-solid fa-clock" style="font-size:.65rem"></i> Pending review</span></td>
+                  <td class="td-muted">—</td>
+                  <td class="td-muted">—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="info-note info-blue" style="margin-top:14px;">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>SKUs marked as <strong>Pending review</strong> are being evaluated by DALA's trade team for compliance and retail-ready packaging. Your account manager (<strong data-bp-manager>Sola Okafor</strong>) will be in touch within 5 business days.</span>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- New SKU Panel -->
+  <div class="panel-overlay" id="new-sku-panel">
+    <div class="side-panel">
+      <div class="panel-header">
+        <h3>Request New SKU</h3>
+        <button class="panel-close" data-panel-close="new-sku-panel">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="panel-body">
+        <p style="font-size:.84rem;color:var(--bp-muted);margin-bottom:20px;line-height:1.55;">
+          Submit a new product for review. DALA's trade team will assess compliance, packaging, and retailer fit before listing.
+        </p>
+        <form data-demo-form="new-sku">
+          <div class="pf-group">
+            <label>Product name</label>
+            <input type="text" placeholder="e.g. Wilson's Lemonade Coconut 330ml" />
+          </div>
+          <div class="pf-group">
+            <label>Pack size / case configuration</label>
+            <input type="text" placeholder="e.g. Case of 24" />
+          </div>
+          <div class="pf-group">
+            <label>Recommended Retail Price (RRP)</label>
+            <input type="text" placeholder="e.g. ₦2,600" />
+          </div>
+          <div class="pf-group">
+            <label>Proposed trade price</label>
+            <input type="text" placeholder="e.g. ₦1,950" />
+          </div>
+          <div class="pf-group">
+            <label>Product description</label>
+            <textarea placeholder="Describe the product, key ingredients, target market..."></textarea>
+          </div>
+          <div class="pf-group">
+            <label>Product image</label>
+            <div class="pf-upload">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              Click to upload or drag and drop<br>
+              <small style="font-size:.74rem;color:#a0aec0">PNG, JPG up to 5MB</small>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">
+            <i class="fa-solid fa-paper-plane"></i> Submit for review
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Update Prices Panel -->
+  <div class="panel-overlay" id="update-prices-panel">
+    <div class="side-panel">
+      <div class="panel-header">
+        <h3>Update Prices</h3>
+        <button class="panel-close" data-panel-close="update-prices-panel">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="panel-body">
+        <div class="info-note info-blue" style="margin-bottom:20px;">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>Price changes require 14 days' notice to retailers. Your DALA account manager will coordinate the rollout.</span>
+        </div>
+        <form data-demo-form="update-prices">
+          <div class="pf-group">
+            <label>Select SKU</label>
+            <select>
+              <option value="">Choose a product...</option>
+              <option>WL-001 — Original 330ml</option>
+              <option>WL-002 — Strawberry 330ml</option>
+              <option>WL-003 — Original 500ml</option>
+              <option>WL-004 — Mint 330ml</option>
+              <option>WL-005 — Ginger 330ml</option>
+              <option>WL-006 — Zero Sugar 330ml</option>
+              <option>WL-007 — Family Pack 1.5L</option>
+              <option>WL-008 — Gift Set</option>
+            </select>
+          </div>
+          <div class="pf-group">
+            <label>New RRP</label>
+            <input type="text" placeholder="₦0.00" />
+          </div>
+          <div class="pf-group">
+            <label>New trade price</label>
+            <input type="text" placeholder="₦0.00" />
+          </div>
+          <div class="pf-group">
+            <label>Effective date</label>
+            <input type="date" />
+          </div>
+          <div class="pf-group">
+            <label>Reason for change</label>
+            <textarea placeholder="e.g. Cost of goods increase, market repositioning..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">
+            <i class="fa-solid fa-paper-plane"></i> Submit price update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/brand-portal.js"></script>
+  <script>bpInit();</script>
+</body>
+</html>

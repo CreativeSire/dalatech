@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — DALA Trade Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/trade-portal.css" />
+</head>
+<body data-trade-page="dashboard">
+
+<div class="trade-portal">
+  <!-- ── Sidebar ─────────────────────────────────────────── -->
+  <aside class="trade-sidebar">
+    <div class="sidebar-logo">
+      <img src="../4.png" alt="DALA Technologies" />
+      <div class="sidebar-logo-label">Trade Portal</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Navigation</div>
+      <a href="dashboard.html" data-page="dashboard">
+        <i class="fa-solid fa-gauge"></i> Dashboard
+      </a>
+      <a href="catalog.html" data-page="catalog">
+        <i class="fa-solid fa-layer-group"></i> Brand Catalog
+      </a>
+      <a href="order.html" data-page="order">
+        <i class="fa-solid fa-clipboard-list"></i> Order Builder
+      </a>
+      <a href="orders.html" data-page="orders">
+        <i class="fa-solid fa-clock-rotate-left"></i> Order History
+      </a>
+      <a href="delivery.html" data-page="delivery">
+        <i class="fa-solid fa-calendar-days"></i> Delivery Schedule
+      </a>
+
+      <div class="sidebar-nav-label" style="margin-top:8px;">Account</div>
+      <a href="account.html" data-page="account">
+        <i class="fa-solid fa-circle-user"></i> My Account
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-account">
+        <div class="sidebar-avatar" data-retailer-initials>AD</div>
+        <div class="sidebar-account-info">
+          <div class="sidebar-account-name" data-retailer-name>Addide Supermarket</div>
+          <div class="sidebar-account-tier" data-retailer-tier>Standard Partner</div>
+        </div>
+      </div>
+      <button class="btn-logout" data-logout>
+        <i class="fa-solid fa-right-from-bracket"></i> Sign out
+      </button>
+    </div>
+  </aside>
+  <div class="sidebar-overlay"></div>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main class="trade-main">
+    <!-- Top bar -->
+    <div class="trade-topbar">
+      <button class="hamburger-btn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="topbar-greeting">
+        <h2 data-greeting>Good morning, Addide Supermarket</h2>
+        <p data-topbar-date>Friday, 27 March 2026</p>
+      </div>
+      <div class="topbar-actions">
+        <a href="order.html" class="btn btn-orange btn-sm" style="text-decoration:none;">
+          <i class="fa-solid fa-plus"></i> New order
+        </a>
+        <button class="topbar-btn-icon" aria-label="Notifications">
+          <i class="fa-regular fa-bell"></i>
+          <span class="notif-dot"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="trade-content">
+
+      <!-- ── Stat tiles ────────────────────────────────── -->
+      <div class="stats-grid">
+        <div class="stat-tile">
+          <div class="stat-tile-icon orange">
+            <i class="fa-solid fa-hourglass-half"></i>
+          </div>
+          <div class="stat-tile-label">Pending Orders</div>
+          <div class="stat-tile-value">2</div>
+          <div class="stat-tile-sub">Awaiting confirmation</div>
+        </div>
+
+        <div class="stat-tile">
+          <div class="stat-tile-icon green">
+            <i class="fa-solid fa-truck"></i>
+          </div>
+          <div class="stat-tile-label">Last Delivery</div>
+          <div class="stat-tile-value" style="font-size:20px;">3 days ago</div>
+          <div class="stat-tile-sub">TP-2850 · 8 items</div>
+        </div>
+
+        <div class="stat-tile">
+          <div class="stat-tile-icon navy">
+            <i class="fa-solid fa-calendar-check"></i>
+          </div>
+          <div class="stat-tile-label">Next Window</div>
+          <div class="stat-tile-value" style="font-size:18px;">Thu 15 Jan</div>
+          <div class="stat-tile-sub">Cutoff: Wed 14 Jan 5pm</div>
+        </div>
+
+        <div class="stat-tile">
+          <div class="stat-tile-icon blue">
+            <i class="fa-solid fa-barcode"></i>
+          </div>
+          <div class="stat-tile-label">Active SKUs</div>
+          <div class="stat-tile-value">34</div>
+          <div class="stat-tile-sub">Across 7 brands</div>
+        </div>
+      </div>
+
+      <!-- ── Content row ───────────────────────────────── -->
+      <div style="display:grid;grid-template-columns:1fr 340px;gap:20px;margin-bottom:24px;" class="dashboard-row">
+
+        <!-- Quick Reorder -->
+        <div class="card">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-rotate-right" style="color:var(--trade-navy);margin-right:8px;"></i>Quick Reorder</h3>
+            <span style="font-size:12px;color:var(--trade-muted);">Recent items</span>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="trade-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Brand</th>
+                  <th>Last Qty</th>
+                  <th>Trade Price</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="product-name">Wilson's Lemonade 330ml</div>
+                    <div class="brand-label">24-pack case</div>
+                  </td>
+                  <td>Wilson's Lemonade</td>
+                  <td>24 cases</td>
+                  <td style="font-weight:600;color:var(--trade-navy);">₦2,000/case</td>
+                  <td><a href="order.html" class="btn btn-sm btn-secondary">Reorder</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="product-name">Zayith Honey 250g</div>
+                    <div class="brand-label">Single unit</div>
+                  </td>
+                  <td>Zayith</td>
+                  <td>36 units</td>
+                  <td style="font-weight:600;color:var(--trade-navy);">₦1,800/unit</td>
+                  <td><a href="order.html" class="btn btn-sm btn-secondary">Reorder</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="product-name">August Secrets Body Lotion 200ml</div>
+                    <div class="brand-label">Single unit</div>
+                  </td>
+                  <td>August Secrets</td>
+                  <td>12 units</td>
+                  <td style="font-weight:600;color:var(--trade-navy);">₦3,000/unit</td>
+                  <td><a href="order.html" class="btn btn-sm btn-secondary">Reorder</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="product-name">Orisirisi Snack Mix 100g</div>
+                    <div class="brand-label">Retail pack</div>
+                  </td>
+                  <td>Orisirisi</td>
+                  <td>48 packs</td>
+                  <td style="font-weight:600;color:var(--trade-navy);">₦450/pack</td>
+                  <td><a href="order.html" class="btn btn-sm btn-secondary">Reorder</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="product-name">Eti Farms Fresh Milk 500ml</div>
+                    <div class="brand-label">Single unit</div>
+                  </td>
+                  <td>Eti Farms</td>
+                  <td>24 units</td>
+                  <td style="font-weight:600;color:var(--trade-navy);">₦850/unit</td>
+                  <td><a href="order.html" class="btn btn-sm btn-secondary">Reorder</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="card">
+          <div class="card-header">
+            <h3><i class="fa-regular fa-bell" style="color:var(--trade-navy);margin-right:8px;"></i>Notifications</h3>
+            <span class="badge badge-orange">4</span>
+          </div>
+          <div class="notif-list">
+            <div class="notif-item">
+              <div class="notif-icon green"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <div class="notif-content">
+                <div class="notif-text">Wilson's Lemonade 330ml restocked — 500 units available</div>
+                <div class="notif-time">2 hours ago</div>
+              </div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon navy"><i class="fa-solid fa-circle-check"></i></div>
+              <div class="notif-content">
+                <div class="notif-text">Your Order #TP-2847 has been confirmed</div>
+                <div class="notif-time">Yesterday</div>
+              </div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon orange"><i class="fa-solid fa-sparkles"></i></div>
+              <div class="notif-content">
+                <div class="notif-text">New SKU added: Kezia Hair Serum 100ml</div>
+                <div class="notif-time">2 days ago</div>
+              </div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon navy"><i class="fa-solid fa-truck"></i></div>
+              <div class="notif-content">
+                <div class="notif-text">Delivery scheduled for Thursday 15 Jan</div>
+                <div class="notif-time">3 days ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── New from Brand Partners ────────────────────── -->
+      <div class="card">
+        <div class="card-header">
+          <h3><i class="fa-solid fa-sparkles" style="color:var(--trade-orange);margin-right:8px;"></i>New from Brand Partners</h3>
+          <a href="catalog.html" class="btn btn-secondary btn-sm">View full catalog</a>
+        </div>
+        <div class="card-body">
+          <div class="scroll-cards">
+
+            <div class="sku-card">
+              <div class="sku-card-brand">Kezia</div>
+              <div class="sku-card-name">Hair Serum 100ml</div>
+              <div style="margin-bottom:10px;"><span class="badge badge-orange">New</span></div>
+              <div class="sku-card-price">₦4,200 <span>/ unit</span></div>
+              <div style="font-size:11px;color:var(--trade-muted);margin-bottom:12px;">MOQ: 6 units</div>
+              <a href="catalog.html" class="btn btn-sm btn-ghost" style="width:100%;justify-content:center;">View</a>
+            </div>
+
+            <div class="sku-card">
+              <div class="sku-card-brand">Wilson's Lemonade</div>
+              <div class="sku-card-name">Lemonade 500ml</div>
+              <div style="margin-bottom:10px;"><span class="badge badge-green">Restocked</span></div>
+              <div class="sku-card-price">₦2,600 <span>/ case</span></div>
+              <div style="font-size:11px;color:var(--trade-muted);margin-bottom:12px;">MOQ: 12 cases</div>
+              <a href="catalog.html" class="btn btn-sm btn-ghost" style="width:100%;justify-content:center;">View</a>
+            </div>
+
+            <div class="sku-card">
+              <div class="sku-card-brand">Cresso Life</div>
+              <div class="sku-card-name">Vitamin C Drink 250ml</div>
+              <div style="margin-bottom:10px;"><span class="badge badge-orange">New</span></div>
+              <div class="sku-card-price">₦1,500 <span>/ unit</span></div>
+              <div style="font-size:11px;color:var(--trade-muted);margin-bottom:12px;">MOQ: 24 units</div>
+              <a href="catalog.html" class="btn btn-sm btn-ghost" style="width:100%;justify-content:center;">View</a>
+            </div>
+
+            <div class="sku-card">
+              <div class="sku-card-brand">Zayith</div>
+              <div class="sku-card-name">Organic Honey 500g</div>
+              <div style="margin-bottom:10px;"><span class="badge badge-orange">New</span></div>
+              <div class="sku-card-price">₦3,200 <span>/ unit</span></div>
+              <div style="font-size:11px;color:var(--trade-muted);margin-bottom:12px;">MOQ: 12 units</div>
+              <a href="catalog.html" class="btn btn-sm btn-ghost" style="width:100%;justify-content:center;">View</a>
+            </div>
+
+            <div class="sku-card">
+              <div class="sku-card-brand">August Secrets</div>
+              <div class="sku-card-name">Glow Face Serum 30ml</div>
+              <div style="margin-bottom:10px;"><span class="badge badge-orange">New</span></div>
+              <div class="sku-card-price">₦5,500 <span>/ unit</span></div>
+              <div style="font-size:11px;color:var(--trade-muted);margin-bottom:12px;">MOQ: 6 units</div>
+              <a href="catalog.html" class="btn btn-sm btn-ghost" style="width:100%;justify-content:center;">View</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.trade-content -->
+  </main>
+
+</div>
+
+<script src="../js/trade-portal.js"></script>
+<script>
+  // Auth guard
+  if (!TradeAuth.isLoggedIn()) window.location.href = 'index.html';
+  else populateRetailerInfo();
+</script>
+
+<style>
+  @media (max-width: 1100px) {
+    .dashboard-row { grid-template-columns: 1fr !important; }
+  }
+</style>
+
+</body>
+</html>

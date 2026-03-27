@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retailer Reach | DALA Brand Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/brand-portal.css" />
+</head>
+<body data-bp-page="reach">
+
+  <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Open menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-shell">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo-wrap">
+        <img src="../4.png" alt="DALA Technologies" class="sidebar-logo" />
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-label">Main</p>
+        <a href="dashboard.html" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="reach.html"     data-page="reach"><i class="fa-solid fa-map-location-dot"></i> Retailer Reach</a>
+        <a href="catalog.html"   data-page="catalog"><i class="fa-solid fa-boxes-stacking"></i> My Products</a>
+        <a href="orders.html"    data-page="orders"><i class="fa-solid fa-file-invoice-pound"></i> Orders &amp; Payments</a>
+        <p class="sidebar-label">Insights</p>
+        <a href="reports.html"   data-page="reports"><i class="fa-solid fa-chart-bar"></i> Reports</a>
+        <a href="consumer.html"  data-page="consumer"><i class="fa-solid fa-store"></i> Consumer Store</a>
+        <p class="sidebar-label">Account</p>
+        <a href="account.html"   data-page="account"><i class="fa-solid fa-circle-user"></i> My Account</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-brand-tag">
+          <div class="brand-avatar" id="sidebar-avatar">WL</div>
+          <div class="brand-name-tag">
+            <span id="sidebar-brand-name">Wilson's Lemonade</span>
+            <span>Brand Partner</span>
+          </div>
+        </div>
+        <button class="btn-logout" data-logout>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main-area">
+      <header class="topbar">
+        <span class="topbar-title">Retailer Reach</span>
+        <div class="topbar-meta">
+          <span class="topbar-date" id="topbar-date"></span>
+          <span class="topbar-updated">Last updated: just now</span>
+        </div>
+      </header>
+
+      <main class="page-body">
+        <!-- Page header -->
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1>Retailer Reach</h1>
+            <p>All retail locations currently stocking <span data-bp-brand>Wilson's Lemonade</span></p>
+          </div>
+          <div class="page-header-actions">
+            <span class="badge badge-green"><i class="fa-solid fa-store"></i> 47 active locations</span>
+            <button class="btn btn-primary">
+              <i class="fa-solid fa-clipboard-check"></i> Request Shelf Audit
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="stats-bar">
+          <div class="stat-item">
+            <div class="stat-val accent">47</div>
+            <div class="stat-lbl">Active</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val blue">3</div>
+            <div class="stat-lbl">New this month</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val amber">2</div>
+            <div class="stat-lbl">No recent order</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val">18</div>
+            <div class="stat-lbl">Lagos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val">12</div>
+            <div class="stat-lbl">Abuja</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val">17</div>
+            <div class="stat-lbl">Others</div>
+          </div>
+        </div>
+
+        <!-- Retailer table -->
+        <div class="reach-table-wrap">
+          <div class="table-header">
+            <h3>All Retail Locations</h3>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <span class="badge badge-green"><i class="fa-solid fa-circle" style="font-size:.5rem"></i> Active</span>
+              <span class="badge badge-amber"><i class="fa-solid fa-triangle-exclamation" style="font-size:.65rem"></i> No recent order</span>
+            </div>
+          </div>
+          <div class="table-scroll">
+            <table class="bp-table">
+              <thead>
+                <tr>
+                  <th>Retailer</th>
+                  <th>Location</th>
+                  <th>SKUs Stocked</th>
+                  <th>Last Order</th>
+                  <th>Monthly Units</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="td-bold">SPAR Victoria Island</td>
+                  <td>Lagos</td>
+                  <td>6 SKUs</td>
+                  <td>10 Jan</td>
+                  <td class="td-bold">2,100 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Addide Ikeja</td>
+                  <td>Lagos</td>
+                  <td>5 SKUs</td>
+                  <td>9 Jan</td>
+                  <td class="td-bold">1,840 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Foodco Lekki</td>
+                  <td>Lagos</td>
+                  <td>6 SKUs</td>
+                  <td>8 Jan</td>
+                  <td class="td-bold">1,620 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Prince Ebeano Abuja</td>
+                  <td>Abuja</td>
+                  <td>5 SKUs</td>
+                  <td>11 Jan</td>
+                  <td class="td-bold">1,380 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Hubmart Wuse</td>
+                  <td>Abuja</td>
+                  <td>4 SKUs</td>
+                  <td>7 Jan</td>
+                  <td class="td-bold">1,210 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Game Ikeja</td>
+                  <td>Lagos</td>
+                  <td>4 SKUs</td>
+                  <td>6 Jan</td>
+                  <td class="td-bold">980 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Jendol Ibadan</td>
+                  <td>Ibadan</td>
+                  <td>3 SKUs</td>
+                  <td>5 Jan</td>
+                  <td class="td-bold">740 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Justrite Surulere</td>
+                  <td>Lagos</td>
+                  <td>4 SKUs</td>
+                  <td>4 Jan</td>
+                  <td class="td-bold">860 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Globus VI</td>
+                  <td>Lagos</td>
+                  <td>3 SKUs</td>
+                  <td>3 Jan</td>
+                  <td class="td-bold">620 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">234 Stores Lekki</td>
+                  <td>Lagos</td>
+                  <td>5 SKUs</td>
+                  <td>8 Jan</td>
+                  <td class="td-bold">910 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Grocery Bazaar</td>
+                  <td>Lagos</td>
+                  <td>3 SKUs</td>
+                  <td>2 Jan</td>
+                  <td class="td-bold">540 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Sundry Market Sq.</td>
+                  <td>Abuja</td>
+                  <td>4 SKUs</td>
+                  <td>6 Jan</td>
+                  <td class="td-bold">780 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Supersaver Abuja</td>
+                  <td>Abuja</td>
+                  <td>3 SKUs</td>
+                  <td>1 Jan</td>
+                  <td class="td-bold">480 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Sweet Sensation</td>
+                  <td>Lagos</td>
+                  <td>2 SKUs</td>
+                  <td>8 Jan</td>
+                  <td class="td-bold">320 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">The Bazaar</td>
+                  <td>Lagos</td>
+                  <td>3 SKUs</td>
+                  <td>5 Jan</td>
+                  <td class="td-bold">560 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr style="background:#fffbeb;">
+                  <td class="td-bold">Total Bonjour</td>
+                  <td>Lagos</td>
+                  <td>2 SKUs</td>
+                  <td>28 Dec</td>
+                  <td class="td-bold">280 units</td>
+                  <td><span class="pill pill-amber"><i class="fa-solid fa-triangle-exclamation" style="font-size:.65rem"></i> No recent order ⚠</span></td>
+                  <td><button class="btn btn-sm btn-accent">Follow up</button></td>
+                </tr>
+                <tr style="background:#fffbeb;">
+                  <td class="td-bold">Twins Faja</td>
+                  <td>Lagos</td>
+                  <td>2 SKUs</td>
+                  <td>20 Dec</td>
+                  <td class="td-bold">240 units</td>
+                  <td><span class="pill pill-amber"><i class="fa-solid fa-triangle-exclamation" style="font-size:.65rem"></i> No recent order ⚠</span></td>
+                  <td><button class="btn btn-sm btn-accent">Follow up</button></td>
+                </tr>
+                <tr>
+                  <td class="td-bold">Covenant University</td>
+                  <td>Ota</td>
+                  <td>3 SKUs</td>
+                  <td>3 Jan</td>
+                  <td class="td-bold">410 units</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active ✓</span></td>
+                  <td><a href="#" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="info-note" style="margin-top:16px;">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Retailers marked ⚠ have not placed an order in 30+ days. Your DALA account manager (<strong data-bp-manager>Sola Okafor</strong>) has been notified and is following up.</span>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="js/brand-portal.js"></script>
+  <script>bpInit();</script>
+</body>
+</html>

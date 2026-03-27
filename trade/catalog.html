@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Catalog — DALA Trade Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/trade-portal.css" />
+</head>
+<body data-trade-page="catalog">
+
+<div class="trade-portal">
+  <!-- ── Sidebar ─────────────────────────────────────────── -->
+  <aside class="trade-sidebar">
+    <div class="sidebar-logo">
+      <img src="../4.png" alt="DALA Technologies" />
+      <div class="sidebar-logo-label">Trade Portal</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Navigation</div>
+      <a href="dashboard.html" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+      <a href="catalog.html" data-page="catalog"><i class="fa-solid fa-layer-group"></i> Brand Catalog</a>
+      <a href="order.html" data-page="order"><i class="fa-solid fa-clipboard-list"></i> Order Builder</a>
+      <a href="orders.html" data-page="orders"><i class="fa-solid fa-clock-rotate-left"></i> Order History</a>
+      <a href="delivery.html" data-page="delivery"><i class="fa-solid fa-calendar-days"></i> Delivery Schedule</a>
+      <div class="sidebar-nav-label" style="margin-top:8px;">Account</div>
+      <a href="account.html" data-page="account"><i class="fa-solid fa-circle-user"></i> My Account</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-account">
+        <div class="sidebar-avatar" data-retailer-initials>AD</div>
+        <div class="sidebar-account-info">
+          <div class="sidebar-account-name" data-retailer-name>Addide Supermarket</div>
+          <div class="sidebar-account-tier" data-retailer-tier>Standard Partner</div>
+        </div>
+      </div>
+      <button class="btn-logout" data-logout><i class="fa-solid fa-right-from-bracket"></i> Sign out</button>
+    </div>
+  </aside>
+  <div class="sidebar-overlay"></div>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main class="trade-main">
+    <div class="trade-topbar">
+      <button class="hamburger-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-greeting">
+        <h2 data-greeting>Good morning, Addide Supermarket</h2>
+        <p data-topbar-date>Friday, 27 March 2026</p>
+      </div>
+      <div class="topbar-actions">
+        <a href="order.html" class="btn btn-orange btn-sm"><i class="fa-solid fa-plus"></i> New order</a>
+        <button class="topbar-btn-icon"><i class="fa-regular fa-bell"></i><span class="notif-dot"></span></button>
+      </div>
+    </div>
+
+    <div class="trade-content">
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1>Brand Partner Catalog</h1>
+          <p>Browse all available SKUs from DALA's brand partners. Trade prices shown are net of VAT.</p>
+        </div>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="card" style="margin-bottom:24px;">
+        <div class="card-body" style="padding:16px 22px;">
+          <div class="filter-bar">
+            <div class="filter-input" style="flex:1;">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="catalog-search" placeholder="Search products or brands…" />
+            </div>
+            <select class="filter-select" id="catalog-brand-filter">
+              <option value="">All brands</option>
+              <option value="wilsons-lemonade">Wilson's Lemonade</option>
+              <option value="zayith">Zayith</option>
+              <option value="august-secrets">August Secrets</option>
+              <option value="orisirisi">Orisirisi</option>
+              <option value="cresso-life">Cresso Life</option>
+              <option value="eti-farms">Eti Farms</option>
+              <option value="kezia">Kezia</option>
+            </select>
+            <select class="filter-select" id="catalog-avail-filter">
+              <option value="">All availability</option>
+              <option value="available">Available</option>
+              <option value="limited">Limited stock</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Brand cards ─────────────────────────────────── -->
+      <div class="brand-grid">
+
+        <!-- Wilson's Lemonade -->
+        <div class="brand-card" data-brand="wilsons-lemonade">
+          <div class="brand-card-icon" style="background:#1a3a8f;">WL</div>
+          <div class="brand-card-info">
+            <h3>Wilson's Lemonade</h3>
+            <p>Premium Nigerian lemonade, 330ml and 500ml variants. High consumer demand across Lagos.</p>
+            <div class="brand-card-meta">
+              <span class="badge badge-navy"><i class="fa-solid fa-tag"></i> Beverages</span>
+              <span class="badge badge-gray"><i class="fa-solid fa-box"></i> 8 SKUs</span>
+              <span class="badge badge-green"><i class="fa-solid fa-circle" style="font-size:7px;"></i> Available</span>
+            </div>
+          </div>
+          <div class="brand-card-actions">
+            <a href="catalog.html?brand=wilsons-lemonade" class="btn btn-primary btn-sm">Browse SKUs</a>
+          </div>
+        </div>
+
+        <!-- Zayith -->
+        <div class="brand-card" data-brand="zayith">
+          <div class="brand-card-icon" style="background:#2d7a4f;">ZY</div>
+          <div class="brand-card-info">
+            <h3>Zayith</h3>
+            <p>Natural honey and wellness products. Clean-label, fast-moving personal care.</p>
+            <div class="brand-card-meta">
+              <span class="badge badge-navy"><i class="fa-solid fa-tag"></i> Wellness</span>
+              <span class="badge badge-gray"><i class="fa-solid fa-box"></i> 12 SKUs</span>
+              <span class="badge badge-green"><i class="fa-solid fa-circle" style="font-size:7px;"></i> Available</span>
+            </div>
+          </div>
+          <div class="brand-card-actions">
+            <a href="catalog.html?brand=zayith" class="btn btn-primary btn-sm">Browse SKUs</a>
+          </div>
+        </div>
+
+        <!-- August Secrets -->
+        <div class="brand-card" data-brand="august-secrets">
+          <div class="brand-card-icon" style="background:#8b3a6b;">AS</div>
+          <div class="brand-card-info">
+            <h3>August Secrets</h3>
+            <p>Body care and beauty essentials. Strong female consumer audience.</p>
+            <div class="brand-card-meta">
+              <span class="badge badge-navy"><i class="fa-solid fa-tag"></i> Beauty & Care</span>
+              <span class="badge badge-gray"><i class="fa-solid fa-box"></i> 15 SKUs</span>
+              <span class="badge badge-green"><i class="fa-solid fa-circle" style="font-size:7px;"></i> Available</span>
+            </div>
+          </div>
+          <div class="brand-card-actions">
+            <a href="catalog.html?brand=august-secrets" class="btn btn-primary btn-sm">Browse SKUs</a>
+          </div>
+        </div>
+
+        <!-- Orisirisi -->
+        <div class="brand-card" data-brand="orisirisi">
+          <div class="brand-card-icon" style="background:#c05621;">OR</div>
+          <div class="brand-card-info">
+            <h3>Orisirisi</h3>
+            <p>Traditional Nigerian snack range. Great for impulse purchase placement.</p>
+            <div class="brand-card-meta">
+              <span class="badge badge-navy"><i class="fa-solid fa-tag"></i> Snacks & Food</span>
+              <span class="badge badge-gray"><i class="fa-solid fa-box"></i> 6 SKUs</span>
+              <span class="badge badge-green"><i class="fa-solid fa-circle" style="font-size:7px;"></i> Available</span>
+            </div>
+          </div>
+          <div class="brand-card-actions">
+            <a href="catalog.html?brand=orisirisi" class="btn btn-primary btn-sm">Browse SKUs</a>
+          </div>
+        </div>
+
+        <!-- Cresso Life -->
+        <div class="brand-card" data-brand="cresso-life">
+          <div class="brand-card-icon" style="background:#2b6cb0;">CL</div>
+          <div class="brand-card-info">
+            <h3>Cresso Life</h3>
+            <p>Functional beverages and vitamin drinks. Growing health-conscious segment.</p>
+            <div class="brand-card-meta">
+              <span class="badge badge-navy"><i class="fa-solid fa-tag"></i> Functional Drinks</span>
+              <span class="badge badge-gray"><i class="fa-solid fa-box"></i> 9 SKUs</span>
+              <span class="badge badge-green"><i class="fa-solid fa-circle" style="font-size:7px;"></i> Available</span>
+            </div>
+          </div>
+          <div class="brand-card-actions">
+            <a href="catalog.html?brand=cresso-life" class="btn btn-primary btn-sm">Browse SKUs</a>
+          </div>
+        </div>
+
+        <!-- Eti Farms -->
+        <div class="brand-card" data-brand="eti-farms">
+          <div class="brand-card-icon" style="background:#276749;">EF</div>
+          <div class="brand-card-info">
+            <h3>Eti Farms</h3>
+            <p>Fresh dairy and farm products. Short lead time, weekly availability.</p>
+            <div class="brand-card-meta">
+              <span class="badge badge-navy"><i class="fa-solid fa-tag"></i> Dairy & Fresh</span>
+              <span class="badge badge-gray"><i class="fa-solid fa-box"></i> 5 SKUs</span>
+              <span class="badge badge-orange"><i class="fa-solid fa-circle" style="font-size:7px;"></i> Limited stock</span>
+            </div>
+          </div>
+          <div class="brand-card-actions">
+            <a href="catalog.html?brand=eti-farms" class="btn btn-primary btn-sm">Browse SKUs</a>
+          </div>
+        </div>
+
+        <!-- Kezia -->
+        <div class="brand-card" data-brand="kezia">
+          <div class="brand-card-icon" style="background:#553c9a;">KZ</div>
+          <div class="brand-card-info">
+            <h3>Kezia</h3>
+            <p>Premium hair and skincare. Popular in beauty and wellness aisles.</p>
+            <div class="brand-card-meta">
+              <span class="badge badge-navy"><i class="fa-solid fa-tag"></i> Hair & Skin</span>
+              <span class="badge badge-gray"><i class="fa-solid fa-box"></i> 11 SKUs</span>
+              <span class="badge badge-green"><i class="fa-solid fa-circle" style="font-size:7px;"></i> Available</span>
+            </div>
+          </div>
+          <div class="brand-card-actions">
+            <a href="catalog.html?brand=kezia" class="btn btn-primary btn-sm">Browse SKUs</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── Full SKU table ──────────────────────────────── -->
+      <div class="card">
+        <div class="card-header">
+          <h3><i class="fa-solid fa-table-list" style="color:var(--trade-navy);margin-right:8px;"></i>All SKUs</h3>
+          <span style="font-size:12px;color:var(--trade-muted);">Trade prices exclusive of VAT</span>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="trade-table">
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th>Product</th>
+                <th>Pack Size</th>
+                <th>MOQ</th>
+                <th>Trade Price</th>
+                <th>Availability</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="sku-table-row" data-brand="wilsons-lemonade" data-availability="available">
+                <td><span class="badge badge-navy" style="font-size:11px;">Wilson's Lemonade</span></td>
+                <td><div class="product-name">Lemonade 330ml</div></td>
+                <td>24-pack case</td>
+                <td>6 cases</td>
+                <td style="font-weight:600;color:var(--trade-navy);">₦2,000</td>
+                <td><span class="badge badge-green">Available</span></td>
+                <td><a href="order.html" class="btn btn-sm btn-secondary">Add to order</a></td>
+              </tr>
+              <tr class="sku-table-row" data-brand="wilsons-lemonade" data-availability="available">
+                <td><span class="badge badge-navy" style="font-size:11px;">Wilson's Lemonade</span></td>
+                <td><div class="product-name">Lemonade 500ml</div></td>
+                <td>12-pack case</td>
+                <td>6 cases</td>
+                <td style="font-weight:600;color:var(--trade-navy);">₦2,600</td>
+                <td><span class="badge badge-green">Available</span></td>
+                <td><a href="order.html" class="btn btn-sm btn-secondary">Add to order</a></td>
+              </tr>
+              <tr class="sku-table-row" data-brand="zayith" data-availability="available">
+                <td><span class="badge badge-green" style="font-size:11px;">Zayith</span></td>
+                <td><div class="product-name">Organic Honey 250g</div></td>
+                <td>Single unit</td>
+                <td>12 units</td>
+                <td style="font-weight:600;color:var(--trade-navy);">₦1,800</td>
+                <td><span class="badge badge-green">Available</span></td>
+                <td><a href="order.html" class="btn btn-sm btn-secondary">Add to order</a></td>
+              </tr>
+              <tr class="sku-table-row" data-brand="zayith" data-availability="available">
+                <td><span class="badge badge-green" style="font-size:11px;">Zayith</span></td>
+                <td><div class="product-name">Organic Honey 500g</div></td>
+                <td>Single unit</td>
+                <td>12 units</td>
+                <td style="font-weight:600;color:var(--trade-navy);">₦3,200</td>
+                <td><span class="badge badge-green">Available</span></td>
+                <td><a href="order.html" class="btn btn-sm btn-secondary">Add to order</a></td>
+              </tr>
+              <tr class="sku-table-row" data-brand="august-secrets" data-availability="available">
+                <td><span class="badge badge-orange" style="font-size:11px;">August Secrets</span></td>
+                <td><div class="product-name">Body Lotion 200ml</div></td>
+                <td>Single unit</td>
+                <td>6 units</td>
+                <td style="font-weight:600;color:var(--trade-navy);">₦3,000</td>
+                <td><span class="badge badge-green">Available</span></td>
+                <td><a href="order.html" class="btn btn-sm btn-secondary">Add to order</a></td>
+              </tr>
+              <tr class="sku-table-row" data-brand="august-secrets" data-availability="available">
+                <td><span class="badge badge-orange" style="font-size:11px;">August Secrets</span></td>
+                <td><div class="product-name">Glow Face Serum 30ml</div></td>
+                <td>Single unit</td>
+                <td>6 units</td>
+                <td style="font-weight:600;color:var(--trade-navy);">₦5,500</td>
+                <td><span class="badge badge-green">Available</span></td>
+                <td><a href="order.html" class="btn btn-sm btn-secondary">Add to order</a></td>
+              </tr>
+              <tr class="sku-table-row" data-brand="orisirisi" data-availability="available">
+                <td><span class="badge badge-orange" style="font-size:11px;">Orisirisi</span></td>
+                <td><div class="product-name">Snack Mix 100g</div></td>
+                <td>Retail pack</td>
+                <td>24 packs</td>
+                <td style="font-weight:600;color:var(--trade-navy);">₦450</td>
+                <td><span class="badge badge-green">Available</span></td>
+                <td><a href="order.html" class="btn btn-sm btn-secondary">Add to order</a></td>
+              </tr>
+              <tr class="sku-table-row" data-brand="cresso-life" data-availability="available">
+                <td><span class="badge badge-blue" style="font-size:11px;">Cresso Life</span></td>
+                <td><div class="product-name">Vitamin C Drink 250ml</div></td>
+                <td>24-pack case</td>
+                <td>6 cases</td>
+                <td style="font-weight:600;color:var(--trade-navy);">₦1,500</td>
+                <td><span class="badge badge-green">Available</span></td>
+                <td><a href="order.html" class="btn btn-sm btn-secondary">Add to order</a></td>
+              </tr>
+              <tr class="sku-table-row" data-brand="eti-farms" data-availability="limited">
+                <td><span class="badge badge-green" style="font-size:11px;">Eti Farms</span></td>
+                <td><div class="product-name">Fresh Milk 500ml</div></td>
+                <td>Single unit</td>
+                <td>12 units</td>
+                <td style="font-weight:600;color:var(--trade-navy);">₦850</td>
+                <td><span class="badge badge-orange">Limited stock</span></td>
+                <td><a href="order.html" class="btn btn-sm btn-secondary">Add to order</a></td>
+              </tr>
+              <tr class="sku-table-row" data-brand="kezia" data-availability="available">
+                <td><span class="badge badge-navy" style="font-size:11px;">Kezia</span></td>
+                <td><div class="product-name">Hair Serum 100ml</div></td>
+                <td>Single unit</td>
+                <td>6 units</td>
+                <td style="font-weight:600;color:var(--trade-navy);">₦4,200</td>
+                <td><span class="badge badge-green">Available</span></td>
+                <td><a href="order.html" class="btn btn-sm btn-secondary">Add to order</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/trade-portal.js"></script>
+<script>
+  if (!TradeAuth.isLoggedIn()) window.location.href = 'index.html';
+  else populateRetailerInfo();
+</script>
+
+</body>
+</html>

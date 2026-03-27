@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account | DALA Brand Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/brand-portal.css" />
+</head>
+<body data-bp-page="account">
+
+  <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Open menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-shell">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo-wrap">
+        <img src="../4.png" alt="DALA Technologies" class="sidebar-logo" />
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-label">Main</p>
+        <a href="dashboard.html" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="reach.html"     data-page="reach"><i class="fa-solid fa-map-location-dot"></i> Retailer Reach</a>
+        <a href="catalog.html"   data-page="catalog"><i class="fa-solid fa-boxes-stacking"></i> My Products</a>
+        <a href="orders.html"    data-page="orders"><i class="fa-solid fa-file-invoice-pound"></i> Orders &amp; Payments</a>
+        <p class="sidebar-label">Insights</p>
+        <a href="reports.html"   data-page="reports"><i class="fa-solid fa-chart-bar"></i> Reports</a>
+        <a href="consumer.html"  data-page="consumer"><i class="fa-solid fa-store"></i> Consumer Store</a>
+        <p class="sidebar-label">Account</p>
+        <a href="account.html"   data-page="account"><i class="fa-solid fa-circle-user"></i> My Account</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-brand-tag">
+          <div class="brand-avatar" id="sidebar-avatar">WL</div>
+          <div class="brand-name-tag">
+            <span id="sidebar-brand-name">Wilson's Lemonade</span>
+            <span>Brand Partner</span>
+          </div>
+        </div>
+        <button class="btn-logout" data-logout>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main-area">
+      <header class="topbar">
+        <span class="topbar-title">My Account</span>
+        <div class="topbar-meta">
+          <span class="topbar-date" id="topbar-date"></span>
+          <span class="topbar-updated">Last updated: just now</span>
+        </div>
+      </header>
+
+      <main class="page-body">
+        <!-- Page header -->
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1>My Account</h1>
+            <p>Manage your brand profile, contact details, and partnership settings</p>
+          </div>
+        </div>
+
+        <div class="account-grid">
+          <!-- LEFT COLUMN -->
+          <div>
+
+            <!-- Brand profile card -->
+            <div class="account-card">
+              <div class="account-card-header">
+                <h3>Brand Profile</h3>
+                <span class="badge badge-green"><i class="fa-solid fa-circle" style="font-size:.45rem"></i> Active</span>
+              </div>
+              <div class="account-card-body">
+                <div class="profile-hero">
+                  <div class="profile-avatar">WL</div>
+                  <div>
+                    <div class="profile-name" data-bp-brand>Wilson's Lemonade</div>
+                    <div class="profile-tier">
+                      <span class="tier-badge">⭐ Premium Partner</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-label">Category</span>
+                  <span class="meta-row-val">Beverages</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-label">Partnership tier</span>
+                  <span class="meta-row-val" style="color:#d97706;">⭐ Premium Partner</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-label">Member since</span>
+                  <span class="meta-row-val">January 2024</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-label">Status</span>
+                  <span class="meta-row-val" style="color:var(--bp-accent);">Active ✓</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key metrics card -->
+            <div class="account-card">
+              <div class="account-card-header">
+                <h3>Partnership Milestones</h3>
+              </div>
+              <div class="account-card-body">
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;text-align:center;">
+                  <div>
+                    <div style="font-size:1.3rem;font-weight:800;color:var(--bp-accent);letter-spacing:-.03em;">₦221.7M</div>
+                    <div style="font-size:.74rem;color:var(--bp-muted);margin-top:3px;">Total revenue since partnership</div>
+                  </div>
+                  <div>
+                    <div style="font-size:1.3rem;font-weight:800;color:var(--bp-dark);letter-spacing:-.03em;">350</div>
+                    <div style="font-size:.74rem;color:var(--bp-muted);margin-top:3px;">Stores reached</div>
+                  </div>
+                  <div>
+                    <div style="font-size:1.3rem;font-weight:800;color:var(--bp-orange);letter-spacing:-.03em;">1.5 yrs</div>
+                    <div style="font-size:.74rem;color:var(--bp-muted);margin-top:3px;">Active partnership</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact details card -->
+            <div class="account-card">
+              <div class="account-card-header">
+                <h3>Contact Details</h3>
+                <button class="btn btn-sm btn-outline" data-panel-open="edit-contact-panel">
+                  <i class="fa-solid fa-pen"></i> Edit details
+                </button>
+              </div>
+              <div class="account-card-body">
+                <div class="meta-row">
+                  <span class="meta-row-label">Contact name</span>
+                  <span class="meta-row-val" data-bp-contact>Emeka Wilson</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-label">Email</span>
+                  <span class="meta-row-val">emeka@wilsonslemonade.ng</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-label">Phone</span>
+                  <span class="meta-row-val">+234 (0)802 000 1234</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-label">Brand address</span>
+                  <span class="meta-row-val">Lagos, Nigeria</span>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /left -->
+
+          <!-- RIGHT COLUMN -->
+          <div>
+
+            <!-- Account manager card -->
+            <div class="account-card">
+              <div class="account-card-header">
+                <h3>Your DALA Account Manager</h3>
+              </div>
+              <div class="account-card-body">
+                <div class="manager-card-inner">
+                  <div class="manager-avatar">SO</div>
+                  <div class="manager-info" style="flex:1;">
+                    <div class="manager-name" data-bp-manager>Sola Okafor</div>
+                    <div class="manager-role">Senior Account Manager, DALA Technologies</div>
+                    <div class="manager-contacts">
+                      <a href="tel:+2348034567890"><i class="fa-solid fa-phone"></i> +234 (0)803 456 7890</a>
+                      <a href="mailto:sola.okafor@dalatechnologies.com"><i class="fa-solid fa-envelope"></i> sola.okafor@dalatechnologies.com</a>
+                    </div>
+                    <div class="manager-actions">
+                      <a href="https://wa.me/2348034567890" class="btn btn-sm btn-accent" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                      </a>
+                      <button class="btn btn-sm btn-outline" onclick="alert('Call scheduling feature coming soon. Please WhatsApp or email Sola directly.')">
+                        <i class="fa-solid fa-calendar-check"></i> Schedule a call
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="info-note info-green" style="margin-top:16px;">
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span>Sola typically responds within 2 hours on business days. For urgent matters, WhatsApp is fastest.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contract & billing card -->
+            <div class="account-card">
+              <div class="account-card-header">
+                <h3>Contract &amp; Billing</h3>
+              </div>
+              <div class="account-card-body">
+                <div class="meta-row">
+                  <span class="meta-row-label">Partnership agreement</span>
+                  <span class="meta-row-val">Signed January 2024</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-label">Payment terms</span>
+                  <span class="meta-row-val">Net 30 days</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-label">Commission rate</span>
+                  <span class="meta-row-val" style="color:var(--bp-muted);font-style:italic;">Contact your manager</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-label">Invoice currency</span>
+                  <span class="meta-row-val">Nigerian Naira (₦)</span>
+                </div>
+                <div style="margin-top:16px;">
+                  <button class="btn btn-outline" onclick="alert('Contract document download — available in a live environment.')">
+                    <i class="fa-solid fa-file-contract"></i> View Agreement
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Notification preferences -->
+            <div class="account-card">
+              <div class="account-card-header">
+                <h3>Notification Preferences</h3>
+              </div>
+              <div class="account-card-body">
+                <div class="toggle-row">
+                  <div class="toggle-label">
+                    Email alerts
+                    <small>Order confirmations, payments, reports</small>
+                  </div>
+                  <label class="toggle-switch">
+                    <input type="checkbox" checked />
+                    <div class="toggle-track"></div>
+                    <div class="toggle-thumb"></div>
+                  </label>
+                </div>
+                <div class="toggle-row">
+                  <div class="toggle-label">
+                    WhatsApp alerts
+                    <small>Urgent updates and account manager messages</small>
+                  </div>
+                  <label class="toggle-switch">
+                    <input type="checkbox" checked />
+                    <div class="toggle-track"></div>
+                    <div class="toggle-thumb"></div>
+                  </label>
+                </div>
+                <div class="toggle-row">
+                  <div class="toggle-label">
+                    Weekly digest
+                    <small>Your weekly performance summary every Monday</small>
+                  </div>
+                  <label class="toggle-switch">
+                    <input type="checkbox" checked />
+                    <div class="toggle-track"></div>
+                    <div class="toggle-thumb"></div>
+                  </label>
+                </div>
+                <div class="toggle-row">
+                  <div class="toggle-label">
+                    Monthly reports
+                    <small>Automatically sent when reports are ready</small>
+                  </div>
+                  <label class="toggle-switch">
+                    <input type="checkbox" checked />
+                    <div class="toggle-track"></div>
+                    <div class="toggle-thumb"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /right -->
+        </div><!-- /account-grid -->
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Edit contact panel -->
+  <div class="panel-overlay" id="edit-contact-panel">
+    <div class="side-panel">
+      <div class="panel-header">
+        <h3>Edit Contact Details</h3>
+        <button class="panel-close" data-panel-close="edit-contact-panel">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="panel-body">
+        <form data-demo-form="edit-contact">
+          <div class="pf-group">
+            <label>Contact name</label>
+            <input type="text" value="Emeka Wilson" />
+          </div>
+          <div class="pf-group">
+            <label>Email address</label>
+            <input type="email" value="emeka@wilsonslemonade.ng" />
+          </div>
+          <div class="pf-group">
+            <label>Phone number</label>
+            <input type="tel" value="+234 (0)802 000 1234" />
+          </div>
+          <div class="pf-group">
+            <label>Brand address</label>
+            <textarea>Lagos, Nigeria</textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">
+            <i class="fa-solid fa-check"></i> Save changes
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/brand-portal.js"></script>
+  <script>bpInit();</script>
+</body>
+</html>
