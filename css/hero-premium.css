@@ -7,7 +7,7 @@
   /* Hero Container - Light Theme with subtle warmth */
   .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f5f3ef 0%, #f8f6f2 50%, #f0ede8 100%);
+    background: #ffffff;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -201,14 +201,14 @@
   }
 
   .hero-btn-secondary {
-    background: white;
+    background: #f5f0e8;
     color: var(--dark);
-    border: 0.5px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
 
   .hero-btn-secondary:hover {
-    background: var(--gray-50);
+    background: #ede8de;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
@@ -265,7 +265,7 @@
   .hero {
     min-height: 100vh;
     min-height: 100dvh;
-    background: linear-gradient(135deg, #f5f3ef 0%, #f8f6f2 50%, #f0ede8 100%);
+    background: #ffffff;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -448,10 +448,10 @@
   }
 
   .hero-btn-secondary {
-    background: white;
+    background: #f5f0e8;
     color: var(--dark);
-    border: 0.5px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
 
   .hero-btn-secondary:active {

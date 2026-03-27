@@ -89,8 +89,8 @@
       <!-- Stats -->
       <div class="hero-stats">
         <div class="hero-stat">
-          <span class="hero-stat-number">22+</span>
-          <span class="hero-stat-label">Retailers</span>
+          <span class="hero-stat-number">48hr</span>
+          <span class="hero-stat-label">Delivery</span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-number">300+</span>
@@ -116,8 +116,7 @@
   <section class="brand-logo-section reveal-section">
     <div class="logo-section-header">
       <p class="logo-section-title">Trusted By Leading Retailers</p>
-      <h3 class="logo-section-subtitle">Building retail infrastructure across Nigeria</h3>
-      <p class="logo-section-desc">22+ leading supermarkets and modern trade outlets across Lagos and Ogun State</p>
+      <h3 class="logo-section-subtitle">Building retail infrastructure with Nigeria's reputable retailers</h3>
     </div>
     
     <div class="brand-marquee">
@@ -210,7 +209,7 @@
     <div class="container">
       <div class="section-header reveal-section">
         <span class="section-label">Who We're Built For</span>
-        <h2 class="section-title">Built For Two Sides of Retail</h2>
+        <h2 class="section-title">Built for both sides of retail.</h2>
         <p class="section-subtitle">
           DALA serves as the control layer between supermarkets and brands streamlining operations, ensuring standards are met, and providing reliable execution for both sides.
         </p>
@@ -308,8 +307,7 @@
   <section class="brand-logo-section reveal-section" style="background: linear-gradient(180deg, #faf9f7 0%, var(--bg-primary) 100%);">
     <div class="logo-section-header">
       <p class="logo-section-title">Brand Partners</p>
-      <h3 class="logo-section-subtitle">Scaling Ambitious Brands</h3>
-      <p class="logo-section-desc">Helping growing consumer brands across Nigeria reach more stores with discipline and structure</p>
+      <h3 class="logo-section-subtitle">Scaling ambitious brands across several retail outlets</h3>
     </div>
     
     <div class="brand-marquee">
@@ -526,7 +524,7 @@
       </div>
       
       <div class="testimonials-cta">
-        <a href="pages/get-listed.html" class="btn btn-primary btn-large">
+        <a href="pages/get-listed.html" class="btn btn-large testimonials-cta-btn">
           Get Listed Now <i class="fas fa-arrow-right"></i>
         </a>
       </div>
@@ -613,6 +611,10 @@
           <i class="fas fa-phone"></i>
           <span>+234 814 882 4115</span>
         </a>
+        <a href="tel:+2349032352306" class="footer-contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+234 903 235 2306</span>
+        </a>
         <a href="mailto:info@dalatechnologies.com" class="footer-contact-item">
           <i class="fas fa-envelope"></i>
           <span>info@dalatechnologies.com</span>
@@ -627,16 +629,16 @@
       <div class="footer-social-section">
         <div class="footer-social-title">Follow Us</div>
         <div class="footer-social-grid">
-          <a href="#" class="social-icon" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/dala-tech/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="#" class="social-icon" aria-label="Instagram">
+          <a href="https://www.instagram.com/dala.technologies?igsh=MTU4eW5jMGdydGx4dw==" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="#" class="social-icon" aria-label="Twitter">
+          <a href="https://x.com/usedalatech" class="social-icon" aria-label="Twitter" target="_blank" rel="noopener">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#" class="social-icon" aria-label="Facebook">
+          <a href="https://www.facebook.com/share/1G7LDCdYw3/" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">
             <i class="fab fa-facebook-f"></i>
           </a>
         </div>
@@ -714,58 +716,36 @@
   <script src="js/smart-navbar.js"></script>
   <script src="js/floating-card.js"></script>
   <script src="assets/js/animations.js"></script>
-<!-- Website Maintenance in Progress Badge -->
 <style>
-  .wip-badge {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: linear-gradient(135deg, rgba(229, 57, 53, 0.95) 0%, rgba(198, 40, 40, 0.95) 100%);
+  /* Testimonials CTA button — gradient, auto-width */
+  .testimonials-cta-btn {
+    background: linear-gradient(135deg, #ff8a1d 0%, #ff6b35 100%);
     color: white;
-    padding: 12px 20px;
-    border-radius: 50px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    display: flex;
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.28);
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 20px rgba(229, 57, 53, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-    backdrop-filter: blur(10px);
-    z-index: 9999;
-    cursor: default;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: wipPulse 3s ease-in-out infinite;
+    gap: 8px;
+    padding: 14px 32px;
+    width: auto;
   }
-  .wip-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(229, 57, 53, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2) inset; }
-  .wip-badge--hidden { opacity: 0; transform: translateY(20px) scale(0.9); pointer-events: none; }
-  @keyframes wipPulse {
-    0%, 100% { box-shadow: 0 4px 20px rgba(229, 57, 53, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset; }
-    50% { box-shadow: 0 6px 25px rgba(229, 57, 53, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 20px rgba(229, 57, 53, 0.2); }
+  .testimonials-cta-btn:hover {
+    background: linear-gradient(135deg, #ff9a2d 0%, #ff7b45 100%);
+    box-shadow: 0 12px 32px rgba(255, 107, 53, 0.38);
+    transform: translateY(-2px);
+    color: white;
   }
-  .wip-badge__dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: wipDotPulse 2s ease-in-out infinite; flex-shrink: 0; }
-  @keyframes wipDotPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.1); } }
-  .wip-badge__close { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; margin-left: 4px; margin-right: -6px; border-radius: 50%; background: rgba(255, 255, 255, 0.15); border: none; color: white; font-size: 14px; cursor: pointer; transition: all 0.2s ease; flex-shrink: 0; }
-  .wip-badge__close:hover { background: rgba(255, 255, 255, 0.25); transform: rotate(90deg); }
-  @media (max-width: 640px) {
-    .wip-badge { bottom: 16px; right: 50%; transform: translateX(50%); padding: 10px 16px; font-size: 12px; }
-    .wip-badge:hover { transform: translateX(50%) translateY(-2px); }
-    .wip-badge--hidden { transform: translateX(50%) translateY(20px) scale(0.9); }
+  /* Override the mobile override that forces red */
+  @media (max-width: 768px) {
+    .cta-buttons .btn-primary {
+      background: linear-gradient(135deg, #ff8a1d 0%, #ff6b35 100%) !important;
+    }
+  }
+  /* Fix marquee subtitle text fade */
+  .logo-section-subtitle {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    opacity: 1 !important;
   }
 </style>
-<div class="wip-badge" id="wipBadge" role="status" aria-label="Website maintenance in progress">
-  <span class="wip-badge__dot"></span>
-  <span class="wip-badge__text">Website Maintenance in Progress</span>
-  <button class="wip-badge__close" onclick="dismissWipBadge()" aria-label="Dismiss notification"><i class="fas fa-times" style="font-size: 10px;"></i></button>
-</div>
-<script>
-  if (localStorage.getItem('wipBadgeDismissed')) document.getElementById('wipBadge').classList.add('wip-badge--hidden');
-  function dismissWipBadge() {
-    document.getElementById('wipBadge').classList.add('wip-badge--hidden');
-    localStorage.setItem('wipBadgeDismissed', 'true');
-    localStorage.setItem('wipBadgeDismissedTime', Date.now().toString());
-  }
-</script>
 </body>
 </html>
