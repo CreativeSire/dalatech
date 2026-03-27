@@ -722,6 +722,10 @@
           <i class="fas fa-phone"></i>
           <span>+234 814 882 4115</span>
         </a>
+        <a href="tel:+2349032352306" class="footer-contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+234 903 235 2306</span>
+        </a>
         <a href="mailto:info@dalatechnologies.com" class="footer-contact-item">
           <i class="fas fa-envelope"></i>
           <span>info@dalatechnologies.com</span>
@@ -736,16 +740,16 @@
       <div class="footer-social-section">
         <div class="footer-social-title">Follow Us</div>
         <div class="footer-social-grid">
-          <a href="#" class="social-icon" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/dala-tech/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="#" class="social-icon" aria-label="Instagram">
+          <a href="https://www.instagram.com/dala.technologies?igsh=MTU4eW5jMGdydGx4dw==" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="#" class="social-icon" aria-label="Twitter">
+          <a href="https://x.com/usedalatech" class="social-icon" aria-label="Twitter" target="_blank" rel="noopener">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#" class="social-icon" aria-label="Facebook">
+          <a href="https://www.facebook.com/share/1G7LDCdYw3/" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">
             <i class="fab fa-facebook-f"></i>
           </a>
         </div>
@@ -1314,243 +1318,5 @@
     }
   }
 </style>
-
-<!-- Website Maintenance in Progress Badge -->
-<style>
-  .wip-badge {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: linear-gradient(135deg, rgba(229, 57, 53, 0.95) 0%, rgba(198, 40, 40, 0.95) 100%);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 50px;
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 20px rgba(229, 57, 53, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-    backdrop-filter: blur(10px);
-    z-index: 9999;
-    cursor: default;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: wipPulse 3s ease-in-out infinite;
-  }
-  .wip-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(229, 57, 53, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2) inset; }
-  .wip-badge--hidden { opacity: 0; transform: translateY(20px) scale(0.9); pointer-events: none; }
-  @keyframes wipPulse {
-    0%, 100% { box-shadow: 0 4px 20px rgba(229, 57, 53, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset; }
-    50% { box-shadow: 0 6px 25px rgba(229, 57, 53, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 20px rgba(229, 57, 53, 0.2); }
-  }
-  .wip-badge__dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: wipDotPulse 2s ease-in-out infinite; flex-shrink: 0; }
-  @keyframes wipDotPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.1); } }
-  .wip-badge__close { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; margin-left: 4px; margin-right: -6px; border-radius: 50%; background: rgba(255, 255, 255, 0.15); border: none; color: white; font-size: 14px; cursor: pointer; transition: all 0.2s ease; flex-shrink: 0; }
-  .wip-badge__close:hover { background: rgba(255, 255, 255, 0.25); transform: rotate(90deg); }
-  @media (max-width: 640px) {
-    .wip-badge { bottom: 16px; right: 50%; transform: translateX(50%); padding: 10px 16px; font-size: 12px; }
-    .wip-badge:hover { transform: translateX(50%) translateY(-2px); }
-    .wip-badge--hidden { transform: translateX(50%) translateY(20px) scale(0.9); }
-  }
-</style>
-<div class="wip-badge" id="wipBadge" role="status" aria-label="Website maintenance in progress">
-  <span class="wip-badge__dot"></span>
-  <span class="wip-badge__text">Website Maintenance in Progress</span>
-  <button class="wip-badge__close" onclick="dismissWipBadge()" aria-label="Dismiss notification"><i class="fas fa-times" style="font-size: 10px;"></i></button>
-</div>
-<script>
-  if (localStorage.getItem('wipBadgeDismissed')) document.getElementById('wipBadge').classList.add('wip-badge--hidden');
-  function dismissWipBadge() {
-    document.getElementById('wipBadge').classList.add('wip-badge--hidden');
-    localStorage.setItem('wipBadgeDismissed', 'true');
-    localStorage.setItem('wipBadgeDismissedTime', Date.now().toString());
-  }
-  
-  // ============================================
-  // SERVICES SECTION - Expandable Cards & Slider
-  // ============================================
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    // Desktop: Expandable cards
-    const expandBtns = document.querySelectorAll('.service-expand-btn');
-    const closeBtns = document.querySelectorAll('.service-close-btn');
-    const servicesNucleus = document.getElementById('servicesNucleus');
-    const mobileServicesFloating = document.getElementById('servicesMobileFloatingBrands');
-
-    // Keep the mobile floating cards outside the hidden desktop wrapper on small screens.
-    if (window.innerWidth <= 1023 && servicesNucleus && mobileServicesFloating && mobileServicesFloating.parentElement === servicesNucleus) {
-      servicesNucleus.insertAdjacentElement('afterend', mobileServicesFloating);
-    }
-    
-    expandBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
-        const card = this.closest('.service-card-portrait');
-        card.classList.add('expanded');
-      });
-    });
-    
-    closeBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
-        const card = this.closest('.service-card-portrait');
-        card.classList.remove('expanded');
-      });
-    });
-    
-    function initFloatingCardCarousel(containerId, delay = 6500) {
-      if (window.innerWidth > 1023) return;
-      const container = document.getElementById(containerId);
-      if (!container) return;
-      
-      const slides = container.querySelectorAll('.floating-card-slide');
-      const dots = container.querySelectorAll('.floating-dot');
-      if (!slides.length) return;
-      
-      let currentSlide = 0;
-      let autoRotate;
-      let touchStartX = 0;
-      let touchEndX = 0;
-      
-      function showSlide(index) {
-        currentSlide = (index + slides.length) % slides.length;
-        slides.forEach((slide, slideIndex) => {
-          slide.classList.toggle('active', slideIndex === currentSlide);
-        });
-        dots.forEach((dot, dotIndex) => {
-          dot.classList.toggle('active', dotIndex === currentSlide);
-        });
-      }
-      
-      function nextSlide() {
-        showSlide(currentSlide + 1);
-      }
-      
-      function restartAutoRotate() {
-        clearInterval(autoRotate);
-        autoRotate = setInterval(nextSlide, delay);
-      }
-      
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          showSlide(index);
-          restartAutoRotate();
-        });
-      });
-      
-      container.addEventListener('touchstart', (event) => {
-        touchStartX = event.changedTouches[0].screenX;
-      }, { passive: true });
-      
-      container.addEventListener('touchend', (event) => {
-        touchEndX = event.changedTouches[0].screenX;
-        const swipeDistance = touchEndX - touchStartX;
-        
-        if (Math.abs(swipeDistance) > 50) {
-          if (swipeDistance < 0) {
-            nextSlide();
-          } else {
-            showSlide(currentSlide - 1);
-          }
-          restartAutoRotate();
-        }
-      }, { passive: true });
-      
-      showSlide(0);
-      restartAutoRotate();
-    }
-    
-    initFloatingCardCarousel('servicesMobileFloatingBrands');
-    
-    // 3D Tilt Effect for Service Cards
-    const tiltCards = document.querySelectorAll('.service-card-portrait');
-    
-    tiltCards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = ((y - centerY) / centerY) * -8; // Max 8deg rotation
-        const rotateY = ((x - centerX) / centerX) * 8;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
-      });
-      
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
-      });
-    });
-    
-    // Desktop: Horizontal Scroll Carousel
-    const carousel = document.getElementById('servicesCarousel');
-    const carouselPrev = document.getElementById('carouselPrev');
-    const carouselNext = document.getElementById('carouselNext');
-    const carouselDots = document.querySelectorAll('.carousel-dot');
-    const orbitCards = document.querySelectorAll('.service-orbit-card');
-    
-    if (carousel && orbitCards.length > 0) {
-      const cardWidth = orbitCards[0].offsetWidth + 32; // card width + gap
-      let currentIndex = 0;
-      const totalCards = orbitCards.length;
-      
-      function updateCarousel() {
-        // Update dots
-        carouselDots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentIndex);
-        });
-        
-        // Update arrow states
-        if (carouselPrev) {
-          carouselPrev.disabled = currentIndex === 0;
-          carouselPrev.style.opacity = currentIndex === 0 ? '0.4' : '1';
-        }
-        if (carouselNext) {
-          carouselNext.disabled = currentIndex >= totalCards - 3;
-          carouselNext.style.opacity = currentIndex >= totalCards - 3 ? '0.4' : '1';
-        }
-      }
-      
-      function scrollToCard(index) {
-        currentIndex = Math.max(0, Math.min(index, totalCards - 1));
-        carousel.scrollTo({
-          left: currentIndex * cardWidth,
-          behavior: 'smooth'
-        });
-        updateCarousel();
-      }
-      
-      // Arrow navigation
-      if (carouselPrev) {
-        carouselPrev.addEventListener('click', () => scrollToCard(currentIndex - 1));
-      }
-      
-      if (carouselNext) {
-        carouselNext.addEventListener('click', () => scrollToCard(currentIndex + 1));
-      }
-      
-      // Dot navigation
-      carouselDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => scrollToCard(index));
-      });
-      
-      // Update on scroll
-      let scrollTimeout;
-      carousel.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          currentIndex = Math.round(carousel.scrollLeft / cardWidth);
-          updateCarousel();
-        }, 100);
-      }, { passive: true });
-      
-      // Initial state
-      updateCarousel();
-    }
-  });
-</script>
 </body>
 </html>
