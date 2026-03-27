@@ -3,180 +3,518 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DALA Store | Premium Marketplace</title>
-  <meta name="description" content="Browse the DALA Store by collection, compare prices, choose quantities, and place manual orders from a cleaner premium marketplace.">
+  <title>DALA Market | Premium FMCG Marketplace</title>
+  <meta name="description" content="Shop DALA Market — Nigeria's premium FMCG marketplace. Pantry essentials, beverages, household goods and more.">
   <link rel="icon" type="image/png" href="../favicon.png">
-  <link rel="shortcut icon" href="../favicon.png">
-  <link rel="apple-touch-icon" href="../favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/store.css">
+  <link rel="stylesheet" href="../css/store-premium.css">
 </head>
-<body class="store-body" data-store-page="home">
-  <nav class="navbar">
-    <div class="navbar-container">
-      <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
-      <div class="nav-links">
-        <a href="../pages/for-brands.html" class="nav-link">DALA for Brands</a>
-        <a href="../pages/for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
-        <a href="../pages/about.html" class="nav-link">About Us</a>
-        <a href="../pages/case-studies.html" class="nav-link">Case Studies</a>
-        <a href="../pages/contact.html" class="nav-link">Contact Us</a>
-        <a href="/store/" class="nav-link active">Store</a>
-        <a href="../pages/signup.html" class="nav-cta">Sign Up</a>
+<body class="premium-store-body">
+
+  <!-- Loading Screen -->
+  <div class="store-loader" id="loader">
+    <div class="store-loader-content">
+      <span class="store-loader-text">DALA MARKET</span>
+      <div class="store-loader-line"></div>
+    </div>
+  </div>
+
+  <!-- Utility Bar -->
+  <div class="premium-utility">
+    <div class="premium-utility-inner">
+      <span><i class="fas fa-truck-fast"></i> Free delivery on orders over ₦15,000</span>
+      <span class="premium-utility-sep">|</span>
+      <a href="#flash-deals">Flash Deals — Today Only</a>
+      <span class="premium-utility-sep">|</span>
+      <span>Delivering across Lagos, Abuja & Port Harcourt</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="premium-header" id="header">
+    <div class="premium-header-inner">
+      <a href="../index.html" class="premium-logo">
+        <img src="../4.png" alt="DALA Market">
+      </a>
+
+      <form class="premium-search" role="search" onsubmit="return false">
+        <select class="premium-search-cat" aria-label="Category">
+          <option>All Categories</option>
+          <option>Pantry</option>
+          <option>Beverages</option>
+          <option>Snacks</option>
+          <option>Household</option>
+          <option>Personal Care</option>
+        </select>
+        <input type="search" class="premium-search-input" placeholder="Search for products, brands and more…" aria-label="Search products">
+        <button class="premium-search-btn" type="submit" aria-label="Search">
+          <i class="fas fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <div class="premium-actions">
+        <a href="../pages/signup.html" class="premium-action">
+          <i class="fas fa-circle-user"></i>
+          <span>Account</span>
+        </a>
+        <button class="premium-action" aria-label="Wishlist">
+          <i class="far fa-heart"></i>
+          <span>Wishlist</span>
+        </button>
+        <button class="premium-action" id="cartToggle" aria-label="Open cart">
+          <i class="fas fa-cart-shopping"></i>
+          <span>Cart</span>
+          <span class="premium-cart-badge" id="cartCount">0</span>
+        </button>
       </div>
-      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Category Navigation -->
+  <nav class="premium-cat-nav" aria-label="Shop categories">
+    <div class="premium-cat-inner hide-scrollbar">
+      <button class="premium-cat-btn">
+        <i class="fas fa-table-cells-large"></i> All Categories
+      </button>
+      <a href="#flash-deals" class="premium-cat-link flash">
+        <i class="fas fa-bolt"></i> Today's Deals
+      </a>
+      <a href="#categories" class="premium-cat-link">Pantry</a>
+      <a href="#categories" class="premium-cat-link">Beverages</a>
+      <a href="#categories" class="premium-cat-link">Snacks</a>
+      <a href="#categories" class="premium-cat-link">Household</a>
+      <a href="#categories" class="premium-cat-link">Personal Care</a>
+      <a href="#categories" class="premium-cat-link">Infant Care</a>
     </div>
   </nav>
 
-  <main class="store-shell">
-    <section class="store-hero">
-      <div class="store-container">
-        <div class="store-hero-layout">
-          <aside class="store-category-rail">
-            <div class="store-rail-head">
-              <span class="store-kicker"><i class="fas fa-table-cells-large"></i> Collections</span>
-              <h2>Browse by category</h2>
-            </div>
-            <div class="store-rail-list" data-store-sidebar></div>
-          </aside>
+  <!-- Hero Section -->
+  <section class="premium-hero" id="hero">
+    <!-- Slide 1 -->
+    <div class="premium-hero-slide active" data-slide="0">
+      <div class="premium-hero-bg" style="background-image: url('../images/case-study-products/wilsons-lemonade.jpg')"></div>
+      <div class="premium-hero-overlay"></div>
+      <div class="premium-hero-content">
+        <span class="premium-hero-eyebrow"><i class="fas fa-bolt"></i> Flash Sale Ends Soon</span>
+        <h1 class="premium-hero-title">Your Favorite Brands.<br><em>One Marketplace.</em></h1>
+        <p class="premium-hero-text">From pantry essentials to household must-haves. Shop Nigeria's most trusted FMCG brands with fast delivery and real savings.</p>
+        <div class="premium-hero-actions">
+          <a href="#flash-deals" class="premium-btn premium-btn-primary"><i class="fas fa-bolt"></i> Shop Deals</a>
+          <a href="#categories" class="premium-btn premium-btn-outline">Browse All</a>
+        </div>
+      </div>
+    </div>
 
-          <div class="store-hero-main">
-            <div class="store-hero-copy">
-              <span class="store-kicker"><i class="fas fa-store"></i> DALA Store</span>
-              <h1>Order retail essentials from a calmer, cleaner marketplace.</h1>
-              <p>Choose a collection, compare products, set quantities, and move into manual checkout or quote without catalog clutter.</p>
-              <form class="store-search" data-store-search>
-                <i class="fas fa-magnifying-glass"></i>
-                <input type="search" placeholder="Search products or categories" aria-label="Search Store" data-store-query>
-                <button class="store-btn store-btn-primary" type="submit">Search</button>
-              </form>
-              <div class="store-hero-actions">
-                <a href="#collections" class="store-btn store-btn-primary">Browse Store</a>
-                <a href="/store/cart.html" class="store-btn store-btn-secondary">View Cart <span data-cart-count>0</span></a>
-              </div>
-              <div class="store-hero-meta">
-                <div class="store-meta-card">
-                  <strong>7 curated categories</strong>
-                  <span>Clear product groups for quick restocking</span>
-                </div>
-                <div class="store-meta-card">
-                  <strong>Live prices</strong>
-                  <span>Real pricing, manual ordering, quote-ready flow</span>
-                </div>
-                <div class="store-meta-card">
-                  <strong>Built for buyers</strong>
-                  <span>Designed for repeat wholesale and retail ordering</span>
-                </div>
-              </div>
-            </div>
+    <!-- Slide 2 -->
+    <div class="premium-hero-slide" data-slide="1">
+      <div class="premium-hero-bg" style="background-image: url('../images/case-study-products/zayith.jpg')"></div>
+      <div class="premium-hero-overlay"></div>
+      <div class="premium-hero-content">
+        <span class="premium-hero-eyebrow"><i class="fas fa-store"></i> For Retailers</span>
+        <h1 class="premium-hero-title">Stock Smart.<br><em>Grow Faster.</em></h1>
+        <p class="premium-hero-text">Join 300+ retailers buying directly from verified distributors. Better margins, reliable supply, zero headaches.</p>
+        <div class="premium-hero-actions">
+          <a href="../pages/for-supermarkets.html" class="premium-btn premium-btn-primary"><i class="fas fa-boxes-stacking"></i> Retailer Portal</a>
+          <a href="../product-catalog/" class="premium-btn premium-btn-outline">View Catalog</a>
+        </div>
+      </div>
+    </div>
 
-            <div class="store-hero-visual">
-              <div class="store-showcase">
-                <div class="store-showcase-band store-showcase-band--primary">
-                  <span>Premium marketplace</span>
-                  <strong>Product-first, not catalog-first</strong>
-                </div>
-                <div class="store-showcase-grid">
-                  <article class="store-showcase-card">
-                    <span class="store-showcase-label">Beverages</span>
-                    <strong>Fast-moving retail picks</strong>
-                  </article>
-                  <article class="store-showcase-card">
-                    <span class="store-showcase-label">Pantry</span>
-                    <strong>Everyday essentials for steady shelves</strong>
-                  </article>
-                  <article class="store-showcase-card">
-                    <span class="store-showcase-label">Care</span>
-                    <strong>Clean ordering for body and infant care</strong>
-                  </article>
-                  <article class="store-showcase-card">
-                    <span class="store-showcase-label">Household</span>
-                    <strong>Reliable restocking across practical items</strong>
-                  </article>
-                </div>
-              </div>
-            </div>
+    <!-- Hero Navigation -->
+    <div class="premium-hero-nav">
+      <div class="premium-hero-dots">
+        <button class="premium-hero-dot active" data-slide="0"></button>
+        <button class="premium-hero-dot" data-slide="1"></button>
+      </div>
+      <div class="premium-hero-arrows">
+        <button class="premium-hero-arrow" id="heroPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="premium-hero-arrow" id="heroNext"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Strip -->
+  <div class="premium-brands">
+    <div class="premium-brands-inner">
+      <span class="premium-brands-label">Trusted Brands</span>
+      <span class="premium-brand"><i class="fas fa-circle-check"></i> Nestlé</span>
+      <span class="premium-brand"><i class="fas fa-circle-check"></i> Unilever</span>
+      <span class="premium-brand"><i class="fas fa-circle-check"></i> P&G</span>
+      <span class="premium-brand"><i class="fas fa-circle-check"></i> Dangote</span>
+      <span class="premium-brand"><i class="fas fa-circle-check"></i> Chi Ltd</span>
+    </div>
+  </div>
+
+  <!-- Flash Deals -->
+  <section class="premium-flash premium-section" id="flash-deals">
+    <div class="premium-flash-header">
+      <div class="premium-flash-title">
+        <span class="premium-flash-badge"><i class="fas fa-bolt"></i> Flash Deals</span>
+        <h2 class="premium-section-title">Deal of the Day</h2>
+      </div>
+      <div class="premium-countdown">
+        <span class="premium-countdown-label">Ends in</span>
+        <div class="premium-countdown-time">
+          <div class="premium-countdown-block"><span id="hours">04</span><small>HRS</small></div>
+          <div class="premium-countdown-block"><span id="mins">32</span><small>MIN</small></div>
+          <div class="premium-countdown-block"><span id="secs">18</span><small>SEC</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="premium-product-grid">
+      <!-- Product 1 -->
+      <div class="premium-product-card reveal">
+        <div class="premium-product-media">
+          <span class="premium-product-badge">−20%</span>
+          <button class="premium-product-wishlist"><i class="far fa-heart"></i></button>
+          <img src="../images/case-study-products/wilsons-lemonade.jpg" alt="Golden Morn">
+        </div>
+        <div class="premium-product-body">
+          <p class="premium-product-name">Nestlé Golden Morn Maize Flakes 900g</p>
+          <div class="premium-product-prices">
+            <span class="premium-product-price">₦2,800</span>
+            <span class="premium-product-was">₦3,500</span>
           </div>
-
-          <aside class="store-hero-side">
-            <article class="store-side-card">
-              <span class="store-side-eyebrow">Need to order quickly?</span>
-              <h3>Start with the collection you need.</h3>
-              <p>Open a category, add products, set quantities, and move into checkout from one clean flow.</p>
-            </article>
-            <article class="store-side-stat">
-              <strong>48-hour delivery</strong>
-              <span>Fast fulfilment after confirmation</span>
-            </article>
-            <article class="store-side-stat">
-              <strong>Manual order + quote</strong>
-              <span>Two routes, one Store experience</span>
-            </article>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="store-section" id="collections">
-      <div class="store-container">
-        <div class="store-section-head">
-          <div>
-            <span class="store-section-kicker"><i class="fas fa-layer-group"></i> Collections</span>
-            <h2>Shop by collection</h2>
+          <div class="premium-product-progress">
+            <div class="premium-product-progress-bar" style="width:68%"></div>
           </div>
-          <p>Open a collection, see its products in one place, and order without fighting a noisy marketplace.</p>
+          <span class="premium-product-claimed">68 claimed</span>
+          <button class="premium-add-btn" onclick="addToCart({id:'gm-900', name:'Golden Morn 900g', price:2800})">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
         </div>
-        <div class="store-chip-row" data-collection-tabs></div>
-        <div class="store-category-grid" data-category-grid></div>
       </div>
-    </section>
 
-    <section class="store-section store-section--featured">
-      <div class="store-container">
-        <div class="store-section-head">
-          <div>
-            <span class="store-section-kicker"><i class="fas fa-bag-shopping"></i> Featured</span>
-            <h2 data-store-results-title>Featured products</h2>
+      <!-- Product 2 -->
+      <div class="premium-product-card reveal">
+        <div class="premium-product-media">
+          <span class="premium-product-badge">−16%</span>
+          <button class="premium-product-wishlist"><i class="far fa-heart"></i></button>
+          <img src="../images/case-study-products/zayith.jpg" alt="Peak Milk">
+        </div>
+        <div class="premium-product-body">
+          <p class="premium-product-name">Peak Full Cream Milk Powder 400g</p>
+          <div class="premium-product-prices">
+            <span class="premium-product-price">₦1,850</span>
+            <span class="premium-product-was">₦2,200</span>
           </div>
-          <p>Fast-moving items with clear pricing, clean placeholders, and direct paths into the cart.</p>
-        </div>
-        <div class="store-product-grid" data-featured-products></div>
-      </div>
-    </section>
-
-    <section class="store-section store-section--trust">
-      <div class="store-container">
-        <div class="store-trust-grid">
-          <article class="store-trust-card">
-            <div class="store-trust-icon"><i class="fas fa-truck-fast"></i></div>
-            <h3>48-hour delivery</h3>
-            <p>Move from confirmed order to fulfilment quickly and clearly.</p>
-          </article>
-          <article class="store-trust-card">
-            <div class="store-trust-icon"><i class="fas fa-shield-check"></i></div>
-            <h3>Disciplined quality</h3>
-            <p>Every listing belongs in a cleaner, more dependable buying flow.</p>
-          </article>
-          <article class="store-trust-card">
-            <div class="store-trust-icon"><i class="fas fa-cart-shopping"></i></div>
-            <h3>Quantity-first ordering</h3>
-            <p>Built for repeat retail and wholesale buying, not casual browsing.</p>
-          </article>
+          <div class="premium-product-progress">
+            <div class="premium-product-progress-bar" style="width:52%"></div>
+          </div>
+          <span class="premium-product-claimed">52 claimed</span>
+          <button class="premium-add-btn" onclick="addToCart({id:'pk-400', name:'Peak Milk 400g', price:1850})">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
         </div>
       </div>
-    </section>
-  </main>
 
-  <a href="/store/cart.html" class="store-floating-cart" aria-label="Open cart">
-    <i class="fas fa-cart-shopping"></i>
-    <span data-cart-count>0</span>
-  </a>
+      <!-- Product 3 -->
+      <div class="premium-product-card reveal">
+        <div class="premium-product-media">
+          <span class="premium-product-badge">−24%</span>
+          <button class="premium-product-wishlist"><i class="far fa-heart"></i></button>
+          <img src="../images/case-study-products/august-secrets.jpg" alt="Pampers">
+        </div>
+        <div class="premium-product-body">
+          <p class="premium-product-name">Pampers Baby Dry Diapers Size 2 — 40 count</p>
+          <div class="premium-product-prices">
+            <span class="premium-product-price">₦4,200</span>
+            <span class="premium-product-was">₦5,500</span>
+          </div>
+          <div class="premium-product-progress">
+            <div class="premium-product-progress-bar" style="width:31%"></div>
+          </div>
+          <span class="premium-product-claimed">31 claimed</span>
+          <button class="premium-add-btn" onclick="addToCart({id:'pam-s2', name:'Pampers S2 x40', price:4200})">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
 
-  <script src="../js/main.js"></script>
-  <script src="../js/store.js"></script>
+      <!-- Product 4 -->
+      <div class="premium-product-card reveal">
+        <div class="premium-product-media">
+          <span class="premium-product-badge">−18%</span>
+          <button class="premium-product-wishlist"><i class="far fa-heart"></i></button>
+          <img src="../images/case-study-products/eloha.jpg" alt="Milo">
+        </div>
+        <div class="premium-product-body">
+          <p class="premium-product-name">Nestlé Milo Chocolate Malt Drink Tin 500g</p>
+          <div class="premium-product-prices">
+            <span class="premium-product-price">₦3,100</span>
+            <span class="premium-product-was">₦3,800</span>
+          </div>
+          <div class="premium-product-progress">
+            <div class="premium-product-progress-bar" style="width:59%"></div>
+          </div>
+          <span class="premium-product-claimed">59 claimed</span>
+          <button class="premium-add-btn" onclick="addToCart({id:'milo-500', name:'Milo 500g', price:3100})">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="premium-categories premium-section" id="categories">
+    <div class="premium-section-header">
+      <h2 class="premium-section-title">Shop by <span>Category</span></h2>
+      <a href="#" class="premium-see-all">See all <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="premium-pill-grid">
+      <a href="#" class="premium-pill reveal">
+        <span class="premium-pill-icon"><i class="fas fa-wheat-awn"></i></span>
+        <span>Pantry</span>
+      </a>
+      <a href="#" class="premium-pill reveal">
+        <span class="premium-pill-icon"><i class="fas fa-mug-hot"></i></span>
+        <span>Beverages</span>
+      </a>
+      <a href="#" class="premium-pill reveal">
+        <span class="premium-pill-icon"><i class="fas fa-cookie-bite"></i></span>
+        <span>Snacks</span>
+      </a>
+      <a href="#" class="premium-pill reveal">
+        <span class="premium-pill-icon"><i class="fas fa-spray-can-sparkles"></i></span>
+        <span>Household</span>
+      </a>
+      <a href="#" class="premium-pill reveal">
+        <span class="premium-pill-icon"><i class="fas fa-pump-soap"></i></span>
+        <span>Personal Care</span>
+      </a>
+      <a href="#" class="premium-pill reveal">
+        <span class="premium-pill-icon"><i class="fas fa-baby"></i></span>
+        <span>Infant Care</span>
+      </a>
+      <a href="#" class="premium-pill reveal">
+        <span class="premium-pill-icon"><i class="fas fa-candy-cane"></i></span>
+        <span>Confectionery</span>
+      </a>
+      <a href="#" class="premium-pill reveal">
+        <span class="premium-pill-icon"><i class="fas fa-leaf"></i></span>
+        <span>Fresh</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section class="premium-trust">
+    <div class="premium-trust-grid">
+      <div class="premium-trust-item reveal">
+        <div class="premium-trust-icon"><i class="fas fa-truck-fast"></i></div>
+        <h3 class="premium-trust-title">Fast Delivery</h3>
+        <p class="premium-trust-text">Free delivery on orders over ₦15,000 across Lagos, Abuja & PH</p>
+      </div>
+      <div class="premium-trust-item reveal">
+        <div class="premium-trust-icon"><i class="fas fa-shield-check"></i></div>
+        <h3 class="premium-trust-title">Verified Products</h3>
+        <p class="premium-trust-text">Every product is sourced directly from authorized distributors</p>
+      </div>
+      <div class="premium-trust-item reveal">
+        <div class="premium-trust-icon"><i class="fas fa-rotate-left"></i></div>
+        <h3 class="premium-trust-title">Easy Returns</h3>
+        <p class="premium-trust-text">30-day hassle-free returns on all unopened items</p>
+      </div>
+      <div class="premium-trust-item reveal">
+        <div class="premium-trust-icon"><i class="fas fa-headset"></i></div>
+        <h3 class="premium-trust-title">24/7 Support</h3>
+        <p class="premium-trust-text">Our customer service team is always ready to help</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Drawer -->
+  <div class="premium-cart-overlay" id="cartOverlay"></div>
+  <div class="premium-cart-drawer" id="cartDrawer">
+    <div class="premium-cart-header">
+      <h2 class="premium-cart-title">Your Cart</h2>
+      <button class="premium-cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="premium-cart-body" id="cartBody">
+      <div class="premium-cart-empty">
+        <i class="fas fa-cart-shopping"></i>
+        <p>Your cart is empty</p>
+        <a href="#flash-deals" class="premium-btn premium-btn-primary" style="margin-top:20px">Start Shopping</a>
+      </div>
+    </div>
+    <div class="premium-cart-footer" id="cartFooter" style="display:none">
+      <div class="premium-cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartTotal">₦0</span>
+      </div>
+      <button class="premium-cart-checkout">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="premium-mobile-nav">
+    <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+    <a href="#categories"><i class="fas fa-grid-2"></i> Categories</a>
+    <a href="#" id="mobileCart"><i class="fas fa-cart-shopping"></i> Cart <span id="mobileCartCount"></span></a>
+    <a href="../pages/signup.html"><i class="fas fa-user"></i> Account</a>
+  </nav>
+
+  <script>
+    // Loading screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 1500);
+    });
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // Hero Carousel
+    const slides = document.querySelectorAll('.premium-hero-slide');
+    const dots = document.querySelectorAll('.premium-hero-dot');
+    let currentSlide = 0;
+
+    function goToSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      currentSlide = index;
+    }
+
+    document.getElementById('heroNext').addEventListener('click', () => {
+      goToSlide((currentSlide + 1) % slides.length);
+    });
+
+    document.getElementById('heroPrev').addEventListener('click', () => {
+      goToSlide((currentSlide - 1 + slides.length) % slides.length);
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => goToSlide(i));
+    });
+
+    setInterval(() => {
+      goToSlide((currentSlide + 1) % slides.length);
+    }, 6000);
+
+    // Countdown Timer
+    function updateCountdown() {
+      const hours = document.getElementById('hours');
+      const mins = document.getElementById('mins');
+      const secs = document.getElementById('secs');
+      
+      let h = parseInt(hours.textContent);
+      let m = parseInt(mins.textContent);
+      let s = parseInt(secs.textContent);
+      
+      s--;
+      if (s < 0) { s = 59; m--; }
+      if (m < 0) { m = 59; h--; }
+      if (h < 0) { h = 23; m = 59; s = 59; }
+      
+      hours.textContent = h.toString().padStart(2, '0');
+      mins.textContent = m.toString().padStart(2, '0');
+      secs.textContent = s.toString().padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+
+    // Cart functionality
+    let cart = [];
+    
+    function addToCart(product) {
+      const existing = cart.find(p => p.id === product.id);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+      updateCart();
+      openCart();
+    }
+
+    function updateCart() {
+      const count = cart.reduce((sum, p) => sum + p.qty, 0);
+      const total = cart.reduce((sum, p) => sum + (p.price * p.qty), 0);
+      
+      document.getElementById('cartCount').textContent = count;
+      document.getElementById('mobileCartCount').textContent = count > 0 ? `(${count})` : '';
+      
+      const cartBody = document.getElementById('cartBody');
+      const cartFooter = document.getElementById('cartFooter');
+      
+      if (cart.length === 0) {
+        cartBody.innerHTML = `
+          <div class="premium-cart-empty">
+            <i class="fas fa-cart-shopping"></i>
+            <p>Your cart is empty</p>
+            <a href="#flash-deals" class="premium-btn premium-btn-primary" style="margin-top:20px" onclick="closeCart()">Start Shopping</a>
+          </div>
+        `;
+        cartFooter.style.display = 'none';
+      } else {
+        cartBody.innerHTML = cart.map(p => `
+          <div style="display:flex;gap:16px;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,0.05)">
+            <div style="width:80px;height:80px;background:var(--color-cream);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-gold)">
+              <i class="fas fa-box"></i>
+            </div>
+            <div style="flex:1">
+              <p style="font-weight:500;margin-bottom:4px">${p.name}</p>
+              <p style="color:var(--color-gray);font-size:0.85rem">Qty: ${p.qty}</p>
+              <p style="font-family:var(--font-serif);font-size:1.2rem;font-weight:600">₦${(p.price * p.qty).toLocaleString()}</p>
+            </div>
+            <button onclick="removeFromCart('${p.id}')" style="background:none;border:none;color:var(--color-gray);cursor:pointer">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        `).join('');
+        document.getElementById('cartTotal').textContent = `₦${total.toLocaleString()}`;
+        cartFooter.style.display = 'block';
+      }
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(p => p.id !== id);
+      updateCart();
+    }
+
+    function openCart() {
+      document.getElementById('cartOverlay').classList.add('active');
+      document.getElementById('cartDrawer').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+      document.getElementById('cartOverlay').classList.remove('active');
+      document.getElementById('cartDrawer').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('cartToggle').addEventListener('click', openCart);
+    document.getElementById('mobileCart').addEventListener('click', openCart);
+    document.getElementById('cartClose').addEventListener('click', closeCart);
+    document.getElementById('cartOverlay').addEventListener('click', closeCart);
+
+    // Scroll reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+
 </body>
 </html>
