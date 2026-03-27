@@ -1318,5 +1318,160 @@
     }
   }
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const expandBtns = document.querySelectorAll('.service-expand-btn');
+    const closeBtns = document.querySelectorAll('.service-close-btn');
+    const servicesNucleus = document.getElementById('servicesNucleus');
+    const mobileServicesFloating = document.getElementById('servicesMobileFloatingBrands');
+    const carousel = document.getElementById('servicesCarousel');
+    const carouselPrev = document.getElementById('carouselPrev');
+    const carouselNext = document.getElementById('carouselNext');
+    const carouselDots = document.querySelectorAll('.carousel-dot');
+    const orbitCards = document.querySelectorAll('.service-orbit-card');
+    const tiltCards = document.querySelectorAll('.service-card-portrait');
+
+    if (window.innerWidth <= 1023 && servicesNucleus && mobileServicesFloating && mobileServicesFloating.parentElement === servicesNucleus) {
+      servicesNucleus.insertAdjacentElement('afterend', mobileServicesFloating);
+    }
+
+    expandBtns.forEach((btn) => {
+      btn.addEventListener('click', function() {
+        const card = this.closest('.service-card-portrait');
+        card?.classList.add('expanded');
+      });
+    });
+
+    closeBtns.forEach((btn) => {
+      btn.addEventListener('click', function() {
+        const card = this.closest('.service-card-portrait');
+        card?.classList.remove('expanded');
+      });
+    });
+
+    function initFloatingCardCarousel(containerId, delay) {
+      if (window.innerWidth > 1023) return;
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      const slides = container.querySelectorAll('.floating-card-slide');
+      const dots = container.querySelectorAll('.floating-dot');
+      if (!slides.length) return;
+
+      let currentSlide = 0;
+      let autoRotate;
+      let touchStartX = 0;
+
+      function showSlide(index) {
+        currentSlide = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle('active', slideIndex === currentSlide);
+        });
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle('active', dotIndex === currentSlide);
+        });
+      }
+
+      function restartAutoRotate() {
+        clearInterval(autoRotate);
+        autoRotate = setInterval(() => showSlide(currentSlide + 1), delay);
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          showSlide(index);
+          restartAutoRotate();
+        });
+      });
+
+      container.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0].screenX;
+      }, { passive: true });
+
+      container.addEventListener('touchend', (event) => {
+        const touchEndX = event.changedTouches[0].screenX;
+        const swipeDistance = touchEndX - touchStartX;
+
+        if (Math.abs(swipeDistance) > 50) {
+          showSlide(swipeDistance < 0 ? currentSlide + 1 : currentSlide - 1);
+          restartAutoRotate();
+        }
+      }, { passive: true });
+
+      showSlide(0);
+      restartAutoRotate();
+    }
+
+    initFloatingCardCarousel('servicesMobileFloatingBrands', 6500);
+
+    tiltCards.forEach((card) => {
+      card.addEventListener('mousemove', (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+      });
+    });
+
+    if (carousel && orbitCards.length > 0) {
+      const cardWidth = orbitCards[0].offsetWidth + 32;
+      let currentIndex = 0;
+      const totalCards = orbitCards.length;
+      const maxIndex = Math.max(totalCards - 3, 0);
+
+      function updateCarousel() {
+        carouselDots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+
+        if (carouselPrev) {
+          carouselPrev.disabled = currentIndex === 0;
+          carouselPrev.style.opacity = currentIndex === 0 ? '0.4' : '1';
+        }
+
+        if (carouselNext) {
+          carouselNext.disabled = currentIndex >= maxIndex;
+          carouselNext.style.opacity = currentIndex >= maxIndex ? '0.4' : '1';
+        }
+      }
+
+      function scrollToCard(index) {
+        currentIndex = Math.max(0, Math.min(index, maxIndex));
+        carousel.scrollTo({
+          left: currentIndex * cardWidth,
+          behavior: 'smooth'
+        });
+        updateCarousel();
+      }
+
+      carouselPrev?.addEventListener('click', () => scrollToCard(currentIndex - 1));
+      carouselNext?.addEventListener('click', () => scrollToCard(currentIndex + 1));
+
+      carouselDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => scrollToCard(index));
+      });
+
+      let scrollTimeout;
+      carousel.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          currentIndex = Math.max(0, Math.min(Math.round(carousel.scrollLeft / cardWidth), maxIndex));
+          updateCarousel();
+        }, 100);
+      }, { passive: true });
+
+      updateCarousel();
+    }
+  });
+</script>
 </body>
 </html>
