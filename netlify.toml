@@ -12,28 +12,33 @@
 
 [[redirects]]
   from = "/store"
-  to = "/store.html"
-  status = 200
+  to = "/"
+  status = 302
 
 [[redirects]]
   from = "/store/"
-  to = "/store.html"
-  status = 200
+  to = "/"
+  status = 302
+
+[[redirects]]
+  from = "/store/*"
+  to = "/"
+  status = 302
 
 [[redirects]]
   from = "/shop"
-  to = "/store.html"
-  status = 301
+  to = "/"
+  status = 302
 
 [[redirects]]
   from = "/shop/"
-  to = "/store.html"
-  status = 301
+  to = "/"
+  status = 302
 
 [[redirects]]
   from = "/shop/*"
-  to = "/store/:splat"
-  status = 301
+  to = "/"
+  status = 302
 
 [dev]
   port = 8888
