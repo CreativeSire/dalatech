@@ -38,6 +38,20 @@ function initNavigation() {
     });
   }
   
+  // Sign In dropdown toggle
+  document.querySelectorAll('.nav-dropdown-trigger').forEach(trigger => {
+    trigger.addEventListener('click', e => {
+      e.stopPropagation();
+      const dropdown = trigger.closest('.nav-dropdown');
+      const isOpen = dropdown.classList.contains('is-open');
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('is-open'));
+      if (!isOpen) dropdown.classList.add('is-open');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('is-open'));
+  });
+
   // Close mobile menu on link click
   const links = navLinks?.querySelectorAll('a');
   links?.forEach(link => {

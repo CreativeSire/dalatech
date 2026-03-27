@@ -4334,3 +4334,99 @@ p {
     height: 44px;
   }
 }
+
+/* ── Nav Dropdown (Sign In + portals) ── */
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+}
+.nav-dropdown-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.nav-dropdown-trigger i {
+  font-size: 0.7em;
+  transition: transform 0.2s;
+}
+.nav-dropdown.is-open .nav-dropdown-trigger i {
+  transform: rotate(180deg);
+}
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.13);
+  min-width: 230px;
+  padding: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.18s, transform 0.18s;
+  z-index: 9999;
+}
+.nav-dropdown.is-open .nav-dropdown-menu {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 13px;
+  border-radius: 9px;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.nav-dropdown-item:hover {
+  background: #f5f5f5;
+}
+.nav-dropdown-item i {
+  width: 22px;
+  text-align: center;
+  color: #f57223;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.nav-dropdown-item strong {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.nav-dropdown-item span {
+  display: block;
+  font-size: 0.72rem;
+  color: #888;
+  margin-top: 1px;
+}
+.nav-dropdown-item div { flex: 1; }
+
+/* Mobile: dropdown inlines into the open nav */
+@media (max-width: 768px) {
+  .nav-dropdown { display: flex; width: 100%; }
+  .nav-dropdown-trigger { width: 100%; justify-content: space-between; }
+  .nav-dropdown-menu {
+    position: static;
+    opacity: 1;
+    pointer-events: all;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    border-radius: 0;
+    min-width: 0;
+    padding: 4px 0 0 16px;
+    display: none;
+  }
+  .nav-dropdown.is-open .nav-dropdown-menu { display: block; }
+}
