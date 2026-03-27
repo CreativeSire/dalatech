@@ -38,3 +38,9 @@ signup-page.png
 
 # Local Netlify folder
 .netlify
+
+# Local Codex / Claude workspace artifacts
+.claude/settings.local.json
+.claude/worktrees/
+.playwright-cli/
+tmp/imagegen/
