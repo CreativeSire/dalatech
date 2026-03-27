@@ -3910,11 +3910,11 @@
       background: rgba(18, 18, 18, 0.18);
     }
 
-    @media (max-width: 768px) {
-      .value-3d-card__inner {
-        min-height: 338px;
-        padding: 1.45rem;
-      }
+        @media (max-width: 768px) {
+          .value-3d-card__inner {
+            min-height: 338px;
+            padding: 1.45rem;
+          }
 
       .value-3d-card h4 {
         font-size: 1.25rem;
@@ -3931,6 +3931,255 @@
 
       .story-3d-visual {
         height: 210px;
+      }
+    }
+
+    /* ============================================
+       ABOUT PAGE - FINAL MOBILE CLARITY OVERRIDES
+       ============================================ */
+    @media (max-width: 768px) {
+      .trust-slider-section {
+        padding: 42px 1.25rem 48px !important;
+        background:
+          radial-gradient(circle at top center, rgba(255, 182, 160, 0.30) 0%, transparent 34%),
+          linear-gradient(180deg, #fff9f4 0%, #fff2ea 100%) !important;
+      }
+
+      .trust-slider-header {
+        max-width: 370px;
+        margin: 0 auto 22px !important;
+        padding: 18px 18px 4px;
+        border-radius: 26px;
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(22, 12, 10, 0.06);
+        box-shadow: 0 20px 45px rgba(63, 34, 25, 0.10);
+        backdrop-filter: blur(16px);
+      }
+
+      .trust-slider-label {
+        color: #c94531 !important;
+      }
+
+      .trust-slider-title {
+        color: #170e0c !important;
+        opacity: 1 !important;
+        text-shadow: none !important;
+      }
+
+      .trust-slider-subtitle {
+        color: #5a4740 !important;
+        opacity: 1 !important;
+        text-shadow: none !important;
+      }
+
+      .trust-slide-card {
+        border-radius: 26px;
+        box-shadow:
+          0 5px 0 rgba(201, 69, 49, 0.08),
+          0 18px 40px rgba(26, 16, 12, 0.14);
+      }
+
+      .trust-slide-image {
+        height: 190px;
+      }
+
+      .trust-slide-content {
+        padding: 24px 22px 26px;
+      }
+
+      .trust-slide-content h3 {
+        color: #170e0c !important;
+      }
+
+      .trust-slide-content p {
+        color: #5a4740 !important;
+      }
+
+      .commitment-section {
+        padding: 56px 1.25rem 58px !important;
+        background:
+          radial-gradient(circle at top center, rgba(255, 115, 72, 0.22) 0%, transparent 28%),
+          linear-gradient(180deg, #150b08 0%, #1f100c 54%, #22110d 100%) !important;
+      }
+
+      .commitment-section::before {
+        opacity: 0.6;
+        background:
+          radial-gradient(circle at 20% 20%, rgba(255, 120, 74, 0.16) 0%, transparent 36%),
+          radial-gradient(circle at 80% 14%, rgba(255, 165, 97, 0.14) 0%, transparent 32%),
+          radial-gradient(circle at 50% 88%, rgba(255, 94, 77, 0.10) 0%, transparent 42%);
+      }
+
+      .commitment-section .section-header {
+        max-width: 360px;
+        margin: 0 auto 10px;
+        text-align: center;
+      }
+
+      .commitment-section .section-header .eyebrow {
+        display: inline-flex;
+        margin: 0 auto 0.95rem;
+        background: rgba(255, 138, 94, 0.14);
+        border: 1px solid rgba(255, 173, 132, 0.24);
+        color: #ffb18f;
+      }
+
+      .commitment-section .section-header h2 {
+        color: #fffaf7 !important;
+        font-size: clamp(2rem, 8.2vw, 2.6rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+      }
+
+      .commitment-intro {
+        max-width: 338px;
+        margin: 0 auto 1.15rem !important;
+        text-align: center;
+      }
+
+      .commitment-intro p {
+        color: rgba(255, 247, 241, 0.82) !important;
+        font-size: 1rem;
+        line-height: 1.72;
+      }
+
+      .commitment-grid {
+        max-width: 390px;
+        min-height: 590px;
+        padding-top: 0.2rem;
+        overflow: visible;
+      }
+
+      .commitment-card {
+        inset: 0 24px 86px !important;
+        min-height: auto;
+        padding: 1rem 1rem 1.35rem;
+        border-radius: 30px;
+        background: linear-gradient(180deg, #ffffff 0%, #fcf8f3 100%);
+        border: 1px solid rgba(26, 14, 11, 0.06);
+        box-shadow: 0 28px 60px rgba(8, 4, 3, 0.34);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(26px) translateY(10px) scale(0.94);
+        transition: opacity 0.45s ease, transform 0.45s ease, box-shadow 0.45s ease;
+      }
+
+      .commitment-card.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0) translateY(0) scale(1);
+        z-index: 3;
+      }
+
+      .commitment-card.prev {
+        opacity: 0.36;
+        transform: translateX(-34px) translateY(18px) scale(0.94);
+        z-index: 1;
+      }
+
+      .commitment-card.next {
+        opacity: 0.56;
+        transform: translateX(34px) translateY(10px) scale(0.955);
+        z-index: 2;
+      }
+
+      .commitment-card__media {
+        aspect-ratio: 1.28 / 0.92;
+        margin-bottom: 1.05rem;
+        border-radius: 24px;
+        box-shadow: 0 16px 34px rgba(17, 10, 8, 0.18);
+      }
+
+      .commitment-card__media::after {
+        background: linear-gradient(180deg, rgba(17, 10, 8, 0.02) 0%, rgba(17, 10, 8, 0.16) 100%);
+      }
+
+      .commitment-card__num {
+        top: 0.95rem;
+        right: 1rem;
+        color: rgba(24, 12, 8, 0.07);
+      }
+
+      .commitment-card h3 {
+        font-size: 1.52rem;
+        line-height: 1.12;
+        margin-bottom: 0.85rem;
+        color: #150d0b !important;
+      }
+
+      .commitment-card p {
+        font-size: 0.98rem;
+        line-height: 1.72;
+        margin-bottom: 0.85rem;
+        color: #57443c !important;
+      }
+
+      .commitment-card ul {
+        gap: 0.82rem;
+        margin-top: 1rem;
+      }
+
+      .commitment-card li {
+        color: #2d1b16;
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+
+      .commitment-mobile-nav {
+        gap: 0.75rem;
+        margin-top: 1.2rem;
+      }
+
+      .commitment-mobile-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: #1b120f;
+      }
+
+      .commitment-mobile-toggle {
+        width: auto;
+        min-width: 88px;
+        padding: 0 0.95rem;
+        border-radius: 999px;
+        gap: 0.45rem;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .commitment-mobile-toggle.is-paused {
+        background: linear-gradient(135deg, #ff8a1d 0%, #ff6b35 100%);
+        color: white;
+        border-color: transparent;
+        box-shadow: 0 14px 28px rgba(255, 107, 53, 0.3);
+      }
+
+      .commitment-mobile-context {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.4rem;
+        margin-top: 1rem;
+        padding: 0;
+        background: transparent;
+        border: none;
+      }
+
+      .commitment-mobile-context span {
+        color: #ffb18f;
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+      }
+
+      .commitment-mobile-context p {
+        max-width: 30ch;
+        color: rgba(255, 244, 237, 0.72) !important;
+        font-size: 0.9rem;
+        line-height: 1.6;
       }
     }
   </style>
@@ -4637,7 +4886,7 @@
         <article class="commitment-card reveal-scale active">
           <div class="commitment-card__num">01</div>
           <div class="commitment-card__media">
-            <img src="../images/generated/about/commitment-clarity.webp" alt="Editorial visual representing clarity and transparent reporting" loading="lazy">
+            <img src="../images/generated/about/commitment-clarity-premium.webp" alt="Nigerian retail team reviewing performance reports in-store" loading="lazy">
           </div>
           <h3>You always know what is happening</h3>
           <p>We share progress, issues, and outcomes with enough clarity for fast decisions and fewer surprises.</p>
@@ -4650,7 +4899,7 @@
         <article class="commitment-card reveal-scale">
           <div class="commitment-card__num">02</div>
           <div class="commitment-card__media">
-            <img src="../images/generated/about/commitment-standards.webp" alt="Editorial visual representing standards in motion" loading="lazy">
+            <img src="../images/generated/about/commitment-standards-premium.webp" alt="Nigerian field team maintaining shelf standards in a supermarket aisle" loading="lazy">
           </div>
           <h3>We protect standards in motion</h3>
           <p>From deliveries to shelf presence, we execute with discipline so growth does not come at the cost of control.</p>
@@ -4663,7 +4912,7 @@
         <article class="commitment-card reveal-scale">
           <div class="commitment-card__num">03</div>
           <div class="commitment-card__media">
-            <img src="../images/generated/about/commitment-growth.webp" alt="Editorial visual representing durable growth" loading="lazy">
+            <img src="../images/generated/about/commitment-growth-premium.webp" alt="Nigerian founder and operations team standing in a logistics environment" loading="lazy">
           </div>
           <h3>We build for durable growth</h3>
           <p>We care about sustainable expansion, healthy cash flow, and the kind of operational trust that compounds over time.</p>
@@ -4685,10 +4934,14 @@
         <button class="commitment-mobile-btn" id="commitmentNext" aria-label="Next commitment">
           <i class="fas fa-arrow-right"></i>
         </button>
+        <button class="commitment-mobile-btn commitment-mobile-toggle" id="commitmentToggle" aria-label="Pause commitment slider" aria-pressed="false">
+          <i class="fas fa-pause"></i>
+          <span>Pause</span>
+        </button>
       </div>
       <div class="commitment-mobile-context">
         <span><i class="fas fa-quote-left"></i> Partner Standard</span>
-        <p>Three standards. One dependable partner experience built around clarity, control, and durable growth.</p>
+        <p>One dependable partner standard, shown one promise at a time.</p>
       </div>
       
     </div>
@@ -5090,7 +5343,10 @@
     const commitmentDots = document.querySelectorAll('.commitment-mobile-dot');
     const commitmentPrev = document.getElementById('commitmentPrev');
     const commitmentNext = document.getElementById('commitmentNext');
+    const commitmentToggle = document.getElementById('commitmentToggle');
     let commitmentIndex = 0;
+    let commitmentAutoRotate;
+    let commitmentPaused = false;
 
     function updateCommitmentSlider() {
       commitmentCards.forEach((card, index) => {
@@ -5109,24 +5365,68 @@
       });
     }
 
+    function updateCommitmentPauseUi() {
+      if (!commitmentToggle) return;
+      commitmentToggle.classList.toggle('is-paused', commitmentPaused);
+      commitmentToggle.setAttribute('aria-pressed', commitmentPaused ? 'true' : 'false');
+      commitmentToggle.setAttribute('aria-label', commitmentPaused ? 'Resume commitment slider' : 'Pause commitment slider');
+      commitmentToggle.innerHTML = commitmentPaused
+        ? '<i class="fas fa-play"></i><span>Play</span>'
+        : '<i class="fas fa-pause"></i><span>Pause</span>';
+    }
+
+    function stopCommitmentAutoRotate() {
+      clearInterval(commitmentAutoRotate);
+    }
+
+    function startCommitmentAutoRotate() {
+      if (commitmentPaused || commitmentCards.length < 2) return;
+      stopCommitmentAutoRotate();
+      commitmentAutoRotate = setInterval(() => {
+        commitmentIndex = (commitmentIndex + 1) % commitmentCards.length;
+        updateCommitmentSlider();
+      }, 5000);
+    }
+
+    function resetCommitmentAutoRotate() {
+      if (!commitmentPaused) {
+        startCommitmentAutoRotate();
+      }
+    }
+
     if (window.innerWidth <= 768 && commitmentCards.length) {
       updateCommitmentSlider();
+      updateCommitmentPauseUi();
+      startCommitmentAutoRotate();
 
       commitmentPrev?.addEventListener('click', () => {
         commitmentIndex = (commitmentIndex - 1 + commitmentCards.length) % commitmentCards.length;
         updateCommitmentSlider();
+        resetCommitmentAutoRotate();
       });
 
       commitmentNext?.addEventListener('click', () => {
         commitmentIndex = (commitmentIndex + 1) % commitmentCards.length;
         updateCommitmentSlider();
+        resetCommitmentAutoRotate();
       });
 
       commitmentDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
           commitmentIndex = index;
           updateCommitmentSlider();
+          resetCommitmentAutoRotate();
         });
+      });
+
+      commitmentToggle?.addEventListener('click', () => {
+        commitmentPaused = !commitmentPaused;
+        if (commitmentPaused) {
+          stopCommitmentAutoRotate();
+        } else {
+          startCommitmentAutoRotate();
+        }
+        updateCommitmentPauseUi();
       });
 
       let commitmentTouchStartX = 0;
@@ -5143,8 +5443,17 @@
             ? (commitmentIndex + 1) % commitmentCards.length
             : (commitmentIndex - 1 + commitmentCards.length) % commitmentCards.length;
           updateCommitmentSlider();
+          resetCommitmentAutoRotate();
         }
       }, { passive: true });
+
+      commitmentGrid?.addEventListener('mouseenter', () => {
+        stopCommitmentAutoRotate();
+      });
+
+      commitmentGrid?.addEventListener('mouseleave', () => {
+        if (!commitmentPaused) startCommitmentAutoRotate();
+      });
     }
     
     // Mobile Story 3D Carousel
