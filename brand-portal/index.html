@@ -3,95 +3,228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brand Portal — Sign In | DALA Technologies</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Brand Portal — DALA Technologies</title>
+  <link rel="icon" type="image/png" href="../favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/brand-portal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/dala-premium-red.css?v=2" />
 </head>
-<body class="login-page">
+<body>
 
-  <!-- LEFT PANEL -->
-  <div class="login-left">
-    <div>
-      <img src="../4.png" alt="DALA Technologies" class="login-logo" />
+<div class="dala-split-layout">
+  
+  <!-- Left: Brand Panel -->
+  <div class="dala-brand-panel">
+    <!-- Decorative Elements -->
+    <div class="dala-deco-circle dala-deco-circle-1"></div>
+    <div class="dala-deco-circle dala-deco-circle-2"></div>
+    
+    <!-- Header -->
+    <div class="dala-brand-header">
+      <a href="../index.html" class="dala-brand-logo">
+        <img src="../4.png" alt="DALA" />
+      </a>
+      <div class="dala-portal-badge">Brand Portal</div>
     </div>
-
-    <div class="login-left-content">
-      <h1 class="login-headline">Your retail distribution,<br>made visible.</h1>
-      <p class="login-subtext">
+    
+    <!-- Story Content -->
+    <div class="dala-brand-story">
+      <h1 class="dala-brand-headline dala-fade-in-up">
+        Your retail distribution,<br><em>made visible.</em>
+      </h1>
+      <p class="dala-brand-description dala-fade-in-up dala-stagger-1">
         See exactly where your products are, who's ordering them, and how your brand is growing across Nigerian retail — all in one place.
       </p>
-
-      <ul class="login-trust-list">
-        <li class="login-trust-item">
-          <i class="fa-solid fa-store"></i>
-          47 active retail locations tracking your brand
-        </li>
-        <li class="login-trust-item">
-          <i class="fa-solid fa-bolt"></i>
-          Real-time order data, updated daily
-        </li>
-        <li class="login-trust-item">
-          <i class="fa-solid fa-file-chart-column"></i>
-          Monthly distribution reports, automatically generated
-        </li>
-      </ul>
+      
+      <!-- Trust Points -->
+      <div class="dala-trust-stack dala-fade-in-up dala-stagger-2">
+        <div class="dala-trust-item">
+          <div class="dala-trust-icon">
+            <i class="fa-solid fa-store"></i>
+          </div>
+          <div class="dala-trust-content">
+            <h4>47 active retail locations</h4>
+            <p>Tracking your brand across Lagos and Ogun State</p>
+          </div>
+        </div>
+        
+        <div class="dala-trust-item">
+          <div class="dala-trust-icon">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div class="dala-trust-content">
+            <h4>Real-time order data</h4>
+            <p>Updated daily with comprehensive insights</p>
+          </div>
+        </div>
+        
+        <div class="dala-trust-item">
+          <div class="dala-trust-icon">
+            <i class="fa-solid fa-chart-pie"></i>
+          </div>
+          <div class="dala-trust-content">
+            <h4>Monthly distribution reports</h4>
+            <p>Automatically generated performance analytics</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <p class="login-brands-label">Our brand partners</p>
-      <div class="login-brand-chips">
-        <span class="login-brand-chip">Wilson's Lemonade</span>
-        <span class="login-brand-chip">Zayith</span>
-        <span class="login-brand-chip">August Secrets</span>
-        <span class="login-brand-chip">Orisirisi</span>
-        <span class="login-brand-chip">Cresso Life</span>
-        <span class="login-brand-chip">Eti Farms</span>
-        <span class="login-brand-chip">Kezia</span>
+    
+    <!-- Partners Strip -->
+    <div class="dala-partners-strip dala-fade-in-up dala-stagger-3">
+      <p class="dala-partners-label">Growing with DALA</p>
+      <div class="dala-partners-chips">
+        <span class="dala-partner-chip">Wilson's Lemonade</span>
+        <span class="dala-partner-chip">Zayith</span>
+        <span class="dala-partner-chip">August Secrets</span>
+        <span class="dala-partner-chip">Orisirisi</span>
+        <span class="dala-partner-chip">Cresso Life</span>
+        <span class="dala-partner-chip">Eti Farms</span>
+        <span class="dala-partner-chip">Kezia</span>
       </div>
     </div>
   </div>
-
-  <!-- RIGHT PANEL -->
-  <div class="login-right">
-    <div class="login-form-wrap">
-      <h2>Sign in to your<br>Brand Portal</h2>
-      <p class="login-subtitle">Welcome back. Let's see how your brand is performing.</p>
-
-      <form id="login-form" novalidate>
-        <div class="form-field">
-          <label for="email">Email address</label>
-          <input type="email" id="email" placeholder="you@yourbrand.com" autocomplete="email" required />
+  
+  <!-- Right: Form Panel -->
+  <div class="dala-form-panel">
+    <div class="dala-form-container">
+      <!-- Form Header -->
+      <div class="dala-form-header">
+        <h2 class="dala-form-title">Sign in to your<br>Brand Portal</h2>
+        <p class="dala-form-subtitle">Welcome back. Let's see how your brand is performing.</p>
+      </div>
+      
+      <!-- Alert (Hidden by default) -->
+      <div id="loginError" class="dala-alert dala-alert-error" style="display: none; margin-bottom: 1.5rem;">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>Incorrect password. Use the demo password to sign in.</span>
+      </div>
+      
+      <!-- Login Form -->
+      <form id="loginForm" novalidate>
+        <div class="dala-form-group">
+          <label class="dala-form-label" for="email">Email address</label>
+          <div class="dala-input-group">
+            <i class="fa-regular fa-envelope dala-input-icon"></i>
+            <input 
+              type="email" 
+              id="email" 
+              class="dala-input with-icon" 
+              placeholder="you@yourbrand.com"
+              autocomplete="email"
+              required
+            />
+          </div>
         </div>
-        <div class="form-field">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required />
+        
+        <div class="dala-form-group">
+          <label class="dala-form-label" for="password">Password</label>
+          <div class="dala-input-group">
+            <i class="fa-solid fa-lock dala-input-icon"></i>
+            <input 
+              type="password" 
+              id="password" 
+              class="dala-input with-icon" 
+              placeholder="••••••••"
+              autocomplete="current-password"
+              required
+            />
+            <button type="button" class="dala-input-action" id="togglePassword" aria-label="Toggle password visibility">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
         </div>
-        <button type="submit" class="btn-login">
-          Sign in &nbsp;<i class="fa-solid fa-arrow-right"></i>
+        
+        <button type="submit" class="dala-btn dala-btn-primary dala-btn-full dala-btn-lg dala-shine" id="signInBtn" style="margin-top: 0.5rem;">
+          <span class="dala-btn-text">Sign in</span>
+          <i class="fa-solid fa-arrow-right"></i>
         </button>
       </form>
-
-      <div id="login-error" class="login-error">
-        <i class="fa-solid fa-circle-exclamation"></i>
-        Incorrect password. Use the demo password to sign in.
+      
+      <div class="dala-divider"></div>
+      
+      <!-- Links -->
+      <div class="dala-form-footer">
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <a href="#" class="dala-link">Forgot password?</a>
+          <p>Not a partner yet? <a href="../pages/contact.html" class="dala-link-arrow">Apply to list your brand</a></p>
+        </div>
       </div>
-
-      <div class="login-links">
-        <a href="#">Forgot password?</a>
-        <a href="#" class="apply-link">Not a partner yet? Apply to list your brand &rarr;</a>
-      </div>
-
-      <div class="demo-hint">
+      
+      <!-- Demo Hint -->
+      <div class="dala-alert dala-alert-info" style="margin-top: 1.5rem;">
         <i class="fa-solid fa-circle-info"></i>
-        <span><strong>Demo:</strong> any email + password: <strong>demo</strong></span>
+        <span><strong>Demo:</strong> Any email + password: <strong>demo</strong></span>
       </div>
     </div>
+    
+    <!-- Footer -->
+    <div style="padding: 1.5rem 2rem; text-align: center; border-top: 1px solid var(--dala-gray-100);">
+      <p style="font-size: 0.75rem; color: var(--dala-gray-400);">
+        © 2026 DALA Technologies · Brand Partner Portal
+      </p>
+    </div>
   </div>
+  
+</div>
 
-  <script src="js/brand-portal.js"></script>
-  <script>bpLoginPage();</script>
+<script>
+  // Toggle password visibility
+  document.getElementById('togglePassword').addEventListener('click', function() {
+    const passwordInput = document.getElementById('password');
+    const icon = this.querySelector('i');
+    
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      icon.classList.remove('fa-eye');
+      icon.classList.add('fa-eye-slash');
+    } else {
+      passwordInput.type = 'password';
+      icon.classList.remove('fa-eye-slash');
+      icon.classList.add('fa-eye');
+    }
+  });
+
+  // Form submission
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const errorEl = document.getElementById('loginError');
+    const btn = document.getElementById('signInBtn');
+    
+    errorEl.style.display = 'none';
+    
+    if (!email) {
+      document.getElementById('email').focus();
+      return;
+    }
+    
+    if (password === 'demo') {
+      btn.classList.add('dala-btn-loading');
+      btn.innerHTML = '<span class="dala-btn-spinner"></span><span class="dala-btn-text">Signing in…</span>';
+      
+      const session = {
+        type: 'brand',
+        name: "Wilson's Lemonade",
+        brand: "Wilson's",
+        manager: 'Kehinde'
+      };
+      localStorage.setItem('dala_brand_session', JSON.stringify(session));
+      
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 800);
+    } else {
+      errorEl.style.display = 'flex';
+      document.getElementById('password').value = '';
+      document.getElementById('password').focus();
+    }
+  });
+</script>
+
 </body>
 </html>

@@ -1,0 +1,202 @@
+/* ============================================================
+   DALA Store — RED Brand Color Override
+   Converts orange/navy to RED brand colors
+   ============================================================ */
+
+/* ── Color Mapping ──
+   Old Orange: #f57223 / #f5a623 → New Red: #E53935 / #C62828
+   Old Navy: #1a1a2e → New Black/Red: #0D0D0D / #E53935
+*/
+
+/* Utility Bar - Red instead of dark navy */
+.mkt-utility-bar {
+  background: #0D0D0D;
+}
+.mkt-utility-inner a { 
+  color: #FF5252; 
+}
+
+/* Search Bar - Red accent */
+.mkt-search-bar:focus-within { 
+  border-color: #E53935; 
+}
+.mkt-search-btn {
+  background: #E53935;
+}
+.mkt-search-btn:hover { 
+  background: #C62828; 
+}
+
+/* Cart Badge - Red */
+.mkt-cart-badge {
+  background: #E53935;
+}
+
+/* Mobile CTA - Red */
+.mkt-mobile-cta {
+  background: #E53935 !important;
+}
+
+/* Category Nav - Red accents */
+.mkt-cat-all {
+  background: #E53935 !important;
+}
+.mkt-cat-flash {
+  color: #E53935 !important;
+}
+.mkt-cat-flash i {
+  color: #E53935 !important;
+}
+
+/* Hero Carousel - Convert slides to Red theme */
+.mkt-slide--orange {
+  background: linear-gradient(135deg, #E53935 0%, #C62828 100%) !important;
+}
+.mkt-slide--navy {
+  background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #B71C1C 100%) !important;
+}
+.mkt-slide--teal {
+  background: linear-gradient(135deg, #C62828 0%, #E53935 100%) !important;
+}
+
+/* Eyebrow badges - Red */
+.mkt-slide-eyebrow {
+  background: rgba(229, 57, 53, 0.2) !important;
+  color: #FF8A80 !important;
+}
+
+/* Buttons - Red */
+.mkt-btn-primary,
+.mkt-btn-light {
+  background: #fff !important;
+  color: #E53935 !important;
+}
+.mkt-btn-primary:hover,
+.mkt-btn-light:hover {
+  background: #f5f5f5 !important;
+}
+
+.mkt-btn-outline-light {
+  border-color: rgba(255,255,255,0.5) !important;
+  color: #fff !important;
+}
+.mkt-btn-outline-light:hover {
+  background: rgba(229, 57, 53, 0.2) !important;
+  border-color: #fff !important;
+}
+
+/* Flash Deals Section - Red */
+.flash-header h2 {
+  color: #E53935 !important;
+}
+.flash-timer {
+  background: #E53935 !important;
+}
+.flash-card {
+  border: 2px solid rgba(229, 57, 53, 0.2) !important;
+}
+.flash-card:hover {
+  border-color: #E53935 !important;
+  box-shadow: 0 10px 30px rgba(229, 57, 53, 0.15) !important;
+}
+.flash-badge {
+  background: linear-gradient(135deg, #E53935, #C62828) !important;
+}
+.flash-price {
+  color: #E53935 !important;
+}
+
+/* Add to Cart Buttons - Red */
+.btn-add {
+  background: #E53935 !important;
+}
+.btn-add:hover {
+  background: #C62828 !important;
+}
+
+/* Category Pills - Red */
+.cat-pill:hover,
+.cat-pill.active {
+  border-color: #E53935 !important;
+  color: #E53935 !important;
+}
+
+/* Product Cards - Red accents */
+.product-card:hover {
+  border-color: rgba(229, 57, 53, 0.3) !important;
+  box-shadow: 0 8px 24px rgba(229, 57, 53, 0.1) !important;
+}
+.product-price {
+  color: #E53935 !important;
+}
+
+/* Promo Band - Red */
+.promo-band {
+  background: linear-gradient(90deg, #E53935 0%, #C62828 100%) !important;
+}
+
+/* Sell Band - Red */
+.sell-band {
+  background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #B71C1C 100%) !important;
+}
+
+/* Newsletter - Red */
+.newsletter-band {
+  background: linear-gradient(135deg, #E53935 0%, #C62828 100%) !important;
+}
+.newsletter-btn {
+  background: #0D0D0D !important;
+}
+.newsletter-btn:hover {
+  background: #1A1A1A !important;
+}
+
+/* Cart Drawer - Red accents */
+.cart-btn-primary {
+  background: #E53935 !important;
+}
+.cart-btn-primary:hover {
+  background: #C62828 !important;
+}
+.cart-free-ship-bar {
+  background: linear-gradient(90deg, #E53935, #FF5252) !important;
+}
+.cart-item-qty button:hover {
+  border-color: #E53935 !important;
+  color: #E53935 !important;
+}
+
+/* Mobile Bottom Nav - Red */
+.mkt-bottom-nav {
+  border-top: 1px solid #eee;
+}
+.mkt-bottom-btn.active {
+  color: #E53935 !important;
+}
+.mkt-bottom-btn.active i {
+  color: #E53935 !important;
+}
+
+/* Quick View Modal - Red */
+.qv-btn-primary {
+  background: #E53935 !important;
+}
+.qv-btn-primary:hover {
+  background: #C62828 !important;
+}
+.qv-price {
+  color: #E53935 !important;
+}
+
+/* Links - Red */
+a:hover {
+  color: #E53935;
+}
+
+/* Focus states - Red */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #E53935;
+  outline-offset: 2px;
+}

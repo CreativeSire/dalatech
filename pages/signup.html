@@ -1,573 +1,602 @@
 <!DOCTYPE html>
+<!-- Deployed: 2026-03-27 RED Brand Update -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create Account | DALA Technologies</title>
+  <title>Create Account — DALA Technologies</title>
   <link rel="icon" type="image/png" href="../favicon.png">
-  <link rel="shortcut icon" href="../favicon.png">
-  <link rel="apple-touch-icon" href="../favicon.png">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/mobile-premium.css">
-  <link rel="stylesheet" href="../css/mobile-fix.css">
-  <link rel="stylesheet" href="../css/mobile-premium-pro.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/dala-premium-red.css?v=2">
   <style>
+    /* FORCE RED BRAND COLORS - Inline fallback */
     :root {
-      --primary: #E53935;
-      --primary-dark: #C62828;
-      --primary-light: #FFEBEE;
-      --dark: #1A1A2E;
-      --gray-50: #FAFAFA;
-      --gray-100: #F5F5F5;
-      --gray-200: #EEEEEE;
-      --gray-300: #E0E0E0;
-      --gray-400: #BDBDBD;
-      --gray-500: #9E9E9E;
-      --gray-600: #757575;
-      --gray-700: #616161;
-      --gray-800: #424242;
-      --gray-900: #212121;
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-xl: 24px;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
-      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-      --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
-      --shadow-xl: 0 24px 60px rgba(0,0,0,0.16);
+      --dala-red: #E53935 !important;
+      --dala-red-dark: #C62828 !important;
+      --dala-red-deeper: #B71C1C !important;
+      --dala-red-deep: #0D0D0D !important;
+      --dala-black: #0D0D0D !important;
+      --dala-cream-warm: #F5F3F0 !important;
+      --dala-white: #FFFFFF !important;
+      --dala-gray-200: #EEEEEE !important;
+      --dala-gray-300: #E0E0E0 !important;
+      --dala-gray-400: #BDBDBD !important;
+      --dala-gray-500: #9E9E9E !important;
+      --dala-gray-600: #757575 !important;
+      --dala-gray-700: #616161 !important;
+      --dala-gray-800: #424242 !important;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #FAFAFA 0%, #F0F0F0 100%);
+    /* Signup-specific RED styles */
+    .signup-page {
       min-height: 100vh;
+      background: linear-gradient(135deg, var(--dala-cream-warm) 0%, var(--dala-white) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
-      line-height: 1.6;
-    }
-
-    .signup-container {
-      width: 100%;
-      max-width: 520px;
-      background: #FFFFFF;
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-xl);
+      padding: 2rem;
+      position: relative;
       overflow: hidden;
     }
-
+    
+    /* Background decoration - RED tones */
+    .signup-page::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(229, 57, 53, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .signup-page::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(198, 40, 40, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .signup-container {
+      width: 100%;
+      max-width: 640px;
+      background: var(--dala-white);
+      border-radius: 24px;
+      box-shadow: 0 25px 80px -20px rgba(13, 13, 13, 0.15), 0 10px 30px -10px rgba(13, 13, 13, 0.1);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Header - PURE RED Gradient (NO BLUE) */
     .signup-header {
-      background: linear-gradient(135deg, var(--dark) 0%, #2D2D44 100%);
-      padding: 48px 40px 40px;
+      background: linear-gradient(135deg, #1A0A0A 0%, #3D1515 30%, #B71C1C 100%);
+      padding: 2.5rem 2rem;
       text-align: center;
       position: relative;
+      overflow: hidden;
     }
-
+    
     .signup-header::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 30% 20%, rgba(229, 57, 53, 0.15) 0%, transparent 50%),
-                  radial-gradient(circle at 70% 80%, rgba(229, 57, 53, 0.1) 0%, transparent 40%);
-      pointer-events: none;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 30% 20%, rgba(229, 57, 53, 0.35) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(255, 82, 82, 0.2) 0%, transparent 40%);
     }
-
+    
     .signup-header-content {
       position: relative;
       z-index: 1;
     }
-
+    
     .signup-logo {
-      height: 48px;
-      margin-bottom: 24px;
+      height: 44px;
+      width: auto;
+      margin-bottom: 1.5rem;
       filter: brightness(0) invert(1);
     }
-
+    
     .signup-header h1 {
-      color: #FFFFFF;
-      font-size: 28px;
+      font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      color: var(--dala-white);
+      margin-bottom: 0.5rem;
       letter-spacing: -0.02em;
     }
-
+    
     .signup-header p {
-      color: rgba(255,255,255,0.7);
-      font-size: 15px;
-      font-weight: 400;
+      font-size: 0.9375rem;
+      color: rgba(255, 255, 255, 0.7);
     }
-
+    
+    /* Body */
     .signup-body {
-      padding: 40px;
+      padding: 2rem 2.5rem 2.5rem;
     }
-
-    /* Account Type Selection */
+    
+    /* Account Type Selection - RED accents */
     .account-type-section {
-      margin-bottom: 32px;
+      margin-bottom: 1.5rem;
     }
-
+    
     .section-label {
-      font-size: 13px;
+      font-size: 0.75rem;
       font-weight: 600;
-      color: var(--gray-600);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 16px;
+      letter-spacing: 0.1em;
+      color: var(--dala-gray-500);
+      margin-bottom: 0.875rem;
     }
-
+    
     .account-type-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 0.875rem;
     }
-
+    
     .account-type-card {
       position: relative;
-      padding: 24px 20px;
-      border: 2px solid var(--gray-200);
-      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      border: 1.5px solid var(--dala-gray-200);
+      border-radius: 12px;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      text-align: center;
-      background: #FFFFFF;
+      background: var(--dala-white);
     }
-
+    
     .account-type-card:hover {
-      border-color: var(--gray-300);
+      border-color: var(--dala-gray-300);
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
-
+    
     .account-type-card.selected {
-      border-color: var(--primary);
-      background: linear-gradient(135deg, #FFEBEE 0%, #FFFFFF 100%);
-      box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.1), var(--shadow-md);
+      border-color: #E53935;
+      background: linear-gradient(135deg, rgba(229, 57, 53, 0.06) 0%, transparent 100%);
+      box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.12), 0 4px 12px rgba(0,0,0,0.08);
     }
-
+    
     .account-type-card input {
       position: absolute;
       opacity: 0;
     }
-
-    .account-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--gray-100);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
-      transition: all 0.3s ease;
-    }
-
-    .account-type-card.selected .account-icon {
-      background: var(--primary);
-      box-shadow: 0 8px 24px rgba(229, 57, 53, 0.3);
-    }
-
-    .account-icon i {
-      font-size: 24px;
-      color: var(--gray-500);
-      transition: all 0.3s ease;
-    }
-
-    .account-type-card.selected .account-icon i {
-      color: #FFFFFF;
-    }
-
-    .account-type-card h3 {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--gray-800);
-      margin-bottom: 4px;
-    }
-
-    .account-type-card p {
-      font-size: 13px;
-      color: var(--gray-500);
-    }
-
+    
     .selected-badge {
       position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 24px;
-      height: 24px;
-      background: var(--primary);
+      top: 0.75rem;
+      right: 0.75rem;
+      width: 20px;
+      height: 20px;
+      background: #E53935;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transform: scale(0.8);
-      transition: all 0.3s ease;
+      transform: scale(0.5);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-
+    
     .account-type-card.selected .selected-badge {
       opacity: 1;
       transform: scale(1);
     }
-
+    
     .selected-badge i {
-      font-size: 12px;
-      color: #FFFFFF;
+      font-size: 0.625rem;
+      color: var(--dala-white);
     }
-
-    /* Form Fields */
-    .form-section {
-      margin-bottom: 28px;
+    
+    .account-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--dala-gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.875rem;
+      transition: all 0.3s ease;
     }
-
+    
+    .account-type-card.selected .account-icon {
+      background: #E53935;
+      box-shadow: 0 8px 20px rgba(229, 57, 53, 0.35);
+    }
+    
+    .account-icon i {
+      font-size: 1.125rem;
+      color: var(--dala-gray-500);
+      transition: all 0.3s ease;
+    }
+    
+    .account-type-card.selected .account-icon i {
+      color: var(--dala-white);
+    }
+    
+    .account-type-card h3 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--dala-gray-800);
+      margin-bottom: 0.25rem;
+    }
+    
+    .account-type-card p {
+      font-size: 0.8125rem;
+      color: var(--dala-gray-500);
+    }
+    
+    /* Divider */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--dala-gray-200), transparent);
+      margin: 1.5rem 0;
+    }
+    
+    /* Form Grid */
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 1rem;
     }
-
+    
+    /* Enhanced Form Elements - RED focus */
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 1rem;
     }
-
-    .form-group:last-child {
-      margin-bottom: 0;
-    }
-
+    
     .form-label {
       display: block;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--gray-700);
-      margin-bottom: 8px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--dala-gray-700);
+      margin-bottom: 0.375rem;
     }
-
+    
     .form-label .required {
-      color: var(--primary);
-      margin-left: 2px;
+      color: #E53935;
+      margin-left: 0.25rem;
     }
-
+    
     .form-input {
       width: 100%;
-      padding: 14px 16px;
-      border: 1.5px solid var(--gray-200);
-      border-radius: var(--radius-md);
-      font-size: 15px;
-      color: var(--gray-800);
-      background: #FFFFFF;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--dala-gray-200);
+      border-radius: 10px;
+      font-size: 0.9375rem;
+      color: var(--dala-gray-800);
+      background: var(--dala-white);
       transition: all 0.2s ease;
     }
-
+    
     .form-input::placeholder {
-      color: var(--gray-400);
+      color: var(--dala-gray-400);
     }
-
+    
     .form-input:hover {
-      border-color: var(--gray-300);
+      border-color: var(--dala-gray-300);
     }
-
+    
     .form-input:focus {
       outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.08);
+      border-color: #E53935;
+      box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.1);
     }
-
+    
+    /* Password Field */
     .password-wrapper {
       position: relative;
     }
-
+    
     .password-toggle {
       position: absolute;
-      right: 14px;
+      right: 0.875rem;
       top: 50%;
       transform: translateY(-50%);
       background: none;
       border: none;
-      color: var(--gray-400);
+      color: var(--dala-gray-400);
       cursor: pointer;
-      padding: 4px;
-      font-size: 16px;
+      padding: 0.25rem;
+      font-size: 0.9375rem;
       transition: color 0.2s ease;
     }
-
+    
     .password-toggle:hover {
-      color: var(--gray-600);
+      color: var(--dala-gray-600);
     }
-
+    
+    /* Password Strength - RED colors */
     .password-strength {
-      height: 4px;
-      background: var(--gray-200);
+      height: 3px;
+      background: var(--dala-gray-200);
       border-radius: 2px;
-      margin-top: 8px;
+      margin-top: 0.5rem;
       overflow: hidden;
     }
-
+    
     .password-strength-bar {
       height: 100%;
       width: 0;
       transition: all 0.3s ease;
       border-radius: 2px;
     }
-
-    .password-strength-bar.weak { width: 33%; background: #EF4444; }
-    .password-strength-bar.medium { width: 66%; background: #F59E0B; }
-    .password-strength-bar.strong { width: 100%; background: #10B981; }
-
-    select.form-input {
-      cursor: pointer;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239E9E9E' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      padding-right: 40px;
-    }
-
+    
+    .password-strength-bar.weak { width: 33%; background: #FF5252; }
+    .password-strength-bar.medium { width: 66%; background: var(--dala-amber); }
+    .password-strength-bar.strong { width: 100%; background: var(--dala-success); }
+    
     /* Dynamic Fields */
     .dynamic-fields {
       display: none;
     }
-
+    
     .dynamic-fields.active {
       display: block;
       animation: fadeIn 0.4s ease;
     }
-
+    
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
-      margin: 32px 0;
+    
+    /* Select */
+    select.form-input {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239CA3AF' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 2.5rem;
     }
-
-    /* Terms Checkbox */
+    
+    /* Terms Checkbox - RED accent */
     .terms-group {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
-      margin: 28px 0;
+      gap: 0.75rem;
+      margin: 1.25rem 0;
     }
-
+    
     .terms-group input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       margin-top: 2px;
-      accent-color: var(--primary);
+      accent-color: #E53935;
       cursor: pointer;
+      flex-shrink: 0;
     }
-
+    
     .terms-group label {
-      font-size: 14px;
-      color: var(--gray-600);
+      font-size: 0.8125rem;
+      color: var(--dala-gray-600);
       line-height: 1.5;
       cursor: pointer;
     }
-
+    
     .terms-group a {
-      color: var(--primary);
+      color: #E53935;
       font-weight: 500;
-      text-decoration: none;
-    }
-
-    .terms-group a:hover {
       text-decoration: underline;
+      text-underline-offset: 2px;
     }
-
-    /* Submit Button */
-    .btn-primary {
+    
+    .terms-group a:hover {
+      color: #C62828;
+    }
+    
+    /* Submit Button - RED */
+    .btn-submit {
       width: 100%;
-      padding: 16px 24px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 0.875rem 1.5rem;
+      background: linear-gradient(135deg, #E53935 0%, #C62828 100%);
       color: #FFFFFF;
       border: none;
-      border-radius: var(--radius-md);
-      font-size: 16px;
+      border-radius: 10px;
+      font-size: 0.9375rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 16px rgba(229, 57, 53, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 16px rgba(229, 57, 53, 0.25);
+      position: relative;
+      overflow: hidden;
     }
-
-    .btn-primary:hover {
+    
+    .btn-submit::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    
+    .btn-submit:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(229, 57, 53, 0.4);
+      box-shadow: 0 8px 24px rgba(229, 57, 53, 0.35);
     }
-
-    .btn-primary:disabled {
-      opacity: 0.6;
+    
+    .btn-submit:hover::before {
+      opacity: 1;
+    }
+    
+    .btn-submit:disabled {
+      opacity: 0.7;
       cursor: not-allowed;
       transform: none;
     }
-
-    .btn-primary .spinner {
+    
+    /* Spinner */
+    .spinner {
       display: inline-block;
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: #FFFFFF;
+      border-top-color: currentColor;
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
-      margin-right: 8px;
-      vertical-align: middle;
     }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
+    
     /* Social Login */
     .social-login {
-      margin-top: 24px;
-      text-align: center;
+      margin-top: 1.25rem;
     }
-
+    
     .social-divider {
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 20px;
-      color: var(--gray-400);
-      font-size: 13px;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      color: var(--dala-gray-400);
+      font-size: 0.8125rem;
     }
-
+    
     .social-divider::before,
     .social-divider::after {
       content: '';
       flex: 1;
       height: 1px;
-      background: var(--gray-200);
+      background: var(--dala-gray-200);
     }
-
+    
     .btn-google {
       width: 100%;
-      padding: 14px 24px;
-      background: #FFFFFF;
-      color: var(--gray-700);
-      border: 1.5px solid var(--gray-200);
-      border-radius: var(--radius-md);
-      font-size: 15px;
+      padding: 0.75rem 1rem;
+      background: var(--dala-white);
+      color: var(--dala-gray-700);
+      border: 1.5px solid var(--dala-gray-200);
+      border-radius: 10px;
+      font-size: 0.875rem;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.2s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 0.625rem;
     }
-
+    
     .btn-google:hover {
-      background: var(--gray-50);
-      border-color: var(--gray-300);
+      background: var(--dala-gray-50);
+      border-color: var(--dala-gray-300);
     }
-
+    
     .btn-google i {
       color: #4285F4;
-      font-size: 18px;
+      font-size: 1rem;
     }
-
+    
     /* Footer */
     .signup-footer {
       text-align: center;
-      padding: 24px 40px 40px;
-      border-top: 1px solid var(--gray-100);
+      padding: 1.25rem 2rem;
+      border-top: 1px solid var(--dala-gray-100);
     }
-
+    
     .signup-footer p {
-      color: var(--gray-500);
-      font-size: 15px;
+      font-size: 0.875rem;
+      color: var(--dala-gray-500);
     }
-
+    
     .signup-footer a {
-      color: var(--primary);
+      color: #E53935;
       font-weight: 600;
-      text-decoration: none;
     }
-
+    
     .signup-footer a:hover {
-      text-decoration: underline;
+      color: #C62828;
     }
-
+    
     /* Messages */
     .message {
-      padding: 14px 16px;
-      border-radius: var(--radius-md);
-      font-size: 14px;
-      margin-bottom: 24px;
+      padding: 0.875rem 1rem;
+      border-radius: 10px;
+      font-size: 0.8125rem;
+      margin-bottom: 1rem;
       display: none;
       align-items: center;
-      gap: 10px;
+      gap: 0.625rem;
     }
-
+    
     .message.show {
       display: flex;
     }
-
+    
     .message-error {
-      background: #FEF2F2;
-      color: #DC2626;
-      border: 1px solid #FECACA;
+      background: rgba(229, 57, 53, 0.08);
+      border: 1px solid rgba(229, 57, 53, 0.2);
+      color: #991B1B;
     }
-
+    
     .message-success {
-      background: #F0FDF4;
-      color: #059669;
-      border: 1px solid #BBF7D0;
+      background: var(--dala-success-soft);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: #065F46;
     }
-
+    
     .message i {
-      font-size: 18px;
+      font-size: 1rem;
+      flex-shrink: 0;
     }
-
+    
     /* Responsive */
-    @media (max-width: 520px) {
-      body {
+    @media (max-width: 640px) {
+      .signup-page {
         padding: 0;
-        background: #FFFFFF;
+        background: var(--dala-white);
       }
-
+      
       .signup-container {
         border-radius: 0;
         box-shadow: none;
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
       }
-
+      
       .signup-header {
-        padding: 32px 24px;
+        padding: 1.75rem 1.25rem;
       }
-
+      
       .signup-body {
-        padding: 24px;
+        padding: 1.25rem;
+        flex: 1;
       }
-
+      
       .form-row {
         grid-template-columns: 1fr;
       }
-
+      
       .account-type-grid {
         grid-template-columns: 1fr;
       }
-
+      
       .signup-footer {
-        padding: 20px 24px 32px;
+        padding: 1rem 1.25rem 1.5rem;
       }
     }
   </style>
 </head>
 <body>
+
+<div class="signup-page">
   <div class="signup-container">
+    
+    <!-- Header -->
     <div class="signup-header">
       <div class="signup-header-content">
         <a href="../index.html">
@@ -577,54 +606,59 @@
         <p>Join Nigeria's premier retail execution platform</p>
       </div>
     </div>
-
+    
+    <!-- Body -->
     <div class="signup-body">
+      
+      <!-- Messages -->
       <div class="message message-error" id="errorMessage">
-        <i class="fas fa-exclamation-circle"></i>
+        <i class="fa-solid fa-exclamation-circle"></i>
         <span id="errorText"></span>
       </div>
-
+      
       <div class="message message-success" id="successMessage">
-        <i class="fas fa-check-circle"></i>
+        <i class="fa-solid fa-check-circle"></i>
         <span id="successText"></span>
       </div>
-
+      
       <form id="signupForm">
-        <!-- Account Type Selection -->
+        
+        <!-- Account Type -->
         <div class="account-type-section">
           <div class="section-label">I want to join as</div>
           <div class="account-type-grid">
             <label class="account-type-card selected" onclick="selectAccountType('brand')">
               <input type="radio" name="userType" value="brand" checked>
               <div class="selected-badge">
-                <i class="fas fa-check"></i>
+                <i class="fa-solid fa-check"></i>
               </div>
               <div class="account-icon">
-                <i class="fas fa-box-open"></i>
+                <i class="fa-solid fa-box-open"></i>
               </div>
               <h3>Brand Partner</h3>
               <p>I supply products to retailers</p>
             </label>
-
+            
             <label class="account-type-card" onclick="selectAccountType('retailer')">
               <input type="radio" name="userType" value="retailer">
               <div class="selected-badge">
-                <i class="fas fa-check"></i>
+                <i class="fa-solid fa-check"></i>
               </div>
               <div class="account-icon">
-                <i class="fas fa-store"></i>
+                <i class="fa-solid fa-store"></i>
               </div>
               <h3>Retailer</h3>
               <p>I own or manage a store</p>
             </label>
           </div>
         </div>
-
+        
         <div class="section-divider"></div>
-
-        <!-- Personal Information -->
+        
+        <!-- Personal Info -->
         <div class="form-section">
           <div class="section-label">Personal Information</div>
+          
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">First Name <span class="required">*</span></label>
@@ -635,18 +669,18 @@
               <input type="text" class="form-input" id="lastName" placeholder="Doe" required>
             </div>
           </div>
-
+          
           <div class="form-group">
             <label class="form-label">Email Address <span class="required">*</span></label>
             <input type="email" class="form-input" id="email" placeholder="you@company.com" required>
           </div>
-
+          
           <div class="form-group">
             <label class="form-label">Phone Number <span class="required">*</span></label>
             <input type="tel" class="form-input" id="phone" placeholder="+234 800 000 0000" required>
           </div>
         </div>
-
+        
         <!-- Brand Fields -->
         <div class="dynamic-fields active" id="brandFields">
           <div class="section-divider"></div>
@@ -671,7 +705,7 @@
             </div>
           </div>
         </div>
-
+        
         <!-- Retailer Fields -->
         <div class="dynamic-fields" id="retailerFields">
           <div class="section-divider"></div>
@@ -700,9 +734,9 @@
             </div>
           </div>
         </div>
-
+        
         <div class="section-divider"></div>
-
+        
         <!-- Security -->
         <div class="form-section">
           <div class="section-label">Security</div>
@@ -711,34 +745,38 @@
             <div class="password-wrapper">
               <input type="password" class="form-input" id="password" placeholder="Create a secure password" required oninput="checkPasswordStrength()">
               <button type="button" class="password-toggle" onclick="togglePassword('password')">
-                <i class="fas fa-eye" id="passwordToggleIcon"></i>
+                <i class="fa-regular fa-eye" id="passwordToggleIcon"></i>
               </button>
             </div>
             <div class="password-strength">
               <div class="password-strength-bar" id="strengthBar"></div>
             </div>
           </div>
-
+          
           <div class="form-group">
             <label class="form-label">Confirm Password <span class="required">*</span></label>
             <div class="password-wrapper">
               <input type="password" class="form-input" id="confirmPassword" placeholder="Confirm your password" required>
               <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
-                <i class="fas fa-eye" id="confirmToggleIcon"></i>
+                <i class="fa-regular fa-eye" id="confirmToggleIcon"></i>
               </button>
             </div>
           </div>
         </div>
-
+        
+        <!-- Terms -->
         <div class="terms-group">
           <input type="checkbox" id="agreeTerms" required>
           <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>, and consent to receiving communications from DALA Technologies.</label>
         </div>
-
-        <button type="submit" class="btn-primary" id="submitBtn">
+        
+        <!-- Submit -->
+        <button type="submit" class="btn-submit" id="submitBtn">
           <span>Create Account</span>
+          <i class="fa-solid fa-arrow-right"></i>
         </button>
-
+        
+        <!-- Social Login -->
         <div class="social-login">
           <div class="social-divider">or sign up with</div>
           <button type="button" class="btn-google" onclick="handleGoogleSignUp()">
@@ -746,163 +784,126 @@
             <span>Continue with Google</span>
           </button>
         </div>
+        
       </form>
     </div>
-
+    
+    <!-- Footer -->
     <div class="signup-footer">
       <p>Already have an account? <a href="login.html">Sign in</a></p>
     </div>
+    
   </div>
+</div>
 
-  <script>
-    const API_URL = window.location.hostname === 'localhost' 
-      ? 'http://localhost:8888/api'
-      : '/api';
-
-    // Account type selection
-    function selectAccountType(type) {
-      document.querySelectorAll('.account-type-card').forEach(card => {
-        card.classList.remove('selected');
-      });
-      event.currentTarget.classList.add('selected');
-
-      // Show/hide relevant fields
-      document.getElementById('brandFields').classList.remove('active');
-      document.getElementById('retailerFields').classList.remove('active');
-
-      if (type === 'brand') {
-        document.getElementById('brandFields').classList.add('active');
-        document.getElementById('companyName').required = true;
-        document.getElementById('storeName').required = false;
-      } else {
-        document.getElementById('retailerFields').classList.add('active');
-        document.getElementById('companyName').required = false;
-        document.getElementById('storeName').required = true;
-      }
-    }
-
-    // Toggle password visibility
-    function togglePassword(fieldId) {
-      const field = document.getElementById(fieldId);
-      const iconId = fieldId === 'password' ? 'passwordToggleIcon' : 'confirmToggleIcon';
-      const icon = document.getElementById(iconId);
-
-      if (field.type === 'password') {
-        field.type = 'text';
-        icon.classList.remove('fa-eye');
-        icon.classList.add('fa-eye-slash');
-      } else {
-        field.type = 'password';
-        icon.classList.remove('fa-eye-slash');
-        icon.classList.add('fa-eye');
-      }
-    }
-
-    // Check password strength
-    function checkPasswordStrength() {
-      const password = document.getElementById('password').value;
-      const strengthBar = document.getElementById('strengthBar');
-
-      let strength = 0;
-      if (password.length >= 8) strength++;
-      if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
-      if (password.match(/[0-9]/)) strength++;
-      if (password.match(/[^a-zA-Z0-9]/)) strength++;
-
-      strengthBar.className = 'password-strength-bar';
-      if (strength <= 1) strengthBar.classList.add('weak');
-      else if (strength === 2) strengthBar.classList.add('medium');
-      else strengthBar.classList.add('strong');
-    }
-
-    // Show messages
-    function showError(message) {
-      const errorDiv = document.getElementById('errorMessage');
-      document.getElementById('errorText').textContent = message;
-      errorDiv.classList.add('show');
-      document.getElementById('successMessage').classList.remove('show');
-      setTimeout(() => errorDiv.classList.remove('show'), 5000);
-    }
-
-    function showSuccess(message) {
-      const successDiv = document.getElementById('successMessage');
-      document.getElementById('successText').textContent = message;
-      successDiv.classList.add('show');
-      document.getElementById('errorMessage').classList.remove('show');
-    }
-
-    // Form submission
-    document.getElementById('signupForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const submitBtn = document.getElementById('submitBtn');
-      const userType = document.querySelector('input[name="userType"]:checked').value;
-      const password = document.getElementById('password').value;
-      const confirmPassword = document.getElementById('confirmPassword').value;
-
-      // Validation
-      if (password !== confirmPassword) {
-        showError('Passwords do not match');
-        return;
-      }
-
-      if (password.length < 8) {
-        showError('Password must be at least 8 characters');
-        return;
-      }
-
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="spinner"></span>Creating account...';
-
-      const formData = {
-        userType: userType,
-        firstName: document.getElementById('firstName').value,
-        lastName: document.getElementById('lastName').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        password: password,
-        companyName: document.getElementById('companyName')?.value,
-        productCategory: document.getElementById('productCategory')?.value,
-        storeName: document.getElementById('storeName')?.value,
-        storeType: document.getElementById('storeType')?.value,
-        storeLocation: document.getElementById('storeLocation')?.value
-      };
-
-      try {
-        const response = await fetch(`${API_URL}/auth/signup`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData)
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-          showSuccess('Account created successfully! Redirecting...');
-          localStorage.setItem('dala_token', data.token);
-          localStorage.setItem('dala_user', JSON.stringify(data.user));
-
-          setTimeout(() => {
-            window.location.href = userType === 'retailer' ? 'dashboard-retailer.html' : 'dashboard-brand.html';
-          }, 1500);
-        } else {
-          showError(data.message || 'Failed to create account');
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<span>Create Account</span>';
-        }
-      } catch (error) {
-        showError('Network error. Please try again.');
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<span>Create Account</span>';
-      }
+<script>
+  // Account type selection
+  function selectAccountType(type) {
+    document.querySelectorAll('.account-type-card').forEach(card => {
+      card.classList.remove('selected');
     });
-
-    // Google Sign Up
-    function handleGoogleSignUp() {
-      alert('Google Sign-Up coming soon!');
+    event.currentTarget.classList.add('selected');
+    
+    document.getElementById('brandFields').classList.remove('active');
+    document.getElementById('retailerFields').classList.remove('active');
+    
+    if (type === 'brand') {
+      document.getElementById('brandFields').classList.add('active');
+      document.getElementById('companyName').required = true;
+      document.getElementById('storeName').required = false;
+    } else {
+      document.getElementById('retailerFields').classList.add('active');
+      document.getElementById('companyName').required = false;
+      document.getElementById('storeName').required = true;
     }
-  </script>
+  }
+  
+  // Toggle password
+  function togglePassword(fieldId) {
+    const field = document.getElementById(fieldId);
+    const iconId = fieldId === 'password' ? 'passwordToggleIcon' : 'confirmToggleIcon';
+    const icon = document.getElementById(iconId);
+    
+    if (field.type === 'password') {
+      field.type = 'text';
+      icon.classList.remove('fa-eye');
+      icon.classList.add('fa-eye-slash');
+    } else {
+      field.type = 'password';
+      icon.classList.remove('fa-eye-slash');
+      icon.classList.add('fa-eye');
+    }
+  }
+  
+  // Check password strength
+  function checkPasswordStrength() {
+    const password = document.getElementById('password').value;
+    const strengthBar = document.getElementById('strengthBar');
+    
+    let strength = 0;
+    if (password.length >= 8) strength++;
+    if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
+    if (password.match(/[0-9]/)) strength++;
+    if (password.match(/[^a-zA-Z0-9]/)) strength++;
+    
+    strengthBar.className = 'password-strength-bar';
+    if (strength <= 1) strengthBar.classList.add('weak');
+    else if (strength === 2) strengthBar.classList.add('medium');
+    else strengthBar.classList.add('strong');
+  }
+  
+  // Show messages
+  function showError(message) {
+    const errorDiv = document.getElementById('errorMessage');
+    document.getElementById('errorText').textContent = message;
+    errorDiv.classList.add('show');
+    document.getElementById('successMessage').classList.remove('show');
+    setTimeout(() => errorDiv.classList.remove('show'), 5000);
+  }
+  
+  function showSuccess(message) {
+    const successDiv = document.getElementById('successMessage');
+    document.getElementById('successText').textContent = message;
+    successDiv.classList.add('show');
+    document.getElementById('errorMessage').classList.remove('show');
+  }
+  
+  // Form submission
+  document.getElementById('signupForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const userType = document.querySelector('input[name="userType"]:checked').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    
+    if (password !== confirmPassword) {
+      showError('Passwords do not match');
+      return;
+    }
+    
+    if (password.length < 8) {
+      showError('Password must be at least 8 characters');
+      return;
+    }
+    
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="spinner"></span> Creating account...';
+    
+    // Simulate API call
+    setTimeout(() => {
+      showSuccess('Account created successfully! Redirecting...');
+      setTimeout(() => {
+        window.location.href = userType === 'retailer' ? '../trade/index.html' : '../brand-portal/index.html';
+      }, 1500);
+    }, 1500);
+  });
+  
+  // Google Sign Up
+  function handleGoogleSignUp() {
+    alert('Google Sign-Up coming soon!');
+  }
+</script>
 
-    <script defer src="/js/wip-badge.js"></script>
 </body>
 </html>

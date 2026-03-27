@@ -3,460 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trade Portal Login — DALA Technologies</title>
+  <title>Trade Portal — DALA Technologies</title>
+  <link rel="icon" type="image/png" href="../favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="../css/trade-portal.css" />
-  <style>
-    body {
-      min-height: 100vh;
-      display: flex;
-      background: var(--trade-bg);
-    }
-
-    .login-split {
-      display: flex;
-      width: 100%;
-      min-height: 100vh;
-    }
-
-    /* ── Left panel ─────────────────────────────────────── */
-    .login-left {
-      flex: 1;
-      background: linear-gradient(150deg, #0d1b4b 0%, #1a3a8f 100%);
-      display: flex;
-      flex-direction: column;
-      padding: 48px 52px;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .login-left::before {
-      content: '';
-      position: absolute;
-      top: -120px;
-      right: -80px;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.03);
-    }
-
-    .login-left::after {
-      content: '';
-      position: absolute;
-      bottom: -100px;
-      left: -60px;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background: rgba(245,114,35,0.06);
-    }
-
-    .login-logo {
-      margin-bottom: 64px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .login-logo img {
-      height: 40px;
-      width: auto;
-      filter: brightness(10) saturate(0);
-    }
-
-    .login-portal-label {
-      display: inline-block;
-      background: rgba(245,114,35,0.2);
-      color: var(--trade-orange);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: 20px;
-      margin-top: 10px;
-    }
-
-    .login-headline {
-      position: relative;
-      z-index: 1;
-      flex: 1;
-    }
-
-    .login-headline h1 {
-      font-size: 32px;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      letter-spacing: -0.5px;
-    }
-
-    .login-headline h1 em {
-      font-style: normal;
-      color: var(--trade-orange);
-    }
-
-    .login-headline p {
-      font-size: 15px;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.65;
-      max-width: 400px;
-      margin-bottom: 40px;
-    }
-
-    .trust-bullets {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 48px;
-    }
-
-    .trust-bullet {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .trust-bullet-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 15px;
-      color: var(--trade-orange);
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .trust-bullet-text h4 {
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-
-    .trust-bullet-text p {
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.55);
-      margin: 0;
-    }
-
-    .brands-strip {
-      position: relative;
-      z-index: 1;
-    }
-
-    .brands-strip-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 12px;
-    }
-
-    .brand-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .brand-chip {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.75);
-      font-size: 12px;
-      font-weight: 500;
-      padding: 5px 12px;
-      border-radius: 20px;
-      transition: background 0.2s;
-    }
-
-    .brand-chip:hover {
-      background: rgba(255,255,255,0.14);
-    }
-
-    /* ── Right panel ─────────────────────────────────────── */
-    .login-right {
-      width: 480px;
-      background: var(--trade-white);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 48px 52px;
-      position: relative;
-    }
-
-    .login-form-wrap {
-      width: 100%;
-      max-width: 360px;
-    }
-
-    .login-form-header {
-      margin-bottom: 32px;
-    }
-
-    .login-form-header h2 {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--trade-text);
-      margin-bottom: 6px;
-    }
-
-    .login-form-header p {
-      font-size: 13.5px;
-      color: var(--trade-muted);
-    }
-
-    .login-form-header p a {
-      color: var(--trade-navy-mid);
-      font-weight: 600;
-    }
-
-    .login-form .form-group {
-      margin-bottom: 18px;
-    }
-
-    .login-form .form-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--trade-text);
-      margin-bottom: 7px;
-    }
-
-    .login-form .form-control {
-      padding: 12px 14px;
-      font-size: 14px;
-    }
-
-    .form-row-between {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-
-    .forgot-link {
-      font-size: 12.5px;
-      color: var(--trade-navy-mid);
-      font-weight: 500;
-    }
-
-    .forgot-link:hover { text-decoration: underline; }
-
-    .btn-sign-in {
-      width: 100%;
-      background: var(--trade-navy);
-      color: white;
-      border: none;
-      border-radius: var(--radius-sm);
-      padding: 13px 24px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .btn-sign-in:hover { background: var(--trade-navy-mid); }
-
-    .login-error {
-      background: rgba(229,62,62,0.08);
-      border: 1px solid rgba(229,62,62,0.25);
-      color: var(--trade-danger);
-      border-radius: var(--radius-sm);
-      padding: 10px 14px;
-      font-size: 13px;
-      margin-bottom: 16px;
-      display: none;
-    }
-
-    .login-divider {
-      height: 1px;
-      background: var(--trade-border);
-      margin: 20px 0;
-      position: relative;
-    }
-
-    .apply-link {
-      text-align: center;
-      font-size: 13px;
-      color: var(--trade-muted);
-    }
-
-    .apply-link a {
-      color: var(--trade-navy-mid);
-      font-weight: 600;
-    }
-
-    .apply-link a:hover { text-decoration: underline; }
-
-    .demo-hint {
-      background: rgba(245,114,35,0.07);
-      border: 1px solid rgba(245,114,35,0.2);
-      border-radius: var(--radius-sm);
-      padding: 12px 14px;
-      margin-top: 24px;
-      font-size: 12.5px;
-      color: var(--trade-text);
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .demo-hint i { color: var(--trade-orange); margin-top: 1px; }
-
-    .login-footer {
-      position: absolute;
-      bottom: 24px;
-      font-size: 12px;
-      color: var(--trade-muted);
-      text-align: center;
-    }
-
-    /* ── Responsive ──────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .login-split { flex-direction: column; }
-      .login-left { padding: 36px 28px 40px; flex: none; }
-      .login-right { width: 100%; padding: 36px 28px; }
-      .login-headline h1 { font-size: 24px; }
-    }
-  </style>
+  <link rel="stylesheet" href="../css/dala-premium-red.css?v=2" />
 </head>
 <body>
 
-<div class="login-split">
-
-  <!-- ── Left: Brand panel ─────────────────────────────── -->
-  <div class="login-left">
-    <div class="login-logo">
-      <img src="../4.png" alt="DALA Technologies" />
-      <div class="login-portal-label">Trade Portal</div>
+<div class="dala-split-layout">
+  
+  <!-- Left: Brand Panel -->
+  <div class="dala-brand-panel">
+    <!-- Decorative Elements -->
+    <div class="dala-deco-circle dala-deco-circle-1"></div>
+    <div class="dala-deco-circle dala-deco-circle-2"></div>
+    
+    <!-- Header -->
+    <div class="dala-brand-header">
+      <a href="../index.html" class="dala-brand-logo">
+        <img src="../4.png" alt="DALA" />
+      </a>
+      <div class="dala-portal-badge">Trade Portal</div>
     </div>
-
-    <div class="login-headline">
-      <h1>The sourcing hub for<br><em>DALA retail partners.</em></h1>
-      <p>Access wholesale pricing, build purchase orders, and manage deliveries — all in one place, built for Nigerian retail.</p>
-
-      <div class="trust-bullets">
-        <div class="trust-bullet">
-          <div class="trust-bullet-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-          <div class="trust-bullet-text">
+    
+    <!-- Story Content -->
+    <div class="dala-brand-story">
+      <h1 class="dala-brand-headline dala-fade-in-up">
+        The sourcing hub for<br><em>DALA retail partners.</em>
+      </h1>
+      <p class="dala-brand-description dala-fade-in-up dala-stagger-1">
+        Access wholesale pricing, build purchase orders, and manage deliveries — all in one place, built for Nigerian retail.
+      </p>
+      
+      <!-- Trust Points -->
+      <div class="dala-trust-stack dala-fade-in-up dala-stagger-2">
+        <div class="dala-trust-item">
+          <div class="dala-trust-icon">
+            <i class="fa-solid fa-boxes-stacked"></i>
+          </div>
+          <div class="dala-trust-content">
             <h4>300+ brand SKUs</h4>
             <p>Curated products from Nigeria's fastest-growing consumer brands</p>
           </div>
         </div>
-        <div class="trust-bullet">
-          <div class="trust-bullet-icon"><i class="fa-solid fa-truck-fast"></i></div>
-          <div class="trust-bullet-text">
+        
+        <div class="dala-trust-item">
+          <div class="dala-trust-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <div class="dala-trust-content">
             <h4>48-hour delivery windows</h4>
             <p>Scheduled Thursday deliveries across all DALA retail locations</p>
           </div>
         </div>
-        <div class="trust-bullet">
-          <div class="trust-bullet-icon"><i class="fa-solid fa-circle-user"></i></div>
-          <div class="trust-bullet-text">
+        
+        <div class="dala-trust-item">
+          <div class="dala-trust-icon">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <div class="dala-trust-content">
             <h4>Dedicated account manager</h4>
             <p>Your DALA contact handles queries, confirmations, and logistics</p>
           </div>
         </div>
       </div>
-
-      <div class="brands-strip">
-        <div class="brands-strip-label">Brand partners available</div>
-        <div class="brand-chips">
-          <span class="brand-chip">Wilson's Lemonade</span>
-          <span class="brand-chip">Zayith</span>
-          <span class="brand-chip">August Secrets</span>
-          <span class="brand-chip">Orisirisi</span>
-          <span class="brand-chip">Cresso Life</span>
-          <span class="brand-chip">Eti Farms</span>
-          <span class="brand-chip">Kezia</span>
-        </div>
+    </div>
+    
+    <!-- Partners Strip -->
+    <div class="dala-partners-strip dala-fade-in-up dala-stagger-3">
+      <p class="dala-partners-label">Our Brand Partners</p>
+      <div class="dala-partners-chips">
+        <span class="dala-partner-chip">Wilson's Lemonade</span>
+        <span class="dala-partner-chip">Zayith</span>
+        <span class="dala-partner-chip">August Secrets</span>
+        <span class="dala-partner-chip">Orisirisi</span>
+        <span class="dala-partner-chip">Cresso Life</span>
+        <span class="dala-partner-chip">Eti Farms</span>
+        <span class="dala-partner-chip">Kezia</span>
       </div>
     </div>
   </div>
-
-  <!-- ── Right: Login form ──────────────────────────────── -->
-  <div class="login-right">
-    <div class="login-form-wrap">
-      <div class="login-form-header">
-        <h2>Sign in to your Trade Portal</h2>
-        <p>Enter your registered email and password to continue.</p>
+  
+  <!-- Right: Form Panel -->
+  <div class="dala-form-panel">
+    <div class="dala-form-container">
+      <!-- Form Header -->
+      <div class="dala-form-header">
+        <h2 class="dala-form-title">Sign in to your Trade Portal</h2>
+        <p class="dala-form-subtitle">Enter your credentials to access your account</p>
       </div>
-
-      <form class="login-form" id="loginForm" novalidate>
-        <div id="login-error" class="login-error">
-          <i class="fa-solid fa-circle-exclamation"></i>&nbsp; Incorrect password. Please try again.
+      
+      <!-- Alert (Hidden by default) -->
+      <div id="loginError" class="dala-alert dala-alert-error" style="display: none; margin-bottom: 1.5rem;">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>Incorrect password. Please try again.</span>
+      </div>
+      
+      <!-- Login Form -->
+      <form id="loginForm" novalidate>
+        <div class="dala-form-group">
+          <label class="dala-form-label" for="email">Email address</label>
+          <div class="dala-input-group">
+            <i class="fa-regular fa-envelope dala-input-icon"></i>
+            <input 
+              type="email" 
+              id="email" 
+              class="dala-input with-icon" 
+              placeholder="you@yourstore.com"
+              autocomplete="email"
+              required
+            />
+          </div>
         </div>
-
-        <div class="form-group">
-          <label class="form-label" for="email">Email address</label>
-          <input
-            class="form-control"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="you@yourstore.com"
-            autocomplete="email"
-            required
-          />
+        
+        <div class="dala-form-group">
+          <label class="dala-form-label" for="password">Password</label>
+          <div class="dala-input-group">
+            <i class="fa-solid fa-lock dala-input-icon"></i>
+            <input 
+              type="password" 
+              id="password" 
+              class="dala-input with-icon" 
+              placeholder="••••••••"
+              autocomplete="current-password"
+              required
+            />
+            <button type="button" class="dala-input-action" id="togglePassword" aria-label="Toggle password visibility">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
         </div>
-
-        <div class="form-group">
-          <label class="form-label" for="password">Password</label>
-          <input
-            class="form-control"
-            type="password"
-            id="password"
-            name="password"
-            placeholder="••••••••"
-            autocomplete="current-password"
-            required
-          />
-        </div>
-
-        <div class="form-row-between">
-          <label style="display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer;">
-            <input type="checkbox" style="accent-color:var(--trade-navy);" /> Remember me
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--dala-gray-600); cursor: pointer;">
+            <input type="checkbox" style="width: 16px; height: 16px; accent-color: var(--dala-gold);" />
+            Remember me
           </label>
-          <a href="#" class="forgot-link">Forgot password?</a>
+          <a href="#" class="dala-link">Forgot password?</a>
         </div>
-
-        <button type="submit" class="btn-sign-in" id="signInBtn">
-          <i class="fa-solid fa-arrow-right-to-bracket"></i>
-          Sign in
+        
+        <button type="submit" class="dala-btn dala-btn-primary dala-btn-full dala-btn-lg dala-shine" id="signInBtn">
+          <span class="dala-btn-text">Sign in</span>
+          <i class="fa-solid fa-arrow-right"></i>
         </button>
-
-        <div class="login-divider"></div>
-
-        <div class="apply-link">
-          Not a partner yet?
-          <a href="../pages/contact.html">Apply for access &rarr;</a>
-        </div>
       </form>
-
-      <div class="demo-hint">
+      
+      <div class="dala-divider"></div>
+      
+      <!-- Apply Link -->
+      <div class="dala-form-footer">
+        <p>Not a partner yet? <a href="../pages/contact.html" class="dala-link-arrow">Apply for access</a></p>
+      </div>
+      
+      <!-- Demo Hint -->
+      <div class="dala-alert dala-alert-info" style="margin-top: 1.5rem;">
         <i class="fa-solid fa-circle-info"></i>
         <span><strong>Demo:</strong> Use any email + password: <strong>demo</strong></span>
       </div>
     </div>
-
-    <div class="login-footer">
-      &copy; 2026 DALA Technologies · Trade Partner Portal
+    
+    <!-- Footer -->
+    <div style="padding: 1.5rem 2rem; text-align: center; border-top: 1px solid var(--dala-gray-100);">
+      <p style="font-size: 0.75rem; color: var(--dala-gray-400);">
+        © 2026 DALA Technologies · Trade Partner Portal
+      </p>
     </div>
   </div>
-
+  
 </div>
 
 <script>
@@ -470,38 +186,56 @@
     } catch(e) {}
   })();
 
+  // Toggle password visibility
+  document.getElementById('togglePassword').addEventListener('click', function() {
+    const passwordInput = document.getElementById('password');
+    const icon = this.querySelector('i');
+    
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      icon.classList.remove('fa-eye');
+      icon.classList.add('fa-eye-slash');
+    } else {
+      passwordInput.type = 'password';
+      icon.classList.remove('fa-eye-slash');
+      icon.classList.add('fa-eye');
+    }
+  });
+
+  // Form submission
   document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const email    = document.getElementById('email').value.trim();
+    
+    const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
-    const errorEl  = document.getElementById('login-error');
-    const btn      = document.getElementById('signInBtn');
-
+    const errorEl = document.getElementById('loginError');
+    const btn = document.getElementById('signInBtn');
+    
     errorEl.style.display = 'none';
-
+    
     if (!email) {
       document.getElementById('email').focus();
       return;
     }
-
+    
     if (password === 'demo') {
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Signing in…';
-      btn.disabled = true;
-
+      btn.classList.add('dala-btn-loading');
+      btn.innerHTML = '<span class="dala-btn-spinner"></span><span class="dala-btn-text">Signing in…</span>';
+      
       const session = {
-        type:     'retailer',
-        name:     'Addide Supermarket',
+        type: 'retailer',
+        name: 'Addide Supermarket',
         location: 'Ikeja, Lagos',
-        tier:     'Standard Partner',
-        manager:  'Tunde Adeyemi'
+        tier: 'Standard Partner',
+        manager: 'Tunde Adeyemi'
       };
       localStorage.setItem('dala_trade_session', JSON.stringify(session));
-
+      
       setTimeout(() => {
         window.location.href = 'dashboard.html';
       }, 800);
     } else {
-      errorEl.style.display = 'block';
+      errorEl.style.display = 'flex';
       document.getElementById('password').value = '';
       document.getElementById('password').focus();
     }
