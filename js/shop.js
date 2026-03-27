@@ -161,7 +161,7 @@
             <p>${category.description || ''}</p>
           </div>
           <div class="shop-category-card__footer">
-            <span class="shop-pill">${category.accent ? category.accent.replace('-', ' ') : 'Collection'}</span>
+            <span class="shop-pill">Retail Collection</span>
             <a class="shop-btn shop-btn-secondary" href="/shop/category.html?slug=${category.slug}">Explore</a>
           </div>
         </div>
