@@ -98,79 +98,129 @@ body {
 }
 
 /* ============================================
-   NAVIGATION - Minimal Premium
+   NAVIGATION - Standard Navbar (matches rest of site)
    ============================================ */
-.cinematic-nav {
+
+/* Navbar adjustments for cinematic page */
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
-  padding: 1.5rem 3vw;
+  z-index: 1000;
+  background: transparent;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure navbar links are visible on dark hero */
+.navbar .nav-link {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled .nav-link {
+  color: white;
+  text-shadow: none;
+}
+
+.navbar .nav-dropdown-trigger {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled .nav-dropdown-trigger {
+  color: white;
+  text-shadow: none;
+}
+
+/* Mobile menu button for dark background */
+.mobile-menu-btn span {
+  background: white;
+}
+
+/* Mobile Menu Overlay - Premium Style */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 999;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  mix-blend-mode: difference;
-  transition: padding 0.4s var(--ease-out-quart);
+  gap: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s var(--ease-out-expo);
+  padding: 2rem;
 }
 
-.cinematic-nav.scrolled {
-  padding: 1rem 3vw;
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
 }
 
-.cinematic-nav-logo {
+.mobile-menu a {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.75rem;
+  font-weight: 400;
   color: white;
   text-decoration: none;
-  letter-spacing: 0.25em;
-  transition: opacity 0.3s ease;
-}
-
-.cinematic-nav-logo:hover {
-  opacity: 0.7;
-}
-
-.cinematic-nav-links {
-  display: flex;
-  gap: 3rem;
-}
-
-.cinematic-nav-links a {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: white;
-  text-decoration: none;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s var(--ease-out-expo);
   position: relative;
-  padding: 0.5rem 0;
-  transition: opacity 0.3s ease;
 }
 
-.cinematic-nav-links a::after {
+.mobile-menu.active a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu a::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: white;
-  transition: width 0.4s var(--ease-out-expo);
-}
-
-.cinematic-nav-links a:hover::after,
-.cinematic-nav-links a.active::after {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
   width: 100%;
+  height: 1px;
+  background: var(--cinematic-gold);
+  transition: transform 0.3s ease;
 }
 
-.cinematic-nav-links a:hover {
-  opacity: 0.8;
+.mobile-menu a:hover::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
-/* Mobile Menu Toggle */
-.mobile-menu-toggle {
+.mobile-menu a:hover {
+  color: var(--cinematic-gold);
+}
+
+/* Staggered animation delays */
+.mobile-menu.active a:nth-child(1) { transition-delay: 0.1s; }
+.mobile-menu.active a:nth-child(2) { transition-delay: 0.15s; }
+.mobile-menu.active a:nth-child(3) { transition-delay: 0.2s; }
+.mobile-menu.active a:nth-child(4) { transition-delay: 0.25s; }
+.mobile-menu.active a:nth-child(5) { transition-delay: 0.3s; }
+.mobile-menu.active a:nth-child(6) { transition-delay: 0.35s; }
+.mobile-menu.active a:nth-child(7) { transition-delay: 0.4s; }
+.mobile-menu.active a:nth-child(8) { transition-delay: 0.45s; }
+.mobile-menu.active a:nth-child(9) { transition-delay: 0.5s; }
+.mobile-menu.active a:nth-child(10) { transition-delay: 0.55s; }
+
+/* Mobile menu button animation */
+.mobile-menu-btn {
   display: none;
   flex-direction: column;
   gap: 5px;
@@ -178,26 +228,27 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 101;
+  z-index: 1001;
+  position: relative;
 }
 
-.mobile-menu-toggle span {
+.mobile-menu-btn span {
   display: block;
   width: 24px;
-  height: 1.5px;
+  height: 2px;
   background: white;
   transition: all 0.3s var(--ease-out-quart);
 }
 
-.mobile-menu-toggle.active span:nth-child(1) {
+.mobile-menu-btn.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
 
-.mobile-menu-toggle.active span:nth-child(2) {
+.mobile-menu-btn.active span:nth-child(2) {
   opacity: 0;
 }
 
-.mobile-menu-toggle.active span:nth-child(3) {
+.mobile-menu-btn.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
@@ -1240,11 +1291,11 @@ body {
    MOBILE RESPONSIVE - Premium Touch Experience
    ============================================ */
 @media (max-width: 1024px) {
-  .cinematic-nav-links {
+  .navbar .nav-links {
     display: none;
   }
   
-  .mobile-menu-toggle {
+  .mobile-menu-btn {
     display: flex;
   }
   
