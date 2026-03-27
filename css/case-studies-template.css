@@ -467,12 +467,12 @@ body.case-study-index {
 .case-index-visual img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
-  padding: 1.4rem;
+  padding: 0;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 20px 28px rgba(0, 0, 0, 0.22));
+  filter: none;
 }
 
 .case-index-visual::after {
@@ -577,38 +577,285 @@ body.case-study-index {
   }
 }
 
+/* ============================================
+   PREMIUM MOBILE EXPERIENCE (max-width: 768px)
+   ============================================ */
+
 @media (max-width: 768px) {
+  :root {
+    --case-mobile-padding: 20px;
+    --case-mobile-radius: 24px;
+  }
+
+  body.case-study-page,
+  body.case-study-index {
+    background: #faf8f5;
+  }
+
   .case-shell {
-    padding-top: calc(var(--header-height) + 1rem);
+    padding-top: 60px;
   }
 
   .case-container,
   .case-footer__inner {
-    padding: 0 1rem;
+    padding: 0 var(--case-mobile-padding);
   }
 
+  /* ==========================================
+     PREMIUM HERO - Full Bleed Editorial
+     ========================================== */
   .case-hero {
-    padding: 1.5rem 0 2.8rem;
+    padding: 0;
+    margin: 0 calc(-1 * var(--case-mobile-padding));
+    position: relative;
   }
 
-  .case-hero-panel,
-  .case-card,
-  .case-cta-panel,
-  .case-index-content {
-    padding: 1.35rem;
+  .case-hero-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    gap: 0;
   }
 
+  /* Full-bleed hero art at top */
   .case-hero-art {
-    min-height: 300px;
+    grid-row: 1;
+    min-height: 62vh;
+    margin: 0;
+    border-radius: 0 0 var(--case-mobile-radius) var(--case-mobile-radius);
+    position: relative;
+    overflow: hidden;
   }
 
-  .case-hero-collage {
-    inset: 0.85rem 0.85rem 7.1rem;
-    gap: 0.7rem;
+  .case-hero-art--product {
+    padding: 0;
   }
 
   .case-product-stage {
-    inset: 0.85rem 0.85rem 7.1rem;
+    inset: 0;
+    border-radius: 0 0 var(--case-mobile-radius) var(--case-mobile-radius);
+    padding: 0;
+  }
+
+  .case-product-stage--shelf img {
+    border-radius: 0 0 var(--case-mobile-radius) var(--case-mobile-radius);
+  }
+
+  /* Dark overlay with gradient for text readability */
+  .case-hero-art::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0.1) 0%,
+      rgba(0,0,0,0.3) 40%,
+      rgba(0,0,0,0.75) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Hero note - positioned at bottom of image */
+  .case-hero-note {
+    left: var(--case-mobile-padding);
+    right: var(--case-mobile-padding);
+    bottom: var(--case-mobile-padding);
+    padding: 1rem 1.25rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    z-index: 3;
+  }
+
+  /* Hero Copy - positioned over image */
+  .case-hero-copy {
+    grid-row: 1;
+    position: relative;
+    z-index: 3;
+    padding: calc(60px + 1rem) var(--case-mobile-padding) 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    pointer-events: none;
+  }
+
+  .case-hero-copy > * {
+    pointer-events: auto;
+  }
+
+  /* Kicker badge - Glass morphism */
+  .case-kicker {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.5rem 0.875rem;
+    backdrop-filter: blur(10px);
+    margin-bottom: 0.5rem;
+    align-self: flex-start;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* Brand name - Large gradient text */
+  .case-brand-name {
+    font-size: clamp(1.65rem, 7vw, 2.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    background: linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fff5f0 50%,
+      #ffccbb 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 20px rgba(229, 57, 53, 0.3);
+    margin-bottom: 0.5rem;
+  }
+
+  /* Headline - White for contrast */
+  .case-headline {
+    font-size: 1.05rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0;
+    font-weight: 500;
+    max-width: 90%;
+  }
+
+  /* Scroll indicator */
+  .case-hero-art::before {
+    content: '';
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 4;
+    animation: pulseRing 2s ease-in-out infinite;
+  }
+
+  .case-hero-scroll {
+    display: block;
+    position: absolute;
+    bottom: 97px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 14l-7 7m0 0l-7-7m7 7V3'/%3E%3C/svg%3E") center no-repeat;
+    opacity: 0.9;
+    z-index: 5;
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  @keyframes pulseRing {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+    50% { transform: translateX(-50%) scale(1.1); opacity: 0.3; }
+  }
+
+  /* Meta section - Below hero in normal flow */
+  .case-hero-meta {
+    grid-row: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: calc(var(--case-mobile-padding) * 1.5) var(--case-mobile-padding);
+    background: linear-gradient(180deg, #faf8f5 0%, #fff 50%);
+    margin-top: -20px;
+    padding-top: 40px;
+    z-index: 5;
+  }
+
+  /* Premium floating cards for chips */
+  .case-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 1.1rem 1.35rem;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 18px;
+    box-shadow: 
+      0 1px 2px rgba(0,0,0,0.02),
+      0 4px 8px rgba(229, 57, 53, 0.04),
+      0 8px 16px rgba(0, 0, 0, 0.06),
+      0 16px 32px rgba(0, 0, 0, 0.04);
+    color: var(--gray-800);
+    font-size: 0.98rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: chipReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .case-chip:nth-child(1) { animation-delay: 0.2s; }
+  .case-chip:nth-child(2) { animation-delay: 0.35s; }
+  .case-chip:nth-child(3) { animation-delay: 0.5s; }
+
+  @keyframes chipReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .case-chip i {
+    color: var(--primary);
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+
+  /* Subtle tap effect on chips */
+  .case-chip:active {
+    transform: scale(0.98);
+  }
+
+  /* Hide subtext and story block on mobile hero */
+  .case-subtext,
+  .case-story-block {
+    display: none;
+  }
+
+  /* ==========================================
+     SECTION CARDS - Premium Mobile
+     ========================================== */
+  .case-sections {
+    padding: 1.5rem 0 3rem;
+  }
+
+  .case-card,
+  .case-cta-panel {
+    padding: 1.75rem;
+    border-radius: var(--case-mobile-radius);
+  }
+
+  .case-index-content {
+    padding: 1.5rem;
+  }
+
+  .case-index-card {
+    border-radius: var(--case-mobile-radius);
   }
 
   .case-hero-tile {
@@ -636,20 +883,25 @@ body.case-study-index {
     width: 72px;
     height: 72px;
   }
+}
+
+/* Small mobile optimizations */
+@media (max-width: 380px) {
+  :root {
+    --case-mobile-padding: 16px;
+    --case-mobile-radius: 20px;
+  }
+
+  .case-brand-name {
+    font-size: 1.75rem;
+  }
 
   .case-headline {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
-  .case-subtext {
-    font-size: 0.98rem;
-  }
-
-  .case-hero-note {
-    left: 0.85rem;
-    right: 0.85rem;
-    bottom: 0.85rem;
-    padding: 0.9rem 0.95rem;
-    font-size: 0.92rem;
+  .case-chip {
+    padding: 0.875rem 1rem;
+    font-size: 0.9rem;
   }
 }

@@ -1811,28 +1811,45 @@
 
       /* Hide desktop grid, show slider */
       .partners-grid {
-        display: block;
+        display: none !important;
+      }
+
+      .partners-mobile-slider {
+        display: block !important;
         position: relative;
+        max-width: 400px;
+        margin: 0 auto;
+        min-height: 660px;
+        padding-top: 0.25rem;
       }
 
-      .partner-card {
-        display: none;
-      }
-
-      .partner-card.active {
+      .partners-mobile-slider .partner-card {
         display: block;
-        animation: partnerSlideIn 0.5s ease;
+        position: absolute;
+        inset: 0 0 84px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(22px) scale(0.95);
+        transition: opacity 0.45s ease, transform 0.45s ease;
       }
 
-      @keyframes partnerSlideIn {
-        from {
-          opacity: 0;
-          transform: translateX(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
+      .partners-mobile-slider .partner-card.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0) scale(1);
+        z-index: 3;
+      }
+
+      .partners-mobile-slider .partner-card.prev {
+        opacity: 0.34;
+        transform: translateX(-18px) translateY(12px) scale(0.95);
+        z-index: 1;
+      }
+
+      .partners-mobile-slider .partner-card.next {
+        opacity: 0.5;
+        transform: translateX(18px) translateY(12px) scale(0.95);
+        z-index: 2;
       }
 
       /* Premium Card Style matching Trust Us */
@@ -1955,6 +1972,8 @@
         justify-content: center;
         gap: 1rem;
         margin-top: 1.75rem;
+        position: relative;
+        z-index: 5;
       }
 
       .partners-nav-btn {
@@ -2537,12 +2556,12 @@
       .commitment-card {
         width: 100%;
         position: absolute;
-        inset: 0;
+        inset: 0 0 84px;
         min-height: 100%;
         padding: 1.25rem 1.2rem 1.45rem;
         opacity: 0;
         pointer-events: none;
-        transform: translateX(18px) scale(0.965);
+        transform: translateX(22px) scale(0.95);
         transition: opacity 0.45s ease, transform 0.45s ease;
       }
 
@@ -2550,6 +2569,19 @@
         opacity: 1;
         pointer-events: auto;
         transform: translateX(0) scale(1);
+        z-index: 3;
+      }
+
+      .commitment-card.prev {
+        opacity: 0.34;
+        transform: translateX(-18px) translateY(12px) scale(0.95);
+        z-index: 1;
+      }
+
+      .commitment-card.next {
+        opacity: 0.5;
+        transform: translateX(18px) translateY(12px) scale(0.95);
+        z-index: 2;
       }
 
       .commitment-card__media {
@@ -2591,6 +2623,8 @@
         justify-content: center;
         gap: 0.9rem;
         margin-top: 1.25rem;
+        position: relative;
+        z-index: 5;
       }
 
       .commitment-mobile-btn {
@@ -2633,7 +2667,7 @@
       }
 
       .commitment-mobile-context {
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: space-between;
         gap: 0.9rem;
@@ -3178,20 +3212,37 @@
         display: block !important;
         max-width: 400px;
         margin: 0 auto;
+        position: relative;
+        padding-top: 0.25rem;
       }
       
       .mv-slide {
-        display: none;
-        animation: mvFadeSlide 0.5s ease;
+        display: block;
+        position: absolute;
+        inset: 0 0 84px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(24px) scale(0.94);
+        transition: opacity 0.45s ease, transform 0.45s ease;
       }
       
       .mv-slide.active {
-        display: block;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0) scale(1);
+        z-index: 3;
       }
-      
-      @keyframes mvFadeSlide {
-        from { opacity: 0; transform: translateX(20px); }
-        to { opacity: 1; transform: translateX(0); }
+
+      .mv-slide.prev {
+        opacity: 0.36;
+        transform: translateX(-18px) translateY(10px) scale(0.95);
+        z-index: 1;
+      }
+
+      .mv-slide.next {
+        opacity: 0.52;
+        transform: translateX(18px) translateY(10px) scale(0.95);
+        z-index: 2;
       }
       
       .mv-slide-card {
@@ -3201,6 +3252,7 @@
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         border: 1px solid rgba(0, 0, 0, 0.06);
         text-align: left;
+        min-height: 100%;
       }
       
       .mv-slide-card.mission {
@@ -3317,6 +3369,8 @@
         justify-content: center;
         gap: 1rem;
         margin-top: 1.5rem;
+        position: relative;
+        z-index: 5;
       }
       
       .mv-slider-btn {
@@ -4429,7 +4483,7 @@
       </div>
       
       <!-- Mobile: Slider Container (hidden on desktop) -->
-      <div class="partners-mobile-slider" id="partnersMobileSlider" style="display: none;">
+      <div class="partners-mobile-slider" id="partnersMobileSlider">
         <!-- Slide 1 -->
         <div class="partner-card active" data-index="0">
           <div class="partners-slider-card">
@@ -4486,7 +4540,7 @@
       </div>
       
       <!-- Mobile Highlight (shown below slider) -->
-      <div class="partners-highlight reveal" style="display: none;" id="partnersMobileHighlight">
+      <div class="partners-highlight reveal" id="partnersMobileHighlight">
         <i class="fas fa-award"></i>
         <span><strong>10+ years</strong> of operating experience</span>
       </div>
@@ -4821,7 +4875,16 @@
       
       function updateSlider() {
         mobileCards.forEach((card, i) => {
-          card.classList.toggle('active', i === currentIndex);
+          card.classList.remove('active', 'prev', 'next');
+          if (i === currentIndex) {
+            card.classList.add('active');
+          } else if (mobileCards.length === 2) {
+            card.classList.add('next');
+          } else if (i === (currentIndex - 1 + mobileCards.length) % mobileCards.length) {
+            card.classList.add('prev');
+          } else if (i === (currentIndex + 1) % mobileCards.length) {
+            card.classList.add('next');
+          }
         });
         dots.forEach((dot, i) => {
           dot.classList.toggle('active', i === currentIndex);
@@ -4960,7 +5023,14 @@
 
     function updateCommitmentSlider() {
       commitmentCards.forEach((card, index) => {
-        card.classList.toggle('active', index === commitmentIndex);
+        card.classList.remove('active', 'prev', 'next');
+        if (index === commitmentIndex) {
+          card.classList.add('active');
+        } else if (index === (commitmentIndex - 1 + commitmentCards.length) % commitmentCards.length) {
+          card.classList.add('prev');
+        } else if (index === (commitmentIndex + 1) % commitmentCards.length) {
+          card.classList.add('next');
+        }
       });
 
       commitmentDots.forEach((dot, index) => {
@@ -5205,9 +5275,15 @@
     
     function updateMvSlider() {
       mvSlides.forEach((slide, index) => {
-        slide.classList.remove('active');
+        slide.classList.remove('active', 'prev', 'next');
         if (index === currentMvSlide) {
           slide.classList.add('active');
+        } else if (totalMvSlides === 2) {
+          slide.classList.add('next');
+        } else if (index === (currentMvSlide - 1 + totalMvSlides) % totalMvSlides) {
+          slide.classList.add('prev');
+        } else if (index === (currentMvSlide + 1) % totalMvSlides) {
+          slide.classList.add('next');
         }
       });
       

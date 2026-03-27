@@ -1,0 +1,56 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DALA Technologies" [ref=e4] [cursor=pointer]:
+        - /url: ../index.html
+        - img "DALA Technologies" [ref=e5]
+      - generic [ref=e6]:
+        - link "DALA for Brands" [ref=e7] [cursor=pointer]:
+          - /url: ../pages/for-brands.html
+        - link "DALA for Supermarkets" [ref=e8] [cursor=pointer]:
+          - /url: ../pages/for-supermarkets.html
+        - link "About Us" [ref=e9] [cursor=pointer]:
+          - /url: ../pages/about.html
+        - link "Case Studies" [ref=e10] [cursor=pointer]:
+          - /url: ../pages/case-studies.html
+        - link "Contact Us" [ref=e11] [cursor=pointer]:
+          - /url: ../pages/contact.html
+        - link "Shop" [ref=e12] [cursor=pointer]:
+          - /url: /shop/
+        - link "Sign Up" [ref=e13] [cursor=pointer]:
+          - /url: ../pages/signup.html
+  - main [ref=e14]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - img "Wilson's Juice Co. Range" [ref=e20]
+        - generic [ref=e21]:
+          - button "Wilson's Juice Co. Range view 1" [ref=e22] [cursor=pointer]:
+            - img "Wilson's Juice Co. Range view 1" [ref=e23]
+          - button "Wilson's Juice Co. Range view 2" [ref=e24] [cursor=pointer]:
+            - img "Wilson's Juice Co. Range view 2" [ref=e25]
+      - generic [ref=e26]:
+        - generic [ref=e27]: Best Seller
+        - heading "Wilson's Juice Co. Range" [level=1] [ref=e28]
+        - paragraph [ref=e29]: Wilson's shelf range presented as a stronger beverage collection.
+        - generic [ref=e30]:
+          - generic [ref=e31]: ₦11,200
+          - generic [ref=e32]: ₦12,400
+        - generic [ref=e33]:
+          - generic [ref=e34]:
+            - text: "SKU:"
+            - strong [ref=e35]: DRINK-008
+          - generic [ref=e36]: In stock
+        - paragraph [ref=e37]: Wilson's shelf range presented as a stronger beverage collection. This product record is sourced directly from the DALA catalog and prepared for storefront browsing, cart building, and manual or quote checkout.
+        - list [ref=e38]:
+          - listitem [ref=e39]:
+            - generic [ref=e40]: 
+            - generic [ref=e41]: Retail-ready presentation for premium shelves
+          - listitem [ref=e42]:
+            - generic [ref=e43]: 
+            - generic [ref=e44]: Live pricing and manual order checkout
+          - listitem [ref=e45]:
+            - generic [ref=e46]: 
+            - generic [ref=e47]: Built for category-first browsing and repeat purchase
+        - generic [ref=e48]:
+          - button "Add to cart" [ref=e49] [cursor=pointer]
+          - button "Request quote" [ref=e50] [cursor=pointer]

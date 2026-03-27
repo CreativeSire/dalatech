@@ -1,0 +1,322 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DALA Technologies" [ref=e4] [cursor=pointer]:
+        - /url: ../index.html
+        - img "DALA Technologies" [ref=e5]
+      - generic [ref=e6]:
+        - link "DALA for Brands" [ref=e7] [cursor=pointer]:
+          - /url: ../pages/for-brands.html
+        - link "DALA for Supermarkets" [ref=e8] [cursor=pointer]:
+          - /url: ../pages/for-supermarkets.html
+        - link "About Us" [ref=e9] [cursor=pointer]:
+          - /url: ../pages/about.html
+        - link "Case Studies" [ref=e10] [cursor=pointer]:
+          - /url: ../pages/case-studies.html
+        - link "Contact Us" [ref=e11] [cursor=pointer]:
+          - /url: ../pages/contact.html
+        - link "Shop" [ref=e12] [cursor=pointer]:
+          - /url: /shop/
+        - link "Sign Up" [ref=e13] [cursor=pointer]:
+          - /url: ../pages/signup.html
+  - main [ref=e14]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - generic [ref=e20]: 
+          - text: DALA Shop
+        - heading "A premium storefront built around the DALA range." [level=1] [ref=e21]
+        - paragraph [ref=e22]: Browse retail-ready collections, discover live pricing, build a cart, and submit a manual order or quote request through a storefront experience that feels polished from the first click.
+        - generic [ref=e23]:
+          - link "Browse collections " [ref=e24] [cursor=pointer]:
+            - /url: "#collections"
+            - text: Browse collections
+            - generic [ref=e25]: 
+          - link "Open cart 0" [ref=e26] [cursor=pointer]:
+            - /url: /shop/cart.html
+            - text: Open cart
+            - generic [ref=e27]: "0"
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - strong [ref=e30]: Live pricing
+            - generic [ref=e31]: Edit-ready from the store backend
+          - generic [ref=e32]:
+            - strong [ref=e33]: Quote or order
+            - generic [ref=e34]: Manual checkout now, payments later
+          - generic [ref=e35]:
+            - strong [ref=e36]: Collection-first
+            - generic [ref=e37]: Browse like a modern retail storefront
+      - generic [ref=e38]:
+        - img "DALA storefront hero" [ref=e39]
+        - generic [ref=e40]:
+          - strong [ref=e41]: Featured storefront
+          - paragraph [ref=e42]: From drinks and pantry staples to infant care, spices, and household essentials, the DALA store groups the catalog into retail-led collections that are easy to browse and easy to order.
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - generic [ref=e48]: 
+            - text: Collections
+          - heading "Shop by collection" [level=2] [ref=e49]
+        - paragraph [ref=e50]: Start with the aisle or category that matters most. Each collection opens into a cleaner buying view with live products, prices, and cart-ready actions.
+      - generic [ref=e51]:
+        - link "Drinks & Yoghurt" [ref=e52] [cursor=pointer]:
+          - /url: /shop/category.html?slug=drinks-yoghurt
+        - link "Body Care & Wellness" [ref=e53] [cursor=pointer]:
+          - /url: /shop/category.html?slug=body-care-wellness
+        - link "Infant & Child Care" [ref=e54] [cursor=pointer]:
+          - /url: /shop/category.html?slug=infant-child-care
+        - link "Pantry Staples & Flour" [ref=e55] [cursor=pointer]:
+          - /url: /shop/category.html?slug=pantry-staples-flour
+        - link "Snacks & Confectionery" [ref=e56] [cursor=pointer]:
+          - /url: /shop/category.html?slug=snacks-confectionery
+        - link "Spices & Condiments" [ref=e57] [cursor=pointer]:
+          - /url: /shop/category.html?slug=spices-condiments
+      - generic [ref=e58]:
+        - article [ref=e59]:
+          - link "Drinks & Yoghurt" [ref=e60] [cursor=pointer]:
+            - /url: /shop/category.html?slug=drinks-yoghurt
+            - img "Drinks & Yoghurt" [ref=e61]
+          - generic [ref=e62]:
+            - generic [ref=e63]:
+              - heading "Drinks & Yoghurt" [level=3] [ref=e64]
+              - paragraph [ref=e65]: Shelf-ready drinks, yoghurt, juice, and breakfast-led beverage lines gathered into one retail collection.
+            - generic [ref=e66]:
+              - generic [ref=e67]: sunrise
+              - link "Explore" [ref=e68] [cursor=pointer]:
+                - /url: /shop/category.html?slug=drinks-yoghurt
+        - article [ref=e69]:
+          - link "Body Care & Wellness" [ref=e70] [cursor=pointer]:
+            - /url: /shop/category.html?slug=body-care-wellness
+            - img "Body Care & Wellness" [ref=e71]
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - heading "Body Care & Wellness" [level=3] [ref=e74]
+              - paragraph [ref=e75]: Wellness-led essentials and personal care products arranged for cleaner category browsing.
+            - generic [ref=e76]:
+              - generic [ref=e77]: clay
+              - link "Explore" [ref=e78] [cursor=pointer]:
+                - /url: /shop/category.html?slug=body-care-wellness
+        - article [ref=e79]:
+          - link "Infant & Child Care" [ref=e80] [cursor=pointer]:
+            - /url: /shop/category.html?slug=infant-child-care
+            - img "Infant & Child Care" [ref=e81]
+          - generic [ref=e82]:
+            - generic [ref=e83]:
+              - heading "Infant & Child Care" [level=3] [ref=e84]
+              - paragraph [ref=e85]: Family and child-focused products grouped for trusted everyday retail shopping.
+            - generic [ref=e86]:
+              - generic [ref=e87]: gold
+              - link "Explore" [ref=e88] [cursor=pointer]:
+                - /url: /shop/category.html?slug=infant-child-care
+        - article [ref=e89]:
+          - link "Pantry Staples & Flour" [ref=e90] [cursor=pointer]:
+            - /url: /shop/category.html?slug=pantry-staples-flour
+            - img "Pantry Staples & Flour" [ref=e91]
+          - generic [ref=e92]:
+            - generic [ref=e93]:
+              - heading "Pantry Staples & Flour" [level=3] [ref=e94]
+              - paragraph [ref=e95]: Pantry-building products, flour, cereals, and kitchen staples with strong household relevance.
+            - generic [ref=e96]:
+              - generic [ref=e97]: sand
+              - link "Explore" [ref=e98] [cursor=pointer]:
+                - /url: /shop/category.html?slug=pantry-staples-flour
+        - article [ref=e99]:
+          - link "Snacks & Confectionery" [ref=e100] [cursor=pointer]:
+            - /url: /shop/category.html?slug=snacks-confectionery
+            - img "Snacks & Confectionery" [ref=e101]
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - heading "Snacks & Confectionery" [level=3] [ref=e104]
+              - paragraph [ref=e105]: Snacks, confectionery, and impulse-friendly shelf products gathered into one browsing lane.
+            - generic [ref=e106]:
+              - generic [ref=e107]: berry
+              - link "Explore" [ref=e108] [cursor=pointer]:
+                - /url: /shop/category.html?slug=snacks-confectionery
+        - article [ref=e109]:
+          - link "Spices & Condiments" [ref=e110] [cursor=pointer]:
+            - /url: /shop/category.html?slug=spices-condiments
+            - img "Spices & Condiments" [ref=e111]
+          - generic [ref=e112]:
+            - generic [ref=e113]:
+              - heading "Spices & Condiments" [level=3] [ref=e114]
+              - paragraph [ref=e115]: Spices, seasonings, and cooking condiments presented with a cleaner premium-store feel.
+            - generic [ref=e116]:
+              - generic [ref=e117]: spice
+              - link "Explore" [ref=e118] [cursor=pointer]:
+                - /url: /shop/category.html?slug=spices-condiments
+        - article [ref=e119]:
+          - link "Household Items" [ref=e120] [cursor=pointer]:
+            - /url: /shop/category.html?slug=household-items
+            - img "Household Items" [ref=e121]
+          - generic [ref=e122]:
+            - generic [ref=e123]:
+              - heading "Household Items" [level=3] [ref=e124]
+              - paragraph [ref=e125]: Household essentials presented as a practical, shelf-ready home care collection.
+            - generic [ref=e126]:
+              - generic [ref=e127]: forest
+              - link "Explore" [ref=e128] [cursor=pointer]:
+                - /url: /shop/category.html?slug=household-items
+    - generic [ref=e130]:
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e133]:
+            - generic [ref=e134]: 
+            - text: Featured products
+          - heading "Retail-ready picks" [level=2] [ref=e135]
+        - paragraph [ref=e136]: A first pass of high-visibility products pulled from the DALA catalog and prepared for storefront browsing.
+      - generic [ref=e137]:
+        - article [ref=e138]:
+          - link "Featured Cevo Exotic Assortment" [ref=e139] [cursor=pointer]:
+            - /url: /shop/product.html?slug=cevo-exotic-assortment
+            - generic [ref=e140]: Featured
+            - img "Cevo Exotic Assortment" [ref=e141]
+          - generic [ref=e142]:
+            - generic [ref=e143]:
+              - generic [ref=e144]: In Stock
+              - generic [ref=e145]: Drinks & Yoghurt
+            - generic [ref=e146]:
+              - heading "Cevo Exotic Assortment" [level=3] [ref=e147]
+              - paragraph [ref=e148]: Premium drinks and yoghurt selection from Cevo Exotic.
+            - generic [ref=e149]:
+              - generic [ref=e150]:
+                - generic [ref=e151]: ₦8,500
+                - generic [ref=e152]: ₦9,600
+              - button "Add to Cart" [ref=e153] [cursor=pointer]
+        - article [ref=e154]:
+          - link "Best Seller Wilson's Juice Co. Range" [ref=e155] [cursor=pointer]:
+            - /url: /shop/product.html?slug=wilsons-juice-co-range
+            - generic [ref=e156]: Best Seller
+            - img "Wilson's Juice Co. Range" [ref=e157]
+          - generic [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: In Stock
+              - generic [ref=e161]: Drinks & Yoghurt
+            - generic [ref=e162]:
+              - heading "Wilson's Juice Co. Range" [level=3] [ref=e163]
+              - paragraph [ref=e164]: Wilson's shelf range presented as a stronger beverage collection.
+            - generic [ref=e165]:
+              - generic [ref=e166]:
+                - generic [ref=e167]: ₦11,200
+                - generic [ref=e168]: ₦12,400
+              - button "Add to Cart" [ref=e169] [cursor=pointer]
+        - article [ref=e170]:
+          - link "Trusted Zayith Yogurt Selection" [ref=e171] [cursor=pointer]:
+            - /url: /shop/product.html?slug=zayith-yogurt-selection
+            - generic [ref=e172]: Trusted
+            - img "Zayith Yogurt Selection" [ref=e173]
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - generic [ref=e176]: In Stock
+              - generic [ref=e177]: Drinks & Yoghurt
+            - generic [ref=e178]:
+              - heading "Zayith Yogurt Selection" [level=3] [ref=e179]
+              - paragraph [ref=e180]: Zayith yoghurt assortment arranged for premium chilled-shelf appeal.
+            - generic [ref=e181]:
+              - generic [ref=e182]:
+                - generic [ref=e183]: ₦10,400
+                - generic [ref=e184]: ₦11,600
+              - button "Add to Cart" [ref=e185] [cursor=pointer]
+        - article [ref=e186]:
+          - link "Popular Aman-Bless Wellness Range" [ref=e187] [cursor=pointer]:
+            - /url: /shop/product.html?slug=aman-bless-wellness-range
+            - generic [ref=e188]: Popular
+            - img "Aman-Bless Wellness Range" [ref=e189]
+          - generic [ref=e190]:
+            - generic [ref=e191]:
+              - generic [ref=e192]: In Stock
+              - generic [ref=e193]: Body Care & Wellness
+            - generic [ref=e194]:
+              - heading "Aman-Bless Wellness Range" [level=3] [ref=e195]
+              - paragraph [ref=e196]: Wellness and body-care products from Aman-Bless.
+            - generic [ref=e197]:
+              - generic [ref=e198]:
+                - generic [ref=e199]: ₦13,200
+                - generic [ref=e200]: ₦14,500
+              - button "Add to Cart" [ref=e201] [cursor=pointer]
+        - article [ref=e202]:
+          - link "Top Rated Whole Eats Africa Meditea" [ref=e203] [cursor=pointer]:
+            - /url: /shop/product.html?slug=whole-eats-africa-meditea
+            - generic [ref=e204]: Top Rated
+            - img "Whole Eats Africa Meditea" [ref=e205]
+          - generic [ref=e206]:
+            - generic [ref=e207]:
+              - generic [ref=e208]: In Stock
+              - generic [ref=e209]: Body Care & Wellness
+            - generic [ref=e210]:
+              - heading "Whole Eats Africa Meditea" [level=3] [ref=e211]
+              - paragraph [ref=e212]: Whole Eats Africa wellness products arranged into one premium card.
+            - generic [ref=e213]:
+              - generic [ref=e214]:
+                - generic [ref=e215]: ₦11,800
+                - generic [ref=e216]: ₦12,900
+              - button "Add to Cart" [ref=e217] [cursor=pointer]
+        - article [ref=e218]:
+          - link "Trusted Whole Eats Africa Infant Care" [ref=e219] [cursor=pointer]:
+            - /url: /shop/product.html?slug=whole-eats-africa-infant-care
+            - generic [ref=e220]: Trusted
+            - img "Whole Eats Africa Infant Care" [ref=e221]
+          - generic [ref=e222]:
+            - generic [ref=e223]:
+              - generic [ref=e224]: In Stock
+              - generic [ref=e225]: Infant & Child Care
+            - generic [ref=e226]:
+              - heading "Whole Eats Africa Infant Care" [level=3] [ref=e227]
+              - paragraph [ref=e228]: Infant and child-care assortment from Whole Eats Africa.
+            - generic [ref=e229]:
+              - generic [ref=e230]:
+                - generic [ref=e231]: ₦14,750
+                - generic [ref=e232]: ₦15,900
+              - button "Add to Cart" [ref=e233] [cursor=pointer]
+        - article [ref=e234]:
+          - link "Featured August Secrets Infant Range" [ref=e235] [cursor=pointer]:
+            - /url: /shop/product.html?slug=august-secrets-infant-range
+            - generic [ref=e236]: Featured
+            - img "August Secrets Infant Range" [ref=e237]
+          - generic [ref=e238]:
+            - generic [ref=e239]:
+              - generic [ref=e240]: In Stock
+              - generic [ref=e241]: Infant & Child Care
+            - generic [ref=e242]:
+              - heading "August Secrets Infant Range" [level=3] [ref=e243]
+              - paragraph [ref=e244]: August Secrets infant-focused products with cleaner shelf presentation.
+            - generic [ref=e245]:
+              - generic [ref=e246]:
+                - generic [ref=e247]: ₦15,200
+                - generic [ref=e248]: ₦16,600
+              - button "Add to Cart" [ref=e249] [cursor=pointer]
+        - article [ref=e250]:
+          - link "Best Seller JKB Plantain Flour" [ref=e251] [cursor=pointer]:
+            - /url: /shop/product.html?slug=jkb-plantain-flour
+            - generic [ref=e252]: Best Seller
+            - img "JKB Plantain Flour" [ref=e253]
+          - generic [ref=e254]:
+            - generic [ref=e255]:
+              - generic [ref=e256]: In Stock
+              - generic [ref=e257]: Pantry Staples & Flour
+            - generic [ref=e258]:
+              - heading "JKB Plantain Flour" [level=3] [ref=e259]
+              - paragraph [ref=e260]: Plantain flour product from JKB with clear pantry relevance.
+            - generic [ref=e261]:
+              - generic [ref=e262]:
+                - generic [ref=e263]: ₦11,600
+                - generic [ref=e264]: ₦12,400
+              - button "Add to Cart" [ref=e265] [cursor=pointer]
+    - generic [ref=e267]:
+      - generic [ref=e268]:
+        - generic [ref=e269]:
+          - generic [ref=e270]:
+            - generic [ref=e271]: 
+            - text: Checkout options
+          - heading "Built for buying now, with payments next" [level=2] [ref=e272]
+        - paragraph [ref=e273]: The storefront is already designed to support quote requests, manual order placement, and a clean step forward into full online payment when we are ready.
+      - generic [ref=e274]:
+        - article [ref=e275]:
+          - heading "Manual order checkout" [level=3] [ref=e276]
+          - paragraph [ref=e277]: Add products to cart, submit your details, and let the DALA team process the order directly.
+        - article [ref=e278]:
+          - heading "Quote request flow" [level=3] [ref=e279]
+          - paragraph [ref=e280]: Ideal for bigger retail conversations, flexible pricing discussions, or assortment-based buying.
+        - article [ref=e281]:
+          - heading "Payments ready later" [level=3] [ref=e282]
+          - paragraph [ref=e283]: The store flow is structured now so online payment can be added later without rebuilding the whole shopping experience.
