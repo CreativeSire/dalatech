@@ -14,6 +14,8 @@
   --cinematic-red-dark: #c62828;
   --cinematic-gold: #c9a962;
   --cinematic-gold-light: #e0c97a;
+  --cinematic-copper: #b86b49;
+  --cinematic-border: rgba(201, 169, 98, 0.16);
   
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', -apple-system, sans-serif;
@@ -113,31 +115,67 @@ body {
 }
 
 .navbar.scrolled {
-  background: rgba(10, 10, 10, 0.95);
+  background: rgba(10, 10, 10, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid var(--cinematic-border);
 }
 
 /* Ensure navbar links are visible on dark hero */
 .navbar .nav-link {
-  color: white;
+  color: rgba(255, 255, 255, 0.88);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .navbar.scrolled .nav-link {
-  color: white;
+  color: rgba(255, 255, 255, 0.88);
   text-shadow: none;
 }
 
 .navbar .nav-dropdown-trigger {
-  color: white;
+  color: rgba(255, 255, 255, 0.88);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .navbar.scrolled .nav-dropdown-trigger {
-  color: white;
+  color: rgba(255, 255, 255, 0.88);
   text-shadow: none;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active,
+.navbar .nav-dropdown-trigger:hover {
+  color: var(--cinematic-gold-light);
+}
+
+.navbar .nav-dropdown-menu {
+  background: rgba(14, 14, 14, 0.96);
+  border: 1px solid var(--cinematic-border);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.navbar .nav-dropdown-item {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.navbar .nav-dropdown-item strong {
+  color: var(--cinematic-light);
+}
+
+.navbar .nav-dropdown-item span {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.navbar .nav-dropdown-item:hover {
+  background: linear-gradient(135deg, rgba(184, 107, 73, 0.16), rgba(201, 169, 98, 0.08));
+}
+
+.navbar .nav-dropdown-item:hover strong,
+.navbar .nav-dropdown-item:hover i {
+  color: var(--cinematic-gold-light);
 }
 
 /* Mobile menu button for dark background */
@@ -316,31 +354,30 @@ body {
 }
 
 .cinematic-hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    transparent 30%,
-    rgba(10, 10, 10, 0.3) 50%,
-    rgba(10, 10, 10, 0.7) 70%,
-    rgba(10, 10, 10, 0.98) 100%
-  );
-  z-index: 1;
-}
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(6, 6, 6, 0.12) 0%,
+      rgba(10, 10, 10, 0.08) 20%,
+      rgba(10, 10, 10, 0.38) 50%,
+      rgba(10, 10, 10, 0.82) 76%,
+      rgba(10, 10, 10, 0.98) 100%
+    );
+    z-index: 1;
+  }
 
 .cinematic-hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at 50% 0%,
-    rgba(229, 57, 53, 0.1) 0%,
-    transparent 50%
-  );
-  z-index: 1;
-}
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 18% 16%, rgba(184, 107, 73, 0.22) 0%, transparent 42%),
+      radial-gradient(ellipse at 82% 12%, rgba(201, 169, 98, 0.16) 0%, transparent 38%),
+      radial-gradient(ellipse at 50% 0%, rgba(229, 57, 53, 0.08) 0%, transparent 52%);
+    z-index: 1;
+  }
 
 .cinematic-hero-bg img {
   width: 100%;
@@ -578,12 +615,13 @@ body {
 }
 
 .cinematic-featured-badge {
-  position: absolute;
-  top: 3rem;
-  left: 3rem;
-  padding: 1rem 2rem;
-  background: var(--cinematic-black);
-  color: white;
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    padding: 1rem 2rem;
+    background: rgba(10, 10, 10, 0.84);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: white;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.3em;
@@ -857,11 +895,12 @@ body {
 }
 
 .cinematic-story-tag {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: var(--cinematic-red);
-  color: white;
-  font-size: 0.6rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(184, 107, 73, 0.12);
+    border: 1px solid rgba(201, 169, 98, 0.18);
+    color: var(--cinematic-gold-light);
+    font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -871,8 +910,9 @@ body {
 }
 
 .cinematic-story:hover .cinematic-story-tag {
-  background: var(--cinematic-gold);
-  color: var(--cinematic-black);
+    background: var(--cinematic-gold);
+    border-color: var(--cinematic-gold);
+    color: var(--cinematic-black);
 }
 
 .cinematic-story-title {
@@ -927,11 +967,13 @@ body {
    IMPACT SECTION - Dark Drama
    ============================================ */
 .cinematic-impact {
-  position: relative;
-  padding: 12rem 5vw;
-  background: var(--cinematic-dark);
-  overflow: hidden;
-}
+    position: relative;
+    padding: 12rem 5vw;
+    background:
+      radial-gradient(circle at top, rgba(184, 107, 73, 0.12), transparent 38%),
+      linear-gradient(180deg, #121212 0%, #0d0d0d 100%);
+    overflow: hidden;
+  }
 
 .cinematic-impact::before {
   content: '';
@@ -1082,10 +1124,12 @@ body {
    CTA SECTION - Minimal Elegance
    ============================================ */
 .cinematic-cta {
-  padding: 10rem 5vw;
-  background: var(--cinematic-cream);
-  color: var(--cinematic-black);
-  text-align: center;
+    padding: 10rem 5vw;
+    background:
+      radial-gradient(circle at top, rgba(201, 169, 98, 0.12), transparent 32%),
+      linear-gradient(180deg, #f8f5f0 0%, #f3ede4 100%);
+    color: var(--cinematic-black);
+    text-align: center;
   position: relative;
 }
 
