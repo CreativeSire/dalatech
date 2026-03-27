@@ -8,381 +8,342 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/case-studies-animations.css?v=12">
+  <link rel="stylesheet" href="../css/case-studies-cinematic.css">
 </head>
-<body class="cs-page page-transition">
+<body>
+
+  <!-- Loading Screen -->
+  <div class="cinematic-loader" id="loader">
+    <span class="loader-text">DALA</span>
+  </div>
 
   <!-- Navigation -->
-  <nav class="navbar navbar--light reveal-up">
-    <div class="navbar-container">
-      <a href="../index.html" class="logo magnetic-btn">
-        <img src="../4.png" alt="DALA" class="logo-img">
-      </a>
-      
-      <div class="nav-links">
-        <a href="for-brands.html" class="nav-link link-draw">For Brands</a>
-        <a href="for-supermarkets.html" class="nav-link link-draw">For Supermarkets</a>
-        <a href="about.html" class="nav-link link-draw">About</a>
-        <a href="case-studies.html" class="nav-link active link-draw">Case Studies</a>
-        <a href="contact.html" class="nav-link link-draw">Contact</a>
-        <a href="signup.html" class="nav-cta magnetic-btn pulse">Get Started</a>
-      </div>
-      
-      <button class="mobile-menu-btn magnetic-btn" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <nav class="cinematic-nav">
+    <a href="../index.html" class="cinematic-nav-logo">DALA</a>
+    <div class="cinematic-nav-links">
+      <a href="for-brands.html">For Brands</a>
+      <a href="for-supermarkets.html">For Supermarkets</a>
+      <a href="about.html">About</a>
+      <a href="case-studies.html" class="active">Case Studies</a>
+      <a href="contact.html">Contact</a>
     </div>
   </nav>
 
-  <!-- Hero - Parallax Depth Layers -->
-  <header class="cs-hero morphing-gradient grid-pattern noise">
-    <div class="parallax-container">
-      <div class="parallax-bg" data-speed="0.3"></div>
-      <div class="cs-hero-inner parallax-fg" data-speed="1">
-        <p class="cs-pretitle reveal-up typewriter">Success Stories</p>
-        <h1 class="cs-title reveal-up">
-          <span class="typewriter-lines">
-            <span>Built for brands.</span>
-            <span>Proven across Africa.</span>
-          </span>
-        </h1>
-        <p class="cs-lead reveal-up">The real stories behind Africa's most ambitious retail transformations.</p>
-        
-        <div class="cs-stats reveal-up stagger-grid">
-          <div class="cs-stat-item tilt-card">
-            <div class="tilt-card-inner">
-              <span class="cs-stat-num counter-animate" data-target="400" data-prefix="₦" data-suffix="M+">₦0M+</span>
-              <span class="cs-stat-label">Revenue Generated</span>
-            </div>
-          </div>
-          <div class="cs-stat-line"></div>
-          <div class="cs-stat-item tilt-card">
-            <div class="tilt-card-inner">
-              <span class="cs-stat-num counter-animate" data-target="700" data-suffix="+">0+</span>
-              <span class="cs-stat-label">Stores Activated</span>
-            </div>
-          </div>
-          <div class="cs-stat-line"></div>
-          <div class="cs-stat-item tilt-card">
-            <div class="tilt-card-inner">
-              <span class="cs-stat-num counter-animate" data-target="4" data-suffix="">0</span>
-              <span class="cs-stat-label">Brand Partners</span>
-            </div>
-          </div>
-        </div>
+  <!-- Hero Section - Cinematic Full Screen -->
+  <section class="cinematic-hero">
+    <div class="cinematic-hero-bg">
+      <img src="../images/case-study-products/wilsons-lemonade.jpg" alt="DALA Success Stories">
+    </div>
+    <div class="cinematic-hero-content">
+      <p class="cinematic-hero-eyebrow">Success Stories</p>
+      <h1 class="cinematic-hero-title">
+        Built for brands.
+        <span>Proven across Africa.</span>
+      </h1>
+      <p class="cinematic-hero-subtitle">
+        The real stories behind Africa's most ambitious retail transformations. 
+        Real revenue. Real growth. Real impact.
+      </p>
+    </div>
+    <div class="cinematic-scroll">
+      <span class="cinematic-scroll-text">Scroll</span>
+      <div class="cinematic-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="cinematic-stats">
+    <div class="cinematic-stats-grid">
+      <div class="cinematic-stat reveal">
+        <div class="cinematic-stat-number" data-target="400">0<span>M+</span></div>
+        <div class="cinematic-stat-label">Revenue Generated</div>
+      </div>
+      <div class="cinematic-stat reveal reveal-delay-1">
+        <div class="cinematic-stat-number" data-target="700">0<span>+</span></div>
+        <div class="cinematic-stat-label">Stores Activated</div>
+      </div>
+      <div class="cinematic-stat reveal reveal-delay-2">
+        <div class="cinematic-stat-number" data-target="4">0</div>
+        <div class="cinematic-stat-label">Brand Partners</div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <!-- Featured Story - Image Reveal + 3D Tilt -->
-  <section class="cs-featured scroll-snap-section">
-    <div class="cs-container">
-      <a href="case-studies/wilsons-lemonade.html" class="cs-featured-card tilt-card reveal-up">
-        <div class="tilt-card-inner">
-          <div class="tilt-shine"></div>
-          <div class="cs-featured-media image-reveal image-curtain">
-            <img src="../images/case-study-products/wilsons-lemonade.jpg" alt="Wilson's Lemonade" loading="eager">
-            <div class="cs-featured-badge float">Featured</div>
-          </div>
-          <div class="cs-featured-body">
-            <div class="cs-featured-meta reveal-left">
-              <img src="../images/logos/brands/dan-1.jpg" alt="Wilson's" class="cs-featured-logo">
-              <span class="cs-featured-tag">Beverage</span>
-            </div>
-            <h2 class="cs-featured-title reveal-up">How Wilson's Became Nigeria's Favorite Lemonade</h2>
-            <p class="cs-featured-text reveal-up">From a niche premium drink to a nationwide household name. Wilson's partnered with DALA to transform their distribution strategy, entering over 350 retail locations and generating ₦221.7M in revenue within 18 months.</p>
-            
-            <div class="cs-featured-results stagger-grid">
-              <div class="cs-result reveal-scale">
-                <span class="cs-result-num counter-animate" data-target="221.7" data-prefix="₦" data-suffix="M">₦0M</span>
-                <span class="cs-result-label">Revenue</span>
-              </div>
-              <div class="cs-result reveal-scale">
-                <span class="cs-result-num counter-animate" data-target="350" data-suffix="+">0+</span>
-                <span class="cs-result-label">Stores</span>
-              </div>
-              <div class="cs-result reveal-scale">
-                <span class="cs-result-num counter-animate" data-target="340" data-suffix="%">0%</span>
-                <span class="cs-result-label">Growth</span>
-              </div>
-            </div>
-            
-            <span class="cs-featured-link link-draw icon-bounce">Read the full story <i class="fas fa-arrow-right"></i></span>
-          </div>
+  <!-- Featured Story - Wilson's -->
+  <section class="cinematic-featured" onclick="window.location.href='case-studies/wilsons-lemonade.html'">
+    <div class="cinematic-featured-visual">
+      <img src="../images/case-study-products/wilsons-lemonade.jpg" alt="Wilson's Lemonade">
+      <div class="cinematic-featured-badge">Featured Story</div>
+    </div>
+    <div class="cinematic-featured-content">
+      <p class="cinematic-featured-eyebrow">Case Study 01</p>
+      <h2 class="cinematic-featured-title">How Wilson's Became Nigeria's Favorite Lemonade</h2>
+      <p class="cinematic-featured-text">
+        From a niche premium drink to a nationwide household name. Wilson's partnered with DALA 
+        to transform their distribution strategy, entering over 350 retail locations and generating 
+        substantial revenue within 18 months.
+      </p>
+      <div class="cinematic-featured-stats">
+        <div class="cinematic-featured-stat">
+          <span class="cinematic-featured-stat-value">₦221.7M</span>
+          <span class="cinematic-featured-stat-label">Revenue</span>
         </div>
+        <div class="cinematic-featured-stat">
+          <span class="cinematic-featured-stat-value">350+</span>
+          <span class="cinematic-featured-stat-label">Stores</span>
+        </div>
+        <div class="cinematic-featured-stat">
+          <span class="cinematic-featured-stat-value">340%</span>
+          <span class="cinematic-featured-stat-label">Growth</span>
+        </div>
+      </div>
+      <a href="case-studies/wilsons-lemonade.html" class="cinematic-featured-cta">
+        Read the full story
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
       </a>
     </div>
   </section>
 
-  <!-- Stories Grid - Staggered Entrance -->
-  <section class="cs-stories scroll-snap-section">
-    <div class="cs-container">
-      <header class="cs-section-head reveal-up">
-        <h2 class="cs-section-title">More Stories</h2>
-        <p class="cs-section-sub">Every brand has a unique journey. Here's how we helped.</p>
-      </header>
+  <!-- More Stories Grid -->
+  <section class="cinematic-stories">
+    <div class="cinematic-stories-header reveal">
+      <h2 class="cinematic-stories-title">
+        More Stories
+        <span>of transformation</span>
+      </h2>
+      <p class="cinematic-stories-subtitle">
+        Every brand has a unique journey. Here's how we helped them scale.
+      </p>
+    </div>
+    
+    <div class="cinematic-grid">
+      <!-- Zayith -->
+      <article class="cinematic-story reveal" onclick="window.location.href='case-studies/zayith.html'">
+        <div class="cinematic-story-number">02</div>
+        <div class="cinematic-story-image">
+          <img src="../images/case-study-products/zayith.jpg" alt="Zayith Food Company">
+          <div class="cinematic-story-overlay"></div>
+        </div>
+        <div class="cinematic-story-content">
+          <span class="cinematic-story-tag">Food & Beverage</span>
+          <h3 class="cinematic-story-title">Zayith Food Company</h3>
+          <p class="cinematic-story-excerpt">
+            Accelerated revenue growth and expanded to 173 stores with disciplined retail execution and strategic partnerships.
+          </p>
+        </div>
+      </article>
+
+      <!-- August Secrets -->
+      <article class="cinematic-story reveal reveal-delay-1" onclick="window.location.href='case-studies/august-secrets.html'">
+        <div class="cinematic-story-number">03</div>
+        <div class="cinematic-story-image">
+          <img src="../images/case-study-products/august-secrets.jpg" alt="August Secrets">
+          <div class="cinematic-story-overlay"></div>
+        </div>
+        <div class="cinematic-story-content">
+          <span class="cinematic-story-tag">Infant Nutrition</span>
+          <h3 class="cinematic-story-title">Jaden's by August Secrets</h3>
+          <p class="cinematic-story-excerpt">
+            Achieved exponential revenue growth with premium retail execution across 106 stores nationwide.
+          </p>
+        </div>
+      </article>
+
+      <!-- Eloha -->
+      <article class="cinematic-story reveal reveal-delay-2" onclick="window.location.href='case-studies/eloha.html'">
+        <div class="cinematic-story-number">04</div>
+        <div class="cinematic-story-image">
+          <img src="../images/case-study-products/eloha.jpg" alt="Eloha">
+          <div class="cinematic-story-overlay"></div>
+        </div>
+        <div class="cinematic-story-content">
+          <span class="cinematic-story-tag">Personal Care</span>
+          <h3 class="cinematic-story-title">Eloha Personal Care</h3>
+          <p class="cinematic-story-excerpt">
+            Launched and scaled to 83 stores in just seven months with structured execution and quality control.
+          </p>
+        </div>
+      </article>
+
+      <!-- Placeholder for future story -->
+      <article class="cinematic-story reveal reveal-delay-3" style="cursor: default;">
+        <div class="cinematic-story-number">05</div>
+        <div class="cinematic-story-image" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);">
+          <div class="cinematic-story-overlay"></div>
+        </div>
+        <div class="cinematic-story-content">
+          <span class="cinematic-story-tag" style="background: transparent; border: 1px solid rgba(255,255,255,0.3);">Coming Soon</span>
+          <h3 class="cinematic-story-title">Your Story Here</h3>
+          <p class="cinematic-story-excerpt">
+            Join the brands scaling with DALA and write your own success story.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="cinematic-impact">
+    <div class="cinematic-impact-content">
+      <p class="cinematic-impact-eyebrow reveal">The Numbers</p>
+      <h2 class="cinematic-impact-title reveal">
+        Real results for <span>real partners</span>
+      </h2>
+      <p class="cinematic-impact-text reveal">
+        We don't just promise growth — we deliver it. Every metric is tracked, 
+        every result is verified, every success is shared.
+      </p>
       
-      <div class="cs-grid stagger-grid">
-        <!-- Zayith -->
-        <a href="case-studies/zayith.html" class="cs-story-card tilt-card card-lift reveal-up">
-          <div class="tilt-card-inner">
-            <div class="tilt-shine"></div>
-            <div class="cs-story-media image-reveal">
-              <img src="../images/case-study-products/zayith.jpg" alt="Zayith" loading="lazy">
-              <span class="cs-story-num float">02</span>
-            </div>
-            <div class="cs-story-body">
-              <span class="cs-story-cat">Food & Beverage</span>
-              <h3 class="cs-story-title">Zayith Food Company</h3>
-              <p class="cs-story-text">Accelerated revenue growth and expanded to 173 stores with disciplined retail execution.</p>
-              <div class="cs-story-stat">
-                <span class="cs-story-stat-num counter-animate" data-target="138" data-prefix="₦" data-suffix="M">₦0M</span>
-                <span class="cs-story-stat-label">Revenue Generated</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- August Secrets -->
-        <a href="case-studies/august-secrets.html" class="cs-story-card tilt-card card-lift reveal-up">
-          <div class="tilt-card-inner">
-            <div class="tilt-shine"></div>
-            <div class="cs-story-media image-reveal">
-              <img src="../images/case-study-products/august-secrets.jpg" alt="August Secrets" loading="lazy">
-              <span class="cs-story-num float">03</span>
-            </div>
-            <div class="cs-story-body">
-              <span class="cs-story-cat">Infant Nutrition</span>
-              <h3 class="cs-story-title">Jaden's by August Secrets</h3>
-              <p class="cs-story-text">Achieved exponential revenue growth with premium retail execution across 106 stores.</p>
-              <div class="cs-story-stat">
-                <span class="cs-story-stat-num counter-animate" data-target="30.8" data-prefix="₦" data-suffix="M">₦0M</span>
-                <span class="cs-story-stat-label">Revenue Generated</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- Eloha -->
-        <a href="case-studies/eloha.html" class="cs-story-card tilt-card card-lift reveal-up">
-          <div class="tilt-card-inner">
-            <div class="tilt-shine"></div>
-            <div class="cs-story-media image-reveal">
-              <img src="../images/case-study-products/eloha.jpg" alt="Eloha" loading="lazy">
-              <span class="cs-story-num float">04</span>
-            </div>
-            <div class="cs-story-body">
-              <span class="cs-story-cat">Personal Care</span>
-              <h3 class="cs-story-title">Eloha</h3>
-              <p class="cs-story-text">Launched and scaled to 83 stores in just seven months with structured execution.</p>
-              <div class="cs-story-stat">
-                <span class="cs-story-stat-num counter-animate" data-target="3.8" data-prefix="₦" data-suffix="M">₦0M</span>
-                <span class="cs-story-stat-label">Revenue Generated</span>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Metrics - Glass Morphism -->
-  <section class="cs-metrics scroll-snap-section">
-    <div class="cs-container">
-      <div class="cs-metrics-grid stagger-grid">
-        <div class="cs-metric-box glass tilt-card reveal-up">
-          <div class="tilt-card-inner">
-            <i class="fas fa-sync-alt spin-slow icon-bounce"></i>
-            <span class="cs-metric-num counter-animate" data-target="98" data-suffix="%">0%</span>
-            <span class="cs-metric-label">Partner Retention</span>
-          </div>
+      <div class="cinematic-impact-grid">
+        <div class="cinematic-impact-item reveal reveal-delay-1">
+          <svg class="cinematic-impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          <div class="cinematic-impact-value" data-target="400">0M+</div>
+          <div class="cinematic-impact-label">Revenue Generated</div>
         </div>
-        <div class="cs-metric-box glass tilt-card reveal-up">
-          <div class="tilt-card-inner">
-            <i class="fas fa-shipping-fast icon-bounce"></i>
-            <span class="cs-metric-num counter-animate" data-target="48" data-suffix="hrs">0hrs</span>
-            <span class="cs-metric-label">Restocking</span>
-          </div>
+        
+        <div class="cinematic-impact-item reveal reveal-delay-2">
+          <svg class="cinematic-impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <div class="cinematic-impact-value" data-target="98">0%</div>
+          <div class="cinematic-impact-label">Partner Retention</div>
         </div>
-        <div class="cs-metric-box glass tilt-card reveal-up">
-          <div class="tilt-card-inner">
-            <i class="fas fa-store icon-bounce"></i>
-            <span class="cs-metric-num counter-animate" data-target="10" data-suffix="K+">0K+</span>
-            <span class="cs-metric-label">Retail Points</span>
-          </div>
+        
+        <div class="cinematic-impact-item reveal reveal-delay-3">
+          <svg class="cinematic-impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <div class="cinematic-impact-value" data-target="48">0hrs</div>
+          <div class="cinematic-impact-label">Avg. Restocking</div>
         </div>
-        <div class="cs-metric-box glass tilt-card reveal-up">
-          <div class="tilt-card-inner">
-            <i class="fas fa-globe-africa icon-bounce"></i>
-            <span class="cs-metric-num counter-animate" data-target="6" data-suffix="">0</span>
-            <span class="cs-metric-label">Markets</span>
-          </div>
+        
+        <div class="cinematic-impact-item reveal reveal-delay-4">
+          <svg class="cinematic-impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <div class="cinematic-impact-value" data-target="10">0K+</div>
+          <div class="cinematic-impact-label">Retail Touchpoints</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA - Glow Effect -->
-  <section class="cs-cta scroll-snap-section">
-    <div class="cs-container">
-      <div class="cs-cta-box reveal-up">
-        <h2 class="cs-cta-title terminal-cursor">Ready to write your story?</h2>
-        <p class="cs-cta-text reveal-up">Join the brands scaling with structure, discipline, and transparency.</p>
-        <div class="cs-cta-actions stagger-grid">
-          <a href="contact.html" class="cs-btn cs-btn--dark magnetic-btn glow-hover reveal-scale">Start a Conversation</a>
-          <a href="../product-catalog/index.html" class="cs-btn cs-btn--light magnetic-btn reveal-scale">Browse Catalog</a>
-        </div>
-      </div>
+  <!-- CTA Section -->
+  <section class="cinematic-cta">
+    <h2 class="cinematic-cta-title reveal">Ready to write your story</h2>
+    <p class="cinematic-cta-text reveal">
+      Join the brands scaling with structure, discipline, and transparency.
+    </p>
+    <div class="cinematic-cta-buttons reveal">
+      <a href="contact.html" class="cinematic-btn cinematic-btn-primary">
+        Start a Conversation
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="../product-catalog/" class="cinematic-btn cinematic-btn-secondary">
+        Browse Our Catalog
+      </a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="cs-footer reveal-up">
-    <div class="cs-container">
-      <div class="cs-footer-grid">
-        <div class="cs-footer-brand">
-          <img src="../4.png" alt="DALA" class="cs-footer-logo">
-          <p>The Retail Execution Control Layer</p>
-        </div>
-        <div class="cs-footer-links">
-          <a href="about.html" class="link-draw">About</a>
-          <a href="services.html" class="link-draw">Services</a>
-          <a href="case-studies.html" class="link-draw">Case Studies</a>
-          <a href="contact.html" class="link-draw">Contact</a>
-        </div>
-      </div>
-      <div class="cs-footer-bottom">
-        <p>&copy; 2025 DALA Technologies. All rights reserved.</p>
-      </div>
+  <footer style="background: #0a0a0a; padding: 3rem 5vw; border-top: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0.2em;">DALA</span>
+      <span style="font-size: 0.8rem; color: rgba(255,255,255,0.4);">© 2025 DALA Technologies. All rights reserved.</span>
     </div>
   </footer>
 
-  <!-- Animation Controller Script -->
   <script>
-    // Intersection Observer for scroll-triggered animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 1500);
+    });
 
+    // Scroll Reveal Animation
+    const revealElements = document.querySelectorAll('.reveal');
+    
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          
-          // Trigger counter animation
-          const counters = entry.target.querySelectorAll('.counter-animate');
-          counters.forEach(counter => animateCounter(counter));
-          
-          // Trigger stagger animation
-          if (entry.target.classList.contains('stagger-grid')) {
-            entry.target.classList.add('animate');
-          }
+          entry.target.classList.add('active');
         }
       });
-    }, observerOptions);
-
-    // Observe all reveal elements
-    document.querySelectorAll('.reveal-up, .reveal-left, .reveal-scale, .image-reveal, .image-curtain').forEach(el => {
-      revealObserver.observe(el);
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
     });
+
+    revealElements.forEach(el => revealObserver.observe(el));
 
     // Counter Animation
-    function animateCounter(el) {
-      const target = parseFloat(el.dataset.target);
-      const prefix = el.dataset.prefix || '';
-      const suffix = el.dataset.suffix || '';
-      const duration = 2000;
-      const start = performance.now();
-      
-      // Clear any existing content to avoid double symbols
-      el.textContent = '';
-      
-      function update(currentTime) {
-        const elapsed = currentTime - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const easeProgress = 1 - Math.pow(1 - progress, 4); // easeOutQuart
-        const current = target * easeProgress;
-        
-        let displayValue;
-        if (target % 1 !== 0) {
-          displayValue = current.toFixed(1);
-        } else {
-          displayValue = Math.floor(current);
-        }
-        
-        // Only add prefix/suffix if not already present in textContent
-        el.textContent = prefix + displayValue + suffix;
-        
-        if (progress < 1) {
+    const counters = document.querySelectorAll('.cinematic-stat-number[data-target], .cinematic-impact-value[data-target]');
+    
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+          entry.target.classList.add('counted');
+          const target = parseInt(entry.target.dataset.target);
+          const suffix = entry.target.querySelector('span')?.textContent || 
+                        entry.target.textContent.replace(/[0-9]/g, '');
+          const duration = 2000;
+          const start = performance.now();
+          
+          function update(currentTime) {
+            const elapsed = currentTime - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeProgress = 1 - Math.pow(1 - progress, 4);
+            const current = Math.floor(target * easeProgress);
+            
+            if (entry.target.querySelector('span')) {
+              entry.target.childNodes[0].textContent = current;
+            } else {
+              entry.target.textContent = current + suffix;
+            }
+            
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            }
+          }
+          
           requestAnimationFrame(update);
         }
-      }
-      
-      requestAnimationFrame(update);
-    }
+      });
+    }, { threshold: 0.5 });
 
-    // 3D Tilt Effect
-    document.querySelectorAll('.tilt-card').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / 20;
-        const rotateY = (centerX - x) / 20;
-        
-        card.style.setProperty('--rotateX', `${rotateX}deg`);
-        card.style.setProperty('--rotateY', `${rotateY}deg`);
-      });
-      
-      card.addEventListener('mouseleave', () => {
-        card.style.setProperty('--rotateX', '0deg');
-        card.style.setProperty('--rotateY', '0deg');
-      });
-    });
+    counters.forEach(counter => countObserver.observe(counter));
 
-    // Magnetic Button Effect
-    document.querySelectorAll('.magnetic-btn').forEach(btn => {
-      btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        
-        btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-      });
-      
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = 'translate(0, 0)';
-      });
-    });
-
-    // Parallax Effect
+    // Parallax Effect on Hero
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
-      
-      document.querySelectorAll('[data-speed]').forEach(el => {
-        const speed = parseFloat(el.dataset.speed);
-        const yPos = -(scrolled * speed * 0.1);
-        el.style.transform = `translateY(${yPos}px)`;
-      });
+      const heroBg = document.querySelector('.cinematic-hero-bg img');
+      if (heroBg && scrolled < window.innerHeight) {
+        heroBg.style.transform = `translateY(${scrolled * 0.5}px) scale(${1 + scrolled * 0.0005})`;
+      }
     });
 
-    // Smooth scroll for anchor links
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     });
   </script>
+
 </body>
 </html>
