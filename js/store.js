@@ -84,6 +84,35 @@
       .trim();
   }
 
+  function categoryIcon(slug) {
+    const icons = {
+      'drinks-yoghurt': 'fa-glass-water',
+      'body-care-wellness': 'fa-heart-pulse',
+      'infant-child-care': 'fa-baby',
+      'pantry-staples-flour': 'fa-basket-shopping',
+      'snacks-confectionery': 'fa-cookie-bite',
+      'spices-condiments': 'fa-pepper-hot',
+      'household-items': 'fa-house'
+    };
+    return icons[slug] || 'fa-box-open';
+  }
+
+  function categoryPlaceholder(category, categoryProducts = []) {
+    return `
+      <div class="store-category-overlay">
+        <span class="store-category-count">${categoryProducts.length} products</span>
+        <div class="shop-product-placeholder" data-placeholder="${category.name}">
+          <i class="fas ${categoryIcon(category.slug)}"></i>
+        </div>
+        <span class="store-category-caption">${category.name}</span>
+      </div>
+    `;
+  }
+
+  function productPlaceholderLabel(product) {
+    return compactProductName(product.name);
+  }
+
   function addToCart(product, quantity = 1) {
     const items = getCart();
     const existing = items.find((item) => item.productSlug === product.slug);
@@ -136,37 +165,19 @@
   }
 
   function categoryVisual(category, categoryProducts = []) {
-    const featured = categoryProducts.slice(0, 3);
-    if (!featured.length) {
-      return `<img src="${category.heroImage}" alt="${category.name}" loading="lazy">`;
-    }
-
-    return `
-      <div class="store-category-stack" aria-hidden="true">
-        ${featured.map((product, index) => `
-          <figure class="store-category-shot store-category-shot--${index + 1}">
-            <img src="${product.image}" alt="${product.name}" loading="lazy">
-          </figure>
-        `).join('')}
-      </div>
-      <div class="store-category-overlay">
-        <span class="store-category-count">${categoryProducts.length} products</span>
-        <span class="store-category-caption">${category.name}</span>
-      </div>
-    `;
+    return categoryPlaceholder(category, categoryProducts);
   }
 
   function categoryCoverImage(category, categoryProducts = []) {
-    return (categoryProducts[0] && categoryProducts[0].image) || category.heroImage;
+    return category.name;
   }
 
   function productCard(product) {
     const displayName = compactProductName(product.name);
     return `
       <article class="shop-product-card">
-        <a class="shop-product-card__media" href="${route(`/product.html?slug=${product.slug}`)}">
+        <a class="shop-product-card__media" href="${route(`/product.html?slug=${product.slug}`)}" data-product-placeholder="${productPlaceholderLabel(product)}">
           <span class="shop-product-badge">${product.badge || 'DALA Pick'}</span>
-          <img src="${product.image}" alt="${product.name}" loading="lazy">
         </a>
         <div class="shop-product-card__body">
           <div class="shop-product-meta">
@@ -282,8 +293,8 @@
     if (headerTitle) headerTitle.textContent = category.name;
     if (headerText) headerText.textContent = category.description;
     if (headerImage) {
-      headerImage.src = categoryCoverImage(category, products);
-      headerImage.alt = category.name;
+      headerImage.setAttribute('data-placeholder', categoryCoverImage(category, products));
+      headerImage.innerHTML = `<i class="fas ${categoryIcon(category.slug)}"></i>`;
     }
 
     if (productGrid) {
@@ -332,21 +343,25 @@
     }
 
     if (mainImage) {
-      mainImage.src = product.image;
-      mainImage.alt = product.name;
+      mainImage.setAttribute('data-placeholder', compactProductName(product.name));
+      mainImage.innerHTML = `<i class="fas ${categoryIcon(product.categorySlug)}"></i>`;
     }
 
     if (gallery) {
-      const shots = product.gallery && product.gallery.length ? product.gallery : [product.image];
-      gallery.innerHTML = shots.map((image, index) => `
-        <button type="button" ${index === 0 ? 'class="is-active"' : ''} data-gallery-image="${image}">
-          <img src="${image}" alt="${product.name} view ${index + 1}" loading="lazy">
+      const shots = [
+        product.categoryName || 'Collection',
+        product.badge || 'DALA Pick',
+        product.stockStatus === 'low_stock' ? 'Low Stock' : 'In Stock'
+      ];
+      gallery.innerHTML = shots.map((label, index) => `
+        <button type="button" ${index === 0 ? 'class="is-active"' : ''} data-gallery-label="${label}">
+          ${label}
         </button>
       `).join('');
 
-      gallery.querySelectorAll('[data-gallery-image]').forEach((button) => {
+      gallery.querySelectorAll('[data-gallery-label]').forEach((button) => {
         button.addEventListener('click', () => {
-          mainImage.src = button.dataset.galleryImage;
+          mainImage.setAttribute('data-placeholder', compactProductName(product.name));
           gallery.querySelectorAll('button').forEach((item) => item.classList.remove('is-active'));
           button.classList.add('is-active');
         });
