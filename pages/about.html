@@ -1269,20 +1269,27 @@
     @media (max-width: 768px) {
       .trust-slider-section {
         padding: 52px 1.5rem 54px;
+        background:
+          radial-gradient(circle at top center, rgba(255, 190, 166, 0.32) 0%, transparent 38%),
+          linear-gradient(180deg, #fffaf6 0%, #fff4ee 100%);
       }
 
       .trust-slider-header {
         margin: 0 auto 34px;
+        max-width: 360px;
       }
 
       .trust-slider-title {
         font-size: clamp(1.8rem, 7vw, 2.2rem);
         margin-bottom: 0.75rem;
+        color: var(--dark);
+        text-shadow: none;
       }
 
       .trust-slider-subtitle {
         font-size: 1rem;
         line-height: 1.6;
+        color: var(--gray-600);
       }
 
       .trust-slider-container {
@@ -1373,6 +1380,26 @@
         font-size: 0.9rem;
         color: var(--gray-600);
         line-height: 1.62;
+      }
+
+      .trust-slider-nav {
+        margin-top: 1.15rem;
+      }
+
+      .trust-nav-btn {
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .trust-slider-dots {
+        padding: 0.4rem 0.72rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .trust-slider-dots .trust-dot {
+        background: rgba(34, 24, 18, 0.14);
       }
     }
 
@@ -2545,6 +2572,23 @@
     }
 
     @media (max-width: 768px) {
+      .commitment-section {
+        padding: 72px 1.1rem 88px;
+        background:
+          radial-gradient(circle at top center, rgba(255, 151, 102, 0.22) 0%, transparent 34%),
+          linear-gradient(180deg, #180b09 0%, #23100d 56%, #1b0d0a 100%);
+      }
+
+      .commitment-intro {
+        margin-bottom: 1.3rem;
+      }
+
+      .commitment-intro p {
+        color: rgba(255,255,255,0.8);
+        font-size: 1rem;
+        line-height: 1.75;
+      }
+
       .commitment-grid {
         position: relative;
         display: block;
@@ -2563,6 +2607,10 @@
         padding: 1.25rem 1.2rem 1.45rem;
         top: auto !important;
         margin: 0 !important;
+        background: linear-gradient(180deg, #ffffff 0%, #fbf7f2 100%);
+        border: 1px solid rgba(28, 18, 14, 0.08);
+        box-shadow: 0 26px 52px rgba(9, 5, 4, 0.26);
+        backdrop-filter: none;
         opacity: 0;
         pointer-events: none;
         transform: translateX(22px) scale(0.95);
@@ -2577,14 +2625,14 @@
       }
 
       .commitment-card.prev {
-        opacity: 0.34;
-        transform: translateX(-18px) translateY(12px) scale(0.95);
+        opacity: 0.18;
+        transform: translateX(-14px) translateY(12px) scale(0.955);
         z-index: 1;
       }
 
       .commitment-card.next {
-        opacity: 0.5;
-        transform: translateX(18px) translateY(12px) scale(0.95);
+        opacity: 0.3;
+        transform: translateX(14px) translateY(12px) scale(0.955);
         z-index: 2;
       }
 
@@ -2602,18 +2650,21 @@
         top: 0.95rem;
         right: 1rem;
         font-size: 2.35rem;
+        color: rgba(18, 10, 8, 0.08);
       }
 
       .commitment-card h3 {
         font-size: 1.78rem;
         line-height: 1.02;
         margin-bottom: 0.85rem;
+        color: var(--dark);
       }
 
       .commitment-card p {
         font-size: 1rem;
         line-height: 1.72;
         margin-bottom: 1.1rem;
+        color: var(--gray-600);
       }
 
       .commitment-card ul {
@@ -2650,8 +2701,8 @@
         gap: 0.5rem;
         padding: 0.4rem 0.75rem;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(0, 0, 0, 0.06);
         backdrop-filter: blur(12px);
       }
 
@@ -2659,7 +2710,7 @@
         width: 8px;
         height: 8px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.24);
+        background: rgba(29, 17, 14, 0.18);
         border: none;
         padding: 0;
         transition: all 0.3s ease;
@@ -2709,6 +2760,14 @@
         opacity: 0;
         pointer-events: none;
         z-index: 0;
+      }
+
+      .commitment-card li {
+        color: var(--gray-700);
+      }
+
+      .commitment-card li i {
+        color: #ff8a5f;
       }
     }
 
