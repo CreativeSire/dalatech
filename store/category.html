@@ -35,24 +35,51 @@
   <main class="shop-shell">
     <section class="shop-hero">
       <div class="shop-container">
-        <div class="shop-hero-panel">
-          <div class="shop-hero-copy">
-            <span class="shop-kicker"><i class="fas fa-boxes-stacked"></i> Collection</span>
-            <h1 data-category-name>Collection</h1>
-            <p data-category-description>Collection details</p>
-            <div class="shop-hero-actions">
-              <a class="shop-btn shop-btn-primary" href="/store/cart.html">Go to cart <span data-cart-count>0</span></a>
-              <a class="shop-btn shop-btn-secondary" href="/store/">Back to store</a>
+        <div class="shop-hero-panel store-market-hero store-market-hero--category">
+          <aside class="store-market-sidebar">
+            <div class="store-market-sidebar__header">
+              <span class="shop-kicker"><i class="fas fa-table-cells-large"></i> Browse</span>
+              <h2>Categories</h2>
             </div>
-            <div class="shop-tabs" data-category-tabs></div>
-          </div>
-          <div class="shop-cover shop-cover--placeholder">
-            <div class="shop-cover-copy">
-              <strong>DALA collection</strong>
-              <p>Browse the full assortment, compare pricing clearly, and add exactly what you need to your cart.</p>
+            <div class="store-market-sidebar__list" data-store-sidebar></div>
+          </aside>
+
+          <div class="store-market-stage">
+            <div class="shop-hero-copy">
+              <span class="shop-kicker"><i class="fas fa-boxes-stacked"></i> Collection</span>
+              <h1 data-category-name>Collection</h1>
+              <p data-category-description>Collection details</p>
+              <form class="store-search-shell" data-store-category-search>
+                <i class="fas fa-magnifying-glass"></i>
+                <input class="shop-input store-search-input" type="search" placeholder="Search within this collection" aria-label="Search within this collection" data-store-category-query>
+                <button class="shop-btn shop-btn-primary" type="submit">Search</button>
+              </form>
+              <div class="shop-hero-actions">
+                <a class="shop-btn shop-btn-primary" href="/store/cart.html">Go to cart <span data-cart-count>0</span></a>
+                <a class="shop-btn shop-btn-secondary" href="/store/">Back to store</a>
+              </div>
+              <div class="shop-tabs" data-category-tabs></div>
             </div>
-            <div class="shop-category-hero-placeholder" data-category-image></div>
+
+            <div class="shop-cover shop-cover--placeholder store-cover">
+              <div class="shop-cover-copy">
+                <strong>DALA collection</strong>
+                <p>Compare products side by side, adjust quantities with ease, and move straight into order or quote.</p>
+              </div>
+              <div class="shop-category-hero-placeholder" data-category-image></div>
+            </div>
           </div>
+
+          <aside class="store-market-quick">
+            <article class="store-quick-stat">
+              <strong data-category-name-short>Collection</strong>
+              <span data-category-count>0 products</span>
+            </article>
+            <article class="store-quick-stat">
+              <strong>Quick ordering</strong>
+              <span>Add products to cart directly from this collection page.</span>
+            </article>
+          </aside>
         </div>
       </div>
     </section>
@@ -62,7 +89,7 @@
         <div class="shop-section-header">
           <div>
             <span class="shop-section-kicker"><i class="fas fa-bag-shopping"></i> Products</span>
-            <h2>Everything in this collection</h2>
+            <h2 data-category-results-title>Everything in this collection</h2>
           </div>
           <p>Clean product cards, quick comparisons, and quantity-ready ordering from one page.</p>
         </div>

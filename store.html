@@ -35,43 +35,76 @@
   <main class="shop-shell">
     <section class="shop-hero">
       <div class="shop-container">
-        <div class="shop-hero-panel">
-          <div class="shop-hero-copy">
-            <span class="shop-kicker"><i class="fas fa-store"></i> DALA Store</span>
-            <h1>Shop trusted Nigerian products in one premium storefront.</h1>
-            <p>Browse retail-ready essentials, compare prices quickly, and place your order from a cleaner, faster store built for serious buyers.</p>
-            <div class="shop-hero-actions">
-              <a class="shop-btn shop-btn-primary" href="#collections">Start browsing <i class="fas fa-arrow-right"></i></a>
-              <a class="shop-btn shop-btn-secondary" href="/store/cart.html">View cart <span data-cart-count>0</span></a>
+        <div class="shop-hero-panel store-market-hero">
+          <aside class="store-market-sidebar">
+            <div class="store-market-sidebar__header">
+              <span class="shop-kicker"><i class="fas fa-table-cells-large"></i> Browse</span>
+              <h2>Categories</h2>
             </div>
-            <div class="shop-highlight-row">
-              <div class="shop-highlight">
-                <strong>48-hour delivery</strong>
-                <span>Fast, reliable fulfilment</span>
+            <div class="store-market-sidebar__list" data-store-sidebar></div>
+          </aside>
+
+          <div class="store-market-stage">
+            <div class="shop-hero-copy">
+              <span class="shop-kicker"><i class="fas fa-store"></i> DALA Store</span>
+              <h1>Everyday essentials, arranged like a premium retail floor.</h1>
+              <p>Shop by category, compare prices with confidence, and place orders from a cleaner marketplace built for serious buyers.</p>
+              <form class="store-search-shell" data-store-search>
+                <i class="fas fa-magnifying-glass"></i>
+                <input class="shop-input store-search-input" type="search" placeholder="Search products or categories" aria-label="Search products or categories" data-store-query>
+                <button class="shop-btn shop-btn-primary" type="submit">Search</button>
+              </form>
+              <div class="shop-hero-actions">
+                <a class="shop-btn shop-btn-primary" href="#collections">Browse store <i class="fas fa-arrow-right"></i></a>
+                <a class="shop-btn shop-btn-secondary" href="/store/cart.html">View cart <span data-cart-count>0</span></a>
               </div>
-              <div class="shop-highlight">
-                <strong>Trusted brands</strong>
-                <span>Clean product pages with prices you can act on</span>
+              <div class="shop-highlight-row">
+                <div class="shop-highlight">
+                  <strong>7 curated categories</strong>
+                  <span>Grouped for quick retail ordering</span>
+                </div>
+                <div class="shop-highlight">
+                  <strong>Live prices</strong>
+                  <span>Clean pricing that is easy to act on</span>
+                </div>
+                <div class="shop-highlight">
+                  <strong>Quote or order</strong>
+                  <span>Use the checkout flow that fits your need</span>
+                </div>
               </div>
-              <div class="shop-highlight">
-                <strong>Easy ordering</strong>
-                <span>Order directly or request a quote</span>
+            </div>
+
+            <div class="shop-cover shop-cover--placeholder store-cover">
+              <div class="shop-cover-grid">
+                <div class="shop-cover-tile shop-cover-tile--wide">
+                  <span class="shop-cover-chip">Marketplace style</span>
+                  <strong>Retail-ready collections</strong>
+                  <p>Choose a category, compare products, add quantities, and move straight into cart or quote without catalog clutter.</p>
+                </div>
+                <div class="shop-cover-tile"><span>Beverages</span></div>
+                <div class="shop-cover-tile"><span>Infant Care</span></div>
+                <div class="shop-cover-tile"><span>Pantry</span></div>
+                <div class="shop-cover-tile"><span>Household</span></div>
               </div>
             </div>
           </div>
-          <div class="shop-cover shop-cover--placeholder">
-            <div class="shop-cover-grid">
-              <div class="shop-cover-tile shop-cover-tile--wide">
-                <span class="shop-cover-chip">7 categories</span>
-                <strong>Retail-ready collections</strong>
-                <p>Browse products by category, compare pricing quickly, and move straight into cart or quote.</p>
-              </div>
-              <div class="shop-cover-tile"><span>Drinks</span></div>
-              <div class="shop-cover-tile"><span>Infant Care</span></div>
-              <div class="shop-cover-tile"><span>Pantry</span></div>
-              <div class="shop-cover-tile"><span>Spices</span></div>
-            </div>
-          </div>
+
+          <aside class="store-market-quick">
+            <article class="store-quick-card">
+              <span class="store-quick-card__eyebrow">Need to order quickly?</span>
+              <h3>Start with the category you need.</h3>
+              <p>Move from collection browsing to product quantities and checkout without leaving the Store flow.</p>
+              <a class="shop-text-link" href="#collections">Go to collections</a>
+            </article>
+            <article class="store-quick-stat">
+              <strong>48-hour delivery</strong>
+              <span>Fast, reliable fulfilment after order confirmation.</span>
+            </article>
+            <article class="store-quick-stat">
+              <strong>Quote support built in</strong>
+              <span>Request a quote directly from the same product flow.</span>
+            </article>
+          </aside>
         </div>
       </div>
     </section>
@@ -83,7 +116,7 @@
             <span class="shop-section-kicker"><i class="fas fa-layer-group"></i> Collections</span>
             <h2>Shop by collection</h2>
           </div>
-          <p>Open the category you need, compare products quickly, and order with the same flow you expect from a modern marketplace.</p>
+          <p>Open a category, see every product in one place, and move into a clean product grid built for confident ordering.</p>
         </div>
         <div class="shop-tabs" data-collection-tabs></div>
         <div class="shop-category-grid" data-category-grid></div>
@@ -95,9 +128,9 @@
         <div class="shop-section-header">
           <div>
             <span class="shop-section-kicker"><i class="fas fa-star"></i> Featured products</span>
-            <h2>Featured products</h2>
+            <h2 data-store-results-title>Featured products</h2>
           </div>
-          <p>Hand-picked favourites from across the store — trusted brands, live prices, and ready to add to cart.</p>
+          <p>Fast-moving products from across the Store, arranged in a cleaner retail grid with direct pricing and ordering.</p>
         </div>
         <div class="shop-product-grid" data-featured-products></div>
       </div>
@@ -109,22 +142,22 @@
           <article class="shop-mini-panel">
             <div class="shop-mini-panel-icon"><i class="fas fa-truck-fast"></i></div>
             <h3>48-hour delivery</h3>
-            <p>Fast, reliable fulfilment from our warehouse direct to you or your store.</p>
+            <p>Fast, reliable fulfilment from confirmed order to delivery.</p>
           </article>
           <article class="shop-mini-panel">
             <div class="shop-mini-panel-icon"><i class="fas fa-shield-check"></i></div>
             <h3>Quality guaranteed</h3>
-            <p>Every product meets the same standards enforced across Nigeria's top supermarkets.</p>
+            <p>Every listing reflects the same standard expected in disciplined retail environments.</p>
           </article>
           <article class="shop-mini-panel">
             <div class="shop-mini-panel-icon"><i class="fas fa-headset"></i></div>
             <h3>Dedicated support</h3>
-            <p>Our team is on hand to assist with orders, quotes, and any product questions.</p>
+            <p>Our team supports quote requests, order questions, and follow-through after checkout.</p>
           </article>
           <article class="shop-mini-panel">
             <div class="shop-mini-panel-icon"><i class="fas fa-receipt"></i></div>
             <h3>Easy reordering</h3>
-            <p>Place orders and quote requests quickly, with your purchase history easy to track.</p>
+            <p>Repeat orders stay simple with a cart-first flow designed for quick restocking.</p>
           </article>
         </div>
       </div>

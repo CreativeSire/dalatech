@@ -78,10 +78,7 @@
   }
 
   function compactProductName(name) {
-    return String(name || '')
-      .replace(/\b(Selection|Assortment|Range|Line|Kit|Pair|Duo)\b/gi, '')
-      .replace(/\s{2,}/g, ' ')
-      .trim();
+    return String(name || '').trim();
   }
 
   function categoryIcon(slug) {
@@ -97,11 +94,39 @@
     return icons[slug] || 'fa-box-open';
   }
 
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function renderStoreSidebar(categories, productsByCategory = {}, activeSlug = '') {
+    const markup = categories.map((category) => {
+      const count = (productsByCategory[category.slug] || []).length;
+      return `
+        <a class="store-sidebar-link ${category.slug === activeSlug ? 'is-active' : ''}" href="${route(`/category.html?slug=${category.slug}`)}">
+          <span class="store-sidebar-link__icon"><i class="fas ${categoryIcon(category.slug)}"></i></span>
+          <span class="store-sidebar-link__copy">
+            <strong>${escapeHtml(category.name)}</strong>
+            <small>${count} product${count === 1 ? '' : 's'}</small>
+          </span>
+        </a>
+      `;
+    }).join('');
+
+    document.querySelectorAll('[data-store-sidebar]').forEach((node) => {
+      node.innerHTML = markup;
+    });
+  }
+
   function categoryPlaceholder(category, categoryProducts = []) {
     return `
       <div class="store-category-overlay">
         <span class="store-category-count">${categoryProducts.length} products</span>
-        <div class="shop-product-placeholder" data-placeholder="${category.name}">
+        <div class="shop-product-placeholder" data-placeholder="${escapeHtml(category.name)}">
           <i class="fas ${categoryIcon(category.slug)}"></i>
         </div>
         <span class="store-category-caption">${category.name}</span>
@@ -176,8 +201,12 @@
     const displayName = compactProductName(product.name);
     return `
       <article class="shop-product-card">
-        <a class="shop-product-card__media" href="${route(`/product.html?slug=${product.slug}`)}" data-product-placeholder="${productPlaceholderLabel(product)}">
+        <a class="shop-product-card__media" href="${route(`/product.html?slug=${product.slug}`)}">
           <span class="shop-product-badge">${product.badge || 'DALA Pick'}</span>
+          <div class="store-product-card__placeholder">
+            <i class="fas ${categoryIcon(product.categorySlug)}"></i>
+            <strong>${escapeHtml(displayName)}</strong>
+          </div>
         </a>
         <div class="shop-product-card__body">
           <div class="shop-product-meta">
@@ -185,7 +214,7 @@
             <span class="shop-pill">${product.categoryName || 'Collection'}</span>
           </div>
           <div>
-            <h3>${displayName}</h3>
+            <h3>${escapeHtml(displayName)}</h3>
             <p>${product.shortDescription || ''}</p>
           </div>
           <div class="shop-product-card__footer">
@@ -227,6 +256,66 @@
     `;
   }
 
+  function wireHomeSearch(products) {
+    const form = document.querySelector('[data-store-search]');
+    const input = document.querySelector('[data-store-query]');
+    const featuredGrid = document.querySelector('[data-featured-products]');
+    const titleNode = document.querySelector('[data-store-results-title]');
+    if (!form || !input || !featuredGrid || !titleNode) return;
+
+    function renderResults(query) {
+      const term = query.trim().toLowerCase();
+      const results = !term
+        ? products.filter((item) => item.featured).slice(0, 12)
+        : products.filter((product) => `${product.name} ${product.shortDescription} ${product.categoryName}`.toLowerCase().includes(term));
+
+      titleNode.textContent = term ? `Results for "${query.trim()}"` : 'Featured products';
+      featuredGrid.innerHTML = results.length
+        ? results.slice(0, 20).map(productCard).join('')
+        : '<div class="shop-state">No matching products yet. Try a different keyword or open a collection.</div>';
+      bindAddToCart(featuredGrid);
+    }
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      renderResults(input.value);
+    });
+
+    input.addEventListener('input', () => {
+      if (!input.value.trim()) renderResults('');
+    });
+  }
+
+  function wireCategorySearch(products) {
+    const form = document.querySelector('[data-store-category-search]');
+    const input = document.querySelector('[data-store-category-query]');
+    const grid = document.querySelector('[data-category-products]');
+    const titleNode = document.querySelector('[data-category-results-title]');
+    if (!form || !input || !grid || !titleNode) return;
+
+    function renderResults(query) {
+      const term = query.trim().toLowerCase();
+      const results = !term
+        ? products
+        : products.filter((product) => `${product.name} ${product.shortDescription}`.toLowerCase().includes(term));
+
+      titleNode.textContent = term ? `Results for "${query.trim()}"` : 'Everything in this collection';
+      grid.innerHTML = results.length
+        ? results.map(productCard).join('')
+        : '<div class="shop-state">No matching products yet in this collection.</div>';
+      bindAddToCart(grid);
+    }
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      renderResults(input.value);
+    });
+
+    input.addEventListener('input', () => {
+      if (!input.value.trim()) renderResults('');
+    });
+  }
+
   function bindAddToCart(scope = document) {
     scope.querySelectorAll('[data-add-to-cart]').forEach((button) => {
       if (button.dataset.bound === 'true') return;
@@ -250,10 +339,12 @@
     const featuredGrid = document.querySelector('[data-featured-products]');
     const collectionTabs = document.querySelector('[data-collection-tabs]');
 
+    renderStoreSidebar(categoryResult.categories, productsByCategory);
+
     if (collectionTabs) {
       collectionTabs.innerHTML = categoryResult.categories
         .slice(0, 6)
-        .map((category) => `<a class="shop-tab" href="${route(`/category.html?slug=${category.slug}`)}">${category.name}</a>`)
+        .map((category) => `<a class="shop-tab" href="${route(`/category.html?slug=${category.slug}`)}">${category.name}<small>${(productsByCategory[category.slug] || []).length}</small></a>`)
         .join('');
     }
 
@@ -267,13 +358,16 @@
       featuredGrid.innerHTML = featuredResult.products.map(productCard).join('');
       bindAddToCart(featuredGrid);
     }
+
+    wireHomeSearch(allProductsResult.products);
   }
 
   async function initCategoryPage() {
     const slug = qs('slug');
-    const [categoryResult, productResult] = await Promise.all([
+    const [categoryResult, productResult, allProductsResult] = await Promise.all([
       api('/categories'),
-      api(`/products?category=${encodeURIComponent(slug || '')}`)
+      api(`/products?category=${encodeURIComponent(slug || '')}`),
+      api('/products?limit=60')
     ]);
 
     const category = categoryResult.categories.find((item) => item.slug === slug) || categoryResult.categories[0];
@@ -283,6 +377,10 @@
     const headerImage = document.querySelector('[data-category-image]');
     const productGrid = document.querySelector('[data-category-products]');
     const tabs = document.querySelector('[data-category-tabs]');
+    const countNode = document.querySelector('[data-category-count]');
+    const shortNameNode = document.querySelector('[data-category-name-short]');
+
+    renderStoreSidebar(categoryResult.categories, categoryProductsMap(allProductsResult.products), category.slug);
 
     if (tabs) {
       tabs.innerHTML = categoryResult.categories
@@ -292,6 +390,8 @@
 
     if (headerTitle) headerTitle.textContent = category.name;
     if (headerText) headerText.textContent = category.description;
+    if (countNode) countNode.textContent = `${products.length} product${products.length === 1 ? '' : 's'}`;
+    if (shortNameNode) shortNameNode.textContent = category.name;
     if (headerImage) {
       headerImage.setAttribute('data-placeholder', categoryCoverImage(category, products));
       headerImage.innerHTML = `<i class="fas ${categoryIcon(category.slug)}"></i>`;
@@ -305,6 +405,8 @@
         bindAddToCart(productGrid);
       }
     }
+
+    wireCategorySearch(products);
   }
 
   async function initProductPage() {
@@ -318,6 +420,8 @@
     const quoteButton = document.querySelector('[data-product-quote]');
     const qtyValueNode = document.querySelector('[data-product-qty-value]');
     const totalNode = document.querySelector('[data-product-total]');
+    const breadcrumbNode = document.querySelector('[data-product-breadcrumb]');
+    const categoryLinkNode = document.querySelector('[data-product-category-link]');
     let quantity = 1;
 
     function renderQuantity() {
@@ -334,6 +438,11 @@
     document.querySelector('[data-product-sku]').textContent = product.sku || 'DALA';
     document.querySelector('[data-product-stock]').textContent = product.stockStatus === 'low_stock' ? 'Low stock' : 'In stock';
     document.querySelector('[data-product-badge]').textContent = product.badge || 'DALA Pick';
+    if (breadcrumbNode) breadcrumbNode.textContent = product.name;
+    if (categoryLinkNode) {
+      categoryLinkNode.textContent = product.categoryName || 'Collection';
+      categoryLinkNode.href = route(`/category.html?slug=${product.categorySlug}`);
+    }
 
     const compare = document.querySelector('[data-product-compare]');
     if (product.compareAtPrice) {
@@ -422,7 +531,12 @@
 
     container.innerHTML = items.map((item) => `
       <article class="shop-cart-item">
-        <img src="${item.image}" alt="${item.productName}" loading="lazy">
+        <div class="shop-cart-item__visual">
+          <div class="shop-cart-placeholder">
+            <i class="fas fa-box"></i>
+            <span>${escapeHtml(compactProductName(item.productName))}</span>
+          </div>
+        </div>
         <div class="shop-cart-item__meta">
           <div>
             <h3>${item.productName}</h3>

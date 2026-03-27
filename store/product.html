@@ -35,6 +35,13 @@
   <main class="shop-shell">
     <section class="shop-section">
       <div class="shop-container">
+        <div class="store-breadcrumb">
+          <a href="/store/">Store</a>
+          <span>/</span>
+          <a href="#" data-product-category-link>Collection</a>
+          <span>/</span>
+          <strong data-product-breadcrumb>Name</strong>
+        </div>
         <div class="shop-product-detail">
           <div class="shop-product-gallery">
             <div class="shop-product-gallery__main">
@@ -56,6 +63,10 @@
             </div>
             <p data-product-description></p>
             <ul class="shop-feature-list" data-product-features></ul>
+            <div class="store-inline-note">
+              <i class="fas fa-truck-fast"></i>
+              <span>Choose quantity, add to cart, then place a manual order or request a quote.</span>
+            </div>
             <div class="shop-purchase-panel">
               <div class="shop-qty-picker" aria-label="Choose quantity">
                 <button type="button" data-product-qty="-1" aria-label="Reduce quantity">-</button>
