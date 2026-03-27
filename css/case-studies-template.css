@@ -611,24 +611,25 @@ body.case-study-index {
   }
 
   .case-hero-panel {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     padding: 0;
     background: transparent;
     border: none;
     box-shadow: none;
     border-radius: 0;
     gap: 0;
+    position: relative;
   }
 
   /* Full-bleed hero art at top */
   .case-hero-art {
-    grid-row: 1;
     min-height: 62vh;
     margin: 0;
     border-radius: 0 0 var(--case-mobile-radius) var(--case-mobile-radius);
     position: relative;
     overflow: hidden;
+    order: 1;
   }
 
   .case-hero-art--product {
@@ -636,12 +637,16 @@ body.case-study-index {
   }
 
   .case-product-stage {
+    position: absolute;
     inset: 0;
     border-radius: 0 0 var(--case-mobile-radius) var(--case-mobile-radius);
     padding: 0;
   }
 
   .case-product-stage--shelf img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 0 0 var(--case-mobile-radius) var(--case-mobile-radius);
   }
 
@@ -652,9 +657,10 @@ body.case-study-index {
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(0,0,0,0.1) 0%,
-      rgba(0,0,0,0.3) 40%,
-      rgba(0,0,0,0.75) 100%
+      rgba(0,0,0,0.4) 0%,
+      rgba(0,0,0,0.2) 25%,
+      rgba(0,0,0,0.5) 60%,
+      rgba(0,0,0,0.85) 100%
     );
     z-index: 2;
     pointer-events: none;
@@ -662,32 +668,69 @@ body.case-study-index {
 
   /* Hero note - positioned at bottom of image */
   .case-hero-note {
+    position: absolute;
     left: var(--case-mobile-padding);
     right: var(--case-mobile-padding);
-    bottom: var(--case-mobile-padding);
+    bottom: calc(var(--case-mobile-padding) + 60px);
     padding: 1rem 1.25rem;
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
     font-size: 0.88rem;
     line-height: 1.55;
     z-index: 3;
+    color: rgba(255,255,255,0.9);
   }
 
-  /* Hero Copy - positioned over image */
+  .case-hero-note strong {
+    color: white;
+  }
+
+  /* Hero Copy - normal flow but with absolutely positioned text elements */
   .case-hero-copy {
-    grid-row: 1;
     position: relative;
     z-index: 3;
-    padding: calc(60px + 1rem) var(--case-mobile-padding) 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0;
     pointer-events: none;
+    order: 2;
+    /* Margin to account for hero image */
+    margin-top: -62vh;
+    padding-top: 62vh;
   }
 
-  .case-hero-copy > * {
+  /* Text elements - absolutely positioned over hero image */
+  .case-hero-copy > .case-kicker,
+  .case-hero-copy > .case-brand-lockup,
+  .case-hero-copy > .case-headline {
+    position: absolute;
+    left: var(--case-mobile-padding);
+    right: var(--case-mobile-padding);
     pointer-events: auto;
+    z-index: 4;
+  }
+
+  .case-hero-copy > .case-kicker {
+    top: calc(60px + 0.5rem);
+  }
+
+  .case-hero-copy > .case-brand-lockup {
+    top: calc(60px + 1.8rem);
+  }
+
+  .case-hero-copy > .case-headline {
+    top: calc(60px + 7.5rem);
+  }
+
+  /* Chips section - flows naturally below */
+  .case-hero-meta {
+    position: relative;
+    z-index: 5;
+    pointer-events: auto;
+    margin-top: 20px;
+    padding: 0 var(--case-mobile-padding);
   }
 
   /* Kicker badge - Glass morphism */
@@ -774,16 +817,16 @@ body.case-study-index {
 
   /* Meta section - Below hero in normal flow */
   .case-hero-meta {
-    grid-row: 2;
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     padding: calc(var(--case-mobile-padding) * 1.5) var(--case-mobile-padding);
     background: linear-gradient(180deg, #faf8f5 0%, #fff 50%);
-    margin-top: -20px;
+    margin-top: auto;
     padding-top: 40px;
     z-index: 5;
+    pointer-events: auto;
   }
 
   /* Premium floating cards for chips */
