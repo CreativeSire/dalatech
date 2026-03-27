@@ -10,42 +10,6 @@
   to = "/.netlify/functions/api/:splat"
   status = 200
 
-[[redirects]]
-  from = "/store"
-  to = "/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/store/"
-  to = "/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/store/*"
-  to = "/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/shop"
-  to = "/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/shop/"
-  to = "/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/shop/*"
-  to = "/"
-  status = 302
-  force = true
-
 [dev]
   port = 8888
   publish = "."
