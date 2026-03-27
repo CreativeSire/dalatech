@@ -3500,14 +3500,14 @@
       .story-3d-carousel {
         position: relative;
         padding: 0.5rem 0 0;
+        perspective: 1200px;
+        perspective-origin: 50% 50%;
       }
 
       .story-3d-container {
         position: relative;
         width: 100%;
         height: 540px;
-        perspective: 1300px;
-        perspective-origin: 50% 30%;
       }
 
       .story-3d-track {
@@ -3530,7 +3530,7 @@
         border-radius: 22px;
         overflow: hidden;
         backface-visibility: hidden;
-        transform: translateX(-50%) rotateY(88deg) scale(0.9);
+        transform: translateX(-50%) rotateY(90deg) scale(0.9);
         opacity: 0;
         pointer-events: none;
         z-index: 1;
@@ -3581,18 +3581,18 @@
       }
       @keyframes storyFlipExitLeft {
         from { transform: translateX(-50%) rotateY(0deg) scale(1); opacity: 1; }
-        to   { transform: translateX(-50%) rotateY(-84deg) scale(0.88) translateZ(-50px); opacity: 0; }
+        to   { transform: translateX(-50%) rotateY(-90deg) scale(0.88); opacity: 0; }
       }
       @keyframes storyFlipExitRight {
         from { transform: translateX(-50%) rotateY(0deg) scale(1); opacity: 1; }
-        to   { transform: translateX(-50%) rotateY(84deg) scale(0.88) translateZ(-50px); opacity: 0; }
+        to   { transform: translateX(-50%) rotateY(90deg) scale(0.88); opacity: 0; }
       }
       @keyframes storyFlipEnterLeft {
-        from { transform: translateX(-50%) rotateY(84deg) scale(0.88) translateZ(-50px); opacity: 0; }
+        from { transform: translateX(-50%) rotateY(90deg) scale(0.88); opacity: 0; }
         to   { transform: translateX(-50%) rotateY(0deg) scale(1); opacity: 1; }
       }
       @keyframes storyFlipEnterRight {
-        from { transform: translateX(-50%) rotateY(-84deg) scale(0.88) translateZ(-50px); opacity: 0; }
+        from { transform: translateX(-50%) rotateY(-90deg) scale(0.88); opacity: 0; }
         to   { transform: translateX(-50%) rotateY(0deg) scale(1); opacity: 1; }
       }
 
