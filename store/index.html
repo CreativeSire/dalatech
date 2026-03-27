@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DALA Store — Shop Trusted Nigerian Brands</title>
-  <meta name="description" content="Shop food, drinks, personal care, infant essentials and household products from trusted Nigerian brands. Fast delivery, live pricing, easy reordering.">
+  <title>DALA Store | Premium Marketplace</title>
+  <meta name="description" content="Browse the DALA Store by collection, compare prices, choose quantities, and place manual orders from a cleaner premium marketplace.">
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="shortcut icon" href="../favicon.png">
   <link rel="apple-touch-icon" href="../favicon.png">
@@ -14,913 +14,169 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/store.css">
-  <link rel="stylesheet" href="../css/store-market.css">
-  <link rel="stylesheet" href="../css/store-red-brand.css">
 </head>
-<body class="market-body" data-shop-page="home">
-
-  <!-- ── UTILITY BAR ── -->
-  <div class="mkt-utility-bar">
-    <div class="mkt-utility-inner">
-      <span><i class="fas fa-truck-fast"></i> 48-hour delivery across Nigeria</span>
-      <span class="mkt-utility-sep">|</span>
-      <span><i class="fas fa-shield-check"></i> Quality guaranteed on every order</span>
-      <span class="mkt-utility-sep">|</span>
-      <a href="../pages/contact.html">Support &amp; enquiries</a>
-    </div>
-  </div>
-
-  <!-- ── STICKY NAVBAR ── -->
-  <header class="mkt-header" id="mkt-header">
-    <div class="mkt-header-inner">
-
-      <a href="../index.html" class="mkt-logo">
-        <img src="../4.png" alt="DALA Technologies">
-      </a>
-
-      <form class="mkt-search-bar" data-store-search>
-        <select class="mkt-search-cat" aria-label="Category">
-          <option value="">All</option>
-          <option>Beverages</option>
-          <option>Pantry</option>
-          <option>Body Care</option>
-          <option>Infant Care</option>
-          <option>Snacks</option>
-          <option>Spices</option>
-          <option>Household</option>
-        </select>
-        <input class="mkt-search-input" type="search" placeholder="Search products, brands and categories…" aria-label="Search store" data-store-query>
-        <button class="mkt-search-btn" type="submit" aria-label="Search"><i class="fas fa-magnifying-glass"></i></button>
-      </form>
-
-      <div class="mkt-header-actions">
-        <a href="../pages/signup.html" class="mkt-action-btn">
-          <i class="fas fa-circle-user"></i>
-          <span>Account</span>
-        </a>
-        <button class="mkt-action-btn mkt-cart-trigger" data-cart-drawer-open aria-label="Open cart">
-          <i class="fas fa-cart-shopping"></i>
-          <span>Cart</span>
-          <span class="mkt-cart-badge" data-cart-count>0</span>
-        </button>
+<body class="store-body" data-store-page="home">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
+      <div class="nav-links">
+        <a href="../pages/for-brands.html" class="nav-link">DALA for Brands</a>
+        <a href="../pages/for-supermarkets.html" class="nav-link">DALA for Supermarkets</a>
+        <a href="../pages/about.html" class="nav-link">About Us</a>
+        <a href="../pages/case-studies.html" class="nav-link">Case Studies</a>
+        <a href="../pages/contact.html" class="nav-link">Contact Us</a>
+        <a href="/store/" class="nav-link active">Store</a>
+        <a href="../pages/signup.html" class="nav-cta">Sign Up</a>
       </div>
-
-      <button class="mkt-hamburger" id="mkt-hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <!-- Mobile dropdown nav -->
-    <div class="mkt-mobile-nav" id="mkt-mobile-nav">
-      <div class="mkt-mobile-nav-inner">
-        <a href="../index.html">Home</a>
-        <a href="../pages/for-brands.html">For Brands</a>
-        <a href="../pages/for-supermarkets.html">For Supermarkets</a>
-        <a href="../pages/about.html">About Us</a>
-        <a href="../pages/case-studies.html">Case Studies</a>
-        <a href="../pages/contact.html">Contact</a>
-        <a href="../pages/signup.html" class="mkt-mobile-cta">Sign Up</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- ── CATEGORY NAV BAR ── -->
-  <nav class="mkt-cat-nav" id="mkt-cat-nav">
-    <div class="mkt-cat-nav-inner">
-      <button class="mkt-cat-all"><i class="fas fa-bars"></i> All Categories</button>
-      <a href="#flash-deals" class="mkt-cat-flash"><i class="fas fa-bolt"></i> Flash Deals</a>
-      <a href="/store/category.html?slug=drinks-yoghurt">Beverages &amp; Drinks</a>
-      <a href="/store/category.html?slug=pantry-staples-flour">Pantry &amp; Staples</a>
-      <a href="/store/category.html?slug=body-care-wellness">Body Care</a>
-      <a href="/store/category.html?slug=infant-child-care">Infant Care</a>
-      <a href="/store/category.html?slug=snacks-confectionery">Snacks</a>
-      <a href="/store/category.html?slug=spices-condiments">Spices &amp; Condiments</a>
-      <a href="/store/category.html?slug=household-items">Household</a>
-      <a href="/store/cart.html" class="mkt-cat-cart"><i class="fas fa-cart-shopping"></i> Cart (<span data-cart-count>0</span>)</a>
+      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <main class="mkt-main" data-shop-page="home">
+  <main class="store-shell">
+    <section class="store-hero">
+      <div class="store-container">
+        <div class="store-hero-layout">
+          <aside class="store-category-rail">
+            <div class="store-rail-head">
+              <span class="store-kicker"><i class="fas fa-table-cells-large"></i> Collections</span>
+              <h2>Browse by category</h2>
+            </div>
+            <div class="store-rail-list" data-store-sidebar></div>
+          </aside>
 
-    <!-- ── HERO CAROUSEL ── -->
-    <section class="mkt-carousel-section">
-      <div class="mkt-carousel" id="hero-carousel">
-        <div class="mkt-carousel-track" id="hero-track">
-
-          <!-- Slide 1 -->
-          <div class="mkt-slide mkt-slide--orange">
-            <div class="mkt-slide-copy">
-              <span class="mkt-slide-eyebrow">New arrivals</span>
-              <h1>Fresh pantry essentials,<br>delivered in 48 hours</h1>
-              <p>Stock up on flours, grains, oils and staples from Nigerian brands you trust — priced for retail buyers.</p>
-              <div class="mkt-slide-actions">
-                <a href="/store/category.html?slug=pantry-staples-flour" class="mkt-btn mkt-btn-light">Shop Pantry</a>
-                <a href="/store/category.html" class="mkt-btn mkt-btn-outline-light">See all categories</a>
+          <div class="store-hero-main">
+            <div class="store-hero-copy">
+              <span class="store-kicker"><i class="fas fa-store"></i> DALA Store</span>
+              <h1>Order retail essentials from a calmer, cleaner marketplace.</h1>
+              <p>Choose a collection, compare products, set quantities, and move into manual checkout or quote without catalog clutter.</p>
+              <form class="store-search" data-store-search>
+                <i class="fas fa-magnifying-glass"></i>
+                <input type="search" placeholder="Search products or categories" aria-label="Search Store" data-store-query>
+                <button class="store-btn store-btn-primary" type="submit">Search</button>
+              </form>
+              <div class="store-hero-actions">
+                <a href="#collections" class="store-btn store-btn-primary">Browse Store</a>
+                <a href="/store/cart.html" class="store-btn store-btn-secondary">View Cart <span data-cart-count>0</span></a>
+              </div>
+              <div class="store-hero-meta">
+                <div class="store-meta-card">
+                  <strong>7 curated categories</strong>
+                  <span>Clear product groups for quick restocking</span>
+                </div>
+                <div class="store-meta-card">
+                  <strong>Live prices</strong>
+                  <span>Real pricing, manual ordering, quote-ready flow</span>
+                </div>
+                <div class="store-meta-card">
+                  <strong>Built for buyers</strong>
+                  <span>Designed for repeat wholesale and retail ordering</span>
+                </div>
               </div>
             </div>
-            <div class="mkt-slide-visual">
-              <div class="mkt-product-stack">
-                <div class="mkt-product-tile mkt-product-tile--a">
-                  <i class="fas fa-wheat-awn"></i>
-                  <span>Flour</span>
-                  <strong>₦4,800</strong>
+
+            <div class="store-hero-visual">
+              <div class="store-showcase">
+                <div class="store-showcase-band store-showcase-band--primary">
+                  <span>Premium marketplace</span>
+                  <strong>Product-first, not catalog-first</strong>
                 </div>
-                <div class="mkt-product-tile mkt-product-tile--b">
-                  <i class="fas fa-oil-can"></i>
-                  <span>Cooking Oil</span>
-                  <strong>₦3,200</strong>
-                </div>
-                <div class="mkt-product-tile mkt-product-tile--c">
-                  <i class="fas fa-seedling"></i>
-                  <span>Rice 5kg</span>
-                  <strong>₦6,500</strong>
-                </div>
-                <div class="mkt-product-tile mkt-product-tile--d">
-                  <i class="fas fa-fire-burner"></i>
-                  <span>Seasoning</span>
-                  <strong>₦1,200</strong>
+                <div class="store-showcase-grid">
+                  <article class="store-showcase-card">
+                    <span class="store-showcase-label">Beverages</span>
+                    <strong>Fast-moving retail picks</strong>
+                  </article>
+                  <article class="store-showcase-card">
+                    <span class="store-showcase-label">Pantry</span>
+                    <strong>Everyday essentials for steady shelves</strong>
+                  </article>
+                  <article class="store-showcase-card">
+                    <span class="store-showcase-label">Care</span>
+                    <strong>Clean ordering for body and infant care</strong>
+                  </article>
+                  <article class="store-showcase-card">
+                    <span class="store-showcase-label">Household</span>
+                    <strong>Reliable restocking across practical items</strong>
+                  </article>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Slide 2 -->
-          <div class="mkt-slide mkt-slide--navy">
-            <div class="mkt-slide-copy">
-              <span class="mkt-slide-eyebrow">Top sellers</span>
-              <h1>Beverages &amp; drinks<br>your customers love</h1>
-              <p>Juices, yoghurts, soft drinks, water and more — trusted brands, competitive margins, fast restock.</p>
-              <div class="mkt-slide-actions">
-                <a href="/store/category.html?slug=drinks-yoghurt" class="mkt-btn mkt-btn-light">Shop Beverages</a>
-                <a href="/store/cart.html" class="mkt-btn mkt-btn-outline-light">View my cart</a>
-              </div>
-            </div>
-            <div class="mkt-slide-visual">
-              <div class="mkt-product-stack">
-                <div class="mkt-product-tile mkt-product-tile--a">
-                  <i class="fas fa-glass-water"></i>
-                  <span>Juice 1L</span>
-                  <strong>₦1,800</strong>
-                </div>
-                <div class="mkt-product-tile mkt-product-tile--b">
-                  <i class="fas fa-mug-hot"></i>
-                  <span>Yoghurt</span>
-                  <strong>₦2,200</strong>
-                </div>
-                <div class="mkt-product-tile mkt-product-tile--c">
-                  <i class="fas fa-bottle-water"></i>
-                  <span>Water 50cl</span>
-                  <strong>₦250</strong>
-                </div>
-                <div class="mkt-product-tile mkt-product-tile--d">
-                  <i class="fas fa-wine-bottle"></i>
-                  <span>Soft Drink</span>
-                  <strong>₦800</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="mkt-slide mkt-slide--teal">
-            <div class="mkt-slide-copy">
-              <span class="mkt-slide-eyebrow">Category spotlight</span>
-              <h1>Body care &amp; wellness<br>products that move</h1>
-              <p>Lotions, soaps, sanitisers, and personal care items from recognised brands — ready for your shelves.</p>
-              <div class="mkt-slide-actions">
-                <a href="/store/category.html?slug=body-care-wellness" class="mkt-btn mkt-btn-light">Shop Body Care</a>
-                <a href="../pages/for-supermarkets.html" class="mkt-btn mkt-btn-outline-light">For supermarkets</a>
-              </div>
-            </div>
-            <div class="mkt-slide-visual">
-              <div class="mkt-product-stack">
-                <div class="mkt-product-tile mkt-product-tile--a">
-                  <i class="fas fa-pump-soap"></i>
-                  <span>Hand Soap</span>
-                  <strong>₦1,500</strong>
-                </div>
-                <div class="mkt-product-tile mkt-product-tile--b">
-                  <i class="fas fa-spray-can-sparkles"></i>
-                  <span>Body Lotion</span>
-                  <strong>₦3,800</strong>
-                </div>
-                <div class="mkt-product-tile mkt-product-tile--c">
-                  <i class="fas fa-face-smile"></i>
-                  <span>Sanitiser</span>
-                  <strong>₦950</strong>
-                </div>
-                <div class="mkt-product-tile mkt-product-tile--d">
-                  <i class="fas fa-shield-halved"></i>
-                  <span>Deodorant</span>
-                  <strong>₦2,100</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 4 -->
-          <div class="mkt-slide mkt-slide--crimson">
-            <div class="mkt-slide-copy">
-              <span class="mkt-slide-eyebrow">Infant &amp; child</span>
-              <h1>Everything your<br>youngest customers need</h1>
-              <p>Diapers, baby food, formula and hygiene products — stocked from brands parents and carers recognise instantly.</p>
-              <div class="mkt-slide-actions">
-                <a href="/store/category.html?slug=infant-child-care" class="mkt-btn mkt-btn-light">Shop Infant Care</a>
-                <a href="../pages/for-brands.html" class="mkt-btn mkt-btn-outline-light">List your brand</a>
-              </div>
-            </div>
-            <div class="mkt-slide-visual">
-              <div class="mkt-product-stack">
-                <div class="mkt-product-tile mkt-product-tile--a">
-                  <i class="fas fa-baby"></i>
-                  <span>Diapers</span>
-                  <strong>₦8,500</strong>
-                </div>
-                <div class="mkt-product-tile mkt-product-tile--b">
-                  <i class="fas fa-jar-wheat"></i>
-                  <span>Baby Food</span>
-                  <strong>₦4,200</strong>
-                </div>
-                <div class="mkt-product-tile mkt-product-tile--c">
-                  <i class="fas fa-droplet"></i>
-                  <span>Baby Lotion</span>
-                  <strong>₦2,800</strong>
-                </div>
-                <div class="mkt-product-tile mkt-product-tile--d">
-                  <i class="fas fa-hand-sparkles"></i>
-                  <span>Wipes</span>
-                  <strong>₦1,600</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /track -->
-
-        <button class="mkt-carousel-prev" id="hero-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-        <button class="mkt-carousel-next" id="hero-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-        <div class="mkt-carousel-dots" id="hero-dots">
-          <button class="mkt-dot is-active" data-index="0" aria-label="Slide 1"></button>
-          <button class="mkt-dot" data-index="1" aria-label="Slide 2"></button>
-          <button class="mkt-dot" data-index="2" aria-label="Slide 3"></button>
-          <button class="mkt-dot" data-index="3" aria-label="Slide 4"></button>
+          <aside class="store-hero-side">
+            <article class="store-side-card">
+              <span class="store-side-eyebrow">Need to order quickly?</span>
+              <h3>Start with the collection you need.</h3>
+              <p>Open a category, add products, set quantities, and move into checkout from one clean flow.</p>
+            </article>
+            <article class="store-side-stat">
+              <strong>48-hour delivery</strong>
+              <span>Fast fulfilment after confirmation</span>
+            </article>
+            <article class="store-side-stat">
+              <strong>Manual order + quote</strong>
+              <span>Two routes, one Store experience</span>
+            </article>
+          </aside>
         </div>
       </div>
     </section>
 
-    <!-- ── BRAND LOGO STRIP ── -->
-    <section class="mkt-brand-strip">
-      <div class="mkt-brand-strip-inner">
-        <span class="mkt-brand-label">Trusted brands on DALA Store</span>
-        <div class="mkt-brand-logos">
-          <div class="mkt-brand-logo"><i class="fas fa-building"></i><span>Nestlé</span></div>
-          <div class="mkt-brand-logo"><i class="fas fa-building"></i><span>Unilever</span></div>
-          <div class="mkt-brand-logo"><i class="fas fa-building"></i><span>P&amp;G</span></div>
-          <div class="mkt-brand-logo"><i class="fas fa-building"></i><span>Dangote</span></div>
-          <div class="mkt-brand-logo"><i class="fas fa-building"></i><span>Honeywell</span></div>
-          <div class="mkt-brand-logo"><i class="fas fa-building"></i><span>Chi Ltd</span></div>
-          <div class="mkt-brand-logo"><i class="fas fa-building"></i><span>Cadbury</span></div>
-          <div class="mkt-brand-logo"><i class="fas fa-building"></i><span>Coca-Cola</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── FLASH DEALS ── -->
-    <section class="mkt-section" id="flash-deals">
-      <div class="mkt-container">
-        <div class="mkt-section-head">
-          <div class="mkt-section-title">
-            <span class="mkt-flash-badge"><i class="fas fa-bolt"></i> Flash Deals</span>
-            <h2>Today's deals</h2>
+    <section class="store-section" id="collections">
+      <div class="store-container">
+        <div class="store-section-head">
+          <div>
+            <span class="store-section-kicker"><i class="fas fa-layer-group"></i> Collections</span>
+            <h2>Shop by collection</h2>
           </div>
-          <div class="mkt-flash-countdown">
-            <span>Ends in</span>
-            <div class="mkt-countdown">
-              <div class="mkt-countdown-block"><span id="fd-hours">00</span><small>hrs</small></div>
-              <span class="mkt-countdown-sep">:</span>
-              <div class="mkt-countdown-block"><span id="fd-mins">00</span><small>min</small></div>
-              <span class="mkt-countdown-sep">:</span>
-              <div class="mkt-countdown-block"><span id="fd-secs">00</span><small>sec</small></div>
-            </div>
-          </div>
-          <a href="/store/category.html" class="mkt-see-all">See all deals <i class="fas fa-arrow-right"></i></a>
+          <p>Open a collection, see its products in one place, and order without fighting a noisy marketplace.</p>
         </div>
-
-        <div class="mkt-flash-grid">
-
-          <article class="mkt-flash-card">
-            <div class="mkt-flash-card-media">
-              <span class="mkt-flash-pct">-35%</span>
-              <button class="mkt-wish-btn" aria-label="Wishlist"><i class="far fa-heart"></i></button>
-              <div class="mkt-flash-img-placeholder" style="background:#fff8f0">
-                <i class="fas fa-wheat-awn" style="color:#e85d04;font-size:2.5rem"></i>
-                <span>Golden Penny Flour</span>
-              </div>
-            </div>
-            <div class="mkt-flash-card-body">
-              <p class="mkt-flash-name">Golden Penny Flour 10kg</p>
-              <div class="mkt-flash-prices">
-                <strong class="mkt-flash-price">₦5,850</strong>
-                <span class="mkt-flash-was">₦9,000</span>
-              </div>
-              <div class="mkt-flash-progress">
-                <div class="mkt-flash-bar" style="width:62%"></div>
-              </div>
-              <span class="mkt-flash-claimed">62% claimed</span>
-              <button class="mkt-add-btn" data-add-to-cart='{"id":"fp-flour","slug":"golden-penny-flour-10kg","name":"Golden Penny Flour 10kg","price":5850}'>
-                <i class="fas fa-cart-plus"></i> Add to Cart
-              </button>
-            </div>
-          </article>
-
-          <article class="mkt-flash-card">
-            <div class="mkt-flash-card-media">
-              <span class="mkt-flash-pct">-28%</span>
-              <button class="mkt-wish-btn" aria-label="Wishlist"><i class="far fa-heart"></i></button>
-              <div class="mkt-flash-img-placeholder" style="background:#f0f8ff">
-                <i class="fas fa-glass-water" style="color:#1a73e8;font-size:2.5rem"></i>
-                <span>Chi Juice 1L</span>
-              </div>
-            </div>
-            <div class="mkt-flash-card-body">
-              <p class="mkt-flash-name">Chi Exotic Juice 1L (Pack of 12)</p>
-              <div class="mkt-flash-prices">
-                <strong class="mkt-flash-price">₦14,400</strong>
-                <span class="mkt-flash-was">₦20,000</span>
-              </div>
-              <div class="mkt-flash-progress">
-                <div class="mkt-flash-bar" style="width:78%"></div>
-              </div>
-              <span class="mkt-flash-claimed">78% claimed</span>
-              <button class="mkt-add-btn" data-add-to-cart='{"id":"chi-juice","slug":"chi-exotic-juice-1l-pack","name":"Chi Exotic Juice 1L (Pack of 12)","price":14400}'>
-                <i class="fas fa-cart-plus"></i> Add to Cart
-              </button>
-            </div>
-          </article>
-
-          <article class="mkt-flash-card">
-            <div class="mkt-flash-card-media">
-              <span class="mkt-flash-pct">-40%</span>
-              <button class="mkt-wish-btn" aria-label="Wishlist"><i class="far fa-heart"></i></button>
-              <div class="mkt-flash-img-placeholder" style="background:#f0fff4">
-                <i class="fas fa-pump-soap" style="color:#2d6a4f;font-size:2.5rem"></i>
-                <span>Dettol Soap</span>
-              </div>
-            </div>
-            <div class="mkt-flash-card-body">
-              <p class="mkt-flash-name">Dettol Antibacterial Soap 150g ×6</p>
-              <div class="mkt-flash-prices">
-                <strong class="mkt-flash-price">₦5,400</strong>
-                <span class="mkt-flash-was">₦9,000</span>
-              </div>
-              <div class="mkt-flash-progress">
-                <div class="mkt-flash-bar" style="width:89%"></div>
-              </div>
-              <span class="mkt-flash-claimed">89% claimed</span>
-              <button class="mkt-add-btn" data-add-to-cart='{"id":"dettol-soap","slug":"dettol-soap-150g-6","name":"Dettol Antibacterial Soap 150g ×6","price":5400}'>
-                <i class="fas fa-cart-plus"></i> Add to Cart
-              </button>
-            </div>
-          </article>
-
-          <article class="mkt-flash-card">
-            <div class="mkt-flash-card-media">
-              <span class="mkt-flash-pct">-22%</span>
-              <button class="mkt-wish-btn" aria-label="Wishlist"><i class="far fa-heart"></i></button>
-              <div class="mkt-flash-img-placeholder" style="background:#fffbeb">
-                <i class="fas fa-jar-wheat" style="color:#b45309;font-size:2.5rem"></i>
-                <span>Cerelac</span>
-              </div>
-            </div>
-            <div class="mkt-flash-card-body">
-              <p class="mkt-flash-name">Nestlé Cerelac Wheat &amp; Honey 500g</p>
-              <div class="mkt-flash-prices">
-                <strong class="mkt-flash-price">₦3,900</strong>
-                <span class="mkt-flash-was">₦5,000</span>
-              </div>
-              <div class="mkt-flash-progress">
-                <div class="mkt-flash-bar" style="width:54%"></div>
-              </div>
-              <span class="mkt-flash-claimed">54% claimed</span>
-              <button class="mkt-add-btn" data-add-to-cart='{"id":"cerelac-wh","slug":"nestle-cerelac-wheat-honey-500g","name":"Nestlé Cerelac Wheat & Honey 500g","price":3900}'>
-                <i class="fas fa-cart-plus"></i> Add to Cart
-              </button>
-            </div>
-          </article>
-
-          <article class="mkt-flash-card">
-            <div class="mkt-flash-card-media">
-              <span class="mkt-flash-pct">-30%</span>
-              <button class="mkt-wish-btn" aria-label="Wishlist"><i class="far fa-heart"></i></button>
-              <div class="mkt-flash-img-placeholder" style="background:#fdf4ff">
-                <i class="fas fa-cookie-bite" style="color:#7e22ce;font-size:2.5rem"></i>
-                <span>Digestive</span>
-              </div>
-            </div>
-            <div class="mkt-flash-card-body">
-              <p class="mkt-flash-name">McVitie's Digestive Biscuits 400g</p>
-              <div class="mkt-flash-prices">
-                <strong class="mkt-flash-price">₦2,100</strong>
-                <span class="mkt-flash-was">₦3,000</span>
-              </div>
-              <div class="mkt-flash-progress">
-                <div class="mkt-flash-bar" style="width:41%"></div>
-              </div>
-              <span class="mkt-flash-claimed">41% claimed</span>
-              <button class="mkt-add-btn" data-add-to-cart='{"id":"mcvitie-dig","slug":"mcvities-digestive-400g","name":"McVities Digestive Biscuits 400g","price":2100}'>
-                <i class="fas fa-cart-plus"></i> Add to Cart
-              </button>
-            </div>
-          </article>
-
-          <article class="mkt-flash-card">
-            <div class="mkt-flash-card-media">
-              <span class="mkt-flash-pct">-18%</span>
-              <button class="mkt-wish-btn" aria-label="Wishlist"><i class="far fa-heart"></i></button>
-              <div class="mkt-flash-img-placeholder" style="background:#fff1f0">
-                <i class="fas fa-pepper-hot" style="color:#dc2626;font-size:2.5rem"></i>
-                <span>Seasoning</span>
-              </div>
-            </div>
-            <div class="mkt-flash-card-body">
-              <p class="mkt-flash-name">Knorr Chicken Cubes 400g (×8 packs)</p>
-              <div class="mkt-flash-prices">
-                <strong class="mkt-flash-price">₦4,100</strong>
-                <span class="mkt-flash-was">₦5,000</span>
-              </div>
-              <div class="mkt-flash-progress">
-                <div class="mkt-flash-bar" style="width:33%"></div>
-              </div>
-              <span class="mkt-flash-claimed">33% claimed</span>
-              <button class="mkt-add-btn" data-add-to-cart='{"id":"knorr-cc","slug":"knorr-chicken-cubes-400g","name":"Knorr Chicken Cubes 400g (×8 packs)","price":4100}'>
-                <i class="fas fa-cart-plus"></i> Add to Cart
-              </button>
-            </div>
-          </article>
-
-        </div><!-- /flash-grid -->
+        <div class="store-chip-row" data-collection-tabs></div>
+        <div class="store-category-grid" data-category-grid></div>
       </div>
     </section>
 
-    <!-- ── CATEGORY PILLS ── -->
-    <section class="mkt-section mkt-section--compact">
-      <div class="mkt-container">
-        <div class="mkt-pill-grid">
-          <a href="/store/category.html?slug=drinks-yoghurt" class="mkt-pill">
-            <span class="mkt-pill-icon">🥤</span><span>Beverages</span>
-          </a>
-          <a href="/store/category.html?slug=pantry-staples-flour" class="mkt-pill">
-            <span class="mkt-pill-icon">🌾</span><span>Pantry</span>
-          </a>
-          <a href="/store/category.html?slug=body-care-wellness" class="mkt-pill">
-            <span class="mkt-pill-icon">🧴</span><span>Body Care</span>
-          </a>
-          <a href="/store/category.html?slug=infant-child-care" class="mkt-pill">
-            <span class="mkt-pill-icon">👶</span><span>Infant</span>
-          </a>
-          <a href="/store/category.html?slug=snacks-confectionery" class="mkt-pill">
-            <span class="mkt-pill-icon">🍪</span><span>Snacks</span>
-          </a>
-          <a href="/store/category.html?slug=spices-condiments" class="mkt-pill">
-            <span class="mkt-pill-icon">🌶️</span><span>Spices</span>
-          </a>
-          <a href="/store/category.html?slug=household-items" class="mkt-pill">
-            <span class="mkt-pill-icon">🏠</span><span>Household</span>
-          </a>
-          <a href="/store/category.html" class="mkt-pill mkt-pill--all">
-            <span class="mkt-pill-icon">🛒</span><span>All</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── FEATURED PRODUCTS ── -->
-    <section class="mkt-section">
-      <div class="mkt-container">
-        <div class="mkt-section-head">
-          <div class="mkt-section-title">
+    <section class="store-section store-section--featured">
+      <div class="store-container">
+        <div class="store-section-head">
+          <div>
+            <span class="store-section-kicker"><i class="fas fa-bag-shopping"></i> Featured</span>
             <h2 data-store-results-title>Featured products</h2>
           </div>
-          <a href="/store/category.html" class="mkt-see-all">See all <i class="fas fa-arrow-right"></i></a>
+          <p>Fast-moving items with clear pricing, clean placeholders, and direct paths into the cart.</p>
         </div>
-        <!-- API-rendered product grid — store.js writes into this node -->
-        <div class="mkt-product-grid shop-product-grid" data-featured-products>
-          <!-- Loading state -->
-          <div class="mkt-loading-grid">
-            <div class="mkt-skeleton-card"></div>
-            <div class="mkt-skeleton-card"></div>
-            <div class="mkt-skeleton-card"></div>
-            <div class="mkt-skeleton-card"></div>
-            <div class="mkt-skeleton-card"></div>
-            <div class="mkt-skeleton-card"></div>
-            <div class="mkt-skeleton-card"></div>
-            <div class="mkt-skeleton-card"></div>
-          </div>
-        </div>
+        <div class="store-product-grid" data-featured-products></div>
       </div>
     </section>
 
-    <!-- ── PROMO BAND ── -->
-    <section class="mkt-promo-band">
-      <div class="mkt-container">
-        <div class="mkt-promo-grid">
-          <a href="../pages/for-brands.html" class="mkt-promo-card mkt-promo-card--dark">
-            <div class="mkt-promo-card-body">
-              <span class="mkt-promo-eyebrow">Are you a brand?</span>
-              <h3>List your products on DALA Store</h3>
-              <p>Get your SKUs in front of 300+ verified retail buyers. We handle fulfilment, you grow.</p>
-              <span class="mkt-promo-cta">Start selling <i class="fas fa-arrow-right"></i></span>
-            </div>
-            <div class="mkt-promo-icon"><i class="fas fa-store"></i></div>
-          </a>
-          <a href="../pages/for-supermarkets.html" class="mkt-promo-card mkt-promo-card--orange">
-            <div class="mkt-promo-card-body">
-              <span class="mkt-promo-eyebrow">Are you a supermarket?</span>
-              <h3>Order wholesale with easy restock</h3>
-              <p>Browse by category, compare by price, place bulk orders and restock shelves — all from one platform.</p>
-              <span class="mkt-promo-cta">Start ordering <i class="fas fa-arrow-right"></i></span>
-            </div>
-            <div class="mkt-promo-icon"><i class="fas fa-shop"></i></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── BEVERAGES SCROLL CAROUSEL ── -->
-    <section class="mkt-section">
-      <div class="mkt-container">
-        <div class="mkt-section-head">
-          <div class="mkt-section-title">
-            <h2>Beverages &amp; Drinks</h2>
-            <a href="/store/category.html?slug=drinks-yoghurt" class="mkt-section-link">View all <i class="fas fa-arrow-right"></i></a>
-          </div>
-          <div class="mkt-scroll-arrows">
-            <button class="mkt-scroll-arrow" id="bev-prev" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
-            <button class="mkt-scroll-arrow" id="bev-next" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
-          </div>
-        </div>
-        <div class="mkt-h-scroll" id="bev-scroll">
-          <div class="mkt-h-track">
-
-            <article class="mkt-mini-card">
-              <div class="mkt-mini-card-img" style="background:#f0f8ff">
-                <i class="fas fa-glass-water" style="color:#1a73e8"></i>
-              </div>
-              <p>Chi Exotic Juice 1L</p>
-              <strong>₦1,800</strong>
-              <button class="mkt-mini-add" data-add-to-cart='{"id":"chi-j1","slug":"chi-exotic-juice-1l","name":"Chi Exotic Juice 1L","price":1800}'>Add</button>
-            </article>
-
-            <article class="mkt-mini-card">
-              <div class="mkt-mini-card-img" style="background:#fdf4ff">
-                <i class="fas fa-mug-hot" style="color:#7e22ce"></i>
-              </div>
-              <p>Frisé Yoghurt 500ml</p>
-              <strong>₦2,200</strong>
-              <button class="mkt-mini-add" data-add-to-cart='{"id":"frise-y","slug":"frise-yoghurt-500ml","name":"Frisé Yoghurt 500ml","price":2200}'>Add</button>
-            </article>
-
-            <article class="mkt-mini-card">
-              <div class="mkt-mini-card-img" style="background:#f0fff4">
-                <i class="fas fa-bottle-water" style="color:#2d6a4f"></i>
-              </div>
-              <p>Eva Water 1.5L ×12</p>
-              <strong>₦3,600</strong>
-              <button class="mkt-mini-add" data-add-to-cart='{"id":"eva-w","slug":"eva-water-1.5l-12","name":"Eva Water 1.5L ×12","price":3600}'>Add</button>
-            </article>
-
-            <article class="mkt-mini-card">
-              <div class="mkt-mini-card-img" style="background:#fff8f0">
-                <i class="fas fa-wine-bottle" style="color:#e85d04"></i>
-              </div>
-              <p>Coca-Cola 60cl ×24</p>
-              <strong>₦19,200</strong>
-              <button class="mkt-mini-add" data-add-to-cart='{"id":"coke-24","slug":"coca-cola-60cl-24","name":"Coca-Cola 60cl ×24","price":19200}'>Add</button>
-            </article>
-
-            <article class="mkt-mini-card">
-              <div class="mkt-mini-card-img" style="background:#fffbeb">
-                <i class="fas fa-leaf" style="color:#b45309"></i>
-              </div>
-              <p>Lipton Yellow Label 100s</p>
-              <strong>₦4,500</strong>
-              <button class="mkt-mini-add" data-add-to-cart='{"id":"lipton-100","slug":"lipton-yellow-100s","name":"Lipton Yellow Label 100s","price":4500}'>Add</button>
-            </article>
-
-            <article class="mkt-mini-card">
-              <div class="mkt-mini-card-img" style="background:#fff1f0">
-                <i class="fas fa-droplet" style="color:#dc2626"></i>
-              </div>
-              <p>Ribena Blackcurrant 1L</p>
-              <strong>₦2,800</strong>
-              <button class="mkt-mini-add" data-add-to-cart='{"id":"ribena-1l","slug":"ribena-blackcurrant-1l","name":"Ribena Blackcurrant 1L","price":2800}'>Add</button>
-            </article>
-
-            <article class="mkt-mini-card">
-              <div class="mkt-mini-card-img" style="background:#f0f8ff">
-                <i class="fas fa-mug-saucer" style="color:#1a73e8"></i>
-              </div>
-              <p>Milo 1kg Tin</p>
-              <strong>₦8,200</strong>
-              <button class="mkt-mini-add" data-add-to-cart='{"id":"milo-1kg","slug":"milo-1kg-tin","name":"Milo 1kg Tin","price":8200}'>Add</button>
-            </article>
-
-            <article class="mkt-mini-card">
-              <div class="mkt-mini-card-img" style="background:#f0fff4">
-                <i class="fas fa-glass-water-droplet" style="color:#2d6a4f"></i>
-              </div>
-              <p>5 Alive Citrus Blend 1L</p>
-              <strong>₦1,950</strong>
-              <button class="mkt-mini-add" data-add-to-cart='{"id":"5alive-1l","slug":"5-alive-citrus-1l","name":"5 Alive Citrus Blend 1L","price":1950}'>Add</button>
-            </article>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── VIDEO SPOTLIGHT ── -->
-    <section class="mkt-video-section">
-      <div class="mkt-container">
-        <div class="mkt-video-grid">
-          <div class="mkt-video-wrap">
-            <div class="mkt-video-placeholder">
-              <div class="mkt-video-overlay">
-                <button class="mkt-play-btn" aria-label="Play video">
-                  <i class="fas fa-play"></i>
-                </button>
-              </div>
-              <div class="mkt-video-bg">
-                <i class="fas fa-film"></i>
-                <span>DALA Store — How it works</span>
-              </div>
-            </div>
-          </div>
-          <div class="mkt-video-copy">
-            <span class="mkt-video-eyebrow"><i class="fas fa-play-circle"></i> Watch the story</span>
-            <h2>The smarter way to stock Nigerian retail shelves</h2>
-            <p>DALA Store connects brands and distributors to verified supermarkets and retailers — with clean pricing, zero catalog clutter, and a checkout flow built for serious buyers.</p>
-            <ul class="mkt-video-list">
-              <li><i class="fas fa-check-circle"></i> Browse 7 curated product categories</li>
-              <li><i class="fas fa-check-circle"></i> Place orders or submit quote requests</li>
-              <li><i class="fas fa-check-circle"></i> Restock in 48 hours from confirmation</li>
-            </ul>
-            <a href="../pages/for-supermarkets.html" class="mkt-btn mkt-btn-dark">Learn more <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── PANTRY GRID ── -->
-    <section class="mkt-section">
-      <div class="mkt-container">
-        <div class="mkt-section-head">
-          <div class="mkt-section-title">
-            <h2>Food &amp; Pantry</h2>
-            <a href="/store/category.html?slug=pantry-staples-flour" class="mkt-section-link">View all <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="mkt-pantry-grid">
-
-          <article class="mkt-pantry-card">
-            <button class="mkt-wish-btn" aria-label="Wishlist"><i class="far fa-heart"></i></button>
-            <div class="mkt-pantry-img" style="background:#fff8f0">
-              <i class="fas fa-wheat-awn" style="color:#e85d04;font-size:3rem"></i>
-            </div>
-            <div class="mkt-pantry-body">
-              <span class="mkt-pantry-badge">Best Seller</span>
-              <p>Golden Penny Semolina 1kg</p>
-              <div class="mkt-pantry-prices">
-                <strong>₦2,800</strong>
-                <span>₦3,500</span>
-              </div>
-              <button class="mkt-add-btn mkt-add-btn--sm" data-add-to-cart='{"id":"gp-semolina","slug":"golden-penny-semolina-1kg","name":"Golden Penny Semolina 1kg","price":2800}'>
-                <i class="fas fa-cart-plus"></i> Add
-              </button>
-            </div>
+    <section class="store-section store-section--trust">
+      <div class="store-container">
+        <div class="store-trust-grid">
+          <article class="store-trust-card">
+            <div class="store-trust-icon"><i class="fas fa-truck-fast"></i></div>
+            <h3>48-hour delivery</h3>
+            <p>Move from confirmed order to fulfilment quickly and clearly.</p>
           </article>
-
-          <article class="mkt-pantry-card">
-            <button class="mkt-wish-btn" aria-label="Wishlist"><i class="far fa-heart"></i></button>
-            <div class="mkt-pantry-img" style="background:#f0fff4">
-              <i class="fas fa-seedling" style="color:#2d6a4f;font-size:3rem"></i>
-            </div>
-            <div class="mkt-pantry-body">
-              <span class="mkt-pantry-badge mkt-pantry-badge--new">New</span>
-              <p>Caprice Long Grain Rice 5kg</p>
-              <div class="mkt-pantry-prices">
-                <strong>₦6,800</strong>
-              </div>
-              <button class="mkt-add-btn mkt-add-btn--sm" data-add-to-cart='{"id":"caprice-rice","slug":"caprice-rice-5kg","name":"Caprice Long Grain Rice 5kg","price":6800}'>
-                <i class="fas fa-cart-plus"></i> Add
-              </button>
-            </div>
+          <article class="store-trust-card">
+            <div class="store-trust-icon"><i class="fas fa-shield-check"></i></div>
+            <h3>Disciplined quality</h3>
+            <p>Every listing belongs in a cleaner, more dependable buying flow.</p>
           </article>
-
-          <article class="mkt-pantry-card">
-            <button class="mkt-wish-btn" aria-label="Wishlist"><i class="far fa-heart"></i></button>
-            <div class="mkt-pantry-img" style="background:#fffbeb">
-              <i class="fas fa-oil-can" style="color:#b45309;font-size:3rem"></i>
-            </div>
-            <div class="mkt-pantry-body">
-              <span class="mkt-pantry-badge">Popular</span>
-              <p>Kings Vegetable Oil 5L</p>
-              <div class="mkt-pantry-prices">
-                <strong>₦12,500</strong>
-                <span>₦15,000</span>
-              </div>
-              <button class="mkt-add-btn mkt-add-btn--sm" data-add-to-cart='{"id":"kings-oil","slug":"kings-veg-oil-5l","name":"Kings Vegetable Oil 5L","price":12500}'>
-                <i class="fas fa-cart-plus"></i> Add
-              </button>
-            </div>
+          <article class="store-trust-card">
+            <div class="store-trust-icon"><i class="fas fa-cart-shopping"></i></div>
+            <h3>Quantity-first ordering</h3>
+            <p>Built for repeat retail and wholesale buying, not casual browsing.</p>
           </article>
-
-          <article class="mkt-pantry-card">
-            <button class="mkt-wish-btn" aria-label="Wishlist"><i class="far fa-heart"></i></button>
-            <div class="mkt-pantry-img" style="background:#fff1f0">
-              <i class="fas fa-fire-burner" style="color:#dc2626;font-size:3rem"></i>
-            </div>
-            <div class="mkt-pantry-body">
-              <span class="mkt-pantry-badge">Bulk Deal</span>
-              <p>Dangote Sugar 50kg</p>
-              <div class="mkt-pantry-prices">
-                <strong>₦74,000</strong>
-                <span>₦82,000</span>
-              </div>
-              <button class="mkt-add-btn mkt-add-btn--sm" data-add-to-cart='{"id":"dang-sugar","slug":"dangote-sugar-50kg","name":"Dangote Sugar 50kg","price":74000}'>
-                <i class="fas fa-cart-plus"></i> Add
-              </button>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>
+  </main>
 
-    <!-- ── SELL ON DALA CTA BAND ── -->
-    <section class="mkt-sell-band">
-      <div class="mkt-container">
-        <div class="mkt-sell-inner">
-          <div class="mkt-sell-copy">
-            <h2>Are you a brand or distributor?</h2>
-            <p>Get your products in front of 300+ verified retailers and supermarkets across Nigeria. DALA handles the discovery — you drive the orders.</p>
-          </div>
-          <div class="mkt-sell-actions">
-            <a href="../pages/for-brands.html" class="mkt-btn mkt-btn-light">List your products</a>
-            <a href="../pages/contact.html" class="mkt-btn mkt-btn-outline-light">Talk to us</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── TRUST STRIP ── -->
-    <section class="mkt-trust-strip">
-      <div class="mkt-container">
-        <div class="mkt-trust-grid">
-          <div class="mkt-trust-item">
-            <i class="fas fa-truck-fast"></i>
-            <div>
-              <strong>48-hour delivery</strong>
-              <span>Confirmed orders fulfilled fast</span>
-            </div>
-          </div>
-          <div class="mkt-trust-item">
-            <i class="fas fa-shield-check"></i>
-            <div>
-              <strong>Quality guaranteed</strong>
-              <span>Every SKU vetted by our team</span>
-            </div>
-          </div>
-          <div class="mkt-trust-item">
-            <i class="fas fa-headset"></i>
-            <div>
-              <strong>Dedicated support</strong>
-              <span>Real people, quick responses</span>
-            </div>
-          </div>
-          <div class="mkt-trust-item">
-            <i class="fas fa-receipt"></i>
-            <div>
-              <strong>Easy reordering</strong>
-              <span>Cart-first flow built for restocking</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── NEWSLETTER ── -->
-    <section class="mkt-newsletter">
-      <div class="mkt-container">
-        <div class="mkt-newsletter-inner">
-          <div>
-            <h2>Stay ahead of deals &amp; new arrivals</h2>
-            <p>Weekly digest of flash deals, new brands, and restocks — straight to your inbox.</p>
-          </div>
-          <form class="mkt-newsletter-form" id="mkt-newsletter-form">
-            <input type="email" placeholder="Your email address" required>
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── FOOTER ── -->
-    <footer class="mkt-footer">
-      <div class="mkt-container">
-        <div class="mkt-footer-grid">
-          <div class="mkt-footer-brand">
-            <img src="../4.png" alt="DALA Technologies" class="mkt-footer-logo">
-            <p>DALA Technologies connects Nigerian brands and retailers through a clean, data-driven distribution platform.</p>
-            <div class="mkt-footer-social">
-              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-          <div class="mkt-footer-col">
-            <h4>Store</h4>
-            <a href="/store/category.html">All categories</a>
-            <a href="#flash-deals">Flash deals</a>
-            <a href="/store/cart.html">My cart</a>
-            <a href="/store/checkout.html">Checkout</a>
-          </div>
-          <div class="mkt-footer-col">
-            <h4>Company</h4>
-            <a href="../pages/about.html">About DALA</a>
-            <a href="../pages/for-brands.html">For Brands</a>
-            <a href="../pages/for-supermarkets.html">For Supermarkets</a>
-            <a href="../pages/case-studies.html">Case Studies</a>
-          </div>
-          <div class="mkt-footer-col">
-            <h4>Help</h4>
-            <a href="../pages/contact.html">Contact us</a>
-            <a href="../pages/signup.html">Create account</a>
-            <a href="#">Delivery info</a>
-            <a href="#">Returns policy</a>
-          </div>
-        </div>
-        <div class="mkt-footer-bottom">
-          <span>&copy; 2025 DALA Technologies. All rights reserved.</span>
-          <div class="mkt-payment-badges">
-            <span><i class="fas fa-credit-card"></i> Card</span>
-            <span><i class="fas fa-mobile-screen"></i> Transfer</span>
-            <span><i class="fas fa-lock"></i> Secure</span>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-  </main><!-- /mkt-main -->
-
-  <!-- ── CART DRAWER ── -->
-  <div class="mkt-drawer-overlay" id="mkt-drawer-overlay"></div>
-  <aside class="mkt-cart-drawer" id="mkt-cart-drawer" aria-label="Shopping cart">
-    <div class="mkt-drawer-head">
-      <h3><i class="fas fa-cart-shopping"></i> My Cart (<span data-cart-count>0</span>)</h3>
-      <button class="mkt-drawer-close" id="mkt-drawer-close" aria-label="Close cart"><i class="fas fa-xmark"></i></button>
-    </div>
-    <div class="mkt-drawer-items" id="mkt-drawer-items"></div>
-    <div class="mkt-drawer-foot">
-      <div class="mkt-drawer-subtotal">
-        <span>Subtotal</span>
-        <strong id="mkt-drawer-subtotal">₦0</strong>
-      </div>
-      <a href="/store/cart.html" class="mkt-btn mkt-btn-dark mkt-btn-full">View cart &amp; checkout</a>
-    </div>
-  </aside>
-
-  <!-- ── QUICK VIEW MODAL ── -->
-  <div class="mkt-qv-overlay" id="mkt-qv-overlay"></div>
-  <div class="mkt-qv-modal" id="mkt-qv-modal" role="dialog" aria-label="Quick view">
-    <button class="mkt-qv-close" id="mkt-qv-close" aria-label="Close"><i class="fas fa-xmark"></i></button>
-    <div class="mkt-qv-inner" id="mkt-qv-inner"></div>
-  </div>
-
-  <!-- ── MOBILE BOTTOM NAV ── -->
-  <nav class="mkt-bottom-nav" aria-label="Mobile navigation">
-    <a href="../index.html" class="mkt-bottom-item">
-      <i class="fas fa-house"></i><span>Home</span>
-    </a>
-    <a href="/store/category.html" class="mkt-bottom-item">
-      <i class="fas fa-th-large"></i><span>Categories</span>
-    </a>
-    <a href="/store/index.html" class="mkt-bottom-item mkt-bottom-item--active">
-      <i class="fas fa-store"></i><span>Store</span>
-    </a>
-    <button class="mkt-bottom-item" data-cart-drawer-open>
-      <i class="fas fa-cart-shopping"></i>
-      <span>Cart</span>
-      <span class="mkt-bottom-badge" data-cart-count>0</span>
-    </button>
-    <a href="../pages/signup.html" class="mkt-bottom-item">
-      <i class="fas fa-circle-user"></i><span>Account</span>
-    </a>
-  </nav>
+  <a href="/store/cart.html" class="store-floating-cart" aria-label="Open cart">
+    <i class="fas fa-cart-shopping"></i>
+    <span data-cart-count>0</span>
+  </a>
 
   <script src="../js/main.js"></script>
   <script src="../js/store.js"></script>
-  <script src="../js/store-market.js"></script>
-  <script defer src="/js/wip-badge.js"></script>
 </body>
 </html>

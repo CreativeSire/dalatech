@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Cart | DALA Store</title>
-  <meta name="description" content="Review your DALA Store cart before placing a manual order or quote request.">
+  <meta name="description" content="Review your selected DALA Store products before placing a manual order or requesting a quote.">
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="shortcut icon" href="../favicon.png">
   <link rel="apple-touch-icon" href="../favicon.png">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/store.css">
 </head>
-<body class="shop-body" data-shop-page="cart">
+<body class="store-body" data-store-page="cart">
   <nav class="navbar">
     <div class="navbar-container">
       <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
@@ -32,24 +32,28 @@
     </div>
   </nav>
 
-  <main class="shop-shell">
-    <section class="shop-section">
-      <div class="shop-container">
-        <div class="shop-section-header">
+  <main class="store-shell">
+    <section class="store-section">
+      <div class="store-container">
+        <div class="store-section-head">
           <div>
-            <span class="shop-section-kicker"><i class="fas fa-cart-shopping"></i> Cart</span>
-            <h2>Review your selected products</h2>
+            <span class="store-section-kicker"><i class="fas fa-cart-shopping"></i> Cart</span>
+            <h1 class="store-page-title">Review your selected products</h1>
           </div>
-          <p>Move from browsing into a quote request or manual order without losing the premium storefront experience.</p>
+          <p>Adjust quantities, remove items, then move into manual checkout or request a quote.</p>
         </div>
-        <div class="shop-cart-layout">
-          <div class="shop-cart-card" data-cart-items></div>
-          <aside class="shop-cart-card shop-cart-float">
-            <div class="shop-checkout-summary">
-              <div class="shop-summary-row"><span>Subtotal</span><strong data-cart-subtotal>₦0</strong></div>
-              <a class="shop-btn shop-btn-primary" href="/store/checkout.html">Manual checkout</a>
-              <a class="shop-btn shop-btn-secondary" href="/store/checkout.html?mode=quote">Request a quote</a>
-              <a class="shop-btn shop-btn-dark" href="/store/">Continue shopping</a>
+
+        <div class="store-cart-layout">
+          <div class="store-panel" data-cart-items></div>
+          <aside class="store-panel store-panel--sticky">
+            <div class="store-summary">
+              <div class="store-summary-row">
+                <span>Subtotal</span>
+                <strong data-cart-subtotal>₦0</strong>
+              </div>
+              <a class="store-btn store-btn-primary" href="/store/checkout.html">Manual checkout</a>
+              <a class="store-btn store-btn-secondary" href="/store/checkout.html?mode=quote">Request a quote</a>
+              <a class="store-btn store-btn-dark" href="/store/">Continue shopping</a>
             </div>
           </aside>
         </div>
@@ -59,6 +63,5 @@
 
   <script src="../js/main.js"></script>
   <script src="../js/store.js"></script>
-  <script defer src="/js/wip-badge.js"></script>
 </body>
 </html>

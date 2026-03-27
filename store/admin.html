@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/store.css">
 </head>
-<body class="shop-body" data-shop-page="admin">
+<body class="store-body" data-store-page="admin">
   <nav class="navbar">
     <div class="navbar-container">
       <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
@@ -32,91 +32,94 @@
     </div>
   </nav>
 
-  <main class="shop-shell">
-    <section class="shop-section">
-      <div class="shop-container">
-        <div class="shop-admin-layout">
-          <section class="shop-admin-panel">
-            <span class="shop-kicker"><i class="fas fa-pen-ruler"></i> Store editor</span>
-            <h1>Edit products and pricing</h1>
-            <p>This first version keeps product and pricing edits simple so the live storefront can move fast while we shape the fuller admin later.</p>
-            <div class="shop-form-field">
-              <label for="adminKey">Admin key</label>
-              <input id="adminKey" class="shop-input" data-admin-key placeholder="Enter SHOP_ADMIN_KEY">
-            </div>
-            <form class="shop-form-grid" data-admin-form>
-              <div class="shop-form-field">
-                <label for="slug">Slug</label>
-                <input id="slug" class="shop-input" name="slug" required>
-              </div>
-              <div class="shop-form-field">
-                <label for="name">Name</label>
-                <input id="name" class="shop-input" name="name" required>
-              </div>
-              <div class="shop-form-field">
-                <label for="categorySlug">Category</label>
-                <select id="categorySlug" class="shop-select" name="categorySlug" data-admin-category></select>
-              </div>
-              <div class="shop-form-field">
-                <label for="sku">SKU</label>
-                <input id="sku" class="shop-input" name="sku">
-              </div>
-              <div class="shop-form-field shop-form-field--full">
-                <label for="shortDescription">Short description</label>
-                <input id="shortDescription" class="shop-input" name="shortDescription">
-              </div>
-              <div class="shop-form-field shop-form-field--full">
-                <label for="description">Full description</label>
-                <textarea id="description" class="shop-textarea" name="description" rows="5"></textarea>
-              </div>
-              <div class="shop-form-field">
-                <label for="price">Price</label>
-                <input id="price" class="shop-input" name="price" type="number" min="0" step="0.01" required>
-              </div>
-              <div class="shop-form-field">
-                <label for="compareAtPrice">Compare-at price</label>
-                <input id="compareAtPrice" class="shop-input" name="compareAtPrice" type="number" min="0" step="0.01">
-              </div>
-              <div class="shop-form-field">
-                <label for="badge">Badge</label>
-                <input id="badge" class="shop-input" name="badge">
-              </div>
-              <div class="shop-form-field">
-                <label for="stockStatus">Stock status</label>
-                <select id="stockStatus" class="shop-select" name="stockStatus">
+  <main class="store-shell">
+    <section class="store-section">
+      <div class="store-container">
+        <div class="store-checkout-layout">
+          <section class="store-panel">
+            <span class="store-kicker"><i class="fas fa-pen-ruler"></i> Store editor</span>
+            <h1 class="store-page-title">Edit products and pricing</h1>
+            <p class="store-panel-copy">This keeps product and pricing edits simple while the full Store admin continues to evolve.</p>
+
+            <label class="store-field">
+              <span>Admin key</span>
+              <input type="text" data-admin-key placeholder="Enter SHOP_ADMIN_KEY">
+            </label>
+
+            <form class="store-form-grid" data-admin-form>
+              <label class="store-field">
+                <span>Slug</span>
+                <input type="text" name="slug" required>
+              </label>
+              <label class="store-field">
+                <span>Name</span>
+                <input type="text" name="name" required>
+              </label>
+              <label class="store-field">
+                <span>Category</span>
+                <select name="categorySlug" data-admin-category></select>
+              </label>
+              <label class="store-field">
+                <span>SKU</span>
+                <input type="text" name="sku">
+              </label>
+              <label class="store-field store-field--full">
+                <span>Short description</span>
+                <input type="text" name="shortDescription">
+              </label>
+              <label class="store-field store-field--full">
+                <span>Full description</span>
+                <textarea name="description" rows="5"></textarea>
+              </label>
+              <label class="store-field">
+                <span>Price</span>
+                <input type="number" name="price" min="0" step="0.01" required>
+              </label>
+              <label class="store-field">
+                <span>Compare-at price</span>
+                <input type="number" name="compareAtPrice" min="0" step="0.01">
+              </label>
+              <label class="store-field">
+                <span>Badge</span>
+                <input type="text" name="badge">
+              </label>
+              <label class="store-field">
+                <span>Stock status</span>
+                <select name="stockStatus">
                   <option value="in_stock">In stock</option>
                   <option value="low_stock">Low stock</option>
                   <option value="out_of_stock">Out of stock</option>
                 </select>
-              </div>
-              <div class="shop-form-field">
-                <label for="featured">Featured</label>
-                <select id="featured" class="shop-select" name="featured">
+              </label>
+              <label class="store-field">
+                <span>Featured</span>
+                <select name="featured">
                   <option value="false">No</option>
                   <option value="true">Yes</option>
                 </select>
-              </div>
-              <div class="shop-form-field">
-                <label for="sortOrder">Sort order</label>
-                <input id="sortOrder" class="shop-input" name="sortOrder" type="number" min="0" step="1">
-              </div>
-              <div class="shop-form-field shop-form-field--full">
-                <label for="image">Primary image path</label>
-                <input id="image" class="shop-input" name="image">
-              </div>
-              <div class="shop-form-field shop-form-field--full">
-                <label for="gallery">Gallery image paths</label>
-                <textarea id="gallery" class="shop-textarea" name="gallery" rows="4" placeholder="Separate multiple paths with commas"></textarea>
-              </div>
-              <div class="shop-form-field shop-form-field--full">
-                <button class="shop-btn shop-btn-primary" type="submit">Save product</button>
+              </label>
+              <label class="store-field">
+                <span>Sort order</span>
+                <input type="number" name="sortOrder" min="0" step="1">
+              </label>
+              <label class="store-field store-field--full">
+                <span>Primary image path</span>
+                <input type="text" name="image">
+              </label>
+              <label class="store-field store-field--full">
+                <span>Gallery image paths</span>
+                <textarea name="gallery" rows="4" placeholder="Separate paths with commas"></textarea>
+              </label>
+              <div class="store-field store-field--full">
+                <button class="store-btn store-btn-primary" type="submit">Save product</button>
               </div>
             </form>
           </section>
-          <aside class="shop-admin-panel">
-            <span class="shop-kicker"><i class="fas fa-table-list"></i> Current products</span>
-            <h1>Live inventory snapshot</h1>
-            <div class="shop-admin-grid" data-admin-products></div>
+
+          <aside class="store-panel">
+            <span class="store-kicker"><i class="fas fa-table-list"></i> Current products</span>
+            <h2 class="store-page-title">Live inventory snapshot</h2>
+            <div class="store-form-grid" data-admin-products></div>
           </aside>
         </div>
       </div>
@@ -125,6 +128,5 @@
 
   <script src="../js/main.js"></script>
   <script src="../js/store.js"></script>
-  <script defer src="/js/wip-badge.js"></script>
 </body>
 </html>

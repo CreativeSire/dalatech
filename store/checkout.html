@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout | DALA Store</title>
-  <meta name="description" content="Complete a DALA Store manual order or quote request checkout.">
+  <meta name="description" content="Complete a DALA Store manual order or quote request with a clean buyer and delivery flow.">
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="shortcut icon" href="../favicon.png">
   <link rel="apple-touch-icon" href="../favicon.png">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/store.css">
 </head>
-<body class="shop-body" data-shop-page="checkout">
+<body class="store-body" data-store-page="checkout">
   <nav class="navbar">
     <div class="navbar-container">
       <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
@@ -32,61 +32,66 @@
     </div>
   </nav>
 
-  <main class="shop-shell">
-    <section class="shop-section">
-      <div class="shop-container">
-        <div class="shop-checkout-layout">
-          <div class="shop-checkout-panel">
-            <span class="shop-kicker" data-checkout-mode>Manual order</span>
-            <h1 data-checkout-heading>Complete your order</h1>
-            <p>Enter the buyer details we need to process the order cleanly and follow up quickly.</p>
-            <form data-checkout-form class="shop-form-grid">
-              <div class="shop-form-field">
-                <label for="customerName">Full name</label>
-                <input class="shop-input" id="customerName" name="customerName" required>
-              </div>
-              <div class="shop-form-field">
-                <label for="companyName">Company name</label>
-                <input class="shop-input" id="companyName" name="companyName">
-              </div>
-              <div class="shop-form-field">
-                <label for="email">Email</label>
-                <input class="shop-input" id="email" name="email" type="email" required>
-              </div>
-              <div class="shop-form-field">
-                <label for="phone">Phone number</label>
-                <input class="shop-input" id="phone" name="phone" required>
-              </div>
-              <div class="shop-form-field">
-                <label for="addressLine1">Address line 1</label>
-                <input class="shop-input" id="addressLine1" name="addressLine1">
-              </div>
-              <div class="shop-form-field">
-                <label for="addressLine2">Address line 2</label>
-                <input class="shop-input" id="addressLine2" name="addressLine2">
-              </div>
-              <div class="shop-form-field">
-                <label for="city">City</label>
-                <input class="shop-input" id="city" name="city">
-              </div>
-              <div class="shop-form-field">
-                <label for="state">State</label>
-                <input class="shop-input" id="state" name="state">
-              </div>
-              <div class="shop-form-field shop-form-field--full">
-                <label for="notes">Notes</label>
-                <textarea class="shop-textarea" id="notes" name="notes" rows="5" placeholder="Add delivery notes, quote context, or any buying details that will help us process this better."></textarea>
-              </div>
-              <div class="shop-form-field shop-form-field--full">
-                <button class="shop-btn shop-btn-primary" type="submit">Place manual order</button>
+  <main class="store-shell">
+    <section class="store-section">
+      <div class="store-container">
+        <div class="store-checkout-layout">
+          <div class="store-panel">
+            <span class="store-kicker" data-checkout-mode>Manual order</span>
+            <h1 class="store-page-title" data-checkout-heading>Complete your order</h1>
+            <p class="store-panel-copy">Share the buyer and delivery details we need to process this cleanly and follow up quickly.</p>
+
+            <form data-checkout-form class="store-form-grid">
+              <label class="store-field">
+                <span>Full name</span>
+                <input type="text" name="customerName" required>
+              </label>
+              <label class="store-field">
+                <span>Company name</span>
+                <input type="text" name="companyName">
+              </label>
+              <label class="store-field">
+                <span>Email</span>
+                <input type="email" name="email" required>
+              </label>
+              <label class="store-field">
+                <span>Phone number</span>
+                <input type="text" name="phone" required>
+              </label>
+              <label class="store-field">
+                <span>Address line 1</span>
+                <input type="text" name="addressLine1">
+              </label>
+              <label class="store-field">
+                <span>Address line 2</span>
+                <input type="text" name="addressLine2">
+              </label>
+              <label class="store-field">
+                <span>City</span>
+                <input type="text" name="city">
+              </label>
+              <label class="store-field">
+                <span>State</span>
+                <input type="text" name="state">
+              </label>
+              <label class="store-field store-field--full">
+                <span>Notes</span>
+                <textarea name="notes" rows="5" placeholder="Add delivery instructions, quote context, or any detail that will help us process this better."></textarea>
+              </label>
+              <div class="store-field store-field--full">
+                <button class="store-btn store-btn-primary" type="submit">Place manual order</button>
               </div>
             </form>
           </div>
-          <aside class="shop-cart-card">
-            <div class="shop-checkout-summary">
+
+          <aside class="store-panel store-panel--sticky">
+            <div class="store-summary">
               <h2>Order summary</h2>
               <div data-checkout-items></div>
-              <div class="shop-summary-row"><span>Subtotal</span><strong data-checkout-subtotal>₦0</strong></div>
+              <div class="store-summary-row">
+                <span>Subtotal</span>
+                <strong data-checkout-subtotal>₦0</strong>
+              </div>
             </div>
           </aside>
         </div>
@@ -96,6 +101,5 @@
 
   <script src="../js/main.js"></script>
   <script src="../js/store.js"></script>
-  <script defer src="/js/wip-badge.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DALA Store Collection</title>
-  <meta name="description" content="Browse a DALA Store collection with live products and editable pricing.">
+  <meta name="description" content="Browse a DALA Store collection with clean product cards, live prices, and a fast route into cart or quote.">
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="shortcut icon" href="../favicon.png">
   <link rel="apple-touch-icon" href="../favicon.png">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/store.css">
 </head>
-<body class="shop-body" data-shop-page="category">
+<body class="store-body" data-store-page="category">
   <nav class="navbar">
     <div class="navbar-container">
       <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
@@ -32,74 +32,71 @@
     </div>
   </nav>
 
-  <main class="shop-shell">
-    <section class="shop-hero">
-      <div class="shop-container">
-        <div class="shop-hero-panel store-market-hero store-market-hero--category">
-          <aside class="store-market-sidebar">
-            <div class="store-market-sidebar__header">
-              <span class="shop-kicker"><i class="fas fa-table-cells-large"></i> Browse</span>
-              <h2>Categories</h2>
-            </div>
-            <div class="store-market-sidebar__list" data-store-sidebar></div>
-          </aside>
+  <main class="store-shell">
+    <section class="store-section store-section--compact">
+      <div class="store-container">
+        <div class="store-breadcrumb">
+          <a href="/store/">Store</a>
+          <span>/</span>
+          <strong data-category-name>Collection</strong>
+        </div>
 
-          <div class="store-market-stage">
-            <div class="shop-hero-copy">
-              <span class="shop-kicker"><i class="fas fa-boxes-stacked"></i> Collection</span>
-              <h1 data-category-name>Collection</h1>
-              <p data-category-description>Collection details</p>
-              <form class="store-search-shell" data-store-category-search>
-                <i class="fas fa-magnifying-glass"></i>
-                <input class="shop-input store-search-input" type="search" placeholder="Search within this collection" aria-label="Search within this collection" data-store-category-query>
-                <button class="shop-btn shop-btn-primary" type="submit">Search</button>
-              </form>
-              <div class="shop-hero-actions">
-                <a class="shop-btn shop-btn-primary" href="/store/cart.html">Go to cart <span data-cart-count>0</span></a>
-                <a class="shop-btn shop-btn-secondary" href="/store/">Back to store</a>
-              </div>
-              <div class="shop-tabs" data-category-tabs></div>
+        <div class="store-collection-hero">
+          <div class="store-collection-copy">
+            <span class="store-kicker"><i class="fas fa-boxes-stacked"></i> Collection</span>
+            <h1 data-category-name>Collection</h1>
+            <p data-category-description>Collection details will appear here.</p>
+            <div class="store-collection-meta">
+              <span class="store-meta-pill" data-category-count>0 products</span>
+              <span class="store-meta-pill">Manual order &amp; quote ready</span>
             </div>
-
-            <div class="shop-cover shop-cover--placeholder store-cover">
-              <div class="shop-cover-copy">
-                <strong>DALA collection</strong>
-                <p>Compare products side by side, adjust quantities with ease, and move straight into order or quote.</p>
-              </div>
-              <div class="shop-category-hero-placeholder" data-category-image></div>
-            </div>
+            <form class="store-search store-search--inline" data-store-category-search>
+              <i class="fas fa-magnifying-glass"></i>
+              <input type="search" placeholder="Search this collection" aria-label="Search this collection" data-store-category-query>
+              <button class="store-btn store-btn-primary" type="submit">Search</button>
+            </form>
           </div>
 
-          <aside class="store-market-quick">
-            <article class="store-quick-stat">
-              <strong data-category-name-short>Collection</strong>
-              <span data-category-count>0 products</span>
-            </article>
-            <article class="store-quick-stat">
-              <strong>Quick ordering</strong>
-              <span>Add products to cart directly from this collection page.</span>
-            </article>
-          </aside>
+          <div class="store-collection-visual">
+            <div class="store-category-placeholder" data-category-image></div>
+          </div>
+        </div>
+
+        <div class="store-collection-toolbar">
+          <div class="store-chip-row" data-category-tabs></div>
+          <label class="store-sort">
+            <span>Sort</span>
+            <select data-category-sort>
+              <option value="default">Recommended</option>
+              <option value="price-asc">Price: Low to high</option>
+              <option value="price-desc">Price: High to low</option>
+              <option value="name-asc">Name: A to Z</option>
+            </select>
+          </label>
         </div>
       </div>
     </section>
 
-    <section class="shop-section">
-      <div class="shop-container">
-        <div class="shop-section-header">
+    <section class="store-section">
+      <div class="store-container">
+        <div class="store-section-head">
           <div>
-            <span class="shop-section-kicker"><i class="fas fa-bag-shopping"></i> Products</span>
+            <span class="store-section-kicker"><i class="fas fa-bag-shopping"></i> Products</span>
             <h2 data-category-results-title>Everything in this collection</h2>
           </div>
-          <p>Clean product cards, quick comparisons, and quantity-ready ordering from one page.</p>
+          <p>Clean product cards with quick add, clear prices, and fast movement into checkout.</p>
         </div>
-        <div class="shop-product-grid" data-category-products></div>
+        <div class="store-product-grid" data-category-products></div>
       </div>
     </section>
   </main>
 
+  <a href="/store/cart.html" class="store-floating-cart" aria-label="Open cart">
+    <i class="fas fa-cart-shopping"></i>
+    <span data-cart-count>0</span>
+  </a>
+
   <script src="../js/main.js"></script>
   <script src="../js/store.js"></script>
-  <script defer src="/js/wip-badge.js"></script>
 </body>
 </html>

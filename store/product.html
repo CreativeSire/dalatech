@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DALA Store Product</title>
-  <meta name="description" content="View a DALA Store product, browse its gallery, and add it to your cart or quote request.">
+  <meta name="description" content="View a DALA Store product, set your quantity, and add it to cart or request a quote.">
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="shortcut icon" href="../favicon.png">
   <link rel="apple-touch-icon" href="../favicon.png">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/store.css">
 </head>
-<body class="shop-body" data-shop-page="product">
+<body class="store-body" data-store-page="product">
   <nav class="navbar">
     <div class="navbar-container">
       <a href="../index.html" class="logo"><img src="../4.png" alt="DALA Technologies" class="logo-img"></a>
@@ -32,68 +32,88 @@
     </div>
   </nav>
 
-  <main class="shop-shell">
-    <section class="shop-section">
-      <div class="shop-container">
+  <main class="store-shell">
+    <section class="store-section store-section--compact">
+      <div class="store-container">
         <div class="store-breadcrumb">
           <a href="/store/">Store</a>
           <span>/</span>
           <a href="#" data-product-category-link>Collection</a>
           <span>/</span>
-          <strong data-product-breadcrumb>Name</strong>
+          <strong data-product-breadcrumb>Product</strong>
         </div>
-        <div class="shop-product-detail">
-          <div class="shop-product-gallery">
-            <div class="shop-product-gallery__main">
-              <div class="shop-product-placeholder shop-product-placeholder--main" data-product-main-image></div>
-            </div>
-            <div class="shop-product-gallery__thumbs" data-product-gallery></div>
+
+        <div class="store-product-layout">
+          <div class="store-product-media">
+            <div class="store-product-main" data-product-main-image></div>
+            <div class="store-product-thumbs" data-product-gallery></div>
           </div>
-          <div class="shop-product-detail__copy">
-            <span class="shop-kicker" data-product-badge>DALA Pick</span>
+
+          <div class="store-product-copy">
+            <span class="store-kicker" data-product-badge>DALA Pick</span>
             <h1 data-product-name>Product Name</h1>
-            <p data-product-short></p>
-            <div class="shop-price-group">
-              <span class="shop-price" data-product-price></span>
-              <span class="shop-compare" data-product-compare></span>
+            <p class="store-product-short" data-product-short></p>
+
+            <div class="store-price-panel">
+              <div class="store-price-group">
+                <span class="store-price" data-product-price></span>
+                <span class="store-compare" data-product-compare></span>
+              </div>
+              <div class="store-meta-list">
+                <span class="store-meta-pill">SKU: <strong data-product-sku></strong></span>
+                <span class="store-meta-pill" data-product-stock></span>
+              </div>
             </div>
-            <div class="shop-product-meta">
-              <span class="shop-pill">SKU: <strong data-product-sku></strong></span>
-              <span class="shop-pill" data-product-stock></span>
-            </div>
-            <p data-product-description></p>
-            <ul class="shop-feature-list" data-product-features></ul>
-            <div class="store-inline-note">
-              <i class="fas fa-truck-fast"></i>
-              <span>Choose quantity, add to cart, then place a manual order or request a quote.</span>
-            </div>
-            <div class="shop-purchase-panel">
-              <div class="shop-qty-picker" aria-label="Choose quantity">
+
+            <p class="store-product-description" data-product-description></p>
+            <ul class="store-feature-list" data-product-features></ul>
+
+            <div class="store-quantity-panel">
+              <div class="store-qty-picker" aria-label="Choose quantity">
                 <button type="button" data-product-qty="-1" aria-label="Reduce quantity">-</button>
                 <span data-product-qty-value>1</span>
                 <button type="button" data-product-qty="1" aria-label="Increase quantity">+</button>
               </div>
-              <div class="shop-purchase-summary">
+              <div class="store-total">
                 <span>Total</span>
                 <strong data-product-total></strong>
               </div>
             </div>
-            <div class="shop-hero-actions">
-              <button class="shop-btn shop-btn-primary" data-product-add>Add to cart</button>
-              <button class="shop-btn shop-btn-secondary" data-product-quote>Request quote</button>
+
+            <div class="store-product-actions">
+              <button class="store-btn store-btn-primary" data-product-add>Add to cart</button>
+              <button class="store-btn store-btn-secondary" data-product-quote>Request quote</button>
             </div>
-            <div class="shop-inline-actions">
-              <a class="shop-text-link" href="/store/cart.html">Go to cart</a>
-              <a class="shop-text-link" href="/store/">Keep shopping</a>
+
+            <div class="store-inline-links">
+              <a href="/store/cart.html">Go to cart</a>
+              <a href="/store/">Continue shopping</a>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="store-section">
+      <div class="store-container">
+        <div class="store-section-head">
+          <div>
+            <span class="store-section-kicker"><i class="fas fa-clone"></i> Related</span>
+            <h2>More in this collection</h2>
+          </div>
+          <p>Keep ordering from the same collection without losing your cart flow.</p>
+        </div>
+        <div class="store-product-grid" data-related-products></div>
+      </div>
+    </section>
   </main>
+
+  <a href="/store/cart.html" class="store-floating-cart" aria-label="Open cart">
+    <i class="fas fa-cart-shopping"></i>
+    <span data-cart-count>0</span>
+  </a>
 
   <script src="../js/main.js"></script>
   <script src="../js/store.js"></script>
-  <script defer src="/js/wip-badge.js"></script>
 </body>
 </html>
