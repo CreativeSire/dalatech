@@ -77,6 +77,13 @@
     return `${storeRoot}${path}`;
   }
 
+  function compactProductName(name) {
+    return String(name || '')
+      .replace(/\b(Selection|Assortment|Range|Line|Kit|Pair|Duo)\b/gi, '')
+      .replace(/\s{2,}/g, ' ')
+      .trim();
+  }
+
   function addToCart(product, quantity = 1) {
     const items = getCart();
     const existing = items.find((item) => item.productSlug === product.slug);
@@ -154,6 +161,7 @@
   }
 
   function productCard(product) {
+    const displayName = compactProductName(product.name);
     return `
       <article class="shop-product-card">
         <a class="shop-product-card__media" href="${route(`/product.html?slug=${product.slug}`)}">
@@ -166,7 +174,7 @@
             <span class="shop-pill">${product.categoryName || 'Collection'}</span>
           </div>
           <div>
-            <h3>${product.name}</h3>
+            <h3>${displayName}</h3>
             <p>${product.shortDescription || ''}</p>
           </div>
           <div class="shop-product-card__footer">
@@ -180,7 +188,7 @@
               name: product.name,
               price: product.price,
               image: product.image
-            }).replace(/'/g, '&#39;')}'>Add to Cart</button>
+            }).replace(/'/g, '&#39;')}'>Add</button>
           </div>
         </div>
       </article>
@@ -297,6 +305,16 @@
     const featureList = document.querySelector('[data-product-features]');
     const addButton = document.querySelector('[data-product-add]');
     const quoteButton = document.querySelector('[data-product-quote]');
+    const qtyValueNode = document.querySelector('[data-product-qty-value]');
+    const totalNode = document.querySelector('[data-product-total]');
+    let quantity = 1;
+
+    function renderQuantity() {
+      if (qtyValueNode) qtyValueNode.textContent = quantity;
+      if (totalNode) totalNode.textContent = currency(Number(product.price) * quantity);
+      if (addButton) addButton.textContent = `Add ${quantity} to cart`;
+      if (quoteButton) quoteButton.textContent = quantity > 1 ? `Request quote for ${quantity}` : 'Request quote';
+    }
 
     document.querySelector('[data-product-name]').textContent = product.name;
     document.querySelector('[data-product-short]').textContent = product.shortDescription || '';
@@ -351,16 +369,25 @@
       image: product.image
     };
 
+    document.querySelectorAll('[data-product-qty]').forEach((button) => {
+      button.addEventListener('click', () => {
+        quantity = Math.max(1, quantity + Number(button.dataset.productQty));
+        renderQuantity();
+      });
+    });
+
     if (addButton) {
-      addButton.addEventListener('click', () => addToCart(payload, 1));
+      addButton.addEventListener('click', () => addToCart(payload, quantity));
     }
 
     if (quoteButton) {
       quoteButton.addEventListener('click', () => {
-        addToCart(payload, 1);
+        addToCart(payload, quantity);
         window.location.href = route('/checkout.html?mode=quote');
       });
     }
+
+    renderQuantity();
   }
 
   function renderCartItems(items, container, summaryNode) {

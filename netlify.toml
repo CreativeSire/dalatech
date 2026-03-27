@@ -12,22 +12,22 @@
 
 [[redirects]]
   from = "/store"
-  to = "/store/index.html"
+  to = "/store.html"
   status = 200
 
 [[redirects]]
   from = "/store/"
-  to = "/store/index.html"
+  to = "/store.html"
   status = 200
 
 [[redirects]]
   from = "/shop"
-  to = "/store/index.html"
+  to = "/store.html"
   status = 301
 
 [[redirects]]
   from = "/shop/"
-  to = "/store/index.html"
+  to = "/store.html"
   status = 301
 
 [[redirects]]

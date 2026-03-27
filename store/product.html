@@ -56,9 +56,24 @@
             </div>
             <p data-product-description></p>
             <ul class="shop-feature-list" data-product-features></ul>
+            <div class="shop-purchase-panel">
+              <div class="shop-qty-picker" aria-label="Choose quantity">
+                <button type="button" data-product-qty="-1" aria-label="Reduce quantity">-</button>
+                <span data-product-qty-value>1</span>
+                <button type="button" data-product-qty="1" aria-label="Increase quantity">+</button>
+              </div>
+              <div class="shop-purchase-summary">
+                <span>Total</span>
+                <strong data-product-total></strong>
+              </div>
+            </div>
             <div class="shop-hero-actions">
               <button class="shop-btn shop-btn-primary" data-product-add>Add to cart</button>
               <button class="shop-btn shop-btn-secondary" data-product-quote>Request quote</button>
+            </div>
+            <div class="shop-inline-actions">
+              <a class="shop-text-link" href="/store/cart.html">Go to cart</a>
+              <a class="shop-text-link" href="/store/">Keep shopping</a>
             </div>
           </div>
         </div>
