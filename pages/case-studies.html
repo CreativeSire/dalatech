@@ -8,22 +8,15 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/case-studies-cinematic.css">
+  <link rel="stylesheet" href="../css/footer-clean.css">
+  <link rel="stylesheet" href="../css/case-studies-premium.css">
 </head>
-<body>
+<body class="case-premium-page">
 
-  <!-- Loading Screen -->
-  <div class="cinematic-loader" id="loader">
-    <div class="loader-content">
-      <span class="loader-text">DALA</span>
-      <div class="loader-line"></div>
-    </div>
-  </div>
-
-  <!-- Navigation - Same as rest of site -->
+  <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="navbar-container">
       <a href="../index.html" class="logo">
@@ -72,7 +65,7 @@
     </div>
   </nav>
 
-  <!-- Mobile Menu Overlay -->
+  <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="../index.html">Home</a>
     <a href="for-brands.html">For Brands</a>
@@ -86,441 +79,257 @@
     <a href="../brand-portal/">Brand Portal</a>
   </div>
 
-  <!-- Hero Section - Cinematic Full Screen -->
-  <section class="cinematic-hero">
-    <div class="cinematic-hero-bg">
-      <img src="../images/generated/case-studies/case-studies-hero-shelf.png" alt="A premium supermarket shelf composition showing products from Wilson's Lemonade, August Secrets, Zayith, and Eloha together" loading="eager" fetchpriority="high" decoding="async">
+  <!-- Hero Section -->
+  <section class="premium-hero" id="hero">
+    <div class="premium-hero-bg">
+      <img src="../images/generated/case-studies/case-studies-hero-shelf.png" alt="Premium supermarket shelf with DALA partner brands" loading="eager" fetchpriority="high" decoding="async">
     </div>
-    <div class="cinematic-hero-content">
-      <p class="cinematic-hero-eyebrow">Success Stories</p>
-      <h1 class="cinematic-hero-title">
+    <div class="premium-hero-overlay"></div>
+    <div class="premium-hero-content">
+      <p class="premium-hero-eyebrow">Success Stories</p>
+      <h1 class="premium-hero-title">
         Built for brands.
         <span>Proven across Africa.</span>
       </h1>
-      <p class="cinematic-hero-subtitle">
+      <p class="premium-hero-subtitle">
         The real stories behind Africa's most ambitious retail transformations. See how founder-led brands moved from shelf friction to stronger presence, faster expansion, and clearer results.
       </p>
     </div>
+    <a href="#stats" class="premium-hero-scroll">
+      <span>Scroll to explore</span>
+      <div class="premium-hero-scroll-line"></div>
+    </a>
   </section>
 
-  <!-- Stats Bar -->
-  <section class="cinematic-stats" id="stats">
-    <div class="cinematic-stats-grid">
-      <div class="cinematic-stat reveal">
-        <div class="cinematic-stat-number"><span>₦</span>400<span>M+</span></div>
-        <div class="cinematic-stat-label">Revenue Generated</div>
+  <!-- Stats Section -->
+  <section class="premium-stats" id="stats">
+    <div class="premium-stats-grid">
+      <div class="premium-stat premium-reveal">
+        <div class="premium-stat-number"><span>₦</span>400<span>M+</span></div>
+        <div class="premium-stat-label">Revenue Generated</div>
       </div>
-      <div class="cinematic-stat reveal reveal-delay-1">
-        <div class="cinematic-stat-number">700<span>+</span></div>
-        <div class="cinematic-stat-label">Stores Activated</div>
+      <div class="premium-stat premium-reveal premium-reveal-delay-1">
+        <div class="premium-stat-number">700<span>+</span></div>
+        <div class="premium-stat-label">Stores Activated</div>
       </div>
-      <div class="cinematic-stat reveal reveal-delay-2">
-        <div class="cinematic-stat-number">4</div>
-        <div class="cinematic-stat-label">Brand Partners</div>
+      <div class="premium-stat premium-reveal premium-reveal-delay-2">
+        <div class="premium-stat-number">4</div>
+        <div class="premium-stat-label">Brand Partners</div>
       </div>
     </div>
   </section>
 
-  <!-- Featured Story - Wilson's -->
-  <section class="cinematic-featured" onclick="window.location.href='case-studies/wilsons-lemonade.html'">
-    <div class="cinematic-featured-visual">
-      <img src="../images/generated/case-studies/wilsons-shelf.webp" alt="Wilson's Lemonade range merchandised together on shelf" loading="lazy" decoding="async">
-      <div class="cinematic-featured-badge">Featured Story</div>
-    </div>
-    <div class="cinematic-featured-content">
-      <p class="cinematic-featured-eyebrow">Case Study 01</p>
-      <h2 class="cinematic-featured-title reveal">How Wilson's Became Nigeria's Favorite Lemonade</h2>
-      <p class="cinematic-featured-text reveal">
-        Wilson's Lemonade had demand, but fragmented orders and expensive delivery patterns were holding growth back. DALA helped turn scattered retail traction into a disciplined execution system, activating 350 stores, strengthening shelf presence, and generating ₦221.7M in revenue within roughly 1.5 years.
-      </p>
-      <div class="cinematic-featured-stats reveal reveal-delay-1">
-        <div class="cinematic-featured-stat">
-          <span class="cinematic-featured-stat-value">₦221.7M</span>
-          <span class="cinematic-featured-stat-label">Revenue</span>
+  <!-- Featured Story: Wilson's -->
+  <section class="premium-featured" id="featured">
+    <div class="premium-featured-container">
+      <div class="premium-featured-grid">
+        <div class="premium-featured-visual premium-reveal">
+          <img src="../images/generated/case-studies/wilsons-shelf.webp" alt="Wilson's Lemonade on supermarket shelf">
+          <div class="premium-featured-badge">Featured Story</div>
         </div>
-        <div class="cinematic-featured-stat">
-          <span class="cinematic-featured-stat-value">350+</span>
-          <span class="cinematic-featured-stat-label">Stores</span>
-        </div>
-        <div class="cinematic-featured-stat">
-          <span class="cinematic-featured-stat-value">340%</span>
-          <span class="cinematic-featured-stat-label">Growth</span>
+        <div class="premium-featured-content">
+          <p class="premium-featured-eyebrow premium-reveal">Case Study 01</p>
+          <h2 class="premium-featured-title premium-reveal premium-reveal-delay-1">How Wilson's Became Nigeria's Favorite Lemonade</h2>
+          <p class="premium-featured-text premium-reveal premium-reveal-delay-2">
+            Wilson's Lemonade had demand, but fragmented orders and expensive delivery patterns were holding growth back. DALA helped turn scattered retail traction into a disciplined execution system, activating 350 stores, strengthening shelf presence, and generating ₦221.7M in revenue within roughly 1.5 years.
+          </p>
+          <div class="premium-featured-stats premium-reveal premium-reveal-delay-3">
+            <div class="premium-featured-stat">
+              <span class="premium-featured-stat-value">₦221.7M</span>
+              <span class="premium-featured-stat-label">Revenue</span>
+            </div>
+            <div class="premium-featured-stat">
+              <span class="premium-featured-stat-value">350+</span>
+              <span class="premium-featured-stat-label">Stores</span>
+            </div>
+            <div class="premium-featured-stat">
+              <span class="premium-featured-stat-value">340%</span>
+              <span class="premium-featured-stat-label">Growth</span>
+            </div>
+          </div>
+          <a href="case-studies/wilsons-lemonade.html" class="premium-featured-cta premium-reveal premium-reveal-delay-4">
+            Read the full story
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
         </div>
       </div>
-      <a href="case-studies/wilsons-lemonade.html" class="cinematic-featured-cta reveal reveal-delay-2">
-        Read the full story
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
     </div>
   </section>
 
   <!-- More Stories Grid -->
-  <section class="cinematic-stories" id="stories">
-    <div class="cinematic-stories-header reveal">
-      <h2 class="cinematic-stories-title">
-        More Stories
-        <span>of transformation</span>
-      </h2>
-      <p class="cinematic-stories-subtitle">
-        Every brand has a unique journey. Here's how we helped them scale.
-      </p>
-    </div>
-    
-    <div class="cinematic-grid">
-      <!-- Zayith -->
-      <article class="cinematic-story reveal" onclick="window.location.href='case-studies/zayith.html'">
-        <div class="cinematic-story-number">02</div>
-        <div class="cinematic-story-image">
-          <img src="../images/generated/case-studies/zayith-shelf.webp" alt="Zayith product range arranged together on shelf" loading="lazy" decoding="async">
-          <div class="cinematic-story-overlay"></div>
-        </div>
-        <div class="cinematic-story-content">
-          <span class="cinematic-story-tag">Food & Beverage</span>
-          <h3 class="cinematic-story-title">Zayith Food Company</h3>
-          <p class="cinematic-story-excerpt">
-            Quality products met the right retail operating engine, helping Zayith build revenue steadily, expand to 173 stores, and turn seasonal traction into visible commercial momentum.
-          </p>
-        </div>
-      </article>
+  <section class="premium-stories" id="stories">
+    <div class="premium-stories-container">
+      <div class="premium-stories-header premium-reveal">
+        <h2 class="premium-stories-title">
+          More Stories
+          <span>of transformation</span>
+        </h2>
+        <p class="premium-stories-subtitle">
+          Every brand has a unique journey. Here's how we helped them scale.
+        </p>
+      </div>
+      
+      <div class="premium-grid">
+        <!-- Zayith - Featured Large -->
+        <article class="premium-story premium-reveal" onclick="window.location.href='case-studies/zayith.html'">
+          <div class="premium-story-number">02</div>
+          <div class="premium-story-image">
+            <img src="../images/generated/case-studies/zayith-shelf.webp" alt="Zayith products on shelf" loading="lazy" decoding="async">
+            <div class="premium-story-overlay"></div>
+          </div>
+          <div class="premium-story-content">
+            <span class="premium-story-tag">Food & Beverage</span>
+            <h3 class="premium-story-title">Zayith Food Company</h3>
+            <p class="premium-story-excerpt">
+              Quality products met the right retail operating engine, helping Zayith build revenue steadily, expand to 173 stores, and turn seasonal traction into visible commercial momentum.
+            </p>
+          </div>
+        </article>
 
-      <!-- August Secrets -->
-      <article class="cinematic-story reveal reveal-delay-1" onclick="window.location.href='case-studies/august-secrets.html'">
-        <div class="cinematic-story-number">03</div>
-        <div class="cinematic-story-image">
-          <img src="../images/generated/case-studies/august-secrets-shelf.webp" alt="August Secrets range arranged together on shelf" loading="lazy" decoding="async">
-          <div class="cinematic-story-overlay"></div>
-        </div>
-        <div class="cinematic-story-content">
-          <span class="cinematic-story-tag">Infant Nutrition</span>
-          <h3 class="cinematic-story-title">August Secrets</h3>
-          <p class="cinematic-story-excerpt">
-            August Secrets paired strong products with disciplined execution, building credible supermarket presence, stronger shelf visibility, and rapid growth across 106 stores in one year.
-          </p>
-        </div>
-      </article>
+        <!-- August Secrets -->
+        <article class="premium-story premium-reveal premium-reveal-delay-1" onclick="window.location.href='case-studies/august-secrets.html'">
+          <div class="premium-story-number">03</div>
+          <div class="premium-story-image">
+            <img src="../images/generated/case-studies/august-secrets-shelf.webp" alt="August Secrets products on shelf" loading="lazy" decoding="async">
+            <div class="premium-story-overlay"></div>
+          </div>
+          <div class="premium-story-content">
+            <span class="premium-story-tag">Infant Nutrition</span>
+            <h3 class="premium-story-title">August Secrets</h3>
+            <p class="premium-story-excerpt">
+              August Secrets paired strong products with disciplined execution, building credible supermarket presence and rapid growth across 106 stores in one year.
+            </p>
+          </div>
+        </article>
 
-      <!-- Eloha -->
-      <article class="cinematic-story reveal reveal-delay-2" onclick="window.location.href='case-studies/eloha.html'">
-        <div class="cinematic-story-number">04</div>
-        <div class="cinematic-story-image">
-          <img src="../images/generated/case-studies/eloha-shelf.webp" alt="Eloha personal care range arranged together on shelf" loading="lazy" decoding="async">
-          <div class="cinematic-story-overlay"></div>
-        </div>
-        <div class="cinematic-story-content">
-          <span class="cinematic-story-tag">Personal Care</span>
-          <h3 class="cinematic-story-title">Eloha Personal Care</h3>
-          <p class="cinematic-story-excerpt">
-            Eloha entered modern retail with speed and structure, scaling to 83 stores in seven months while protecting launch credibility through tighter execution and weekly visibility.
-          </p>
-        </div>
-      </article>
-
-      <!-- Coming Soon -->
-      <article class="cinematic-story coming-soon reveal reveal-delay-3">
-        <div class="cinematic-story-number">05</div>
-        <div class="cinematic-story-image">
-          <div class="cinematic-story-overlay"></div>
-        </div>
-        <div class="cinematic-story-content">
-          <span class="cinematic-story-tag">Coming Soon</span>
-          <h3 class="cinematic-story-title">Your Story Here</h3>
-          <p class="cinematic-story-excerpt">
-            Join the brands scaling with DALA and write your own success story.
-          </p>
-        </div>
-      </article>
+        <!-- Eloha -->
+        <article class="premium-story premium-reveal premium-reveal-delay-2" onclick="window.location.href='case-studies/eloha.html'">
+          <div class="premium-story-number">04</div>
+          <div class="premium-story-image">
+            <img src="../images/generated/case-studies/eloha-shelf.webp" alt="Eloha products on shelf" loading="lazy" decoding="async">
+            <div class="premium-story-overlay"></div>
+          </div>
+          <div class="premium-story-content">
+            <span class="premium-story-tag">Natural Products</span>
+            <h3 class="premium-story-title">Eloha</h3>
+            <p class="premium-story-excerpt">
+              Eloha launched with precision and scaled to 83 stores in just seven months, proving that new brands can establish credible retail presence quickly.
+            </p>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- Impact Section -->
-  <section class="cinematic-impact" id="impact">
-    <div class="cinematic-impact-content">
-      <p class="cinematic-impact-eyebrow reveal">The Numbers</p>
-      <h2 class="cinematic-impact-title reveal">
-        Real results for <span>real partners</span>
+  <section class="premium-impact" id="impact">
+    <div class="premium-impact-container">
+      <p class="premium-impact-eyebrow premium-reveal">Our Impact</p>
+      <h2 class="premium-impact-title premium-reveal premium-reveal-delay-1">
+        Real Results for Real Brands
       </h2>
-      <p class="cinematic-impact-text reveal">
-        From first listings to multi-store traction, these case studies show what happens when strong products meet the right retail execution. Every metric is tracked, every result is verified, and every story shows what changed on the ground.
+      <p class="premium-impact-text premium-reveal premium-reveal-delay-2">
+        We don't just promise growth—we deliver measurable outcomes that transform businesses.
       </p>
       
-      <div class="cinematic-impact-grid">
-        <div class="cinematic-impact-item reveal reveal-delay-1">
-          <svg class="cinematic-impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+      <div class="premium-impact-grid">
+        <div class="premium-impact-item premium-reveal">
+          <svg class="premium-impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
           </svg>
-          <div class="cinematic-impact-value"><span>₦</span>400<span>M+</span></div>
-          <div class="cinematic-impact-label">Revenue Generated</div>
+          <div class="premium-impact-value">₦400M+</div>
+          <div class="premium-impact-label">Revenue Generated</div>
         </div>
-        
-        <div class="cinematic-impact-item reveal reveal-delay-2">
-          <svg class="cinematic-impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+        <div class="premium-impact-item premium-reveal premium-reveal-delay-1">
+          <svg class="premium-impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+            <path d="M9 22V12h6v10"/>
           </svg>
-          <div class="cinematic-impact-value">95<span>%</span></div>
-          <div class="cinematic-impact-label">Partner Retention</div>
+          <div class="premium-impact-value">700+</div>
+          <div class="premium-impact-label">Retail Stores</div>
         </div>
-        
-        <div class="cinematic-impact-item reveal reveal-delay-3">
-          <svg class="cinematic-impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <div class="premium-impact-item premium-reveal premium-reveal-delay-2">
+          <svg class="premium-impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+          <div class="premium-impact-value">340%</div>
+          <div class="premium-impact-label">Avg. Growth</div>
+        </div>
+        <div class="premium-impact-item premium-reveal premium-reveal-delay-3">
+          <svg class="premium-impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
+            <path d="M12 6v6l4 2"/>
           </svg>
-          <div class="cinematic-impact-value">48<span>hrs</span></div>
-          <div class="cinematic-impact-label">Avg. Restocking</div>
-        </div>
-        
-        <div class="cinematic-impact-item reveal reveal-delay-4">
-          <svg class="cinematic-impact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-          <div class="cinematic-impact-value">10<span>K+</span></div>
-          <div class="cinematic-impact-label">Retail Touchpoints</div>
+          <div class="premium-impact-value">18mo</div>
+          <div class="premium-impact-label">Avg. Time to Scale</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="cinematic-cta" id="cta">
-    <h2 class="cinematic-cta-title reveal">Ready to write your story</h2>
-    <p class="cinematic-cta-text reveal">
-      Join the founder-led brands using structure, discipline, and transparency. DALA helps turn shelf ambition into visible growth.
-    </p>
-    <div class="cinematic-cta-buttons reveal">
-      <a href="contact.html" class="cinematic-btn cinematic-btn-primary">
-        <span>Start a Conversation</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
-      <a href="../product-catalog/" class="cinematic-btn cinematic-btn-secondary">
-        Browse Our Catalog
-      </a>
+  <section class="premium-cta" id="cta">
+    <div class="premium-cta-container">
+      <h2 class="premium-cta-title premium-reveal">Ready to Write Your Story?</h2>
+      <p class="premium-cta-text premium-reveal premium-reveal-delay-1">
+        Join the brands that have transformed their retail presence with DALA. Your success story starts here.
+      </p>
+      <div class="premium-cta-buttons premium-reveal premium-reveal-delay-2">
+        <a href="for-brands.html" class="premium-btn premium-btn-primary">
+          Partner with DALA
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="contact.html" class="premium-btn premium-btn-secondary">
+          Contact Us
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="cinematic-footer">
-    <div class="cinematic-footer-inner">
-      <a href="../index.html" class="cinematic-footer-logo">DALA</a>
-      <span class="cinematic-footer-copy">© 2025 DALA Technologies. All rights reserved.</span>
+  <footer class="footer-clean">
+    <div class="footer-clean-container">
+      <div class="footer-clean-main">
+        <div class="footer-clean-brand">
+          <img src="../4.png" alt="DALA" class="footer-clean-logo">
+          <p class="footer-clean-tagline">Building Africa's retail infrastructure.</p>
+        </div>
+        <div class="footer-clean-links">
+          <div class="footer-clean-column">
+            <h4>Solutions</h4>
+            <a href="for-brands.html">For Brands</a>
+            <a href="for-supermarkets.html">For Supermarkets</a>
+          </div>
+          <div class="footer-clean-column">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-clean-column">
+            <h4>Resources</h4>
+            <a href="../store">Consumer Store</a>
+            <a href="../product-catalog/">Product Catalog</a>
+            <a href="../trade/">Trade Portal</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-clean-bottom">
+        <p>&copy; 2026 DALA Technologies. All rights reserved.</p>
+        <div class="footer-clean-social">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Loading Screen
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('loader').classList.add('hidden');
-      }, 1800);
-    });
-
-    // Mobile Menu Toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-    });
-    
-    // Close menu on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // Navbar dropdown functionality
-    const dropdownTriggers = document.querySelectorAll('.nav-dropdown-trigger');
-    
-    dropdownTriggers.forEach(trigger => {
-      trigger.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const dropdown = trigger.parentElement;
-        const isActive = dropdown.classList.contains('active');
-        
-        // Close all other dropdowns
-        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
-        
-        // Toggle current
-        if (!isActive) {
-          dropdown.classList.add('active');
-        }
-      });
-    });
-    
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', () => {
-      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
-    });
-
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll > 100) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-      
-      lastScroll = currentScroll;
-    }, { passive: true });
-
-    // Scroll Reveal Animation
-    const revealElements = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
-    
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          // Don't unobserve to allow re-animation if needed
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // Counter Animation with Intersection Observer
-    const counterElements = document.querySelectorAll('.cinematic-stat-number[data-target]');
-    
-    const countObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-          entry.target.classList.add('counted');
-          
-          const targetEl = entry.target.querySelector('[data-target]') || entry.target;
-          const target = parseInt(targetEl.dataset.target) || 0;
-          const duration = 2500;
-          const start = performance.now();
-          
-          // Get prefix and suffix from the element structure
-          const prefixEl = entry.target.querySelector('span:first-child');
-          const suffixEl = entry.target.querySelector('span:last-child');
-          const prefix = prefixEl ? prefixEl.textContent : '';
-          const suffix = suffixEl ? suffixEl.textContent : '';
-          
-          function update(currentTime) {
-            const elapsed = currentTime - start;
-            const progress = Math.min(elapsed / duration, 1);
-            const easeProgress = 1 - Math.pow(1 - progress, 4);
-            const current = Math.floor(target * easeProgress);
-            
-            // Update the number while keeping prefix and suffix
-            const numberSpan = entry.target.querySelector('span:not(:first-child):not(:last-child)') || entry.target.childNodes[1];
-            if (numberSpan) {
-              numberSpan.textContent = current;
-            } else {
-              // Fallback for simple structure
-              const textNode = entry.target.childNodes[entry.target.childNodes.length > 1 ? 1 : 0];
-              if (textNode) textNode.textContent = current;
-            }
-            
-            if (progress < 1) {
-              requestAnimationFrame(update);
-            }
-          }
-          
-          requestAnimationFrame(update);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    counterElements.forEach(counter => countObserver.observe(counter));
-
-    // Parallax Effect on Hero
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrolled = window.pageYOffset;
-          const heroBg = document.querySelector('.cinematic-hero-bg img');
-          if (heroBg && scrolled < window.innerHeight) {
-            const parallaxSpeed = 0.4;
-            const scale = 1 + (scrolled * 0.0003);
-            heroBg.style.transform = `translateY(${scrolled * parallaxSpeed}px) scale(${scale})`;
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-
-    // Touch swipe detection for mobile story cards
-    let touchStartY = 0;
-    let touchEndY = 0;
-    
-    document.addEventListener('touchstart', (e) => {
-      touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
-    
-    document.addEventListener('touchend', (e) => {
-      touchEndY = e.changedTouches[0].screenY;
-      handleSwipe();
-    }, { passive: true });
-    
-    function handleSwipe() {
-      const swipeThreshold = 50;
-      const diff = touchStartY - touchEndY;
-      
-      // Can add swipe-based navigation here if needed
-    }
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // Add magnetic effect to buttons on desktop
-    if (window.matchMedia('(pointer: fine)').matches) {
-      document.querySelectorAll('.cinematic-btn, .cinematic-featured-cta').forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-          const rect = btn.getBoundingClientRect();
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
-          
-          btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
-        });
-        
-        btn.addEventListener('mouseleave', () => {
-          btn.style.transform = '';
-        });
-      });
-    }
-
-    // Preload critical images
-    const criticalImages = [
-      '../images/generated/case-studies/case-studies-hero-shelf.png',
-      '../images/generated/case-studies/wilsons-shelf.webp',
-      '../images/generated/case-studies/zayith-shelf.webp',
-      '../images/generated/case-studies/august-secrets-shelf.webp',
-      '../images/generated/case-studies/eloha-shelf.webp'
-    ];
-    
-    criticalImages.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
-  </script>
-
+  <script src="../js/main.js"></script>
+  <script src="../js/case-studies-premium.js"></script>
 </body>
 </html>
