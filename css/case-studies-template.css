@@ -256,24 +256,7 @@ body.case-study-index {
 }
 
 .case-hero-note {
-  position: absolute;
-  left: 1.1rem;
-  right: 1.1rem;
-  bottom: 1.1rem;
-  padding: 1rem 1.05rem;
-  border-radius: 18px;
-  background: rgba(18, 12, 12, 0.68);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(14px);
-  z-index: 1;
-  line-height: 1.55;
-}
-
-.case-hero-note strong {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: #ffffff;
+  display: none;
 }
 
 .case-sections {
@@ -668,22 +651,7 @@ body.case-study-index {
 
   /* Hero note - positioned at bottom of image */
   .case-hero-note {
-    position: absolute;
-    left: var(--case-mobile-padding);
-    right: var(--case-mobile-padding);
-    bottom: calc(var(--case-mobile-padding) + 60px);
-    padding: 1rem 1.25rem;
-    background: rgba(0, 0, 0, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
-    font-size: 0.88rem;
-    line-height: 1.55;
-    z-index: 3;
-    color: rgba(255,255,255,0.9);
-  }
-
-  .case-hero-note strong {
-    color: white;
+    display: none;
   }
 
   /* Hero Copy - normal flow but with absolutely positioned text elements */
