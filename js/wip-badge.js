@@ -25,6 +25,7 @@
       transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
       animation: wipPulse 3s ease-in-out infinite;
       max-width: min(calc(100vw - 32px), 420px);
+      cursor: pointer;
     }
 
     .wip-badge:hover {
@@ -50,6 +51,10 @@
     .wip-badge__text {
       line-height: 1.2;
       white-space: nowrap;
+    }
+
+    .wip-badge__text-compact {
+      display: none;
     }
 
     .wip-badge__close {
@@ -98,13 +103,15 @@
       .wip-badge {
         left: 50%;
         right: auto;
-        bottom: 18px;
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
         transform: translateX(-50%);
-        padding: 15px 20px;
-        font-size: 13px;
-        gap: 10px;
-        width: calc(100vw - 24px);
-        max-width: 360px;
+        padding: 10px 14px;
+        font-size: 11.5px;
+        gap: 8px;
+        width: auto;
+        max-width: calc(100vw - 36px);
+        min-height: 46px;
+        box-shadow: 0 10px 22px rgba(229, 57, 53, 0.24), 0 0 0 1px rgba(255, 255, 255, 0.12) inset;
       }
 
       .wip-badge:hover {
@@ -117,6 +124,33 @@
 
       .wip-badge__text {
         white-space: normal;
+        max-width: 210px;
+      }
+
+      .wip-badge--compact {
+        padding: 9px 12px;
+        gap: 8px;
+        max-width: none;
+      }
+
+      .wip-badge--compact .wip-badge__text-full {
+        display: none;
+      }
+
+      .wip-badge--compact .wip-badge__text-compact {
+        display: inline;
+        white-space: nowrap;
+      }
+
+      .wip-badge--compact .wip-badge__close {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+      }
+
+      .wip-badge--compact .wip-badge__dot {
+        width: 8px;
+        height: 8px;
       }
     }
   `;
@@ -130,9 +164,31 @@
   badge.setAttribute('aria-label', 'Website maintenance in progress');
   badge.innerHTML = `
     <span class="wip-badge__dot"></span>
-    <span class="wip-badge__text">Website Maintenance in Progress</span>
+    <span class="wip-badge__text">
+      <span class="wip-badge__text-full">Website Maintenance in Progress</span>
+      <span class="wip-badge__text-compact">Maintenance</span>
+    </span>
     <button class="wip-badge__close" type="button" aria-label="Dismiss notification">&times;</button>
   `;
+
+  const isMobile = () => window.matchMedia('(max-width: 640px)').matches;
+  let compactTimer = null;
+
+  function applyCompactState() {
+    if (isMobile()) {
+      badge.classList.add('wip-badge--compact');
+      return;
+    }
+    badge.classList.remove('wip-badge--compact');
+  }
+
+  function scheduleCompact() {
+    clearTimeout(compactTimer);
+    if (!isMobile()) return;
+    compactTimer = setTimeout(() => {
+      badge.classList.add('wip-badge--compact');
+    }, 4500);
+  }
 
   if (localStorage.getItem('wipBadgeDismissed')) {
     badge.classList.add('wip-badge--hidden');
@@ -144,7 +200,23 @@
     localStorage.setItem('wipBadgeDismissedTime', Date.now().toString());
   });
 
+  badge.addEventListener('click', function (event) {
+    if (event.target.closest('.wip-badge__close')) return;
+    if (!isMobile()) return;
+    if (badge.classList.contains('wip-badge--compact')) {
+      badge.classList.remove('wip-badge--compact');
+      scheduleCompact();
+    }
+  });
+
   document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(badge);
+    applyCompactState();
+    scheduleCompact();
+  });
+
+  window.addEventListener('resize', function () {
+    applyCompactState();
+    scheduleCompact();
   });
 })();
