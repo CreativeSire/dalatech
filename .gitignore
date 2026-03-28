@@ -1,46 +1,72 @@
-# Dependencies
-node_modules/
-server/node_modules/
+# Screenshot files (testing artifacts) - do not commit
+/case-studies-*.png
+/case-studies-*.jpg
+/catalog-*.png
+/catalog-*.jpg
+/cinematic-*.png
+/cinematic-*.jpg
+/premium-*.png
+/premium-*.jpg
+/mobile-*.png
+/mobile-*.jpg
+/navbar-*.png
+/hero-*.png
+/hero-*.jpg
+/footer-*.png
+/footer-*.jpg
+/homepage-*.png
+/homepage-*.jpg
+/store-*.png
+/store-*.jpg
+/brand-*.png
+/brand-*.jpg
+/testimonial-*.png
+/testimonial-*.jpg
+/dual-card-*.png
+/dual-card-*.jpg
+/about-*.png
+/about-*.jpg
+/signup-*.png
+/login-*.png
+/supermarket-*.png
+/supermarket-*.jpg
 
-# Database
-database.sqlite
-*.sqlite
-*.db
+# Video files
+*.mp4
+*.mov
+*.avi
 
-# Environment files
-.env
-.env.local
-.env.*.local
+# Archive files
+*.zip
+*.tar.gz
+*.rar
 
-# Logs
-logs/
-*.log
-npm-debug.log*
+# Temporary files
+tmp/
+tmp-*
+*.tmp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
 # OS files
 .DS_Store
 Thumbs.db
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
+# Log files
+*.log
+netlify-shop.log
 
-# Screenshots (generated during development)
-logo-check*.png
-login-page.png
-signup-page.png
+# Playwright temp files
+.playwright-cli/
 
-# Temporary files
-*.tmp
-*.temp
+# Node modules (should be installed via npm)
+node_modules/
 
-# Local Netlify folder
-.netlify
-
-# Local Codex / Claude workspace artifacts
+# Local settings
 .claude/settings.local.json
 .claude/worktrees/
-.playwright-cli/
-tmp/imagegen/
