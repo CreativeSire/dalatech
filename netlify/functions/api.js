@@ -23,6 +23,10 @@ function json(statusCode, body) {
   };
 }
 
+function isAdminConfigured() {
+  return Boolean(process.env.SHOP_ADMIN_KEY);
+}
+
 exports.handler = async (event, context) => {
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
@@ -92,6 +96,9 @@ exports.handler = async (event, context) => {
     }
 
     if (normalizedPath === '/shop/admin/products' && event.httpMethod === 'POST') {
+      if (!isAdminConfigured()) {
+        return json(503, { message: 'Admin product editing is not configured on this environment' });
+      }
       if (!requireAdmin(event)) return json(401, { message: 'Unauthorized' });
       const body = JSON.parse(event.body || '{}');
       if (!body.slug || !body.name || !body.categorySlug) {

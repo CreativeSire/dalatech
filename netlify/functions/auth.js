@@ -5,7 +5,17 @@ const { v4: uuidv4 } = require('uuid');
 
 // In-memory storage for demo (replace with Supabase/PlanetScale for production)
 const users = [];
-const JWT_SECRET = process.env.JWT_SECRET || 'fallback-secret-change-in-production';
+const JWT_SECRET = process.env.JWT_SECRET;
+
+function authUnavailable(headers) {
+  return {
+    statusCode: 503,
+    headers,
+    body: JSON.stringify({
+      message: 'Authentication is not configured on this environment'
+    })
+  };
+}
 
 exports.handler = async (event, context) => {
   const headers = {
@@ -24,6 +34,10 @@ exports.handler = async (event, context) => {
   try {
     // SIGNUP
     if (path === '/signup' && event.httpMethod === 'POST') {
+      if (!JWT_SECRET) {
+        return authUnavailable(headers);
+      }
+
       const body = JSON.parse(event.body);
       const { userType, email, password, firstName, lastName, phone, companyName, storeName } = body;
 
@@ -67,6 +81,10 @@ exports.handler = async (event, context) => {
 
     // LOGIN
     if (path === '/login' && event.httpMethod === 'POST') {
+      if (!JWT_SECRET) {
+        return authUnavailable(headers);
+      }
+
       const body = JSON.parse(event.body);
       const { email, password } = body;
 

@@ -1,6 +1,5 @@
 const { neon } = require('@neondatabase/serverless');
 const crypto = require('crypto');
-const FALLBACK_ADMIN_KEY = 'dala-admin-demo';
 const seedPayload = require('../../data/shop-seed.json');
 const seedCategories = seedPayload.categories || [];
 const seedProducts = seedPayload.products || [];
@@ -344,7 +343,8 @@ async function createOrder(payload) {
 
 function requireAdmin(event) {
   const provided = event.headers['x-admin-key'] || event.headers['X-Admin-Key'];
-  const expected = process.env.SHOP_ADMIN_KEY || FALLBACK_ADMIN_KEY;
+  const expected = process.env.SHOP_ADMIN_KEY;
+  if (!expected) return false;
   return provided && provided === expected;
 }
 
