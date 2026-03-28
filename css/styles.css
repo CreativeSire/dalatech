@@ -4411,6 +4411,44 @@ p {
 }
 .nav-dropdown-item div { flex: 1; }
 
+/* Desktop nav fit tuning for denser inner-page menus */
+@media (min-width: 769px) and (max-width: 1380px) {
+  .navbar-container {
+    padding: 0 1rem;
+    gap: 0.75rem;
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    height: 42px;
+  }
+
+  .nav-links {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 0.1rem;
+    min-width: 0;
+  }
+
+  .nav-link {
+    padding: 0.58rem 0.72rem;
+    font-size: 0.89rem;
+  }
+
+  .nav-dropdown-trigger {
+    gap: 4px;
+  }
+
+  .nav-cta {
+    margin-left: 0.35rem;
+    padding: 0.72rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
 /* Mobile: dropdown inlines into the open nav */
 @media (max-width: 768px) {
   .nav-dropdown { display: flex; width: 100%; }
