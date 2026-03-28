@@ -317,3 +317,160 @@ body.page-premium-audit--listed .listed-cta-panel p {
     line-height: 1.7;
   }
 }
+
+body.page-premium-audit--faq .listed-hero-panel,
+body.page-premium-audit--listed-form .listed-hero-panel {
+  align-items: stretch;
+}
+
+body.page-premium-audit--faq .faq-shell,
+body.page-premium-audit--listed-form .listed-form-shell {
+  padding-top: calc(var(--header-height) + 1.5rem);
+}
+
+body.page-premium-audit--faq .listed-hero-copy,
+body.page-premium-audit--listed-form .listed-hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body.page-premium-audit--faq .listed-hero-copy .listed-title,
+body.page-premium-audit--listed-form .listed-hero-copy .listed-title {
+  max-width: 11ch;
+}
+
+body.page-premium-audit--faq .listed-hero-copy .listed-subtitle,
+body.page-premium-audit--listed-form .listed-hero-copy .listed-subtitle {
+  max-width: 38ch;
+}
+
+body.page-premium-audit--faq .listed-hero-note,
+body.page-premium-audit--listed-form .listed-hero-note {
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+body.page-premium-audit--faq .listed-faq-items,
+body.page-premium-audit--listed-form .listed-form-panel {
+  border-radius: 22px;
+}
+
+body.page-premium-audit--faq .listed-faq-trigger {
+  padding: 1.35rem 1.5rem;
+}
+
+body.page-premium-audit--faq .listed-faq-answer p {
+  line-height: 1.72;
+}
+
+body.page-premium-audit--listed-form .listed-form-panel {
+  padding: clamp(2rem, 4vw, 2.75rem);
+}
+
+body.page-premium-audit--listed-form .listed-form-grid {
+  gap: 1.1rem 1rem;
+}
+
+body.page-premium-audit--listed-form .listed-field input,
+body.page-premium-audit--listed-form .listed-field select,
+body.page-premium-audit--listed-form .listed-field textarea {
+  border-radius: 16px;
+}
+
+body.page-premium-audit--services .services-hero {
+  padding: clamp(8.5rem, 10vw, 10rem) 2rem clamp(4.25rem, 7vw, 5rem);
+}
+
+body.page-premium-audit--services .services-hero .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+body.page-premium-audit--services .services-hero-content {
+  max-width: 760px;
+}
+
+body.page-premium-audit--services .services-title {
+  max-width: 12ch;
+  margin-inline: auto;
+  color: #161616;
+  text-shadow: none;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: #161616;
+  background-clip: initial;
+}
+
+body.page-premium-audit--services .services-subtitle {
+  max-width: 40ch;
+  margin-inline: auto;
+  color: #676767;
+}
+
+body.page-premium-audit--services .services-badge {
+  color: var(--primary);
+}
+
+body.page-premium-audit--services .services-section {
+  padding: clamp(4rem, 7vw, 5rem) 2rem;
+}
+
+body.page-premium-audit--services .services-grid {
+  gap: 1.25rem;
+}
+
+body.page-premium-audit--services .service-card {
+  border-radius: 22px;
+}
+
+@media (max-width: 768px) {
+  body.page-premium-audit--faq .listed-hero-copy .listed-title,
+  body.page-premium-audit--listed-form .listed-hero-copy .listed-title,
+  body.page-premium-audit--services .services-title {
+    max-width: 10ch;
+  }
+
+  body.page-premium-audit--faq .listed-hero-copy .listed-subtitle,
+  body.page-premium-audit--listed-form .listed-hero-copy .listed-subtitle,
+  body.page-premium-audit--services .services-subtitle {
+    max-width: 33ch;
+  }
+
+  body.page-premium-audit--faq .listed-hero-panel,
+  body.page-premium-audit--listed-form .listed-hero-panel {
+    gap: 1.25rem;
+  }
+
+  body.page-premium-audit--faq .faq-shell,
+  body.page-premium-audit--listed-form .listed-form-shell {
+    padding-top: calc(var(--header-height) + 1rem);
+  }
+
+  body.page-premium-audit--faq .listed-faq-trigger {
+    padding: 1.15rem 1.15rem;
+  }
+
+  body.page-premium-audit--listed-form .listed-form-panel {
+    padding: 1.6rem 1.15rem;
+    border-radius: 18px;
+  }
+
+  body.page-premium-audit--services .services-hero {
+    padding: 7.4rem 1.25rem 3.5rem;
+  }
+
+  body.page-premium-audit--services .services-subtitle {
+    font-size: 1rem;
+    line-height: 1.72;
+  }
+
+  body.page-premium-audit--services .services-section {
+    padding: 3rem 1.25rem;
+  }
+
+  body.page-premium-audit--services .service-card {
+    padding: 1.7rem;
+    border-radius: 18px;
+  }
+}
