@@ -9,8 +9,8 @@
 body.case-study-page,
 body.case-study-index {
   background:
-    radial-gradient(circle at top left, rgba(229, 57, 53, 0.06), transparent 36%),
-    linear-gradient(180deg, #fffdfc 0%, #fff7f3 100%);
+    radial-gradient(circle at top left, rgba(229, 57, 53, 0.08), transparent 40%),
+    linear-gradient(180deg, #fffdfd 0%, #fff5f5 100%);
 }
 
 .case-shell {
