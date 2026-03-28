@@ -22,9 +22,10 @@
   <link rel="stylesheet" href="css/footer-clean.css">
   <link rel="stylesheet" href="css/footer-premium-desktop.css">
   <link rel="stylesheet" href="css/hero-premium.css">
+  <link rel="stylesheet" href="css/homepage-refined.css">
   <link rel="stylesheet" href="assets/css/animations.css">
 </head>
-<body>
+<body class="homepage">
   <!-- Navigation -->
   <nav class="navbar">
     <div class="navbar-container">
@@ -75,7 +76,7 @@
   </nav>
 
   <!-- Hero Section with Constellation -->
-  <section class="hero">
+  <section class="hero homepage-hero">
     <!-- Floating Particles -->
     <div class="hero-particles">
       <div class="hero-particle"></div>
@@ -83,6 +84,11 @@
       <div class="hero-particle"></div>
       <div class="hero-particle"></div>
       <div class="hero-particle"></div>
+    </div>
+    <div class="hero-atmosphere" aria-hidden="true">
+      <span class="hero-orb hero-orb-left"></span>
+      <span class="hero-orb hero-orb-right"></span>
+      <span class="hero-grid-lines"></span>
     </div>
 
     <div class="hero-container">
@@ -137,7 +143,7 @@
   </section>
 
   <!-- Trusted Retailers Marquee -->
-  <section class="brand-logo-section reveal-section">
+  <section class="brand-logo-section retailer-proof-section reveal-section">
     <div class="logo-section-header">
       <p class="logo-section-title">Trusted By Leading Retailers</p>
       <h3 class="logo-section-subtitle">Building retail infrastructure with Nigeria's reputable retailers</h3>
@@ -229,7 +235,7 @@
   </section>
 
   <!-- Built For Two Sides Section -->
-  <section class="section bg-subtle-pattern">
+  <section class="section bg-subtle-pattern homepage-bifurcation-section">
     <div class="container">
       <div class="section-header reveal-section">
         <span class="section-label">Who We're Built For</span>
@@ -328,7 +334,7 @@
   </section>
 
   <!-- Brand Partners Marquee -->
-  <section class="brand-logo-section reveal-section" style="background: linear-gradient(180deg, #faf9f7 0%, var(--bg-primary) 100%);">
+  <section class="brand-logo-section brand-proof-section reveal-section" style="background: linear-gradient(180deg, #faf9f7 0%, var(--bg-primary) 100%);">
     <div class="logo-section-header">
       <p class="logo-section-title">Brand Partners</p>
       <h3 class="logo-section-subtitle">Scaling ambitious brands across several retail outlets</h3>
@@ -417,7 +423,7 @@
   </section>
 
   <!-- Testimonials Section -->
-  <section class="testimonials-slider-section">
+  <section class="testimonials-slider-section homepage-proof-section">
     <div class="container">
       <div class="testimonials-header reveal-section">
         <span class="testimonials-label">Voices of Brand Partners</span>
@@ -556,7 +562,7 @@
   </section>
 
   <!-- Final CTA Section -->
-  <section class="cta-section reveal-section">
+  <section class="cta-section homepage-final-cta reveal-section">
     <div class="cta-container">
       <h2>Ready to Work With DALA?</h2>
       <p>Join the brands and retailers scaling with structure, discipline, and transparency.</p>
@@ -739,6 +745,7 @@
   <script src="js/dual-card-slider.js"></script>
   <script src="js/smart-navbar.js"></script>
   <script src="js/floating-card.js"></script>
+  <script src="js/homepage-refined.js"></script>
   <script src="assets/js/animations.js"></script>
 <style>
   /* Testimonials CTA button — gradient, auto-width */
