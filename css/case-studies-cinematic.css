@@ -1557,7 +1557,7 @@ body {
      ============================================ */
   .cinematic-stories {
     padding: 4rem 1.5rem;
-    background: var(--cinematic-white);
+    background: var(--cinematic-black);
   }
   
   .cinematic-stories-header {
@@ -1573,7 +1573,7 @@ body {
     font-size: clamp(1.5rem, 6vw, 2rem);
     font-weight: 400;
     line-height: 1.1;
-    color: var(--cinematic-black);
+    color: var(--cinematic-light);
   }
   
   .cinematic-stories-title span {
@@ -1590,7 +1590,7 @@ body {
   .cinematic-stories-subtitle {
     font-size: 0.9rem;
     line-height: 1.6;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.5);
     max-width: 100%;
   }
   
@@ -1656,7 +1656,7 @@ body {
     display: flex;
     flex-direction: row;
     background: var(--cinematic-white);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     overflow: hidden;
     height: 100px;
@@ -1676,6 +1676,7 @@ body {
     flex-direction: column;
     justify-content: center;
     position: relative;
+    background: var(--cinematic-white);
   }
   
   .cinematic-story:not(:first-child) .cinematic-story-number {
@@ -1683,6 +1684,7 @@ body {
     top: 0.5rem;
     right: 0.75rem;
     opacity: 0.08;
+    color: var(--cinematic-black);
   }
   
   .cinematic-story:not(:first-child) .cinematic-story-eyebrow {
@@ -1697,6 +1699,7 @@ body {
     font-weight: 500;
     margin-bottom: 0;
     line-height: 1.3;
+    color: var(--cinematic-black);
   }
   
   .cinematic-story:not(:first-child) .cinematic-story-excerpt,
