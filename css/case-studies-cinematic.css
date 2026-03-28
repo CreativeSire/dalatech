@@ -1337,112 +1337,390 @@ body {
     width: 40px;
   }
   
+  /* ============================================
+     STATS BAR - VERTICAL & TIGHTER (Mobile)
+     ============================================ */
   .cinematic-stats {
-    padding: 4rem 5vw;
+    padding: 2.5rem 1.5rem;
+    background: var(--cinematic-charcoal);
   }
   
   .cinematic-stats-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 0;
+    max-width: 280px;
+    margin: 0 auto;
   }
   
   .cinematic-stat {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
+    text-align: center;
+    position: relative;
+  }
+  
+  .cinematic-stat:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   
   .cinematic-stat:not(:last-child)::after {
     display: none;
   }
   
-  .cinematic-stat:not(:last-child) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  .cinematic-stat-number {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    justify-content: center;
   }
   
+  .cinematic-stat-number span {
+    font-size: 0.5em;
+    color: var(--cinematic-gold);
+  }
+  
+  .cinematic-stat-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  
+  /* ============================================
+     FEATURED STORY (WILSON'S) - PREMIUM MOBILE
+     ============================================ */
   .cinematic-featured {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    background: var(--cinematic-cream);
+    margin: 0;
+    min-height: auto;
   }
   
   .cinematic-featured-visual {
-    min-height: 50vh;
-    order: 2;
+    position: relative;
+    height: 45vh;
+    min-height: 320px;
+    order: 1;
+    overflow: hidden;
   }
   
-  .cinematic-featured-content {
-    padding: 4rem 5vw;
-    order: 1;
+  .cinematic-featured-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .cinematic-featured-visual::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, var(--cinematic-cream), transparent);
+    pointer-events: none;
   }
   
   .cinematic-featured-badge {
-    top: 2rem;
-    left: 2rem;
-    padding: 0.75rem 1.25rem;
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    padding: 0.625rem 1rem;
+    background: rgba(10, 10, 10, 0.9);
+    border: 1px solid rgba(201, 169, 98, 0.3);
+    border-radius: 4px;
     font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cinematic-gold);
+    z-index: 3;
+    backdrop-filter: blur(10px);
+  }
+  
+  .cinematic-featured-content {
+    padding: 2rem 1.5rem 3rem;
+    order: 2;
+    background: var(--cinematic-cream);
+  }
+  
+  .cinematic-featured-eyebrow {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cinematic-red);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .cinematic-featured-eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--cinematic-red);
   }
   
   .cinematic-featured-title {
-    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--cinematic-black);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
   }
   
-  .cinematic-featured-stats {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding-bottom: 2rem;
+  .cinematic-featured-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.6);
     margin-bottom: 2rem;
+    max-width: 100%;
   }
   
+  /* Premium Stats Grid for Wilson's */
+  .cinematic-featured-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  
+  .cinematic-featured-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.375rem;
+  }
+  
+  .cinematic-featured-stat-value {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--cinematic-black);
+    line-height: 1;
+  }
+  
+  .cinematic-featured-stat-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Mobile CTA Button - Full Width */
+  .cinematic-featured-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1.125rem 1.5rem;
+    background: var(--cinematic-gold);
+    color: var(--cinematic-black);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .cinematic-featured-cta svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.5;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Prevent alt text tooltip/overlay */
+  .cinematic-featured-visual img,
+  .cinematic-story-image img {
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  /* ============================================
+     MORE STORIES GRID - COMPACT CARDS
+     ============================================ */
   .cinematic-stories {
-    padding: 6rem 5vw;
+    padding: 4rem 1.5rem;
+    background: var(--cinematic-white);
   }
   
   .cinematic-stories-header {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    text-align: left;
   }
   
   .cinematic-stories-title {
-    font-size: clamp(1.75rem, 7vw, 2.5rem);
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--cinematic-black);
+  }
+  
+  .cinematic-stories-title span {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cinematic-gold);
+    margin-top: 0.5rem;
   }
   
   .cinematic-stories-subtitle {
-    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.5);
     max-width: 100%;
-    font-size: 0.95rem;
   }
   
+  /* Grid - Single column on mobile */
   .cinematic-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
   
   .cinematic-story:nth-child(n) {
-    grid-column: span 1;
+    grid-column: auto;
   }
   
-  .cinematic-story-image {
+  /* First card (Zayith) - Full width featured */
+  .cinematic-story:first-child {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .cinematic-story:first-child .cinematic-story-image {
     aspect-ratio: 16/10;
+    height: auto;
+  }
+  
+  .cinematic-story:first-child .cinematic-story-content {
+    padding: 1.75rem;
+    background: var(--cinematic-black);
+  }
+  
+  .cinematic-story:first-child .cinematic-story-number {
+    font-size: 3.5rem;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0.15;
+  }
+  
+  .cinematic-story:first-child .cinematic-story-eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.75rem;
+  }
+  
+  .cinematic-story:first-child .cinematic-story-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .cinematic-story:first-child .cinematic-story-excerpt {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  
+  .cinematic-story:first-child .cinematic-story-arrow {
+    width: 40px;
+    height: 40px;
+    margin-top: 1.25rem;
+  }
+  
+  /* Other cards - Compact 2-column layout */
+  .cinematic-story:not(:first-child) {
+    display: flex;
+    flex-direction: row;
+    background: var(--cinematic-white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100px;
+  }
+  
+  .cinematic-story:not(:first-child) .cinematic-story-image {
+    width: 100px;
+    min-width: 100px;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+  
+  .cinematic-story:not(:first-child) .cinematic-story-content {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .cinematic-story:not(:first-child) .cinematic-story-number {
+    font-size: 2rem;
+    top: 0.5rem;
+    right: 0.75rem;
+    opacity: 0.08;
+  }
+  
+  .cinematic-story:not(:first-child) .cinematic-story-eyebrow {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.375rem;
+    color: var(--cinematic-gold);
+  }
+  
+  .cinematic-story:not(:first-child) .cinematic-story-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    line-height: 1.3;
+  }
+  
+  .cinematic-story:not(:first-child) .cinematic-story-excerpt,
+  .cinematic-story:not(:first-child) .cinematic-story-arrow {
+    display: none;
+  }
+  
+  /* Zayith card adjustments */
+  .cinematic-story-image {
+    aspect-ratio: auto;
+    position: relative;
+    overflow: hidden;
   }
   
   .cinematic-story-content {
-    padding: 2rem;
-    transform: translateY(0);
+    position: relative;
+    transform: none;
+    background: var(--cinematic-black);
   }
   
   .cinematic-story-excerpt {
     opacity: 1;
-    transform: translateY(0);
-    font-size: 0.9rem;
-  }
-  
-  .cinematic-story-number {
-    font-size: 5rem;
-    top: 1.5rem;
-    right: 1.5rem;
-  }
-  
-  .cinematic-story-title {
-    font-size: 1.5rem;
+    transform: none;
+    color: rgba(255, 255, 255, 0.6);
   }
   
   .cinematic-impact {
