@@ -65,31 +65,65 @@
           <span class="listed-section-badge"><i class="fas fa-thumbs-up"></i> Ideal Partner</span>
           <h2>You are a great fit for DALA if you…</h2>
         </div>
-        <div class="listed-fit-grid">
-          <article class="listed-fit-card" data-animate>
+        <div class="listed-fit-grid listed-carousel" id="listedFitCarousel">
+          <article class="listed-fit-card active" data-animate data-index="0">
             <span class="listed-fit-number">01</span>
-            <div class="listed-fit-icon"><i class="fas fa-box-open"></i></div>
-            <h3>FMCG Products With Proven Demand</h3>
-            <p>Your products have demonstrated market traction and consumer acceptance in retail or direct channels.</p>
+            <div class="listed-fit-media">
+              <img src="../images/generated/get-listed/fit-proven-demand.webp" alt="Retail-ready FMCG products with proven demand on shelf" loading="lazy">
+            </div>
+            <div class="listed-fit-copy">
+              <div class="listed-fit-label">Ideal Partner</div>
+              <h3>FMCG Products With Proven Demand</h3>
+              <p>Your products have demonstrated market traction and consumer acceptance in retail or direct channels.</p>
+            </div>
           </article>
-          <article class="listed-fit-card" data-animate>
+          <article class="listed-fit-card next" data-animate data-index="1">
             <span class="listed-fit-number">02</span>
-            <div class="listed-fit-icon"><i class="fas fa-chart-line"></i></div>
-            <h3>Ready to Scale Operations</h3>
-            <p>You have the infrastructure and capacity to handle increased order volumes and retail distribution.</p>
+            <div class="listed-fit-media">
+              <img src="../images/generated/get-listed/fit-scale-operations.webp" alt="Operations team ready to scale retail fulfillment" loading="lazy">
+            </div>
+            <div class="listed-fit-copy">
+              <div class="listed-fit-label">Ideal Partner</div>
+              <h3>Ready to Scale Operations</h3>
+              <p>You have the infrastructure and capacity to handle increased order volumes and retail distribution.</p>
+            </div>
           </article>
-          <article class="listed-fit-card" data-animate>
+          <article class="listed-fit-card" data-animate data-index="2">
             <span class="listed-fit-number">03</span>
-            <div class="listed-fit-icon"><i class="fas fa-eye"></i></div>
-            <h3>Value Transparency & Data</h3>
-            <p>You believe in clear reporting, open communication, and making decisions based on performance metrics.</p>
+            <div class="listed-fit-media">
+              <img src="../images/generated/get-listed/fit-transparency-data.webp" alt="Retail reporting and transparent data review in store" loading="lazy">
+            </div>
+            <div class="listed-fit-copy">
+              <div class="listed-fit-label">Ideal Partner</div>
+              <h3>Value Transparency & Data</h3>
+              <p>You believe in clear reporting, open communication, and making decisions based on performance metrics.</p>
+            </div>
           </article>
-          <article class="listed-fit-card" data-animate>
+          <article class="listed-fit-card prev" data-animate data-index="3">
             <span class="listed-fit-number">04</span>
-            <div class="listed-fit-icon"><i class="fas fa-handshake"></i></div>
-            <h3>Seek Long-Term Partnerships</h3>
-            <p>You are building for sustainable growth, not quick wins, and value operational excellence.</p>
+            <div class="listed-fit-media">
+              <img src="../images/generated/get-listed/fit-long-term-partnerships.webp" alt="Long-term partnership between brand and retail teams" loading="lazy">
+            </div>
+            <div class="listed-fit-copy">
+              <div class="listed-fit-label">Ideal Partner</div>
+              <h3>Seek Long-Term Partnerships</h3>
+              <p>You are building for sustainable growth, not quick wins, and value operational excellence.</p>
+            </div>
           </article>
+        </div>
+        <div class="listed-carousel-controls">
+          <button class="listed-carousel-btn prev" type="button" aria-label="Previous great-fit card" data-carousel-prev="listedFitCarousel">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <div class="listed-carousel-dots" data-carousel-dots="listedFitCarousel">
+            <button class="listed-carousel-dot active" type="button" aria-label="Show first great-fit card" data-index="0"></button>
+            <button class="listed-carousel-dot" type="button" aria-label="Show second great-fit card" data-index="1"></button>
+            <button class="listed-carousel-dot" type="button" aria-label="Show third great-fit card" data-index="2"></button>
+            <button class="listed-carousel-dot" type="button" aria-label="Show fourth great-fit card" data-index="3"></button>
+          </div>
+          <button class="listed-carousel-btn next" type="button" aria-label="Next great-fit card" data-carousel-next="listedFitCarousel">
+            <i class="fas fa-arrow-right"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -128,13 +162,15 @@
           <span class="listed-section-badge"><i class="fas fa-folder-open"></i> Requirements</span>
           <h2>What we need from you</h2>
         </div>
-        <div class="listed-req-grid">
-          <article class="listed-req-card" data-animate>
-            <div class="listed-req-header">
-              <div class="listed-req-icon"><i class="fas fa-file-contract"></i></div>
-              <h3>Legal Documentation</h3>
+        <div class="listed-req-grid listed-carousel" id="listedReqCarousel">
+          <article class="listed-req-card active" data-animate data-index="0">
+            <div class="listed-req-media">
+              <img src="../images/generated/get-listed/requirement-legal-documentation.webp" alt="Legal documentation and compliance review" loading="lazy">
+              <div class="listed-req-number">01</div>
             </div>
             <div class="listed-req-body">
+              <div class="listed-req-label">Requirements</div>
+              <h3>Legal Documentation</h3>
               <ul>
                 <li><i class="fas fa-check-circle"></i> CAC Certificate of Registration</li>
                 <li><i class="fas fa-check-circle"></i> Tax Identification Number (TIN)</li>
@@ -142,12 +178,14 @@
               </ul>
             </div>
           </article>
-          <article class="listed-req-card" data-animate>
-            <div class="listed-req-header">
-              <div class="listed-req-icon"><i class="fas fa-award"></i></div>
-              <h3>Product Standards</h3>
+          <article class="listed-req-card next" data-animate data-index="1">
+            <div class="listed-req-media">
+              <img src="../images/generated/get-listed/requirement-product-standards.webp" alt="Retail quality assurance and product standards check" loading="lazy">
+              <div class="listed-req-number">02</div>
             </div>
             <div class="listed-req-body">
+              <div class="listed-req-label">Requirements</div>
+              <h3>Product Standards</h3>
               <ul>
                 <li><i class="fas fa-check-circle"></i> Minimum 6 months shelf life</li>
                 <li><i class="fas fa-check-circle"></i> Consistent product quality</li>
@@ -155,12 +193,14 @@
               </ul>
             </div>
           </article>
-          <article class="listed-req-card" data-animate>
-            <div class="listed-req-header">
-              <div class="listed-req-icon"><i class="fas fa-cogs"></i></div>
-              <h3>Business Operations</h3>
+          <article class="listed-req-card prev" data-animate data-index="2">
+            <div class="listed-req-media">
+              <img src="../images/generated/get-listed/requirement-business-operations.webp" alt="Business operations team coordinating fulfillment and delivery" loading="lazy">
+              <div class="listed-req-number">03</div>
             </div>
             <div class="listed-req-body">
+              <div class="listed-req-label">Requirements</div>
+              <h3>Business Operations</h3>
               <ul>
                 <li><i class="fas fa-check-circle"></i> Active business for 12+ months</li>
                 <li><i class="fas fa-check-circle"></i> Dedicated account manager</li>
@@ -168,6 +208,19 @@
               </ul>
             </div>
           </article>
+        </div>
+        <div class="listed-carousel-controls">
+          <button class="listed-carousel-btn prev" type="button" aria-label="Previous requirement card" data-carousel-prev="listedReqCarousel">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <div class="listed-carousel-dots" data-carousel-dots="listedReqCarousel">
+            <button class="listed-carousel-dot active" type="button" aria-label="Show first requirement card" data-index="0"></button>
+            <button class="listed-carousel-dot" type="button" aria-label="Show second requirement card" data-index="1"></button>
+            <button class="listed-carousel-dot" type="button" aria-label="Show third requirement card" data-index="2"></button>
+          </div>
+          <button class="listed-carousel-btn next" type="button" aria-label="Next requirement card" data-carousel-next="listedReqCarousel">
+            <i class="fas fa-arrow-right"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -267,29 +320,113 @@
       observer.observe(el);
     });
 
-    // 3D Tilt Effect for Requirement Cards (Desktop only)
-    if (window.innerWidth > 1100) {
-      const reqCards = document.querySelectorAll('.listed-req-card');
-      
-      reqCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          
-          const rotateX = (y - centerY) / 20;
-          const rotateY = (centerX - x) / 20;
-          
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(60px) scale(1.02)`;
+    function initListedCarousel(carouselId, interval = 5200) {
+      const carousel = document.getElementById(carouselId);
+      if (!carousel) return;
+
+      const cards = Array.from(carousel.querySelectorAll('[data-index]'));
+      const dots = Array.from(document.querySelectorAll(`[data-carousel-dots="${carouselId}"] .listed-carousel-dot`));
+      const prevBtn = document.querySelector(`[data-carousel-prev="${carouselId}"]`);
+      const nextBtn = document.querySelector(`[data-carousel-next="${carouselId}"]`);
+      let currentIndex = 0;
+      let timer = null;
+      let touchStartX = 0;
+
+      const setHeight = () => {
+        let maxHeight = 0;
+        cards.forEach(card => {
+          card.style.visibility = 'hidden';
+          card.style.position = 'absolute';
+          card.style.opacity = '1';
+          maxHeight = Math.max(maxHeight, card.offsetHeight);
+          card.style.visibility = '';
+          card.style.position = '';
+          card.style.opacity = '';
         });
-        
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = '';
+        carousel.style.height = `${maxHeight + (window.innerWidth <= 768 ? 28 : 42)}px`;
+      };
+
+      const applyState = () => {
+        const total = cards.length;
+        cards.forEach((card, index) => {
+          card.classList.remove('active', 'prev', 'next', 'is-away-left', 'is-away-right');
+          if (index === currentIndex) {
+            card.classList.add('active');
+            return;
+          }
+          if (index === (currentIndex - 1 + total) % total) {
+            card.classList.add('prev');
+            return;
+          }
+          if (index === (currentIndex + 1) % total) {
+            card.classList.add('next');
+            return;
+          }
+
+          const forward = (index - currentIndex + total) % total;
+          const backward = (currentIndex - index + total) % total;
+          card.classList.add(forward < backward ? 'is-away-right' : 'is-away-left');
+        });
+
+        dots.forEach((dot, index) => dot.classList.toggle('active', index === currentIndex));
+        setHeight();
+      };
+
+      const goTo = (index) => {
+        currentIndex = (index + cards.length) % cards.length;
+        applyState();
+      };
+
+      const start = () => {
+        stop();
+        timer = window.setInterval(() => goTo(currentIndex + 1), interval);
+      };
+
+      const stop = () => {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      };
+
+      prevBtn?.addEventListener('click', () => {
+        goTo(currentIndex - 1);
+        start();
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        goTo(currentIndex + 1);
+        start();
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          goTo(index);
+          start();
         });
       });
+
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+      carousel.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0].clientX;
+        stop();
+      }, { passive: true });
+      carousel.addEventListener('touchend', (event) => {
+        const deltaX = event.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(deltaX) > 40) {
+          goTo(currentIndex + (deltaX < 0 ? 1 : -1));
+        }
+        start();
+      }, { passive: true });
+
+      window.addEventListener('resize', setHeight);
+      applyState();
+      start();
     }
+
+    initListedCarousel('listedFitCarousel');
+    initListedCarousel('listedReqCarousel');
   </script>
 <script defer src="/js/wip-badge.js"></script>
 </body>
