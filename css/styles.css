@@ -4479,3 +4479,9 @@ p {
   }
   .nav-dropdown.is-open .nav-dropdown-menu { display: block; }
 }
+
+/* Hide all carousel/slider navigation controls */
+.benefits-nav, .benefits-dots, .carousel-nav, .carousel-progress, .floating-card-dots, .testimonials-nav, .testimonials-dots {
+  display: none !important;
+}
+
