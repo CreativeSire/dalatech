@@ -149,26 +149,6 @@
     animation: fade-in-up 0.8s ease-out 0.4s both;
   }
 
-  /* Hero Video */
-  .hero-video-container {
-    width: 100%;
-    max-width: 720px;
-    margin: 0 auto 40px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    animation: fade-in-up 0.8s ease-out 0.5s both;
-  }
-
-  .hero-video {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
   /* CTA Buttons */
   .hero-cta-group {
     display: flex;
@@ -194,28 +174,13 @@
     overflow: hidden;
   }
 
-  /* Primary = Cream (DALA FOR SUPERMARKETS) */
   .hero-btn-primary {
-    background: #f5f0e8;
-    color: var(--dark);
-    border: 0.5px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  }
-
-  .hero-btn-primary:hover {
-    background: #ede8de;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Secondary = Gradient (DALA FOR BRANDS) */
-  .hero-btn-secondary {
     background: linear-gradient(135deg, #E84A3C 0%, #FF8C42 100%);
     color: white;
     box-shadow: 0 8px 30px rgba(232, 74, 60, 0.3);
   }
 
-  .hero-btn-secondary::before {
+  .hero-btn-primary::before {
     content: '';
     position: absolute;
     top: 0;
@@ -226,13 +191,26 @@
     transition: left 0.5s ease;
   }
 
-  .hero-btn-secondary:hover {
+  .hero-btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(229, 57, 53, 0.4);
   }
 
-  .hero-btn-secondary:hover::before {
+  .hero-btn-primary:hover::before {
     left: 100%;
+  }
+
+  .hero-btn-secondary {
+    background: #f5f0e8;
+    color: var(--dark);
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  .hero-btn-secondary:hover {
+    background: #ede8de;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .hero-btn i {
@@ -411,26 +389,6 @@
     animation: fade-in-up 0.8s ease-out 0.4s both;
   }
 
-  /* Hero Video - Mobile */
-  .hero-video-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto 24px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-    animation: fade-in-up 0.8s ease-out 0.5s both;
-  }
-
-  .hero-video {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
   /* CTA Buttons - Side by side on mobile */
   .hero-cta-group {
     display: flex;
@@ -463,27 +421,13 @@
     line-height: 1;
   }
 
-  /* Primary = Cream (DALA FOR SUPERMARKETS) */
   .hero-btn-primary {
-    background: #f5f0e8;
-    color: var(--dark);
-    border: 0.5px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  }
-
-  .hero-btn-primary:active {
-    background: var(--gray-50);
-    transform: scale(0.98);
-  }
-
-  /* Secondary = Gradient (DALA FOR BRANDS) */
-  .hero-btn-secondary {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
     box-shadow: 0 8px 30px rgba(229, 57, 53, 0.3);
   }
 
-  .hero-btn-secondary::before {
+  .hero-btn-primary::before {
     content: '';
     position: absolute;
     top: 0;
@@ -494,13 +438,25 @@
     transition: left 0.5s ease;
   }
 
-  .hero-btn-secondary:active {
+  .hero-btn-primary:active {
     transform: scale(0.98);
     box-shadow: 0 4px 15px rgba(229, 57, 53, 0.2);
   }
 
-  .hero-btn-secondary:active::before {
+  .hero-btn-primary:active::before {
     left: 100%;
+  }
+
+  .hero-btn-secondary {
+    background: #f5f0e8;
+    color: var(--dark);
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .hero-btn-secondary:active {
+    background: var(--gray-50);
+    transform: scale(0.98);
   }
 
   .hero-btn i {
