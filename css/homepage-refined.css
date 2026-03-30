@@ -690,6 +690,7 @@
   line-height: 1.1;
   margin-bottom: 0.875rem;
   text-wrap: balance;
+  color: var(--dark);
 }
 
 .homepage .homepage-final-cta p {
@@ -707,11 +708,41 @@
 
 .homepage .homepage-final-cta .btn {
   min-height: 52px;
-  padding: 0.75rem 1.75rem;
-  border-radius: 12px;
+  padding: 0.875rem 2rem;
+  border-radius: 100px;
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.3s var(--ease-out-expo);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage .homepage-final-cta .btn-primary {
+  background: linear-gradient(135deg, #ff8a1d 0%, #ff6b35 100%);
+  color: white;
+  box-shadow: 0 4px 16px rgba(229, 57, 53, 0.25);
+  border: none;
+}
+
+.homepage .homepage-final-cta .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(229, 57, 53, 0.35);
+}
+
+.homepage .homepage-final-cta .btn-secondary {
+  background: white;
+  color: var(--dark);
+  border: 1px solid rgba(13, 13, 13, 0.1);
+  box-shadow: 0 2px 8px rgba(13, 13, 13, 0.06);
+}
+
+.homepage .homepage-final-cta .btn-secondary:hover {
+  background: var(--gray-50);
+  transform: translateY(-2px);
+  border-color: rgba(13, 13, 13, 0.15);
+  box-shadow: 0 4px 12px rgba(13, 13, 13, 0.1);
 }
 
 .homepage .wip-badge {
