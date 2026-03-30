@@ -1,84 +1,58 @@
 /* ============================================
-   MOBILE PREMIUM REDESIGN - SLAP AND KILL EDITION
-   Fixes: Menu, Blank Cards, Layout, 3D Effects
+   PREMIUM MOBILE EXPERIENCE
+   Elevated mobile design with refined animations
    ============================================ */
 
 /* ============================================
-   MOBILE CRITICAL FIXES - Overlap Issues
+   BASE MOBILE TYPOGRAPHY & SPACING
    ============================================ */
 @media (max-width: 768px) {
-  /* Fix z-index stacking context */
-  .section {
-    position: relative !important;
-    z-index: auto !important;
+  :root {
+    --mobile-spacing-xs: 0.5rem;
+    --mobile-spacing-sm: 0.75rem;
+    --mobile-spacing-md: 1rem;
+    --mobile-spacing-lg: 1.5rem;
+    --mobile-spacing-xl: 2rem;
+    --mobile-radius: 16px;
+    --mobile-radius-sm: 12px;
+    --mobile-radius-lg: 20px;
   }
 
-  .section-header {
-    position: relative !important;
-    z-index: 10 !important;
-    background: transparent;
+  html {
+    font-size: 15px;
   }
 
-  /* Ensure cards don't overlap */
-  .container {
-    position: relative !important;
-    z-index: 1 !important;
+  body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Fix for service/holo cards overlapping */
-  .services-holo-section,
-  .holo-grid,
-  .holo-card {
-    position: relative !important;
-    z-index: 1 !important;
+  /* Premium touch targets */
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
   }
 
-  .holo-card {
-    margin-bottom: 20px !important;
-    transform: none !important;
-    display: block !important;
-    clear: both !important;
-    float: none !important;
+  /* ============================================
+     PREMIUM MOBILE NAVIGATION
+     ============================================ */
+  .navbar {
+    padding: 0.75rem 1rem;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
-  .holo-card-inner {
-    position: relative !important;
-    z-index: 2 !important;
-    transform: none !important;
+  .navbar-container {
+    padding: 0;
   }
 
-  /* Fix section stacking */
-  section {
-    position: relative !important;
-    isolation: isolate !important;
+  .logo-img {
+    height: 36px;
   }
 
-  h1, h2, h3 {
-    position: relative !important;
-    z-index: 5 !important;
-  }
-
-  /* Fix crystal section overlapping */
-  .crystal-section {
-    position: relative !important;
-    z-index: 1 !important;
-    overflow: visible !important;
-  }
-
-  .crystal-island {
-    position: relative !important;
-    z-index: 2 !important;
-  }
-}
-
-/* ============================================
-   MOBILE MENU - Fixed Overlay Issue
-   ============================================ */
-@media (max-width: 768px) {
-  /* Fix mobile menu from covering entire page */
+  /* Hamburger Animation */
   .mobile-menu-btn {
-    position: relative;
-    z-index: 1001;
     width: 44px;
     height: 44px;
     display: flex;
@@ -86,19 +60,21 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
-    background: rgba(255,255,255,0.9);
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(229, 57, 53, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-menu-btn:active {
+    background: rgba(229, 57, 53, 0.1);
+    transform: scale(0.95);
   }
 
   .mobile-menu-btn span {
-    width: 20px;
+    width: 22px;
     height: 2px;
     background: var(--dark);
     border-radius: 2px;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .mobile-menu-btn.active span:nth-child(1) {
@@ -107,917 +83,615 @@
 
   .mobile-menu-btn.active span:nth-child(2) {
     opacity: 0;
+    transform: scaleX(0);
   }
 
   .mobile-menu-btn.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
-  /* Compact mobile nav overlay */
+  /* Premium Mobile Menu Overlay */
   .nav-links {
     position: fixed;
-    top: 80px;
-    left: 16px;
-    right: 16px;
-    background: rgba(255,255,255,0.98);
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(0,0,0,0.05);
-    transform: translateY(-20px);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 999;
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
-  }
-
-  .nav-links.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-links .nav-link {
-    display: block;
-    padding: 14px 16px;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--gray-700);
-    border-radius: 12px;
-    transition: all 0.2s ease;
-    margin-bottom: 4px;
-  }
-
-  .nav-links .nav-link:hover,
-  .nav-links .nav-link:active {
-    background: var(--primary-lighter);
-    color: var(--primary);
-  }
-
-  .nav-links .nav-cta {
-    display: block;
-    margin-top: 12px;
-    padding: 14px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-    border-radius: 12px;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
-  }
-}
-
-/* ============================================
-   HERO SECTION - Mobile Premium
-   ============================================ */
-@media (max-width: 768px) {
-  .hero {
-    min-height: auto;
-    padding: 120px 20px 60px;
-    text-align: center;
-  }
-
-  .hero-container {
-    padding: 0;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    margin: 0 auto 20px;
-    padding: 10px 18px;
-    font-size: 12px;
-    background: rgba(229, 57, 53, 0.1);
-    border: 1px solid rgba(229, 57, 53, 0.2);
-    border-radius: 100px;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
-  }
-
-  .hero h1 em {
-    display: block;
-    color: var(--primary);
-  }
-
-  .hero p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--gray-600);
-    margin-bottom: 28px;
-    max-width: 100%;
-  }
-
-  /* Stacked CTA buttons */
-  .hero-cta {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 280px;
-    margin: 0 auto;
-  }
-
-  .hero-cta .btn {
-    width: 100%;
-    padding: 16px 24px;
-    font-size: 15px;
-    font-weight: 600;
-    border-radius: 14px;
-    text-align: center;
-  }
-
-  .hero-cta .btn--primary {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-    box-shadow: 0 8px 24px rgba(229, 57, 53, 0.35);
-  }
-
-  .hero-cta .btn--secondary {
-    background: white;
-    color: var(--dark);
-    border: 1.5px solid var(--gray-200);
-  }
-}
-
-/* ============================================
-   RETAILER MARQUEE - Mobile Optimized
-   ============================================ */
-@media (max-width: 768px) {
-  .brand-logo-section {
-    padding: 24px 0;
-  }
-
-  .logo-section-header {
-    padding: 0 20px;
-    margin-bottom: 16px;
-  }
-
-  .logo-section-title {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-  }
-
-  .logo-section-subtitle {
-    font-size: 22px;
-    margin-bottom: 8px;
-  }
-
-  .logo-section-desc {
-    font-size: 14px;
-  }
-
-  .brand-marquee {
-    padding: 16px 0;
-  }
-
-  .brand-logo-card {
-    width: 160px;
-    height: 120px;
-    margin: 0 14px;
-    padding: 16px;
-    border-radius: 16px;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    animation: breathe-mobile 3s ease-in-out infinite;
-  }
-  
-  .brand-logo-card:nth-child(1) { animation-delay: 0s; }
-  .brand-logo-card:nth-child(2) { animation-delay: 0.3s; }
-  .brand-logo-card:nth-child(3) { animation-delay: 0.6s; }
-  .brand-logo-card:nth-child(4) { animation-delay: 0.9s; }
-  .brand-logo-card:nth-child(5) { animation-delay: 1.2s; }
-  .brand-logo-card:nth-child(6) { animation-delay: 1.5s; }
-  .brand-logo-card:nth-child(7) { animation-delay: 1.8s; }
-  
-  @keyframes breathe-mobile {
-    0%, 100% {
-      transform: scale(1);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    }
-    50% {
-      transform: scale(1.06);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    }
-  }
-
-  .brand-logo-card img {
-    max-width: 100%;
-    max-height: 80px;
-    object-fit: contain;
-  }
-}
-
-/* ============================================
-   TWO-SIDED CARDS - No More Itemized Lists!
-   ============================================ */
-@media (max-width: 768px) {
-  .two-sided-section,
-  .section:has(.cards-container) {
-    padding: 40px 20px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .section-header h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
-  }
-
-  .section-header p {
-    font-size: 15px;
-    color: var(--gray-600);
-  }
-
-  /* Stack cards vertically with proper spacing */
-  .cards-container,
-  .two-column.two-sides-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Fix overlapping cards */
-  .card-3d,
-  .side-card {
-    background: white;
-    border-radius: 24px;
-    padding: 28px 24px;
-    box-shadow: 
-      0 4px 20px rgba(0,0,0,0.08),
-      0 1px 3px rgba(0,0,0,0.05);
-    transform-style: preserve-3d;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(0,0,0,0.04);
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    margin: 0;
-    display: block;
-    clear: both;
-  }
-
-  .card-3d::before {
-    content: '';
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 5rem 2rem 2rem;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
   }
 
-  .card-3d:hover {
-    transform: perspective(1000px) rotateX(0deg) translateY(-4px);
-    box-shadow: 
-      0 12px 40px rgba(0,0,0,0.12),
-      0 4px 12px rgba(229, 57, 53, 0.1);
-  }
-
-  .card-3d:hover::before {
+  .nav-links.active {
     opacity: 1;
-  }
-
-  /* Card for Supermarkets - Red theme */
-  .card-3d.supermarket::before {
-    background: linear-gradient(90deg, var(--primary) 0%, #FF6B6B 100%);
-  }
-
-  /* Card for Brands - Dark theme */
-  .card-3d.brand::before {
-    background: linear-gradient(90deg, var(--dark) 0%, #4A4A6A 100%);
-  }
-
-  .card-3d-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    background: var(--gray-100);
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--gray-700);
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .card-3d.supermarket .card-3d-badge {
-    background: var(--primary-lighter);
-    color: var(--primary);
-  }
-
-  .card-3d.brand .card-3d-badge {
-    background: var(--dark-800);
-    color: white;
-  }
-
-  .card-3d h3 {
-    font-size: 22px;
-    margin-bottom: 12px;
-    color: var(--dark);
-  }
-
-  .card-3d p {
-    font-size: 14px;
-    color: var(--gray-600);
-    line-height: 1.7;
-    margin-bottom: 20px;
-  }
-
-  /* Feature pills instead of itemized lists */
-  .card-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-
-  .feature-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    background: var(--gray-50);
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--gray-700);
-    border: 1px solid var(--gray-200);
-  }
-
-  .feature-pill i {
-    color: var(--primary);
-    font-size: 11px;
-  }
-
-  .card-3d .btn {
-    width: 100%;
-    padding: 14px 20px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .card-3d.supermarket .btn {
-    background: var(--primary);
-    color: white;
-    box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
-  }
-
-  .card-3d.brand .btn {
-    background: var(--dark);
-    color: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  }
-}
-
-/* ============================================
-   TESTIMONIALS - Mobile Premium
-   ============================================ */
-@media (max-width: 768px) {
-  .testimonials-slider-section {
-    padding: 32px 0 24px;
-  }
-
-  .testimonials-header {
-    margin-bottom: 20px;
-    padding: 0 20px;
-  }
-
-  .testimonials-title {
-    font-size: 1.5rem;
-  }
-
-  .testimonials-subtitle {
-    font-size: 0.875rem;
-  }
-
-  .testimonial-section {
-    padding: 40px 20px;
-  }
-
-  .testimonial-card {
-    background: white;
-    border-radius: 24px;
-    padding: 28px 24px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    margin: 0 10px;
-  }
-
-  .testimonial-stars {
-    color: #FFB800;
-    font-size: 14px;
-    margin-bottom: 16px;
-    letter-spacing: 2px;
-  }
-
-  .testimonial-quote {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--gray-700);
-    margin-bottom: 24px;
-    font-style: italic;
-  }
-
-  .testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .author-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 600;
-    font-size: 18px;
-  }
-
-  .author-info h4 {
-    font-size: 15px;
-    color: var(--dark);
-    margin-bottom: 2px;
-  }
-
-  .author-info p {
-    font-size: 13px;
-    color: var(--gray-500);
-  }
-
-  /* Swipe indicator */
-  .swipe-indicator {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 24px;
-  }
-
-  .swipe-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--gray-300);
-    transition: all 0.3s ease;
-  }
-
-  .swipe-dot.active {
-    width: 24px;
-    border-radius: 4px;
-    background: var(--primary);
-  }
-
-  /* Testimonial Slider Card - Mobile Compact */
-  .testimonials-slider-container {
-    padding: 0 16px;
-  }
-
-  .testimonial-slide-card {
-    border-radius: 20px;
-    padding: 24px 20px;
-    max-width: 340px;
-    margin: 0 auto;
-  }
-
-  .testimonial-slide-badge {
-    font-size: 10px;
-    padding: 4px 10px;
-    margin-bottom: 12px;
-  }
-
-  .testimonial-slide-stars {
-    font-size: 12px;
-    margin-bottom: 12px;
-  }
-
-  .testimonial-slide-text {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 16px;
-  }
-
-  .testimonial-slide-author {
-    margin-bottom: 16px;
-  }
-
-  .author-slide-avatar {
-    width: 40px;
-    height: 40px;
-    font-size: 14px;
-  }
-
-  .author-slide-info h4 {
-    font-size: 14px;
-  }
-
-  .author-slide-info p {
-    font-size: 12px;
-  }
-
-  .testimonial-slide-link {
-    padding: 10px 16px;
-    font-size: 13px;
-  }
-
-  .testimonials-nav {
-    margin-top: 20px;
-    gap: 16px;
-  }
-
-/* ============================================
-   CTA SECTION - Mobile Impact
-   ============================================ */
-@media (max-width: 768px) {
-  .cta-section {
-    padding: 60px 20px;
-    text-align: center;
-    background: #0f0a0a;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(229, 57, 53, 0.15) 0%, transparent 50%);
-    animation: cta-pulse 8s ease-in-out infinite;
-  }
-
-  @keyframes cta-pulse {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.1); opacity: 0.8; }
-  }
-
-  .cta-section h2 {
-    font-size: 28px;
-    color: white;
-    margin-bottom: 12px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .cta-section p {
-    font-size: 15px;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 28px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .cta-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 280px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .cta-buttons .btn {
-    width: 100%;
-    padding: 16px 24px;
-    border-radius: 14px;
-    font-size: 15px;
-    font-weight: 600;
-  }
-
-  .cta-buttons .btn-white {
-    background: white;
-    color: var(--dark);
-    box-shadow: 0 4px 20px rgba(255,255,255,0.2);
-  }
-
-  .cta-buttons .btn-outline {
-    background: transparent;
-    color: white;
-    border: 1.5px solid rgba(255,255,255,0.3);
-  }
-}
-
-/* ============================================
-   FOOTER - Mobile Clean
-   ============================================ */
-@media (max-width: 768px) {
-  .footer {
-    padding: 40px 20px 24px;
-    background: var(--dark);
-  }
-
-  .footer-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  /* Hide footer brand/logo section on mobile for cleaner look */
-  .footer-brand {
-    display: none;
-  }
-
-  .footer-links h4 {
-    font-size: 13px;
-    font-weight: 600;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 16px;
-  }
-
-  .footer-links a {
-    display: block;
-    padding: 8px 0;
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    transition: color 0.2s ease;
-  }
-
-  .footer-links a:hover {
-    color: white;
-  }
-
-  .footer-contact p {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 10px;
-  }
-
-  .footer-bottom {
-    margin-top: 32px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    text-align: center;
-  }
-
-  .footer-bottom p {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-  }
-}
-
-/* ============================================
-   3D FLOATING ANIMATION FOR MOBILE
-   ============================================ */
-@media (max-width: 768px) {
-  .float-3d {
-    animation: mobile-float-3d 6s ease-in-out infinite;
-    transform-style: preserve-3d;
-  }
-
-  @keyframes mobile-float-3d {
-    0%, 100% { 
-      transform: translateY(0) rotateX(0deg) rotateY(0deg);
-    }
-    25% { 
-      transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
-    }
-    50% { 
-      transform: translateY(-4px) rotateX(-1deg) rotateY(2deg);
-    }
-    75% { 
-      transform: translateY(-12px) rotateX(1deg) rotateY(-1deg);
-    }
-  }
-
-  /* Shimmer effect for cards */
-  .shimmer {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .shimmer::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,0.2),
-      transparent
-    );
-    animation: shimmer 3s infinite;
-  }
-
-  @keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 200%; }
-  }
-
-  /* Glow pulse for important elements */
-  .glow-pulse {
-    animation: glow-pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes glow-pulse {
-    0%, 100% { 
-      box-shadow: 0 0 20px rgba(229, 57, 53, 0.2);
-    }
-    50% { 
-      box-shadow: 0 0 40px rgba(229, 57, 53, 0.4);
-    }
-  }
-
-  /* Parallax scroll effect for mobile */
-  .parallax-mobile {
-    will-change: transform;
-    transition: transform 0.1s linear;
-  }
-}
-
-/* ============================================
-   UTILITY CLASSES FOR MOBILE
-   ============================================ */
-@media (max-width: 768px) {
-  .hide-mobile {
-    display: none !important;
-  }
-
-  .show-mobile {
-    display: block !important;
-  }
-
-  .text-center-mobile {
-    text-align: center;
-  }
-
-  .full-width-mobile {
-    width: 100%;
-  }
-
-  .stack-mobile {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  /* Remove blank/empty cards */
-  .card:empty,
-  .card-3d:empty {
-    display: none !important;
-  }
-
-  /* Ensure all cards have content */
-  .card:not(:has(*)),
-  .card-3d:not(:has(*)) {
-    display: none !important;
-  }
-}
-
-/* ============================================
-   LOADING STATES - Premium
-   ============================================ */
-@media (max-width: 768px) {
-  .skeleton {
-    background: linear-gradient(
-      90deg,
-      var(--gray-100) 0%,
-      var(--gray-200) 50%,
-      var(--gray-100) 100%
-    );
-    background-size: 200% 100%;
-    animation: skeleton-loading 1.5s infinite;
-    border-radius: 8px;
-  }
-
-  @keyframes skeleton-loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-}
-
-/* ============================================
-   SCROLL ANIMATIONS - Mobile
-   ============================================ */
-@media (max-width: 768px) {
-  .reveal-mobile {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .reveal-mobile.revealed {
-    opacity: 1;
+    visibility: visible;
     transform: translateY(0);
   }
 
-  .reveal-left {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .reveal-left.revealed {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .reveal-right {
-    opacity: 0;
-    transform: translateX(30px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .reveal-right.revealed {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  /* Stagger children animations */
-  .stagger-children > * {
+  .nav-link {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
   }
 
-  .stagger-children.revealed > *:nth-child(1) { animation: fade-up 0.5s 0.1s forwards; }
-  .stagger-children.revealed > *:nth-child(2) { animation: fade-up 0.5s 0.2s forwards; }
-  .stagger-children.revealed > *:nth-child(3) { animation: fade-up 0.5s 0.3s forwards; }
-  .stagger-children.revealed > *:nth-child(4) { animation: fade-up 0.5s 0.4s forwards; }
+  .nav-links.active .nav-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-  @keyframes fade-up {
-    to {
-      opacity: 1;
-      transform: translateY(0);
+  .nav-links.active .nav-link:nth-child(1) { transition-delay: 0.1s; }
+  .nav-links.active .nav-link:nth-child(2) { transition-delay: 0.15s; }
+  .nav-links.active .nav-link:nth-child(3) { transition-delay: 0.2s; }
+  .nav-links.active .nav-link:nth-child(4) { transition-delay: 0.25s; }
+  .nav-links.active .nav-link:nth-child(5) { transition-delay: 0.3s; }
+
+  .nav-link:active {
+    background: var(--primary-subtle);
+    color: var(--primary);
+  }
+
+  .nav-link.active {
+    color: var(--primary);
+  }
+
+  /* ============================================
+     PREMIUM MOBILE HERO
+     ============================================ */
+  .hero.hero--inner {
+    min-height: auto;
+    padding: 7rem 1.25rem 3rem;
+  }
+
+  .hero-container {
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+    letter-spacing: 0.15em;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  .hero-cta-group {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .btn-large {
+    width: 100%;
+    max-width: 320px;
+    padding: 1.1rem 2rem;
+    font-size: 1rem;
+    border-radius: 100px;
+  }
+
+  /* ============================================
+     PREMIUM MOBILE CARDS
+     ============================================ */
+  .floating-card {
+    border-radius: var(--mobile-radius-lg);
+    overflow: hidden;
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.08),
+      0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .floating-card-media {
+    height: 200px;
+  }
+
+  .floating-card-body {
+    padding: 1.5rem;
+  }
+
+  .floating-card-badge {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.875rem;
+    letter-spacing: 0.08em;
+  }
+
+  .floating-card-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .floating-card-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .floating-feature-item {
+    font-size: 0.85rem;
+    padding: 0.35rem 0;
+  }
+
+  /* ============================================
+     PREMIUM MOBILE SECTIONS
+     ============================================ */
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+    line-height: 1.15;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     PREMIUM MOBILE LOGO MARQUEE
+     ============================================ */
+  .brand-logo-section {
+    padding: 2.5rem 0;
+  }
+
+  .logo-section-header {
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .logo-section-title {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.875rem;
+  }
+
+  .logo-section-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .logo-section-desc {
+    font-size: 0.95rem;
+  }
+
+  .brand-logo-card {
+    height: 100px;
+    min-width: 140px;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  /* ============================================
+     PREMIUM MOBILE BENEFITS/SLIDER
+     ============================================ */
+  .benefits-slider-section {
+    padding: 3rem 0;
+  }
+
+  .benefits-header {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  .benefits-label {
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .benefits-title {
+    font-size: 1.75rem;
+  }
+
+  .benefits-subtitle {
+    font-size: 1rem;
+  }
+
+  .benefit-slide-card {
+    border-radius: var(--mobile-radius-lg);
+    margin: 0 1rem;
+  }
+
+  .benefit-slide-image {
+    height: 220px;
+  }
+
+  .benefit-slide-content {
+    padding: 1.5rem;
+  }
+
+  .benefit-slide-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+    margin: -24px 0 1rem;
+  }
+
+  .benefit-slide-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .benefit-slide-content p {
+    font-size: 0.95rem;
+  }
+
+  .benefit-slide-features li {
+    font-size: 0.9rem;
+  }
+
+  /* ============================================
+     PREMIUM MOBILE SERVICES
+     ============================================ */
+  .services-section {
+    padding: 3rem 1rem;
+  }
+
+  .services-section .section-label {
+    background: linear-gradient(135deg, #E53935 0%, #C62828 100%);
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.6rem 1.25rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* ============================================
+     PREMIUM MOBILE CTA
+     ============================================ */
+  .cta-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .cta-container {
+    padding: 0;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+    line-height: 1.15;
+  }
+
+  .cta-section > .cta-container > p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.875rem;
+    width: 100%;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 1.1rem 2rem;
+    font-size: 1rem;
+    border-radius: 100px;
+  }
+
+  .cta-buttons .btn-primary {
+    background: linear-gradient(135deg, #ff8a1d 0%, #ff6b35 100%);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+  }
+
+  /* ============================================
+     PREMIUM MOBILE FOOTER
+     ============================================ */
+  .footer {
+    padding: 2.5rem 0 1.5rem;
+  }
+
+  .footer-brand {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .footer-logo img {
+    height: 40px;
+    margin: 0 auto 1rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.95rem;
+  }
+
+  .footer-accordion {
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-accordion-item {
+    border-radius: var(--mobile-radius);
+    overflow: hidden;
+  }
+
+  .footer-accordion-header {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .footer-accordion-content {
+    padding: 0 1.25rem;
+  }
+
+  .footer-links-grid {
+    padding: 0.75rem 0 1.25rem;
+    gap: 0.5rem;
+  }
+
+  .footer-link {
+    padding: 0.75rem 0;
+    font-size: 0.95rem;
+  }
+
+  .footer-contact-card {
+    padding: 1.5rem;
+    border-radius: var(--mobile-radius);
+    margin-bottom: 2rem;
+  }
+
+  .footer-contact-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-contact-item {
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+  }
+
+  .footer-social-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-social-grid {
+    gap: 0.75rem;
+  }
+
+  .social-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding-top: 1.5rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.85rem;
+  }
+
+  .footer-legal {
+    gap: 1rem;
+  }
+
+  .footer-legal-link {
+    font-size: 0.85rem;
+  }
+
+  /* ============================================
+     PREMIUM MOBILE CASE STUDIES
+     ============================================ */
+  .study-hero {
+    padding: 5rem 1.25rem 2.5rem;
+    min-height: auto;
+  }
+
+  .study-hero-logo {
+    width: 56px;
+    height: 56px;
+    padding: 0.625rem;
+  }
+
+  .study-hero-title {
+    font-size: 1.875rem;
+    line-height: 1.1;
+  }
+
+  .study-hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .study-hero-stats {
+    flex-direction: row;
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .study-hero-stat {
+    flex: 1 1 45%;
+    min-width: 120px;
+  }
+
+  .study-hero-stat-value {
+    font-size: 1.375rem;
+  }
+
+  .study-hero-image {
+    height: 260px;
+    border-radius: var(--mobile-radius);
+  }
+
+  .study-content {
+    padding: 2.5rem 0;
+  }
+
+  .study-section {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+  }
+
+  .study-section-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .study-section-title {
+    font-size: 1.5rem;
+  }
+
+  .study-results {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .study-result-card {
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 1rem;
+    border-radius: var(--mobile-radius);
+  }
+
+  .study-result-icon-wrap {
+    margin: 0;
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .study-result-value {
+    font-size: 1.5rem;
+  }
+
+  .study-nav-container {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  /* ============================================
+     PREMIUM SCROLL ANIMATIONS
+     ============================================ */
+  [data-animate] {
+    opacity: 0.9;
+    transform: translateY(10px);
+  }
+
+  [data-animate].visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Premium focus states */
+  *:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  /* Disable animations for reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
   }
 }
 
 /* ============================================
-   MICRO-INTERACTIONS - Mobile
+   SMALL PHONES (375px and below)
    ============================================ */
-@media (max-width: 768px) {
-  /* Touch feedback */
-  .touch-feedback {
-    transition: transform 0.15s ease, opacity 0.15s ease;
+@media (max-width: 375px) {
+  html {
+    font-size: 14px;
   }
 
-  .touch-feedback:active {
-    transform: scale(0.96);
-    opacity: 0.9;
+  .hero.hero--inner {
+    padding: 6.5rem 1rem 2.5rem;
   }
 
-  /* Ripple effect container */
-  .ripple {
-    position: relative;
-    overflow: hidden;
+  .hero-title {
+    font-size: 1.75rem;
   }
 
-  /* Magnetic button effect */
-  .magnetic {
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  .section-title {
+    font-size: 1.5rem;
   }
 
-  /* Hover lift for cards */
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .floating-card-body {
+    padding: 1.25rem;
   }
 
-  .hover-lift:active {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  .footer-contact-card {
+    padding: 1.25rem;
   }
 
-  /* Border glow on focus */
-  .focus-glow:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.3);
+  .study-hero-stat {
+    flex: 1 1 100%;
+  }
+}
+
+/* ============================================
+   LARGE PHONES (390px - 428px)
+   ============================================ */
+@media (min-width: 390px) and (max-width: 428px) {
+  .floating-card-media {
+    height: 220px;
+  }
+
+  .benefit-slide-image {
+    height: 240px;
+  }
+}
+
+/* ============================================
+   TABLET ADJUSTMENTS (769px - 1024px)
+   ============================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .floating-card-container.mobile-only {
+    max-width: 400px;
+  }
+
+  .study-hero-grid {
+    gap: 2rem;
+  }
+
+  .study-results {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
