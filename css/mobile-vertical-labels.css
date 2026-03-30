@@ -1,129 +1,122 @@
 /* ============================================
-   MOBILE VERTICAL LABELS & STATS
-   Makes section labels and stat badges vertical on mobile
+   MOBILE HORIZONTAL LABELS & BADGES
+   Makes section labels and badges horizontal on mobile
    ============================================ */
 
 @media (max-width: 768px) {
   /* ============================================
-     VERTICAL SECTION LABELS IN HERO
-     "DALA FOR SUPERMARKETS" and "DALA FOR BRANDS"
+     HORIZONTAL SECTION LABELS IN HERO
+     "FOR SUPERMARKETS" and "FOR BRANDS"
      ============================================ */
   
-  /* Apply to all hero section labels */
+  /* Reset hero section labels to horizontal */
   .hero.hero--inner .section-label {
-    writing-mode: vertical-rl !important;
-    text-orientation: mixed !important;
-    transform: translateY(-50%) rotate(180deg) !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: initial !important;
+    transform: none !important;
     
-    /* Position on the left side */
-    position: absolute !important;
-    left: 8px !important;
-    top: 50% !important;
+    /* Reset position to normal flow */
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
     
-    /* Styling for vertical display */
-    padding: 16px 8px !important;
-    font-size: 11px !important;
+    /* Horizontal styling */
+    padding: 8px 16px !important;
+    font-size: 12px !important;
     font-weight: 800 !important;
-    letter-spacing: 0.15em !important;
-    text-transform: uppercase !important;
-    white-space: nowrap !important;
-    
-    /* Visual styling */
-    background: linear-gradient(180deg, rgba(229, 57, 53, 0.15) 0%, rgba(229, 57, 53, 0.08) 100%) !important;
-    border: 1px solid rgba(229, 57, 53, 0.2) !important;
-    border-radius: 20px !important;
-    color: #E53935 !important;
-    
-    /* Ensure it's above other content */
-    z-index: 10 !important;
-    margin: 0 !important;
-    display: block !important;
-  }
-  
-  /* Adjust hero container to make room for vertical label */
-  .hero.hero--inner .hero-container {
-    padding-left: 50px !important;
-    position: relative !important;
-  }
-  
-  /* Adjust hero inner section */
-  .hero.hero--inner {
-    position: relative !important;
-  }
-  
-  /* ============================================
-     VERTICAL FLOATING CARD BADGES
-     "48-Hour Delivery", "Supplier Vetting", etc.
-     ============================================ */
-  
-  .floating-card-badge {
-    writing-mode: vertical-rl !important;
-    text-orientation: mixed !important;
-    transform: translateY(-50%) rotate(180deg) !important;
-    
-    /* Styling for vertical display */
-    padding: 12px 6px !important;
-    font-size: 10px !important;
-    font-weight: 700 !important;
     letter-spacing: 0.1em !important;
     text-transform: uppercase !important;
     white-space: nowrap !important;
     
-    /* Visual styling */
-    background: linear-gradient(180deg, rgba(229, 57, 53, 0.9) 0%, rgba(229, 57, 53, 0.7) 100%) !important;
+    /* Visual styling - horizontal pill */
+    background: rgba(229, 57, 53, 0.1) !important;
+    border: 1px solid rgba(229, 57, 53, 0.2) !important;
+    border-radius: 100px !important;
+    color: #E53935 !important;
+    
+    /* Reset margins */
+    z-index: auto !important;
+    margin: 0 auto 1rem !important;
+    display: inline-block !important;
+  }
+  
+  /* Reset hero container padding */
+  .hero.hero--inner .hero-container {
+    padding-left: 1rem !important;
+    position: relative !important;
+    text-align: center !important;
+  }
+  
+  /* ============================================
+     HORIZONTAL FLOATING CARD BADGES
+     "48-Hour Delivery", "Supplier Vetting", etc.
+     ============================================ */
+  
+  .floating-card-badge {
+    writing-mode: horizontal-tb !important;
+    text-orientation: initial !important;
+    transform: none !important;
+    
+    /* Horizontal styling */
+    padding: 8px 16px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    
+    /* Visual styling - horizontal pill at top */
+    background: linear-gradient(90deg, rgba(229, 57, 53, 0.9) 0%, rgba(229, 57, 53, 0.7) 100%) !important;
     color: white !important;
-    border-radius: 16px !important;
+    border-radius: 100px !important;
     
-    /* Position on the left side of card */
+    /* Reset position to normal flow at top of card */
     position: absolute !important;
-    left: 8px !important;
-    top: 50% !important;
+    left: 16px !important;
+    top: 16px !important;
     
-    /* Flex layout */
+    /* Flex layout for icon + text */
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 6px !important;
   }
   
-  /* Icon adjustment for vertical badges */
+  /* Reset icon rotation */
   .floating-card-badge i {
-    transform: rotate(90deg) !important;
+    transform: none !important;
     font-size: 12px !important;
   }
   
-  /* For dark cards, adjust badge styling */
+  /* For dark cards, keep badge styling */
   .floating-card.dark .floating-card-badge {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%) !important;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%) !important;
     color: #1a1a1a !important;
   }
   
-  /* Adjust floating card body to accommodate vertical badge */
+  /* Reset floating card body padding */
   .floating-card-body {
     position: relative !important;
-    padding-left: 40px !important;
+    padding-left: 0 !important;
+    padding-top: 56px !important;
   }
 }
 
 /* Extra Small Screens - Adjustments */
 @media (max-width: 380px) {
   .hero.hero--inner .section-label {
-    font-size: 10px !important;
-    padding: 12px 6px !important;
-    left: 4px !important;
-  }
-  
-  .hero.hero--inner .hero-container {
-    padding-left: 40px !important;
-  }
-  
-  .floating-card-body {
-    padding-left: 36px !important;
+    font-size: 11px !important;
+    padding: 6px 14px !important;
   }
   
   .floating-card-badge {
-    left: 6px !important;
-    font-size: 9px !important;
-    padding: 10px 5px !important;
+    font-size: 10px !important;
+    padding: 6px 12px !important;
+    left: 12px !important;
+    top: 12px !important;
+  }
+  
+  .floating-card-body {
+    padding-top: 48px !important;
   }
 }

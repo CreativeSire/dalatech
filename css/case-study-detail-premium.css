@@ -746,6 +746,98 @@ body.case-study-page {
 }
 
 /* ============================================
+   NEW STYLES FOR CASE STUDY REFRESH
+   ============================================ */
+
+/* Subsection Title (What We Did) */
+.study-subsection-title {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cs-gray-800);
+  margin: 1.5rem 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--cs-red-subtle);
+}
+
+/* Study List (What We Did items) */
+.study-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.study-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.875rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--cs-gray-700);
+}
+
+.study-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 6px;
+  height: 6px;
+  background: var(--cs-red);
+  border-radius: 50%;
+}
+
+/* Impact Summary Section */
+.study-impact {
+  background: linear-gradient(135deg, var(--cs-gray-50) 0%, rgba(229, 57, 53, 0.03) 100%);
+  padding: 2rem;
+  border-radius: var(--cs-radius-xl);
+  border: 1px solid var(--cs-gray-100);
+}
+
+.study-impact .study-section-icon {
+  background: var(--cs-red);
+  color: var(--cs-white);
+}
+
+/* Result Card Icon Wrapper */
+.study-result-icon-wrap {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cs-red-subtle);
+  border-radius: var(--cs-radius);
+  color: var(--cs-red);
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .study-result-icon-wrap {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .study-subsection-title {
+    font-size: 1rem;
+    margin-top: 1.25rem;
+  }
+  
+  .study-list li {
+    font-size: 0.95rem;
+    padding-left: 1.25rem;
+  }
+  
+  .study-impact {
+    padding: 1.5rem;
+  }
+}
+
+/* ============================================
    REDUCED MOTION
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
