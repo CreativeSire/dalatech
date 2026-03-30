@@ -194,13 +194,28 @@
     overflow: hidden;
   }
 
+  /* Primary = Cream (DALA FOR SUPERMARKETS) */
   .hero-btn-primary {
+    background: #f5f0e8;
+    color: var(--dark);
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  .hero-btn-primary:hover {
+    background: #ede8de;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Secondary = Gradient (DALA FOR BRANDS) */
+  .hero-btn-secondary {
     background: linear-gradient(135deg, #E84A3C 0%, #FF8C42 100%);
     color: white;
     box-shadow: 0 8px 30px rgba(232, 74, 60, 0.3);
   }
 
-  .hero-btn-primary::before {
+  .hero-btn-secondary::before {
     content: '';
     position: absolute;
     top: 0;
@@ -211,26 +226,13 @@
     transition: left 0.5s ease;
   }
 
-  .hero-btn-primary:hover {
+  .hero-btn-secondary:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(229, 57, 53, 0.4);
   }
 
-  .hero-btn-primary:hover::before {
+  .hero-btn-secondary:hover::before {
     left: 100%;
-  }
-
-  .hero-btn-secondary {
-    background: #f5f0e8;
-    color: var(--dark);
-    border: 0.5px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  }
-
-  .hero-btn-secondary:hover {
-    background: #ede8de;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .hero-btn i {
@@ -461,13 +463,27 @@
     line-height: 1;
   }
 
+  /* Primary = Cream (DALA FOR SUPERMARKETS) */
   .hero-btn-primary {
+    background: #f5f0e8;
+    color: var(--dark);
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .hero-btn-primary:active {
+    background: var(--gray-50);
+    transform: scale(0.98);
+  }
+
+  /* Secondary = Gradient (DALA FOR BRANDS) */
+  .hero-btn-secondary {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
     box-shadow: 0 8px 30px rgba(229, 57, 53, 0.3);
   }
 
-  .hero-btn-primary::before {
+  .hero-btn-secondary::before {
     content: '';
     position: absolute;
     top: 0;
@@ -478,25 +494,13 @@
     transition: left 0.5s ease;
   }
 
-  .hero-btn-primary:active {
+  .hero-btn-secondary:active {
     transform: scale(0.98);
     box-shadow: 0 4px 15px rgba(229, 57, 53, 0.2);
   }
 
-  .hero-btn-primary:active::before {
+  .hero-btn-secondary:active::before {
     left: 100%;
-  }
-
-  .hero-btn-secondary {
-    background: #f5f0e8;
-    color: var(--dark);
-    border: 0.5px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  }
-
-  .hero-btn-secondary:active {
-    background: var(--gray-50);
-    transform: scale(0.98);
   }
 
   .hero-btn i {

@@ -596,6 +596,31 @@
   }
 
   /* ============================================
+     TESTIMONIALS CTA BUTTON - Auto width
+     ============================================ */
+  .testimonials-cta {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .testimonials-cta-btn {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.75rem;
+    background: linear-gradient(135deg, #ff8a1d 0%, #ff6b35 100%);
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 100px;
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.28);
+    width: auto !important;
+    max-width: none !important;
+    white-space: nowrap;
+  }
+
+  /* ============================================
      PREMIUM SCROLL ANIMATIONS
      ============================================ */
   [data-animate] {
