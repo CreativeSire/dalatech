@@ -89,18 +89,55 @@ body.page-premium-audit .benefit-slide-content {
 }
 
 @media (max-width: 768px) {
+  /* ============================================
+     VERTICAL SECTION LABELS FOR MOBILE
+     "DALA FOR SUPERMARKETS" and "DALA FOR BRANDS"
+     ============================================ */
+  body.page-premium-audit .hero.hero--inner .section-label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    
+    /* Styling for vertical display */
+    padding: 16px 8px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    
+    /* Position on the left side */
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    
+    /* Visual styling */
+    background: linear-gradient(180deg, rgba(229, 57, 53, 0.15) 0%, rgba(229, 57, 53, 0.08) 100%);
+    border: 1px solid rgba(229, 57, 53, 0.2);
+    border-radius: 20px;
+    color: #E53935;
+    
+    /* Ensure it's above other content */
+    z-index: 10;
+    margin: 0;
+  }
+  
   body.page-premium-audit .hero.hero--inner {
     min-height: auto;
     padding: 112px 0 52px;
+    position: relative;
   }
 
   body.page-premium-audit .hero.hero--inner::after {
     height: 110px;
   }
 
+  /* Adjust hero container to make room for vertical label - combined padding */
   body.page-premium-audit .hero.hero--inner .hero-container {
     gap: 0.85rem;
-    padding: 0 1.25rem;
+    padding: 0 1.25rem 0 50px;
+    position: relative;
   }
 
   body.page-premium-audit .hero.hero--inner .hero-title {
@@ -164,6 +201,59 @@ body.page-premium-audit .benefit-slide-content {
 
   body.page-premium-audit .benefit-slide-card {
     border-radius: 22px;
+  }
+  
+  /* ============================================
+     VERTICAL FLOATING CARD BADGES
+     "48-Hour Delivery", "Supplier Vetting", etc.
+     ============================================ */
+  .floating-card-badge {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    
+    /* Styling for vertical display */
+    padding: 12px 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    
+    /* Visual styling */
+    background: linear-gradient(180deg, rgba(229, 57, 53, 0.9) 0%, rgba(229, 57, 53, 0.7) 100%);
+    color: white;
+    border-radius: 16px;
+    
+    /* Position on the left side of card */
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    
+    /* Flex layout */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  /* Icon adjustment for vertical badges */
+  .floating-card-badge i {
+    transform: rotate(90deg);
+    font-size: 12px;
+  }
+  
+  /* For dark cards, adjust badge styling */
+  .floating-card.dark .floating-card-badge {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+    color: #1a1a1a;
+  }
+  
+  /* Adjust floating card body to accommodate vertical badge */
+  .floating-card-body {
+    position: relative;
+    padding-left: 40px;
   }
 }
 
@@ -472,5 +562,28 @@ body.page-premium-audit--services .service-card {
   body.page-premium-audit--services .service-card {
     padding: 1.7rem;
     border-radius: 18px;
+  }
+}
+
+/* Extra Small Screens - Vertical Labels Adjustments */
+@media (max-width: 380px) {
+  body.page-premium-audit .hero.hero--inner .section-label {
+    font-size: 10px;
+    padding: 12px 6px;
+    left: 4px;
+  }
+  
+  body.page-premium-audit .hero.hero--inner .hero-container {
+    padding-left: 40px;
+  }
+  
+  .floating-card-body {
+    padding-left: 36px;
+  }
+  
+  .floating-card-badge {
+    left: 6px;
+    font-size: 9px;
+    padding: 10px 5px;
   }
 }
