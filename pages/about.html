@@ -197,14 +197,14 @@
     
     /* Hero Section - PREMIUM with Animated Background */
     .about-hero {
-      min-height: clamp(680px, 88vh, 900px);
+      min-height: clamp(600px, 80vh, 800px);
       background: linear-gradient(135deg, #faf9f7 0%, #ffffff 50%, #fff8f5 100%);
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      padding: 136px 2rem 72px;
+      padding: 136px 2rem 40px;
     }
     
     .hero-mesh {
@@ -2891,7 +2891,7 @@
 
     .cta-section .btn-group .btn {
       flex: 0 1 auto;
-      min-width: 220px;
+      min-width: 180px;
       max-width: 100%;
       padding: 1.125rem 2rem;
       font-size: 1rem;
@@ -2900,6 +2900,7 @@
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
+      white-space: nowrap;
     }
 
     /* Primary CTA button - Premium gradient */
@@ -2920,23 +2921,23 @@
         0 0 0 1px rgba(255,255,255,0.3) inset;
     }
 
-    /* Secondary button - Refined outline */
+    /* Secondary button - Refined outline with subtle gradient */
     .cta-section .btn--outline {
       color: #1a1a1a;
       border: 2px solid #e0e0e0;
-      background: #ffffff;
-      white-space: normal;
+      background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+      white-space: nowrap;
       text-align: center;
-      line-height: 1.35;
+      line-height: 1.4;
       box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
 
     .cta-section .btn--outline:hover {
-      background: #1a1a1a;
+      background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
       color: white;
       border-color: #1a1a1a;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
     
     /* Footer */
@@ -3246,10 +3247,12 @@
       }
 
       .cta-section .btn-group .btn {
-        flex: 1 1 100%;
+        flex: 1 1 auto;
         max-width: 100%;
-        min-width: 0;
-        white-space: normal;
+        min-width: 140px;
+        white-space: nowrap;
+        padding: 14px 24px;
+        font-size: 0.95rem;
       }
       
       .btn-group .btn--primary {
@@ -3896,8 +3899,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(12, 8, 8, 0.02) 0%, rgba(12, 8, 8, 0.3) 38%, rgba(12, 8, 8, 0.88) 100%),
-        linear-gradient(135deg, rgba(229, 57, 53, 0.26) 0%, rgba(245, 158, 11, 0.12) 45%, rgba(10, 10, 10, 0.14) 100%);
+        linear-gradient(180deg, rgba(12, 8, 8, 0.2) 0%, rgba(12, 8, 8, 0.5) 38%, rgba(12, 8, 8, 0.95) 100%),
+        linear-gradient(135deg, rgba(229, 57, 53, 0.3) 0%, rgba(245, 158, 11, 0.15) 45%, rgba(10, 10, 10, 0.2) 100%);
     }
 
     .value-3d-card__label,
@@ -3911,18 +3914,24 @@
     .value-3d-card__label {
       display: inline-flex;
       align-items: center;
+      gap: 0.4rem;
       width: fit-content;
       margin-bottom: 0.9rem;
       padding: 0.45rem 0.8rem;
       border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: rgba(255,255,255,0.92);
+      background: rgba(229, 57, 53, 0.15);
+      border: 1px solid rgba(229, 57, 53, 0.3);
+      color: rgba(255,255,255,0.95);
       font-size: 0.68rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.14em;
       backdrop-filter: blur(10px);
+    }
+
+    .value-3d-card__label i {
+      color: #E53935;
+      font-size: 0.75rem;
     }
 
     .value-3d-card h4 {
@@ -4263,27 +4272,6 @@
     </div>
   </section>
 
-  <!-- Stats Section -->
-  <section class="stats-section">
-    <div class="stats-grid">
-      <div class="stat-item reveal-scale">
-        <div class="stat-number" data-target="300">0</div>
-        <div class="stat-label">Retail Stores</div>
-      </div>
-      <div class="stat-item reveal-scale">
-        <div class="stat-number" data-target="7">0</div>
-        <div class="stat-label">Brand Partners</div>
-      </div>
-      <div class="stat-item reveal-scale">
-        <div class="stat-number" data-target="10">0</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-item reveal-scale">
-        <div class="stat-number" data-target="48">0</div>
-        <div class="stat-label">Avg. Response</div>
-      </div>
-    </div>
-  </section>
 
   <!-- Origin Story - Desktop Grid + Mobile 3D Carousel -->
   <section class="story-section">
@@ -4473,19 +4461,9 @@
             <div class="mv-split-media mission" aria-hidden="true"></div>
           </div>
           <div class="mv-split-content">
-            <span class="mv-label">Our Mission</span>
+            <span class="mv-label"><i class="fas fa-bullseye"></i> Our Mission</span>
             <h3>Remove Operational Bottlenecks</h3>
             <p>We exist to remove operational bottlenecks so great products can scale responsibly in modern retail. We help founder-led brands grow with structure, discipline, and confidence.</p>
-            <div class="mv-stats">
-              <div class="mv-stat">
-                <span class="mv-stat-num">300+</span>
-                <span class="mv-stat-text">Stores Reached</span>
-              </div>
-              <div class="mv-stat">
-                <span class="mv-stat-num">22+</span>
-                <span class="mv-stat-text">Retail Partners</span>
-              </div>
-            </div>
           </div>
         </div>
         
@@ -4494,19 +4472,9 @@
             <div class="mv-split-media vision" aria-hidden="true"></div>
           </div>
           <div class="mv-split-content">
-            <span class="mv-label">Our Vision</span>
+            <span class="mv-label"><i class="fas fa-eye"></i> Our Vision</span>
             <h3>The Trusted Retail Engine</h3>
             <p>To be the trusted retail operations engine for every growing consumer brand in Nigeria — the reliable infrastructure layer between ambitious brands and modern retail.</p>
-            <div class="mv-stats">
-              <div class="mv-stat">
-                <span class="mv-stat-num">Lagos</span>
-                <span class="mv-stat-text">Primary Market</span>
-              </div>
-              <div class="mv-stat">
-                <span class="mv-stat-num">Ogun</span>
-                <span class="mv-stat-text">Expanding To</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -4517,19 +4485,9 @@
           <div class="mv-slide-card mission">
             <div class="mv-slide-media mission" aria-hidden="true"></div>
             <div class="mv-slide-body">
-              <span class="mv-slide-label">Our Mission</span>
+              <span class="mv-slide-label"><i class="fas fa-bullseye"></i> Our Mission</span>
               <h3>Remove Operational Bottlenecks</h3>
               <p>We help founder-led brands grow with structure, discipline, and confidence in modern retail.</p>
-              <div class="mv-slide-stats">
-                <div class="mv-slide-stat">
-                  <strong>300+</strong>
-                  <span>Stores</span>
-                </div>
-                <div class="mv-slide-stat">
-                  <strong>22+</strong>
-                  <span>Partners</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -4538,19 +4496,9 @@
           <div class="mv-slide-card vision">
             <div class="mv-slide-media vision" aria-hidden="true"></div>
             <div class="mv-slide-body">
-              <span class="mv-slide-label">Our Vision</span>
+              <span class="mv-slide-label"><i class="fas fa-eye"></i> Our Vision</span>
               <h3>The Trusted Retail Engine</h3>
               <p>The reliable infrastructure layer between ambitious brands and modern retail across Nigeria.</p>
-              <div class="mv-slide-stats">
-                <div class="mv-slide-stat">
-                  <strong>Lagos</strong>
-                  <span>Primary</span>
-                </div>
-                <div class="mv-slide-stat">
-                  <strong>Ogun</strong>
-                  <span>Expanding</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -4579,7 +4527,7 @@
           <div class="value-3d-card active" data-index="0">
             <div class="value-3d-card__inner">
               <div class="value-3d-card__media"><img src="../images/generated/about/value-integrity-first.webp" alt="Integrity First" loading="eager" fetchpriority="high" decoding="async"></div>
-              <div class="value-3d-card__label">Core Value</div>
+              <div class="value-3d-card__label"><i class="fas fa-shield-alt"></i> Core Value</div>
               <h4>Integrity First</h4>
               <p>We operate with full transparency and honest communication — no hidden agendas, no surprises.</p>
               <div class="value-3d-card__shine"></div>
@@ -4589,7 +4537,7 @@
           <div class="value-3d-card" data-index="1">
             <div class="value-3d-card__inner">
               <div class="value-3d-card__media"><img src="../images/generated/about/value-execution-excellence.webp" alt="Execution Excellence" loading="eager" fetchpriority="high" decoding="async"></div>
-              <div class="value-3d-card__label">Core Value</div>
+              <div class="value-3d-card__label"><i class="fas fa-trophy"></i> Core Value</div>
               <h4>Execution Excellence</h4>
               <p>We take pride in doing things right — consistently, reliably, and to the highest standard.</p>
               <div class="value-3d-card__shine"></div>
@@ -4599,7 +4547,7 @@
           <div class="value-3d-card" data-index="2">
             <div class="value-3d-card__inner">
               <div class="value-3d-card__media"><img src="../images/generated/about/value-sustainable-growth.webp" alt="Sustainable Growth" loading="eager" fetchpriority="high" decoding="async"></div>
-              <div class="value-3d-card__label">Core Value</div>
+              <div class="value-3d-card__label"><i class="fas fa-seedling"></i> Core Value</div>
               <h4>Sustainable Growth</h4>
               <p>We build for the long term — helping brands scale in disciplined, responsible ways.</p>
               <div class="value-3d-card__shine"></div>
@@ -4609,7 +4557,7 @@
           <div class="value-3d-card" data-index="3">
             <div class="value-3d-card__inner">
               <div class="value-3d-card__media"><img src="../images/generated/about/value-partnership-mindset.webp" alt="Partnership Mindset" loading="eager" fetchpriority="high" decoding="async"></div>
-              <div class="value-3d-card__label">Core Value</div>
+              <div class="value-3d-card__label"><i class="fas fa-handshake"></i> Core Value</div>
               <h4>Partnership Mindset</h4>
               <p>Your success is our success. We treat every relationship as a true collaboration.</p>
               <div class="value-3d-card__shine"></div>
@@ -4619,7 +4567,7 @@
           <div class="value-3d-card" data-index="4">
             <div class="value-3d-card__inner">
               <div class="value-3d-card__media"><img src="../images/generated/about/value-continuous-improvement.webp" alt="Continuous Improvement" loading="eager" fetchpriority="high" decoding="async"></div>
-              <div class="value-3d-card__label">Core Value</div>
+              <div class="value-3d-card__label"><i class="fas fa-chart-line"></i> Core Value</div>
               <h4>Continuous Improvement</h4>
               <p>We constantly refine our processes to stay ahead of the challenges our partners face.</p>
               <div class="value-3d-card__shine"></div>
@@ -4969,7 +4917,7 @@
         <p>If you're a founder-led brand ready to scale with structure, transparency, and a partner who truly gets what you're facing, we'd love to explore whether we're aligned.</p>
         <div class="btn-group">
           <a class="btn btn--white btn--lg" href="get-listed.html">Partner With Us</a>
-          <a class="btn btn--outline btn--lg" href="for-brands.html">Learn More About Our Services</a>
+          <a class="btn btn--outline btn--lg" href="for-brands.html">Explore Services</a>
         </div>
       </div>
     </div>

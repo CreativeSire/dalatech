@@ -511,26 +511,31 @@ p {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 180px;
-  z-index: 10;
+  width: 120px;
+  z-index: 5;
   pointer-events: none;
 }
 
 .brand-marquee::before {
   left: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 40%, transparent 100%);
 }
 
 .brand-marquee::after {
   right: 0;
-  background: linear-gradient(270deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
+  background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 40%, transparent 100%);
 }
 
+/* Ensure header stays above fade effect */
 .logo-section-header {
+  position: relative;
+  z-index: 10;
   text-align: center;
   margin-bottom: var(--space-3xl);
   padding: 0 var(--space-lg);
 }
+
+/* Header styling moved above with z-index to prevent fade overlap */
 
 .logo-section-title {
   font-size: 0.75rem;
@@ -4080,9 +4085,15 @@ p {
   }
   
   .cta-buttons .btn-primary {
-    background: #E53935;
+    background: linear-gradient(135deg, #ff8a1d 0%, #ff6b35 100%);
     color: white;
     border: none;
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.28);
+  }
+  
+  .cta-buttons .btn-primary:hover {
+    background: linear-gradient(135deg, #ff9b3d 0%, #ff7b47 100%);
+    box-shadow: 0 12px 28px rgba(255, 107, 53, 0.34);
   }
   
   .cta-buttons .btn-secondary {
