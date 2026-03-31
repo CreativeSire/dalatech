@@ -311,6 +311,11 @@ p {
   flex-direction: column;
   gap: 5px;
   padding: var(--space-sm);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
 }
 
 .mobile-menu-btn span {
@@ -318,7 +323,20 @@ p {
   width: 24px;
   height: 2px;
   background: var(--gray-700);
-  transition: all var(--transition-fast);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* ============================================
@@ -3560,23 +3578,27 @@ p {
   .nav-links {
     display: none;
     position: fixed;
-    top: 72px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: white;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
     flex-direction: column;
-    padding: var(--space-xl);
-    gap: var(--space-xs);
-    border-bottom: 1px solid var(--gray-200);
-    box-shadow: var(--shadow-lg);
-    max-height: calc(100vh - 72px);
+    padding: 80px 24px 40px;
+    gap: 0;
+    z-index: 1000;
     overflow-y: auto;
-    z-index: 999;
+    -webkit-overflow-scrolling: touch;
   }
   
   .nav-links.active {
     display: flex;
+    animation: slideInMenu 0.3s ease-out;
+  }
+  
+  @keyframes slideInMenu {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   
   .nav-cta {
@@ -4470,66 +4492,89 @@ p {
     display: flex; 
     width: 100%; 
     flex-direction: column;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .nav-link {
+    padding: 18px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
   }
   .nav-dropdown-trigger { 
     width: 100%; 
     justify-content: space-between;
-    padding: 16px 0;
-    font-size: 18px;
+    padding: 18px 0;
+    font-size: 20px;
     font-weight: 600;
     color: var(--dark);
+    border-bottom: none;
   }
   .nav-dropdown.is-open .nav-dropdown-trigger {
     color: var(--primary);
+  }
+  .nav-dropdown-trigger i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+  }
+  .nav-dropdown.is-open .nav-dropdown-trigger i {
+    transform: rotate(180deg);
   }
   .nav-dropdown-menu {
     position: static;
     opacity: 1;
     pointer-events: all;
     transform: none;
-    box-shadow: none;
-    border: none;
-    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 12px;
     min-width: 0;
-    padding: 8px;
-    margin: 0 0 12px 0;
+    padding: 12px;
+    margin: 8px 0 16px 0;
     display: none;
-    background: #f8f8f8;
+    background: white;
   }
   .nav-dropdown.is-open .nav-dropdown-menu { 
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
+    animation: slideDown 0.3s ease-out;
+  }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   .nav-dropdown-item {
-    padding: 14px 16px;
+    padding: 16px;
     font-size: 15px;
-    border-radius: 6px;
-    background: white;
-    margin-bottom: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    background: #fafafa;
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: all 0.2s ease;
   }
   .nav-dropdown-item:active {
     background: var(--primary-light);
+    transform: scale(0.98);
   }
   .nav-dropdown-item i {
-    font-size: 18px;
-    width: 28px;
+    font-size: 20px;
+    width: 32px;
     color: var(--primary);
   }
   .nav-dropdown-item strong {
     font-weight: 600;
     color: var(--dark);
+    font-size: 15px;
   }
   .nav-dropdown-item span {
     font-size: 13px;
     color: var(--gray-500);
+    margin-top: 2px;
   }
   .nav-dropdown-divider {
-    margin: 12px 16px;
+    margin: 8px 0;
     border: none;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid rgba(0,0,0,0.1);
   }
 }
 
