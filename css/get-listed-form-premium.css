@@ -4,14 +4,15 @@
    ============================================ */
 
 /* Remove any borders from container - override original styles */
-body .listed-container,
+body.listed-form-body .listed-container,
 .listed-container {
   border: none !important;
   box-shadow: none !important;
 }
 
-body .listed-hero-panel,
-.listed-hero-panel {
+/* Highly specific selector to override get-listed.css */
+body.listed-form-body .listed-hero-panel,
+body.listed-form-body .listed-hero .listed-container .listed-hero-panel {
   border: none !important;
   background: transparent !important;
   box-shadow: none !important;
