@@ -3,6 +3,12 @@
    Mature, professional, focused on the form
    ============================================ */
 
+/* Remove any borders from container */
+.listed-container {
+  border: none !important;
+  box-shadow: none !important;
+}
+
 /* Premium Hero Section - Clean & Impactful */
 .listed-hero {
   background: linear-gradient(135deg, #ffffff 0%, #faf9f7 50%, #f5f3f0 100%);
@@ -28,8 +34,8 @@
 .listed-hero-panel {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
+  justify-content: flex-start;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 40px;
   position: relative;
@@ -37,10 +43,13 @@
   background: transparent;
   box-shadow: none;
   border-radius: 0;
+  border: none;
 }
 
 .listed-hero-copy {
   max-width: 600px;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 /* Premium Kicker Badge */

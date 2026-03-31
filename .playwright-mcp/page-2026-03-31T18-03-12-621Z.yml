@@ -1,0 +1,237 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DALA Technologies" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DALA Technologies" [ref=e5]
+      - generic [ref=e193]:
+        - generic [ref=e194]:
+          - link "DALA Technologies" [ref=e195] [cursor=pointer]:
+            - /url: /
+            - img "DALA Technologies" [ref=e196]
+          - button "Close menu" [ref=e197] [cursor=pointer]:
+            - generic [ref=e198]: ×
+        - link "For Brands" [ref=e199] [cursor=pointer]:
+          - /url: /pages/for-brands
+        - link "For Supermarkets" [ref=e200] [cursor=pointer]:
+          - /url: /pages/for-supermarkets
+        - link "About" [ref=e201] [cursor=pointer]:
+          - /url: /pages/about
+        - link "Case Studies" [ref=e202] [cursor=pointer]:
+          - /url: /pages/case-studies
+        - generic [ref=e203]:
+          - button "Marketplace " [ref=e204] [cursor=pointer]:
+            - text: Marketplace
+            - generic [ref=e205]: 
+          - text: 
+        - link "Contact" [ref=e206] [cursor=pointer]:
+          - /url: /pages/contact
+        - generic [ref=e207]:
+          - button "Account " [ref=e208] [cursor=pointer]:
+            - text: Account
+            - generic [ref=e209]: 
+          - text:   
+      - button "Toggle menu" [ref=e6] [cursor=pointer]
+  - generic [ref=e10]:
+    - img "Premium supermarket shelf with DALA partner brands" [ref=e12]
+    - generic [ref=e14]:
+      - paragraph [ref=e15]: Success Stories
+      - heading "Built for brands. Proven across Africa." [level=1] [ref=e16]:
+        - text: Built for brands.
+        - generic [ref=e17]: Proven across Africa.
+      - paragraph [ref=e18]: The real stories behind Africa's most ambitious retail transformations. See how founder-led brands moved from shelf friction to stronger presence, faster expansion, and clearer results.
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]: ₦
+        - text: "400"
+        - generic [ref=e24]: M+
+      - generic [ref=e25]: Revenue Generated
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - text: "700"
+        - generic [ref=e28]: +
+      - generic [ref=e29]: Stores Activated
+    - generic [ref=e30]:
+      - generic [ref=e31]: "4"
+      - generic [ref=e32]: Brand Partners
+  - generic [ref=e35]:
+    - generic [ref=e36]:
+      - img "Wilson's Lemonade on supermarket shelf" [ref=e37]
+      - generic [ref=e38]: Featured Story
+    - generic [ref=e39]:
+      - paragraph [ref=e40]: Case Study 01
+      - heading "How Wilson's Became Nigeria's Favorite Lemonade" [level=2] [ref=e41]
+      - paragraph [ref=e42]: Wilson's Lemonade had demand, but fragmented orders and expensive delivery patterns were holding growth back. DALA helped turn scattered retail traction into a disciplined execution system, activating 350 stores, strengthening shelf presence, and generating ₦221.7M in revenue within roughly 1.5 years.
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - generic [ref=e45]: ₦221.7M
+          - text: Revenue
+        - generic [ref=e46]:
+          - generic [ref=e47]: 350+
+          - text: Stores
+        - generic [ref=e48]:
+          - generic [ref=e49]: 340%
+          - text: Growth
+      - link "Read the full story" [ref=e50] [cursor=pointer]:
+        - /url: /pages/case-studies/wilsons-lemonade
+        - text: Read the full story
+        - img [ref=e51]
+  - generic [ref=e54]:
+    - generic [ref=e55]:
+      - heading "More Stories of transformation" [level=2] [ref=e56]:
+        - text: More Stories
+        - generic [ref=e57]: of transformation
+      - paragraph [ref=e58]: Every brand has a unique journey. Here's how we helped them scale.
+    - generic [ref=e59]:
+      - article [ref=e60] [cursor=pointer]:
+        - generic [ref=e61]: "02"
+        - img "Zayith products on shelf" [ref=e63]
+        - generic [ref=e65]:
+          - generic [ref=e66]: Food & Beverage
+          - heading "Zayith Food Company" [level=3] [ref=e67]
+          - paragraph [ref=e68]: Quality products met the right retail operating engine, helping Zayith build revenue steadily, expand to 173 stores, and turn seasonal traction into visible commercial momentum.
+      - article [ref=e69] [cursor=pointer]:
+        - generic [ref=e70]: "03"
+        - img "August Secrets products on shelf" [ref=e72]
+        - generic [ref=e74]:
+          - generic [ref=e75]: Infant Nutrition
+          - heading "August Secrets" [level=3] [ref=e76]
+          - paragraph [ref=e77]: August Secrets paired strong products with disciplined execution, building credible supermarket presence and rapid growth across 106 stores in one year.
+      - article [ref=e78] [cursor=pointer]:
+        - generic [ref=e79]: "04"
+        - img "Eloha products on shelf" [ref=e81]
+        - generic [ref=e83]:
+          - generic [ref=e84]: Natural Products
+          - heading "Eloha" [level=3] [ref=e85]
+          - paragraph [ref=e86]: Eloha launched with precision and scaled to 83 stores in just seven months, proving that new brands can establish credible retail presence quickly.
+  - generic [ref=e88]:
+    - paragraph [ref=e89]: Our Impact
+    - heading "Real Results for Real Brands" [level=2] [ref=e90]
+    - paragraph [ref=e91]: We don't just promise growth—we deliver measurable outcomes that transform businesses.
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - img [ref=e94]
+        - generic [ref=e96]: ₦400M+
+        - generic [ref=e97]: Revenue Generated
+      - generic [ref=e98]:
+        - img [ref=e99]
+        - generic [ref=e102]: 700+
+        - generic [ref=e103]: Retail Stores
+      - generic [ref=e104]:
+        - img [ref=e105]
+        - generic [ref=e107]: 340%
+        - generic [ref=e108]: Avg. Growth
+      - generic [ref=e109]:
+        - img [ref=e110]
+        - generic [ref=e113]: 18mo
+        - generic [ref=e114]: Avg. Time to Scale
+  - generic [ref=e116]:
+    - heading "Ready to Write Your Story?" [level=2] [ref=e117]
+    - paragraph [ref=e118]: Join the brands that have transformed their retail presence with DALA. Your success story starts here.
+    - generic [ref=e119]:
+      - link "Partner with DALA" [ref=e120] [cursor=pointer]:
+        - /url: /pages/for-brands
+        - text: Partner with DALA
+        - img [ref=e121]
+      - link "Contact Us" [ref=e123] [cursor=pointer]:
+        - /url: /pages/contact
+  - contentinfo [ref=e124]:
+    - generic [ref=e125]:
+      - generic [ref=e126]:
+        - link "DALA Technologies" [ref=e127] [cursor=pointer]:
+          - /url: /
+          - img "DALA Technologies" [ref=e128]
+        - paragraph [ref=e129]: The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - generic [ref=e132] [cursor=pointer]:
+            - generic [ref=e133]:
+              - generic [ref=e134]: 
+              - text: Company
+            - generic [ref=e135]: 
+          - generic [ref=e136]:
+            - link " Home" [ref=e137] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e138]: 
+              - text: Home
+            - link " About" [ref=e139] [cursor=pointer]:
+              - /url: /pages/about
+              - generic [ref=e140]: 
+              - text: About
+            - link " Case Studies" [ref=e141] [cursor=pointer]:
+              - /url: /pages/case-studies
+              - generic [ref=e142]: 
+              - text: Case Studies
+            - link " Contact" [ref=e143] [cursor=pointer]:
+              - /url: /pages/contact
+              - generic [ref=e144]: 
+              - text: Contact
+        - generic [ref=e145]:
+          - generic [ref=e146] [cursor=pointer]:
+            - generic [ref=e147]:
+              - generic [ref=e148]: 
+              - text: Solutions
+            - generic [ref=e149]: 
+          - generic [ref=e150]:
+            - link " For Brands" [ref=e151] [cursor=pointer]:
+              - /url: /pages/for-brands
+              - generic [ref=e152]: 
+              - text: For Brands
+            - link " Supermarkets" [ref=e153] [cursor=pointer]:
+              - /url: /pages/for-supermarkets
+              - generic [ref=e154]: 
+              - text: Supermarkets
+            - link " Get Listed" [ref=e155] [cursor=pointer]:
+              - /url: /pages/get-listed
+              - generic [ref=e156]: 
+              - text: Get Listed
+            - link " Login" [ref=e157] [cursor=pointer]:
+              - /url: /pages/login
+              - generic [ref=e158]: 
+              - text: Login
+      - generic [ref=e159]:
+        - generic [ref=e160]:
+          - generic [ref=e161]: 
+          - text: Get In Touch
+        - link " Iju, Ota, Ogun State, Nigeria" [ref=e162] [cursor=pointer]:
+          - /url: https://maps.google.com
+          - generic [ref=e163]: 
+          - generic [ref=e164]: Iju, Ota, Ogun State, Nigeria
+        - link " +234 814 882 4115" [ref=e165] [cursor=pointer]:
+          - /url: tel:+2348148824115
+          - generic [ref=e166]: 
+          - generic [ref=e167]: +234 814 882 4115
+        - link " +234 903 235 2306" [ref=e168] [cursor=pointer]:
+          - /url: tel:+2349032352306
+          - generic [ref=e169]: 
+          - generic [ref=e170]: +234 903 235 2306
+        - link " info@dalatechnologies.com" [ref=e171] [cursor=pointer]:
+          - /url: mailto:info@dalatechnologies.com
+          - generic [ref=e172]: 
+          - generic [ref=e173]: info@dalatechnologies.com
+        - generic [ref=e174]:
+          - generic [ref=e175]: 
+          - generic [ref=e176]: "Mon - Sat: 8am - 6pm"
+      - generic [ref=e177]:
+        - generic [ref=e178]: Follow Us
+        - generic [ref=e179]:
+          - link "LinkedIn" [ref=e180] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/dala-tech/
+            - generic [ref=e181]: 
+          - link "Instagram" [ref=e182] [cursor=pointer]:
+            - /url: https://www.instagram.com/dala.technologies?igsh=MTU4eW5jMGdydGx4dw==
+            - generic [ref=e183]: 
+          - link "Twitter" [ref=e184] [cursor=pointer]:
+            - /url: https://x.com/usedalatech
+            - generic [ref=e185]: 
+          - link "Facebook" [ref=e186] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1G7LDCdYw3/
+            - generic [ref=e187]: 
+      - generic [ref=e188]:
+        - paragraph [ref=e189]: © 2026 DALA Technologies. All rights reserved.
+        - generic [ref=e190]:
+          - link "Privacy Policy" [ref=e191] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e192] [cursor=pointer]:
+            - /url: "#"
