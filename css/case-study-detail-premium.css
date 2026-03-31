@@ -737,11 +737,9 @@ body.case-study-page {
 
 @media (max-width: 480px) {
   .study-hero-stats {
-    flex-wrap: wrap;
-  }
-  
-  .study-hero-stat {
-    flex: 1 1 45%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 }
 
