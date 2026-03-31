@@ -3,6 +3,11 @@
    Pixabay-style clean full-screen menu
    ============================================ */
 
+/* Hide mobile nav sheet by default on desktop */
+.mobile-nav-sheet {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
   /* Full screen overlay menu - override all other styles */
   body .navbar .nav-links,
@@ -47,7 +52,7 @@
   
   /* Mobile nav sheet header with logo and close button */
   .mobile-nav-sheet {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
     padding: 16px 20px;
