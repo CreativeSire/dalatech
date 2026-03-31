@@ -1695,6 +1695,64 @@ body.page-premium-audit--listed .listed-req-card.active {
   color: white;
 }
 
+.sku-progressive {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.sku-card[hidden] {
+  display: none !important;
+}
+
+.sku-card--optional {
+  border-style: dashed;
+}
+
+.sku-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.35rem;
+}
+
+.sku-add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.95rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid rgba(229, 57, 53, 0.16);
+  background: linear-gradient(135deg, rgba(229, 57, 53, 0.06) 0%, rgba(255, 138, 29, 0.06) 100%);
+  color: var(--primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sku-add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+  border-color: rgba(229, 57, 53, 0.24);
+}
+
+.sku-add-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.sku-limit-note {
+  margin: 0;
+  color: var(--gray-500);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 /* ============================================
    MOBILE RESPONSIVE
    ============================================ */
@@ -1872,6 +1930,15 @@ body.page-premium-audit--listed .listed-req-card.active {
     width: 100%;
     max-width: 320px;
     justify-content: center;
+  }
+
+  .sku-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sku-add-btn {
+    width: 100%;
   }
 }
 

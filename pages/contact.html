@@ -518,6 +518,19 @@
       margin-top: 1rem;
     }
 
+    .sku-progressive {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .sku-card[hidden] {
+      display: none !important;
+    }
+
+    .sku-card--optional {
+      border-style: dashed;
+    }
+
     .sku-title {
       display: flex;
       align-items: center;
@@ -539,6 +552,51 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gray-500);
+    }
+
+    .sku-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.35rem;
+    }
+
+    .sku-add-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid rgba(229, 57, 53, 0.16);
+      background: linear-gradient(135deg, rgba(229, 57, 53, 0.06) 0%, rgba(255, 138, 29, 0.06) 100%);
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .sku-add-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      border-color: rgba(229, 57, 53, 0.24);
+    }
+
+    .sku-add-btn:disabled {
+      opacity: 0.45;
+      cursor: default;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .sku-limit-note {
+      margin: 0;
+      color: var(--gray-500);
+      font-size: 0.92rem;
+      line-height: 1.5;
     }
 
     .qualification-actions {
@@ -947,6 +1005,15 @@
         flex-direction: column;
         align-items: stretch;
       }
+
+      .sku-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .sku-add-btn {
+        width: 100%;
+      }
       
       .company-grid {
         grid-template-columns: 1fr;
@@ -1295,112 +1362,119 @@
               </div>
             </div>
 
-            <article class="sku-card">
-              <div class="sku-title">
-                <h5>SKU 1</h5>
-              </div>
-              <div class="sku-grid">
-                <div class="qualification-field">
-                  <label class="qualification-label" for="contact-sku1-name">Product Name / SKU Name</label>
-                  <input class="qualification-input" id="contact-sku1-name" name="sku1_name" type="text" required>
+            <div class="sku-progressive" data-sku-manager>
+              <article class="sku-card" data-sku-card="1">
+                <div class="sku-title">
+                  <h5>SKU 1</h5>
                 </div>
-                <div class="qualification-field">
-                  <label class="qualification-label" for="contact-sku1-category">Product Category</label>
-                  <input class="qualification-input" id="contact-sku1-category" name="sku1_category" type="text" required>
-                </div>
-                <div class="qualification-field qualification-field--full">
-                  <label class="qualification-label">Is the product perishable?</label>
-                  <div class="qualification-radio-group">
-                    <label class="qualification-radio"><input type="radio" name="sku1_perishable" value="Yes" required><span>Yes</span></label>
-                    <label class="qualification-radio"><input type="radio" name="sku1_perishable" value="No" required><span>No</span></label>
+                <div class="sku-grid">
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="contact-sku1-name">Product Name / SKU Name</label>
+                    <input class="qualification-input" id="contact-sku1-name" name="sku1_name" type="text" required>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="contact-sku1-category">Product Category</label>
+                    <input class="qualification-input" id="contact-sku1-category" name="sku1_category" type="text" required>
+                  </div>
+                  <div class="qualification-field qualification-field--full">
+                    <label class="qualification-label">Is the product perishable?</label>
+                    <div class="qualification-radio-group">
+                      <label class="qualification-radio"><input type="radio" name="sku1_perishable" value="Yes" required><span>Yes</span></label>
+                      <label class="qualification-radio"><input type="radio" name="sku1_perishable" value="No" required><span>No</span></label>
+                    </div>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="contact-sku1-units">Units per Pack</label>
+                    <input class="qualification-input" id="contact-sku1-units" name="sku1_units_per_pack" type="number" min="1" required>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="contact-sku1-weight">Pack Weight</label>
+                    <input class="qualification-input" id="contact-sku1-weight" name="sku1_pack_weight" type="text" placeholder="500ml, 1kg" required>
+                  </div>
+                  <div class="qualification-field qualification-field--full">
+                    <label class="qualification-label" for="contact-sku1-price">Product Invoice Price (₦)</label>
+                    <input class="qualification-input" id="contact-sku1-price" name="sku1_invoice_price" type="number" min="0" step="0.01" required>
                   </div>
                 </div>
-                <div class="qualification-field">
-                  <label class="qualification-label" for="contact-sku1-units">Units per Pack</label>
-                  <input class="qualification-input" id="contact-sku1-units" name="sku1_units_per_pack" type="number" min="1" required>
-                </div>
-                <div class="qualification-field">
-                  <label class="qualification-label" for="contact-sku1-weight">Pack Weight</label>
-                  <input class="qualification-input" id="contact-sku1-weight" name="sku1_pack_weight" type="text" placeholder="500ml, 1kg" required>
-                </div>
-                <div class="qualification-field qualification-field--full">
-                  <label class="qualification-label" for="contact-sku1-price">Price per Pack (₦)</label>
-                  <input class="qualification-input" id="contact-sku1-price" name="sku1_price_per_pack" type="number" min="0" step="0.01" required>
-                </div>
-              </div>
-            </article>
+              </article>
 
-            <article class="sku-card">
-              <div class="sku-title">
-                <h5>SKU 2</h5>
-                <span class="sku-note">Optional</span>
-              </div>
-              <div class="sku-grid">
-                <div class="qualification-field">
-                  <label class="qualification-label" for="contact-sku2-name">Product Name / SKU Name</label>
-                  <input class="qualification-input" id="contact-sku2-name" name="sku2_name" type="text">
+              <article class="sku-card sku-card--optional" data-sku-card="2" hidden>
+                <div class="sku-title">
+                  <h5>SKU 2</h5>
+                  <span class="sku-note">Optional</span>
                 </div>
-                <div class="qualification-field">
-                  <label class="qualification-label" for="contact-sku2-category">Product Category</label>
-                  <input class="qualification-input" id="contact-sku2-category" name="sku2_category" type="text">
-                </div>
-                <div class="qualification-field qualification-field--full">
-                  <label class="qualification-label">Is the product perishable?</label>
-                  <div class="qualification-radio-group">
-                    <label class="qualification-radio"><input type="radio" name="sku2_perishable" value="Yes"><span>Yes</span></label>
-                    <label class="qualification-radio"><input type="radio" name="sku2_perishable" value="No"><span>No</span></label>
+                <div class="sku-grid">
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="contact-sku2-name">Product Name / SKU Name</label>
+                    <input class="qualification-input" id="contact-sku2-name" name="sku2_name" type="text">
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="contact-sku2-category">Product Category</label>
+                    <input class="qualification-input" id="contact-sku2-category" name="sku2_category" type="text">
+                  </div>
+                  <div class="qualification-field qualification-field--full">
+                    <label class="qualification-label">Is the product perishable?</label>
+                    <div class="qualification-radio-group">
+                      <label class="qualification-radio"><input type="radio" name="sku2_perishable" value="Yes"><span>Yes</span></label>
+                      <label class="qualification-radio"><input type="radio" name="sku2_perishable" value="No"><span>No</span></label>
+                    </div>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="contact-sku2-units">Units per Pack</label>
+                    <input class="qualification-input" id="contact-sku2-units" name="sku2_units_per_pack" type="number" min="1">
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="contact-sku2-weight">Pack Weight</label>
+                    <input class="qualification-input" id="contact-sku2-weight" name="sku2_pack_weight" type="text" placeholder="500ml, 1kg">
+                  </div>
+                  <div class="qualification-field qualification-field--full">
+                    <label class="qualification-label" for="contact-sku2-price">Product Invoice Price (₦)</label>
+                    <input class="qualification-input" id="contact-sku2-price" name="sku2_invoice_price" type="number" min="0" step="0.01">
                   </div>
                 </div>
-                <div class="qualification-field">
-                  <label class="qualification-label" for="contact-sku2-units">Units per Pack</label>
-                  <input class="qualification-input" id="contact-sku2-units" name="sku2_units_per_pack" type="number" min="1">
-                </div>
-                <div class="qualification-field">
-                  <label class="qualification-label" for="contact-sku2-weight">Pack Weight</label>
-                  <input class="qualification-input" id="contact-sku2-weight" name="sku2_pack_weight" type="text" placeholder="500ml, 1kg">
-                </div>
-                <div class="qualification-field qualification-field--full">
-                  <label class="qualification-label" for="contact-sku2-price">Price per Pack (₦)</label>
-                  <input class="qualification-input" id="contact-sku2-price" name="sku2_price_per_pack" type="number" min="0" step="0.01">
-                </div>
-              </div>
-            </article>
+              </article>
 
-            <article class="sku-card">
-              <div class="sku-title">
-                <h5>SKU 3</h5>
-                <span class="sku-note">Optional</span>
-              </div>
-              <div class="sku-grid">
-                <div class="qualification-field">
-                  <label class="qualification-label" for="contact-sku3-name">Product Name / SKU Name</label>
-                  <input class="qualification-input" id="contact-sku3-name" name="sku3_name" type="text">
+              <article class="sku-card sku-card--optional" data-sku-card="3" hidden>
+                <div class="sku-title">
+                  <h5>SKU 3</h5>
+                  <span class="sku-note">Optional</span>
                 </div>
-                <div class="qualification-field">
-                  <label class="qualification-label" for="contact-sku3-category">Product Category</label>
-                  <input class="qualification-input" id="contact-sku3-category" name="sku3_category" type="text">
-                </div>
-                <div class="qualification-field qualification-field--full">
-                  <label class="qualification-label">Is the product perishable?</label>
-                  <div class="qualification-radio-group">
-                    <label class="qualification-radio"><input type="radio" name="sku3_perishable" value="Yes"><span>Yes</span></label>
-                    <label class="qualification-radio"><input type="radio" name="sku3_perishable" value="No"><span>No</span></label>
+                <div class="sku-grid">
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="contact-sku3-name">Product Name / SKU Name</label>
+                    <input class="qualification-input" id="contact-sku3-name" name="sku3_name" type="text">
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="contact-sku3-category">Product Category</label>
+                    <input class="qualification-input" id="contact-sku3-category" name="sku3_category" type="text">
+                  </div>
+                  <div class="qualification-field qualification-field--full">
+                    <label class="qualification-label">Is the product perishable?</label>
+                    <div class="qualification-radio-group">
+                      <label class="qualification-radio"><input type="radio" name="sku3_perishable" value="Yes"><span>Yes</span></label>
+                      <label class="qualification-radio"><input type="radio" name="sku3_perishable" value="No"><span>No</span></label>
+                    </div>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="contact-sku3-units">Units per Pack</label>
+                    <input class="qualification-input" id="contact-sku3-units" name="sku3_units_per_pack" type="number" min="1">
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="contact-sku3-weight">Pack Weight</label>
+                    <input class="qualification-input" id="contact-sku3-weight" name="sku3_pack_weight" type="text" placeholder="500ml, 1kg">
+                  </div>
+                  <div class="qualification-field qualification-field--full">
+                    <label class="qualification-label" for="contact-sku3-price">Product Invoice Price (₦)</label>
+                    <input class="qualification-input" id="contact-sku3-price" name="sku3_invoice_price" type="number" min="0" step="0.01">
                   </div>
                 </div>
-                <div class="qualification-field">
-                  <label class="qualification-label" for="contact-sku3-units">Units per Pack</label>
-                  <input class="qualification-input" id="contact-sku3-units" name="sku3_units_per_pack" type="number" min="1">
-                </div>
-                <div class="qualification-field">
-                  <label class="qualification-label" for="contact-sku3-weight">Pack Weight</label>
-                  <input class="qualification-input" id="contact-sku3-weight" name="sku3_pack_weight" type="text" placeholder="500ml, 1kg">
-                </div>
-                <div class="qualification-field qualification-field--full">
-                  <label class="qualification-label" for="contact-sku3-price">Price per Pack (₦)</label>
-                  <input class="qualification-input" id="contact-sku3-price" name="sku3_price_per_pack" type="number" min="0" step="0.01">
-                </div>
+              </article>
+
+              <div class="sku-actions">
+                <button type="button" class="sku-add-btn" data-add-sku>Add another product</button>
+                <p class="sku-limit-note">You can add up to 3 products.</p>
               </div>
-            </article>
+            </div>
           </section>
 
           <div class="qualification-actions">

@@ -581,3 +581,36 @@ document.addEventListener('DOMContentLoaded', () => {
   initTrustSlider();
   initValuesSlider();
 });
+
+function initSkuProgressiveForms() {
+  const skuManagers = document.querySelectorAll('[data-sku-manager]');
+  if (!skuManagers.length) return;
+
+  skuManagers.forEach((manager) => {
+    const cards = Array.from(manager.querySelectorAll('[data-sku-card]'));
+    const addButton = manager.querySelector('[data-add-sku]');
+    if (!cards.length || !addButton) return;
+
+    const updateState = () => {
+      const nextCard = cards.find((card) => card.hasAttribute('hidden'));
+      addButton.disabled = !nextCard;
+      addButton.textContent = nextCard ? 'Add another product' : 'Maximum of 3 products reached';
+    };
+
+    addButton.addEventListener('click', () => {
+      const nextCard = cards.find((card) => card.hasAttribute('hidden'));
+      if (!nextCard) {
+        updateState();
+        return;
+      }
+
+      nextCard.removeAttribute('hidden');
+      nextCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      updateState();
+    });
+
+    updateState();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initSkuProgressiveForms);
