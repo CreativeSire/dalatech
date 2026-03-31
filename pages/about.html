@@ -51,137 +51,7 @@
       line-height: 1.6;
     }
     
-    /* Navigation */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 0.75rem 2rem;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    
-    .navbar__inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.25rem;
-    }
-    
-    .navbar__logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: var(--dark);
-    }
-    
-    .logo-d {
-      width: 40px;
-      height: 40px;
-      background: var(--primary);
-      color: white;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-    }
-    
-    .navbar__links {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
-    
-    .navbar__links a {
-      text-decoration: none;
-      color: var(--gray-800);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-      position: relative;
-      white-space: nowrap;
-    }
-
-    .navbar__cta {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-shrink: 0;
-    }
-    
-    .navbar__links a:hover,
-    .navbar__links a.active {
-      color: var(--primary);
-    }
-    
-    .navbar__links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
-    
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.8rem 1.4rem;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 0.92rem;
-      text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      border: none;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-    
-    .btn--primary {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 4px 14px rgba(229, 57, 53, 0.3);
-    }
-    
-    .btn--primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(229, 57, 53, 0.4);
-    }
-    
-    .btn--ghost {
-      background: transparent;
-      color: var(--dark);
-      border: 2px solid var(--gray-200);
-    }
-    
-    .btn--ghost:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-    
-    .btn--outline {
-      background: transparent;
-      color: white;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-    }
-    
-    .btn--outline:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: white;
-    }
+    /* Navigation - Using external styles.css */
     
     .btn--lg {
       padding: 1rem 2rem;
@@ -3018,96 +2888,7 @@
       transform: scale(1);
     }
     
-    /* Mobile Menu */
-    .navbar__hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 5px;
-    }
-    
-    .navbar__hamburger span {
-      width: 24px;
-      height: 2px;
-      background: var(--dark);
-      transition: all 0.3s;
-    }
-    
-    /* Mobile Menu - Full Screen Overlay */
-    .navbar__mobile {
-      display: none;
-      position: fixed;
-      top: 72px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(250,250,250,0.99) 100%);
-      backdrop-filter: blur(20px);
-      padding: 1.5rem;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 0;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-      z-index: 999;
-      overflow-y: auto;
-      min-height: calc(100vh - 72px);
-    }
-    
-    .navbar__mobile a {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 600;
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      transition: all 0.2s ease;
-      flex-shrink: 0;
-    }
-    
-    .navbar__mobile a:hover {
-      color: var(--primary);
-      padding-left: 0.5rem;
-    }
-    
-    /* Mobile Menu Auth Buttons - Contained in menu */
-    .navbar__mobile-auth {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 2px solid rgba(0,0,0,0.06);
-      flex-shrink: 0;
-    }
-    
-    .navbar__mobile .btn {
-      width: 100%;
-      text-align: center;
-      padding: 1rem;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 1rem;
-      margin-top: 0;
-    }
-    
-    .navbar__mobile .btn--ghost {
-      background: rgba(229, 57, 53, 0.05);
-      border: 1.5px solid var(--primary);
-      color: var(--primary);
-    }
-    
-    .navbar__mobile .btn--primary {
-      background: linear-gradient(135deg, var(--primary) 0%, #c62828 100%);
-      border: none;
-      color: white;
-      box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
-    }
+    /* Mobile Menu - Using external styles.css */
     
     /* ==========================================
        DESKTOP/MOBILE VISIBILITY CONTROL
@@ -3126,10 +2907,7 @@
     
     /* Mobile Responsive */
     @media (max-width: 1024px) {
-      .navbar__links { display: none; }
-      .navbar__cta { display: none; }
-      .navbar__hamburger { display: flex; }
-      .navbar__mobile.active { display: flex; }
+      /* Navbar styles handled by external CSS */
       
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       
@@ -4349,17 +4127,19 @@
 <body>
 
   <!-- Navigation -->
-  <header class="navbar">
-    <div class="navbar__inner">
+  <nav class="navbar">
+    <div class="navbar-container">
       <a href="../index.html" class="logo">
         <img src="../4.png" alt="DALA Technologies" class="logo-img">
       </a>
-      <nav class="navbar__links">
-        <a href="for-brands.html">For Brands</a>
-        <a href="for-supermarkets.html">For Supermarkets</a>
-        <a href="about.html" class="active">About</a>
+      
+      <div class="nav-links">
+        <a href="for-brands.html" class="nav-link">For Brands</a>
+        <a href="for-supermarkets.html" class="nav-link">For Supermarkets</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="case-studies.html" class="nav-link">Case Studies</a>
         <div class="nav-dropdown">
-          <button class="nav-link nav-dropdown-trigger" type="button" style="background:none;border:none;font:inherit;cursor:pointer;">Marketplace <i class="fas fa-chevron-down"></i></button>
+          <button class="nav-link nav-dropdown-trigger" type="button">Marketplace <i class="fas fa-chevron-down"></i></button>
           <div class="nav-dropdown-menu">
             <a href="../store/" class="nav-dropdown-item">
               <i class="fas fa-cart-shopping"></i>
@@ -4371,11 +4151,9 @@
             </a>
           </div>
         </div>
-      </nav>
-      <div class="navbar__cta">
         <a href="contact.html" class="nav-link">Contact</a>
         <div class="nav-dropdown">
-          <button class="btn btn--ghost nav-dropdown-trigger" type="button">Account <i class="fas fa-chevron-down"></i></button>
+          <button class="nav-link nav-dropdown-trigger" type="button">Account <i class="fas fa-chevron-down"></i></button>
           <div class="nav-dropdown-menu">
             <a href="signup.html" class="nav-dropdown-item">
               <i class="fas fa-user-plus"></i>
@@ -4396,24 +4174,15 @@
             </a>
           </div>
         </div>
-        <a href="signup.html" class="btn btn--primary">Sign Up</a>
       </div>
-      <button class="navbar__hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+      
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
-    <nav class="navbar__mobile">
-      <a href="for-brands.html">DALA for Brands</a>
-      <a href="for-supermarkets.html">DALA for Supermarkets</a>
-      <a href="about.html">About Us</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="contact.html">Contact Us</a>
-      <div class="navbar__mobile-auth">
-        <a class="btn btn--ghost" href="login.html">Login</a>
-        <a class="btn btn--primary" href="signup.html">Sign Up</a>
-      </div>
-    </nav>
-  </header>
+  </nav>
 
   <!-- Hero Section - PREMIUM -->
   <section class="about-hero">
@@ -5142,13 +4911,7 @@
       statObserver.observe(stat);
     });
     
-    // Mobile menu toggle
-    const hamburger = document.querySelector('.navbar__hamburger');
-    const mobileMenu = document.querySelector('.navbar__mobile');
-    
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-    });
+    // Mobile menu toggle - Handled by main.js
     
     // 3D tilt effect for story blocks
     const storyBlocks = document.querySelectorAll('.story-block');
@@ -5795,6 +5558,7 @@
   container.addEventListener('mouseleave', startAutoRotate);
 })();
 </script>
+<script src="../js/main.js"></script>
 <script defer src="/js/wip-badge.js"></script>
 </body>
 </html>
