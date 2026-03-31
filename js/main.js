@@ -20,11 +20,41 @@ function initNavigation() {
   const navbar = document.querySelector('.navbar');
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
-  const closeMobileMenu = () => {
-    navLinks?.classList.remove('active');
-    mobileMenuBtn?.classList.remove('active');
-    document.body.classList.remove('nav-open');
-    document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('is-open'));
+  let mobileMenuHistoryOpen = false;
+
+  const applyMobileMenuState = isOpen => {
+    navLinks?.classList.toggle('active', isOpen);
+    mobileMenuBtn?.classList.toggle('active', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+    if (!isOpen) {
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('is-open'));
+    }
+  };
+
+  const closeMobileMenu = (options = {}) => {
+    const { fromPopState = false } = options;
+    if (!navLinks?.classList.contains('active')) {
+      mobileMenuHistoryOpen = false;
+      return;
+    }
+    if (mobileMenuHistoryOpen && !fromPopState) {
+      window.history.back();
+      return;
+    }
+    mobileMenuHistoryOpen = false;
+    applyMobileMenuState(false);
+  };
+
+  const openMobileMenu = () => {
+    if (!navLinks) return;
+    applyMobileMenuState(true);
+    if (!mobileMenuHistoryOpen) {
+      const currentState = window.history.state && typeof window.history.state === 'object'
+        ? window.history.state
+        : {};
+      window.history.pushState({ ...currentState, dalaMobileMenu: true }, '', window.location.href);
+      mobileMenuHistoryOpen = true;
+    }
   };
   
   // Navbar scroll effect
@@ -37,11 +67,13 @@ function initNavigation() {
   });
   
   // Mobile menu toggle
-  if (mobileMenuBtn) {
+  if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      mobileMenuBtn.classList.toggle('active');
-      document.body.classList.toggle('nav-open', navLinks.classList.contains('active'));
+      if (navLinks.classList.contains('active')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
   }
   
@@ -70,6 +102,12 @@ function initNavigation() {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       closeMobileMenu();
+    }
+  });
+
+  window.addEventListener('popstate', () => {
+    if (navLinks?.classList.contains('active') || mobileMenuHistoryOpen) {
+      closeMobileMenu({ fromPopState: true });
     }
   });
 }

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/get-listed.css">
+  <link rel="stylesheet" href="../css/mobile-premium.css">
   <link rel="stylesheet" href="../css/frontend-premium-pass.css">
 </head>
 <body class="listed-form-body page-premium-audit page-premium-audit--listed-form page-premium-audit--listed">
@@ -88,47 +89,244 @@
         <section class="listed-form-panel">
           <span class="listed-form-badge"><i class="fas fa-pen-to-square"></i> Application</span>
           <h2 style="margin:0.7rem 0 0;">Brand Partner Qualification Form</h2>
-          <p class="listed-intro">Complete the form below and our team will review your submission.</p>
-          <form name="get-listed-qualification" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="get-listed-qualification">
-            <input type="hidden" name="bot-field">
-            <div class="listed-form-grid">
-              <div class="listed-field">
-                <label for="full-name">Full Name</label>
-                <input id="full-name" name="full_name" type="text" required>
-              </div>
-              <div class="listed-field">
-                <label for="brand-name">Brand Name</label>
-                <input id="brand-name" name="brand_name" type="text" required>
-              </div>
-              <div class="listed-field">
-                <label for="email">Email Address</label>
-                <input id="email" name="email" type="email" required>
-              </div>
-              <div class="listed-field">
-                <label for="phone">Phone Number</label>
-                <input id="phone" name="phone" type="tel" required>
-              </div>
-              <div class="listed-field">
-                <label for="category">Product Category</label>
-                <input id="category" name="product_category" type="text" required>
-              </div>
-              <div class="listed-field">
-                <label for="partner-type">Partnership Type</label>
-                <select id="partner-type" name="partner_type" required>
-                  <option value="Brand Partner" selected>Brand Partner</option>
-                  <option value="Retail Partner">Retail Partner</option>
-                </select>
-              </div>
-              <div class="listed-field listed-field--full">
-                <label for="message">Tell us about your brand</label>
-                <textarea id="message" name="message" placeholder="Share your product range, current retail footprint, and what you want to achieve with DALA." required></textarea>
-              </div>
+          <p class="listed-intro">Use the full qualification form below so we can review your business clearly, understand your retail readiness, and move the conversation forward quickly.</p>
+
+          <div class="qualification-shell">
+            <div class="qualification-header">
+              <span class="qualification-eyebrow"><i class="fas fa-clipboard-list"></i> Tell us about your business</span>
+              <h3 class="qualification-title">DALA Lead Qualification Form</h3>
+              <p class="qualification-copy">We are keeping this structured so the review is fast, clean, and genuinely useful. Start with your business profile, then give us up to three SKUs to assess properly.</p>
             </div>
-            <div class="listed-form-actions">
-              <button type="submit" class="listed-btn listed-btn-primary">Submit Qualification Form <i class="fas fa-arrow-right"></i></button>
-            </div>
-          </form>
+
+            <form name="get-listed-qualification" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="qualification-form">
+              <input type="hidden" name="form-name" value="get-listed-qualification">
+              <input type="hidden" name="bot-field">
+
+              <section class="qualification-block">
+                <div class="qualification-block-header">
+                  <div>
+                    <span class="qualification-step">Contact</span>
+                    <h4>Primary Contact Details</h4>
+                    <p>We need a clear operator on the other side of the application before we review the commercial details.</p>
+                  </div>
+                </div>
+                <div class="qualification-grid">
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="full-name">Full Name</label>
+                    <input class="qualification-input" id="full-name" name="full_name" type="text" required>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="brand-name">Brand Name</label>
+                    <input class="qualification-input" id="brand-name" name="brand_name" type="text" required>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="email">Email Address</label>
+                    <input class="qualification-input" id="email" name="email" type="email" required>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="phone">Phone Number</label>
+                    <input class="qualification-input" id="phone" name="phone" type="tel" required>
+                  </div>
+                </div>
+              </section>
+
+              <section class="qualification-block">
+                <div class="qualification-block-header">
+                  <div>
+                    <span class="qualification-step">Section 1</span>
+                    <h4>Business Qualification</h4>
+                    <p>These answers help us understand current traction, readiness, and your growth ambition over the next twelve months.</p>
+                  </div>
+                </div>
+                <div class="qualification-grid">
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="certification">Which certification do your products have?</label>
+                    <select class="qualification-select" id="certification" name="product_certification" required>
+                      <option value="">Select one</option>
+                      <option>NAFDAC</option>
+                      <option>SON (MANCAP)</option>
+                    </select>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="retail-presence">How many active retail outlets are your products currently in?</label>
+                    <select class="qualification-select" id="retail-presence" name="retail_presence" required>
+                      <option value="">Select one</option>
+                      <option>Less than 5</option>
+                      <option>Less than 20</option>
+                      <option>Less than 50</option>
+                      <option>Less than 100</option>
+                    </select>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="monthly-revenue">What is your current average monthly business revenue?</label>
+                    <select class="qualification-select" id="monthly-revenue" name="monthly_revenue" required>
+                      <option value="">Select one</option>
+                      <option>Less than ₦500,000</option>
+                      <option>Less than ₦1,000,000</option>
+                      <option>Less than ₦2,000,000</option>
+                      <option>Less than ₦5,000,000</option>
+                      <option>Less than ₦10,000,000</option>
+                      <option>Less than ₦20,000,000</option>
+                    </select>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="marketing-activities">Do you currently engage in marketing activities?</label>
+                    <select class="qualification-select" id="marketing-activities" name="marketing_activities" required>
+                      <option value="">Select one</option>
+                      <option>None</option>
+                      <option>Digital Marketing (Ads, Social Media)</option>
+                      <option>Physical Marketing (In-store promotions, exhibitions, activations)</option>
+                      <option>Both Digital &amp; Physical</option>
+                    </select>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="distribution-target">How many retail stores do you want to be in within the next 12 months?</label>
+                    <select class="qualification-select" id="distribution-target" name="distribution_target" required>
+                      <option value="">Select one</option>
+                      <option>10+ stores</option>
+                      <option>40+ stores</option>
+                      <option>80+ stores</option>
+                      <option>100+ stores</option>
+                      <option>200+ stores</option>
+                    </select>
+                  </div>
+                  <div class="qualification-field">
+                    <label class="qualification-label" for="revenue-target">What is your 12-month target monthly retail revenue?</label>
+                    <select class="qualification-select" id="revenue-target" name="revenue_target" required>
+                      <option value="">Select one</option>
+                      <option>Above ₦2,000,000</option>
+                      <option>Above ₦5,000,000</option>
+                      <option>Above ₦10,000,000</option>
+                      <option>Above ₦20,000,000</option>
+                      <option>Above ₦50,000,000</option>
+                    </select>
+                  </div>
+                </div>
+              </section>
+
+              <section class="qualification-block">
+                <div class="qualification-block-header">
+                  <div>
+                    <span class="qualification-step">Section 2</span>
+                    <h4>Product Details (SKU Information)</h4>
+                    <p>Allow up to three SKUs. This can be your current core range or the products you want positioned first in modern retail.</p>
+                  </div>
+                </div>
+
+                <article class="sku-card">
+                  <div class="sku-title">
+                    <h5>SKU 1</h5>
+                  </div>
+                  <div class="sku-grid">
+                    <div class="qualification-field">
+                      <label class="qualification-label" for="sku1-name">Product Name / SKU Name</label>
+                      <input class="qualification-input" id="sku1-name" name="sku1_name" type="text" required>
+                    </div>
+                    <div class="qualification-field">
+                      <label class="qualification-label" for="sku1-category">Product Category</label>
+                      <input class="qualification-input" id="sku1-category" name="sku1_category" type="text" required>
+                    </div>
+                    <div class="qualification-field qualification-field--full">
+                      <label class="qualification-label">Is the product perishable?</label>
+                      <div class="qualification-radio-group">
+                        <label class="qualification-radio"><input type="radio" name="sku1_perishable" value="Yes" required><span>Yes</span></label>
+                        <label class="qualification-radio"><input type="radio" name="sku1_perishable" value="No" required><span>No</span></label>
+                      </div>
+                    </div>
+                    <div class="qualification-field">
+                      <label class="qualification-label" for="sku1-units">Units per Pack</label>
+                      <input class="qualification-input" id="sku1-units" name="sku1_units_per_pack" type="number" min="1" required>
+                    </div>
+                    <div class="qualification-field">
+                      <label class="qualification-label" for="sku1-weight">Pack Weight</label>
+                      <input class="qualification-input" id="sku1-weight" name="sku1_pack_weight" type="text" placeholder="500ml, 1kg" required>
+                    </div>
+                    <div class="qualification-field qualification-field--full">
+                      <label class="qualification-label" for="sku1-price">Price per Pack (₦)</label>
+                      <input class="qualification-input" id="sku1-price" name="sku1_price_per_pack" type="number" min="0" step="0.01" required>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="sku-card">
+                  <div class="sku-title">
+                    <h5>SKU 2</h5>
+                    <span class="sku-note">Optional</span>
+                  </div>
+                  <div class="sku-grid">
+                    <div class="qualification-field">
+                      <label class="qualification-label" for="sku2-name">Product Name / SKU Name</label>
+                      <input class="qualification-input" id="sku2-name" name="sku2_name" type="text">
+                    </div>
+                    <div class="qualification-field">
+                      <label class="qualification-label" for="sku2-category">Product Category</label>
+                      <input class="qualification-input" id="sku2-category" name="sku2_category" type="text">
+                    </div>
+                    <div class="qualification-field qualification-field--full">
+                      <label class="qualification-label">Is the product perishable?</label>
+                      <div class="qualification-radio-group">
+                        <label class="qualification-radio"><input type="radio" name="sku2_perishable" value="Yes"><span>Yes</span></label>
+                        <label class="qualification-radio"><input type="radio" name="sku2_perishable" value="No"><span>No</span></label>
+                      </div>
+                    </div>
+                    <div class="qualification-field">
+                      <label class="qualification-label" for="sku2-units">Units per Pack</label>
+                      <input class="qualification-input" id="sku2-units" name="sku2_units_per_pack" type="number" min="1">
+                    </div>
+                    <div class="qualification-field">
+                      <label class="qualification-label" for="sku2-weight">Pack Weight</label>
+                      <input class="qualification-input" id="sku2-weight" name="sku2_pack_weight" type="text" placeholder="500ml, 1kg">
+                    </div>
+                    <div class="qualification-field qualification-field--full">
+                      <label class="qualification-label" for="sku2-price">Price per Pack (₦)</label>
+                      <input class="qualification-input" id="sku2-price" name="sku2_price_per_pack" type="number" min="0" step="0.01">
+                    </div>
+                  </div>
+                </article>
+
+                <article class="sku-card">
+                  <div class="sku-title">
+                    <h5>SKU 3</h5>
+                    <span class="sku-note">Optional</span>
+                  </div>
+                  <div class="sku-grid">
+                    <div class="qualification-field">
+                      <label class="qualification-label" for="sku3-name">Product Name / SKU Name</label>
+                      <input class="qualification-input" id="sku3-name" name="sku3_name" type="text">
+                    </div>
+                    <div class="qualification-field">
+                      <label class="qualification-label" for="sku3-category">Product Category</label>
+                      <input class="qualification-input" id="sku3-category" name="sku3_category" type="text">
+                    </div>
+                    <div class="qualification-field qualification-field--full">
+                      <label class="qualification-label">Is the product perishable?</label>
+                      <div class="qualification-radio-group">
+                        <label class="qualification-radio"><input type="radio" name="sku3_perishable" value="Yes"><span>Yes</span></label>
+                        <label class="qualification-radio"><input type="radio" name="sku3_perishable" value="No"><span>No</span></label>
+                      </div>
+                    </div>
+                    <div class="qualification-field">
+                      <label class="qualification-label" for="sku3-units">Units per Pack</label>
+                      <input class="qualification-input" id="sku3-units" name="sku3_units_per_pack" type="number" min="1">
+                    </div>
+                    <div class="qualification-field">
+                      <label class="qualification-label" for="sku3-weight">Pack Weight</label>
+                      <input class="qualification-input" id="sku3-weight" name="sku3_pack_weight" type="text" placeholder="500ml, 1kg">
+                    </div>
+                    <div class="qualification-field qualification-field--full">
+                      <label class="qualification-label" for="sku3-price">Price per Pack (₦)</label>
+                      <input class="qualification-input" id="sku3-price" name="sku3_price_per_pack" type="number" min="0" step="0.01">
+                    </div>
+                  </div>
+                </article>
+              </section>
+
+              <div class="qualification-actions">
+                <p>Submit this once with clean information and we can assess fit, commercial readiness, and the best next step without a lot of back and forth.</p>
+                <button type="submit" class="listed-btn-primary">Submit Qualification Form <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </form>
+          </div>
         </section>
       </div>
     </section>

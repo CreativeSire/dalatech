@@ -296,6 +296,266 @@
       color: var(--gray-500);
       line-height: 1.6;
     }
+
+    .form-shortcuts {
+      display: flex;
+      justify-content: center;
+      gap: 0.85rem;
+      margin-top: 1.75rem;
+      flex-wrap: wrap;
+    }
+
+    .form-shortcut {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.85rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(0,0,0,0.08);
+      color: var(--gray-800);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s var(--ease-out-quart);
+    }
+
+    .form-shortcut:hover {
+      transform: translateY(-2px);
+      border-color: rgba(229, 57, 53, 0.2);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+
+    .qualification-shell {
+      margin-top: 2.5rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .qualification-header {
+      text-align: left;
+      padding: 1.75rem;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, #fff7f2 100%);
+      border: 1px solid rgba(229, 57, 53, 0.1);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.06);
+    }
+
+    .qualification-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0 0 0.85rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(229, 57, 53, 0.08);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .qualification-title {
+      margin: 0 0 0.65rem;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--dark);
+    }
+
+    .qualification-copy {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--gray-600);
+      line-height: 1.75;
+      max-width: 760px;
+    }
+
+    .qualification-form {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .qualification-block {
+      padding: 1.75rem;
+      background: white;
+      border-radius: 24px;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.05);
+    }
+
+    .qualification-block-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .qualification-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 110px;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(229, 57, 53, 0.1) 0%, rgba(255, 140, 66, 0.08) 100%);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .qualification-block-header h3,
+    .qualification-block-header h4 {
+      margin: 0;
+      font-size: 1.35rem;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+    }
+
+    .qualification-block-header p {
+      margin: 0.25rem 0 0;
+      color: var(--gray-600);
+      line-height: 1.7;
+      max-width: 720px;
+    }
+
+    .qualification-grid,
+    .sku-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .qualification-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .qualification-field--full {
+      grid-column: 1 / -1;
+    }
+
+    .qualification-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .qualification-input,
+    .qualification-select {
+      width: 100%;
+      padding: 1rem 1.1rem;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.1);
+      background: #fff;
+      color: var(--dark);
+      font-size: 0.98rem;
+      font-family: inherit;
+      transition: all 0.25s ease;
+    }
+
+    .qualification-input:focus,
+    .qualification-select:focus {
+      outline: none;
+      border-color: rgba(229, 57, 53, 0.45);
+      box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.08);
+    }
+
+    .qualification-radio-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .qualification-radio {
+      flex: 1 1 150px;
+      min-height: 56px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #fff8f5;
+      overflow: hidden;
+    }
+
+    .qualification-radio input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .qualification-radio span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .qualification-radio input:checked + span {
+      background: linear-gradient(135deg, rgba(229, 57, 53, 0.12) 0%, rgba(255, 140, 66, 0.1) 100%);
+      color: var(--primary);
+      box-shadow: inset 0 0 0 1px rgba(229, 57, 53, 0.18);
+    }
+
+    .sku-card {
+      padding: 1.5rem;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #fff 0%, #fff7f3 100%);
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+    }
+
+    .sku-card + .sku-card {
+      margin-top: 1rem;
+    }
+
+    .sku-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .sku-title h5 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--dark);
+    }
+
+    .sku-note {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+    }
+
+    .qualification-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .qualification-actions p {
+      margin: 0;
+      color: var(--gray-600);
+      line-height: 1.6;
+      max-width: 520px;
+    }
     
     .form-grid {
       display: grid;
@@ -666,6 +926,27 @@
         padding: 2.5rem 1.75rem;
         border-radius: 24px;
       }
+
+      .form-shortcuts {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .qualification-header,
+      .qualification-block {
+        padding: 1.35rem;
+        border-radius: 20px;
+      }
+
+      .qualification-grid,
+      .sku-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .qualification-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
       
       .company-grid {
         grid-template-columns: 1fr;
@@ -872,38 +1153,44 @@
           Get Started Today
         </div>
         <h2 class="form-title">Get Listed</h2>
-        <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+        <p class="form-subtitle">Start from Contact if that is where you are, and we will keep the qualification flow clean, structured, and easy to complete.</p>
+        <div class="form-shortcuts">
+          <a href="get-listed.html" class="form-shortcut"><i class="fas fa-arrow-up-right-from-square"></i> Open Get Listed Page</a>
+          <a href="get-listed-form.html" class="form-shortcut"><i class="fas fa-file-signature"></i> Open Full Qualification Form</a>
+        </div>
       </div>
-      
-      <form action="#" method="POST" class="form-grid">
+      <form name="contact-lead-qualification" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form-grid">
+        <input type="hidden" name="form-name" value="contact-lead-qualification">
+        <input type="hidden" name="bot-field">
+
         <div class="form-group">
           <label class="form-label" for="firstName">First Name *</label>
-          <input type="text" id="firstName" name="firstName" class="form-input" placeholder="John" required>
+          <input type="text" id="firstName" name="first_name" class="form-input" placeholder="John" required>
         </div>
-        
+
         <div class="form-group">
           <label class="form-label" for="lastName">Last Name *</label>
-          <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Doe" required>
+          <input type="text" id="lastName" name="last_name" class="form-input" placeholder="Doe" required>
         </div>
-        
+
         <div class="form-group">
           <label class="form-label" for="email">Email Address *</label>
           <input type="email" id="email" name="email" class="form-input" placeholder="john@company.com" required>
         </div>
-        
+
         <div class="form-group">
           <label class="form-label" for="phone">Phone Number *</label>
           <input type="tel" id="phone" name="phone" class="form-input" placeholder="+234 800 000 0000" required>
         </div>
-        
+
         <div class="form-group">
           <label class="form-label" for="company">Company Name *</label>
           <input type="text" id="company" name="company" class="form-input" placeholder="Your Company Ltd" required>
         </div>
-        
+
         <div class="form-group">
           <label class="form-label" for="category">Business Type *</label>
-          <select id="category" name="category" class="form-select" required>
+          <select id="category" name="business_type" class="form-select" required>
             <option value="">Select one...</option>
             <option value="brand">FMCG Brand</option>
             <option value="supermarket">Supermarket/Retailer</option>
@@ -912,19 +1199,223 @@
             <option value="other">Other</option>
           </select>
         </div>
-        
+
         <div class="form-group full-width">
           <label class="form-label" for="message">Tell us about your business *</label>
           <textarea id="message" name="message" class="form-textarea" placeholder="Describe your products, current distribution challenges, and what you're looking to achieve with DALA..." required></textarea>
         </div>
-        
+
+        <div class="form-group full-width qualification-shell">
+          <div class="qualification-header">
+            <span class="qualification-eyebrow"><i class="fas fa-clipboard-list"></i> Continue with qualification</span>
+            <h3 class="qualification-title">Business Qualification</h3>
+            <p class="qualification-copy">Now that we have your business summary, complete the qualification details below so we can assess fit, scale readiness, and product structure properly.</p>
+          </div>
+
+          <section class="qualification-block">
+            <div class="qualification-block-header">
+              <div>
+                <span class="qualification-step">Section 1</span>
+                <h4>Business Qualification</h4>
+                <p>This helps us understand your current readiness, momentum, and growth goals.</p>
+              </div>
+            </div>
+            <div class="qualification-grid">
+              <div class="qualification-field">
+                <label class="qualification-label" for="contact-certification">Which certification do your products have?</label>
+                <select class="qualification-select" id="contact-certification" name="product_certification" required>
+                  <option value="">Select one</option>
+                  <option>NAFDAC</option>
+                  <option>SON (MANCAP)</option>
+                </select>
+              </div>
+              <div class="qualification-field">
+                <label class="qualification-label" for="contact-retail-presence">How many active retail outlets are your products currently in?</label>
+                <select class="qualification-select" id="contact-retail-presence" name="retail_presence" required>
+                  <option value="">Select one</option>
+                  <option>Less than 5</option>
+                  <option>Less than 20</option>
+                  <option>Less than 50</option>
+                  <option>Less than 100</option>
+                </select>
+              </div>
+              <div class="qualification-field">
+                <label class="qualification-label" for="contact-monthly-revenue">What is your current average monthly business revenue?</label>
+                <select class="qualification-select" id="contact-monthly-revenue" name="monthly_revenue" required>
+                  <option value="">Select one</option>
+                  <option>Less than ₦500,000</option>
+                  <option>Less than ₦1,000,000</option>
+                  <option>Less than ₦2,000,000</option>
+                  <option>Less than ₦5,000,000</option>
+                  <option>Less than ₦10,000,000</option>
+                  <option>Less than ₦20,000,000</option>
+                </select>
+              </div>
+              <div class="qualification-field">
+                <label class="qualification-label" for="contact-marketing-activities">Do you currently engage in marketing activities?</label>
+                <select class="qualification-select" id="contact-marketing-activities" name="marketing_activities" required>
+                  <option value="">Select one</option>
+                  <option>None</option>
+                  <option>Digital Marketing (Ads, Social Media)</option>
+                  <option>Physical Marketing (In-store promotions, exhibitions, activations)</option>
+                  <option>Both Digital &amp; Physical</option>
+                </select>
+              </div>
+              <div class="qualification-field">
+                <label class="qualification-label" for="contact-distribution-target">How many retail stores do you want to be in within the next 12 months?</label>
+                <select class="qualification-select" id="contact-distribution-target" name="distribution_target" required>
+                  <option value="">Select one</option>
+                  <option>10+ stores</option>
+                  <option>40+ stores</option>
+                  <option>80+ stores</option>
+                  <option>100+ stores</option>
+                  <option>200+ stores</option>
+                </select>
+              </div>
+              <div class="qualification-field">
+                <label class="qualification-label" for="contact-revenue-target">What is your 12-month target monthly retail revenue?</label>
+                <select class="qualification-select" id="contact-revenue-target" name="revenue_target" required>
+                  <option value="">Select one</option>
+                  <option>Above ₦2,000,000</option>
+                  <option>Above ₦5,000,000</option>
+                  <option>Above ₦10,000,000</option>
+                  <option>Above ₦20,000,000</option>
+                  <option>Above ₦50,000,000</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <section class="qualification-block">
+            <div class="qualification-block-header">
+              <div>
+                <span class="qualification-step">Section 2</span>
+                <h4>Product Details (SKU Information)</h4>
+                <p>Use up to three SKUs so we can review how your range should be positioned commercially.</p>
+              </div>
+            </div>
+
+            <article class="sku-card">
+              <div class="sku-title">
+                <h5>SKU 1</h5>
+              </div>
+              <div class="sku-grid">
+                <div class="qualification-field">
+                  <label class="qualification-label" for="contact-sku1-name">Product Name / SKU Name</label>
+                  <input class="qualification-input" id="contact-sku1-name" name="sku1_name" type="text" required>
+                </div>
+                <div class="qualification-field">
+                  <label class="qualification-label" for="contact-sku1-category">Product Category</label>
+                  <input class="qualification-input" id="contact-sku1-category" name="sku1_category" type="text" required>
+                </div>
+                <div class="qualification-field qualification-field--full">
+                  <label class="qualification-label">Is the product perishable?</label>
+                  <div class="qualification-radio-group">
+                    <label class="qualification-radio"><input type="radio" name="sku1_perishable" value="Yes" required><span>Yes</span></label>
+                    <label class="qualification-radio"><input type="radio" name="sku1_perishable" value="No" required><span>No</span></label>
+                  </div>
+                </div>
+                <div class="qualification-field">
+                  <label class="qualification-label" for="contact-sku1-units">Units per Pack</label>
+                  <input class="qualification-input" id="contact-sku1-units" name="sku1_units_per_pack" type="number" min="1" required>
+                </div>
+                <div class="qualification-field">
+                  <label class="qualification-label" for="contact-sku1-weight">Pack Weight</label>
+                  <input class="qualification-input" id="contact-sku1-weight" name="sku1_pack_weight" type="text" placeholder="500ml, 1kg" required>
+                </div>
+                <div class="qualification-field qualification-field--full">
+                  <label class="qualification-label" for="contact-sku1-price">Price per Pack (₦)</label>
+                  <input class="qualification-input" id="contact-sku1-price" name="sku1_price_per_pack" type="number" min="0" step="0.01" required>
+                </div>
+              </div>
+            </article>
+
+            <article class="sku-card">
+              <div class="sku-title">
+                <h5>SKU 2</h5>
+                <span class="sku-note">Optional</span>
+              </div>
+              <div class="sku-grid">
+                <div class="qualification-field">
+                  <label class="qualification-label" for="contact-sku2-name">Product Name / SKU Name</label>
+                  <input class="qualification-input" id="contact-sku2-name" name="sku2_name" type="text">
+                </div>
+                <div class="qualification-field">
+                  <label class="qualification-label" for="contact-sku2-category">Product Category</label>
+                  <input class="qualification-input" id="contact-sku2-category" name="sku2_category" type="text">
+                </div>
+                <div class="qualification-field qualification-field--full">
+                  <label class="qualification-label">Is the product perishable?</label>
+                  <div class="qualification-radio-group">
+                    <label class="qualification-radio"><input type="radio" name="sku2_perishable" value="Yes"><span>Yes</span></label>
+                    <label class="qualification-radio"><input type="radio" name="sku2_perishable" value="No"><span>No</span></label>
+                  </div>
+                </div>
+                <div class="qualification-field">
+                  <label class="qualification-label" for="contact-sku2-units">Units per Pack</label>
+                  <input class="qualification-input" id="contact-sku2-units" name="sku2_units_per_pack" type="number" min="1">
+                </div>
+                <div class="qualification-field">
+                  <label class="qualification-label" for="contact-sku2-weight">Pack Weight</label>
+                  <input class="qualification-input" id="contact-sku2-weight" name="sku2_pack_weight" type="text" placeholder="500ml, 1kg">
+                </div>
+                <div class="qualification-field qualification-field--full">
+                  <label class="qualification-label" for="contact-sku2-price">Price per Pack (₦)</label>
+                  <input class="qualification-input" id="contact-sku2-price" name="sku2_price_per_pack" type="number" min="0" step="0.01">
+                </div>
+              </div>
+            </article>
+
+            <article class="sku-card">
+              <div class="sku-title">
+                <h5>SKU 3</h5>
+                <span class="sku-note">Optional</span>
+              </div>
+              <div class="sku-grid">
+                <div class="qualification-field">
+                  <label class="qualification-label" for="contact-sku3-name">Product Name / SKU Name</label>
+                  <input class="qualification-input" id="contact-sku3-name" name="sku3_name" type="text">
+                </div>
+                <div class="qualification-field">
+                  <label class="qualification-label" for="contact-sku3-category">Product Category</label>
+                  <input class="qualification-input" id="contact-sku3-category" name="sku3_category" type="text">
+                </div>
+                <div class="qualification-field qualification-field--full">
+                  <label class="qualification-label">Is the product perishable?</label>
+                  <div class="qualification-radio-group">
+                    <label class="qualification-radio"><input type="radio" name="sku3_perishable" value="Yes"><span>Yes</span></label>
+                    <label class="qualification-radio"><input type="radio" name="sku3_perishable" value="No"><span>No</span></label>
+                  </div>
+                </div>
+                <div class="qualification-field">
+                  <label class="qualification-label" for="contact-sku3-units">Units per Pack</label>
+                  <input class="qualification-input" id="contact-sku3-units" name="sku3_units_per_pack" type="number" min="1">
+                </div>
+                <div class="qualification-field">
+                  <label class="qualification-label" for="contact-sku3-weight">Pack Weight</label>
+                  <input class="qualification-input" id="contact-sku3-weight" name="sku3_pack_weight" type="text" placeholder="500ml, 1kg">
+                </div>
+                <div class="qualification-field qualification-field--full">
+                  <label class="qualification-label" for="contact-sku3-price">Price per Pack (₦)</label>
+                  <input class="qualification-input" id="contact-sku3-price" name="sku3_price_per_pack" type="number" min="0" step="0.01">
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <div class="qualification-actions">
+            <p>Once this is submitted, we can review your commercial readiness much faster and continue the conversation with the right context.</p>
+          </div>
+        </div>
+
         <div class="form-submit">
           <button type="submit" class="btn-submit magnetic">
-            Submit Inquiry
+            Submit Qualification Form
             <i class="fas fa-arrow-right"></i>
           </button>
         </div>
       </form>
+      </div>
     </div>
   </section>
 
