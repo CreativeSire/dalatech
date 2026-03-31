@@ -3,9 +3,17 @@
    Mature, professional, focused on the form
    ============================================ */
 
-/* Remove any borders from container */
+/* Remove any borders from container - override original styles */
+body .listed-container,
 .listed-container {
   border: none !important;
+  box-shadow: none !important;
+}
+
+body .listed-hero-panel,
+.listed-hero-panel {
+  border: none !important;
+  background: transparent !important;
   box-shadow: none !important;
 }
 
