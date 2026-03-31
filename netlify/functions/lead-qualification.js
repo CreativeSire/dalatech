@@ -115,6 +115,29 @@ function requestUrl(urlString, options = {}, body = null) {
 async function postToGoogleAppsScript(webhookUrl, payload) {
   const serializedBody = JSON.stringify(payload);
 
+  try {
+    const fetchResponse = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json, text/plain, */*'
+      },
+      body: serializedBody,
+      redirect: 'follow'
+    });
+
+    const fetchBody = await fetchResponse.text();
+    if (fetchResponse.status >= 200 && fetchResponse.status < 300) {
+      return {
+        statusCode: fetchResponse.status,
+        headers: Object.fromEntries(fetchResponse.headers.entries()),
+        body: fetchBody
+      };
+    }
+  } catch (error) {
+    // Fall through to the lower-level redirect handling path below.
+  }
+
   const initialResponse = await requestUrl(
     webhookUrl,
     {
