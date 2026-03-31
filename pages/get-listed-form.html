@@ -363,5 +363,16 @@
   <script src="../js/main.js"></script>
   <script src="../js/lead-capture.js"></script>
 <script defer src="/js/wip-badge.js"></script>
+<script>
+  // Remove border from hero panel
+  document.addEventListener('DOMContentLoaded', function() {
+    var heroPanel = document.querySelector('.listed-hero-panel');
+    if (heroPanel) {
+      heroPanel.style.border = 'none';
+      heroPanel.style.background = 'transparent';
+      heroPanel.style.boxShadow = 'none';
+    }
+  });
+</script>
 </body>
 </html>
