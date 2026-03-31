@@ -188,8 +188,10 @@ body.page-premium-audit .benefit-slide-content {
   }
 
   body.page-premium-audit .logo-section-subtitle {
-    max-width: 11ch;
-    font-size: 1.95rem;
+    max-width: 15ch;
+    font-size: 1.85rem;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
   }
 
   body.page-premium-audit .logo-section-desc {
