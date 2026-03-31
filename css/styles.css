@@ -4466,8 +4466,18 @@ p {
 
 /* Mobile: dropdown inlines into the open nav */
 @media (max-width: 768px) {
-  .nav-dropdown { display: flex; width: 100%; }
-  .nav-dropdown-trigger { width: 100%; justify-content: space-between; }
+  .nav-dropdown { 
+    display: flex; 
+    width: 100%; 
+    flex-direction: column;
+  }
+  .nav-dropdown-trigger { 
+    width: 100%; 
+    justify-content: space-between;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 500;
+  }
   .nav-dropdown-menu {
     position: static;
     opacity: 1;
@@ -4475,13 +4485,32 @@ p {
     transform: none;
     box-shadow: none;
     border: none;
-    border-top: 1px solid #f0f0f0;
+    border-left: 3px solid var(--primary);
     border-radius: 0;
     min-width: 0;
-    padding: 4px 0 0 16px;
+    padding: 8px 0 8px 16px;
+    margin: 4px 0 8px 0;
     display: none;
+    background: rgba(229, 57, 53, 0.03);
   }
-  .nav-dropdown.is-open .nav-dropdown-menu { display: block; }
+  .nav-dropdown.is-open .nav-dropdown-menu { 
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .nav-dropdown-item {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  .nav-dropdown-item i {
+    font-size: 16px;
+    width: 24px;
+    color: var(--primary);
+  }
+  .nav-dropdown-divider {
+    margin: 8px 12px;
+    border-color: rgba(0,0,0,0.1);
+  }
 }
 
 /* Hide all carousel/slider navigation controls */
