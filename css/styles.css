@@ -3576,7 +3576,7 @@ p {
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
+    display: none !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -3592,7 +3592,7 @@ p {
   }
   
   .nav-links.active {
-    display: flex;
+    display: flex !important;
     animation: slideInMenu 0.3s ease-out;
   }
   
@@ -4589,5 +4589,16 @@ p {
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin: 8px 0;
+}
+
+
+/* Debug: Force mobile menu visibility */
+@media (max-width: 768px) {
+  body.nav-open .nav-links {
+    display: flex !important;
+  }
+  .nav-links[style*='display: flex'] {
+    display: flex !important;
+  }
 }
 
