@@ -164,18 +164,57 @@
     0 0 60px rgba(229, 57, 53, 0.15);
 }
 
-/* Accordion Steps Enhancement */
-.listed-step {
+/* Requirements Cards Enhancement */
+.listed-need-card {
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.listed-step-header {
-  position: relative;
-  overflow: hidden;
+.listed-need-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.1),
+    0 0 30px rgba(229, 57, 53, 0.05);
 }
 
-.listed-step-header::before {
+.listed-need-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 3px;
+  background: linear-gradient(180deg, transparent, #e53935, #ff8a1d, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.listed-need-card:hover::before {
+  opacity: 1;
+}
+
+.listed-need-icon {
+  transition: all 0.3s ease;
+}
+
+.listed-need-card:hover .listed-need-icon {
+  transform: scale(1.15) rotate(-5deg);
+  box-shadow: 0 8px 24px rgba(229, 57, 53, 0.25);
+}
+
+/* Accordion Steps Enhancement */
+.listed-process-item {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.listed-process-header {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.listed-process-header::before {
   content: '';
   position: absolute;
   left: 0;
@@ -187,20 +226,28 @@
   transition: opacity 0.3s ease;
 }
 
-.listed-step:hover .listed-step-header::before,
-.listed-step.active .listed-step-header::before {
+.listed-process-item:hover .listed-process-header::before,
+.listed-process-item.expanded .listed-process-header::before {
   opacity: 1;
 }
 
-.listed-step-number {
+.listed-process-number {
   background: linear-gradient(135deg, #e53935 0%, #ff6b35 100%);
   box-shadow: 0 8px 24px rgba(229, 57, 53, 0.3);
   transition: all 0.3s ease;
 }
 
-.listed-step:hover .listed-step-number {
+.listed-process-item:hover .listed-process-number {
   transform: scale(1.1) rotate(5deg);
   box-shadow: 0 12px 32px rgba(229, 57, 53, 0.4);
+}
+
+.listed-process-toggle {
+  transition: transform 0.3s ease;
+}
+
+.listed-process-item.expanded .listed-process-toggle {
+  transform: rotate(180deg);
 }
 
 /* Form Panel Enhancement */
@@ -223,30 +270,64 @@
   opacity: 1;
 }
 
-/* Input Focus Enhancement */
+/* Enhanced Form Fields */
 .listed-input,
-.listed-select {
+.listed-select,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
   transition: all 0.3s ease;
   border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.8);
 }
 
 .listed-input:focus,
-.listed-select:focus {
+.listed-select:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
   border-color: rgba(229, 57, 53, 0.3);
   box-shadow: 
     0 0 0 3px rgba(229, 57, 53, 0.08),
     0 4px 12px rgba(229, 57, 53, 0.05);
   transform: translateY(-1px);
+  background: white;
+}
+
+/* Form Section Headers */
+.form-section-header {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.form-section-header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #e53935, #ff8a1d);
+  border-radius: 3px;
 }
 
 /* Submit Button Enhancement */
-.listed-submit {
+.listed-submit,
+button[type="submit"] {
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #ff8a1d 0%, #ff6b35 50%, #e53935 100%);
+  transition: all 0.3s ease;
 }
 
-.listed-submit::before {
+.listed-submit::before,
+button[type="submit"]::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -255,13 +336,50 @@
   transition: transform 0.6s ease;
 }
 
-.listed-submit:hover::before {
+.listed-submit:hover::before,
+button[type="submit"]:hover::before {
   transform: translateX(100%);
 }
 
-.listed-submit:hover {
+.listed-submit:hover,
+button[type="submit"]:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(229, 57, 53, 0.3);
+}
+
+/* CTA Section Enhancement */
+.listed-cta-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.listed-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(229, 57, 53, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(255, 138, 29, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.listed-cta-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.listed-cta-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.listed-cta-btn:hover::after {
+  transform: translateX(100%);
 }
 
 /* Scroll Reveal Animation Classes */
@@ -326,6 +444,46 @@
   50% { transform: translateX(100%); }
 }
 
+/* Radio Button Enhancement */
+input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  border-color: #e53935;
+  background: radial-gradient(circle, #e53935 40%, transparent 45%);
+  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.15);
+}
+
+/* Add Product Button Enhancement */
+button[type="button"].add-product-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+button[type="button"].add-product-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(229, 57, 53, 0.2);
+}
+
+/* SKU Card Enhancement */
+.sku-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.sku-card:hover {
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
 /* Responsive Enhancements */
 @media (max-width: 768px) {
   .listed-hero-title {
@@ -338,5 +496,27 @@
   
   .listed-not-card:hover {
     transform: translateY(-6px);
+  }
+  
+  .listed-need-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .listed-hero-title,
+  .listed-section-badge::after,
+  .listed-hero-label::after,
+  .float-subtle,
+  .listed-hero-btn::before {
+    animation: none;
+  }
+  
+  .listed-fit-card,
+  .listed-not-card,
+  .listed-need-card,
+  .listed-process-item {
+    transition: none;
   }
 }
