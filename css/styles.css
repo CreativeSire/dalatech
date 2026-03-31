@@ -3559,16 +3559,20 @@ p {
 @media (max-width: 768px) {
   .nav-links {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 72px;
     left: 0;
     right: 0;
+    bottom: 0;
     background: white;
     flex-direction: column;
     padding: var(--space-xl);
     gap: var(--space-xs);
     border-bottom: 1px solid var(--gray-200);
     box-shadow: var(--shadow-lg);
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    z-index: 999;
   }
   
   .nav-links.active {
