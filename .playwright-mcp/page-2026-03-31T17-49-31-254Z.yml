@@ -1,0 +1,179 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DALA Technologies" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DALA Technologies" [ref=e5]
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - link "DALA Technologies" [ref=e122] [cursor=pointer]:
+            - /url: /
+            - img "DALA Technologies" [ref=e123]
+          - button "Close menu" [ref=e124] [cursor=pointer]:
+            - generic [ref=e125]: ×
+        - link "For Brands" [ref=e126] [cursor=pointer]:
+          - /url: /pages/for-brands
+        - link "For Supermarkets" [ref=e127] [cursor=pointer]:
+          - /url: /pages/for-supermarkets
+        - link "About" [ref=e128] [cursor=pointer]:
+          - /url: /pages/about
+        - link "Case Studies" [ref=e129] [cursor=pointer]:
+          - /url: /pages/case-studies
+        - generic [ref=e130]:
+          - button "Marketplace " [ref=e131] [cursor=pointer]:
+            - text: Marketplace
+            - generic [ref=e132]: 
+          - text: 
+        - link "Contact" [ref=e133] [cursor=pointer]:
+          - /url: /pages/contact
+        - generic [ref=e134]:
+          - button "Account " [ref=e135] [cursor=pointer]:
+            - text: Account
+            - generic [ref=e136]: 
+          - text:   
+      - button "Toggle menu" [active] [ref=e6] [cursor=pointer]
+  - main [ref=e10]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]: 
+        - text: Qualification Form
+      - heading "Complete your qualification form." [level=1] [ref=e17]
+      - paragraph [ref=e18]: Share the details we need to review your brand properly and move the partnership process forward.
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]: 
+        - text: Application
+      - heading "Brand Partner Qualification Form" [level=2] [ref=e24]
+      - paragraph [ref=e25]: Use the full qualification form below so we can review your business clearly, understand your retail readiness, and move the conversation forward quickly.
+      - generic [ref=e26]:
+        - text: 
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - generic [ref=e30]:
+              - generic [ref=e31]: Contact
+              - heading "Primary Contact Details" [level=4] [ref=e32]
+              - paragraph [ref=e33]: We need a clear operator on the other side of the application before we review the commercial details.
+            - generic [ref=e34]:
+              - generic [ref=e35]:
+                - generic [ref=e36]: Full Name *
+                - textbox "Full Name *" [ref=e37]
+              - generic [ref=e38]:
+                - generic [ref=e39]: Brand Name *
+                - textbox "Brand Name *" [ref=e40]
+              - generic [ref=e41]:
+                - generic [ref=e42]: Email Address *
+                - textbox "Email Address *" [ref=e43]
+              - generic [ref=e44]:
+                - generic [ref=e45]: Phone Number *
+                - textbox "Phone Number *" [ref=e46]
+          - generic [ref=e47]:
+            - generic [ref=e49]:
+              - generic [ref=e50]: Section 1
+              - heading "Business Qualification" [level=4] [ref=e51]
+              - paragraph [ref=e52]: These answers help us understand current traction, readiness, and your growth ambition over the next twelve months.
+            - generic [ref=e53]:
+              - generic [ref=e54]:
+                - generic [ref=e55]: Which certification do your products have? *
+                - combobox "Which certification do your products have? *" [ref=e56] [cursor=pointer]:
+                  - option "Select one" [selected]
+                  - option "NAFDAC"
+                  - option "SON (MANCAP)"
+              - generic [ref=e57]:
+                - generic [ref=e58]: How many active retail outlets are your products currently in? *
+                - combobox "How many active retail outlets are your products currently in? *" [ref=e59] [cursor=pointer]:
+                  - option "Select one" [selected]
+                  - option "Less than 5"
+                  - option "Less than 20"
+                  - option "Less than 50"
+                  - option "Less than 100"
+              - generic [ref=e60]:
+                - generic [ref=e61]: What is your current average monthly business revenue? *
+                - combobox "What is your current average monthly business revenue? *" [ref=e62] [cursor=pointer]:
+                  - option "Select one" [selected]
+                  - option "Less than ₦500,000"
+                  - option "Less than ₦1,000,000"
+                  - option "Less than ₦2,000,000"
+                  - option "Less than ₦5,000,000"
+                  - option "Less than ₦10,000,000"
+                  - option "Less than ₦20,000,000"
+              - generic [ref=e63]:
+                - generic [ref=e64]: Do you currently engage in marketing activities? *
+                - combobox "Do you currently engage in marketing activities? *" [ref=e65] [cursor=pointer]:
+                  - option "Select one" [selected]
+                  - option "None"
+                  - option "Digital Marketing (Ads, Social Media)"
+                  - option "Physical Marketing (In-store promotions, exhibitions, activations)"
+                  - option "Both Digital & Physical"
+              - generic [ref=e66]:
+                - generic [ref=e67]: How many retail stores do you want to be in within the next 12 months? *
+                - combobox "How many retail stores do you want to be in within the next 12 months? *" [ref=e68] [cursor=pointer]:
+                  - option "Select one" [selected]
+                  - option "10+ stores"
+                  - option "40+ stores"
+                  - option "80+ stores"
+                  - option "100+ stores"
+                  - option "200+ stores"
+              - generic [ref=e69]:
+                - generic [ref=e70]: What is your 12-month target monthly retail revenue? *
+                - combobox "What is your 12-month target monthly retail revenue? *" [ref=e71] [cursor=pointer]:
+                  - option "Select one" [selected]
+                  - option "Above ₦2,000,000"
+                  - option "Above ₦5,000,000"
+                  - option "Above ₦10,000,000"
+                  - option "Above ₦20,000,000"
+                  - option "Above ₦50,000,000"
+          - generic [ref=e72]:
+            - generic [ref=e74]:
+              - generic [ref=e75]: Section 2
+              - heading "Product Details (SKU Information)" [level=4] [ref=e76]
+              - paragraph [ref=e77]: Allow up to three SKUs. This can be your current core range or the products you want positioned first in modern retail.
+            - generic [ref=e78]:
+              - article [ref=e79]:
+                - heading "SKU 1" [level=5] [ref=e81]
+                - generic [ref=e82]:
+                  - generic [ref=e83]:
+                    - generic [ref=e84]: Product Name / SKU Name *
+                    - textbox "Product Name / SKU Name *" [ref=e85]
+                  - generic [ref=e86]:
+                    - generic [ref=e87]: Product Category *
+                    - textbox "Product Category *" [ref=e88]
+                  - generic [ref=e89]:
+                    - generic [ref=e90]: Is the product perishable? *
+                    - generic [ref=e91]:
+                      - generic [ref=e92] [cursor=pointer]:
+                        - radio "Yes"
+                        - generic [ref=e93]: "Yes"
+                      - generic [ref=e94] [cursor=pointer]:
+                        - radio "No"
+                        - generic [ref=e95]: "No"
+                  - generic [ref=e96]:
+                    - generic [ref=e97]: Units per Pack *
+                    - spinbutton "Units per Pack *" [ref=e98]
+                  - generic [ref=e99]:
+                    - generic [ref=e100]: Pack Weight *
+                    - textbox "Pack Weight *" [ref=e101]:
+                      - /placeholder: 500ml, 1kg
+                  - generic [ref=e102]:
+                    - generic [ref=e103]: Product Invoice Price (₦) *
+                    - spinbutton "Product Invoice Price (₦) *" [ref=e104]
+              - text: "* * * * * * * * * * * *"
+              - generic [ref=e105]:
+                - button "Add another product" [ref=e106] [cursor=pointer]
+                - paragraph [ref=e107]: You can add up to 3 products.
+          - generic [ref=e108]:
+            - paragraph [ref=e109]: Submit this once with clean information and we can assess fit, commercial readiness, and the best next step without a lot of back and forth.
+            - button "Submit Qualification Form " [ref=e110] [cursor=pointer]:
+              - text: Submit Qualification Form
+              - generic [ref=e111]: 
+  - contentinfo [ref=e112]:
+    - generic [ref=e113]:
+      - paragraph [ref=e114]: © 2026 DALA Technologies. Structured retail execution across Nigeria.
+      - generic [ref=e115]:
+        - link "Home" [ref=e116] [cursor=pointer]:
+          - /url: /
+        - link "For Brands" [ref=e117] [cursor=pointer]:
+          - /url: /pages/for-brands
+        - link "For Supermarkets" [ref=e118] [cursor=pointer]:
+          - /url: /pages/for-supermarkets
+        - link "Get Listed" [ref=e119] [cursor=pointer]:
+          - /url: /pages/get-listed
