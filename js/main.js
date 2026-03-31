@@ -20,7 +20,32 @@ function initNavigation() {
   const navbar = document.querySelector('.navbar');
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
+  const desktopLogo = document.querySelector('.navbar .logo');
   let mobileMenuHistoryOpen = false;
+
+  if (navLinks && !navLinks.querySelector('.mobile-nav-sheet')) {
+    const mobileSheet = document.createElement('div');
+    mobileSheet.className = 'mobile-nav-sheet';
+
+    const mobileSheetLogo = desktopLogo?.cloneNode(true);
+    mobileSheetLogo?.classList.add('mobile-nav-sheet__logo');
+
+    const mobileCloseBtn = document.createElement('button');
+    mobileCloseBtn.type = 'button';
+    mobileCloseBtn.className = 'mobile-nav-close';
+    mobileCloseBtn.setAttribute('aria-label', 'Close menu');
+    mobileCloseBtn.innerHTML = '<span aria-hidden="true">&times;</span>';
+
+    if (mobileSheetLogo) {
+      mobileSheet.appendChild(mobileSheetLogo);
+    }
+    mobileSheet.appendChild(mobileCloseBtn);
+    navLinks.prepend(mobileSheet);
+
+    mobileCloseBtn.addEventListener('click', () => {
+      closeMobileMenu();
+    });
+  }
 
   const applyMobileMenuState = isOpen => {
     navLinks?.classList.toggle('active', isOpen);
