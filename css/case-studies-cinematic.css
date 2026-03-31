@@ -1339,49 +1339,54 @@ body {
   }
   
   /* ============================================
-     STATS BAR - VERTICAL & TIGHTER (Mobile)
+     STATS BAR - HORIZONTAL & COMPACT (Mobile)
      ============================================ */
   .cinematic-stats {
-    padding: 2.5rem 1.5rem;
+    padding: 2.35rem 1rem;
     background: var(--cinematic-charcoal);
   }
   
   .cinematic-stats-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    max-width: 280px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    max-width: 100%;
     margin: 0 auto;
   }
   
   .cinematic-stat {
-    padding: 1.5rem 0;
+    padding: 0.9rem 0.35rem;
     text-align: center;
     position: relative;
   }
   
   .cinematic-stat:not(:last-child) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: none;
   }
   
   .cinematic-stat:not(:last-child)::after {
-    display: none;
+    display: block;
+    right: -0.4rem;
+    top: 20%;
+    transform: none;
+    height: 60%;
   }
   
   .cinematic-stat-number {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: clamp(1.85rem, 7vw, 2.5rem);
+    margin-bottom: 0.45rem;
     justify-content: center;
   }
   
   .cinematic-stat-number span {
-    font-size: 0.5em;
+    font-size: 0.48em;
     color: var(--cinematic-gold);
   }
   
   .cinematic-stat-label {
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
+    font-size: 0.56rem;
+    letter-spacing: 0.16em;
+    line-height: 1.35;
     color: rgba(255, 255, 255, 0.4);
   }
   

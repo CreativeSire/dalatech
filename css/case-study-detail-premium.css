@@ -654,13 +654,25 @@ body.case-study-page {
   }
   
   .study-hero-stats {
-    flex-direction: row;
-    gap: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
     padding-top: 1.25rem;
   }
   
+  .study-hero-stat {
+    min-width: 0;
+  }
+
   .study-hero-stat-value {
-    font-size: 1.375rem;
+    font-size: 1.22rem;
+    line-height: 1.05;
+  }
+
+  .study-hero-stat-label {
+    font-size: 0.7rem;
+    line-height: 1.35;
+    letter-spacing: 0.08em;
   }
   
   .study-hero-image {
@@ -740,6 +752,14 @@ body.case-study-page {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.75rem;
+  }
+
+  .study-hero-stat-value {
+    font-size: 1.08rem;
+  }
+
+  .study-hero-stat-label {
+    font-size: 0.64rem;
   }
 }
 
