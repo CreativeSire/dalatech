@@ -4485,3 +4485,11 @@ p {
   display: none !important;
 }
 
+
+/* Dropdown divider */
+.nav-dropdown-divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 8px 0;
+}
+
