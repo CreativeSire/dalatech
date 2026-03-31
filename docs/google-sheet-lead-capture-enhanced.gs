@@ -1,10 +1,10 @@
 const CONFIG = {
+  SPREADSHEET_ID: '1zdFd7v4FRIa16N_HX-YGJY68AsX7yFjgwbB_3QSp0f8',
   MASTER_SHEET: 'Sheet1',
   CONTACT_SHEET: 'Contact Leads',
   GET_LISTED_SHEET: 'Get Listed Leads',
   DEDICATED_SHEET: 'Dedicated Form Leads',
   QUALIFIED_SHEET: 'Qualified Leads',
-  ALERT_EMAIL: 'creddypensmedia@gmail.com',
   TIMEZONE: 'Africa/Lagos',
   DATE_FORMAT: 'yyyy-mm-dd hh:mm:ss'
 };
@@ -58,43 +58,42 @@ function doGet() {
 }
 
 function doPost(e) {
-  const payload = JSON.parse(e.postData.contents || '{}');
-  const workbook = SpreadsheetApp.getActiveSpreadsheet();
+  try {
+    const payload = JSON.parse((e && e.postData && e.postData.contents) || '{}');
+    const workbook = SpreadsheetApp.openById(CONFIG.SPREADSHEET_ID);
 
-  installOrRefreshLeadSheets_();
+    const submissionChannel = getSubmissionChannel_(payload);
+    const leadScore = scoreLead_(payload);
+    const qualificationStatus = leadScore >= 3 ? 'Qualified' : 'Needs Review';
+    const row = buildRow_(payload, submissionChannel, leadScore, qualificationStatus);
 
-  const submissionChannel = getSubmissionChannel_(payload);
-  const leadScore = scoreLead_(payload);
-  const qualificationStatus = leadScore >= 3 ? 'Qualified' : 'Needs Review';
-  const row = buildRow_(payload, submissionChannel, leadScore, qualificationStatus);
+    appendToNamedSheet_(workbook, CONFIG.MASTER_SHEET, row);
+    appendToNamedSheet_(workbook, getChannelSheetName_(submissionChannel), row);
 
-  appendToSheet_(workbook.getSheetByName(CONFIG.MASTER_SHEET), row);
+    if (qualificationStatus === 'Qualified') {
+      appendToNamedSheet_(workbook, CONFIG.QUALIFIED_SHEET, row);
+    }
 
-  const channelSheetName = getChannelSheetName_(submissionChannel);
-  appendToSheet_(workbook.getSheetByName(channelSheetName), row);
-
-  if (qualificationStatus === 'Qualified') {
-    appendToSheet_(workbook.getSheetByName(CONFIG.QUALIFIED_SHEET), row);
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        ok: true,
+        submissionChannel: submissionChannel,
+        leadScore: leadScore,
+        qualificationStatus: qualificationStatus
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        ok: false,
+        error: error && error.message ? error.message : String(error)
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
   }
-
-  sendLeadAlert_(payload, submissionChannel, leadScore, qualificationStatus);
-
-  return ContentService
-    .createTextOutput(JSON.stringify({
-      ok: true,
-      submissionChannel,
-      leadScore,
-      qualificationStatus
-    }))
-    .setMimeType(ContentService.MimeType.JSON);
 }
 
 function installOrRefreshLeadSheets() {
-  installOrRefreshLeadSheets_();
-}
-
-function installOrRefreshLeadSheets_() {
-  const workbook = SpreadsheetApp.getActiveSpreadsheet();
+  const workbook = SpreadsheetApp.openById(CONFIG.SPREADSHEET_ID);
 
   [
     CONFIG.MASTER_SHEET,
@@ -102,166 +101,192 @@ function installOrRefreshLeadSheets_() {
     CONFIG.GET_LISTED_SHEET,
     CONFIG.DEDICATED_SHEET,
     CONFIG.QUALIFIED_SHEET
-  ].forEach((name) => ensureSheet_(workbook, name));
+  ].forEach(function(sheetName) {
+    const sheet = getOrCreateSheet_(workbook, sheetName);
+    ensureHeaders_(sheet);
+    formatSheet_(sheet);
+  });
 }
 
-function ensureSheet_(workbook, name) {
-  let sheet = workbook.getSheetByName(name);
-  if (!sheet) {
-    sheet = workbook.insertSheet(name);
-  }
-
-  const headerRange = sheet.getRange(1, 1, 1, HEADERS.length);
-  const currentHeaders = headerRange.getValues()[0];
-  const hasHeaders = currentHeaders.some(Boolean);
-
-  if (!hasHeaders || currentHeaders.join('|') !== HEADERS.join('|')) {
-    headerRange.setValues([HEADERS]);
-  }
-
-  sheet.setFrozenRows(1);
-  headerRange
-    .setFontWeight('bold')
-    .setBackground('#1f6f64')
-    .setFontColor('#ffffff');
-  sheet.getRange('A:A').setNumberFormat(CONFIG.DATE_FORMAT);
-  sheet.autoResizeColumns(1, HEADERS.length);
-
-  if (sheet.getFilter()) {
-    sheet.getFilter().remove();
-  }
-  sheet.getDataRange().createFilter();
-}
-
-function appendToSheet_(sheet, row) {
+function appendToNamedSheet_(workbook, sheetName, row) {
+  const sheet = getOrCreateSheet_(workbook, sheetName);
+  ensureHeaders_(sheet);
   sheet.appendRow(row);
-  const lastRow = sheet.getLastRow();
-  sheet.getRange(lastRow, 1).setNumberFormat(CONFIG.DATE_FORMAT);
 }
 
-function buildRow_(payload, submissionChannel, leadScore, qualificationStatus) {
-  const sku = (index, field) => {
-    const item = Array.isArray(payload.skus) ? payload.skus.find(entry => entry.skuIndex === index) : null;
-    return item && item[field] !== undefined && item[field] !== null ? item[field] : '';
-  };
+function getOrCreateSheet_(workbook, sheetName) {
+  let sheet = workbook.getSheetByName(sheetName);
+  if (!sheet) {
+    sheet = workbook.insertSheet(sheetName);
+  }
+  return sheet;
+}
 
-  return [
-    new Date(payload.submittedAt || new Date().toISOString()),
-    payload.sourcePage || '',
-    payload.formName || '',
-    submissionChannel,
-    leadScore,
-    qualificationStatus,
-    payload.firstName || '',
-    payload.lastName || '',
-    payload.fullName || '',
-    payload.email || '',
-    payload.phone || '',
-    payload.companyName || '',
-    payload.brandName || '',
-    payload.businessType || '',
-    payload.businessSummary || '',
-    payload.productCertification || '',
-    payload.retailPresence || '',
-    payload.monthlyRevenue || '',
-    payload.marketingActivities || '',
-    payload.distributionTarget || '',
-    payload.revenueTarget || '',
-    sku(1, 'productName'),
-    sku(1, 'productCategory'),
-    sku(1, 'isPerishable'),
-    sku(1, 'unitsPerPack'),
-    sku(1, 'packWeight'),
-    sku(1, 'productInvoicePrice'),
-    sku(2, 'productName'),
-    sku(2, 'productCategory'),
-    sku(2, 'isPerishable'),
-    sku(2, 'unitsPerPack'),
-    sku(2, 'packWeight'),
-    sku(2, 'productInvoicePrice'),
-    sku(3, 'productName'),
-    sku(3, 'productCategory'),
-    sku(3, 'isPerishable'),
-    sku(3, 'unitsPerPack'),
-    sku(3, 'packWeight'),
-    sku(3, 'productInvoicePrice')
-  ];
+function ensureHeaders_(sheet) {
+  const existingHeaders = sheet.getRange(1, 1, 1, HEADERS.length).getValues()[0];
+  const needsHeaders = HEADERS.some(function(header, index) {
+    return existingHeaders[index] !== header;
+  });
+
+  if (needsHeaders) {
+    sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
+  }
+}
+
+function formatSheet_(sheet) {
+  sheet.setFrozenRows(1);
+  sheet.getRange(1, 1, 1, HEADERS.length)
+    .setFontWeight('bold')
+    .setBackground('#1f6f5f')
+    .setFontColor('#ffffff');
+
+  if (sheet.getMaxColumns() < HEADERS.length) {
+    sheet.insertColumnsAfter(sheet.getMaxColumns(), HEADERS.length - sheet.getMaxColumns());
+  }
+
+  sheet.getRange(2, 1, Math.max(sheet.getMaxRows() - 1, 1), 1).setNumberFormat(CONFIG.DATE_FORMAT);
 }
 
 function getSubmissionChannel_(payload) {
-  const formName = String(payload.formName || '').trim();
+  const sourcePage = String(payload.sourcePage || payload.source_page || '').toLowerCase();
+  const formName = String(payload.formName || payload.form_name || '').toLowerCase();
 
-  if (formName === 'contact-lead-qualification') {
+  if (sourcePage.indexOf('/pages/contact') !== -1 || formName.indexOf('contact') !== -1) {
     return 'Contact';
   }
 
-  if (formName === 'get-listed-qualification-inline') {
-    return 'Get Listed';
-  }
-
-  if (formName === 'get-listed-qualification') {
+  if (sourcePage.indexOf('/pages/get-listed-form') !== -1 || formName.indexOf('dedicated') !== -1) {
     return 'Dedicated Form';
   }
 
-  return 'Unknown';
+  return 'Get Listed';
 }
 
 function getChannelSheetName_(submissionChannel) {
   if (submissionChannel === 'Contact') return CONFIG.CONTACT_SHEET;
-  if (submissionChannel === 'Get Listed') return CONFIG.GET_LISTED_SHEET;
   if (submissionChannel === 'Dedicated Form') return CONFIG.DEDICATED_SHEET;
-  return CONFIG.MASTER_SHEET;
+  return CONFIG.GET_LISTED_SHEET;
 }
 
 function scoreLead_(payload) {
   let score = 0;
 
-  if (payload.productCertification === 'NAFDAC' || payload.productCertification === 'SON (MANCAP)') {
-    score += 1;
-  }
+  const certification = String(payload.productCertification || payload.product_certification || '');
+  const retailPresence = String(payload.retailPresence || payload.retail_presence || '');
+  const monthlyRevenue = String(payload.monthlyRevenue || payload.monthly_revenue || '');
+  const marketingActivities = String(payload.marketingActivities || payload.marketing_activities || '');
+  const distributionTarget = String(payload.distributionTarget || payload.distribution_target || '');
+  const revenueTarget = String(payload.revenueTarget || payload.revenue_target || '');
+  const skus = normalizeSkus_(payload);
 
-  if (payload.marketingActivities && payload.marketingActivities !== 'None') {
-    score += 1;
-  }
-
-  if (payload.distributionTarget && payload.distributionTarget !== '10+ stores') {
-    score += 1;
-  }
-
-  if (payload.revenueTarget && payload.revenueTarget !== 'Above ₦2,000,000') {
-    score += 1;
-  }
-
-  if (Array.isArray(payload.skus) && payload.skus.some(item => item.productName)) {
-    score += 1;
-  }
+  if (certification && certification !== 'None') score += 1;
+  if (retailPresence && retailPresence !== 'Less than 5') score += 1;
+  if (monthlyRevenue && monthlyRevenue !== 'Less than ₦500,000') score += 1;
+  if (marketingActivities && marketingActivities !== 'None') score += 1;
+  if (distributionTarget && distributionTarget !== '10+ stores') score += 1;
+  if (revenueTarget && revenueTarget !== 'Above ₦2,000,000') score += 1;
+  if (skus.some(function(item) { return item.productName; })) score += 1;
 
   return score;
 }
 
-function sendLeadAlert_(payload, submissionChannel, leadScore, qualificationStatus) {
-  if (!CONFIG.ALERT_EMAIL) return;
+function buildRow_(payload, submissionChannel, leadScore, qualificationStatus) {
+  const submittedAt = Utilities.formatDate(new Date(), CONFIG.TIMEZONE, CONFIG.DATE_FORMAT);
+  const sourcePage = payload.sourcePage || payload.source_page || '';
+  const formName = payload.formName || payload.form_name || '';
+  const firstName = payload.firstName || payload.first_name || '';
+  const lastName = payload.lastName || payload.last_name || '';
+  const fullName = payload.fullName || payload.full_name || [firstName, lastName].filter(Boolean).join(' ').trim();
+  const email = payload.email || '';
+  const phone = payload.phone || '';
+  const companyName = payload.companyName || payload.company_name || '';
+  const brandName = payload.brandName || payload.brand_name || '';
+  const businessType = payload.businessType || payload.business_type || '';
+  const businessSummary = payload.businessSummary || payload.business_summary || '';
+  const productCertification = payload.productCertification || payload.product_certification || '';
+  const retailPresence = payload.retailPresence || payload.retail_presence || '';
+  const monthlyRevenue = payload.monthlyRevenue || payload.monthly_revenue || '';
+  const marketingActivities = payload.marketingActivities || payload.marketing_activities || '';
+  const distributionTarget = payload.distributionTarget || payload.distribution_target || '';
+  const revenueTarget = payload.revenueTarget || payload.revenue_target || '';
+  const skus = normalizeSkus_(payload);
 
-  const subject = `New DALA lead: ${payload.companyName || payload.brandName || payload.fullName || 'Unnamed Lead'}`;
-  const body = [
-    'A new DALA lead has been submitted.',
-    '',
-    `Channel: ${submissionChannel}`,
-    `Qualification status: ${qualificationStatus}`,
-    `Lead score: ${leadScore}`,
-    '',
-    `Name: ${payload.fullName || ''}`.trim(),
-    `Email: ${payload.email || ''}`.trim(),
-    `Phone: ${payload.phone || ''}`.trim(),
-    `Company: ${payload.companyName || ''}`.trim(),
-    `Brand: ${payload.brandName || ''}`.trim(),
-    `Business type: ${payload.businessType || ''}`.trim(),
-    '',
-    'Summary:',
-    payload.businessSummary || '',
-    '',
-    'Open the Google Sheet to view the full submission.'
-  ].join('\n');
+  return [
+    submittedAt,
+    sourcePage,
+    formName,
+    submissionChannel,
+    leadScore,
+    qualificationStatus,
+    firstName,
+    lastName,
+    fullName,
+    email,
+    phone,
+    companyName,
+    brandName,
+    businessType,
+    businessSummary,
+    productCertification,
+    retailPresence,
+    monthlyRevenue,
+    marketingActivities,
+    distributionTarget,
+    revenueTarget,
+    skuValue_(skus, 1, 'productName'),
+    skuValue_(skus, 1, 'productCategory'),
+    skuValue_(skus, 1, 'isPerishable'),
+    skuValue_(skus, 1, 'unitsPerPack'),
+    skuValue_(skus, 1, 'packWeight'),
+    skuValue_(skus, 1, 'productInvoicePrice'),
+    skuValue_(skus, 2, 'productName'),
+    skuValue_(skus, 2, 'productCategory'),
+    skuValue_(skus, 2, 'isPerishable'),
+    skuValue_(skus, 2, 'unitsPerPack'),
+    skuValue_(skus, 2, 'packWeight'),
+    skuValue_(skus, 2, 'productInvoicePrice'),
+    skuValue_(skus, 3, 'productName'),
+    skuValue_(skus, 3, 'productCategory'),
+    skuValue_(skus, 3, 'isPerishable'),
+    skuValue_(skus, 3, 'unitsPerPack'),
+    skuValue_(skus, 3, 'packWeight'),
+    skuValue_(skus, 3, 'productInvoicePrice')
+  ];
+}
 
-  MailApp.sendEmail(CONFIG.ALERT_EMAIL, subject, body);
+function normalizeSkus_(payload) {
+  if (Array.isArray(payload.skus)) {
+    return payload.skus.map(function(item, index) {
+      return {
+        skuIndex: Number(item.skuIndex || index + 1),
+        productName: item.productName || item.name || '',
+        productCategory: item.productCategory || item.category || '',
+        isPerishable: item.isPerishable || item.perishable || '',
+        unitsPerPack: item.unitsPerPack || item.units || '',
+        packWeight: item.packWeight || item.weight || '',
+        productInvoicePrice: item.productInvoicePrice || item.invoicePrice || item.price || ''
+      };
+    });
+  }
+
+  const skus = [];
+  for (var i = 1; i <= 3; i += 1) {
+    skus.push({
+      skuIndex: i,
+      productName: payload['sku' + i + '_name'] || '',
+      productCategory: payload['sku' + i + '_category'] || '',
+      isPerishable: payload['sku' + i + '_perishable'] || '',
+      unitsPerPack: payload['sku' + i + '_units_per_pack'] || '',
+      packWeight: payload['sku' + i + '_pack_weight'] || '',
+      productInvoicePrice: payload['sku' + i + '_invoice_price'] || ''
+    });
+  }
+  return skus;
+}
+
+function skuValue_(skus, skuIndex, field) {
+  const match = skus.find(function(item) {
+    return Number(item.skuIndex) === Number(skuIndex);
+  });
+  return match && match[field] ? match[field] : '';
 }

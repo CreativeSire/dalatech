@@ -1,3 +1,6 @@
+const https = require('https');
+const { URL } = require('url');
+
 const headers = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'Content-Type',
@@ -72,6 +75,68 @@ function normalizeLead(payload) {
   };
 }
 
+function requestUrl(urlString, options = {}, body = null) {
+  return new Promise((resolve, reject) => {
+    const url = new URL(urlString);
+    const req = https.request(
+      {
+        protocol: url.protocol,
+        hostname: url.hostname,
+        port: url.port || undefined,
+        path: `${url.pathname}${url.search}`,
+        method: options.method || 'GET',
+        headers: options.headers || {}
+      },
+      (response) => {
+        let responseBody = '';
+        response.on('data', (chunk) => {
+          responseBody += chunk;
+        });
+        response.on('end', () => {
+          resolve({
+            statusCode: response.statusCode || 0,
+            headers: response.headers || {},
+            body: responseBody
+          });
+        });
+      }
+    );
+
+    req.on('error', reject);
+
+    if (body) {
+      req.write(body);
+    }
+
+    req.end();
+  });
+}
+
+async function postToGoogleAppsScript(webhookUrl, payload) {
+  const serializedBody = JSON.stringify(payload);
+
+  const initialResponse = await requestUrl(
+    webhookUrl,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(serializedBody)
+      }
+    },
+    serializedBody
+  );
+
+  if (
+    [301, 302, 303, 307, 308].includes(initialResponse.statusCode) &&
+    initialResponse.headers.location
+  ) {
+    return requestUrl(initialResponse.headers.location, { method: 'GET' });
+  }
+
+  return initialResponse;
+}
+
 exports.handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
@@ -94,20 +159,14 @@ exports.handler = async (event) => {
       });
     }
 
-    const response = await fetch(webhookUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(normalizedLead)
-    });
+    const response = await postToGoogleAppsScript(webhookUrl, normalizedLead);
 
-    if (!response.ok) {
-      const webhookBody = await response.text();
-      console.error('Lead sheet webhook failed:', response.status, webhookBody);
+    if (response.statusCode < 200 || response.statusCode >= 300) {
+      console.error('Lead sheet webhook failed:', response.statusCode, response.body);
       return json(502, {
         message: 'Lead received, but sheet sync failed',
-        sheetLinked: false
+        sheetLinked: false,
+        webhookStatus: response.statusCode
       });
     }
 
