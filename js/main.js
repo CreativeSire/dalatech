@@ -20,6 +20,12 @@ function initNavigation() {
   const navbar = document.querySelector('.navbar');
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
+  const closeMobileMenu = () => {
+    navLinks?.classList.remove('active');
+    mobileMenuBtn?.classList.remove('active');
+    document.body.classList.remove('nav-open');
+    document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('is-open'));
+  };
   
   // Navbar scroll effect
   window.addEventListener('scroll', () => {
@@ -35,6 +41,7 @@ function initNavigation() {
     mobileMenuBtn.addEventListener('click', () => {
       navLinks.classList.toggle('active');
       mobileMenuBtn.classList.toggle('active');
+      document.body.classList.toggle('nav-open', navLinks.classList.contains('active'));
     });
   }
   
@@ -56,9 +63,14 @@ function initNavigation() {
   const links = navLinks?.querySelectorAll('a');
   links?.forEach(link => {
     link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      mobileMenuBtn.classList.remove('active');
+      closeMobileMenu();
     });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+    }
   });
 }
 
