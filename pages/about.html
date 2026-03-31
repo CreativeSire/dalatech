@@ -4189,6 +4189,161 @@
         display: none !important;
       }
     }
+    /* Review alignment pass */
+    .about-hero {
+      padding-bottom: clamp(4rem, 8vw, 5.5rem);
+    }
+
+    .story-section {
+      padding-top: clamp(4rem, 7vw, 5.5rem);
+      padding-bottom: clamp(4rem, 7vw, 5rem);
+      background: linear-gradient(180deg, #f8f4ef 0%, #fcfaf7 100%);
+    }
+
+    .story-grid,
+    .story-marquee-container,
+    .story-3d-carousel {
+      display: none !important;
+    }
+
+    .story-prose-flow {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .story-prose-item {
+      display: grid;
+      grid-template-columns: 84px minmax(0, 1fr);
+      gap: 1.5rem;
+      padding: 0 0 2rem;
+      border-bottom: 1px solid rgba(23, 12, 9, 0.08);
+    }
+
+    .story-prose-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .story-prose-num {
+      width: 84px;
+      height: 84px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, rgba(229, 57, 53, 0.12) 0%, rgba(255, 138, 29, 0.08) 100%);
+      border: 1px solid rgba(229, 57, 53, 0.14);
+      color: #c93d33;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .story-prose-copy .eyebrow {
+      margin-bottom: 0.75rem;
+    }
+
+    .story-prose-copy h3 {
+      margin: 0 0 1rem;
+      color: #120b09;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+    }
+
+    .story-prose-copy p {
+      margin: 0 0 0.9rem;
+      color: #51413b;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 68ch;
+    }
+
+    .story-prose-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .mv-label,
+    .mv-slide-label {
+      background: rgba(229, 57, 53, 0.1);
+      border-color: rgba(229, 57, 53, 0.18);
+      color: #d74338;
+    }
+
+    .mv-label i,
+    .mv-slide-label i {
+      display: none;
+    }
+
+    .values-title {
+      color: #170d0b;
+    }
+
+    .value-3d-card__inner {
+      background: linear-gradient(180deg, rgba(36, 18, 16, 0.96) 0%, rgba(24, 12, 10, 0.98) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 22px 48px rgba(12, 6, 6, 0.22);
+    }
+
+    .value-3d-card__label {
+      background: rgba(229, 57, 53, 0.16);
+      border: 1px solid rgba(229, 57, 53, 0.22);
+      color: #ffd9cf;
+    }
+
+    .value-3d-card h4,
+    .value-3d-card p {
+      color: #fff7f2 !important;
+    }
+
+    .value-3d-card p {
+      opacity: 0.88;
+    }
+
+    .cta-section .btn-group .btn {
+      min-width: 0;
+      white-space: nowrap;
+    }
+
+    .cta-section .btn--primary {
+      background: linear-gradient(135deg, #e84a3c 0%, #ff8c42 100%);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 14px 28px rgba(232, 74, 60, 0.24);
+    }
+
+    .cta-section .btn--primary:hover {
+      background: linear-gradient(135deg, #ef5b49 0%, #ff9b4f 100%);
+    }
+
+    @media (max-width: 767px) {
+      .story-prose-flow {
+        gap: 1.5rem;
+      }
+
+      .story-prose-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .story-prose-num {
+        width: 64px;
+        height: 64px;
+        border-radius: 20px;
+        font-size: 1.2rem;
+      }
+
+      .story-prose-copy h3 {
+        font-size: 1.65rem;
+      }
+
+      .story-prose-copy p {
+        font-size: 0.98rem;
+        line-height: 1.75;
+      }
+    }
   </style>
 </head>
 <body>
@@ -4218,19 +4373,9 @@
         </div>
       </nav>
       <div class="navbar__cta">
-        <a href="contact.html" class="nav-link">Contact</a>
         <div class="nav-dropdown">
-          <button class="btn btn--ghost nav-dropdown-trigger" type="button">Account <i class="fas fa-chevron-down"></i></button>
+          <button class="btn btn--ghost nav-dropdown-trigger" type="button">Sign In <i class="fas fa-chevron-down"></i></button>
           <div class="nav-dropdown-menu">
-            <a href="signup.html" class="nav-dropdown-item">
-              <i class="fas fa-user-plus"></i>
-              <div><strong>Sign Up</strong><span>Create a new account</span></div>
-            </a>
-            <a href="login.html" class="nav-dropdown-item">
-              <i class="fas fa-sign-in-alt"></i>
-              <div><strong>Sign In</strong><span>Access your account</span></div>
-            </a>
-            <hr class="nav-dropdown-divider">
             <a href="../trade/" class="nav-dropdown-item">
               <i class="fas fa-store"></i>
               <div><strong>Trade Portal</strong><span>For retailers</span></div>
@@ -4241,6 +4386,7 @@
             </a>
           </div>
         </div>
+        <a href="signup.html" class="btn btn--primary">Sign Up</a>
       </div>
       <button class="navbar__hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -4290,167 +4436,39 @@
         <h2>From the Problem We Lived</h2>
       </div>
       
-      <!-- Desktop: Grid Layout -->
-      <div class="story-grid">
-        <!-- Block 01 - Challenge -->
-        <div class="story-block reveal">
-          <div class="story-visual">
-            <div class="story-number">01</div>
-            <div class="story-image">
-              <div class="story-placeholder challenge">
-                <i class="fas fa-store-slash"></i>
-                <h4>The Struggle</h4>
-                <p>Nigerian retail challenges</p>
-              </div>
-            </div>
-          </div>
-          <div class="story-content">
+      <div class="story-prose-flow reveal">
+        <article class="story-prose-item">
+          <div class="story-prose-num">01</div>
+          <div class="story-prose-copy">
             <div class="eyebrow">Where We Started</div>
             <h3>Born From the Problem We Lived</h3>
             <p>Before DALA became what it is today, we were you. We had a company that was slowly dying. Not because the product wasn't good. But because the operational chaos of Nigerian retail was eating us alive.</p>
-            <p>Deliveries were killing our cash flow. Getting into stores felt impossible. Small order quantities weren't worth it to logistics companies.</p>
-            <p><strong>That's when DALA was born — not as a business idea, but as a lifeline.</strong></p>
+            <p>Deliveries were killing our cash flow. Getting into stores felt impossible. Small order quantities were not worth it to logistics companies.</p>
+            <p><strong>That is when DALA was born — not as a business idea, but as a lifeline.</strong></p>
           </div>
-        </div>
-        
-        <!-- Block 02 - Breakthrough -->
-        <div class="story-block reveal">
-          <div class="story-visual">
-            <div class="story-number">02</div>
-            <div class="story-image">
-              <div class="story-placeholder breakthrough">
-                <i class="fas fa-rocket"></i>
-                <h4>The Breakthrough</h4>
-                <p>From 10 to 300+ stores</p>
-              </div>
-            </div>
-          </div>
-          <div class="story-content">
+        </article>
+
+        <article class="story-prose-item">
+          <div class="story-prose-num">02</div>
+          <div class="story-prose-copy">
             <div class="eyebrow">The Breakthrough</div>
             <h3>What We Learned Changes Everything</h3>
-            <p>DALA helped Wilson Lemonade scale from struggling in a few stores to thriving in over 300 modern retail locations across Lagos and Ogun.</p>
-            <p>What took us close to a decade to achieve on our own could have been done in 1–2 years with what we know now.</p>
-            <p><strong>We learned: the problem was never the product. It was the operations.</strong> When you can't deliver efficiently, you can't scale.</p>
+            <p>Over more than 10 years of operating experience, we learned that the real problem was not the quality of the product. The real problem was operational execution.</p>
+            <p>When delivery is unreliable, store access is fragmented, and reporting is unclear, growth slows down no matter how strong the demand is.</p>
+            <p><strong>We learned: the problem was never the product. It was the operations.</strong> Once execution becomes disciplined, scale becomes repeatable.</p>
           </div>
-        </div>
-        
-        <!-- Block 03 - Today -->
-        <div class="story-block reveal">
-          <div class="story-visual">
-            <div class="story-number">03</div>
-            <div class="story-image">
-              <div class="story-placeholder today">
-                <i class="fas fa-handshake"></i>
-                <h4>Today</h4>
-                <p>Helping brands scale</p>
-              </div>
-            </div>
-          </div>
-          <div class="story-content">
+        </article>
+
+        <article class="story-prose-item">
+          <div class="story-prose-num">03</div>
+          <div class="story-prose-copy">
             <div class="eyebrow">What We Do Today</div>
             <h3>Sharing What Saved Us</h3>
-            <p>Today, DALA exists to help other founder-led brands move faster than they ever could alone. We help you get on more shelves, expand across Lagos and Ogun, and scale rapidly.</p>
-            <p>While you focus on what actually matters: making great products and building demand.</p>
-            <p><strong>We're not selling you theory. We're sharing what saved us.</strong></p>
+            <p>Today, DALA exists to help other founder-led brands move faster than they ever could alone. We help you get on more shelves, scale responsibly, and build growth on operational discipline instead of chaos.</p>
+            <p>While you focus on what actually matters: making great products and building demand, we help keep the retail engine clear, accountable, and dependable.</p>
+            <p><strong>We are not selling theory. We are sharing what saved us.</strong></p>
           </div>
-        </div>
-      </div>
-      
-      <!-- Desktop: Floating Marquee -->
-      <div class="story-marquee-container">
-        <div class="story-marquee-track">
-          <!-- Card 1: The Struggle -->
-          <div class="story-float-card active" data-index="0">
-            <div class="story-float-visual struggle">
-              <div class="story-float-number">01</div>
-              <img src="../images/generated/about/story-struggle.webp" alt="The struggle of founder-led retail operations in Nigeria" loading="lazy">
-            </div>
-            <div class="story-float-content">
-              <span class="story-float-label">The Struggle</span>
-              <h3>Born From the Problem</h3>
-              <p>Before DALA, we were you. Our company was dying from operational chaos — deliveries killing cash flow, stores impossible to reach.</p>
-            </div>
-          </div>
-          
-          <!-- Card 2: The Breakthrough -->
-          <div class="story-float-card next" data-index="1">
-            <div class="story-float-visual breakthrough">
-              <div class="story-float-number">02</div>
-              <img src="../images/generated/about/story-breakthrough.webp" alt="The breakthrough from disciplined retail operations" loading="lazy">
-            </div>
-            <div class="story-float-content">
-              <span class="story-float-label">The Breakthrough</span>
-              <h3>What Changed Everything</h3>
-              <p>We scaled from 10 to 300+ stores. What took a decade could be done in 1-2 years with what we know now.</p>
-            </div>
-          </div>
-          
-          <!-- Card 3: Today -->
-          <div class="story-float-card prev" data-index="2">
-            <div class="story-float-visual today">
-              <div class="story-float-number">03</div>
-              <img src="../images/generated/about/story-today.webp" alt="How DALA helps brands scale today" loading="lazy">
-            </div>
-            <div class="story-float-content">
-              <span class="story-float-label">Today</span>
-              <h3>Sharing What Saved Us</h3>
-              <p>We help founder-led brands move faster. Get on more shelves, expand across Lagos and Ogun, scale rapidly.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Mobile: 3D Carousel with Red Background -->
-      <div class="story-3d-carousel">
-        <div class="story-3d-container">
-          <div class="story-3d-track" id="storyTrack">
-            <!-- Card 1 -->
-            <div class="story-3d-card active" data-index="0">
-              <div class="story-3d-visual">
-                <div class="story-3d-number">01</div>
-                <img src="../images/generated/about/story-struggle.webp" alt="The struggle of founder-led retail operations in Nigeria" loading="lazy">
-              </div>
-              <div class="story-3d-content">
-                <span class="story-3d-eyebrow">Where We Started</span>
-                <h3>Born From the Problem</h3>
-                <p>Before DALA, we were you. Our company was dying from operational chaos — deliveries killing cash flow, stores impossible to reach.</p>
-                <p class="story-3d-highlight">DALA was born as a lifeline.</p>
-              </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="story-3d-card" data-index="1">
-              <div class="story-3d-visual">
-                <div class="story-3d-number">02</div>
-                <img src="../images/generated/about/story-breakthrough.webp" alt="The breakthrough from disciplined retail operations" loading="lazy">
-              </div>
-              <div class="story-3d-content">
-                <span class="story-3d-eyebrow">The Breakthrough</span>
-                <h3>What Changed Everything</h3>
-                <p>We scaled from 10 to 300+ stores. What took a decade could be done in 1-2 years with what we know now.</p>
-                <p class="story-3d-highlight">The problem was never the product. It was operations.</p>
-              </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="story-3d-card" data-index="2">
-              <div class="story-3d-visual">
-                <div class="story-3d-number">03</div>
-                <img src="../images/generated/about/story-today.webp" alt="How DALA helps brands scale today" loading="lazy">
-              </div>
-              <div class="story-3d-content">
-                <span class="story-3d-eyebrow">What We Do Today</span>
-                <h3>Sharing What Saved Us</h3>
-                <p>We help founder-led brands move faster than they ever could alone. Get on more shelves, expand across Lagos and Ogun, and scale rapidly.</p>
-                <p class="story-3d-highlight">We're sharing what saved us. Not theory.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Dots -->
-        <div class="story-3d-dots">
-          <button class="story-dot active" data-index="0"></button>
-          <button class="story-dot" data-index="1"></button>
-          <button class="story-dot" data-index="2"></button>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -4470,7 +4488,7 @@
             <div class="mv-split-media mission" aria-hidden="true"></div>
           </div>
           <div class="mv-split-content">
-            <span class="mv-label"><i class="fas fa-bullseye"></i> Our Mission</span>
+            <span class="mv-label">Our Mission</span>
             <h3>Remove Operational Bottlenecks</h3>
             <p>We exist to remove operational bottlenecks so great products can scale responsibly in modern retail. We help founder-led brands grow with structure, discipline, and confidence.</p>
           </div>
@@ -4481,7 +4499,7 @@
             <div class="mv-split-media vision" aria-hidden="true"></div>
           </div>
           <div class="mv-split-content">
-            <span class="mv-label"><i class="fas fa-eye"></i> Our Vision</span>
+            <span class="mv-label">Our Vision</span>
             <h3>The Trusted Retail Engine</h3>
             <p>To be the trusted retail operations engine for every growing consumer brand in Nigeria — the reliable infrastructure layer between ambitious brands and modern retail.</p>
           </div>
@@ -4494,9 +4512,9 @@
           <div class="mv-slide-card mission">
             <div class="mv-slide-media mission" aria-hidden="true"></div>
             <div class="mv-slide-body">
-              <span class="mv-slide-label"><i class="fas fa-bullseye"></i> Our Mission</span>
+              <span class="mv-slide-label">Our Mission</span>
               <h3>Remove Operational Bottlenecks</h3>
-              <p>We help founder-led brands grow with structure, discipline, and confidence in modern retail.</p>
+              <p>We exist to remove operational bottlenecks so great products can scale responsibly in modern retail. We help founder-led brands grow with structure, discipline, and confidence.</p>
             </div>
           </div>
         </div>
@@ -4505,9 +4523,9 @@
           <div class="mv-slide-card vision">
             <div class="mv-slide-media vision" aria-hidden="true"></div>
             <div class="mv-slide-body">
-              <span class="mv-slide-label"><i class="fas fa-eye"></i> Our Vision</span>
+              <span class="mv-slide-label">Our Vision</span>
               <h3>The Trusted Retail Engine</h3>
-              <p>The reliable infrastructure layer between ambitious brands and modern retail across Nigeria.</p>
+              <p>To be the trusted retail operations engine for every growing consumer brand in Nigeria — the reliable infrastructure layer between ambitious brands and modern retail.</p>
             </div>
           </div>
         </div>
@@ -4536,7 +4554,7 @@
           <div class="value-3d-card active" data-index="0">
             <div class="value-3d-card__inner">
               <div class="value-3d-card__media"><img src="../images/generated/about/value-integrity-first.webp" alt="Integrity First" loading="eager" fetchpriority="high" decoding="async"></div>
-              <div class="value-3d-card__label"><i class="fas fa-shield-alt"></i> Core Value</div>
+              <div class="value-3d-card__label">Core Value</div>
               <h4>Integrity First</h4>
               <p>We operate with full transparency and honest communication — no hidden agendas, no surprises.</p>
               <div class="value-3d-card__shine"></div>
@@ -4546,7 +4564,7 @@
           <div class="value-3d-card" data-index="1">
             <div class="value-3d-card__inner">
               <div class="value-3d-card__media"><img src="../images/generated/about/value-execution-excellence.webp" alt="Execution Excellence" loading="eager" fetchpriority="high" decoding="async"></div>
-              <div class="value-3d-card__label"><i class="fas fa-trophy"></i> Core Value</div>
+              <div class="value-3d-card__label">Core Value</div>
               <h4>Execution Excellence</h4>
               <p>We take pride in doing things right — consistently, reliably, and to the highest standard.</p>
               <div class="value-3d-card__shine"></div>
@@ -4556,7 +4574,7 @@
           <div class="value-3d-card" data-index="2">
             <div class="value-3d-card__inner">
               <div class="value-3d-card__media"><img src="../images/generated/about/value-sustainable-growth.webp" alt="Sustainable Growth" loading="eager" fetchpriority="high" decoding="async"></div>
-              <div class="value-3d-card__label"><i class="fas fa-seedling"></i> Core Value</div>
+              <div class="value-3d-card__label">Core Value</div>
               <h4>Sustainable Growth</h4>
               <p>We build for the long term — helping brands scale in disciplined, responsible ways.</p>
               <div class="value-3d-card__shine"></div>
@@ -4566,7 +4584,7 @@
           <div class="value-3d-card" data-index="3">
             <div class="value-3d-card__inner">
               <div class="value-3d-card__media"><img src="../images/generated/about/value-partnership-mindset.webp" alt="Partnership Mindset" loading="eager" fetchpriority="high" decoding="async"></div>
-              <div class="value-3d-card__label"><i class="fas fa-handshake"></i> Core Value</div>
+              <div class="value-3d-card__label">Core Value</div>
               <h4>Partnership Mindset</h4>
               <p>Your success is our success. We treat every relationship as a true collaboration.</p>
               <div class="value-3d-card__shine"></div>
@@ -4576,7 +4594,7 @@
           <div class="value-3d-card" data-index="4">
             <div class="value-3d-card__inner">
               <div class="value-3d-card__media"><img src="../images/generated/about/value-continuous-improvement.webp" alt="Continuous Improvement" loading="eager" fetchpriority="high" decoding="async"></div>
-              <div class="value-3d-card__label"><i class="fas fa-chart-line"></i> Core Value</div>
+              <div class="value-3d-card__label">Core Value</div>
               <h4>Continuous Improvement</h4>
               <p>We constantly refine our processes to stay ahead of the challenges our partners face.</p>
               <div class="value-3d-card__shine"></div>
@@ -4629,7 +4647,7 @@
                   <i class="fas fa-map-marker-alt"></i> Local Expertise
                 </span>
                 <h3>We Understand Nigerian Retail Realities</h3>
-                <p>We're not theory-driven consultants. We operate daily in Lagos and Ogun's retail environment. We know the challenges, the politics, the delays — and we've built systems that actually work here.</p>
+                <p>We're not theory-driven consultants. We operate daily in Nigeria's retail environment. We know the challenges, the politics, the delays — and we've built systems that actually work here.</p>
               </div>
             </div>
           </div>
@@ -4925,7 +4943,7 @@
         <h2>Let's Build Something Great Together</h2>
         <p>If you're a founder-led brand ready to scale with structure, transparency, and a partner who truly gets what you're facing, we'd love to explore whether we're aligned.</p>
         <div class="btn-group">
-          <a class="btn btn--white btn--lg" href="get-listed.html">Partner With Us</a>
+          <a class="btn btn--primary btn--lg" href="get-listed.html">Partner With Us</a>
           <a class="btn btn--outline btn--lg" href="for-brands.html">Explore Services</a>
         </div>
       </div>
