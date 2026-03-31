@@ -1,0 +1,287 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DALA Technologies" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DALA Technologies" [ref=e5]
+      - text:      
+      - button "Toggle menu" [ref=e6] [cursor=pointer]
+  - generic [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - generic [ref=e13]: 
+        - generic [ref=e14]: The Retail Execution Control Layer
+      - heading "Dala The Retail Execution Control Layer" [level=1] [ref=e15]:
+        - text: Dala The
+        - emphasis [ref=e16]: Retail Execution
+        - text: Control Layer
+      - paragraph [ref=e17]: Ensuring supermarket standards are met while driving efficient, disciplined, transparent, and sustainable growth between brands and modern retail.
+      - generic [ref=e20]:
+        - link " DALA FOR SUPERMARKETS" [ref=e21] [cursor=pointer]:
+          - /url: /pages/for-supermarkets
+          - generic [ref=e22]: 
+          - text: DALA FOR SUPERMARKETS
+        - link " DALA FOR BRANDS" [ref=e23] [cursor=pointer]:
+          - /url: /pages/for-brands
+          - generic [ref=e24]: 
+          - text: DALA FOR BRANDS
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: 48hr
+          - generic [ref=e28]: Delivery
+        - generic [ref=e29]:
+          - generic [ref=e30]: 300+
+          - generic [ref=e31]: Stores
+        - generic [ref=e32]:
+          - generic [ref=e33]: "30"
+          - generic [ref=e34]: Day Payments
+    - text: 
+  - generic [ref=e35]:
+    - generic [ref=e36]:
+      - paragraph [ref=e37]: Trusted By Leading Retailers
+      - heading "Building retail infrastructure with Nigeria's reputable retailers" [level=3] [ref=e38]
+    - generic [ref=e40]:
+      - img "234 Stores" [ref=e42]
+      - img "Addide" [ref=e44]
+      - img "Covenant University" [ref=e46]
+      - img "Foodco" [ref=e48]
+      - img "Game" [ref=e50]
+      - img "Globus Supermarket" [ref=e52]
+      - img "Grocery Bazaar" [ref=e54]
+      - img "Hubmart" [ref=e56]
+      - img "Jendol" [ref=e58]
+      - img "Justrite" [ref=e60]
+      - img "Prime Mart" [ref=e62]
+      - img "Prince Ebeano" [ref=e64]
+      - img "Spar" [ref=e66]
+      - img "Sundry Market Square" [ref=e68]
+      - img "Supersaver" [ref=e70]
+      - img "Sweet Sensation" [ref=e72]
+      - img "The Bazaar" [ref=e74]
+      - img "Total Bonjour" [ref=e76]
+      - img "Twins Faja Supermarket" [ref=e78]
+      - img "Spar" [ref=e80]
+      - img "Hubmart" [ref=e82]
+      - img "Prince Ebeano" [ref=e84]
+      - img "Justrite" [ref=e86]
+      - img "Addide" [ref=e88]
+      - img "Total" [ref=e90]
+      - img "SuperSaver" [ref=e92]
+  - generic [ref=e94]:
+    - generic [ref=e95]:
+      - generic [ref=e96]: Who We're Built For
+      - heading "Built for both sides of retail." [level=2] [ref=e97]
+      - paragraph [ref=e98]: DALA serves as the control layer between supermarkets and brands streamlining operations, ensuring standards are met, and providing reliable execution for both sides.
+    - text:          
+    - generic [ref=e100]:
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - generic [ref=e104]: 
+          - text: For Supermarkets
+        - heading "Dala For Supermarkets" [level=3] [ref=e105]
+        - paragraph [ref=e106]: We reduce supplier-related risks by ensuring your standards are upheld, monitoring inventory to prevent stockouts, and quickly resolving quality issues.
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - generic [ref=e109]: 
+            - text: 48hr restocking
+          - generic [ref=e110]:
+            - generic [ref=e111]: 
+            - text: Quality control
+          - generic [ref=e112]:
+            - generic [ref=e113]: 
+            - text: Standards enforcement
+        - link "Learn More " [ref=e114] [cursor=pointer]:
+          - /url: /pages/for-supermarkets
+          - text: Learn More
+          - generic [ref=e115]: 
+      - generic:
+        - generic:
+          - generic:
+            - generic: 
+            - text: For Brands
+          - heading "Dala For Brands" [level=3]
+          - paragraph: We help you grow in supermarkets with structure and reliable execution — providing predictable payments and operational clarity.
+          - generic:
+            - generic:
+              - generic: 
+              - text: 30-day payments
+            - generic:
+              - generic: 
+              - text: 300+ stores
+            - generic:
+              - generic: 
+              - text: Real-time visibility
+          - link "Learn More ":
+            - /url: /pages/for-brands
+            - text: Learn More
+            - generic: 
+  - generic [ref=e116]:
+    - generic [ref=e117]:
+      - paragraph [ref=e118]: Brand Partners
+      - heading "Scaling ambitious brands across several retail outlets" [level=3] [ref=e119]
+    - generic [ref=e121]:
+      - img "Wilson's" [ref=e123]
+      - img "Zayith" [ref=e125]
+      - img "August Secrets" [ref=e127]
+      - img "Orisirisi" [ref=e129]
+      - img "Cresso Life" [ref=e131]
+      - img "Eti Farms" [ref=e133]
+      - img "Kezia" [ref=e135]
+      - img "Dan" [ref=e137]
+      - img "Dan" [ref=e139]
+      - img "Dan" [ref=e141]
+      - img "Dan" [ref=e143]
+      - img "Wilson's" [ref=e145]
+      - img "Zayith" [ref=e147]
+      - img "August Secrets" [ref=e149]
+      - img "Orisirisi" [ref=e151]
+      - img "Cresso Life" [ref=e153]
+      - img "Eti Farms" [ref=e155]
+      - img "Kezia" [ref=e157]
+      - img "Dan" [ref=e159]
+      - img "Dan" [ref=e161]
+      - img "Dan" [ref=e163]
+      - img "Dan" [ref=e165]
+  - generic [ref=e167]:
+    - generic [ref=e168]:
+      - generic [ref=e169]: Voices of Brand Partners
+      - heading "What Our Brand Partners Say About DALA" [level=2] [ref=e170]
+      - paragraph [ref=e171]: Real words from founders and managers scaling with discipline, efficiency, and sustainable growth.
+    - generic [ref=e173]:
+      - generic [ref=e175]:
+        - generic [ref=e176]:
+          - generic [ref=e177]: Active Partner
+          - generic [ref=e178]:
+            - generic [ref=e179]: 
+            - generic [ref=e180]: 
+            - generic [ref=e181]: 
+            - generic [ref=e182]: 
+            - generic [ref=e183]: 
+          - paragraph [ref=e184]: "\"Working with DALA has transformed our retail business and how we distribute our products. They helped us get our products into over 300 stores across Lagos and Ogun State, drastically increasing our reach, sales & profitability.\""
+          - generic [ref=e185]:
+            - img "Wilson's" [ref=e187]
+            - generic [ref=e188]:
+              - heading "Kehinde — General Manager" [level=4] [ref=e189]
+              - paragraph [ref=e190]: Wilson's Juice Company
+          - link "View Case Study " [ref=e191] [cursor=pointer]:
+            - /url: /pages/case-studies/wilsons-lemonade
+            - text: View Case Study
+            - generic [ref=e192]: 
+        - img "Wilson's Lemonade - Happy customer holding product" [ref=e194]
+      - text:                  
+    - link "Get Listed Now " [ref=e196] [cursor=pointer]:
+      - /url: /pages/get-listed
+      - text: Get Listed Now
+      - generic [ref=e197]: 
+  - generic [ref=e199]:
+    - heading "Ready to Work With DALA?" [level=2] [ref=e200]
+    - paragraph [ref=e201]: Join the brands and retailers scaling with structure, discipline, and transparency.
+    - generic [ref=e202]:
+      - link "Work With Us (Brands)" [ref=e203] [cursor=pointer]:
+        - /url: /pages/get-listed
+      - link "Work With Us (Supermarkets)" [ref=e204] [cursor=pointer]:
+        - /url: /pages/for-supermarkets
+  - contentinfo [ref=e205]:
+    - generic [ref=e206]:
+      - generic [ref=e207]:
+        - link "DALA Technologies" [ref=e208] [cursor=pointer]:
+          - /url: /
+          - img "DALA Technologies" [ref=e209]
+        - paragraph [ref=e210]: The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.
+      - generic [ref=e211]:
+        - generic [ref=e212]:
+          - generic [ref=e213] [cursor=pointer]:
+            - generic [ref=e214]:
+              - generic [ref=e215]: 
+              - text: Company
+            - generic [ref=e216]: 
+          - generic [ref=e217]:
+            - link " Home" [ref=e218] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e219]: 
+              - text: Home
+            - link " About" [ref=e220] [cursor=pointer]:
+              - /url: /pages/about
+              - generic [ref=e221]: 
+              - text: About
+            - link " Case Studies" [ref=e222] [cursor=pointer]:
+              - /url: /pages/case-studies
+              - generic [ref=e223]: 
+              - text: Case Studies
+            - link " Contact" [ref=e224] [cursor=pointer]:
+              - /url: /pages/contact
+              - generic [ref=e225]: 
+              - text: Contact
+        - generic [ref=e226]:
+          - generic [ref=e227] [cursor=pointer]:
+            - generic [ref=e228]:
+              - generic [ref=e229]: 
+              - text: Solutions
+            - generic [ref=e230]: 
+          - generic [ref=e231]:
+            - link " For Brands" [ref=e232] [cursor=pointer]:
+              - /url: /pages/for-brands
+              - generic [ref=e233]: 
+              - text: For Brands
+            - link " Supermarkets" [ref=e234] [cursor=pointer]:
+              - /url: /pages/for-supermarkets
+              - generic [ref=e235]: 
+              - text: Supermarkets
+            - link " Get Listed" [ref=e236] [cursor=pointer]:
+              - /url: /pages/get-listed
+              - generic [ref=e237]: 
+              - text: Get Listed
+            - link " Login" [ref=e238] [cursor=pointer]:
+              - /url: /pages/login
+              - generic [ref=e239]: 
+              - text: Login
+      - generic [ref=e240]:
+        - generic [ref=e241]:
+          - generic [ref=e242]: 
+          - text: Get In Touch
+        - link " Iju, Ota, Ogun State, Nigeria" [ref=e243] [cursor=pointer]:
+          - /url: https://maps.google.com
+          - generic [ref=e244]: 
+          - generic [ref=e245]: Iju, Ota, Ogun State, Nigeria
+        - link " +234 814 882 4115" [ref=e246] [cursor=pointer]:
+          - /url: tel:+2348148824115
+          - generic [ref=e247]: 
+          - generic [ref=e248]: +234 814 882 4115
+        - link " +234 903 235 2306" [ref=e249] [cursor=pointer]:
+          - /url: tel:+2349032352306
+          - generic [ref=e250]: 
+          - generic [ref=e251]: +234 903 235 2306
+        - link " info@dalatechnologies.com" [ref=e252] [cursor=pointer]:
+          - /url: mailto:info@dalatechnologies.com
+          - generic [ref=e253]: 
+          - generic [ref=e254]: info@dalatechnologies.com
+        - generic [ref=e255]:
+          - generic [ref=e256]: 
+          - generic [ref=e257]: "Mon - Sat: 8am - 6pm"
+      - generic [ref=e258]:
+        - generic [ref=e259]: Follow Us
+        - generic [ref=e260]:
+          - link "LinkedIn" [ref=e261] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/dala-tech/
+            - generic [ref=e262]: 
+          - link "Instagram" [ref=e263] [cursor=pointer]:
+            - /url: https://www.instagram.com/dala.technologies?igsh=MTU4eW5jMGdydGx4dw==
+            - generic [ref=e264]: 
+          - link "Twitter" [ref=e265] [cursor=pointer]:
+            - /url: https://x.com/usedalatech
+            - generic [ref=e266]: 
+          - link "Facebook" [ref=e267] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1G7LDCdYw3/
+            - generic [ref=e268]: 
+      - generic [ref=e269]:
+        - paragraph [ref=e270]: © 2026 DALA Technologies. All rights reserved.
+        - generic [ref=e271]:
+          - link "Privacy Policy" [ref=e272] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e273] [cursor=pointer]:
+            - /url: "#"
+  - button "Chat on WhatsApp" [ref=e275] [cursor=pointer]:
+    - generic [ref=e276]: 
+  - status "Website maintenance in progress" [ref=e277] [cursor=pointer]:
+    - generic [ref=e279]: Maintenance
+    - button "Dismiss notification" [ref=e280]: ×
