@@ -7,6 +7,8 @@ const {
 const { buildGoogleSheetsPayload } = require('./_lead-helpers');
 const { postToGoogleAppsScript } = require('./_google-webhook');
 
+const CONFIRMED_GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbw5xeWkNGFPx3BX-w0TkqwJTPy6fYx4WHGe27GBXaYhjvTxLjBeT9g3m_Ip1ZgKkyfc/exec';
+
 const headers = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'Content-Type',
@@ -40,7 +42,7 @@ exports.handler = async (event) => {
       });
     }
 
-    const webhookUrl = process.env.LEAD_SHEET_WEBHOOK_URL;
+    const webhookUrl = CONFIRMED_GOOGLE_SHEETS_WEBHOOK_URL;
     if (!webhookUrl) {
       return json(503, {
         message: 'Google Sheets sync is not configured',
