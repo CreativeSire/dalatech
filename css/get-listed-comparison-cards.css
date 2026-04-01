@@ -1,0 +1,331 @@
+/* ============================================
+   GET LISTED - COMPARISON CARDS
+   Premium side-by-side comparison layout
+   ============================================ */
+
+/* Comparison Section Container */
+.listed-comparison-section {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
+}
+
+.listed-comparison-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Section Header */
+.listed-comparison-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.listed-comparison-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.listed-comparison-header p {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Comparison Grid - Side by Side Cards */
+.listed-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Comparison Card Base Styles */
+.listed-comparison-card {
+  border-radius: 28px;
+  padding: 48px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.listed-comparison-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Good Fit Card (Green/Light theme) */
+.listed-comparison-card--good {
+  background: linear-gradient(145deg, #ffffff 0%, #f0fdf4 100%);
+  border: 2px solid #86efac;
+  box-shadow: 
+    0 4px 24px rgba(0,0,0,0.05),
+    0 0 0 1px rgba(34, 197, 94, 0.1);
+}
+
+.listed-comparison-card--good:hover {
+  box-shadow: 
+    0 20px 48px rgba(34, 197, 94, 0.15),
+    0 0 0 1px rgba(34, 197, 94, 0.2);
+}
+
+/* Not Fit Card (Red/Dark theme) */
+.listed-comparison-card--not {
+  background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+  border: 2px solid #ef4444;
+  box-shadow: 
+    0 4px 24px rgba(0,0,0,0.2),
+    0 0 0 1px rgba(239, 68, 68, 0.2);
+}
+
+.listed-comparison-card--not:hover {
+  box-shadow: 
+    0 20px 48px rgba(239, 68, 68, 0.25),
+    0 0 0 1px rgba(239, 68, 68, 0.3);
+}
+
+/* Card Header */
+.listed-comparison-card__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid;
+}
+
+.listed-comparison-card--good .listed-comparison-card__header {
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.listed-comparison-card--not .listed-comparison-card__header {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Icon Container */
+.listed-comparison-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.listed-comparison-card--good .listed-comparison-card__icon {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.3);
+}
+
+.listed-comparison-card--not .listed-comparison-card__icon {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.3);
+}
+
+/* Title */
+.listed-comparison-card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.listed-comparison-card--good .listed-comparison-card__title {
+  color: #166534;
+}
+
+.listed-comparison-card--not .listed-comparison-card__title {
+  color: #ffffff;
+}
+
+/* Badge */
+.listed-comparison-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+}
+
+.listed-comparison-card--good .listed-comparison-card__badge {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.listed-comparison-card--not .listed-comparison-card__badge {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Items List */
+.listed-comparison-card__items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.listed-comparison-card__item {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.listed-comparison-card--good .listed-comparison-card__item {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+.listed-comparison-card--good .listed-comparison-card__item:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(34, 197, 94, 0.2);
+  transform: translateX(4px);
+}
+
+.listed-comparison-card--not .listed-comparison-card__item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.1);
+}
+
+.listed-comparison-card--not .listed-comparison-card__item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(239, 68, 68, 0.2);
+  transform: translateX(4px);
+}
+
+/* Item Number */
+.listed-comparison-card__number {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.listed-comparison-card--good .listed-comparison-card__number {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.listed-comparison-card--not .listed-comparison-card__number {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+/* Item Content */
+.listed-comparison-card__content h4 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.listed-comparison-card--good .listed-comparison-card__content h4 {
+  color: #166534;
+}
+
+.listed-comparison-card--not .listed-comparison-card__content h4 {
+  color: #ffffff;
+}
+
+.listed-comparison-card__content p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.listed-comparison-card--good .listed-comparison-card__content p {
+  color: #4ade80;
+}
+
+.listed-comparison-card--not .listed-comparison-card__content p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* VS Badge (Center) */
+.listed-comparison-vs {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #E53935 0%, #ff6b6b 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: 0 8px 24px rgba(229, 57, 53, 0.4);
+  z-index: 10;
+  border: 4px solid #fafafa;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .listed-comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .listed-comparison-vs {
+    display: none;
+  }
+  
+  .listed-comparison-card {
+    padding: 36px 28px;
+  }
+  
+  .listed-comparison-container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .listed-comparison-section {
+    padding: 60px 0;
+  }
+  
+  .listed-comparison-card {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+  
+  .listed-comparison-card__header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .listed-comparison-card__icon {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+  
+  .listed-comparison-card__title {
+    font-size: 1.25rem;
+  }
+  
+  .listed-comparison-card__item {
+    padding: 16px;
+  }
+}

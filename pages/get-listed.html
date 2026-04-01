@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="../css/get-listed.css">
 <link rel="stylesheet" href="../css/get-listed-premium-enhanced.css">
   <link rel="stylesheet" href="../css/get-listed-desktop-enhanced.css">
+  <link rel="stylesheet" href="../css/get-listed-comparison-cards.css">
   <link rel="stylesheet" href="../css/mobile-premium.css">
   <link rel="stylesheet" href="../css/frontend-premium-pass.css">
   <link rel="stylesheet" href="../css/mobile-menu-fix.css?v=2">
@@ -82,64 +83,101 @@
       </div>
     </section>
 
-    <!-- Section 1: You Will Enjoy Partnering With Dala If You: -->
-    <section class="listed-section--ideal">
-      <div class="listed-container">
-        <div class="listed-section-header">
-          <span class="listed-section-badge"><i class="fas fa-thumbs-up"></i> Ideal Partner</span>
-          <h2>You Will Enjoy Partnering With Dala If You:</h2>
+    <!-- Comparison Section: Good Fit vs Not Ready -->
+    <section class="listed-comparison-section">
+      <div class="listed-comparison-container">
+        <div class="listed-comparison-header">
+          <h2>Is DALA Right For You?</h2>
+          <p>Compare what makes a successful partnership versus what might mean you're not ready yet.</p>
         </div>
-        <div class="listed-fit-grid">
-          <article class="listed-fit-card" data-animate>
-            <span class="listed-fit-number">01</span>
-            <div class="listed-fit-icon"><i class="fas fa-box-open"></i></div>
-            <h3>Strong Products With Proven Demand</h3>
-            <p>Have strong products with proven demand and actively invest in marketing.</p>
+        
+        <div class="listed-comparison-grid">
+          <!-- Good Fit Card -->
+          <article class="listed-comparison-card listed-comparison-card--good" data-animate>
+            <div class="listed-comparison-card__header">
+              <div class="listed-comparison-card__icon">
+                <i class="fas fa-thumbs-up"></i>
+              </div>
+              <h3 class="listed-comparison-card__title">You Will Enjoy Partnering With DALA If You:</h3>
+            </div>
+            
+            <div class="listed-comparison-card__badge">
+              <i class="fas fa-check-circle"></i> Ideal Partner
+            </div>
+            
+            <div class="listed-comparison-card__items">
+              <div class="listed-comparison-card__item">
+                <span class="listed-comparison-card__number">01</span>
+                <div class="listed-comparison-card__content">
+                  <h4>Strong Products With Proven Demand</h4>
+                  <p>Have strong products with proven demand and actively invest in marketing.</p>
+                </div>
+              </div>
+              
+              <div class="listed-comparison-card__item">
+                <span class="listed-comparison-card__number">02</span>
+                <div class="listed-comparison-card__content">
+                  <h4>Consistent Production & Scale</h4>
+                  <p>Can produce consistently, scale when needed, and respond quickly to consumer feedback.</p>
+                </div>
+              </div>
+              
+              <div class="listed-comparison-card__item">
+                <span class="listed-comparison-card__number">03</span>
+                <div class="listed-comparison-card__content">
+                  <h4>Value Structure & Transparency</h4>
+                  <p>Value structure, transparency, and accountability in your business partnerships.</p>
+                </div>
+              </div>
+              
+              <div class="listed-comparison-card__item">
+                <span class="listed-comparison-card__number">04</span>
+                <div class="listed-comparison-card__content">
+                  <h4>Meet Regulatory Requirements</h4>
+                  <p>Meet regulatory requirements (NAFDAC, SON, scannable barcode, etc).</p>
+                </div>
+              </div>
+            </div>
           </article>
-          <article class="listed-fit-card" data-animate>
-            <span class="listed-fit-number">02</span>
-            <div class="listed-fit-icon"><i class="fas fa-chart-line"></i></div>
-            <h3>Consistent Production & Scale</h3>
-            <p>Can produce consistently, scale when needed, and respond quickly to consumer feedback.</p>
-          </article>
-          <article class="listed-fit-card" data-animate>
-            <span class="listed-fit-number">03</span>
-            <div class="listed-fit-icon"><i class="fas fa-handshake"></i></div>
-            <h3>Value Structure, Transparency & Accountability</h3>
-            <p>Value structure, transparency, and accountability in your business partnerships.</p>
-          </article>
-          <article class="listed-fit-card" data-animate>
-            <span class="listed-fit-number">04</span>
-            <div class="listed-fit-icon"><i class="fas fa-certificate"></i></div>
-            <h3>Meet Regulatory Requirements</h3>
-            <p>Meet regulatory requirements (NAFDAC, SON, scannable barcode, etc).</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 2: Dala may not be a good fit for you yet if you… -->
-    <section class="listed-section--not-ready">
-      <div class="listed-container">
-        <div class="listed-section-header">
-          <span class="listed-section-badge"><i class="fas fa-hourglass-half"></i> Not Yet Ready</span>
-          <h2>DALA May Not Be a Good Fit Yet If You:</h2>
-        </div>
-        <div class="listed-not-grid">
-          <article class="listed-not-card" data-animate>
-            <div class="listed-not-icon"><i class="fas fa-bullhorn"></i></div>
-            <h3>Expect DALA to Drive All Sales</h3>
-            <p>Expect DALA to drive sales without your own marketing effort. Sales require your sustained mandatory effort.</p>
-          </article>
-          <article class="listed-not-card" data-animate>
-            <div class="listed-not-icon"><i class="fas fa-exclamation-triangle"></i></div>
-            <h3>Struggle With Consistency</h3>
-            <p>Struggle with consistent production, quick response, or adhering to operational standards.</p>
-          </article>
-          <article class="listed-not-card" data-animate>
-            <div class="listed-not-icon"><i class="fas fa-bolt"></i></div>
-            <h3>Prefer Shortcuts</h3>
-            <p>Prefer shortcuts over long-term, disciplined growth.</p>
+          
+          <!-- Not Ready Card -->
+          <article class="listed-comparison-card listed-comparison-card--not" data-animate>
+            <div class="listed-comparison-card__header">
+              <div class="listed-comparison-card__icon">
+                <i class="fas fa-hourglass-half"></i>
+              </div>
+              <h3 class="listed-comparison-card__title">DALA May Not Be a Good Fit Yet If You:</h3>
+            </div>
+            
+            <div class="listed-comparison-card__badge">
+              <i class="fas fa-clock"></i> Not Yet Ready
+            </div>
+            
+            <div class="listed-comparison-card__items">
+              <div class="listed-comparison-card__item">
+                <span class="listed-comparison-card__number">01</span>
+                <div class="listed-comparison-card__content">
+                  <h4>Expect DALA to Drive All Sales</h4>
+                  <p>Expect DALA to drive sales without your own marketing effort. Sales require your sustained effort.</p>
+                </div>
+              </div>
+              
+              <div class="listed-comparison-card__item">
+                <span class="listed-comparison-card__number">02</span>
+                <div class="listed-comparison-card__content">
+                  <h4>Struggle With Consistency</h4>
+                  <p>Struggle with consistent production, quick response, or adhering to operational standards.</p>
+                </div>
+              </div>
+              
+              <div class="listed-comparison-card__item">
+                <span class="listed-comparison-card__number">03</span>
+                <div class="listed-comparison-card__content">
+                  <h4>Prefer Shortcuts</h4>
+                  <p>Prefer shortcuts over long-term, disciplined growth.</p>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
