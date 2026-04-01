@@ -5,6 +5,9 @@
 [functions]
   node_bundler = "esbuild"
 
+[functions."lead-sync-google"]
+  schedule = "@hourly"
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
