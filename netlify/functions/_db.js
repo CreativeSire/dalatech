@@ -274,6 +274,103 @@ async function markLeadSubmissionSyncFailed(id, errorMessage) {
   `;
 }
 
+async function getLeadSyncSummary(limit = 20) {
+  const sql = await ensureLeadSchema();
+
+  const countsRows = await sql`
+    SELECT
+      COUNT(*)::INT AS total,
+      COUNT(*) FILTER (WHERE google_sync_status = 'pending')::INT AS pending,
+      COUNT(*) FILTER (WHERE google_sync_status = 'failed')::INT AS failed,
+      COUNT(*) FILTER (WHERE google_sync_status = 'synced')::INT AS synced
+    FROM lead_submissions
+  `;
+
+  const recentRows = await sql`
+    SELECT
+      id,
+      submitted_at,
+      submission_channel,
+      full_name,
+      email,
+      company_name,
+      brand_name,
+      lead_score,
+      qualification_status,
+      google_sync_status,
+      google_sync_attempts,
+      google_sync_error
+    FROM lead_submissions
+    ORDER BY submitted_at DESC
+    LIMIT ${limit}
+  `;
+
+  return {
+    counts: countsRows[0] || { total: 0, pending: 0, failed: 0, synced: 0 },
+    recent: recentRows.map((row) => ({
+      id: row.id,
+      submittedAt: row.submitted_at ? new Date(row.submitted_at).toISOString() : null,
+      submissionChannel: row.submission_channel,
+      fullName: row.full_name,
+      email: row.email,
+      companyName: row.company_name,
+      brandName: row.brand_name,
+      leadScore: Number(row.lead_score || 0),
+      qualificationStatus: row.qualification_status,
+      googleSyncStatus: row.google_sync_status,
+      googleSyncAttempts: Number(row.google_sync_attempts || 0),
+      googleSyncError: row.google_sync_error
+    }))
+  };
+}
+
+async function deleteLeadSubmissionsByEmails(emails = []) {
+  const normalizedEmails = Array.from(
+    new Set(
+      (emails || [])
+        .map((value) => String(value || '').trim().toLowerCase())
+        .filter(Boolean)
+    )
+  );
+
+  if (!normalizedEmails.length) {
+    return {
+      deletedCount: 0,
+      deleted: []
+    };
+  }
+
+  const sql = await ensureLeadSchema();
+
+  const toDelete = await sql`
+    SELECT id, email, full_name, company_name, submitted_at
+    FROM lead_submissions
+    WHERE LOWER(email) = ANY(${normalizedEmails})
+    ORDER BY submitted_at DESC
+  `;
+
+  if (!toDelete.length) {
+    return {
+      deletedCount: 0,
+      deleted: []
+    };
+  }
+
+  const ids = toDelete.map((row) => row.id);
+  await sql`DELETE FROM lead_submissions WHERE id = ANY(${ids})`;
+
+  return {
+    deletedCount: toDelete.length,
+    deleted: toDelete.map((row) => ({
+      id: row.id,
+      email: row.email,
+      fullName: row.full_name,
+      companyName: row.company_name,
+      submittedAt: row.submitted_at ? new Date(row.submitted_at).toISOString() : null
+    }))
+  };
+}
+
 module.exports = {
   getConnectionString,
   getSqlClient,
@@ -281,5 +378,7 @@ module.exports = {
   insertLeadSubmission,
   listPendingLeadSyncBatch,
   markLeadSubmissionSynced,
-  markLeadSubmissionSyncFailed
+  markLeadSubmissionSyncFailed,
+  getLeadSyncSummary,
+  deleteLeadSubmissionsByEmails
 };

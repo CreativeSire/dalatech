@@ -42,7 +42,7 @@ exports.handler = async (event) => {
       });
     }
 
-    const webhookUrl = CONFIRMED_GOOGLE_SHEETS_WEBHOOK_URL;
+    const webhookUrl = process.env.LEAD_SHEET_WEBHOOK_URL || CONFIRMED_GOOGLE_SHEETS_WEBHOOK_URL;
     if (!webhookUrl) {
       return json(503, {
         message: 'Google Sheets sync is not configured',
