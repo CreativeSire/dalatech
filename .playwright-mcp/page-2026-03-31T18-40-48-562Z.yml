@@ -1,0 +1,261 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DALA Technologies" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DALA Technologies" [ref=e5]
+      - generic [ref=e6]:
+        - link "For Brands" [ref=e7] [cursor=pointer]:
+          - /url: /pages/for-brands
+        - link "For Supermarkets" [ref=e8] [cursor=pointer]:
+          - /url: /pages/for-supermarkets
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: /pages/about
+        - link "Case Studies" [ref=e10] [cursor=pointer]:
+          - /url: /pages/case-studies
+        - generic [ref=e11]:
+          - button "Marketplace " [ref=e12] [cursor=pointer]:
+            - text: Marketplace
+            - generic [ref=e13]: 
+          - generic:
+            - link " Consumer Store Shop DALA-distributed brands":
+              - /url: ../store
+              - generic: 
+              - generic:
+                - strong: Consumer Store
+                - generic: Shop DALA-distributed brands
+            - link "Product Catalog Browse our full brand portfolio":
+              - /url: ../product-catalog/
+              - generic:
+                - strong: Product Catalog
+                - generic: Browse our full brand portfolio
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: /pages/contact
+        - generic [ref=e15]:
+          - button "Account " [ref=e16] [cursor=pointer]:
+            - text: Account
+            - generic [ref=e17]: 
+          - generic:
+            - link " Sign Up Create a new account":
+              - /url: /pages/signup
+              - generic: 
+              - generic:
+                - strong: Sign Up
+                - generic: Create a new account
+            - link " Sign In Access your account":
+              - /url: /pages/login
+              - generic: 
+              - generic:
+                - strong: Sign In
+                - generic: Access your account
+            - separator
+            - link " Trade Portal For retailers":
+              - /url: ../trade/
+              - generic: 
+              - generic:
+                - strong: Trade Portal
+                - generic: For retailers
+            - link "Brand Portal For brand partners":
+              - /url: ../brand-portal/
+              - generic:
+                - strong: Brand Portal
+                - generic: For brand partners
+  - generic [ref=e18]:
+    - img "Premium supermarket shelf with DALA partner brands" [ref=e20]
+    - generic [ref=e22]:
+      - paragraph [ref=e23]: Success Stories
+      - heading "Built for brands. Proven across Africa." [level=1] [ref=e24]:
+        - text: Built for brands.
+        - generic [ref=e25]: Proven across Africa.
+      - paragraph [ref=e26]: The real stories behind Africa's most ambitious retail transformations. See how founder-led brands moved from shelf friction to stronger presence, faster expansion, and clearer results.
+  - generic [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31]: ₦
+        - text: "400"
+        - generic [ref=e32]: M+
+      - generic [ref=e33]: Revenue Generated
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - text: "700"
+        - generic [ref=e36]: +
+      - generic [ref=e37]: Stores Activated
+    - generic [ref=e38]:
+      - generic [ref=e39]: "4"
+      - generic [ref=e40]: Brand Partners
+  - generic [ref=e43]:
+    - generic [ref=e44]:
+      - img "Wilson's Lemonade on supermarket shelf" [ref=e45]
+      - generic [ref=e46]: Featured Story
+    - generic [ref=e47]:
+      - paragraph [ref=e48]: Case Study 01
+      - heading "How Wilson's Became Nigeria's Favorite Lemonade" [level=2] [ref=e49]
+      - paragraph [ref=e50]: Wilson's Lemonade had demand, but fragmented orders and expensive delivery patterns were holding growth back. DALA helped turn scattered retail traction into a disciplined execution system, activating 350 stores, strengthening shelf presence, and generating ₦221.7M in revenue within roughly 1.5 years.
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - generic [ref=e53]: ₦221.7M
+          - text: Revenue
+        - generic [ref=e54]:
+          - generic [ref=e55]: 350+
+          - text: Stores
+        - generic [ref=e56]:
+          - generic [ref=e57]: 340%
+          - text: Growth
+      - link "Read the full story" [ref=e58] [cursor=pointer]:
+        - /url: /pages/case-studies/wilsons-lemonade
+        - text: Read the full story
+        - img [ref=e59]
+  - generic [ref=e62]:
+    - generic [ref=e63]:
+      - heading "More Stories of transformation" [level=2] [ref=e64]:
+        - text: More Stories
+        - generic [ref=e65]: of transformation
+      - paragraph [ref=e66]: Every brand has a unique journey. Here's how we helped them scale.
+    - generic [ref=e67]:
+      - article [ref=e68] [cursor=pointer]:
+        - generic [ref=e69]: "02"
+        - img "Zayith products on shelf" [ref=e71]
+        - generic [ref=e73]:
+          - generic [ref=e74]: Food & Beverage
+          - heading "Zayith Food Company" [level=3] [ref=e75]
+          - paragraph [ref=e76]: Quality products met the right retail operating engine, helping Zayith build revenue steadily, expand to 173 stores, and turn seasonal traction into visible commercial momentum.
+      - article [ref=e77] [cursor=pointer]:
+        - generic [ref=e78]: "03"
+        - img "August Secrets products on shelf" [ref=e80]
+        - generic [ref=e82]:
+          - generic [ref=e83]: Infant Nutrition
+          - heading "August Secrets" [level=3] [ref=e84]
+          - paragraph [ref=e85]: August Secrets paired strong products with disciplined execution, building credible supermarket presence and rapid growth across 106 stores in one year.
+      - article [ref=e86] [cursor=pointer]:
+        - generic [ref=e87]: "04"
+        - img "Eloha products on shelf" [ref=e89]
+        - generic [ref=e91]:
+          - generic [ref=e92]: Natural Products
+          - heading "Eloha" [level=3] [ref=e93]
+          - paragraph [ref=e94]: Eloha launched with precision and scaled to 83 stores in just seven months, proving that new brands can establish credible retail presence quickly.
+  - generic [ref=e96]:
+    - paragraph [ref=e97]: Our Impact
+    - heading "Real Results for Real Brands" [level=2] [ref=e98]
+    - paragraph [ref=e99]: We don't just promise growth—we deliver measurable outcomes that transform businesses.
+    - generic [ref=e100]:
+      - generic [ref=e101]:
+        - img [ref=e102]
+        - generic [ref=e104]: ₦400M+
+        - generic [ref=e105]: Revenue Generated
+      - generic [ref=e106]:
+        - img [ref=e107]
+        - generic [ref=e110]: 700+
+        - generic [ref=e111]: Retail Stores
+      - generic [ref=e112]:
+        - img [ref=e113]
+        - generic [ref=e115]: 340%
+        - generic [ref=e116]: Avg. Growth
+      - generic [ref=e117]:
+        - img [ref=e118]
+        - generic [ref=e121]: 18mo
+        - generic [ref=e122]: Avg. Time to Scale
+  - generic [ref=e124]:
+    - heading "Ready to Write Your Story?" [level=2] [ref=e125]
+    - paragraph [ref=e126]: Join the brands that have transformed their retail presence with DALA. Your success story starts here.
+    - generic [ref=e127]:
+      - link "Partner with DALA" [ref=e128] [cursor=pointer]:
+        - /url: /pages/for-brands
+        - text: Partner with DALA
+        - img [ref=e129]
+      - link "Contact Us" [ref=e131] [cursor=pointer]:
+        - /url: /pages/contact
+  - contentinfo [ref=e132]:
+    - generic [ref=e133]:
+      - generic [ref=e134]:
+        - link "DALA Technologies" [ref=e135] [cursor=pointer]:
+          - /url: /
+          - img "DALA Technologies" [ref=e136]
+        - paragraph [ref=e137]: The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.
+      - generic [ref=e138]:
+        - generic [ref=e139]:
+          - generic [ref=e140]:
+            - generic [ref=e141]:  Company
+            - text: 
+          - generic [ref=e143]:
+            - link " Home" [ref=e144] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e145]: 
+              - text: Home
+            - link " About" [ref=e146] [cursor=pointer]:
+              - /url: /pages/about
+              - generic [ref=e147]: 
+              - text: About
+            - link " Case Studies" [ref=e148] [cursor=pointer]:
+              - /url: /pages/case-studies
+              - generic [ref=e149]: 
+              - text: Case Studies
+            - link " Contact" [ref=e150] [cursor=pointer]:
+              - /url: /pages/contact
+              - generic [ref=e151]: 
+              - text: Contact
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - generic [ref=e154]:  Solutions
+            - text: 
+          - generic [ref=e156]:
+            - link " For Brands" [ref=e157] [cursor=pointer]:
+              - /url: /pages/for-brands
+              - generic [ref=e158]: 
+              - text: For Brands
+            - link " Supermarkets" [ref=e159] [cursor=pointer]:
+              - /url: /pages/for-supermarkets
+              - generic [ref=e160]: 
+              - text: Supermarkets
+            - link " Get Listed" [ref=e161] [cursor=pointer]:
+              - /url: /pages/get-listed
+              - generic [ref=e162]: 
+              - text: Get Listed
+            - link " Login" [ref=e163] [cursor=pointer]:
+              - /url: /pages/login
+              - generic [ref=e164]: 
+              - text: Login
+      - generic [ref=e165]:
+        - generic [ref=e166]:
+          - generic [ref=e167]: 
+          - text: Get In Touch
+        - link " Iju, Ota, Ogun State, Nigeria" [ref=e168] [cursor=pointer]:
+          - /url: https://maps.google.com
+          - generic [ref=e169]: 
+          - generic [ref=e170]: Iju, Ota, Ogun State, Nigeria
+        - link " +234 814 882 4115" [ref=e171] [cursor=pointer]:
+          - /url: tel:+2348148824115
+          - generic [ref=e172]: 
+          - generic [ref=e173]: +234 814 882 4115
+        - link " +234 903 235 2306" [ref=e174] [cursor=pointer]:
+          - /url: tel:+2349032352306
+          - generic [ref=e175]: 
+          - generic [ref=e176]: +234 903 235 2306
+        - link " info@dalatechnologies.com" [ref=e177] [cursor=pointer]:
+          - /url: mailto:info@dalatechnologies.com
+          - generic [ref=e178]: 
+          - generic [ref=e179]: info@dalatechnologies.com
+        - generic [ref=e180]:
+          - generic [ref=e181]: 
+          - generic [ref=e182]: "Mon - Sat: 8am - 6pm"
+      - generic [ref=e183]:
+        - generic [ref=e184]: Follow Us
+        - generic [ref=e185]:
+          - link "LinkedIn" [ref=e186] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/dala-tech/
+            - generic [ref=e187]: 
+          - link "Instagram" [ref=e188] [cursor=pointer]:
+            - /url: https://www.instagram.com/dala.technologies?igsh=MTU4eW5jMGdydGx4dw==
+            - generic [ref=e189]: 
+          - link "Twitter" [ref=e190] [cursor=pointer]:
+            - /url: https://x.com/usedalatech
+            - generic [ref=e191]: 
+          - link "Facebook" [ref=e192] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1G7LDCdYw3/
+            - generic [ref=e193]: 
+      - generic [ref=e194]:
+        - paragraph [ref=e195]: © 2026 DALA Technologies. All rights reserved.
+        - generic [ref=e196]:
+          - link "Privacy Policy" [ref=e197] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e198] [cursor=pointer]:
+            - /url: "#"

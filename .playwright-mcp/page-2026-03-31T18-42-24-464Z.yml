@@ -1,0 +1,350 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DALA Technologies" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DALA Technologies" [ref=e5]
+      - generic [ref=e6]:
+        - link "For Brands" [ref=e7] [cursor=pointer]:
+          - /url: /pages/for-brands
+        - link "For Supermarkets" [ref=e8] [cursor=pointer]:
+          - /url: /pages/for-supermarkets
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: /pages/about
+        - link "Case Studies" [ref=e10] [cursor=pointer]:
+          - /url: /pages/case-studies
+        - generic [ref=e11]:
+          - button "Marketplace " [ref=e12] [cursor=pointer]:
+            - text: Marketplace
+            - generic [ref=e13]: 
+          - generic:
+            - link " Consumer Store Shop DALA-distributed brands":
+              - /url: ../store/
+              - generic: 
+              - generic:
+                - strong: Consumer Store
+                - generic: Shop DALA-distributed brands
+            - link "Product Catalog Browse our full brand portfolio":
+              - /url: ../product-catalog/
+              - generic:
+                - strong: Product Catalog
+                - generic: Browse our full brand portfolio
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: /pages/contact
+        - generic [ref=e15]:
+          - button "Account " [ref=e16] [cursor=pointer]:
+            - text: Account
+            - generic [ref=e17]: 
+          - generic:
+            - link " Sign Up Create a new account":
+              - /url: /pages/signup
+              - generic: 
+              - generic:
+                - strong: Sign Up
+                - generic: Create a new account
+            - link " Sign In Access your account":
+              - /url: /pages/login
+              - generic: 
+              - generic:
+                - strong: Sign In
+                - generic: Access your account
+            - separator
+            - link " Trade Portal For retailers":
+              - /url: ../trade/
+              - generic: 
+              - generic:
+                - strong: Trade Portal
+                - generic: For retailers
+            - link "Brand Portal For brand partners":
+              - /url: ../brand-portal/
+              - generic:
+                - strong: Brand Portal
+                - generic: For brand partners
+  - generic [ref=e19]:
+    - generic [ref=e20]: For Brands
+    - heading "Grow in Supermarkets With Structure, Discipline, and Reliable Execution" [level=1] [ref=e21]
+    - paragraph [ref=e22]: DALA is the control layer between your brand and supermarkets. We streamline order-to-payment cycles, ensure compliance with retailer standards, and eliminate operational chaos so you can focus on production and demand creation.
+    - link "Work with us" [ref=e24] [cursor=pointer]:
+      - /url: /pages/get-listed
+  - generic [ref=e25]:
+    - generic [ref=e26]:
+      - paragraph [ref=e27]: Join Our Brand Partners
+      - heading "Scaling ambitious brands across several retail outlets" [level=3] [ref=e28]
+      - paragraph [ref=e29]: Join Wilson's, Zayith, August Secrets and other growing brands reaching 300+ stores
+    - generic [ref=e31]:
+      - img "Wilson's" [ref=e33]
+      - img "Zayith" [ref=e35]
+      - img "August Secrets" [ref=e37]
+      - img "Orisirisi" [ref=e39]
+      - img "Cresso Life" [ref=e41]
+      - img "Eti Farms" [ref=e43]
+      - img "Kezia" [ref=e45]
+      - img "Dan" [ref=e47]
+      - img "Dan" [ref=e49]
+      - img "Dan" [ref=e51]
+      - img "Dan" [ref=e53]
+      - img "Wilson's" [ref=e55]
+      - img "Zayith" [ref=e57]
+      - img "August Secrets" [ref=e59]
+      - img "Orisirisi" [ref=e61]
+      - img "Cresso Life" [ref=e63]
+      - img "Eti Farms" [ref=e65]
+      - img "Kezia" [ref=e67]
+      - img "Dan" [ref=e69]
+      - img "Dan" [ref=e71]
+      - img "Dan" [ref=e73]
+      - img "Dan" [ref=e75]
+  - generic [ref=e77]:
+    - generic [ref=e78]:
+      - generic [ref=e79]: Why Choose DALA
+      - heading "Why Growing Brands Choose DALA" [level=2] [ref=e80]
+      - paragraph [ref=e81]: Our operations help brands meet supermarket standards, build trust with retailers, and protect your cash flow.
+    - generic [ref=e83]:
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - img "Reliable cash flow and predictable payments" [ref=e87]
+          - generic [ref=e89]: "01"
+        - generic [ref=e90]:
+          - generic [ref=e92]: 
+          - heading "Reliable Cash Flow & Predictable Payment" [level=3] [ref=e93]
+          - paragraph [ref=e94]: Clear paperwork and reliable payment timing protect cash flow. We ensure payments are processed within agreed cycles, so you can plan production with confidence and less financial stress.
+          - list [ref=e95]:
+            - listitem [ref=e96]:
+              - generic [ref=e97]: 
+              - text: 30-day payment guarantee
+            - listitem [ref=e98]:
+              - generic [ref=e99]: 
+              - text: Clear invoicing & documentation
+            - listitem [ref=e100]:
+              - generic [ref=e101]: 
+              - text: No payment chasing needed
+      - text:            
+  - generic [ref=e103]:
+    - generic [ref=e104]:
+      - generic [ref=e105]: Our Services
+      - heading "What DALA Does for Brand Partners" [level=2] [ref=e106]
+      - paragraph [ref=e107]: Drive efficient, disciplined, transparent and sustainable growth
+    - generic [ref=e108]:
+      - generic [ref=e110]:
+        - generic [ref=e112] [cursor=pointer]:
+          - img "Retail expansion and faster market access" [ref=e114]
+          - generic [ref=e116]:
+            - generic [ref=e118]: 
+            - heading "Retail Expansion" [level=4] [ref=e119]
+            - paragraph [ref=e120]: Get on shelves faster
+            - button "Learn more about Retail Expansion" [ref=e121]:
+              - generic [ref=e122]: +
+          - generic:
+            - generic:
+              - heading "Retail Expansion & Store Onboarding" [level=5]
+              - paragraph: We get brands on shelf faster. From initial introduction to consistent shelf presence, we ensure your brand reaches more customers across 300+ stores in Lagos and Ogun.
+              - button "Close":
+                - generic: 
+        - generic [ref=e124] [cursor=pointer]:
+          - img "Shelf management and structured execution" [ref=e126]
+          - generic [ref=e128]:
+            - generic [ref=e130]: 
+            - heading "Shelf Management" [level=4] [ref=e131]
+            - paragraph [ref=e132]: Confirm FIFO compliance
+            - button "Learn more about Shelf Management" [ref=e133]:
+              - generic [ref=e134]: +
+          - generic:
+            - generic:
+              - heading "In-Store Operations & Shelf Management" [level=5]
+              - paragraph: We confirm FIFO compliance, resolve issues promptly and ensure shelf presence preventing stock out. Your products stay visible and available to customers.
+              - button "Close":
+                - generic: 
+        - generic [ref=e136] [cursor=pointer]:
+          - img "Warehousing and 48-hour fulfillment" [ref=e138]
+          - generic [ref=e140]:
+            - generic [ref=e142]: 
+            - heading "Warehousing" [level=4] [ref=e143]
+            - paragraph [ref=e144]: 48-hour fulfillment
+            - button "Learn more about Warehousing" [ref=e145]:
+              - generic [ref=e146]: +
+          - generic:
+            - generic:
+              - heading "Warehousing & Timely Delivery" [level=5]
+              - paragraph: Flexible ambient and cold storage solutions. 48 hour fulfillment with no minimum order quantities. Accurate invoicing and real-time delivery confirmation.
+              - button "Close":
+                - generic: 
+        - generic [ref=e148] [cursor=pointer]:
+          - img "Reporting and shelf performance analysis" [ref=e150]
+          - generic [ref=e152]:
+            - generic [ref=e154]: 
+            - heading "Reporting" [level=4] [ref=e155]
+            - paragraph [ref=e156]: Weekly transparent insights
+            - button "Learn more about Reporting" [ref=e157]:
+              - generic [ref=e158]: +
+          - generic:
+            - generic:
+              - heading "Weekly Reporting & Transparent Insights" [level=5]
+              - paragraph: Receive unbiased detailed and meaningful activity and sales reports. Know your brand performance exactly how your products are doing across retail outlets.
+              - button "Close":
+                - generic: 
+        - generic [ref=e160] [cursor=pointer]:
+          - img "Reliable payment and cash flow" [ref=e162]
+          - generic [ref=e164]:
+            - generic [ref=e166]: 
+            - heading "Payment Guarantee" [level=4] [ref=e167]
+            - paragraph [ref=e168]: 30-day predictable cash flow
+            - button "Learn more about Payment Guarantee" [ref=e169]:
+              - generic [ref=e170]: +
+          - generic:
+            - generic:
+              - heading "Stress-free Reliable Payment" [level=5]
+              - paragraph: We have fixed payment terms that eliminate time, energy and money spent chasing payment. Predictable cash flow allows you to produce, market and grow sustainably.
+              - button "Close":
+                - generic: 
+        - generic [ref=e172] [cursor=pointer]:
+          - img "Retail expansion" [ref=e174]
+          - generic [ref=e176]:
+            - generic [ref=e178]: 
+            - heading "Retail Expansion" [level=4] [ref=e179]
+            - paragraph [ref=e180]: Get on shelves faster
+            - button "Learn more" [ref=e181]:
+              - generic [ref=e182]: +
+        - generic [ref=e184] [cursor=pointer]:
+          - img "Shelf management" [ref=e186]
+          - generic [ref=e188]:
+            - generic [ref=e190]: 
+            - heading "Shelf Management" [level=4] [ref=e191]
+            - paragraph [ref=e192]: Confirm FIFO compliance
+            - button "Learn more" [ref=e193]:
+              - generic [ref=e194]: +
+        - generic [ref=e196] [cursor=pointer]:
+          - img "Warehousing" [ref=e198]
+          - generic [ref=e200]:
+            - generic [ref=e202]: 
+            - heading "Warehousing" [level=4] [ref=e203]
+            - paragraph [ref=e204]: 48-hour fulfillment
+            - button "Learn more" [ref=e205]:
+              - generic [ref=e206]: +
+        - generic [ref=e208] [cursor=pointer]:
+          - img "Reporting" [ref=e210]
+          - generic [ref=e212]:
+            - generic [ref=e214]: 
+            - heading "Reporting" [level=4] [ref=e215]
+            - paragraph [ref=e216]: Weekly transparent insights
+            - button "Learn more" [ref=e217]:
+              - generic [ref=e218]: +
+        - generic [ref=e220] [cursor=pointer]:
+          - img "Payment" [ref=e222]
+          - generic [ref=e224]:
+            - generic [ref=e226]: 
+            - heading "Payment Guarantee" [level=4] [ref=e227]
+            - paragraph [ref=e228]: 30-day predictable cash flow
+            - button "Learn more" [ref=e229]:
+              - generic [ref=e230]: +
+        - button "View All Services " [ref=e232] [cursor=pointer]:
+          - text: View All Services
+          - generic [ref=e233]: 
+      - text:                         
+  - generic [ref=e235]:
+    - heading "Ready to Scale With Discipline, Transparency, and Reliable Structure?" [level=2] [ref=e236]
+    - link "Become a Brand Partner" [ref=e238] [cursor=pointer]:
+      - /url: /pages/get-listed
+  - contentinfo [ref=e239]:
+    - generic [ref=e240]:
+      - generic [ref=e241]:
+        - link "DALA Technologies" [ref=e242] [cursor=pointer]:
+          - /url: /
+          - img "DALA Technologies" [ref=e243]
+        - paragraph [ref=e244]: The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.
+      - generic [ref=e245]:
+        - generic [ref=e246]:
+          - generic [ref=e247] [cursor=pointer]:
+            - generic [ref=e248]:
+              - generic [ref=e249]: 
+              - text: Company
+            - generic [ref=e250]: 
+          - generic [ref=e252]:
+            - link " Home" [ref=e253] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e254]: 
+              - text: Home
+            - link " About" [ref=e255] [cursor=pointer]:
+              - /url: /pages/about
+              - generic [ref=e256]: 
+              - text: About
+            - link " Case Studies" [ref=e257] [cursor=pointer]:
+              - /url: /pages/case-studies
+              - generic [ref=e258]: 
+              - text: Case Studies
+            - link " Contact" [ref=e259] [cursor=pointer]:
+              - /url: /pages/contact
+              - generic [ref=e260]: 
+              - text: Contact
+        - generic [ref=e261]:
+          - generic [ref=e262] [cursor=pointer]:
+            - generic [ref=e263]:
+              - generic [ref=e264]: 
+              - text: Solutions
+            - generic [ref=e265]: 
+          - generic [ref=e267]:
+            - link " For Brands" [ref=e268] [cursor=pointer]:
+              - /url: /pages/for-brands
+              - generic [ref=e269]: 
+              - text: For Brands
+            - link " Supermarkets" [ref=e270] [cursor=pointer]:
+              - /url: /pages/for-supermarkets
+              - generic [ref=e271]: 
+              - text: Supermarkets
+            - link " Get Listed" [ref=e272] [cursor=pointer]:
+              - /url: /pages/get-listed
+              - generic [ref=e273]: 
+              - text: Get Listed
+            - link " Login" [ref=e274] [cursor=pointer]:
+              - /url: /pages/login
+              - generic [ref=e275]: 
+              - text: Login
+      - generic [ref=e276]:
+        - generic [ref=e277]:
+          - generic [ref=e278]: 
+          - text: Get In Touch
+        - link " Iju, Ota, Ogun State, Nigeria" [ref=e279] [cursor=pointer]:
+          - /url: https://maps.google.com
+          - generic [ref=e280]: 
+          - generic [ref=e281]: Iju, Ota, Ogun State, Nigeria
+        - link " +234 814 882 4115" [ref=e282] [cursor=pointer]:
+          - /url: tel:+2348148824115
+          - generic [ref=e283]: 
+          - generic [ref=e284]: +234 814 882 4115
+        - link " +234 903 235 2306" [ref=e285] [cursor=pointer]:
+          - /url: tel:+2349032352306
+          - generic [ref=e286]: 
+          - generic [ref=e287]: +234 903 235 2306
+        - link " info@dalatechnologies.com" [ref=e288] [cursor=pointer]:
+          - /url: mailto:info@dalatechnologies.com
+          - generic [ref=e289]: 
+          - generic [ref=e290]: info@dalatechnologies.com
+        - generic [ref=e291]:
+          - generic [ref=e292]: 
+          - generic [ref=e293]: "Mon - Sat: 8am - 6pm"
+      - generic [ref=e294]:
+        - generic [ref=e295]: Follow Us
+        - generic [ref=e296]:
+          - link "LinkedIn" [ref=e297] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/dala-tech/
+            - generic [ref=e298]: 
+          - link "Instagram" [ref=e299] [cursor=pointer]:
+            - /url: https://www.instagram.com/dala.technologies?igsh=MTU4eW5jMGdydGx4dw==
+            - generic [ref=e300]: 
+          - link "Twitter" [ref=e301] [cursor=pointer]:
+            - /url: https://x.com/usedalatech
+            - generic [ref=e302]: 
+          - link "Facebook" [ref=e303] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1G7LDCdYw3/
+            - generic [ref=e304]: 
+      - generic [ref=e305]:
+        - paragraph [ref=e306]: © 2026 DALA Technologies. All rights reserved.
+        - generic [ref=e307]:
+          - link "Privacy Policy" [ref=e308] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e309] [cursor=pointer]:
+            - /url: "#"
+  - button "Chat on WhatsApp" [ref=e311] [cursor=pointer]:
+    - generic [ref=e312]: 
+  - status "Website maintenance in progress" [ref=e313] [cursor=pointer]:
+    - generic [ref=e315]: Website Maintenance in Progress
+    - button "Dismiss notification" [ref=e316]: ×

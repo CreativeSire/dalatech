@@ -1,0 +1,335 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DALA Technologies" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DALA Technologies" [ref=e5]
+      - generic [ref=e6]:
+        - link "For Brands" [ref=e7] [cursor=pointer]:
+          - /url: /pages/for-brands
+        - link "For Supermarkets" [ref=e8] [cursor=pointer]:
+          - /url: /pages/for-supermarkets
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: /pages/about
+        - link "Case Studies" [ref=e10] [cursor=pointer]:
+          - /url: /pages/case-studies
+        - generic [ref=e11]:
+          - button "Marketplace " [ref=e12] [cursor=pointer]:
+            - text: Marketplace
+            - generic [ref=e13]: 
+          - generic:
+            - link " Consumer Store Shop DALA-distributed brands":
+              - /url: ../store/
+              - generic: 
+              - generic:
+                - strong: Consumer Store
+                - generic: Shop DALA-distributed brands
+            - link "Product Catalog Browse our full brand portfolio":
+              - /url: ../product-catalog/
+              - generic:
+                - strong: Product Catalog
+                - generic: Browse our full brand portfolio
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: /pages/contact
+        - generic [ref=e15]:
+          - button "Account " [ref=e16] [cursor=pointer]:
+            - text: Account
+            - generic [ref=e17]: 
+          - generic:
+            - link " Sign Up Create a new account":
+              - /url: /pages/signup
+              - generic: 
+              - generic:
+                - strong: Sign Up
+                - generic: Create a new account
+            - link " Sign In Access your account":
+              - /url: /pages/login
+              - generic: 
+              - generic:
+                - strong: Sign In
+                - generic: Access your account
+            - separator
+            - link " Trade Portal For retailers":
+              - /url: ../trade/
+              - generic: 
+              - generic:
+                - strong: Trade Portal
+                - generic: For retailers
+            - link "Brand Portal For brand partners":
+              - /url: ../brand-portal/
+              - generic:
+                - strong: Brand Portal
+                - generic: For brand partners
+  - generic [ref=e19]:
+    - generic [ref=e20]: For Supermarkets
+    - heading "Reduce Supplier Risk and Improve Operational Reliability" [level=1] [ref=e21]
+    - paragraph [ref=e22]: DALA partners with modern retail outlets to reduce supplier-related risks and complications. We ensure your standards are upheld, monitor inventory, and streamline operations so your team can focus on customers.
+    - link "Work With Us" [ref=e24] [cursor=pointer]:
+      - /url: /pages/get-listed
+  - generic [ref=e25]:
+    - generic [ref=e26]:
+      - paragraph [ref=e27]: Trusted By Leading Retailers
+      - heading "Building retail infrastructure with Nigeria's reputable retailers" [level=3] [ref=e28]
+      - paragraph [ref=e29]: Join the network of modern retail outlets streamlining their supplier operations
+    - generic [ref=e31]:
+      - img "234 Stores" [ref=e33]
+      - img "Addide" [ref=e35]
+      - img "Covenant University" [ref=e37]
+      - img "Foodco" [ref=e39]
+      - img "Game" [ref=e41]
+      - img "Globus Supermarket" [ref=e43]
+      - img "Grocery Bazaar" [ref=e45]
+      - img "Hubmart" [ref=e47]
+      - img "Jendol" [ref=e49]
+      - img "Justrite" [ref=e51]
+      - img "Prime Mart" [ref=e53]
+      - img "Prince Ebeano" [ref=e55]
+      - img "Spar" [ref=e57]
+      - img "Sundry Market Square" [ref=e59]
+      - img "Supersaver" [ref=e61]
+      - img "Sweet Sensation" [ref=e63]
+      - img "The Bazaar" [ref=e65]
+      - img "Total Bonjour" [ref=e67]
+      - img "Twins Faja Supermarket" [ref=e69]
+      - img "234 Stores" [ref=e71]
+      - img "Addide" [ref=e73]
+      - img "Covenant University" [ref=e75]
+      - img "Foodco" [ref=e77]
+      - img "Game" [ref=e79]
+      - img "Globus Supermarket" [ref=e81]
+      - img "Grocery Bazaar" [ref=e83]
+      - img "Hubmart" [ref=e85]
+      - img "Jendol" [ref=e87]
+      - img "Justrite" [ref=e89]
+  - generic [ref=e91]:
+    - generic [ref=e92]:
+      - generic [ref=e93]: Why Choose DALA
+      - heading "Why Retailers Choose DALA" [level=2] [ref=e94]
+      - paragraph [ref=e95]: DALA strengthens your operations by streamlining orders, executing timely delivery and providing accurate documentation.
+    - generic [ref=e97]:
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - img "48-hour restocking and delivery" [ref=e101]
+          - generic [ref=e103]: "01"
+        - generic [ref=e104]:
+          - generic [ref=e106]: 
+          - heading "Reduced Supplier Risk & Stockouts" [level=3] [ref=e107]
+          - paragraph [ref=e108]: Structured replenishment cycles and timely delivery discipline reduce stockouts and operational escalations. Our 48-hour restocking guarantee keeps your shelves full.
+          - list [ref=e109]:
+            - listitem [ref=e110]:
+              - generic [ref=e111]: 
+              - text: Proactive monitoring
+            - listitem [ref=e112]:
+              - generic [ref=e113]: 
+              - text: 48-hour restocking
+            - listitem [ref=e114]:
+              - generic [ref=e115]: 
+              - text: Low inventory alerts
+      - text:            
+  - generic [ref=e117]:
+    - generic [ref=e118]:
+      - generic [ref=e119]: Our Services
+      - heading "What DALA Does for Retail Partners" [level=2] [ref=e120]
+      - paragraph [ref=e121]: From supplier vetting to issue resolution, we ensure brand partners meet your standards
+    - generic [ref=e122]:
+      - generic [ref=e124]:
+        - generic [ref=e126] [cursor=pointer]:
+          - img "Supplier vetting and quality assurance" [ref=e128]
+          - generic [ref=e130]:
+            - generic [ref=e132]: 
+            - heading "Supplier Vetting" [level=4] [ref=e133]
+            - paragraph [ref=e134]: Quality-assured brands only
+            - button "Learn more about Supplier Vetting" [ref=e135]:
+              - generic [ref=e136]: +
+          - generic:
+            - generic:
+              - heading "Supplier Vetting & Quality Assurance" [level=5]
+              - paragraph: Brands within the DALA system are held to clear execution expectations. We vet them before they reach your shelves, ensuring they meet operational readiness, regulatory compliance, and production reliability standards.
+              - button "Close":
+                - generic: 
+        - generic [ref=e138] [cursor=pointer]:
+          - img "Store visits and performance reporting" [ref=e140]
+          - generic [ref=e142]:
+            - generic [ref=e144]: 
+            - heading "Store Visits" [level=4] [ref=e145]
+            - paragraph [ref=e146]: Regular performance reports
+            - button "Learn more about Store Visits" [ref=e147]:
+              - generic [ref=e148]: +
+          - generic:
+            - generic:
+              - heading "Regular Store Visits & Performance Reporting" [level=5]
+              - paragraph: We regularly visit your store to ensure in-store execution, and provide you with clear, structured reports to keep you informed on supplier execution, delivery performance, and issue resolution for full visibility without the need for constant follow-up.
+              - button "Close":
+                - generic: 
+        - generic [ref=e150] [cursor=pointer]:
+          - img "48-hour delivery and restocking" [ref=e152]
+          - generic [ref=e154]:
+            - generic [ref=e156]: 
+            - heading "48-Hour Delivery" [level=4] [ref=e157]
+            - paragraph [ref=e158]: Fast restocking, no minimums
+            - button "Learn more about 48-Hour Delivery" [ref=e159]:
+              - generic [ref=e160]: +
+          - generic:
+            - generic:
+              - heading "48-Hour Restocking & Delivery" [level=5]
+              - paragraph: Reduce inventory risk with 48-hours fulfillment and no minimum order values. When inventory runs low, we restock within 48 hours. Our fast, reliable delivery ensures your shelves stay full and your customers find what they need.
+              - button "Close":
+                - generic: 
+        - generic [ref=e162] [cursor=pointer]:
+          - img "Issue resolution and structured execution" [ref=e164]
+          - generic [ref=e166]:
+            - generic [ref=e168]: 
+            - heading "Issue Resolution" [level=4] [ref=e169]
+            - paragraph [ref=e170]: 24-hour problem solving
+            - button "Learn more about Issue Resolution" [ref=e171]:
+              - generic [ref=e172]: +
+          - generic:
+            - generic:
+              - heading "Proactive Issue Resolution" [level=5]
+              - paragraph: Product quality concerns, damaged packaging, and expiry issues are identified and resolved within 24 hours. We handle problems professionally before they escalate.
+              - button "Close":
+                - generic: 
+        - generic [ref=e174] [cursor=pointer]:
+          - img "Supplier vetting" [ref=e176]
+          - generic [ref=e178]:
+            - generic [ref=e180]: 
+            - heading "Supplier Vetting" [level=4] [ref=e181]
+            - paragraph [ref=e182]: Quality-assured brands only
+            - button "Learn more" [ref=e183]:
+              - generic [ref=e184]: +
+        - generic [ref=e186] [cursor=pointer]:
+          - img "Store visits" [ref=e188]
+          - generic [ref=e190]:
+            - generic [ref=e192]: 
+            - heading "Store Visits" [level=4] [ref=e193]
+            - paragraph [ref=e194]: Regular performance reports
+            - button "Learn more" [ref=e195]:
+              - generic [ref=e196]: +
+        - generic [ref=e198] [cursor=pointer]:
+          - img "48-hour delivery" [ref=e200]
+          - generic [ref=e202]:
+            - generic [ref=e204]: 
+            - heading "48-Hour Delivery" [level=4] [ref=e205]
+            - paragraph [ref=e206]: Fast restocking, no minimums
+            - button "Learn more" [ref=e207]:
+              - generic [ref=e208]: +
+        - generic [ref=e210] [cursor=pointer]:
+          - img "Issue resolution" [ref=e212]
+          - generic [ref=e214]:
+            - generic [ref=e216]: 
+            - heading "Issue Resolution" [level=4] [ref=e217]
+            - paragraph [ref=e218]: 24-hour problem solving
+            - button "Learn more" [ref=e219]:
+              - generic [ref=e220]: +
+        - button "View All Services " [ref=e222] [cursor=pointer]:
+          - text: View All Services
+          - generic [ref=e223]: 
+      - text:                    
+  - generic [ref=e225]:
+    - heading "Ready to Work With Clean, Professional Execution?" [level=2] [ref=e226]
+    - link "Become a Retail Partner" [ref=e228] [cursor=pointer]:
+      - /url: /pages/get-listed
+  - contentinfo [ref=e229]:
+    - generic [ref=e230]:
+      - generic [ref=e231]:
+        - link "DALA Technologies" [ref=e232] [cursor=pointer]:
+          - /url: /
+          - img "DALA Technologies" [ref=e233]
+        - paragraph [ref=e234]: The Retail Execution Control Layer. Bridging brands and modern retail across Nigeria.
+      - generic [ref=e235]:
+        - generic [ref=e236]:
+          - generic [ref=e237] [cursor=pointer]:
+            - generic [ref=e238]:
+              - generic [ref=e239]: 
+              - text: Company
+            - generic [ref=e240]: 
+          - generic [ref=e242]:
+            - link " Home" [ref=e243] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e244]: 
+              - text: Home
+            - link " About" [ref=e245] [cursor=pointer]:
+              - /url: /pages/about
+              - generic [ref=e246]: 
+              - text: About
+            - link " Case Studies" [ref=e247] [cursor=pointer]:
+              - /url: /pages/case-studies
+              - generic [ref=e248]: 
+              - text: Case Studies
+            - link " Contact" [ref=e249] [cursor=pointer]:
+              - /url: /pages/contact
+              - generic [ref=e250]: 
+              - text: Contact
+        - generic [ref=e251]:
+          - generic [ref=e252] [cursor=pointer]:
+            - generic [ref=e253]:
+              - generic [ref=e254]: 
+              - text: Solutions
+            - generic [ref=e255]: 
+          - generic [ref=e257]:
+            - link " For Brands" [ref=e258] [cursor=pointer]:
+              - /url: /pages/for-brands
+              - generic [ref=e259]: 
+              - text: For Brands
+            - link " Supermarkets" [ref=e260] [cursor=pointer]:
+              - /url: /pages/for-supermarkets
+              - generic [ref=e261]: 
+              - text: Supermarkets
+            - link " Get Listed" [ref=e262] [cursor=pointer]:
+              - /url: /pages/get-listed
+              - generic [ref=e263]: 
+              - text: Get Listed
+            - link " Login" [ref=e264] [cursor=pointer]:
+              - /url: /pages/login
+              - generic [ref=e265]: 
+              - text: Login
+      - generic [ref=e266]:
+        - generic [ref=e267]:
+          - generic [ref=e268]: 
+          - text: Get In Touch
+        - link " Iju, Ota, Ogun State, Nigeria" [ref=e269] [cursor=pointer]:
+          - /url: https://maps.google.com
+          - generic [ref=e270]: 
+          - generic [ref=e271]: Iju, Ota, Ogun State, Nigeria
+        - link " +234 814 882 4115" [ref=e272] [cursor=pointer]:
+          - /url: tel:+2348148824115
+          - generic [ref=e273]: 
+          - generic [ref=e274]: +234 814 882 4115
+        - link " +234 903 235 2306" [ref=e275] [cursor=pointer]:
+          - /url: tel:+2349032352306
+          - generic [ref=e276]: 
+          - generic [ref=e277]: +234 903 235 2306
+        - link " info@dalatechnologies.com" [ref=e278] [cursor=pointer]:
+          - /url: mailto:info@dalatechnologies.com
+          - generic [ref=e279]: 
+          - generic [ref=e280]: info@dalatechnologies.com
+        - generic [ref=e281]:
+          - generic [ref=e282]: 
+          - generic [ref=e283]: "Mon - Sat: 8am - 6pm"
+      - generic [ref=e284]:
+        - generic [ref=e285]: Follow Us
+        - generic [ref=e286]:
+          - link "LinkedIn" [ref=e287] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/dala-tech/
+            - generic [ref=e288]: 
+          - link "Instagram" [ref=e289] [cursor=pointer]:
+            - /url: https://www.instagram.com/dala.technologies?igsh=MTU4eW5jMGdydGx4dw==
+            - generic [ref=e290]: 
+          - link "Twitter" [ref=e291] [cursor=pointer]:
+            - /url: https://x.com/usedalatech
+            - generic [ref=e292]: 
+          - link "Facebook" [ref=e293] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1G7LDCdYw3/
+            - generic [ref=e294]: 
+      - generic [ref=e295]:
+        - paragraph [ref=e296]: © 2026 DALA Technologies. All rights reserved.
+        - generic [ref=e297]:
+          - link "Privacy Policy" [ref=e298] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e299] [cursor=pointer]:
+            - /url: "#"
+  - button "Chat on WhatsApp" [ref=e301] [cursor=pointer]:
+    - generic [ref=e302]: 
+  - status "Website maintenance in progress" [ref=e303] [cursor=pointer]:
+    - generic [ref=e305]: Website Maintenance in Progress
+    - button "Dismiss notification" [ref=e306]: ×

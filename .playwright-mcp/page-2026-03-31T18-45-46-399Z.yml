@@ -1,0 +1,330 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DALA Technologies" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DALA Technologies" [ref=e5]
+      - generic [ref=e6]:
+        - link "For Brands" [ref=e7] [cursor=pointer]:
+          - /url: /pages/for-brands
+        - link "For Supermarkets" [ref=e8] [cursor=pointer]:
+          - /url: /pages/for-supermarkets
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: /pages/about
+        - link "Case Studies" [ref=e10] [cursor=pointer]:
+          - /url: /pages/case-studies
+        - link "Get Listed" [ref=e11] [cursor=pointer]:
+          - /url: /pages/get-listed
+        - generic [ref=e12]:
+          - button "Marketplace " [ref=e13] [cursor=pointer]:
+            - text: Marketplace
+            - generic [ref=e14]: 
+          - generic:
+            - link " Consumer Store Shop DALA-distributed brands":
+              - /url: ../store/
+              - generic: 
+              - generic:
+                - strong: Consumer Store
+                - generic: Shop DALA-distributed brands
+            - link "Product Catalog Browse our full brand portfolio":
+              - /url: ../product-catalog/
+              - generic:
+                - strong: Product Catalog
+                - generic: Browse our full brand portfolio
+        - link "Contact" [ref=e15] [cursor=pointer]:
+          - /url: /pages/contact
+        - generic [ref=e16]:
+          - button "Account " [ref=e17] [cursor=pointer]:
+            - text: Account
+            - generic [ref=e18]: 
+          - generic:
+            - link " Sign Up Create a new account":
+              - /url: /pages/signup
+              - generic: 
+              - generic:
+                - strong: Sign Up
+                - generic: Create a new account
+            - link " Sign In Access your account":
+              - /url: /pages/login
+              - generic: 
+              - generic:
+                - strong: Sign In
+                - generic: Access your account
+            - separator
+            - link " Trade Portal For retailers":
+              - /url: ../trade/
+              - generic: 
+              - generic:
+                - strong: Trade Portal
+                - generic: For retailers
+            - link "Brand Portal For brand partners":
+              - /url: ../brand-portal/
+              - generic:
+                - strong: Brand Portal
+                - generic: For brand partners
+  - main [ref=e19]:
+    - generic [ref=e21]:
+      - generic [ref=e22]: Brand Partnership
+      - heading "Get Your Brand Listed With DALA" [level=1] [ref=e23]
+      - paragraph [ref=e24]: Scale with discipline, efficiency, transparency and sustainability.
+      - link "Start Your Application " [ref=e25] [cursor=pointer]:
+        - /url: /pages/get-listed-form
+        - text: Start Your Application
+        - generic [ref=e26]: 
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]: 
+          - text: Ideal Partner
+        - heading "You Will Enjoy Partnering With Dala If You:" [level=2] [ref=e32]
+      - generic:
+        - article:
+          - generic: "01"
+          - text: 
+          - heading "Strong Products With Proven Demand" [level=3]
+          - paragraph: Have strong products with proven demand and actively invest in marketing.
+        - article:
+          - generic: "02"
+          - text: 
+          - heading "Consistent Production & Scale" [level=3]
+          - paragraph: Can produce consistently, scale when needed, and respond quickly to consumer feedback.
+        - article:
+          - generic: "03"
+          - text: 
+          - heading "Value Structure, Transparency & Accountability" [level=3]
+          - paragraph: Value structure, transparency, and accountability in your business partnerships.
+        - article:
+          - generic: "04"
+          - text: 
+          - heading "Meet Regulatory Requirements" [level=3]
+          - paragraph: Meet regulatory requirements (NAFDAC, SON, scannable barcode, etc).
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]: 
+          - text: Not Yet Ready
+        - heading "DALA May Not Be a Good Fit Yet If You:" [level=2] [ref=e38]
+      - generic [ref=e39]:
+        - article [ref=e40]:
+          - generic [ref=e42]: 
+          - heading "Expect DALA to Drive All Sales" [level=3] [ref=e43]
+          - paragraph [ref=e44]: Expect DALA to drive sales without your own marketing effort. Sales require your sustained mandatory effort.
+        - article [ref=e45]:
+          - generic [ref=e47]: 
+          - heading "Struggle With Consistency" [level=3] [ref=e48]
+          - paragraph [ref=e49]: Struggle with consistent production, quick response, or adhering to operational standards.
+        - article [ref=e50]:
+          - generic [ref=e52]: 
+          - heading "Prefer Shortcuts" [level=3] [ref=e53]
+          - paragraph [ref=e54]: Prefer shortcuts over long-term, disciplined growth.
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]: 
+          - text: Requirements
+        - heading "What We Need From You" [level=2] [ref=e60]
+      - generic [ref=e61]:
+        - article [ref=e62]:
+          - generic [ref=e63]:
+            - generic [ref=e65]: 
+            - heading "Drive Consumer Demand" [level=3] [ref=e66]
+          - paragraph [ref=e68]: Sales require your sustained mandatory effort. DALA ensures availability, visibility, and reliable payments. And also invest in digital marketing and in-store activations.
+        - article [ref=e69]:
+          - generic [ref=e70]:
+            - generic [ref=e72]: 
+            - heading "Maintain Product Availability" [level=3] [ref=e73]
+          - paragraph [ref=e75]: The market rewards reliability. You must have the capacity and commitment to scale production, maintaining quality standards as demand increases.
+        - article [ref=e76]:
+          - generic [ref=e77]:
+            - generic [ref=e79]: 
+            - heading "Proactive Preventions and Responsive Actions to Address Any Product Challenge" [level=3] [ref=e80]
+          - paragraph [ref=e82]: Retail moves fast. Timely, clean constructive and proactive communication is key. Collaborative system to resolve challenges. Long term growth mindset.
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - generic [ref=e87]: 
+          - text: Our Process
+        - heading "How the partnership works" [level=2] [ref=e88]
+      - generic [ref=e89]:
+        - article [ref=e90]:
+          - button "1 Application & Discovery " [ref=e91] [cursor=pointer]:
+            - generic [ref=e92]: "1"
+            - heading "Application & Discovery" [level=3] [ref=e93]
+            - generic [ref=e94]: 
+          - paragraph [ref=e95]: Submit via the Work With Us form. We'll schedule a call to understand your brand, products, and goals.
+        - article [ref=e96]:
+          - button "2 Alignment & Proposal " [ref=e97] [cursor=pointer]:
+            - generic [ref=e98]: "2"
+            - heading "Alignment & Proposal" [level=3] [ref=e99]
+            - generic [ref=e100]: 
+          - paragraph [ref=e101]: We explain our model, pricing, and partnership requirements with full transparency.
+        - article [ref=e102]:
+          - button "3 3-Month Trial " [ref=e103] [cursor=pointer]:
+            - generic [ref=e104]: "3"
+            - heading "3-Month Trial" [level=3] [ref=e105]
+            - generic [ref=e106]: 
+          - paragraph [ref=e107]: Test operational readiness with full access to DALA services—store expansion, merchandising, delivery, reporting, and payment guarantees.
+        - article [ref=e108]:
+          - button "4 Onboarding & Execution " [ref=e109] [cursor=pointer]:
+            - generic [ref=e110]: "4"
+            - heading "Onboarding & Execution" [level=3] [ref=e111]
+            - generic [ref=e112]: 
+          - paragraph [ref=e113]: We integrate your brand into our retail operations engine. You focus on product quality and marketing, we handle execution.
+        - article [ref=e114]:
+          - button "5 Scale & Grow Together " [ref=e115] [cursor=pointer]:
+            - generic [ref=e116]: "5"
+            - heading "Scale & Grow Together" [level=3] [ref=e117]
+            - generic [ref=e118]: 
+          - paragraph [ref=e119]: After trial success, we expand your presence with predictable cash flow, transparent reporting, and scalable growth across modern retail.
+    - generic [ref=e122]:
+      - generic [ref=e123]:
+        - generic [ref=e124]: 
+        - text: Application
+      - heading "Brand Partner Qualification Form" [level=2] [ref=e125]
+      - paragraph [ref=e126]: This is the same structured qualification flow used in Contact, so you can complete it here directly without jumping to another page.
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - generic [ref=e130]: 
+            - text: Qualification Form
+          - heading "DALA Lead Qualification Form" [level=3] [ref=e131]
+          - paragraph [ref=e132]: Start with your business profile, then complete the commercial qualification questions and add up to three SKUs so we can review your brand properly.
+        - generic [ref=e133]:
+          - generic [ref=e134]:
+            - generic [ref=e136]:
+              - generic [ref=e137]: Contact
+              - heading "Primary Contact Details" [level=4] [ref=e138]
+              - paragraph [ref=e139]: We need a clear operator on the other side of the application before we review the commercial details.
+            - generic [ref=e140]:
+              - generic [ref=e141]:
+                - generic [ref=e142]: Full Name
+                - textbox "Full Name" [ref=e143]
+              - generic [ref=e144]:
+                - generic [ref=e145]: Brand Name
+                - textbox "Brand Name" [ref=e146]
+              - generic [ref=e147]:
+                - generic [ref=e148]: Email Address
+                - textbox "Email Address" [ref=e149]
+              - generic [ref=e150]:
+                - generic [ref=e151]: Phone Number
+                - textbox "Phone Number" [ref=e152]
+          - generic [ref=e153]:
+            - generic [ref=e155]:
+              - generic [ref=e156]: Section 1
+              - heading "Business Qualification" [level=4] [ref=e157]
+              - paragraph [ref=e158]: These answers help us understand current traction, readiness, and your growth ambition over the next twelve months.
+            - generic [ref=e159]:
+              - generic [ref=e160]:
+                - generic [ref=e161]: Which certification do your products have?
+                - combobox "Which certification do your products have?" [ref=e162]:
+                  - option "Select one" [selected]
+                  - option "NAFDAC"
+                  - option "SON (MANCAP)"
+              - generic [ref=e163]:
+                - generic [ref=e164]: How many active retail outlets are your products currently in?
+                - combobox "How many active retail outlets are your products currently in?" [ref=e165]:
+                  - option "Select one" [selected]
+                  - option "Less than 5"
+                  - option "Less than 20"
+                  - option "Less than 50"
+                  - option "Less than 100"
+              - generic [ref=e166]:
+                - generic [ref=e167]: What is your current average monthly business revenue?
+                - combobox "What is your current average monthly business revenue?" [ref=e168]:
+                  - option "Select one" [selected]
+                  - option "Less than ₦500,000"
+                  - option "Less than ₦1,000,000"
+                  - option "Less than ₦2,000,000"
+                  - option "Less than ₦5,000,000"
+                  - option "Less than ₦10,000,000"
+                  - option "Less than ₦20,000,000"
+              - generic [ref=e169]:
+                - generic [ref=e170]: Do you currently engage in marketing activities?
+                - combobox "Do you currently engage in marketing activities?" [ref=e171]:
+                  - option "Select one" [selected]
+                  - option "None"
+                  - option "Digital Marketing (Ads, Social Media)"
+                  - option "Physical Marketing (In-store promotions, exhibitions, activations)"
+                  - option "Both Digital & Physical"
+              - generic [ref=e172]:
+                - generic [ref=e173]: How many retail stores do you want to be in within the next 12 months?
+                - combobox "How many retail stores do you want to be in within the next 12 months?" [ref=e174]:
+                  - option "Select one" [selected]
+                  - option "10+ stores"
+                  - option "40+ stores"
+                  - option "80+ stores"
+                  - option "100+ stores"
+                  - option "200+ stores"
+              - generic [ref=e175]:
+                - generic [ref=e176]: What is your 12-month target monthly retail revenue?
+                - combobox "What is your 12-month target monthly retail revenue?" [ref=e177]:
+                  - option "Select one" [selected]
+                  - option "Above ₦2,000,000"
+                  - option "Above ₦5,000,000"
+                  - option "Above ₦10,000,000"
+                  - option "Above ₦20,000,000"
+                  - option "Above ₦50,000,000"
+          - generic [ref=e178]:
+            - generic [ref=e180]:
+              - generic [ref=e181]: Section 2
+              - heading "Product Details (SKU Information)" [level=4] [ref=e182]
+              - paragraph [ref=e183]: Allow up to three SKUs. This can be your current core range or the products you want positioned first in modern retail.
+            - generic [ref=e184]:
+              - article [ref=e185]:
+                - heading "SKU 1" [level=5] [ref=e187]
+                - generic [ref=e188]:
+                  - generic [ref=e189]:
+                    - generic [ref=e190]: Product Name / SKU Name
+                    - textbox "Product Name / SKU Name" [ref=e191]
+                  - generic [ref=e192]:
+                    - generic [ref=e193]: Product Category
+                    - textbox "Product Category" [ref=e194]
+                  - generic [ref=e195]:
+                    - generic [ref=e196]: Is the product perishable?
+                    - generic [ref=e197]:
+                      - generic [ref=e198]:
+                        - radio "Yes"
+                        - generic [ref=e199] [cursor=pointer]: "Yes"
+                      - generic [ref=e200]:
+                        - radio "No"
+                        - generic [ref=e201] [cursor=pointer]: "No"
+                  - generic [ref=e202]:
+                    - generic [ref=e203]: Units per Pack
+                    - spinbutton "Units per Pack" [ref=e204]
+                  - generic [ref=e205]:
+                    - generic [ref=e206]: Pack Weight
+                    - textbox "Pack Weight" [ref=e207]:
+                      - /placeholder: 500ml, 1kg
+                  - generic [ref=e208]:
+                    - generic [ref=e209]: Product Invoice Price (₦)
+                    - spinbutton "Product Invoice Price (₦)" [ref=e210]
+              - generic [ref=e211]:
+                - button "Add another product" [ref=e212] [cursor=pointer]
+                - paragraph [ref=e213]: You can add up to 3 products.
+          - generic [ref=e214]:
+            - paragraph [ref=e215]: Submit this once with clean information and we can assess fit, commercial readiness, and the best next step without a lot of back and forth.
+            - button "Submit Qualification Form " [ref=e216] [cursor=pointer]:
+              - text: Submit Qualification Form
+              - generic [ref=e217]: 
+    - generic [ref=e220]:
+      - heading "Ready to Get Listed?" [level=2] [ref=e221]
+      - paragraph [ref=e222]: Meet retail standards, scale with discipline, and partner with DALA today.
+      - generic [ref=e223]:
+        - link "Start Your Application " [ref=e224] [cursor=pointer]:
+          - /url: /pages/get-listed-form
+          - text: Start Your Application
+          - generic [ref=e225]: 
+        - link "Learn More About What DALA Does" [ref=e226] [cursor=pointer]:
+          - /url: /pages/for-brands
+  - contentinfo [ref=e227]:
+    - generic [ref=e229]:
+      - paragraph [ref=e230]: © 2026 DALA Technologies. Structured retail execution across Nigeria.
+      - generic [ref=e231]:
+        - link "Home" [ref=e232] [cursor=pointer]:
+          - /url: /
+        - link "For Brands" [ref=e233] [cursor=pointer]:
+          - /url: /pages/for-brands
+        - link "For Supermarkets" [ref=e234] [cursor=pointer]:
+          - /url: /pages/for-supermarkets
+        - link "FAQ" [ref=e235] [cursor=pointer]:
+          - /url: /pages/faq
