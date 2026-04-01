@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orders &amp; Payments | DALA Brand Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/brand-portal.css" />
+</head>
+<body data-bp-page="orders">
+
+  <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Open menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-shell">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo-wrap">
+        <img src="../4.png" alt="DALA Technologies" class="sidebar-logo" />
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-label">Main</p>
+        <a href="dashboard.html" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="reach.html"     data-page="reach"><i class="fa-solid fa-map-location-dot"></i> Retailer Reach</a>
+        <a href="catalog.html"   data-page="catalog"><i class="fa-solid fa-boxes-stacking"></i> My Products</a>
+        <a href="orders.html"    data-page="orders"><i class="fa-solid fa-file-invoice-pound"></i> Orders &amp; Payments</a>
+        <p class="sidebar-label">Insights</p>
+        <a href="reports.html"   data-page="reports"><i class="fa-solid fa-chart-bar"></i> Reports</a>
+        <a href="consumer.html"  data-page="consumer"><i class="fa-solid fa-store"></i> Consumer Store</a>
+        <p class="sidebar-label">Account</p>
+        <a href="account.html"   data-page="account"><i class="fa-solid fa-circle-user"></i> My Account</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-brand-tag">
+          <div class="brand-avatar" id="sidebar-avatar">WL</div>
+          <div class="brand-name-tag">
+            <span id="sidebar-brand-name">Wilson's Lemonade</span>
+            <span>Brand Partner</span>
+          </div>
+        </div>
+        <button class="btn-logout" data-logout>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main-area">
+      <header class="topbar">
+        <span class="topbar-title">Orders &amp; Payments</span>
+        <div class="topbar-meta">
+          <span class="topbar-date" id="topbar-date"></span>
+          <span class="topbar-updated">Last updated: just now</span>
+        </div>
+      </header>
+
+      <main class="page-body">
+        <!-- Page header -->
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1>Orders &amp; Payments</h1>
+            <p>Track orders placed by retailers and incoming payments for January 2026</p>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tab-bar">
+          <button class="tab-btn active" data-tab="orders">
+            <i class="fa-solid fa-file-invoice" style="margin-right:6px"></i>Orders
+          </button>
+          <button class="tab-btn" data-tab="payments">
+            <i class="fa-solid fa-naira-sign" style="margin-right:6px"></i>Payments
+          </button>
+        </div>
+
+        <!-- ORDERS TAB -->
+        <div class="tab-content active" data-tab="orders">
+          <div class="summary-strip">
+            <div class="sum-box accent">
+              <div class="sum-val">₦18.2M</div>
+              <div class="sum-lbl">Total order value this month</div>
+            </div>
+            <div class="sum-box">
+              <div class="sum-val">127</div>
+              <div class="sum-lbl">Total orders placed</div>
+            </div>
+            <div class="sum-box">
+              <div class="sum-val">12,840</div>
+              <div class="sum-lbl">Total units ordered</div>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <div class="table-header">
+              <h3>Recent Orders</h3>
+              <span class="badge badge-blue">Showing last 10 of 127</span>
+            </div>
+            <div class="table-scroll">
+              <table class="bp-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Retailer</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Order Value</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="td-mono">ORD-5891</td>
+                    <td class="td-bold">SPAR Victoria Island</td>
+                    <td class="td-muted">12 Jan</td>
+                    <td>480 units WL-001</td>
+                    <td class="td-bold">₦864,000</td>
+                    <td><span class="pill pill-green">Fulfilled</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">ORD-5887</td>
+                    <td class="td-bold">Addide Ikeja</td>
+                    <td class="td-muted">11 Jan</td>
+                    <td>360 units WL-002</td>
+                    <td class="td-bold">₦666,000</td>
+                    <td><span class="pill pill-green">Fulfilled</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">ORD-5882</td>
+                    <td class="td-bold">Foodco Lekki</td>
+                    <td class="td-muted">10 Jan</td>
+                    <td>420 units WL-001 + WL-003</td>
+                    <td class="td-bold">₦924,000</td>
+                    <td><span class="pill pill-blue">In Progress</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">ORD-5876</td>
+                    <td class="td-bold">Globus VI</td>
+                    <td class="td-muted">10 Jan</td>
+                    <td>240 units WL-001</td>
+                    <td class="td-bold">₦432,000</td>
+                    <td><span class="pill pill-orange">Confirmed</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">ORD-5871</td>
+                    <td class="td-bold">Prince Ebeano</td>
+                    <td class="td-muted">9 Jan</td>
+                    <td>360 units WL-001 + WL-004</td>
+                    <td class="td-bold">₦673,200</td>
+                    <td><span class="pill pill-green">Fulfilled</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">ORD-5865</td>
+                    <td class="td-bold">Hubmart</td>
+                    <td class="td-muted">8 Jan</td>
+                    <td>288 units WL-002</td>
+                    <td class="td-bold">₦532,800</td>
+                    <td><span class="pill pill-green">Fulfilled</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">ORD-5859</td>
+                    <td class="td-bold">234 Stores</td>
+                    <td class="td-muted">7 Jan</td>
+                    <td>192 units WL-003</td>
+                    <td class="td-bold">₦422,400</td>
+                    <td><span class="pill pill-green">Fulfilled</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">ORD-5853</td>
+                    <td class="td-bold">Game Ikeja</td>
+                    <td class="td-muted">6 Jan</td>
+                    <td>240 units WL-001</td>
+                    <td class="td-bold">₦432,000</td>
+                    <td><span class="pill pill-green">Fulfilled</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">ORD-5847</td>
+                    <td class="td-bold">Justrite</td>
+                    <td class="td-muted">5 Jan</td>
+                    <td>168 units WL-005</td>
+                    <td class="td-bold">₦327,600</td>
+                    <td><span class="pill pill-green">Fulfilled</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">ORD-5841</td>
+                    <td class="td-bold">Jendol Ibadan</td>
+                    <td class="td-muted">4 Jan</td>
+                    <td>144 units WL-001</td>
+                    <td class="td-bold">₦259,200</td>
+                    <td><span class="pill pill-green">Fulfilled</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAYMENTS TAB -->
+        <div class="tab-content" data-tab="payments">
+          <div class="summary-strip">
+            <div class="sum-box accent">
+              <div class="sum-val">₦14.1M</div>
+              <div class="sum-lbl">Received this month</div>
+            </div>
+            <div class="sum-box amber">
+              <div class="sum-val">₦4.1M</div>
+              <div class="sum-lbl">Pending / due</div>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <div class="table-header">
+              <h3>Payment Ledger — January 2026</h3>
+              <span class="badge badge-amber">₦4.1M pending</span>
+            </div>
+            <div class="table-scroll">
+              <table class="bp-table">
+                <thead>
+                  <tr>
+                    <th>Ref</th>
+                    <th>Retailer</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="td-mono">PAY-3421</td>
+                    <td class="td-bold">SPAR</td>
+                    <td class="td-muted">11 Jan</td>
+                    <td class="td-bold">₦3,200,000</td>
+                    <td><span class="pill pill-green"><i class="fa-solid fa-circle-check" style="font-size:.7rem"></i> Received</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">PAY-3418</td>
+                    <td class="td-bold">Addide</td>
+                    <td class="td-muted">10 Jan</td>
+                    <td class="td-bold">₦2,400,000</td>
+                    <td><span class="pill pill-green"><i class="fa-solid fa-circle-check" style="font-size:.7rem"></i> Received</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">PAY-3415</td>
+                    <td class="td-bold">Foodco</td>
+                    <td class="td-muted">9 Jan</td>
+                    <td class="td-bold">₦2,800,000</td>
+                    <td><span class="pill pill-green"><i class="fa-solid fa-circle-check" style="font-size:.7rem"></i> Received</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">PAY-3411</td>
+                    <td class="td-bold">Prince Ebeano</td>
+                    <td class="td-muted">8 Jan</td>
+                    <td class="td-bold">₦1,900,000</td>
+                    <td><span class="pill pill-green"><i class="fa-solid fa-circle-check" style="font-size:.7rem"></i> Received</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">PAY-3408</td>
+                    <td class="td-bold">Hubmart</td>
+                    <td class="td-muted">7 Jan</td>
+                    <td class="td-bold">₦1,800,000</td>
+                    <td><span class="pill pill-green"><i class="fa-solid fa-circle-check" style="font-size:.7rem"></i> Received</span></td>
+                  </tr>
+                  <tr>
+                    <td class="td-mono">PAY-3402</td>
+                    <td class="td-bold">Others</td>
+                    <td class="td-muted">6 Jan</td>
+                    <td class="td-bold">₦2,000,000</td>
+                    <td><span class="pill pill-green"><i class="fa-solid fa-circle-check" style="font-size:.7rem"></i> Received</span></td>
+                  </tr>
+                  <tr style="background:#fffbeb;">
+                    <td class="td-mono">PAY-3398</td>
+                    <td class="td-bold">Globus</td>
+                    <td class="td-muted" style="color:var(--bp-amber);font-weight:600;">Due 20 Jan</td>
+                    <td class="td-bold">₦1,400,000</td>
+                    <td><span class="pill pill-amber"><i class="fa-solid fa-clock" style="font-size:.65rem"></i> Pending</span></td>
+                  </tr>
+                  <tr style="background:#fffbeb;">
+                    <td class="td-mono">PAY-3394</td>
+                    <td class="td-bold">Game</td>
+                    <td class="td-muted" style="color:var(--bp-amber);font-weight:600;">Due 22 Jan</td>
+                    <td class="td-bold">₦1,300,000</td>
+                    <td><span class="pill pill-amber"><i class="fa-solid fa-clock" style="font-size:.65rem"></i> Pending</span></td>
+                  </tr>
+                  <tr style="background:#fffbeb;">
+                    <td class="td-mono">PAY-3391</td>
+                    <td class="td-bold">234 Stores</td>
+                    <td class="td-muted" style="color:var(--bp-amber);font-weight:600;">Due 25 Jan</td>
+                    <td class="td-bold">₦800,000</td>
+                    <td><span class="pill pill-amber"><i class="fa-solid fa-clock" style="font-size:.65rem"></i> Pending</span></td>
+                  </tr>
+                  <tr style="background:#fffbeb;">
+                    <td class="td-mono">PAY-3387</td>
+                    <td class="td-bold">Jendol</td>
+                    <td class="td-muted" style="color:var(--bp-amber);font-weight:600;">Due 28 Jan</td>
+                    <td class="td-bold">₦600,000</td>
+                    <td><span class="pill pill-amber"><i class="fa-solid fa-clock" style="font-size:.65rem"></i> Pending</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="info-note" style="margin-top:14px;">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Pending payments are within agreed payment terms (Net 30). DALA monitors all outstanding balances and will escalate any overdue invoices on your behalf. Your account manager (<strong data-bp-manager>Sola Okafor</strong>) can provide a detailed reconciliation.</span>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="js/brand-portal.js"></script>
+  <script>bpInit();</script>
+</body>
+</html>

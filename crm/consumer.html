@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consumer Store | DALA Brand Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/brand-portal.css" />
+</head>
+<body data-bp-page="consumer">
+
+  <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Open menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-shell">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo-wrap">
+        <img src="../4.png" alt="DALA Technologies" class="sidebar-logo" />
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-label">Main</p>
+        <a href="dashboard.html" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="reach.html"     data-page="reach"><i class="fa-solid fa-map-location-dot"></i> Retailer Reach</a>
+        <a href="catalog.html"   data-page="catalog"><i class="fa-solid fa-boxes-stacking"></i> My Products</a>
+        <a href="orders.html"    data-page="orders"><i class="fa-solid fa-file-invoice-pound"></i> Orders &amp; Payments</a>
+        <p class="sidebar-label">Insights</p>
+        <a href="reports.html"   data-page="reports"><i class="fa-solid fa-chart-bar"></i> Reports</a>
+        <a href="consumer.html"  data-page="consumer"><i class="fa-solid fa-store"></i> Consumer Store</a>
+        <p class="sidebar-label">Account</p>
+        <a href="account.html"   data-page="account"><i class="fa-solid fa-circle-user"></i> My Account</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-brand-tag">
+          <div class="brand-avatar" id="sidebar-avatar">WL</div>
+          <div class="brand-name-tag">
+            <span id="sidebar-brand-name">Wilson's Lemonade</span>
+            <span>Brand Partner</span>
+          </div>
+        </div>
+        <button class="btn-logout" data-logout>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main-area">
+      <header class="topbar">
+        <span class="topbar-title">Consumer Store Performance</span>
+        <div class="topbar-meta">
+          <span class="topbar-date" id="topbar-date"></span>
+          <span class="topbar-updated">Last updated: just now</span>
+        </div>
+      </header>
+
+      <main class="page-body">
+        <!-- Page header -->
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1>Consumer Store Performance</h1>
+            <p>How your products are performing on the DALA Marketplace</p>
+          </div>
+        </div>
+
+        <!-- KPI stats -->
+        <div class="stats-bar" style="margin-bottom:20px;">
+          <div class="stat-item">
+            <div class="stat-val accent">6</div>
+            <div class="stat-lbl">Products live on marketplace</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val blue">248</div>
+            <div class="stat-lbl">Consumer orders this month</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val">4.7<span style="font-size:.9rem;font-weight:500;color:var(--bp-muted)">/5</span></div>
+            <div class="stat-lbl">Average rating</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val orange">1,840</div>
+            <div class="stat-lbl">"Find in store" clicks</div>
+          </div>
+        </div>
+
+        <!-- Callout -->
+        <div class="callout-box">
+          <i class="fa-solid fa-arrow-trend-up"></i>
+          <div>
+            <h4>Your products are driving retail foot traffic</h4>
+            <p>
+              Every "Find in a store near you" click on the consumer marketplace directs consumers to a DALA retail partner.
+              Last month, <strong>1,840 consumers</strong> were sent to your retail partners through this feature — turning
+              online discovery into in-store sales.
+            </p>
+          </div>
+        </div>
+
+        <!-- Per-product table -->
+        <div class="table-wrap" style="margin-bottom:24px;">
+          <div class="table-header">
+            <h3>Product Performance — DALA Marketplace</h3>
+            <span class="badge badge-blue">January 2026</span>
+          </div>
+          <div class="table-scroll">
+            <table class="bp-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Live</th>
+                  <th>Consumer Orders</th>
+                  <th>Views</th>
+                  <th>"Find in store" clicks</th>
+                  <th>Avg. Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="td-bold">WL-001 Original 330ml</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle-check" style="font-size:.65rem"></i> Live</span></td>
+                  <td class="td-bold">89</td>
+                  <td>2,340</td>
+                  <td class="td-bold" style="color:var(--bp-accent)">420</td>
+                  <td>
+                    <span style="color:#f59e0b;font-weight:700;">4.8</span>
+                    <span style="color:#f59e0b;font-size:.75rem;"> ★★★★★</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-bold">WL-002 Strawberry 330ml</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle-check" style="font-size:.65rem"></i> Live</span></td>
+                  <td class="td-bold">72</td>
+                  <td>1,890</td>
+                  <td class="td-bold" style="color:var(--bp-accent)">380</td>
+                  <td>
+                    <span style="color:#f59e0b;font-weight:700;">4.7</span>
+                    <span style="color:#f59e0b;font-size:.75rem;"> ★★★★★</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-bold">WL-003 Original 500ml</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle-check" style="font-size:.65rem"></i> Live</span></td>
+                  <td class="td-bold">54</td>
+                  <td>1,420</td>
+                  <td class="td-bold" style="color:var(--bp-accent)">280</td>
+                  <td>
+                    <span style="color:#f59e0b;font-weight:700;">4.8</span>
+                    <span style="color:#f59e0b;font-size:.75rem;"> ★★★★★</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-bold">WL-004 Mint 330ml</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle-check" style="font-size:.65rem"></i> Live</span></td>
+                  <td class="td-bold">41</td>
+                  <td>980</td>
+                  <td class="td-bold" style="color:var(--bp-accent)">210</td>
+                  <td>
+                    <span style="color:#f59e0b;font-weight:700;">4.6</span>
+                    <span style="color:#f59e0b;font-size:.75rem;"> ★★★★½</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-bold">WL-005 Ginger 330ml</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle-check" style="font-size:.65rem"></i> Live</span></td>
+                  <td class="td-bold">18</td>
+                  <td>640</td>
+                  <td class="td-bold" style="color:var(--bp-accent)">180</td>
+                  <td>
+                    <span style="color:#f59e0b;font-weight:700;">4.7</span>
+                    <span style="color:#f59e0b;font-size:.75rem;"> ★★★★★</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-bold">WL-006 Zero Sugar 330ml</td>
+                  <td><span class="pill pill-green"><i class="fa-solid fa-circle-check" style="font-size:.65rem"></i> Live</span></td>
+                  <td class="td-bold">14</td>
+                  <td>520</td>
+                  <td class="td-bold" style="color:var(--bp-accent)">110</td>
+                  <td>
+                    <span style="color:#f59e0b;font-weight:700;">4.5</span>
+                    <span style="color:#f59e0b;font-size:.75rem;"> ★★★★½</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Promotional opportunities -->
+        <div style="margin-bottom:8px;">
+          <h2 style="font-size:1rem;font-weight:700;color:var(--bp-text);margin-bottom:6px;">
+            <i class="fa-solid fa-rocket" style="color:var(--bp-orange);margin-right:8px;"></i>Promotional Opportunities
+          </h2>
+          <p style="font-size:.84rem;color:var(--bp-muted);margin-bottom:16px;">
+            Boost your brand's visibility on the DALA consumer marketplace. Your account manager will confirm availability.
+          </p>
+        </div>
+        <div class="promo-grid">
+          <div class="promo-card">
+            <div style="font-size:1.4rem;margin-bottom:4px;">⚡</div>
+            <h4>Homepage Flash Deals Banner</h4>
+            <p>Feature one of your products in a time-limited Flash Deal on the DALA marketplace homepage. High visibility, high conversion.</p>
+            <small>Your account manager will confirm availability and pricing.</small>
+            <button class="btn btn-primary btn-sm" onclick="alert('Request sent! Your DALA account manager will be in touch within 1 business day.')">
+              <i class="fa-solid fa-paper-plane"></i> Request
+            </button>
+          </div>
+          <div class="promo-card">
+            <div style="font-size:1.4rem;margin-bottom:4px;">🎠</div>
+            <h4>Carousel Hero Slide Feature</h4>
+            <p>Secure a rotating hero placement on the DALA marketplace homepage carousel — prime real estate for brand awareness.</p>
+            <small>Your account manager will confirm availability and pricing.</small>
+            <button class="btn btn-primary btn-sm" onclick="alert('Request sent! Your DALA account manager will be in touch within 1 business day.')">
+              <i class="fa-solid fa-paper-plane"></i> Request
+            </button>
+          </div>
+          <div class="promo-card">
+            <div style="font-size:1.4rem;margin-bottom:4px;">📧</div>
+            <h4>Newsletter Feature</h4>
+            <p>Get your brand featured in the DALA consumer newsletter, sent to thousands of active shoppers across Nigeria.</p>
+            <small>Your account manager will confirm availability and pricing.</small>
+            <button class="btn btn-primary btn-sm" onclick="alert('Request sent! Your DALA account manager will be in touch within 1 business day.')">
+              <i class="fa-solid fa-paper-plane"></i> Request
+            </button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="js/brand-portal.js"></script>
+  <script>bpInit();</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | DALA CRM</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/brand-portal.css" />
+</head>
+<body data-bp-page="dashboard">
+
+  <!-- Mobile toggle -->
+  <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Open menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-shell">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo-wrap">
+        <img src="../4.png" alt="DALA Technologies" class="sidebar-logo" />
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-label">Main</p>
+        <a href="dashboard.html" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="reach.html"     data-page="reach"><i class="fa-solid fa-map-location-dot"></i> Retailer Reach</a>
+        <a href="catalog.html"   data-page="catalog"><i class="fa-solid fa-boxes-stacking"></i> My Products</a>
+        <a href="orders.html"    data-page="orders"><i class="fa-solid fa-file-invoice-pound"></i> Orders &amp; Payments</a>
+        <p class="sidebar-label">Insights</p>
+        <a href="reports.html"   data-page="reports"><i class="fa-solid fa-chart-bar"></i> Reports</a>
+        <a href="consumer.html"  data-page="consumer"><i class="fa-solid fa-store"></i> Consumer Store</a>
+        <p class="sidebar-label">Account</p>
+        <a href="account.html"   data-page="account"><i class="fa-solid fa-circle-user"></i> My Account</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-brand-tag">
+          <div class="brand-avatar" id="sidebar-avatar">WL</div>
+          <div class="brand-name-tag">
+            <span id="sidebar-brand-name">DALA CRM</span>
+            <span>Operations Workspace</span>
+          </div>
+        </div>
+        <button class="btn-logout" data-logout>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main-area">
+      <!-- Top bar -->
+      <header class="topbar">
+        <span class="topbar-title" id="topbar-title">Dashboard</span>
+        <div class="topbar-meta">
+          <span class="topbar-date" id="topbar-date"></span>
+          <span class="topbar-updated">Last updated: just now</span>
+        </div>
+      </header>
+
+      <!-- Page content -->
+      <main class="page-body">
+
+        <!-- Welcome banner -->
+        <div class="welcome-banner">
+          <h2>Here's what needs attention inside <span class="welcome-accent" data-bp-brand>DALA CRM</span> today.</h2>
+          <p>This starter dashboard is ready for live lead, brand, retailer, and account activity once your colleague connects the real CRM data.</p>
+        </div>
+
+        <!-- KPI grid -->
+        <div class="kpi-grid">
+          <div class="kpi-tile green">
+            <div class="kpi-icon"><i class="fa-solid fa-store"></i></div>
+            <div class="kpi-value">47</div>
+            <div class="kpi-label">Active Retail Locations</div>
+            <span class="kpi-badge up">+3 new</span>
+          </div>
+          <div class="kpi-tile blue">
+            <div class="kpi-icon"><i class="fa-solid fa-box-open"></i></div>
+            <div class="kpi-value">12,840</div>
+            <div class="kpi-label">Units Ordered This Month</div>
+            <span class="kpi-badge up">+12.6%</span>
+          </div>
+          <div class="kpi-tile orange">
+            <div class="kpi-icon"><i class="fa-solid fa-naira-sign"></i></div>
+            <div class="kpi-value">₦18.2M</div>
+            <div class="kpi-label">Revenue This Month</div>
+            <span class="kpi-badge up">+8.4%</span>
+          </div>
+          <div class="kpi-tile purple">
+            <div class="kpi-icon"><i class="fa-solid fa-shop"></i></div>
+            <div class="kpi-value">3</div>
+            <div class="kpi-label">New Retailers This Month</div>
+            <span class="kpi-badge up">New</span>
+          </div>
+          <div class="kpi-tile amber">
+            <div class="kpi-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="kpi-value">₦4.1M</div>
+            <div class="kpi-label">Pending Payments</div>
+            <span class="kpi-badge down">Due</span>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-row">
+          <!-- Chart 1: Units ordered last 90 days -->
+          <div class="chart-card">
+            <h3>Units Ordered <span>Last 90 Days</span></h3>
+            <div class="bar-row">
+              <span class="bar-label">October</span>
+              <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+              <span class="bar-value">9,200 units</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">November</span>
+              <div class="bar-track"><div class="bar-fill" data-width="86"></div></div>
+              <span class="bar-value">11,400 units</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">December</span>
+              <div class="bar-track"><div class="bar-fill" data-width="82"></div></div>
+              <span class="bar-value">10,800 units</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">January</span>
+              <div class="bar-track"><div class="bar-fill" data-width="98"></div></div>
+              <span class="bar-value">12,840 units</span>
+            </div>
+          </div>
+
+          <!-- Chart 2: Revenue by retailer -->
+          <div class="chart-card">
+            <h3>Revenue by Top Retailers <span>This month</span></h3>
+            <div class="bar-row">
+              <span class="bar-label">SPAR</span>
+              <div class="bar-track"><div class="bar-fill orange" data-width="84"></div></div>
+              <span class="bar-value">₦4.2M</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Addide</span>
+              <div class="bar-track"><div class="bar-fill orange" data-width="62"></div></div>
+              <span class="bar-value">₦3.1M</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Foodco</span>
+              <div class="bar-track"><div class="bar-fill orange" data-width="56"></div></div>
+              <span class="bar-value">₦2.8M</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Prince Ebeano</span>
+              <div class="bar-track"><div class="bar-fill orange" data-width="48"></div></div>
+              <span class="bar-value">₦2.4M</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Hubmart</span>
+              <div class="bar-track"><div class="bar-fill orange" data-width="42"></div></div>
+              <span class="bar-value">₦2.1M</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Others</span>
+              <div class="bar-track"><div class="bar-fill orange" data-width="72"></div></div>
+              <span class="bar-value">₦3.6M</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two-column: activity + retailer strip -->
+        <div class="charts-row">
+          <!-- Activity feed -->
+          <div class="activity-card" style="margin-bottom:0">
+            <h3><i class="fa-solid fa-bell" style="color:var(--bp-accent);margin-right:8px;font-size:.85rem"></i>Recent Activity</h3>
+            <div class="activity-feed">
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <span class="activity-text">New order placed by <strong>Globus Supermarket</strong> — 240 units Wilson's Lemonade 330ml</span>
+                <span class="activity-time">2 hrs ago</span>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot blue"></div>
+                <span class="activity-text">Delivery confirmed to <strong>SPAR Victoria Island</strong></span>
+                <span class="activity-time">Yesterday</span>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot amber"></div>
+                <span class="activity-text">New retailer onboarded: <strong>Supersaver Abuja</strong></span>
+                <span class="activity-time">2 days ago</span>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot purple"></div>
+                <span class="activity-text">Payment received from <strong>Addide</strong> — ₦1.8M</span>
+                <span class="activity-time">3 days ago</span>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <span class="activity-text">Shelf audit completed at <strong>Foodco Lekki</strong> — All SKUs present ✓</span>
+                <span class="activity-time">4 days ago</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick links -->
+          <div class="chart-card" style="display:flex;flex-direction:column;gap:10px;">
+            <h3><i class="fa-solid fa-bolt" style="color:var(--bp-orange);margin-right:8px;font-size:.85rem"></i>Quick Actions</h3>
+            <a href="reach.html" class="btn btn-outline" style="width:100%;justify-content:flex-start;">
+              <i class="fa-solid fa-map-location-dot" style="color:var(--bp-accent)"></i> View retailer map
+            </a>
+            <a href="catalog.html" class="btn btn-outline" style="width:100%;justify-content:flex-start;">
+              <i class="fa-solid fa-boxes-stacking" style="color:var(--bp-accent)"></i> Manage my SKUs
+            </a>
+            <a href="orders.html" class="btn btn-outline" style="width:100%;justify-content:flex-start;">
+              <i class="fa-solid fa-file-invoice-pound" style="color:var(--bp-accent)"></i> View orders &amp; payments
+            </a>
+            <a href="reports.html" class="btn btn-outline" style="width:100%;justify-content:flex-start;">
+              <i class="fa-solid fa-chart-bar" style="color:var(--bp-accent)"></i> Download Jan 2026 report
+            </a>
+            <div class="info-note info-green" style="margin-top:4px;">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Your Jan 2026 distribution report is ready. <a href="reports.html" style="font-weight:700;color:#065f46;text-decoration:underline">Download now</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Retailer quick-status strip -->
+        <div class="retailer-strip-card" style="margin-top:20px;">
+          <h3><i class="fa-solid fa-store" style="color:var(--bp-muted);margin-right:8px;font-size:.85rem"></i>Retailer Status — Active Locations</h3>
+          <div class="retailer-strip">
+            <div class="r-tile">
+              <div class="r-tile-name">SPAR VI</div>
+              <div class="r-tile-skus">6 SKUs stocked</div>
+              <div class="r-tile-date">Last order: 10 Jan</div>
+              <span class="status-dot active">Active</span>
+            </div>
+            <div class="r-tile">
+              <div class="r-tile-name">Addide Ikeja</div>
+              <div class="r-tile-skus">5 SKUs stocked</div>
+              <div class="r-tile-date">Last order: 9 Jan</div>
+              <span class="status-dot active">Active</span>
+            </div>
+            <div class="r-tile">
+              <div class="r-tile-name">Foodco Lekki</div>
+              <div class="r-tile-skus">6 SKUs stocked</div>
+              <div class="r-tile-date">Last order: 8 Jan</div>
+              <span class="status-dot active">Active</span>
+            </div>
+            <div class="r-tile">
+              <div class="r-tile-name">Prince Ebeano</div>
+              <div class="r-tile-skus">5 SKUs stocked</div>
+              <div class="r-tile-date">Last order: 11 Jan</div>
+              <span class="status-dot active">Active</span>
+            </div>
+            <div class="r-tile">
+              <div class="r-tile-name">Hubmart Wuse</div>
+              <div class="r-tile-skus">4 SKUs stocked</div>
+              <div class="r-tile-date">Last order: 7 Jan</div>
+              <span class="status-dot active">Active</span>
+            </div>
+            <div class="r-tile">
+              <div class="r-tile-name">Game Ikeja</div>
+              <div class="r-tile-skus">4 SKUs stocked</div>
+              <div class="r-tile-date">Last order: 6 Jan</div>
+              <span class="status-dot active">Active</span>
+            </div>
+            <div class="r-tile">
+              <div class="r-tile-name">234 Stores</div>
+              <div class="r-tile-skus">5 SKUs stocked</div>
+              <div class="r-tile-date">Last order: 8 Jan</div>
+              <span class="status-dot active">Active</span>
+            </div>
+            <div class="r-tile">
+              <div class="r-tile-name">Globus VI</div>
+              <div class="r-tile-skus">3 SKUs stocked</div>
+              <div class="r-tile-date">Last order: 3 Jan</div>
+              <span class="status-dot active">Active</span>
+            </div>
+            <div class="r-tile">
+              <div class="r-tile-name">Sundry Market</div>
+              <div class="r-tile-skus">4 SKUs stocked</div>
+              <div class="r-tile-date">Last order: 6 Jan</div>
+              <span class="status-dot active">Active</span>
+            </div>
+            <div class="r-tile">
+              <div class="r-tile-name">Total Bonjour</div>
+              <div class="r-tile-skus">2 SKUs stocked</div>
+              <div class="r-tile-date">Last order: 28 Dec</div>
+              <span class="status-dot amber">No recent order</span>
+            </div>
+            <div class="r-tile">
+              <div class="r-tile-name">Twins Faja</div>
+              <div class="r-tile-skus">2 SKUs stocked</div>
+              <div class="r-tile-date">Last order: 20 Dec</div>
+              <span class="status-dot amber">No recent order</span>
+            </div>
+            <div class="r-tile">
+              <div class="r-tile-name">Covenant Uni</div>
+              <div class="r-tile-skus">3 SKUs stocked</div>
+              <div class="r-tile-date">Last order: 3 Jan</div>
+              <span class="status-dot active">Active</span>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div><!-- /main-area -->
+  </div><!-- /app-shell -->
+
+  <script src="js/brand-portal.js"></script>
+  <script>bpInit();</script>
+</body>
+</html>
