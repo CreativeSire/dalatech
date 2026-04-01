@@ -61,7 +61,8 @@ exports.handler = async (event) => {
       synced: 0,
       failed: 0,
       syncedIds: [],
-      failedIds: []
+      failedIds: [],
+      failedEntries: []
     };
 
     for (const submission of batch) {
@@ -73,14 +74,23 @@ exports.handler = async (event) => {
           results.synced += 1;
           results.syncedIds.push(submission.id);
         } else {
-          await markLeadSubmissionSyncFailed(submission.id, `Webhook returned ${response.statusCode}`);
+          const errorMessage = `Webhook returned ${response.statusCode}${response.body ? `: ${String(response.body).slice(0, 500)}` : ''}`;
+          await markLeadSubmissionSyncFailed(submission.id, errorMessage);
           results.failed += 1;
           results.failedIds.push(submission.id);
+          results.failedEntries.push({
+            id: submission.id,
+            error: errorMessage
+          });
         }
       } catch (error) {
         await markLeadSubmissionSyncFailed(submission.id, error.message);
         results.failed += 1;
         results.failedIds.push(submission.id);
+        results.failedEntries.push({
+          id: submission.id,
+          error: error.message
+        });
       }
     }
 
