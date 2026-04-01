@@ -161,7 +161,7 @@ async function insertLeadSubmission(lead) {
       ${lead.revenueTarget},
       ${lead.leadScore},
       ${lead.qualificationStatus},
-      'pending',
+      ${lead.googleSyncStatus || 'pending'},
       ${JSON.stringify(lead.rawPayload || {})}
     )
     RETURNING id, submitted_at

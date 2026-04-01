@@ -4,6 +4,16 @@ function valueOrNull(value) {
   return trimmed ? trimmed : null;
 }
 
+function isTestEmail(email) {
+  const normalized = String(email || '').trim().toLowerCase();
+  if (!normalized) return false;
+
+  return (
+    normalized.endsWith('@samplemail.dev') ||
+    normalized === 'creddypensmedia+codextest@gmail.com'
+  );
+}
+
 function coerceBool(value) {
   if (value === undefined || value === null || value === '') return null;
   return String(value).toLowerCase() === 'yes';
@@ -95,6 +105,8 @@ function normalizeLeadPayload(payload) {
   normalized.submissionChannel = getSubmissionChannel(normalized);
   normalized.leadScore = scoreLead(normalized);
   normalized.qualificationStatus = normalized.leadScore >= 3 ? 'Qualified' : 'Needs Review';
+  normalized.isTestLead = isTestEmail(normalized.email);
+  normalized.googleSyncStatus = normalized.isTestLead ? 'ignored' : 'pending';
 
   return normalized;
 }
@@ -130,5 +142,6 @@ module.exports = {
   normalizeLeadPayload,
   buildGoogleSheetsPayload,
   getSubmissionChannel,
-  scoreLead
+  scoreLead,
+  isTestEmail
 };

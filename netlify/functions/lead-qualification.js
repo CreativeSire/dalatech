@@ -42,7 +42,9 @@ exports.handler = async (event) => {
       storage: 'neon',
       submissionId: storedLead.id,
       qualificationStatus: normalizedLead.qualificationStatus,
-      leadScore: normalizedLead.leadScore
+      leadScore: normalizedLead.leadScore,
+      testLead: Boolean(normalizedLead.isTestLead),
+      googleSyncStatus: normalizedLead.googleSyncStatus
     });
   } catch (error) {
     console.error('Lead qualification error:', error);
